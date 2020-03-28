@@ -12,6 +12,11 @@ this repository is meant to serve as a curated central repository of MM and MD i
 trajectories, analysis scripts, well-validated algorithms, and related data for immediate community 
 access.
 
+This project may serve as a prototype into a future, more general Molecular Mechanics Exchange of Data 
+project. There may come a time as this project evolves that it naturally does become more general (or 
+change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
+future evolutions can dealt with as they arise. 
+
 ## A Central Reference for Community Simulation Data
 
 The nature of this pandemic requires rapid, and flexible response. This repository, and the data 
