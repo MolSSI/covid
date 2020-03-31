@@ -1,0 +1,24 @@
+- id: 0
+  desc: SARS-CoV-2 main protease with unliganded active site
+  origin: <a href="https://www.rcsb.org/structure/6Y84">PDB 6Y84</a>
+  struct_data:
+    - text: Placeholder Text
+      link: google.com
+  models:
+    - text: Placeholder Model A
+    - text: Placeholder Model B
+    - text: Placeholder Model C
+    - text: Placeholder Model D
+    - text: Placeholder Model E
+    - text: Placeholder Model F
+  inputs:
+    - text: Placeholder Inputs
+  trajectories:
+    - text : Placeholder Trajectory
+  algorithms:
+    - text: Placeholder Algorithms
+  cite:
+    - text: Placeholder Citation A
+    - text: Placeholder Citation B
+    - text: Placeholder Citation C
+    - text: Placeholder Citation D

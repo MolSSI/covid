@@ -36,10 +36,10 @@ in a centralized location:
 * COVID-19 target proteins (viral and host)
 * Structural data (continually updated, prioritized by utility/quality)
 * High-quality simulation-ready models (unsolvated and solvated) that correct flaws in structural-data (continually updated, prioritized by quality)
-* Input files, simulation ensembles (for ensemble docking), and trajectories with all info needed for provenance/reproducibility
+* Input files, simulation ensembles (for ensemble docking), etc. with all info needed for provenance/reproducibility
 * Small molecules and antibodies that are known to have affinity/activity for various targets/structures
 * Corresponding literature DOIs that are associated with all of the above
-* Links to trajectories and how to access them
+* Trajectories are accepted by [filling out the intake form](https://forms.gle/xp8hNXtVK6PPnghe8), or contacting a maintainer directly. Links to trajectories and how to access them with all info needed for provenance
 * Where appropriate, well-validated and easily deployable algorithms such as functional Monte Carlo, machine 
   learning methods, and heuristic property calculators.
 
@@ -49,9 +49,16 @@ This exchange is a community resource as well as community driven tool. Suggesti
 the folder structure, types of content accepted, regulation of the content, etc. are all welcome and 
 encouraged through issues and pull requests.
 
-## What do you need to contribute?
+## Types of Data Stored
 
-When you want to submit data to the repo, please provide the following information.
+The following classes of data are accepted in the Exchange currently (Note: This is a flexible and broad list. 
+New suggestions can be made through issues). Please note that all data in each category should have the subsequent 
+information associated with it to be accepted. All submissions should also have contributing information included in 
+their records.
+
+### Contributor Information
+
+The following information should be included with all submissions
 
 * Author
 * Group (lab group)
@@ -62,47 +69,69 @@ When you want to submit data to the repo, please provide the following informati
 * Reference(s) (how the information can be cited if it has a reference)
 * Licensing information
 
-## Types of Data Stored
 
-The following classes of data are accepted in the Exchange currently (Note: This is a **flexible** and 
-broad list. New suggestions can be made through issues). Please note that all data in each category 
-should have the subsequent information associated with it to be accepted. All submissions should also 
-have contributing information in the form of a README.md
+### Structures
 
-* Structures
-    * Provenance of structure including any modifications made. Will accept manually written provenance. 
-      If modifications made by program, please include script along with pre-modified files and list of required 
-      programs to re-generate.
-* Simulation Configuration Files
-    * Programs required to run (minimal subset which gets all dependencies, with minimal versions), 
-    * Basic script and/or working instructions to execute these configuration files, 
-    * Structure files (required for non-internet accessible structures, e.g. not required for things on the 
-      [Protien Data Bank](https://www.rcsb.org/))
-* Program Structure Files - Structures formatted uniquely for a specific simulation program or run 
-    * Same requirements as Simulation Configuration Files
-* Analysis Data 
-    * Complete set of any of the previous data and exact details for replication
-    * Analysis scripts with placeholders for output trajectory files.
-    * Pointers to the trajectories if possible
-* Trajectories - Not accepted in their entirety to the GitHub repository, 
-    * Pointers will be accepted and noted. (contact information, where it’s stored, how to request, URLs, etc)
-    * Program used to generate this trajectory.
-    * Structures (or links there to) which were used to initiate the simulation which yielded this trajectory.
-    * Config files and or scripts which were used to run the simulation that generate the trajectory (if possible)
-* Papers - as links
-    * Links to preprints and publications
-    * Inclusion of the files for the paper if they fall into the other categories above.
-    * Notation of any simulation package or software used to get the data in the paper
-    * Papers from multiple groups should be added in multiple folders (see [Contributing](#contributing) below)
-* Movies - hyperlinks only, please do not include full movie files.
-    * Links to long term-hosted movies (e.g. YouTube).
-    * Structures (or links there to) which were used to initiate this movie.
-    * Config files and or scripts which were used to run the simulation that generate the trajectory (if possible)
-    * The trajectory which this movie references (if possible, see rules on Trajectories above)
-* Algorithms - Well-validated and easily deployable algorithms such as functional Monte Carlo and machine learning methods and heuristic property calculators
-    * Code Snippets
-    * Programing Language (if restricted)
-    * List of required software and minimal dependencies (if any)
+Contributed structures should include any provenance information, such as initial structure, 
+any modifications made to the structure, the process by which modifications were made. 
+If modifications were performed using a program, please include the relevant script along with pre-modified files, 
+and a list of required programs needed to run the script.
+
+### High-quality simulation-ready models
+
+These are subject to the same rules as Structures, but with the addition that all modifications and 
+routines should be tracked and recorded. 
+
+### Simulation Configuration Files
+
+Simulation configuration files should include a list of programs required to utilize the configuration files. 
+Ideally this will contain the minimal subset of programs that gets all dependencies. Version numbers, either the 
+version used or the minimal version that will produce the correct results, should also be included for each program.
+
+Submission should also either a script or a set of working instructions to execute the included configuration files and 
+any structure files not available through internet-accessible storage. (subject to the rules of Structures)
+
+### Program Structure Files
+
+Structures formatted uniquely for a specific simulation program or run. 
+These require the same information as the Simulation Configuration Files. 
+
+### Analysis Data 
+
+Analysis data should include the complete set of any of the previous data and exact details for replication.
+Analysis scripts with placeholders for output trajectory files can be provided if no trajectory is available.
+Please include pointers to the trajectories if possible.
+
+### Trajectories
+
+Trajectories are accepted through [filling out the intake form](https://forms.gle/xp8hNXtVK6PPnghe8) and will be 
+hosted by MolSSI and you retain full rights. They are not accepted on GitHub directly. You may also submit links to 
+trajectories if you are hosting them elsewhere (please provide the same information as is on the 
+[intake form](https://forms.gle/xp8hNXtVK6PPnghe8)).
+
+If possible, please also provide any of the previous categories of information along with the Trajectory so they can 
+be cross referenced.
+
+### Papers
+
+Papers, preprints, and all other manuscripts are accepted as links to their hosted location. They are not 
+accepted on the GitHub repo directly.
+
+If possible, please also provide any of the previous categories of information along with the Trajectory so they can 
+be cross referenced.
+
+### Movies 
+
+Movies are accepted as hyperlinks only, please do not include full movie files. 
+
+If possible, please also provide any of the previous categories of information along with the Trajectory so they can 
+be cross referenced.
+
+### Algorithms 
+
+Well-validated and easily deployable algorithms such as functional Monte Carlo and machine learning methods and 
+heuristic property calculators. Data included should be code snippets, programing language (if restricted), and a list 
+of required software and minimal dependencies (if any).
 
 Due to the rapidly evolving nature of this exchange, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
@@ -121,23 +150,28 @@ for types you are not submitting):
 sorted_by_group
 └──YOUR_GROUP_NAME
    ├── README.md
-   └── TARGET
-       ├── algorithms
-       ├── analysis
-       ├── movies
-       ├── papers
-       ├── program_specific_structures
-       │   └── SIMULATION_SOFTWARE
-       ├── simulation_configs
-       │   └── SIMULATION_SOFTWARE
-       ├── structures
-       └── trajectories
-           └── SIMULATION_SOFTWARE
+   └── SUBMISSION_ID
+       ├── README.md
+       └── TARGET
+           ├── algorithms
+           ├── analysis
+           ├── movies
+           ├── papers
+           ├── program_specific_structures
+           │   └── SIMULATION_SOFTWARE
+           ├── simulation_configs
+           │   └── SIMULATION_SOFTWARE
+           ├── structures
+           └── trajectories
+               └── SIMULATION_SOFTWARE
 ```
 
-All capital lettered directories should be replaced with the appropriate names. 
-The `README.md` file should contain information about your group (or the group you are referencing), 
-as well as what types of data you have submitted. Also please try to include the meta data (such as 
+All capital lettered directories should be replaced with the appropriate names. The `SUBMISSION_ID` 
+is simply an identifier so each submission can be handled in turn; just make sure its unique (and ideally 
+something easy to tell which came first). 
+The `README.md` file should contain information about your group (or the group you are referencing).
+The internal README.md should contain info  
+as what types of data you were submitted here. Also please try to include the meta data (such as 
 provenance information) in the appropriate directories themselves which includes what each file is and 
 some basic descriptions.
 
@@ -145,11 +179,8 @@ Please add sub-folders for any item requiring multiple files (e.g. an analysis w
 
 Papers contributed by multiple groups should be added in both groups names and use the same URL.
 
-(Not required) If possible, please also create symlinks in the folders of the root directory as well. If you do not 
-wish to, symlinks will be created for each of the other folders in the root directory of the exchange by a maintainer.
-The current plan is to move 
-
-This structure is subject to change, but all changes will be made by a maintainer.
+This structure is subject to change, but all changes will be made by a maintainer and the instructions 
+updated accordingly
 
 ## Exchange Maintainers 
 
