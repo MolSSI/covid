@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Jekyll
+_site/
+Gemfile
+Gemfile.lock
+scratch.txt

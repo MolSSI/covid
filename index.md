@@ -15,9 +15,17 @@ access.
 This project may serve as a prototype into a future, more general Molecular Mechanics Exchange of Data 
 project. There may come a time as this project evolves that it naturally does become more general (or 
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
-future evolutions can dealt with as they arise. 
+future evolutions can dealt with as they arise.
 
-## [Go to the Website](https://molssi.github.io/CoVMME/)
+## Get the Data Now
+
+<center>
+<a href="./targets/spike.html" class="btn2">Spike Protien</a>
+<a href="./targets/protease.html" class="btn2">Protease(s)</a>
+<a href="./targets/membrane.html" class="btn2">Membrane Protein</a>
+<a href="./targets/envelope.html" class="btn2">Envelope Protein</a>
+<a href="./targets/nucleocapsid.html" class="btn2">Nucleocapsid Protein</a>
+</center>
 
 ## A Central Reference for Community Simulation Data
 
@@ -25,29 +33,41 @@ The nature of this pandemic requires rapid, and flexible response. This reposito
 within are designed to get the information out quickly. The repo seeks to provide the following information
 in a centralized location:
 
-* Provide Simulation input files (structures, configurations, scripts, Jupyter notebooks) 
-  to the community in an organized structure. Sorting done by Research Group, Target (spike protein, protease, etc), 
-  Simulation Program, Hardware/platform (cluster, cloud, local, etc).
-* Provide Trajectories to the community for analysis. Due to the nature of the trajectories’ sizes, 
-  we may only be able to provide pointers to the trajectories where possible. As the data, repository, 
-  and available resources evolve, MolSSI may be able to provide a central location for full trajectories
-  in the future.
-* Provide analysis files and quantitative numbers associated with inputs and trajectories.
-* Pointers to preprint servers such as arXiv, bioRxiv, and ChemRxiv on biomolecular simulation research in regards 
-  SARS-CoV-2.
+* COVID-19 target proteins (viral and host)
+* Structural data (continually updated, prioritized by utility/quality)
+* High-quality simulation-ready models (unsolvated and solvated) that correct flaws in structural-data (continually updated, prioritized by quality)
+* Input files, simulation ensembles (for ensemble docking), and trajectories with all info needed for provenance/reproducibility
+* Small molecules and antibodies that are known to have affinity/activity for various targets/structures
+* Corresponding literature DOIs that are associated with all of the above
+* Links to trajectories and how to access them
 * Where appropriate, well-validated and easily deployable algorithms such as functional Monte Carlo, machine 
   learning methods, and heuristic property calculators.
+
+Any researchers can submit changes via PRs, core teams will review PRs for quality and merge them.
   
 This exchange is a community resource as well as community driven tool. Suggestions as to changes for 
 the folder structure, types of content accepted, regulation of the content, etc. are all welcome and 
 encouraged through issues and pull requests.
 
+## What do you need to contribute?
+
+When you want to submit data to the repo, please provide the following information.
+
+* Author
+* Group (lab group)
+* Organization (university/corporation)
+* Synopsis (this would be a short description of the data being included)
+* Full Description (if different from synopsis/relevant)
+* Tags (any tags the group would like to include for search purposes)
+* Reference(s) (how the information can be cited if it has a reference)
+* Licensing information
+
 ## Types of Data Stored
 
 The following classes of data are accepted in the Exchange currently (Note: This is a **flexible** and 
- broad list. New suggestions can be made through issues). Please note that all data in each category 
- should have the subsequent information associated with it to be accepted. All submissions should also 
- have contributing information in the form of a README.md
+broad list. New suggestions can be made through issues). Please note that all data in each category 
+should have the subsequent information associated with it to be accepted. All submissions should also 
+have contributing information in the form of a README.md
 
 * Structures
     * Provenance of structure including any modifications made. Will accept manually written provenance. 
@@ -91,6 +111,8 @@ contributor to ask for additional information as needed.
 
 ## Contributing
 
+SUBJECT TO CHANGE
+
 The exchange gladly accepts any of the above types of data (and others if you propose an organization). 
 Simply open a PR with the data you wish to submit with the following folder structure (omit any directories 
 for types you are not submitting):
@@ -131,7 +153,7 @@ This structure is subject to change, but all changes will be made by a maintaine
 
 ## Exchange Maintainers 
 
-* [The Molecular Sciences Software Institute (MolSSI)](molssi.org)
+* The Molecular Sciences Software Institute (MolSSI)
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)
