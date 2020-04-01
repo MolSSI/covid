@@ -60,13 +60,13 @@ their records.
 
 The following information should be included with all submissions
 
-* Author
-* Group (lab group)
-* Organization (university/corporation)
-* Synopsis (this would be a short description of the data being included)
-* Full Description (if different from synopsis/relevant)
-* Tags (any tags the group would like to include for search purposes)
-* Reference(s) (how the information can be cited if it has a reference)
+* Author: The user(s) who produced the data associated with the submission.
+* Group: The group(s) of the author(s) of the submission.
+* Organization: The organization(s) of the author(s).
+* Abstract: A short description of the data included in the submission.
+* Full Description: If desired, include a more detailed description of the data being submitted and the process used to create it.
+* Tags: Include any additional tags and keywords to be associated with the submission.
+* Reference: How the information can be cited. Include papers to cite here.
 * Licensing information
 
 
@@ -166,21 +166,22 @@ sorted_by_group
                └── SIMULATION_SOFTWARE
 ```
 
-All capital lettered directories should be replaced with the appropriate names. The `SUBMISSION_ID` 
-is simply an identifier so each submission can be handled in turn; just make sure its unique (and ideally 
-something easy to tell which came first). 
-The `README.md` file should contain information about your group (or the group you are referencing).
-The internal README.md should contain info  
-as what types of data you were submitted here. Also please try to include the meta data (such as 
-provenance information) in the appropriate directories themselves which includes what each file is and 
-some basic descriptions.
+Create a folder for your group within the `sorted_by_group` directory. This will serve as the main storage location for all of your submissions. Within this folder, create a README.md file and include information about your contributing group(s):
+* Author: The user(s) who produced the data associated with the submission.
+* Group: The group(s) of the author(s) of the submission.
+* Organization: The organization(s) of the author(s).
+* Reference_Information: If desired, include websites for the associated groups.
+* Contact_Information: If desired, include ways that the author(s) can be contacted about their submission.
 
-Please add sub-folders for any item requiring multiple files (e.g. an analysis with additional data).
+Note that for submissions by collaborations of multiple groups, create a folder within the `sorted_by_group` folder for your collaboration. Within the README.md include all authors and groups associated with this collaboration.
 
-Papers contributed by multiple groups should be added in both groups names and use the same URL.
+For each new submission made the the repository, please create a folder, within your groups folder, with a unique `SUBMISSION_ID` as its name. Ideally, submission names should represent the order of submissions, allowing each submission to be processed in the order it is received.
+
+Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission.
+Within the `TARGET` folder, create a subfolder for each type of data within this submission. These folders should contain all relevant files to the data types along with any meta data, such as provenance information, for the data.
 
 This structure is subject to change, but all changes will be made by a maintainer and the instructions 
-updated accordingly
+updated accordingly.
 
 ## Exchange Maintainers 
 
