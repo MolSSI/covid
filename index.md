@@ -15,7 +15,7 @@ access.
 This project may serve as a prototype into a future, more general Molecular Mechanics Exchange of Data 
 project. There may come a time as this project evolves that it naturally does become more general (or 
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
-future evolutions can dealt with as they arise.
+future evolutions can be dealt with as they arise.
 
 ## Get the Data Now
 
@@ -52,7 +52,7 @@ encouraged through issues and pull requests.
 ## Types of Data Stored
 
 The following classes of data are accepted in the Exchange currently (Note: This is a flexible and broad list. 
-New suggestions can be made through issues). Please note that all data in each category should have the subsequent 
+New suggestions can be made through [issues](https://github.com/MolSSI/CoVMME/issues)). Please note that all data in each category should have the subsequent 
 information associated with it to be accepted. All submissions should also have contributing information included in 
 their records.
 
