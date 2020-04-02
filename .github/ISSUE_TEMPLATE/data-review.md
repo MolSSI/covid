@@ -11,17 +11,29 @@ assignees: ''
 Include submission ID
 
 ### Procedure
-Explain the scientific process you used to review the submitted data. Include a list of technical issues you checked for such as:
+Explain the scientific process you used to review the submitted data. The tables below summarize some of the technical and scientific issues to consider.
 
-| Issues | Success | Problem description |
+#### Sientific issues
+
+| Issue | Valid | Problem description |
 | :---: | :---: | :---: |
-| Unique submission ID | yes/no | ... |
-| Valid target name | yes/no | ... |
+| Initial structure | yes/no | ... |
+| Provenance | yes/no | ... |
+| Simulation | yes/no | ... |
+| Analysis | yes/no | ... |
+| Citations included for data/algorithms/methods | yes/no | ... |
+
+#### Technical issues
+
+| Issue | Success | Problem description |
+| :---: | :---: | :---: |
 | Valid sofware depdendencies | yes/no | ... |
 | File integrity and validity | yes/no | ... |
 | Valid target name | yes/no | ... |
 | Execution of script files | yes/no | ... |
-| Citations for data or algorithms/methods | yes/no | ... |
 
 ### Evaluation
-Include a qualitative assessment of the data: bad/rejected, fuzzy/debatable, good/acceptable
+Include a qualitative assessment of the data: 
+   - bad: the data set ought to be rejected
+   - debatable: some issues needs to be addressed before publication, 
+   - good: the data set is acceptable as is and ready to be published
