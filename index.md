@@ -133,6 +133,9 @@ Well-validated and easily deployable algorithms such as functional Monte Carlo a
 heuristic property calculators. Data included should be code snippets, programing language (if restricted), and a list 
 of required software and minimal dependencies (if any).
 
+
+### Disclaimer
+
 Due to the rapidly evolving nature of this exchange, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
 contributor to ask for additional information as needed.  
@@ -185,7 +188,7 @@ updated accordingly.
 
 ## Exchange Maintainers 
 
-* The Molecular Sciences Software Institute (MolSSI)
+* [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)

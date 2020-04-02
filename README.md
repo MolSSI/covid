@@ -136,7 +136,7 @@ updated accordingly.
 
 ## Exchange Maintainers 
 
-* [The Molecular Sciences Software Institute (MolSSI)](molssi.org)
+* [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)
