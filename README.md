@@ -57,7 +57,7 @@ The following classes of data are currently accepted in the Exchange (Note: This
     * Programs required to run (minimal subset which gets all dependencies, with minimal versions), 
     * Basic script and/or working instructions to execute these configuration files, 
     * Structure files (required for non-internet accessible structures, e.g. not required for things on the 
-      [Protien Data Bank](https://www.rcsb.org/))
+      [Protein Data Bank](https://www.rcsb.org/))
 * Program Structure Files - Structures formatted uniquely for a specific simulation program or run 
     * Same requirements as Simulation Configuration Files
 * Analysis Data 
