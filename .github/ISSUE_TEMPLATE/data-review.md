@@ -19,9 +19,11 @@ Explain the scientific process you used to review the submitted data. The tables
 | :---: | :---: | :---: |
 | Initial structure | yes/no | ... |
 | Provenance | yes/no | ... |
-| Simulation | yes/no | ... |
-| Analysis | yes/no | ... |
-| Citations included for data/algorithms/methods | yes/no | ... |
+| Simulation procedure| yes/no | ... |
+| Simulation input data| yes/no | ... |
+| Simulation output data| yes/no | ... |
+| Analysis methodology | yes/no | ... |
+| Analysis data | yes/no | ... |
 
 #### Technical issues
 
@@ -31,6 +33,10 @@ Explain the scientific process you used to review the submitted data. The tables
 | File integrity and validity | yes/no | ... |
 | Valid target name | yes/no | ... |
 | Execution of script files | yes/no | ... |
+| Simulation run | yes/no | ... |
+| Links/pointers to movies, trajectories, papers, etc. | yes/no | ... |
+| Citations included for data/algorithms/methods | yes/no | ... |
+| Valid license | yes/no | ... |
 
 ### Evaluation
 Include a qualitative assessment of the data: 
