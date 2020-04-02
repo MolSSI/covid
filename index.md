@@ -15,7 +15,7 @@ access.
 This project may serve as a prototype into a future, more general Molecular Mechanics Exchange of Data 
 project. There may come a time as this project evolves that it naturally does become more general (or 
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
-future evolutions can dealt with as they arise.
+future evolutions can be dealt with as they arise.
 
 ## Get the Data Now
 
@@ -52,7 +52,7 @@ encouraged through issues and pull requests.
 ## Types of Data Stored
 
 The following classes of data are accepted in the Exchange currently (Note: This is a flexible and broad list. 
-New suggestions can be made through issues). Please note that all data in each category should have the subsequent 
+New suggestions can be made through [issues](https://github.com/MolSSI/CoVMME/issues)). Please note that all data in each category should have the subsequent 
 information associated with it to be accepted. All submissions should also have contributing information included in 
 their records.
 
@@ -169,18 +169,18 @@ sorted_by_group
                └── SIMULATION_SOFTWARE
 ```
 
-Create a folder for your group within the `sorted_by_group` directory. This will serve as the main storage location for all of your submissions. Within this folder, create a README.md file and include information about your contributing group(s):
+Create a folder for your group within the `sorted_by_group` directory. This will serve as the main storage location for all of your submissions. Within this folder, create a `README.md` file and include information about your contributing group(s):
 * Author: The user(s) who produced the data associated with the submission.
 * Group: The group(s) of the author(s) of the submission.
 * Organization: The organization(s) of the author(s).
 * Reference_Information: If desired, include websites for the associated groups.
 * Contact_Information: If desired, include ways that the author(s) can be contacted about their submission.
 
-Note that for submissions by collaborations of multiple groups, create a folder within the `sorted_by_group` folder for your collaboration. Within the README.md include all authors and groups associated with this collaboration.
+Note that for submissions by collaborations of multiple groups, create a folder within the `sorted_by_group` folder for your collaboration. Within the `README.md` include all authors and groups associated with this collaboration.
 
-For each new submission made the the repository, please create a folder, within your groups folder, with a unique `SUBMISSION_ID` as its name. Ideally, submission names should represent the order of submissions, allowing each submission to be processed in the order it is received.
+For each new submission made to the repository, please create a folder, within your groups folder, with a unique `SUBMISSION_ID` as its name. Ideally, submission names should represent the order of submissions, allowing each submission to be processed in the order it is received.
 
-Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission.
+Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission within the `README.md` file.
 Within the `TARGET` folder, create a subfolder for each type of data within this submission. These folders should contain all relevant files to the data types along with any meta data, such as provenance information, for the data.
 
 This structure is subject to change, but all changes will be made by a maintainer and the instructions 
