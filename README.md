@@ -1,10 +1,11 @@
 # COVID-19 Molecular Mechanics Exchange (CoVMME)
 
-![MolSSI and the Community VS. COVID-19](repo_management/MolSSI-Logo-covid.png "MolSSI and the Community VS. COVID-19")
+![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
 
 A community data repository and curation service for Molecular Mechanics (MM) and Molecular Dynamics (MD) 
 related computations for research into the SARS-CoV-2 / COVID-19 / ”Coronavirus” pandemic maintained 
-by The Molecular Sciences Software Institute (MolSSI). 
+by [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org) and 
+[BioExcel](https://bioexcel.eu/). 
 This virus has spurred the entire scientific world into action looking for treatments and answers to 
 help minimize its spread, its symptoms, and its fatalities. 
 To help researchers and the community quickly provide their resources and expertise, 
@@ -133,9 +134,18 @@ The current plan is to move
 This structure is subject to change, but all changes will be made by a maintainer and the instructions 
 updated accordingly.
 
+## Want to join the collaboration?
+
+MolSSI and BioExcel are working together on this project to de-duplicate efforts and to reach the broadest 
+community possible. We are activley looking for other institutes, collaborators, consortia, and anyone who wants 
+to be an active contributor to join us! 
+
+Reach out to any of the maintainers below and lets work together to make this as helpful as possible! 
+
 ## Exchange Maintainers 
 
 * [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
+* [BioExcel](https://bioexcel.eu/)
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)

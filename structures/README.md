@@ -5,6 +5,7 @@ Raw links are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
-       └── structures
+   └── SUBMISSION_ID
+       └── TARGET
+           └── structures
 ```

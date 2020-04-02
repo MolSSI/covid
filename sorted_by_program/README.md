@@ -6,13 +6,14 @@ Raw files are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
-       ├── program_specific_structures
-       │   └── SIMULATION_SOFTWARE
-       ├── simulation_configs
-       │   └── SIMULATION_SOFTWARE
-       └── trajectories
-           └── SIMULATION_SOFTWARE
+   └──SUBMISSION_ID
+       └── TARGET
+           ├── program_specific_structures
+           │   └── SIMULATION_SOFTWARE
+           ├── simulation_configs
+           │   └── SIMULATION_SOFTWARE
+           └── trajectories
+               └── SIMULATION_SOFTWARE
 ``` 
 
 Structures which are needed to run the configs files or referenced by trajectories will also be linked.

@@ -5,9 +5,10 @@ Raw files are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
-       └── simulation_configs
-           └── SIMULATION_SOFTWARE
+   └── SUBMISSION_ID
+       └── TARGET
+           └── simulation_configs
+               └── SIMULATION_SOFTWARE
 ```
 
 The default sort will be by which particular software is used. 

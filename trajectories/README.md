@@ -5,8 +5,9 @@ Raw links are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
-       └── trajectory
+   └── SUBMISSION_ID
+       └── TARGET
+           └── trajectory
 ```
 
 The default sort will be by file type, then name, then which particular software is used. 

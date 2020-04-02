@@ -6,9 +6,10 @@ Raw files are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
-       └── program_specific_structures
-           └── SIMULATION_SOFTWARE
+   └── SUBMISSION_ID
+       └── TARGET
+           └── program_specific_structures
+               └── SIMULATION_SOFTWARE
 ```
 
 The links here will be referenced by the simulation software itself, so this shares a fair amount of 

@@ -5,7 +5,8 @@ Raw files are not placed in this directory and only linked to through:
 ```
 sorted_by_group
 └──GROUP_NAME
-   └── TARGET
+   └── SUBMISSION_ID
+       └── TARGET
 ``` 
 
 Sort is then done by type of data (`structures`, `algorithms`, etc.), and then by program. 
