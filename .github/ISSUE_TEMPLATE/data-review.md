@@ -1,12 +1,3 @@
----
-name: Data review
-about: Create a review report for submitted simulation data
-title: 'Data review: SUBMISSION_ID'
-labels: ''
-assignees: ''
-
----
-
 ### Submitted data reference
 Include submission ID
 
@@ -15,28 +6,28 @@ Explain the scientific process you used to review the submitted data. The tables
 
 #### Scientific issues
 
-| Issue | Valid | Problem description |
-| :---: | :---: | :---: |
-| Initial structure | yes/no | ... |
-| Provenance | yes/no | ... |
-| Simulation procedure| yes/no | ... |
-| Simulation input data| yes/no | ... |
-| Simulation output data| yes/no | ... |
-| Analysis methodology | yes/no | ... |
-| Analysis data | yes/no | ... |
+| Issue | Valid | Problem description | Recommendation |
+| :---: | :---: | :---: | :--: |
+| Initial structure | yes/no | ... | ... |
+| Provenance | yes/no | ... | ... |
+| Simulation procedure| yes/no | ... | ... |
+| Simulation input data| yes/no | ... | ... |
+| Simulation output data| yes/no | ... | ... |
+| Analysis methodology | yes/no | ... | ... |
+| Analysis data | yes/no | ... | ... |
 
 #### Technical issues
 
-| Issue | Success | Problem description |
-| :---: | :---: | :---: |
-| Valid sofware depdendencies | yes/no | ... |
-| File integrity and validity | yes/no | ... |
-| Valid target name | yes/no | ... |
-| Execution of script files | yes/no | ... |
-| Simulation run | yes/no | ... |
-| Links/pointers to movies, trajectories, papers, etc. | yes/no | ... |
-| Citations included for data/algorithms/methods | yes/no | ... |
-| Valid license | yes/no | ... |
+| Issue | Success | Problem description | Recommendation |
+| :---: | :---: | :---: | :---: |
+| Valid software/services dependencies | yes/no | ... | ... |
+| File integrity and validity | yes/no | ... | ... |
+| Valid target name | yes/no | ... | ... |
+| Execution of script files | yes/no | ... | ... |
+| Simulation run | yes/no | ... | ... |
+| Links to movies, trajectories, papers, etc. | yes/no | ... | ... |
+| Citations included for data/algorithms/methods | yes/no | ... | ... |
+| Valid license | yes/no | ... | ... |
 
 ### Evaluation
 Include a qualitative assessment of the data: 
