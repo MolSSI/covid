@@ -21,7 +21,7 @@ future evolutions can be dealt with as they arise.
 ## Get the Data Now
 
 <center>
-<a href="./targets/spike.html" class="btn2">Spike Protien</a>
+<a href="./targets/spike.html" class="btn2">Spike Protein</a>
 <a href="./targets/protease.html" class="btn2">Protease(s)</a>
 <a href="./targets/membrane.html" class="btn2">Membrane Protein</a>
 <a href="./targets/envelope.html" class="btn2">Envelope Protein</a>
