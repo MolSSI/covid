@@ -190,7 +190,7 @@ updated accordingly.
 ## Want to join the collaboration?
 
 MolSSI and BioExcel are working together on this project to de-duplicate efforts and to reach the broadest 
-community possible. We are activley looking for other institutes, collaborators, consortia, and anyone who wants 
+community possible. We are actively looking for other institutes, collaborators, consortia, and anyone who wants 
 to be an active contributor to join us! 
 
 Reach out to any of the maintainers below and lets work together to make this as helpful as possible!  

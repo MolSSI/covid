@@ -43,8 +43,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Structural Data", 
-          "children" : [
     {% for struct_child in member.struct_data %}
         {% if struct_child.link == null %}
             {"text": {{ struct_child.text }} },
@@ -52,8 +50,6 @@ $(function() {
             {"text": "{{ struct_child.text }}", a_attr: { href: "{{ struct_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
@@ -77,8 +73,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Simulation Ready Models", 
-          "children" : [
     {% for models_child in member.models %}
         {% if models_child.link == null %}
             {"text": "{{ models_child.text }}" },
@@ -86,8 +80,6 @@ $(function() {
             {"text": "{{ models_child.text }}", a_attr: { href: "{{ models_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
@@ -108,8 +100,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Simulation Input Files", 
-          "children" : [
     {% for input_child in member.inputs %}
         {% if input_child.link == null %}
             {"text": "{{ input_child.text }}" },
@@ -117,8 +107,6 @@ $(function() {
             {"text": "{{ input_child.text }}", a_attr: { href: "{{ input_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
@@ -140,8 +128,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Trajectories", 
-          "children" : [
     {% for traj_child in member.trajectories %}
         {% if traj_child.link == null %}
             {"text": "{{ traj_child.text }}" },
@@ -149,8 +135,6 @@ $(function() {
             {"text": "{{ traj_child.text }}", a_attr: { href: "{{ traj_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
@@ -171,8 +155,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Algorithms", 
-          "children" : [
     {% for algo_child in member.algorithms %}
         {% if algo_child.link == null %}
             {"text": "{{ algo_child.text }}" },
@@ -180,8 +162,6 @@ $(function() {
             {"text": "{{ algo_child.text }}", a_attr: { href: "{{ algo_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
@@ -202,8 +182,6 @@ $(function() {
     "plugins" : ["search"],
     'core' : {
       'data' : [
-        { "text" : "Citations", 
-          "children" : [
     {% for cite_child in member.cite %}
         {% if cite_child.link == null %}
             {"text": "{{ cite_child.text }}" },
@@ -211,8 +189,6 @@ $(function() {
             {"text": "{{ cite_child.text }}", a_attr: { href: "{{ cite_child.link }}" } },
         {% endif %} 
     {% endfor %}
-          ]
-        }
       ],
       'themes' : {
         'variant' : 'large'
