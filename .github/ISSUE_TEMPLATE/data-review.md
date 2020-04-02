@@ -30,7 +30,7 @@ Explain the scientific process you used to review the submitted data. The tables
 | Valid license | yes/no | ... | ... |
 
 ### Evaluation
-Include a qualitative assessment of the data: 
-   - bad: the data set ought to be rejected
-   - debatable: some issues needs to be addressed before publication, 
-   - good: the data set is acceptable as is and ready to be published
+Coclude the review with a qualitative assessment of the submission: 
+   - bad: data set ought to be rejected
+   - fair: some issues needs to be addressed before publication
+   - good: data set is acceptable as is and ready to be published
