@@ -37,6 +37,8 @@
 <script>
 $(function() {
 {% for member in site.data.spike %}
+
+{% if member.struct_data != null %}
   $('#struct_data_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -47,7 +49,7 @@ $(function() {
         {% if struct_child.link == null %}
             {"text": {{ struct_child.text }} },
         {% else %}
-            {"text": "{{ struct_child.text }}", a_attr : { linkout: "{{ struct_child.link }}" } },
+            {"text": "{{ struct_child.text }}", a_attr: { href: "{{ struct_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -60,16 +62,17 @@ $(function() {
   });
   $("#struct_data_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
    });
+{% endif %}
    
    
    
   
-   
+{% if member.models != null %}   
   $('#models_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -80,7 +83,7 @@ $(function() {
         {% if models_child.link == null %}
             {"text": "{{ models_child.text }}" },
         {% else %}
-            {"text": "{{ models_child.text }}", a_attr : { linkout: "{{ models_child.link }}" } },
+            {"text": "{{ models_child.text }}", a_attr: { href: "{{ models_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -93,13 +96,14 @@ $(function() {
   });
   $("#models_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
    });
+{% endif %}
 
-   
+{% if member.inputs != null %}    
   $('#inputs_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -110,7 +114,7 @@ $(function() {
         {% if input_child.link == null %}
             {"text": "{{ input_child.text }}" },
         {% else %}
-            {"text": "{{ input_child.text }}", a_attr : { linkout: "{{ input_child.link }}" } },
+            {"text": "{{ input_child.text }}", a_attr: { href: "{{ input_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -123,12 +127,15 @@ $(function() {
   });
   $("#inputs_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
    });
-   
+{% endif %}
+
+
+{% if member.trajectories != null %}      
   $('#traj_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -139,7 +146,7 @@ $(function() {
         {% if traj_child.link == null %}
             {"text": "{{ traj_child.text }}" },
         {% else %}
-            {"text": "{{ traj_child.text }}", a_attr : { linkout: "{{ traj_child.link }}" } },
+            {"text": "{{ traj_child.text }}", a_attr: { href: "{{ traj_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -152,12 +159,14 @@ $(function() {
   });
   $("#traj_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
    });
-   
+{% endif %}
+
+{% if member.algorithms != null %}     
   $('#algo_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -168,7 +177,7 @@ $(function() {
         {% if algo_child.link == null %}
             {"text": "{{ algo_child.text }}" },
         {% else %}
-            {"text": "{{ algo_child.text }}", a_attr : { linkout: "{{ algo_child.link }}" } },
+            {"text": "{{ algo_child.text }}", a_attr: { href: "{{ algo_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -181,13 +190,14 @@ $(function() {
   });
   $("#algo_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
    });
-   
+{% endif %}   
 
+{% if member.cite != null %}  
   $('#cite_{{ member.id }}').jstree({
     "plugins" : ["search"],
     'core' : {
@@ -198,7 +208,7 @@ $(function() {
         {% if cite_child.link == null %}
             {"text": "{{ cite_child.text }}" },
         {% else %}
-            {"text": "{{ cite_child.text }}", a_attr : { linkout: "{{ cite_child.link }}" } },
+            {"text": "{{ cite_child.text }}", a_attr: { href: "{{ cite_child.link }}" } },
         {% endif %} 
     {% endfor %}
           ]
@@ -211,11 +221,12 @@ $(function() {
   });
   $("#cite_{{ member.id }}").on("click", ".jstree-anchor", function(evt) {
     evt.preventDefault();
-    var link = $(evt.target).attr("linkout");
-    if (typeof link !== 'undefined' ) {
-      window.open(link, _blank);
+    var link = $(evt.target).attr("href");
+    if (link !== '#') {
+      window.open(link);
     }
-   });   
+   }); 
+{% endif %}  
 
 {% endfor %}
 
