@@ -1,3 +1,12 @@
+---
+name: Data review
+about: Create a review report for submitted simulation data
+title: 'Data review: SUBMISSION_ID'
+labels: ''
+assignees: ''
+
+---
+
 ### Submitted data reference
 Include submission ID
 
@@ -31,6 +40,6 @@ Explain the scientific process you used to review the submitted data. The tables
 
 ### Evaluation
 Coclude the review with a qualitative assessment of the submission: 
-   - bad: data set ought to be rejected
-   - fair: some issues needs to be addressed before publication
-   - good: data set is acceptable as is and ready to be published
+   - *bad*: data set ought to be rejected
+   - *fuzzy*: some issues needs to be addressed before publication
+   - *good*: data set is acceptable as is and ready to be published
