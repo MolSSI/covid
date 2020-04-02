@@ -13,7 +13,7 @@ Include submission ID
 ### Procedure
 Explain the scientific process you used to review the submitted data. The tables below summarize some of the technical and scientific issues to consider.
 
-#### Sientific issues
+#### Scientific issues
 
 | Issue | Valid | Problem description |
 | :---: | :---: | :---: |
