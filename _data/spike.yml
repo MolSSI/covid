@@ -1,24 +1,20 @@
 - id: 0
-  desc: Placeholder Spike
-  origin: ???
+  desc: SARS-CoV-2 spike ectodomain structure (open state)
+  origin: <a href="https://www.rcsb.org/structure/6VYB">PDB 6VYB</a>
   struct_data:
-    - text: Placeholder Text
-      link: google.com
   models:
-    - text: Placeholder Model A
-    - text: Placeholder Model B
-    - text: Placeholder Model C
-    - text: Placeholder Model D
-    - text: Placeholder Model E
-    - text: Placeholder Model F
+    - text: "DESRES Trajectory 10897136 Starting Structure, closed state"
+      link: "https://covmme.molssi.org/data/desres/desres_trajs_0/spike_protein/DESRES-Trajectory_sarscov2-10897136-structure.tar"
+    - text: "DESRES Trajectory 10897850 Starting Structure, partially open state"
+      link: "https://covmme.molssi.org/data/desres/desres_trajs_0/spike_protein/DESRES-Trajectory_sarscov2-10897850-structure.tar"
   inputs:
-    - text: Placeholder Inputs
   trajectories:
-    - text : Placeholder Trajectory
+    - text: "DESRES 10 Microsecond Trajectory initated in closed state, no water, no ions"
+      link: "https://covmme.molssi.org/data/desres/desres_trajs_0/spike_protein/DESRES-Trajectory_sarscov2-10897136-no-water-no-ion-glueCA.tar"
+    - text: "DESRES 10 Microsecond Trajectory initated in partially open state, no water, no ions"
+      link: "https://covmme.molssi.org/data/desres/desres_trajs_0/spike_protein/DESRES-Trajectory_sarscov2-10897850-no-water-no-ion-glueCA.tar"
   algorithms:
-    - text: Placeholder Algorithms
   cite:
-    - text: Placeholder Citation A
-    - text: Placeholder Citation B
-    - text: Placeholder Citation C
-    - text: Placeholder Citation D
+    - text: "David E. Shaw, J.P. Grossman, Joseph A. Bank, Brannon Batson, J. Adam Butts, Jack C. Chao, Martin M. Deneroff, Ron O. Dror, Amos Even, Christopher H. Fenton, Anthony Forte, Joseph Gagliardo, Gennette Gill, Brian Greskamp, C. Richard Ho, Douglas J. Ierardi, Lev Iserovich, Jeffrey S. Kuskin, Richard H. Larson, Timothy Layman, Li-Siang Lee, Adam K. Lerer, Chester Li, Daniel Killebrew, Kenneth M. Mackenzie, Shark Yeuk-Hai Mok, Mark A. Moraes, Rolf Mueller, Lawrence J. Nociolo, Jon L. Peticolas, Terry Quan, Daniel Ramot, John K. Salmon, Daniele P. Scarpazza, U. Ben Schafer, Naseer Siddique, Christopher W. Snyder, Jochen Spengler, Ping Tak Peter Tang, Michael Theobald, Horia Toma, Brian Towles, Benjamin Vitale, Stanley C. Wang, and Cliff Young, 'Anton 2: Raising the Bar for Performance and Programmability in a Special-Purpose Molecular Dynamics Supercomputer,' Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC14), Piscataway, NJ: IEEE, 2014, pp. 41–53."
+    - text: "Owen, C. D.; Lukacik, P.; Strain-Damerell, C. M.; Douangamath, A.; Powell, A. J.; Fearon, D.; Brandao-Neto, J.; Crawshaw, A. D.; Aragao, D.; Williams, M.; Flaig, R.; Hall, D. R.; McAuley, K. E.; Mazzorana, M.; Stuart, D. I.; von Delft, F.; Walsh, M. A. SARS-CoV-2 main protease with unliganded active site (2019-nCoV, coronavirus disease 2019, COVID-19)."
+    - text: "Piana, S.; Robustelli, P.; Tan, D; Chen, S; Shaw, D. E. Development of a Force Field for the Simulation of Single-Chain Proteins and Protein Protein Complexes. J. Chem. Theory Comput. 2020, in press."
