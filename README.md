@@ -127,9 +127,6 @@ For each new submission made to the repository, please create a folder, within y
 Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission within the `README.md` file.
 Within the `TARGET` folder, create a subfolder for each type of data within this submission. These folders should contain all relevant files to the data types along with any meta data, such as provenance information, for the data.
 
-(Not required) If possible, please also create symlinks in the folders of the root directory as well. If you do not 
-wish to, symlinks will be created for each of the other folders in the root directory of the exchange by a maintainer.
-The current plan is to move 
 
 This structure is subject to change, but all changes will be made by a maintainer and the instructions 
 updated accordingly.
@@ -149,3 +146,7 @@ Reach out to any of the maintainers below and lets work together to make this as
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)
+
+## Funding
+
+MolSSI is funded by the NSF through ACI-1547580

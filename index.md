@@ -202,3 +202,7 @@ Reach out to any of the maintainers below and lets work together to make this as
 * [Levi N. Naden (MolSSI)](https://github.com/lnaden)
 * [Sam Ellis (MolSSI)](https://github.com/sjayellis)
 * [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)
+
+## Funding
+
+MolSSI is funded by the NSF through ACI-1547580
