@@ -1,0 +1,5 @@
+# Riken BDR
+
+Website: https://www.bdr.riken.jp/en/index.html
+
+RIKEN established the Center for Biosystems Dynamics Research (BDR) in 2018, through the merger of the Center for Developmental Biology, the Center for Life Science Technologies, and the Quantitative Biology Center. Researchers at the BDR strive to elucidate the biological functions that unfold within the body during an organism’s lifespan, by grasping lifecycle progression from birth to death as a dynamic process involving the establishment, maintenance and breakdown of a balanced interlinked system of molecules, cells, and organs. We also endeavor to develop technologies to visualize the processes occurring within a body by building and improving upon the state-of-the-art imaging technologies, large-scale data integration and analytical tools accrued by the three centers. By gaining an understanding of what healthy and normal states are in humans, and elucidating the mechanisms regulating longevity to unravel the processes involved in being alive, the RIKEN BDR is committed to contributing to the extension of healthy life expectancies.
