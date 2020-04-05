@@ -1,6 +1,6 @@
 - id: 0
   desc: SARS-CoV-2 dimeric main protease without ligand
-  origin: <a href="http://www.rcsb.org/structure/6LU7">PDB 66LU7</a>
+  origin: <a href="http://www.rcsb.org/structure/6LU7">PDB 6LU7</a>
   struct_data:
   models:
     - text: Riken BDR Trajectory System structure
