@@ -1,24 +1,22 @@
 - id: 0
-  desc: SARS-CoV-2 main protease with unliganded active site
-  origin: <a href="https://www.rcsb.org/structure/6Y84">PDB 6Y84</a>
+  desc: SARS-CoV-2 dimeric main protease without ligand
+  origin: <a href="http://www.rcsb.org/structure/6LU7">PDB 66LU7</a>
   struct_data:
-    - text: Placeholder Text
-      link: google.com
   models:
-    - text: Placeholder Model A
-    - text: Placeholder Model B
-    - text: Placeholder Model C
-    - text: Placeholder Model D
-    - text: Placeholder Model E
-    - text: Placeholder Model F
+    - text: Riken BDR Trajectory System structure
+    link: https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10421220-structure/sarscov2-10421220-structure.tar
+    - text: Riken BDR Trajectory Protein structure
+    link: https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10921231-structure/sarscov2-10921231-structure.tar
   inputs:
-    - text: Placeholder Inputs
   trajectories:
-    - text : Placeholder Trajectory
+    - text: Riken BDR 10 Microsecond Trajectory System Snapshot every 10ns
+    link:https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10421220-trajectory/sarscov2-10421220-system/traj_system_snap_every10ns.tar
+    - text: Riken BDR 10 microsecond Trajectory Protein Snapshot every 1ns 
+    link: https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10921231-trajectory/sarscov2-10921231-protein/traj_protein_snap_every1ns.tar
+    - text: Riken BDR 10 microsecond Trajectory Protein Snapshot every 200ps 
+    link: https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10921231-trajectory/sarscov2-10921231-protein/traj_protein_snap_every200ps.tar
   algorithms:
-    - text: Placeholder Algorithms
   cite:
-    - text: Placeholder Citation A
-    - text: Placeholder Citation B
-    - text: Placeholder Citation C
-    - text: Placeholder Citation D
+    - text: Teruhisa S. Komatsu, Yohei M. Koyama, Noriaki Okimoto, Gentaro Morimoto, Yousuke Ohno, Makoto Taiji,
+    “COVID-19 related trajectory data of 10 microseconds all atom molecular dynamics simulation of SARS-CoV-2 dimeric main protease”, Mendeley Data, v1, 2020
+    http://dx.doi.org/10.17632/vpps4vhryg.1
