@@ -1,4 +1,4 @@
-baseURL = "http://example.com/"
+baseURL = "https://naden-covid-prototype.netlify.com"
 languageCode = "en-us"
 title = "MolSSI and BioExcel COVID-19 Computational Molecular Data Exchange"
 theme = "minimal"
