@@ -1,0 +1,20 @@
+nope:
+  structure: "bad"
+  reviewer: "Levi Naden"
+nope2:
+  structure: "good"
+  reviewer: "Levi Naden"
+nope3:
+  structure: "unreviwed"
+noparela:
+  reviewer: "Auto Review"
+  biology: bad
+  inputs:
+    2-sub-c: questionable
+  models:
+    0-sub-a: good
+  structure: questionable
+  structure_data:
+    1-sub-b: bad
+  trajectories:
+    3-sub-d: unreviwed
