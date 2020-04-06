@@ -36,18 +36,6 @@ theme = "minimal"
         name = "All Targets"
         weight = 1
 
-    [[menu.main]]
-        parent = "Targets"
-        hasChildren = true
-        name = "Spike"
-        weight = 2
-
-        [[menu.main]]
-            parent = "Spike"
-            name = "WholeSpike"
-            weight = 2
-            url = "/"
-
 [[menu.main]]
     url = "/about/"
     name = "About"
