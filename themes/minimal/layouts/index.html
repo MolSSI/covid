@@ -15,6 +15,7 @@
               <thead>
                 <tr>
                     <th scope="col">Target</th>
+                    <th><a href="/targets/">ALL Targets</a></th>
                 </tr>
               </thead>
               <tbody>
@@ -26,7 +27,7 @@
                     <!-- Render the Subcategory-->
                     {{ $sort_pages := .Pages.ByParam "list-order" }}
                     {{ range $sort_pages }}
-                        <td><a href="{{ .Params.link }}">{{ .Title }}</a></td>
+                        <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
                     {{ end }}
               {{ end }}
                 </tr>
