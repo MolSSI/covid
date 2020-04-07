@@ -104,4 +104,11 @@ ENV/
 _site/
 Gemfile
 Gemfile.lock
+
+# Hugo
+/public
+/resources
+
+# Custom stuff
 scratch.txt
+/.vscode

@@ -1,0 +1,50 @@
+- id: "nope"
+  description: "A sample"
+- id: "nope2"
+  description: "More sample"
+- id: "nope3"
+  description: "More sample with a really long string which keeps running and running"
+- author: Levi N. Naden
+  citations:
+    - Waffles
+    - DOI:XXXX.yyyy/ZZZZ
+  description: "Some descriptor of 0"
+  id: noparela
+  image: 'images/MolSSI-BioExcel-covid.png'
+  models:
+    - author: Levi Naden and Python
+      citations:
+        - Model Waffles
+        - Syrup:XXXX.yyyy/ZZZZ
+      description: Some model description or such
+      id: 0-sub-a
+      pointers:
+        - sample
+      submitting: Levi Naden
+    - id: something else
+      author: "Levi... Again"
+  origin: PDB XXX0
+  tags:
+    - sample
+    - shoop
+  trajectories:
+    - description: Some model description or such
+      id: 0-sub-d
+      pointers:
+        - sample
+      ref:
+        - 0-sub-c
+        - 0-sub-b
+  inputs:
+    - description: Some model description or such
+      id: 0-sub-c
+      pointers:
+        - sample
+      ref: 0-sub-b
+  structure_data:
+    - citations:
+        - Structural Waffles
+      description: Some model description or such
+      id: 0-sub-b
+      pointers:
+        - sample

@@ -1,0 +1,46 @@
+{{ partial "header" . }}
+
+<main>
+    <div class="intro">
+        {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
+        <h2>{{ .Site.Title }}</h2>
+        <h3>{{ markdownify .Site.Params.Description }}</h3>
+        {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
+
+        <!-- Establish a scope-independent scratch -->
+        {{ $mainScratch := newScratch }}
+
+        <span class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                    <th scope="col">Target</th>
+                    <th><a href="/targets/">ALL Targets</a></th>
+                </tr>
+              </thead>
+              <tbody>
+              {{ range .Pages.GroupByParam "subcategory-order" }}
+                <tr>
+                    {{ range first 1 .Pages }}
+                        <th scope="row"> {{.Param "subcategory" }}</th>
+                    {{ end }}
+                    <!-- Render the Subcategory-->
+                    {{ $sort_pages := .Pages.ByParam "list-order" }}
+                    {{ range $sort_pages }}
+                        <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+                    {{ end }}
+              {{ end }}
+                </tr>
+              </tbody>
+            </table>
+        </span>
+
+
+
+
+
+    </div>
+
+</main>
+
+{{ partial "footer" . }}

@@ -1,0 +1,12 @@
+{{ if .HasChildren }}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ .Name }}<span class="caret"></span></a>
+        <ul class ="dropdown-menu">
+            {{ range .Children }}
+                {{ partial "has-children" . }}
+            {{ end }}
+        </ul>
+    </li>
+{{ else }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+{{ end }}
