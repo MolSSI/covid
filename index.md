@@ -1,5 +1,9 @@
 # COVID-19 Molecular Mechanics Exchange (CoVMME)
 
+## This is all going to change
+
+## Old content
+
 ![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
 
 A community data repository and curation service for Molecular Mechanics (MM) and Molecular Dynamics (MD) 
