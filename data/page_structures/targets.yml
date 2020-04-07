@@ -1,0 +1,58 @@
+viral:
+  spike:
+    - name: S1 (RBD) Spike
+      desc: S1 Receptor-Binding Domain (RBD) of the cleaved viral spike
+    - name: S2 Spike Stalk
+      desc: S2 Stalk of the cleaved viral spike
+    - name: S1 (RBD) and Host Receptor ACE2
+      desc: S1 RBD with ACE2, including unbound and complexed
+    - name: S2 Fusion Core, HR1, and HR2
+      desc: Fusion core of the spikes S2 stalk. Includes the Heptad Repeats, HR1 and HR2
+    - name: Whole Viral Spike
+      desc: The entire Viral Spike, pre-cleaving. Relies on a furin-like protease for cleaving
+  proteases:
+    - name: Main Protease (NSP5)
+      desc: 3CL-Protease, also identified as NSP5. Includes SARS and SARS2 Structures
+    - name: RNA Polymerase (NSP12)
+      desc: RNA-dependent, RNA polymerase. Multi-NSP structures with NSP12 are here as well.
+    - name: PL-Protease (PLpro) (NSP3)
+      desc: Papain-like protease
+  nps:
+    - name: NSP1
+      desc: Nonstructured Protein 1
+    - name: NSP2
+      desc: Nonstructured Protein 2
+    - name: NSP4
+      desc: Nonstructured Protein 4
+    - name: NSP6
+      desc: Nonstructured Protein 6
+    - name: NSP7
+      desc: Nonstructured Protein 7
+    - name: NSP8
+      desc: Nonstructured Protein 8
+    - name: NSP9
+      desc: Nonstructured Protein 9
+    - name: NSP10
+      desc: Nonstructured Protein 10
+    - name: NSP11
+      desc: Nonstructured Protein 11
+    - name: NSP13
+      desc: Nonstructured Protein 13
+    - name: NSP14
+      desc: Nonstructured Protein 15
+    - name: NSP15
+      desc: Nonstructured Protein 15
+    - name: NSP16
+      desc: Nonstructured Protein 16
+  whole:
+    - name: Whole Viral Particle
+      desc: Models of the Entire Viral Particle
+host:
+  validated:
+    - name: Angiotensin-converting enzyme 2 gene (ACE2)
+      desc: ACE2 Receptor without viral proteins.
+    - name: Furin / PACE
+      desc: Furin or PACE protein
+    - name: Serine Protease TMPRSS2
+      desc: Hemagglutinin-activating host protease gene TMPRSS2
+  presumed:

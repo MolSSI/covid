@@ -11,9 +11,35 @@
     {{ $content := .Content }}
     <div align="start" class="content">
         {{ $content }}
-        {{ partial "thedat" . }}
+
     </div>
 
+    <!-- Start List -->
+    <hr class="hr-thick">
+    <h2>Virus Targets</h2>
+
+    <!-- Viral Spike -->
+    {{ partial "target-builders/viral-spike" . }}
+    <hr>
+
+    <!-- Proteases -->
+    {{ partial "target-builders/proteases" . }}
+    <hr>
+
+    <!-- NPS -->
+    {{ partial "target-builders/nps-accord" . }}
+
+    <hr class="hr-thick">
+    <h2>Host Targets</h2>
+
+    <!-- Validated Hosts -->
+    {{ partial "target-builders/host-valid" . }}
+    <hr>
+
+    <!-- Presumed Hosts -->
+    {{ partial "target-builders/host-presumed" . }}
+
 </main>
+
 
 {{ partial "footer" . }}

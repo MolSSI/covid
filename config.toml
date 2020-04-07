@@ -21,8 +21,6 @@ ignoreFiles = ["README.md$"]
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-[taxonomies]
-    model = "models"
 
 [[menu.main]]
     url = "/"
