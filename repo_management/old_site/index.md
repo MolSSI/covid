@@ -4,7 +4,7 @@
 
 ## Old content
 
-![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
+![MolSSI, BioExcel, and the Community VS. COVID-19](../MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
 
 A community data repository and curation service for Molecular Mechanics (MM) and Molecular Dynamics (MD) 
 related computations for research into the SARS-CoV-2 / COVID-19 / ”Coronavirus” pandemic maintained 
