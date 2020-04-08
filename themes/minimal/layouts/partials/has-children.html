@@ -1,12 +1,16 @@
-{{ if .HasChildren }}
+{{ if .context.HasChildren }}
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ .Name }}<span class="caret"></span></a>
-        <ul class ="dropdown-menu">
-            {{ range .Children }}
-                {{ partial "has-children" . }}
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">{{ .context.Name }}<span class="caret"></span></a>
+        {{ if .top }}
+        <ul class="dropdown-menu">
+        {{ else }}
+        <ul class="dropdown-submenu">
+        {{ end }}
+            {{ range .context.Children }}
+                {{ partial "has-children" (dict "context" . "top" false )}}
             {{ end }}
         </ul>
     </li>
 {{ else }}
-    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    <li><a href="{{ .context.URL }}">{{ .context.Name }}</a></li>
 {{ end }}

@@ -41,10 +41,17 @@ ignoreFiles = ["README.md$"]
         name = "All Targets"
         weight = 1
 
-#[[menu.main]]
-#    url = "/about/"
-#    name = "About"
-#    weight = 3
+    [[menu.main]]
+        parent = "Targets"
+        url = "/targets/viral-targets"
+        name = "Viral Targets"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Targets"
+        url = "/targets/host-targets/"
+        name = "Host Targets"
+        weight = 3
 
 [[menu.main]]
     hasChildren = true
