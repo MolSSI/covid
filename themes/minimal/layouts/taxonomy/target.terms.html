@@ -1,0 +1,60 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>Viral and Host Targets</h2>
+
+        <h4>Virus (SARS-CoV-2), Host (validated), and Host (presumed) based targets. Validated targets are known essential host
+        genes or interactions. The presumed are implicated host proteins that arise from analyses, but have not been
+            universally agreed upon.</h4>
+
+    </div>
+
+
+    <!-- Helper function to be deleted -->
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+        {{ range $key, $vale := $taxonomy }}
+            {{ $key }}
+        {{ end }}
+    {{ end }}
+
+
+    <hr class="hr-thick">
+    <h2><a href="{{ $.Site.BaseURL }}targets/viral-targets">Virus Targets</a></h2>
+
+    <!-- Viral Spike -->
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/viral-spike">Viral Spike</a></u></h3>
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "viral-spike") }}
+    <hr>
+
+    <!-- Proteases -->
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/proteases">Proteases</a></u></h3>
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "proteases") }}
+    <hr>
+
+    <!-- NPS -->
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/other-nonstructural-proteins">Other Nonstructural Proteins</a></u></h3>
+    {{ partial "target-builders/target-taxonomy-accord" (dict "context" . "term" "other-nonstructural-proteins") }}
+
+    <hr class="hr-thick">
+    <h2><a href="{{ $.Site.BaseURL }}targets/host-targets">Host Targets</a></h2>
+
+    <!-- Validated Hosts -->
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/validated-host-targets">Validated Host Targets</a></u></h3>
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "validated-host-targets") }}
+    <hr>
+
+    <!-- Presumed Hosts -->
+    {{ if (index .Site.Taxonomies.targets "presumed-host-targets" )}}
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/presumed-host-targets">Presumed Host Targets</a></u></h3>
+    {{ else }}
+    <h3><u><a href="#">Presumed Host Targets</a></u></h3>
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "presumed-host-targets") }}
+
+
+
+</main>
+
+{{ partial "footer" . }}

@@ -1,0 +1,21 @@
+<!-- Have to Index the page with a " " in it by "-", but "-" is invalid, so have to us index fn -->
+
+{{ $pages := index .context.Site.Taxonomies.targets .term }}
+
+{{ if $pages }}
+    {{ range $pages }}
+        <div>
+            <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+            <h5>{{ .Description }}</h5>
+        </div>
+    {{ end }}
+{{ else }}
+
+    {{ $string_name := title ( replace .term "-" " ") }}
+
+    <h4> No information has been recorded in the Exchange about {{ $string_name }} </h4>
+
+    The information might be out there! The Exchange only knows what people tell it, so if you know of information
+      regarding {{ $string_name }}, please submit an issue to help add it to the Exchange!
+
+{{ end }}

@@ -1,7 +1,7 @@
 ---
-title: "Targets"
-description: "Viral and Host targets"
-type: "targets"
+title: "Structures"
+description: "Structures for each Targets"
+type: "structures"
 ---
 
 Virus (SARS-CoV-2), Host (validated), and Host (presumed) based targets. Validated targets are known essential host 

@@ -1,0 +1,24 @@
+<!-- Easier to view accordion -->
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          (Click to Expand)
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <!-- Have to Index the page with a " " in it by "-", but "-" is invalid, so have to us index fn -->
+        {{ range (index .context.Site.Taxonomies.targets .term )}}
+            <div>
+                <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                <h5>{{ .Description }}</h5>
+            </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</div>
