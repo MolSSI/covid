@@ -1,4 +1,4 @@
-# COVID-19 Molecular Mechanics Exchange (CoVMME)
+# COVID-19 Therapeutics and Modeling Exchange
 
 ![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
 

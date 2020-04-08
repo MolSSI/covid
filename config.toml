@@ -53,6 +53,12 @@ ignoreFiles = ["README.md$"]
         name = "Host Targets"
         weight = 3
 
+
+[[menu.main]]
+    url = "/structures"
+    name = "Structures"
+    weight = 3
+
 [[menu.main]]
     hasChildren = true
     name = "About"
@@ -82,7 +88,7 @@ ignoreFiles = ["README.md$"]
 # The list of available icons can be found at http://fontawesome.io/icons.
 
 [[menu.icon]]
-    url = "https://github.com/molssi/"
+    url = "https://github.com/molssi/covid"
     name = "github"
     weight = 1
 
