@@ -24,7 +24,7 @@ project. There may come a time as this project evolves that it naturally does be
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
 future evolutions can be dealt with as they arise. 
 
-## [Go to the Website](https://molssi.github.io/CoVMME/)
+## [Go to the Website](https://covid.molssi.org)
 
 ## A Central Reference for Community Simulation Data
 
@@ -93,66 +93,3 @@ The following classes of data are currently accepted in the Exchange (Note: This
 Due to the rapidly evolving nature of this exchange, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
 contributor to ask for additional information as needed.  
-
-
-## Contributing
-
-The exchange gladly accepts any of the above types of data (and others if you propose an organization). 
-Simply open a PR with the data you wish to submit with the following folder structure (omit any directories 
-for types you are not submitting):
-
-```
-sorted_by_group
-└──YOUR_GROUP_NAME
-   ├── README.md
-   └── TARGET
-       ├── algorithms
-       ├── analysis
-       ├── movies
-       ├── papers
-       ├── program_specific_structures
-       │   └── SIMULATION_SOFTWARE
-       ├── simulation_configs
-       │   └── SIMULATION_SOFTWARE
-       ├── structures
-       └── trajectories
-           └── SIMULATION_SOFTWARE
-```
-
-Create a folder for your group within the `sorted_by_group` directory. This will serve as the main storage location for all of your submissions. Within this folder, create a `README.md` file and include information about your contributing group(s):
-* Author: The user(s) who produced the data associated with the submission.
-* Group: The group(s) of the author(s) of the submission.
-* Organization: The organization(s) of the author(s).
-* Reference_Information: If desired, include websites for the associated groups.
-* Contact_Information: If desired, include ways that the author(s) can be contacted about their submission.
-
-Note that for submissions by collaborations of multiple groups, create a folder within the `sorted_by_group` folder for your collaboration. Within the `README.md` include all authors and groups associated with this collaboration.
-
-For each new submission made to the repository, please create a folder, within your groups folder, with a unique `SUBMISSION_ID` as its name. Ideally, submission names should represent the order of submissions, allowing each submission to be processed in the order it is received.
-
-Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission within the `README.md` file.
-Within the `TARGET` folder, create a subfolder for each type of data within this submission. These folders should contain all relevant files to the data types along with any meta data, such as provenance information, for the data.
-
-(Not required) If possible, please also create symlinks in the folders of the root directory as well. If you do not 
-wish to, symlinks will be created for each of the other folders in the root directory of the exchange by a maintainer.
-The current plan is to move 
-
-This structure is subject to change, but all changes will be made by a maintainer and the instructions 
-updated accordingly.
-
-## Want to join the collaboration?
-
-MolSSI and BioExcel are working together on this project to de-duplicate efforts and to reach the broadest 
-community possible. We are actively looking for other institutes, collaborators, consortia, and anyone who wants 
-to be an active contributor to join us! 
-
-Reach out to any of the maintainers below and lets work together to make this as helpful as possible! 
-
-## Exchange Maintainers 
-
-* [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
-* [BioExcel](https://bioexcel.eu/)
-* [Levi N. Naden (MolSSI)](https://github.com/lnaden)
-* [Sam Ellis (MolSSI)](https://github.com/sjayellis)
-* [Andrew Abi-Mansour (MolSSI)](https://github.com/Andrew-AbiMansour)
-
