@@ -5,6 +5,10 @@ theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
 # googleAnalytics = ""
 
+# Additional custom parameters
+# Ignore README files meant for GitHub
+ignoreFiles = ["README.md$"]
+
 [params]
     author = "MolSSI and BioExcel"
     description = "You're here for data. Lets go."
