@@ -53,7 +53,7 @@ ignoreFiles = ["README.md$"]
     [[menu.main]]
         parent = "About"
         url = "/about/"
-        name = "About"
+        name = "About the Exchange"
         weight = 1
         
     [[menu.main]]
