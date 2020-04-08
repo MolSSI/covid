@@ -1,0 +1,57 @@
+<hr class="hr-thick">
+
+{{ if eq .Title "Targets" }}
+<h2><a href="{{ $.Site.BaseURL }}targets/viral-targets">Virus Targets</a></h2>
+{{ end }}
+
+<!-- Viral Spike -->
+{{ if in (slice "Targets" "Viral Targets" "Viral Spike") .Title }}
+    {{ if in (slice "Targets" "Viral Targets") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/viral-spike">Viral Spike</a></u></h3>
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "viral-spike") }}
+    <hr>
+{{ end }}
+
+<!-- Proteases -->
+{{ if in (slice "Targets" "Viral Targets" "Viral Spike" "Proteases") .Title }}
+    {{ if in (slice "Targets" "Viral Targets") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/proteases">Proteases</a></u></h3>
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "proteases") }}
+    <hr>
+{{ end }}
+
+<!-- NPS -->
+{{ if in (slice "Targets" "Viral Targets" "Viral Spike" "Other Nonstructural Proteins") .Title }}
+    {{ if in (slice "Targets" "Viral Targets") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/other-nonstructural-proteins">Other Nonstructural Proteins</a></u></h3>
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy-accord" (dict "context" . "term" "other-nonstructural-proteins") }}
+{{ end }}
+
+{{ if eq .Title "Targets" }}
+<hr class="hr-thick">
+<h2><a href="{{ $.Site.BaseURL }}targets/host-targets">Host Targets</a></h2>
+{{ end }}
+
+<!-- Validated Hosts -->
+{{ if in (slice "Targets" "Host Targets" "Validated Host Targets") .Title }}
+    {{ if in (slice "Targets" "Host Targets") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}targets/validated-host-targets">Validated Host Targets</a></u></h3>
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "validated-host-targets") }}
+    <hr>
+{{ end }}
+
+<!-- Presumed Hosts -->
+{{ if in (slice "Targets" "Host Targets" "Presumed Host Targets") .Title }}
+    {{ if in (slice "Targets" "Host Targets") .Title }}
+        {{ if (index .Site.Taxonomies.targets "presumed-host-targets" )}}
+        <h3><u><a href="{{ $.Site.BaseURL }}targets/presumed-host-targets">Presumed Host Targets</a></u></h3>
+        {{ else }}
+        <h3><u><a href="#">Presumed Host Targets</a></u></h3>
+        {{ end }}
+    {{ end }}
+    {{ partial "target-builders/target-taxonomy" (dict "context" . "term" "presumed-host-targets") }}
+{{ end }}

@@ -2,18 +2,15 @@
 
 <main>
 
-    {{ . }}
     <h2>{{ .Title }}</h2>
 
-    {{ range .Pages }}
-        <div>
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <h5>{{ .Description }}</h5>
-        </div>
 
-    {{ end }}
+    {{ partial "target-builders/target-taxonomy-master" . }}
 
 </main>
+
+
+
 
 
 {{ partial "footer" . }}
