@@ -11,4 +11,5 @@ pdb_doi:
 publication_doi:
 target:
 protein:
+organism:
 ```
