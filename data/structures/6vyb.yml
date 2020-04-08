@@ -4,4 +4,4 @@ resolution: "3.2"
 pdb_doi: "http://dx.doi.org/10.2210/pdb6VYB/pdb"
 publication_doi: "https://doi.org/10.1016/j.cell.2020.02.058"
 target: "spike binding"
-
+protein: "spike"
