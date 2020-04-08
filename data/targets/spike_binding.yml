@@ -1,5 +1,5 @@
 target: "spike binding"
 description: "The spike protein of SARS-CoV-2 binds to the ACE2 protein to initiate cell entry."
-protein: "spike", "S1", "RBD", "ACE2", "BoAT"
-pdb_id: "6vyb", "6m17", "6vxx", "6w41"
-therapeutic: "antibody", "protein binder", "vaccine"
+protein: ["spike", "S1", "RBD", "ACE2", "BoAT"]
+pdb_id: ["6vyb", "6m17", "6vxx", "6w41"]
+therapeutic: ["antibody", "protein binder", "vaccine"]
