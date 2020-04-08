@@ -18,7 +18,7 @@ project. There may come a time as this project evolves that it naturally does be
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
 future evolutions can be dealt with as they arise. 
 
-## [Go to the Website](https://molssi.github.io/CoVMME/)
+## [Go to the Website](https://covid.molssi.org/)
 
 ## A Central Reference for Community Simulation Data
 
