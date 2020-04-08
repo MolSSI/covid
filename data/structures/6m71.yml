@@ -1,0 +1,14 @@
+data_type: "structure"
+method: "x-ray crystallography"
+resolution: "2.9"
+pdb_doi: "http://dx.doi.org/10.2210/pdb6M71/pdb "
+publication_doi: "to be published"
+target: viral replication
+protein:
+  - NSP7
+  - NSP8
+  - RdRP
+organism: 
+  - SARS-CoV-1
+  - host
+  - viral
