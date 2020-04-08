@@ -40,12 +40,33 @@ ignoreFiles = ["README.md$"]
         name = "All Targets"
         weight = 1
 
+#[[menu.main]]
+#    url = "/about/"
+#    name = "About"
+#    weight = 3
+
 [[menu.main]]
-    url = "/about/"
+    hasChildren = true
     name = "About"
     weight = 3
 
-
+    [[menu.main]]
+        parent = "About"
+        url = "/about/"
+        name = "About the Exchange"
+        weight = 1
+        
+    [[menu.main]]
+        parent = "About"
+        url = "/contributing/"
+        name = "Contributing"
+        weight = 2
+        
+    [[menu.main]]
+        parent = "About"
+        url = "/collaborating/"
+        name = "Collaborating"
+        weight = 3
 
 
 # Social icons to be shown on the right-hand side of the navigation bar.
