@@ -5,7 +5,7 @@ Schema information will be populated here at a later date
 ## YAML Template:
 ```
 data_type: 
-name: "structure"
+name:
 link: 
 description:
 organization:
