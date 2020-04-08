@@ -1,4 +1,4 @@
-baseURL = "https://naden-covid-prototype.netlify.com"
+baseURL = "https://covid.molssi.org/"
 languageCode = "en-us"
 title = "MolSSI and BioExcel COVID-19 Computational Molecular Data Exchange"
 theme = "minimal"
@@ -21,6 +21,9 @@ ignoreFiles = ["README.md$"]
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
+
+[taxonomies]
+    target = "targets"
 
 [[menu.main]]
     url = "/"
@@ -46,7 +49,7 @@ ignoreFiles = ["README.md$"]
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 3
+    weight = 4
 
     [[menu.main]]
         parent = "About"
