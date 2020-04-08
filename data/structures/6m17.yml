@@ -1,0 +1,14 @@
+data_type: "structure"
+method: "cryo-EM"
+resolution: "2.9"
+pdb_doi: "http://dx.doi.org/10.2210/pdb6m17/pdb"
+publication_doi: "http://dx.doi.org/10.1126/science.abb2762"
+target: spike binding
+protein: 
+  - spike
+  - RBD
+  - ACE2
+  - BoAT1
+organism: 
+  - SARS-2
+  - host
