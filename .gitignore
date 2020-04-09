@@ -112,3 +112,4 @@ Gemfile.lock
 # Custom stuff
 scratch.txt
 /.vscode
+.DS_Store
