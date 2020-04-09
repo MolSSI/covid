@@ -1,0 +1,28 @@
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "page" . }}
+
+{{ $localScratch.Set "targets" (slice ) }}
+
+{{ range $file, $content := .Site.Data.structures }}
+    <!-- Check if the protein key-value matches the page protein" -->
+    {{ if $content.protein }}
+        {{ $localScratch.Set "protein" $content.protein }}
+        {{ if reflect.IsSlice $content.protein }}
+            {{ $localScratch.Set "match" (in $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ else }}
+            {{ $localScratch.Set "match" (eq $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ end }}
+    {{ end }}
+    {{ if and ($localScratch.Get "match") (ne $file "TEMPLATE") }}
+        <!-- Now sift through the targets -->
+        {{ if $content.target }}
+            {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $content.target) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Finally, yield the targets -->
+{{ range (uniq ($localScratch.Get "targets")) }}
+    <kbd class="item-tag">{{ . | title }}</kbd>
+{{ end }}
