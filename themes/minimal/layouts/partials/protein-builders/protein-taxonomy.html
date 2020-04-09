@@ -15,6 +15,7 @@
                     <div>
                         <h4><a href="{{ ($localScratch.Get "page").Permalink }}">{{ ($localScratch.Get "page").Title }}</a></h4>
                         <h5>{{ ($localScratch.Get "page").Description }}</h5>
+                        {{ partial "structure-target-tags" ($localScratch.Get "page") }}
                     </div>
                     {{ $localScratch.Set "posted" true }}
                     {{ $localScratch.Set "posted_something" true }}
@@ -24,6 +25,7 @@
             <div>
                 <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
                 <h5>{{ .Description }}</h5>
+                {{ partial "structure-target-tags" . }}
             </div>
             {{ $localScratch.Set "posted_something" true }}
         {{ end }}

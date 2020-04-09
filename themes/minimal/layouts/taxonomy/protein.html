@@ -2,13 +2,47 @@
 
 <main>
 
-    <h2>{{ .Title }}</h2>
+{{ $localScratch := newScratch }}
 
+<main>
 
-    {{ partial "protein-builders/protein-taxonomy-master" . }}
+    <div>
+        <h2>{{ .Title }}</h2>
+
+        <h4>Proteins associated with {{ .Title }}</h4>
+
+        <kbd class="item-tag">Boxes</kbd> such as this one indicate known Target information in their structures
+
+    </div>
+
+    {{ $localScratch.Set "context" . }}
+
+    {{ if or (in .Title "Active Interest") (in .Title "Low Interest") }}
+        <hr class="hr-thick">
+        <h2><u><a href="{{ $.Site.BaseURL }}proteins/viral-proteins">Viral Proteins</a></u></h2>
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice .Title) ) }}
+
+        <hr class="hr-thick">
+        <h2><u><a  href='{{ $.Site.BaseURL }}proteins/{{ "Host Proteins" | urlize}}'>Host Proteins</a></u></h2>
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice .Title) ) }}
+
+    {{ else if or (in .Title "Viral") (in .Title "Host") }}
+        <hr class="hr-thick">
+        <h2><u><a href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h2>
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Active Interest Proteins") ) }}
+
+        <hr class="hr-thick">
+        <h2><u><a href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h2>
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Low Interest Proteins") ) }}
+
+    {{ else }}
+        <h2>If you made it to this page somehow, please contact an exchange maintainer as it has not been formatted
+            correctly. And please provide the URL of the page as well as how you got here. Thank you!
+        </h2>
+        {{ range .Pages }} {{ partial "list-item" . }} {{ end }}
+    {{ end }}
 
 </main>
-
 
 
 
