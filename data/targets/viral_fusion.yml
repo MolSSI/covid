@@ -9,5 +9,7 @@ therapeutic:
   - peptide
   - antibody
 papers:
-  Xia_2020_Fusion_mechanism: https://doi.org/10.1038/s41423-020-0374-2
-  Kawase_2019_Biochemical_analysis: https://doi.org/10.1128/JVI.00785-19
+  Xia_2020_Fusion_mechanism:
+    doi: 10.1038/s41423-020-0374-2
+  Kawase_2019_Biochemical_analysis:
+    doi: 10.1128/JVI.00785-19

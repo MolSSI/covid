@@ -1,14 +1,12 @@
-data_type: "structure"
-method: "cryo-EM"
-resolution: "2.9"
-pdb_doi: "http://dx.doi.org/10.2210/pdb6M71/pdb "
-publication_doi: "to be published"
+pdbid: 6m71
 target: viral replication
 protein:
   - NSP7
   - NSP8
   - RdRP
-organism: 
+organism:
   - SARS-CoV-2
   - host
   - viral
+annotation: High-resolution cyro-EM structure of the SARS-CoV-2 NSP7-8 complex with RdRP
+rating: 4

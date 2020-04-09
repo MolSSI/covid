@@ -1,0 +1,9 @@
+pdbid: 6lxt
+protein:
+  - fusion core
+  - HR1
+  - HR2
+organism: SARS-CoV-2
+target: viral-fusion
+annotation: Medium-resolution structure of post-fusion core of SARS-CoV-2 S2 subunit
+rating: 3

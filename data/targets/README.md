@@ -1,3 +1,15 @@
-Make a YAML file for each entry! 
+# Therapeutic targeting modalities for COVID-19
 
-Schema information will be populated here at a later date
+## To add new resources
+
+Contribute a separate [YAML file](https://yaml.org/) for each entry.
+
+### YAML schema
+
+Each entry has the following required and optional keys:
+```
+target: (required)
+description: (required)
+protein: (required)
+therapeutic: one of [small molecule, antibody]
+```
