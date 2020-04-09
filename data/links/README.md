@@ -1,4 +1,4 @@
-# Structural models for COVID-19 targets
+# External links to information resources related to COVID-19
 
 ## To add new resources
 
