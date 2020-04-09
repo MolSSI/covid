@@ -11,5 +11,5 @@ Each entry has the following required and optional keys:
 target: (required)
 description: (required)
 protein: (required)
-therapeutic: one of [small molecule, antibody]
+therapeutic: one of [small molecule, antibody, peptide, vaccine]
 ```
