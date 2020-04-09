@@ -1,0 +1,18 @@
+name: chloroquine
+description: >
+  Chloroquine is an aminoquinoline with anti-malarial and anti-inflammatory activities.
+  Chloroquine acts during both viral entry and post entry steps. 
+therapeutic: 
+  small molecule
+links:
+  - wikipedia: wikipedia: https://en.wikipedia.org/wiki/Chloroquine
+  - chemspider: http://www.chemspider.com/Chemical-Structure.2618.html?rid=7ccd2bad-87f4-4539-bc27-7e7ac0e10339&page_num=0
+target: viral entry and replication
+mechanism: The potential mechanisms for attacking the virus >
+  By inhibiting viral enzymes, viral protein glycosylation, viral assembly, and virus release
+  By changing the acidity of the cells
+  By inhibiting the ACE2 cellular receptor
+  By activating the immune response 
+protein: 
+  - ACE2
+  - Spike Protein
