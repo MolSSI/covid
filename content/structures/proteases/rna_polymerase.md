@@ -1,7 +1,7 @@
 ---
-title: "PL-Protease (PLpro) (NSP3)"
-description: "Papain-like protease"
+title: "RNA Polymerase (NSP12)"
+description: "RNA-dependent, RNA polymerase. Multi-NSP structures with NSP12 are here as well."
 proteins: ["Viral Proteins", "Proteases", "Active Interest Proteins"]
-proteins_weight: 3
+proteins_weight: 2
 protein: "RdRP"
 ---
