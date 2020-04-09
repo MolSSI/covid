@@ -1,5 +1,5 @@
 data_type: "structure"
-method: "x-ray crystallography"
+method: "cryo-EM"
 resolution: "2.9"
 pdb_doi: "http://dx.doi.org/10.2210/pdb6M71/pdb "
 publication_doi: "to be published"
@@ -9,6 +9,6 @@ protein:
   - NSP8
   - RdRP
 organism: 
-  - SARS-CoV-1
+  - SARS-CoV-2
   - host
   - viral
