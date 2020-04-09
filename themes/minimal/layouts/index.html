@@ -11,28 +11,50 @@
         {{ $mainScratch := newScratch }}
 
         <span class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover text-center-row">
               <thead>
                 <tr>
                     <th scope="col">Proteins</th>
-                    <th><a href="/proteins/">ALL Proteins</a></th>
+                    <th scope="col">Structures</th>
+                    <th scope="col">Targets</th>
+                    <th scope="col">Therapeutics</th>
                 </tr>
               </thead>
               <tbody>
-              {{ $sort_pages := .Pages.ByParam "list-order" }}
-                <tr>
-                    <!-- Render the Subcategory-->
-                    {{ range $sort_pages }}
-                        <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
-                    {{ end }}
+                    <tr>
+                        <th><a href="/proteins/">ALL Proteins</a></th>
+                        <th><a href="/structures/">All Structures</a></th>
+                        <th>Sort by Target is not available yet</th>
+                        <th><a href="/theraputics/">All Therapeutics</a></th>
+                    </tr>
+                    <tr>
+                        <th><a href="/proteins/viral-proteins/">Viral Proteins</a></th>
+                        <th><a href="/structures/viral-proteins/">Viral Proteins</a></th>
+                        <th>It will be coming in the future</th>
+                        <th><a href="/theraputics/antibodies/">Antibodies</a></th>
+                    </tr>
+                    <tr>
+                        <th><a href="/proteins/host-proteins/">Host Proteins</a></th>
+                        <th><a href="/structures/host-proteins/">Host Proteins</a></th>
+                        <th>Proteins are marked with targets by an <kbd class="item-tag">item tag</kbd> </th>
+                        <th><a href="/theraputics/peptides/">Peptides</a></th>
+                    </tr>
+                    <tr>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><a href="/theraputics/small_molecules/">Small (Optionally Drug-like) Molecules</a></th>
+                    </tr>
+                    <tr>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><a href="/theraputics/vaccines/">Vaccines</a></th>
+                    </tr>
                 </tr>
               </tbody>
             </table>
         </span>
-
-
-
-
 
     </div>
 

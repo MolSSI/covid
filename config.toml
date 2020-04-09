@@ -1,6 +1,6 @@
 baseURL = "https://covid.molssi.org/"
 languageCode = "en-us"
-title = "MolSSI and BioExcel COVID-19 Computational Molecular Data Exchange"
+title = "COVID-19 Molecular Structure and Therapeutics Exchange"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
 # googleAnalytics = ""

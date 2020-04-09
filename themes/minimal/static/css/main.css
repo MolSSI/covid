@@ -140,3 +140,10 @@ footer {
 .hr-thick {
     border-top: 5px solid #eee;
 }
+
+.text-center-row>tbody>tr>th,
+.text-center-row>tbody>tr>td,
+.text-center-row>thead>tr>th {
+  text-align: center;
+  vertical-align: middle !important;
+}
