@@ -141,7 +141,8 @@ footer {
     border-top: 5px solid #eee;
 }
 
-.text-center-row>th,
-.text-center-row>td {
+.text-center-row>tbody>tr>th,
+.text-center-row>tbody>tr>td,
+.text-center-row>thead>tr>th {
   text-align: center;
 }
