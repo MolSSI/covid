@@ -1,22 +1,31 @@
 {{ $localScratch := newScratch }}
-{{  $keymap := dict "spike" "targets/viral-spike"   "RBD" "structures/spike/s1_rbd"   "ACE2" "structures/hosts/ace2"   "BoAT1" "structures/hosts/boat1"}}
+
+{{  $keymap := dict "spike" "structures/spike/spike"   "RBD" "structures/spike/s1_rbd"   "ACE2" "structures/hosts/ace2"   "BoAT1" "structures/hosts/boat1"}}
 
 {{ $localScratch.Set "baseurl" .baseurl }}
-{{ $localScratch.Set "keymap" $keymap }}
+{{ $localScratch.Set "current" .current }}
+{{ $localScratch.Set "keymap" .keymap }}
+{{ $localScratch.Set "related" (slice ) }}
+
+{{ if reflect.IsSlice .data }}
+    {{ $localScratch.Set "iterdata" .data }}
+{{ else }}
+    {{ $localScratch.Set "iterdata" (slice .data) }}
+{{ end }}
+
+{{ range ($localScratch.Get "iterdata") }}
+    {{ if ne . ($localScratch.Get "current") }}
+        {{ $localScratch.Set "related" (($localScratch.Get "related") | append .) }}
+    {{ end }}
+{{ end }}
 
 <div class="table-responsive">
     <table class="table table-striped table-hover">
     <!-- Cycle through data -->
         <tbody>
-            {{ if reflect.IsSlice .data }}
-            {{ $localScratch.Set "iterdata" .data }}
-            {{ else }}
-            {{ $localScratch.Set "iterdata" (slice .data) }}
-            {{ end }}
-
-            {{ range ($localScratch.Get "iterdata") }}
+            {{ range (uniq ($localScratch.Get "related")) }}
                 <tr>
-                    <td><a href="{{ $localScratch.Get "baseurl" }}{{ index ($localScratch.Get "keymap") . }}/">{{ . }}</a></td>
+                    <td><a href='{{ $localScratch.Get "baseurl" }}{{ index ($localScratch.Get "keymap") . }}'>{{ . }}</a></td>
                 </tr>
             {{ end }}
         </tbody>
