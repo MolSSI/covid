@@ -1,0 +1,19 @@
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "data" . }}
+
+{{ if reflect.IsSlice . }}
+  {{ $localScratch.Set "str" "" }}
+  {{ range $localScratch.Get "data" }}
+    {{ $localScratch.Set "str" (print ($localScratch.Get "str") . " ") }}
+  {{ end }}
+  {{ $localScratch.Set "data" ($localScratch.Get "str")}}
+{{ end }}
+
+{{ $data := $localScratch.Get "data" }}
+
+{{ $string_name := title ( replace $data "-" " ") }}
+
+<h4> No information has been recorded in the Exchange about {{ $string_name }} </h4>
+
+The information might be out there! The Exchange only knows what people tell it, so if you know of information
+  regarding {{ $string_name }}, please submit an issue to help add it to the Exchange!
