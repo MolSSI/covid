@@ -1,19 +1,40 @@
 {{ partial "header" . }}
 
+{{ $localScratch := newScratch }}
+
 <main>
 
     <div>
         <h2>Viral and Host Targets</h2>
 
-        <h4>Virus (SARS-CoV-2), Host (validated), and Host (presumed) based targets. Validated targets are known essential host
+        <h4>Virus (SARS-CoV-2), Validated Host, and Presumed Host based targets. Validated targets are known essential host
         genes or interactions. The presumed are implicated host proteins that arise from analyses, but have not been
             universally agreed upon.</h4>
 
     </div>
 
-    {{ partial "target-builders/target-taxonomy-master" . }}
+    {{ $localScratch.Set "context" . }}
+    <hr class="hr-thick">
+    <h2><u><a href="{{ $.Site.BaseURL }}targets/primary-targets">Primary Targets</a></u></h2>
+    {{ range (slice "Viral Targets" "Validated Host Targets" "Presumed Host Targets") }}
+        <h3><u><a style="color:black;" href="{{ $.Site.BaseURL }}targets/{{. | urlize}}">{{ . }}</a></u></h3>
+        {{ partial "target-builders/target-taxonomy" (dict "context" ($localScratch.Get "context") "term" "primary-targets" "conditions" (slice .) ) }}
+    {{ end }}
 
 
+    <hr class="hr-thick">
+    <h2><u><a href="{{ $.Site.BaseURL }}targets/secondary-targets">Secondary Targets</a></u></h2>
+    {{ range (slice "Viral Targets" "Validated Host Targets" "Presumed Host Targets") }}
+        <h3><u><a style="color:black;" href="{{ $.Site.BaseURL }}targets/{{. | urlize}}">{{ . }}</a></u></h3>
+        {{ partial "target-builders/target-taxonomy" (dict "context" ($localScratch.Get "context") "term" "secondary-targets" "conditions" (slice .) ) }}
+    {{ end }}
+
+    <hr class="hr-thick">
+    <h2><u><a href="{{ $.Site.BaseURL }}targets/other-proteins">Other Proteins and Non-Targets</a></u></h2>
+    {{ range (slice "Viral Targets" "Validated Host Targets" "Presumed Host Targets") }}
+        <h3><u><a style="color:black;" href="{{ $.Site.BaseURL }}targets/{{. | urlize}}">{{ . }}</a></u></h3>
+        {{ partial "target-builders/target-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "other-proteins" "conditions" (slice .) "key" (.|urlize)) }}
+    {{ end }}
 
 </main>
 

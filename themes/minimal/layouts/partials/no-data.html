@@ -1,4 +1,17 @@
-{{ $string_name := title ( replace . "-" " ") }}
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "data" . }}
+
+{{ if reflect.IsSlice . }}
+  {{ $localScratch.Set "str" "" }}
+  {{ range $localScratch.Get "data" }}
+    {{ $localScratch.Set "str" (print ($localScratch.Get "str") . " ") }}
+  {{ end }}
+  {{ $localScratch.Set "data" ($localScratch.Get "str")}}
+{{ end }}
+
+{{ $data := $localScratch.Get "data" }}
+
+{{ $string_name := title ( replace $data "-" " ") }}
 
 <h4> No information has been recorded in the Exchange about {{ $string_name }} </h4>
 
