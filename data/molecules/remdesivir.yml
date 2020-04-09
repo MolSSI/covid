@@ -1,0 +1,7 @@
+name: remdesivir
+therapeutic: antiviral (broad spectrum)
+links: 
+  - http://www.chemspider.com/Chemical-Structure.58827832.html
+target: viral replication
+mechanism: inhibitor of RNA-dependent RNA polymerase
+protein: RdRP
