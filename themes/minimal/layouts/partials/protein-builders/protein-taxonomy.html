@@ -1,7 +1,7 @@
 <!-- Have to Index the page with a " " in it by "-", but "-" is invalid, so have to us index fn -->
 
 {{ $localScratch := newScratch }}
-{{ $pages := index .context.Site.Taxonomies.targets .term }}
+{{ $pages := index .context.Site.Taxonomies.proteins .term }}
 {{ $localScratch.Set "conditions" .conditions }}
 {{ $localScratch.Set "posted_something" false }}
 
@@ -11,7 +11,7 @@
         {{ if $localScratch.Get "conditions" }}
             {{ $localScratch.Set "posted" false }}
             {{ range $localScratch.Get "conditions" }}
-                {{ if and (in (($localScratch.Get "page").Param "targets") .) (not ($localScratch.Get "posted")) }}
+                {{ if and (in (($localScratch.Get "page").Param "proteins") .) (not ($localScratch.Get "posted")) }}
                     <div>
                         <h4><a href="{{ ($localScratch.Get "page").Permalink }}">{{ ($localScratch.Get "page").Title }}</a></h4>
                         <h5>{{ ($localScratch.Get "page").Description }}</h5>

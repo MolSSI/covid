@@ -23,7 +23,7 @@ ignoreFiles = ["README.md$"]
 
 
 [taxonomies]
-    target = "targets"
+    protein = "proteins"
 
 [[menu.main]]
     url = "/"
@@ -32,25 +32,25 @@ ignoreFiles = ["README.md$"]
 
 [[menu.main]]
     hasChildren = true
-    name = "Targets"
+    name = "Proteins"
     weight = 2
 
     [[menu.main]]
-        parent = "Targets"
-        url = "/targets/"
-        name = "All Targets"
+        parent = "Proteins"
+        url = "/proteins/"
+        name = "All Proteins"
         weight = 1
 
     [[menu.main]]
-        parent = "Targets"
-        url = "/targets/viral-targets"
-        name = "Viral Targets"
+        parent = "Proteins"
+        url = "/proteins/viral-proteins"
+        name = "Viral Proteins"
         weight = 2
 
     [[menu.main]]
-        parent = "Targets"
-        url = "/targets/host-targets/"
-        name = "Host Targets"
+        parent = "Proteins"
+        url = "/proteins/host-proteins/"
+        name = "Host Proteins"
         weight = 3
 
 

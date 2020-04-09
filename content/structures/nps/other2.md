@@ -1,7 +1,7 @@
 ---
 title: "NSP2"
 description: "Nonstructural Protein 2"
-targets: ["Viral Targets", "Other Nonstructural Proteins", "Other Proteins"]
-targets_weight: 2
+proteins: ["Viral Proteins", "Other Nonstructural Proteins", "Low Interest Proteins"]
+proteins_weight: 102
 ---
 

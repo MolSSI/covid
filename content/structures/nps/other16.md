@@ -1,6 +1,6 @@
 ---
 title: "NSP16"
 description: "Nonstructural Protein 16"
-targets: ["Viral Targets", "Other Nonstructural Proteins", "Other Proteins"]
-targets_weight: 16
+proteins: ["Viral Proteins", "Other Nonstructural Proteins", "Low Interest Proteins"]
+proteins_weight: 116
 ---

@@ -27,7 +27,7 @@ within are designed to get the information out quickly. The repo seeks to provid
 in a centralized location:
 
 * Provide Simulation input files (structures, configurations, scripts, Jupyter notebooks) 
-  to the community in an organized structure. Sorting done by Research Group, Target (spike protein, protease, etc), 
+  to the community in an organized structure. Sorting done by Research Group, proteins (spike protein, protease, etc), 
   Simulation Program, Hardware/platform (cluster, cloud, local, etc).
 * Provide Trajectories to the community for analysis. Due to the nature of the trajectories’ sizes, 
   we may only be able to provide pointers to the trajectories where possible. As the data, repository, 

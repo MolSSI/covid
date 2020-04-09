@@ -11,7 +11,7 @@
     <div id="collapse{{.key}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{.key}}">
       <div class="panel-body">
         <!-- Have to Index the page with a " " in it by "-", but "-" is invalid, so have to us index fn -->
-        {{ partial "target-builders/target-taxonomy" (dict "context" .context "term" .term "conditions" .conditions) }}
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" .context "term" .term "conditions" .conditions) }}
       </div>
     </div>
   </div>
