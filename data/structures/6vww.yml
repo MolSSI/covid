@@ -1,0 +1,11 @@
+data_type: "structure"
+method: "X-Ray Diffraction"
+resolution: "2.2"
+pdb_doi: "https://www.wwpdb.org/pdb?id=pdb_00006m03"
+publication_doi: "https://www.biorxiv.org/content/10.1101/2020.03.02.968388v1"
+target: viral replication
+protein: 
+  - NSP15
+organism: 
+  - SARS-2
+  
