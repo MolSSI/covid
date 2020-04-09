@@ -10,7 +10,13 @@ Each entry has the following required and optional keys:
 ```
 pdbid: (required)
 protein: (required)
-target: (required)
+target: (possible options listed)
+  - spike binding
+  - spike cleavage
+  - viral replication
+  - 3CL-PRO protease activity
+  - PL-PRO protease activity
+  - viral fusion
 ligands: (optional)
 annotation: (required)
 rating: (required)
