@@ -1,0 +1,57 @@
+<hr class="hr-thick">
+
+{{ if eq .Title "Proteins" }}
+<h2><a href="{{ $.Site.BaseURL }}proteins/viral-proteins">Virus Proteins</a></h2>
+{{ end }}
+
+<!-- Viral Spike -->
+{{ if in (slice "Proteins" "Viral Proteins" "Viral Spike") .Title }}
+    {{ if in (slice "Proteins" "Viral Proteins") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}proteins/viral-spike">Viral Spike</a></u></h3>
+    {{ end }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" . "term" "viral-spike") }}
+    <hr>
+{{ end }}
+
+<!-- Proteases -->
+{{ if in (slice "Proteins" "Viral Proteins" "Viral Spike" "Proteases") .Title }}
+    {{ if in (slice "Proteins" "Viral Proteins") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}proteins/proteases">Proteases</a></u></h3>
+    {{ end }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" . "term" "proteases") }}
+    <hr>
+{{ end }}
+
+<!-- NPS -->
+{{ if in (slice "Proteins" "Viral Proteins" "Viral Spike" "Other Nonstructural Proteins") .Title }}
+    {{ if in (slice "Proteins" "Viral Proteins") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}proteins/other-nonstructural-proteins">Other Nonstructural Proteins</a></u></h3>
+    {{ end }}
+    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" . "term" "other-nonstructural-proteins") }}
+{{ end }}
+
+{{ if eq .Title "Proteins" }}
+<hr class="hr-thick">
+<h2><a href="{{ $.Site.BaseURL }}proteins/host-proteins">Host Proteins</a></h2>
+{{ end }}
+
+<!-- Validated Hosts -->
+{{ if in (slice "Proteins" "Host Proteins" "Validated Host Proteins") .Title }}
+    {{ if in (slice "Proteins" "Host Proteins") .Title }}
+    <h3><u><a href="{{ $.Site.BaseURL }}proteins/validated-host-proteins">Validated Host Proteins</a></u></h3>
+    {{ end }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" . "term" "validated-host-proteins") }}
+    <hr>
+{{ end }}
+
+<!-- Presumed Hosts -->
+{{ if in (slice "Proteins" "Host Proteins" "Presumed Host Proteins") .Title }}
+    {{ if in (slice "Proteins" "Host Proteins") .Title }}
+        {{ if (index .Site.Taxonomies.proteins "presumed-host-proteins" )}}
+        <h3><u><a href="{{ $.Site.BaseURL }}proteins/presumed-host-proteins">Presumed Host Proteins</a></u></h3>
+        {{ else }}
+        <h3><u><a href="#">Presumed Host Proteins</a></u></h3>
+        {{ end }}
+    {{ end }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" . "term" "presumed-host-proteins") }}
+{{ end }}

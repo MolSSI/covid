@@ -1,0 +1,34 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+
+<main>
+
+    <div>
+        <h2>Viral and Host Proteins</h2>
+
+        <h4>Virus (SARS-CoV-2), Validated Host, and Presumed Host based Proteins. Validated proteins are known essential host
+        genes or interactions. The presumed are implicated host proteins that arise from analyses, but have not been
+            universally agreed upon.</h4>
+
+    </div>
+
+    {{ $localScratch.Set "context" . }}
+
+    <hr class="hr-thick">
+    <h2><u><a href="{{ $.Site.BaseURL }}proteins/viral-proteins">Viral Proteins</a></u></h2>
+    <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h3>
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Active Interest Proteins") ) }}
+    <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h3>
+    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "virus low" |urlize)) }}
+
+    <hr class="hr-thick">
+    <h2><u><a href="{{ $.Site.BaseURL }}proteins/host-proteins">Host Proteins</a></u></h2>
+    <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h3>
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Active Interest Proteins") ) }}
+    <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h3>
+    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "host low" |urlize)) }}
+
+</main>
+
+{{ partial "footer" . }}

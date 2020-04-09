@@ -1,14 +1,18 @@
-data_type: "structure"
-method: "cryo-EM"
-resolution: "2.9"
-pdb_doi: "http://dx.doi.org/10.2210/pdb6m17/pdb"
-publication_doi: "http://dx.doi.org/10.1126/science.abb2762"
+pdbid: 6m17
 target: spike binding
-protein: 
+protein:
   - spike
   - RBD
   - ACE2
   - BoAT1
-organism: 
+organism:
   - SARS-2
   - host
+protein:
+  - fusion core
+  - HR1
+  - HR2
+organism: SARS-CoV-2
+target: viral-fusion
+annotation: High-resolution cryo-EM structure of the full-length SARS-CoV-2 spike protein bound to human host cell receptor ACE2.
+rating: 5

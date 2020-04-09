@@ -5,7 +5,7 @@ description: >
 therapeutic: 
   small molecule
 links:
-  - wikipedia: wikipedia: https://en.wikipedia.org/wiki/Chloroquine
+  - wikipedia: https://en.wikipedia.org/wiki/Chloroquine
   - chemspider: http://www.chemspider.com/Chemical-Structure.2618.html?rid=7ccd2bad-87f4-4539-bc27-7e7ac0e10339&page_num=0
 target: viral entry and replication
 mechanism: The potential mechanisms for attacking the virus >
