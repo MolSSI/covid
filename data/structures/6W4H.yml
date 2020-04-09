@@ -1,0 +1,12 @@
+data_type: "structure"
+pdbid: "6W4H"
+protein:
+  - NSP16
+  - NSP10
+method: "x-ray diffraction"
+resolution: "1.8"
+organism: "SARS-CoV-2"
+pdb_doi: "10.2210/pdb6W4H/pdb"
+target: "viral replication"
+annotation: "1.80 Angstrom Resolution Crystal Structure of NSP16 - NSP10 Complex from SARS-CoV-2"
+rating: "3"
