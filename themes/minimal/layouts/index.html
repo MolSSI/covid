@@ -19,17 +19,12 @@
                 </tr>
               </thead>
               <tbody>
-              {{ range .Pages.GroupByParam "subcategory-order" }}
+              {{ $sort_pages := .Pages.ByParam "list-order" }}
                 <tr>
-                    {{ range first 1 .Pages }}
-                        <th scope="row"> {{.Param "subcategory" }}</th>
-                    {{ end }}
                     <!-- Render the Subcategory-->
-                    {{ $sort_pages := .Pages.ByParam "list-order" }}
                     {{ range $sort_pages }}
                         <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
                     {{ end }}
-              {{ end }}
                 </tr>
               </tbody>
             </table>
