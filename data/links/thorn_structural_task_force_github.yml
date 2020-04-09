@@ -1,0 +1,8 @@
+name: Structural Biology Task Force GitHub page
+url: https://github.com/thorn-lab/coronavirus_structural_task_force
+description: >
+  A global public resource for the structures from beta-coronavirus with a focus on SARS-CoV and SARS-CoV-2.
+organization: Coronavirus Structural Biology Task Force
+resources:
+  - structures
+  - models

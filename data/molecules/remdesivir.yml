@@ -1,7 +1,11 @@
 name: remdesivir
-therapeutic: antiviral (broad spectrum)
-links: 
-  - http://www.chemspider.com/Chemical-Structure.58827832.html
+description: >
+  Remdesivir is a novel antiviral drug in the class of nucleotide analogs.
+  Remdesivir is an adenosine analogue, which incorporates into nascent viral RNA chains and causes their pre-mature termination.
+therapeutic: small molecule
+links:
+  - wikipedia: "wikipedia: https://en.wikipedia.org/wiki/Remdesivir"
+  - chemspider: http://www.chemspider.com/Chemical-Structure.58827832.html
 target: viral replication
 mechanism: inhibitor of RNA-dependent RNA polymerase
 protein: RdRP
