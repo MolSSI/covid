@@ -19,9 +19,19 @@
     <!-- Counter -->
     {{ $localScratch.Set "npages" 0 }}
 
+    <!-- page info -->
+    {{ $localScratch.Set "page" .Page }}
+
     <!-- loop through all the data at a file level so I can get YAML file names-->
     {{ range $file, $content := .Site.Data.structures }}
         <!-- Determine if structure is for this data -->
+        {{ if reflect.IsSlice $content.protein }}
+            {{ $localScratch.Set "match" (in $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ else }}
+            {{ $localScratch.Set "match" (eq $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ end }}
+
+
         {{ if and (eq $content.target $.Page.Params.target) (ne $file "TEMPLATE") }}
             <h3>Structure: {{ $file }}</h3>
             <br>
