@@ -1,0 +1,15 @@
+target: viral fusion
+description: >
+  After the S1 subunit is cleaved from the spike protein,
+  S2 rearranges itself, bringing two heptad repeats in close,
+  stable proximity to form a 6 helical coiled coil known as
+  the fusion core. The formation of the fusion core is thought
+  to drive viral-host membrane fusion.
+therapeutic:
+  - peptide
+  - antibody
+papers:
+  Xia_2020_Fusion_mechanism:
+    doi: 10.1038/s41423-020-0374-2
+  Kawase_2019_Biochemical_analysis:
+    doi: 10.1128/JVI.00785-19

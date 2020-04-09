@@ -1,0 +1,7 @@
+target: viral replication
+description: >
+  Inhibition of viral replication via inhibition of NSP7, NSP8, and RdRp is a feasible route to therapy.
+protein:
+  - RdRP
+  - nsp7
+  - nsp8

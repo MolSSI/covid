@@ -1,0 +1,8 @@
+target: "PL-PRO protease activity"
+description: >
+  PL-PRO (nsp3, papain-like protease) is a viral cysteine protease
+  responsible for maturation of the viral polyprotein, necessary for
+  infection. Also involved in repressing host immune response.
+protein:
+  - PL-PRO
+therapeutic: small molecule
