@@ -1,0 +1,11 @@
+name: Structure of Fusion Core of SARS-CoV-2 
+method: x-ray crystallography
+resolution: 2.90
+protein:
+  - fusion core
+  - HR1
+  - HR2
+target: viral fusion
+pdb_id: 6LXT
+pdb_doi: http://dx.doi.org/10.2210/pdb6lxt/pdb
+publication_doi: http://dx.doi.org/10.1038/s41422-020-0305-x
