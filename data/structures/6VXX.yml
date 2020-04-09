@@ -1,6 +1,6 @@
 data_type: "structure"
 pdbid: "6VXX"
-protein: "SARS-2 Spike (Closed)"
+protein: "spike"
 method: "cryo-EM"
 resolution: "2.8"
 organism: "SARS-CoV-2"
