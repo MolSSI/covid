@@ -1,0 +1,7 @@
+name: EK1C4
+description: >
+  Pan-coronavirus fusion inhibitor EK1 peptide with GS linker and cholesterol. 
+  Show to be more effective against SARS-CoV-2
+sequence: SLDQINVTFLDLEYEMKKLEEAIKKLEESYIDLKELGSGSG-(PEG4)-(Cholesterol)
+publication_doi: https://doi.org/10.1038/s41422-020-0305-x
+
