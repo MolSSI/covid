@@ -5,6 +5,7 @@ Schema information will be populated here at a later date
 ## YAML Template:
 ```
 data_type: "structure"
+pdb_id:
 method: 
 resolution:
 pdb_doi:
