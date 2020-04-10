@@ -14,8 +14,8 @@ target: (possible options listed)
   - spike binding
   - spike cleavage
   - viral replication
-  - 3CL-PRO protease activity
-  - PL-PRO protease activity
+  - 3CLpro protease activity
+  - PLpro protease activity
   - viral fusion
 ligands: (optional)
 annotation: (required)
