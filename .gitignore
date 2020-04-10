@@ -113,3 +113,4 @@ Gemfile.lock
 scratch.txt
 /.vscode
 .DS_Store
+.idea
