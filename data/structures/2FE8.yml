@@ -6,6 +6,6 @@ pdb_doi: "https://www.rcsb.org/structure/2FE8"
 publication_doi: "https://www.pnas.org/content/103/15/5717"
 target: viral replication
 protein:
-  - PL-PRO
+  - PLpro
 organism:
   - SARS
