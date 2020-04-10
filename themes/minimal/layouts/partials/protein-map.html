@@ -1,0 +1,8 @@
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "map" dict }}
+
+{{ range where $.Site.Pages "Section" "structures" }}
+    {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict (string (.Param "protein")) .RelPermalink) ) }}
+{{ end }}
+
+{{ return ($localScratch.Get "map") }}

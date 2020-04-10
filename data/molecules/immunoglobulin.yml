@@ -2,13 +2,13 @@ name: immunoglobulin
 description: >
   Immunoglobulin AKA antibody is a protein produced by B cells that is used to fight against pathogens and viruses via adaptive immunity.
 therapeutic: 
-  antibody
-  antiviral (non-specific)
-  peptide
-  immunotherapy
+  - antibody
+  - antiviral (non-specific)
+  - peptide
+  - immunotherapy
 links:
-  - wikipedia: https://en.wikipedia.org/wiki/Antibody
-  - drugdatabank: https://www.drugbank.ca/drugs/DB00028
+  wikipedia: https://en.wikipedia.org/wiki/Antibody
+  drugdatabank: https://www.drugbank.ca/drugs/DB00028
 target: viral fusion
 mechanism: proposed to block viral Fc receptor activation by boosting endogenous neutralizing antibodies and preventing antibody-dependent enhancement of infection
 protein:

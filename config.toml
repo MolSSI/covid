@@ -58,16 +58,20 @@ ignoreFiles = ["README.md$"]
         name = "Host Proteins"
         weight = 3
 
+[[menu.main]]
+    url = "/therapeutics"
+    name = "Therapeutics"
+    weight = 4
 
 [[menu.main]]
     url = "/structures"
     name = "Structures"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 5
+    weight = 6
 
     [[menu.main]]
         parent = "About"

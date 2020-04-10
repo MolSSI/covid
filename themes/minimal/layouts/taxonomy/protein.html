@@ -3,6 +3,7 @@
 <main>
 
 {{ $localScratch := newScratch }}
+{{ $localScratch.Set "target_map" (partial "target-map" .) }}
 
 <main>
 
@@ -20,20 +21,20 @@
     {{ if or (in .Title "Active Interest") (in .Title "Low Interest") }}
         <hr class="hr-thick">
         <h2><u><a href="{{ $.Site.BaseURL }}proteins/viral-proteins">Viral Proteins</a></u></h2>
-        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice .Title) ) }}
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice .Title) "target_map" ($localScratch.Get "target_map")) }}
 
         <hr class="hr-thick">
         <h2><u><a  href='{{ $.Site.BaseURL }}proteins/{{ "Host Proteins" | urlize}}'>Host Proteins</a></u></h2>
-        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice .Title) ) }}
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice .Title) "target_map" ($localScratch.Get "target_map")) }}
 
     {{ else if or (in .Title "Viral") (in .Title "Host") }}
         <hr class="hr-thick">
         <h2><u><a href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h2>
-        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Active Interest Proteins") ) }}
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Active Interest Proteins") "target_map" ($localScratch.Get "target_map")) }}
 
         <hr class="hr-thick">
         <h2><u><a href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h2>
-        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Low Interest Proteins") ) }}
+        {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" ( .Title | urlize ) "conditions" (slice "Low Interest Proteins") "target_map" ($localScratch.Get "target_map")) }}
 
     {{ else }}
         <h2>If you made it to this page somehow, please contact an exchange maintainer as it has not been formatted

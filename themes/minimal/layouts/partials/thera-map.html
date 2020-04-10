@@ -1,0 +1,18 @@
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "map" dict }}
+{{ $localScratch.Set "map" dict }}
+
+{{ range $.Site.Data.molecules }}
+    {{ if reflect.IsSlice .therapeutic }}
+        {{ $localScratch.Set "iter" .therapeutic }}
+    {{ else }}
+        {{ $localScratch.Set "iter" (slice .therapeutic) }}
+    {{ end }}
+    {{ range .therapeutic }}
+        {{ $link := print $.Site.BaseURL "therapeutics/#" ( . | anchorize) }}
+        {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict .  $link) ) }}
+    {{ end }}
+{{ end }}
+
+{{ return ($localScratch.Get "map") }}
