@@ -44,9 +44,11 @@ target: (possible options listed)
   - 3CLpro protease activity
   - PLpro protease activity
   - viral fusion
+  - host immune response
+  - cell cycle inhibitors 
 ligands: (optional)
 annotation: (required)
-rating: (required)
+rating: (required) (1= poor quality to 5=best quality)
 ```
 
 ## Notes
