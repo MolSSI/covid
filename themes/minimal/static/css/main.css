@@ -147,3 +147,9 @@ footer {
   text-align: center;
   vertical-align: middle !important;
 }
+
+.anchor {
+    /* Shenanigans to make anchors work correctly. */
+    padding-top: 56px;
+    margin-top: -56px;
+}

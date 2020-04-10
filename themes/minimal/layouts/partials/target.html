@@ -11,7 +11,7 @@
 <div class="col col-9">
 
   <!-- target name -->
-  <h3><b>{{ .context.name }}</b> <img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
+  <h3 class="anchor" id="{{.context.name | anchorize }}"><b>{{ .context.name }}</b><img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
 
   <!-- target description -->
   <p align="justify">{{ .context.description }}</p>
