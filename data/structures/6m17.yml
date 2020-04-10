@@ -11,3 +11,6 @@ organism:
   - viral
 annotation: High-resolution cryo-EM structure of the full-length SARS-CoV-2 spike protein bound to human host cell receptor ACE2.
 rating: 5
+images: 
+  - images/protein_renderings/6M18.png 
+  - images/protein_renderings/6M18_ace2.png 
