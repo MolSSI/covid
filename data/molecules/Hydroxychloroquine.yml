@@ -2,7 +2,7 @@ name: hydroxychloroquine
 description: >
   Hydroxychloroquine is primarily an antimalarial drugs alse used in treating autoimmune diseases like Rheumatoid arthritis, lupus.
   Hydroxychloroquine has more potency than chloroquine against SARS-CoV-2.
-therapeutic: 
+therapeutic:
   small molecule
 links:
   - wikipedia: https://en.wikipedia.org/wiki/Hydroxychloroquine
@@ -11,7 +11,7 @@ target: viral fusion and replication
 mechanism: Act primarily by>
   Altering endosomal pH and affecting virus-cell fusion
   By inhibiting the ACE2 cellular receptor
-  By activating the immune response 
-protein: 
+  By activating the immune response
+protein:
   - ACE2
-  - Spike Protein
+  - spike

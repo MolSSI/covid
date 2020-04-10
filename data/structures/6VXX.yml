@@ -1,0 +1,10 @@
+data_type: "structure"
+pdbid: "6VXX"
+protein: "spike"
+method: "cryo-EM"
+resolution: "2.8"
+organism: "SARS-CoV-2"
+pdb_doi: "10.2210/pdb6VXX/pdb"
+target: spike binding
+annotation: "Structure of the SARS-CoV-2 spike glycoprotein (closed state)"
+rating: "4"
