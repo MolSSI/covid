@@ -1,0 +1,52 @@
+<!--
+  <div class="col col-2">
+  <img src=img/{{ .img }}>
+</div>
+-->
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "proteinmap" .proteinmap }}
+{{ $localScratch.Set "baseURL" .baseURL }}
+
+<div class="col col-9">
+
+  <!-- target name -->
+  <h3 class="anchor" id="{{.context.name | anchorize }}"><b>{{ .context.name }}</b><img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
+
+  <!-- target description -->
+  <p align="justify">{{ .context.description }}</p>
+
+  <!-- tag links to proteins involves in this target -->
+  <h4 align="left">Protein targets:</h4>
+  {{ range .context.proteins }}
+    <!-- NOTE: hyperlinks do not correctly link up to the right anchor point yet -->
+    <a href='{{ index ($localScratch.Get "proteinmap") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+  {{ end }}
+
+  <!-- key therapeutics -->
+  {{ if .context.therapeutic_modalities }}
+    <div>
+    <h4 align="left">Potential therapeutic modalities:</h4>
+      {{ range .context.therapeutic_modalities }}
+       <!-- NOTE: hyperlinks do not correctly link up to the right anchor point yet -->
+       <a href="/modalities/#{{ . }}"><kbd class="alert-success">{{ . }}</kbd></a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+
+
+  <!-- Key publications -->
+  {{ if .papers }}
+  <h4 align="left">Key publications:</h4>
+  <ul>
+    {{ range .papers }}
+    <!-- TODO: Pull more information about these publications automagically -->
+    <li> <div align="justify"><b>{{ .title }}</b> <a href="http://doi.org/{{ .doi }}"> [DOI] </a></div> </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+
+  - - -
+
+</div>

@@ -1,0 +1,29 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "map" dict }}
+{{ range where $.Site.Pages "Section" "structures" }}
+    {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict (string (.Param "protein")) .RelPermalink) ) }}
+{{ end }}
+{{ $localScratch.Set "baseURL" $.Site.BaseURL }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+        {{ partial "tags" . }}
+    </div>
+
+    <hr>
+
+    <!-- List all targets from data/targets/ -->
+    {{ range $.Site.Data.targets }}
+       {{ partial "target.html" (dict "context" . "baseURL" ($localScratch.Get "baseURL") "proteinmap" ($localScratch.Get "map") )}}
+    {{ end }}
+
+    <hr>
+
+</main>
+
+{{ partial "footer" . }}

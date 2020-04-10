@@ -1,5 +1,16 @@
 {{ partial "header" . }}
 
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "rowcount" 0 }}
+<!-- Isnt used right now, but will be to auto populate table -->
+<!-- Populate Targets -->
+{{ $localScratch.Set "targets" slice }}
+{{ range $.Site.Data.targets }}
+    {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append . ) }}
+{{ end }}
+{{ $localScratch.Set "targets" (uniq ($localScratch.Get "targets") ) }}
+
+
 <main>
     <div class="intro">
         {{ with .Site.Params.profilePic }} <img class="profile" src="{{ . }}"> {{ end }}
@@ -22,34 +33,46 @@
               </thead>
               <tbody>
                     <tr>
-                        <th><a href="/proteins/">ALL Proteins</a></th>
+                        <th><a href="/proteins/">All Proteins</a></th>
                         <th><a href="/structures/">All Structures</a></th>
-                        <th>Sort by Target is not available yet</th>
+                        <th><a href="/targets/">All Targets</a></th>
                         <th><a href="/theraputics/">All Therapeutics</a></th>
                     </tr>
                     <tr>
                         <th><a href="/proteins/viral-proteins/">Viral Proteins</a></th>
                         <th><a href="/structures/viral-proteins/">Viral Proteins</a></th>
-                        <th>It will be coming in the future</th>
+                        <th><a href='/targets/#{{ "Inhibition of 3CL-PRO protease activity" | anchorize }}'>Inhibition of 3CL-PRO protease activity</a></th>
                         <th><a href="/theraputics/antibodies/">Antibodies</a></th>
                     </tr>
                     <tr>
                         <th><a href="/proteins/host-proteins/">Host Proteins</a></th>
                         <th><a href="/structures/host-proteins/">Host Proteins</a></th>
-                        <th>Proteins are marked with targets by an <kbd class="item-tag">item tag</kbd> </th>
+                        <th><a href='/targets/#{{ "Inhibition of PL-PRO protease activity" | anchorize }}'>Inhibition of PL-PRO protease activity</a></th>
                         <th><a href="/theraputics/peptides/">Peptides</a></th>
                     </tr>
                     <tr>
                         <th><br/></th>
                         <th><br/></th>
-                        <th><br/></th>
+                        <th><a href='/targets/#{{ "Blocking SARS-CoV-2 Spike protein binding to human ACE2 receptor" | anchorize }}'>Blocking SARS-CoV-2 Spike protein binding to human ACE2 receptor</a></th>
                         <th><a href="/theraputics/small_molecules/">Small (Optionally Drug-like) Molecules</a></th>
                     </tr>
                     <tr>
                         <th><br/></th>
                         <th><br/></th>
-                        <th><br/></th>
+                        <th><a href='/targets/#{{ "Inhibiting cleavage of the SARS-CoV-2 spike protein" | anchorize }}'>Inhibiting cleavage of the SARS-CoV-2 spike protein</a></th>
                         <th><a href="/theraputics/vaccines/">Vaccines</a></th>
+                    </tr>
+                    <tr>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><a href='/targets/#{{ "Inhibition of formation of the viral fusion core" | anchorize }}'>Inhibition of formation of the viral fusion core</a></th>
+                        <th><br/></th>
+                    </tr>
+                    <tr>
+                        <th><br/></th>
+                        <th><br/></th>
+                        <th><a href='/targets/#{{ "Inhibition of viral polymerases" | anchorize }}'>Inhibition of viral polymerases</a></th>
+                        <th><br/></th>
                     </tr>
                 </tr>
               </tbody>

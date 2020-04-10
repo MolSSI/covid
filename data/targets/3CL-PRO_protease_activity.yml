@@ -1,10 +1,14 @@
 target: "3CL-PRO protease activity"
+name: Inhibition of 3CL-PRO protease activity
 description: >
-  3CL-PRO (main protease, M-PRO, etc) is a viral cysteine protease
-  responsible for maturation of the viral polyprotein, necessary for
-  infection. Target of many drug discovery campaigns. 3CL-PRO is an
-  obligate dimer, although many drug design efforts just use a monomer
-  structure.
-protein:
+  3CL-PRO (main viral protease, Mpro, 3CL-like protease) is a viral cysteine protease
+  responsible for maturation of the viral polyprotein by cutting in ~10 positions,
+  rendering it necessary for infection.
+  Inhibiting protease activity via active site inhibition is likely a viable approach to
+  drug discovery.
+  As 3CL-PRO is an obligate dimer, inhibiting dimerization may also be a viable route
+  to potential therapeutics.
+proteins:
   - Mpro
-therapeutic: small molecule
+therapeutic_modalities:
+  - small molecule
