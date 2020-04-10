@@ -1,10 +1,11 @@
 {{ $localScratch := newScratch }}
 
-{{ $localScratch.Set "page" . }}
+{{ $localScratch.Set "page" .page }}
+{{ $localScratch.Set "target_map" .target_map }}
 
 {{ $localScratch.Set "targets" (slice ) }}
 
-{{ range $file, $content := .Site.Data.structures }}
+{{ range $file, $content := .page.Site.Data.structures }}
     <!-- Check if the protein key-value matches the page protein" -->
     {{ if $content.protein }}
         {{ $localScratch.Set "protein" $content.protein }}
@@ -24,5 +25,5 @@
 
 <!-- Finally, yield the targets -->
 {{ range (uniq ($localScratch.Get "targets")) }}
-    <kbd class="item-tag">{{ . | title }}</kbd>
+    <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ . | title }}</kbd></a>
 {{ end }}

@@ -4,6 +4,7 @@
 {{ $pages := index .context.Site.Taxonomies.proteins .term }}
 {{ $localScratch.Set "conditions" .conditions }}
 {{ $localScratch.Set "posted_something" false }}
+{{ $localScratch.Set "target_map" .target_map }}
 
 {{ if $pages }}
     {{ range $pages }}
@@ -15,7 +16,7 @@
                     <div>
                         <h4><a href="{{ ($localScratch.Get "page").Permalink }}">{{ ($localScratch.Get "page").Title }}</a></h4>
                         <h5>{{ ($localScratch.Get "page").Description }}</h5>
-                        {{ partial "structure-target-tags" ($localScratch.Get "page") }}
+                        {{ partial "structure-target-tags" (dict "page" ($localScratch.Get "page") "target_map" ($localScratch.Get "target_map")) }}
                     </div>
                     {{ $localScratch.Set "posted" true }}
                     {{ $localScratch.Set "posted_something" true }}
@@ -25,7 +26,7 @@
             <div>
                 <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
                 <h5>{{ .Description }}</h5>
-                {{ partial "structure-target-tags" . }}
+                {{ partial "structure-target-tags" (dict "page" . "target_map" ($localScratch.Get "target_map")) }}
             </div>
             {{ $localScratch.Set "posted_something" true }}
         {{ end }}

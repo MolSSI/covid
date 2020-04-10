@@ -1,6 +1,7 @@
 {{ partial "header" . }}
 
 {{ $localScratch := newScratch }}
+{{ $localScratch.Set "target_map" (partial "target-map" .) }}
 
 <main>
 
@@ -20,16 +21,16 @@
     <hr class="hr-thick">
     <h2><u><a href="{{ $.Site.BaseURL }}proteins/viral-proteins">Viral Proteins</a></u></h2>
     <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h3>
-    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Active Interest Proteins") ) }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Active Interest Proteins") "target_map" ($localScratch.Get "target_map")) }}
     <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h3>
-    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "virus low" |urlize)) }}
+    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "viral-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "virus low" |urlize) "target_map" ($localScratch.Get "target_map")) }}
 
     <hr class="hr-thick">
     <h2><u><a href="{{ $.Site.BaseURL }}proteins/host-proteins">Host Proteins</a></u></h2>
     <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Active Interest Proteins" | urlize}}'>Active Interest Proteins</a></u></h3>
-    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Active Interest Proteins") ) }}
+    {{ partial "protein-builders/protein-taxonomy" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Active Interest Proteins") "target_map" ($localScratch.Get "target_map")) }}
     <h3><u><a style="color:black;" href='{{ $.Site.BaseURL }}proteins/{{ "Low Interest Proteins" | urlize}}'>Low Interest Proteins</a></u></h3>
-    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "host low" |urlize)) }}
+    {{ partial "protein-builders/protein-taxonomy-accord" (dict "context" ($localScratch.Get "context") "term" "host-proteins" "conditions" (slice "Low Interest Proteins") "key" ( "host low" |urlize) "target_map" ($localScratch.Get "target_map")) }}
 
 </main>
 

@@ -1,0 +1,47 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "protein_map" (partial "protein-map" .) }}
+{{ $localScratch.Set "target_map" (partial "target-map" .) }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .) }}
+
+{{ $localScratch.Set "baseURL" $.Site.BaseURL }}
+
+{{ $localScratch.Set "thera_categories" slice }}
+{{ range $.Site.Data.molecules }}
+    {{ $localScratch.Set "thera_categories" (($localScratch.Get "thera_categories") | append .therapeutic ) }}
+{{ end }}
+{{ $localScratch.Set "thera_categories" (uniq ($localScratch.Get "thera_categories")) }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+    </div>
+
+    <hr>
+
+    <!-- List all targets from data/targets/ -->
+    {{ range (sort ($localScratch.Get "thera_categories")) }}
+        <hr class="hr-thick">
+        {{ $localScratch.Set "term" . }}
+        <div class="col col-9">
+            <!-- therapeutic category -->
+            <h3 class="anchor" id="{{ . | anchorize }}"><b>{{ . | title }}</b><img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
+
+            {{ range $.Site.Data.molecules }}
+                {{ $localScratch.Set "data" . }}
+                {{ if and (.) (in .therapeutic ($localScratch.Get "term")) }}
+                    {{ partial "therapeutics-data.html" (dict "term" ($localScratch.Get "term") "data" ($localScratch.Get "data") "protein_map" ($localScratch.Get "protein_map") "target_map" ($localScratch.Get "target_map") )}}
+                {{ end }}
+            {{ end }}
+
+        </div>
+    {{ end }}
+
+    <hr>
+
+</main>
+
+{{ partial "footer" . }}

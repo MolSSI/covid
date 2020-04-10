@@ -3,6 +3,7 @@
 {{ $localScratch := newScratch }}
 {{ $localScratch.Set "rowcount" 0 }}
 <!-- Isnt used right now, but will be to auto populate table -->
+
 <!-- Populate Targets -->
 {{ $localScratch.Set "targets" slice }}
 {{ range $.Site.Data.targets }}

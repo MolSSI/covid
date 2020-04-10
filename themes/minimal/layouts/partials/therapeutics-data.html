@@ -1,0 +1,55 @@
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "term" .term }}
+{{ $localScratch.Set "data" .data }}
+{{ $localScratch.Set "protein_map" .protein_map }}
+{{ $localScratch.Set "target_map" .target_map }}
+
+<!-- Molecule Title -->
+<h4 align="justify">{{ .data.name | title }}</h4>
+
+<!-- Molecule description -->
+<p align="justify">{{ .data.description }}</p>
+
+<!-- Molecule mechanism -->
+<p align="justify"><u>Mechanism:</u> {{ .data.mechanism }}</p>
+
+{{ if .data.links }}
+  <p align="justify"><u>Read more about it:</u></p></h5>
+  {{ if .data.links.wikipedia }}
+    <a href='{{ .data.links.wikipedia }}'><kbd class="alert-info">Wikipedia</kbd></a>
+  {{ end }}
+  {{ if .data.links.Drugdatabank }}
+    <a href='{{ .data.links.Drugdatabank }}'><kbd class="alert-info">Drug Data Bank</kbd></a>
+  {{ end }}
+  {{ if .data.links.chemspider }}
+    <a href='{{ .data.links.chemspider }}'><kbd class="alert-info">Chem Spider</kbd></a>
+  {{ end }}
+{{ end }}
+
+<!-- Targets -->
+{{ if .data.target }}
+  {{ if reflect.IsSlice .data.target }}
+      {{ $localScratch.Set "iter" .data.target }}
+  {{ else }}
+      {{ $localScratch.Set "iter" (slice .data.target) }}
+  {{ end }}
+  <p align="justify"><u>Targeting Modalities:</u></p>
+  {{ range $localScratch.Get "iter" }}
+    <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ . | title}}</kbd></a>
+  {{ end }}
+{{ end }}
+
+<!-- tag links to proteins involves in this target -->
+{{ if .data.protein }}
+  {{ if reflect.IsSlice .data.protein }}
+      {{ $localScratch.Set "iter" .data.protein }}
+  {{ else }}
+      {{ $localScratch.Set "iter" (slice .data.protein) }}
+  {{ end }}
+  <p align="justify"><u>Known Protein Interactions:</u></p>
+  {{ range $localScratch.Get "iter" }}
+    <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+  {{ end }}
+{{ end }}
+<hr>

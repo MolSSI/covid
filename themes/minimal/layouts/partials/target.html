@@ -5,8 +5,8 @@
 -->
 
 {{ $localScratch := newScratch }}
-{{ $localScratch.Set "proteinmap" .proteinmap }}
-{{ $localScratch.Set "baseURL" .baseURL }}
+{{ $localScratch.Set "protein_map" .protein_map }}
+{{ $localScratch.Set "thera_map" .thera_map }}
 
 <div class="col col-9">
 
@@ -19,8 +19,7 @@
   <!-- tag links to proteins involves in this target -->
   <h4 align="left">Protein targets:</h4>
   {{ range .context.proteins }}
-    <!-- NOTE: hyperlinks do not correctly link up to the right anchor point yet -->
-    <a href='{{ index ($localScratch.Get "proteinmap") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+    <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
 
   <!-- key therapeutics -->
@@ -29,20 +28,19 @@
     <h4 align="left">Potential therapeutic modalities:</h4>
       {{ range .context.therapeutic_modalities }}
        <!-- NOTE: hyperlinks do not correctly link up to the right anchor point yet -->
-       <a href="/modalities/#{{ . }}"><kbd class="alert-success">{{ . }}</kbd></a>
+       <a href='{{ index ($localScratch.Get "thera_map") . }}'><kbd class="alert-success">{{ . | title }}</kbd></a>
       {{ end }}
     </div>
   {{ end }}
 
 
-
   <!-- Key publications -->
-  {{ if .papers }}
+  {{ if .context.papers }}
   <h4 align="left">Key publications:</h4>
   <ul>
-    {{ range .papers }}
-    <!-- TODO: Pull more information about these publications automagically -->
-    <li> <div align="justify"><b>{{ .title }}</b> <a href="http://doi.org/{{ .doi }}"> [DOI] </a></div> </li>
+    {{ range .context.papers }}
+      <!-- TODO: Pull more information about these publications automagically -->
+      <li> <div align="justify"><b>{{ .title }}</b> <a href="http://doi.org/{{ .doi }}"> [DOI] </a></div> </li>
     {{ end }}
   </ul>
   {{ end }}
