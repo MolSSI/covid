@@ -4,7 +4,7 @@ therapeutic: monoclonal antibody
 links:
   -wikipedia: https://en.wikipedia.org/wiki/Tocilizumab
   -drugbank: https://www.drugbank.ca/drugs/DB06273
-target: soluble and membrane-bound IL-6
+target: host immune response
 mechanism: targets soluble and membrane-bound IL-6 receptors to decrease immune and inflammatory responses 
 protein: 
   -sIL-6R
