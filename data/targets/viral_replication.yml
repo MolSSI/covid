@@ -1,7 +1,10 @@
 target: viral replication
+name: Inhibition of viral polymerases
 description: >
   Inhibition of viral replication via inhibition of NSP7, NSP8, and RdRp is a feasible route to therapy.
-protein:
+proteins:
   - RdRP
   - nsp7
   - nsp8
+therapeutic_modalities:
+  - small molecule

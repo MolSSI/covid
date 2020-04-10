@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+        {{ partial "tags" . }}
+    </div>
+
+    <hr>
+
+    <!-- List all targets from data/targets/ -->
+    {{ range $.Site.Data.targets }}
+       {{ partial "target.html" . }}
+    {{ end }}
+
+    <hr>
+
+</main>
+
+{{ partial "footer" . }}

@@ -1,11 +1,11 @@
 target: spike cleavage
+name: Inhibiting cleavage of the SARS-CoV-2 spike protein
 description: >
   Proteins such as TMPRSS2 cleave the spike protein, enabling the release of S1
   and the reorganization of S2 to make the fusion core
-protein:
+proteins:
   - spike
   - TMPRSS2
-therapeutic:
+therapeutic_modalities:
   - antibody
-  - small molecule:
-    - serine protease inhibitor
+  - small molecule

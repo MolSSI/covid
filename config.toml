@@ -31,9 +31,14 @@ ignoreFiles = ["README.md$"]
     weight = 1
 
 [[menu.main]]
+    url = "/targets"
+    name = "Targets"
+    weight = 2
+
+[[menu.main]]
     hasChildren = true
     name = "Proteins"
-    weight = 2
+    weight = 3
 
     [[menu.main]]
         parent = "Proteins"
@@ -57,25 +62,25 @@ ignoreFiles = ["README.md$"]
 [[menu.main]]
     url = "/structures"
     name = "Structures"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 4
+    weight = 5
 
     [[menu.main]]
         parent = "About"
         url = "/about/"
         name = "About the Exchange"
         weight = 1
-        
+
     [[menu.main]]
         parent = "About"
         url = "/contributing/"
         name = "Contributing"
         weight = 2
-        
+
     [[menu.main]]
         parent = "About"
         url = "/collaborating/"
@@ -101,4 +106,3 @@ ignoreFiles = ["README.md$"]
     url = "https://twitter.com/MolSSI_NSF/"
     name = "twitter"
     weight = 3
-

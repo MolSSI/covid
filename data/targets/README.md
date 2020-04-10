@@ -8,8 +8,9 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 
 Each entry has the following required and optional keys:
 ```
-target: (required)
+target: (required unique keyword)
+name: (required)
 description: (required)
-protein: (required)
-therapeutic: one of [small molecule, antibody, peptide, vaccine]
+proteins: (required)
+therapeutic_modalities: one or ore of [small molecule, antibody, peptide, vaccine]
 ```
