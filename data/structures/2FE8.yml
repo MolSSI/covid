@@ -9,4 +9,7 @@ protein:
   - PL-PRO
 organism:
   - SARS
-images: images/protein_renderings/2FE8c.png
+images: 
+  - images/protein_renderings/2FE8a.png
+  - images/protein_renderings/2FE8b.png
+  - images/protein_renderings/2FE8c.png
