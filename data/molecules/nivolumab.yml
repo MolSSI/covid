@@ -8,6 +8,6 @@ therapeutic: monoclonal antibody
 links: 
   -wikipedia: https://en.wikipedia.org/wiki/Nivolumab
   -drugbank: https://www.drugbank.ca/drugs/DB09035
-target: PD-1, immune checkpoint programmed cell death protein 1 
+target: host immune response
 mechanism: Blocks PD-1 inhibitory signaling to T-cells 
 protein: PD-1
