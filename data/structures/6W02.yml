@@ -1,5 +1,7 @@
 data_type: "structure"
-pdbid: "6W02"
+pdbid: 
+  - "6W02"
+  - "3CLpro"
 protein: "NSP3"
 method: "x-ray diffraction"
 resolution: "1.5"
