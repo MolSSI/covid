@@ -1,5 +1,9 @@
 name: nivolumab
-description: Nivolumab is a full human IgG4 antibody that targets PD-1, programmed cell death protein 1, and is used in combination with protease inhibitors to activate T-cells to launch an immune response against the tumor. Used to combat cancer
+description: >
+  Nivolumab is a full human IgG4 antibody that targets PD-1, 
+  programmed cell death protein 1, and is used in combination 
+  with protease inhibitors to activate T-cells to launch an immune 
+  response against the tumor. Used to combat cancer
 therapeutic: monoclonal antibody 
 links: 
   -wikipedia: https://en.wikipedia.org/wiki/Nivolumab
