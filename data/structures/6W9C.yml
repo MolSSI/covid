@@ -1,10 +1,11 @@
-data_type: "structure"
-pdbid: "6w9c"
-protein: "PL-PRO"
-method: "x-ray diffraction"
-resolution: "2.7"
-organism: "SARS-CoV-2"
-pdb_doi: "10.2210/pdb6W9C/pdb"
-target: "PL-PRO protease activity"
-annotation: "The crystal structure of papain-like protease of SARS CoV-2"
-rating: "4"
+pdbid: 6w9c
+resolution: 2.7
+proteins:
+  - PL-PRO
+method: X-ray diffraction
+organisms:
+  - SARS-CoV-2
+targets:
+  - PL-PRO protease activity
+annotation: The crystal structure of papain-like protease of SARS CoV-2
+rating: 4

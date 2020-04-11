@@ -4,3 +4,4 @@ description: Cysteine protease essential for viral maturation
 organism: SARS-CoV-2
 targets:
   - 3CLpro protease activity
+image: images/protein_renderings/6Y84.png
