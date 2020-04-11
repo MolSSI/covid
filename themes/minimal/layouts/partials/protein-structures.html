@@ -1,9 +1,13 @@
 <!-- Condensed form for all structures associated with a protein -->
 
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .context) }}
+{{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
+
 <div class="col col-9">
 
   <!-- protein name -->
-  <h3 class="anchor" id="{{.name | anchorize }}"><b>{{ .protein.name }}</b>
+  <h3 align="left" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b>
 
   <!-- protein description -->
   <h4 align="justify">{{ .protein.description }}</h4>
@@ -11,8 +15,9 @@
   <!-- illustrative structure image -->
   {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
 
-  <!-- TODO: Dynamically add associated therapeutic modalities -->
-  <kbd class="item-tag">small molecule</kbd>
+  {{ range (index ($localScratch.Get "thera_by_protein") (.protein.protein) ) }}
+    <a href='{{ index ($localScratch.Get "thera_map") . }}'><kbd class="alert-success">{{ . | title }}</kbd></a>
+  {{ end }}
 
   <!-- top (useful) structures containing this protein -->
   <!-- TODO: Change this to link to the individual structure pages with attached models? -->
@@ -46,6 +51,6 @@
 
   <!-- TODO: Add most useful molecules/bioassay data? -->
 
-  - - -
+  <hr>
 
 </div>

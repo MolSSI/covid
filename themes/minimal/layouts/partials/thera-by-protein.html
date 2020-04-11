@@ -1,0 +1,28 @@
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "map" dict }}
+
+{{ range $.Site.Data.molecules }}
+    {{ if .protein }}
+        {{ if reflect.IsSlice .protein }}
+            {{ $localScratch.Set "iter" .protein }}
+        {{ else }}
+            {{ $localScratch.Set "iter" (slice .protein) }}
+        {{ end }}
+
+        {{ $localScratch.Set "data" . }}
+
+        {{ range $localScratch.Get "iter" }}
+            {{ if not (index ($localScratch.Get "map") .) }}
+                {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict . slice) ) }}
+            {{ end }}
+
+            {{ $data := (index ($localScratch.Get "map") .) | append ($localScratch.Get "data").therapeutic }}
+            {{ $data := uniq $data }}
+
+            {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict . $data) ) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return ($localScratch.Get "map") }}

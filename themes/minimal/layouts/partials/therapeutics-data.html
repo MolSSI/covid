@@ -2,7 +2,7 @@
 {{ $localScratch := newScratch }}
 {{ $localScratch.Set "term" .term }}
 {{ $localScratch.Set "data" .data }}
-{{ $localScratch.Set "protein_map" .protein_map }}
+{{ $localScratch.Set "structure_map" .structure_map }}
 {{ $localScratch.Set "target_map" .target_map }}
 
 <!-- Molecule Title -->
@@ -49,7 +49,7 @@
   {{ end }}
   <p align="justify"><u>Known Protein Interactions:</u></p>
   {{ range $localScratch.Get "iter" }}
-    <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+    <a href='{{ index ($localScratch.Get "structure_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
 {{ end }}
 <hr>

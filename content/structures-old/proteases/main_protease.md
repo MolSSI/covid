@@ -5,4 +5,3 @@ proteins: ["Viral Proteins", "Proteases", "Active Interest Proteins"]
 proteins_weight: 1
 protein: "3CLpro"
 ---
-

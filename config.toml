@@ -63,10 +63,6 @@ ignoreFiles = ["README.md$"]
     name = "Structures"
     weight = 4
 
-[[menu.main]]
-    url = "/structures2"
-    name = "Structures2"
-    weight = 5
 
 [[menu.main]]
     url = "/models"
