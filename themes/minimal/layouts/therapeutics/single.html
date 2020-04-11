@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
 {{ $localScratch := newScratch }}
-{{ $localScratch.Set "protein_map" (partial "protein-map" .) }}
+{{ $localScratch.Set "structure_map" (partial "structure-map" .) }}
 {{ $localScratch.Set "target_map" (partial "target-map" .) }}
 {{ $localScratch.Set "thera_map" (partial "thera-map" .) }}
 
@@ -20,8 +20,6 @@
         <h5>{{ .Description }}</h5>
     </div>
 
-    <hr>
-
     <!-- List all targets from data/targets/ -->
     {{ range (sort ($localScratch.Get "thera_categories")) }}
         <hr class="hr-thick">
@@ -33,7 +31,7 @@
             {{ range $.Site.Data.molecules }}
                 {{ $localScratch.Set "data" . }}
                 {{ if and (.) (in .therapeutic ($localScratch.Get "term")) }}
-                    {{ partial "therapeutics-data.html" (dict "term" ($localScratch.Get "term") "data" ($localScratch.Get "data") "protein_map" ($localScratch.Get "protein_map") "target_map" ($localScratch.Get "target_map") )}}
+                    {{ partial "therapeutics-data.html" (dict "term" ($localScratch.Get "term") "data" ($localScratch.Get "data") "structure_map" ($localScratch.Get "structure_map") "target_map" ($localScratch.Get "target_map") )}}
                 {{ end }}
             {{ end }}
 

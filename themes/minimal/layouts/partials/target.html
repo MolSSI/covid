@@ -5,7 +5,7 @@
 -->
 
 {{ $localScratch := newScratch }}
-{{ $localScratch.Set "protein_map" .protein_map }}
+{{ $localScratch.Set "structure_map" .structure_map }}
 {{ $localScratch.Set "thera_map" .thera_map }}
 
 <div class="col col-9">
@@ -19,7 +19,7 @@
   <!-- tag links to proteins involves in this target -->
   <h4 align="left">Protein targets:</h4>
   {{ range .context.proteins }}
-    <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+    <a href='{{ index ($localScratch.Get "structure_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
 
   <!-- key therapeutics -->
