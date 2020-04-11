@@ -37,7 +37,7 @@
         {{ end }}
 
         {{ if and ($localScratch.Get "match") (ne $file "TEMPLATE") }}
-            <h3>Structure: {{ $file }}</h3>
+            <h3>Structure: {{ $file | upper }}</h3>
             <br>
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
@@ -56,7 +56,7 @@
                         <td align="justify">{{ partial "ifx" $content.annotation }}</td>
                         <td>{{ partial "ifx" $content.method }}</td>
                         <td>{{ partial "resolution" $content.resolution }}</td>
-                        <td><a href="{{ $content.pdb_doi | safeURL }}">{{ $file }}</a></td>
+                        <td><a href="{{ $content.pdb_doi | safeURL }}">{{ $file | upper }}</a></td>
                         <td><a href="{{ $content.publication_doi | safeHTML}}">DOI</a></td>
                         <td> {{ partial "related-proteins" (dict "current" (($localScratch.Get "page").Param "protein") "data" $content.protein "baseurl" $.Site.BaseURL "keymap" ($localScratch.Get "map")) }}</td>
                     </tr>
