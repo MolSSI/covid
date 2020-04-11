@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
 {{ $localScratch := newScratch }}
-{{ $localScratch.Set "structure_map" (partial "structure-map" .) }}
+{{ $localScratch.Set "protein_map" (partial "protein-map" .) }}
 {{ $localScratch.Set "thera_map" (partial "thera-map" .) }}
 
 <main>
@@ -16,7 +16,7 @@
 
     <!-- List all targets from data/targets/ -->
     {{ range $.Site.Data.targets }}
-       {{ partial "target.html" (dict "context" . "structure_map" ($localScratch.Get "structure_map") "thera_map" ($localScratch.Get "thera_map") )}}
+       {{ partial "target.html" (dict "context" . "protein_map" ($localScratch.Get "protein_map") "thera_map" ($localScratch.Get "thera_map") )}}
     {{ end }}
 
     <hr>

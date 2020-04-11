@@ -48,7 +48,7 @@ targets: (one or more of the following options)
   - cell cycle inhibitors
 annotation: (required)
 rating: (required) (1= poor quality to 5=best quality)
-organisms: (one or more fo the following options)
+organisms: (required) (one or more fo the following options as a list)
   - SARS-CoV-2
   - SARS-CoV
   - host

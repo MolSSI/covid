@@ -1,0 +1,86 @@
+<!-- Condensed form for all structures associated with a protein -->
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .context) }}
+{{ $localScratch.Set "target_map" (partial "target-map" .context) }}
+{{ $localScratch.Set "protein_map" (partial "protein-map" .context) }}
+{{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
+
+<div class="col col-9">
+
+  {{ $pdb := .structure.pdbid }}
+  {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
+  {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
+  {{ if $data }}
+    {{ $localScratch.Set "pub_link" (print "http://doi.org/" $data.rcsb_primary_citation.pdbx_database_id_doi) }}
+    {{ $localScratch.Set "title" (print ($data.struct.title | title) "(" ($pdb | upper) ")")  }}
+    {{ $localScratch.Set "method" ((index $data.exptl 0).method | lower | title) }}
+    {{ $localScratch.Set "resolution" (index ($data.rcsb_entry_info.resolution_combined) 0) }}
+  {{ else }}
+    {{ $localScratch.Set "title" ($pdb | upper) }}
+    {{ $localScratch.Set "pub_link" nil }}
+    {{ $localScratch.Set "method" nil }}
+    {{ $localScratch.Set "resolution" nil }}
+  {{ end }}
+
+  {{ $pub_link := $localScratch.Get "pub_link" }}
+  {{ $title := $localScratch.Get "title"}}
+  {{ $method := $localScratch.Get "method"  }}
+  {{ $resolution := $localScratch.Get "resolution" }}
+
+
+  <!-- Structure name -->
+  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'><b>{{ $title }}</b></h3>
+
+  <!-- Structure Annotation -->
+  {{ if not (in ( $title | lower) (.structure.annotation | lower) ) }}
+    <h4 align="justify">Additional: {{ .structure.annotation }}</h4>
+  {{ end }}
+
+  <!-- illustrative structure image(s) -->
+  <p>
+  {{ if .structure.images }}
+    {{ $images := partial "ensure-slice" .structure.images }}
+
+    {{ range $images }}
+      <img width=200 src="/{{ . }}">
+    {{ end }}
+
+  {{ else }}
+    No Image Provided
+  {{ end }}
+  </p>
+
+  <h3> Structure Data and Links </h3>
+  <p>
+    <a href='{{ $url }}'><kbd class="alert-info">RCSB PDB</kbd></a>
+    {{ if $pub_link }}
+      <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
+    {{ end }}
+  </p>
+  {{ if $method }}
+    <p>Experimental Method: {{ $method }}</p>
+  {{ end }}
+  {{ if $resolution }}
+    <p>Resolution: {{ $resolution }} Å</p>
+  {{ end }}
+
+  <h4> Known Targets Modalities: </h4>
+  <p>
+  {{ $targets := partial "ensure-slice" .structure.targets }}
+  {{ range $targets }}
+    <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ (index ($localScratch.Get "target_map") .).name | title }}</kbd></a>
+  {{ end }}
+  </p>
+
+  <h4> Related Proteins: </h4>
+  <p>
+  {{ $proteins := partial "ensure-slice" .structure.proteins }}
+  {{ range $proteins }}
+    <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
+  {{ end }}
+  </p>
+
+  <hr>
+
+</div>

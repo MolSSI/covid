@@ -1,7 +1,7 @@
 target: "PLpro protease activity"
 name: Inhibition of PL-PRO protease activity
 description: >
-  PLpro (nsp3, papain-like protease) is a viral cysteine protease
+  PLpro (NSP3, papain-like protease) is a viral cysteine protease
   responsible for maturation of the viral polyprotein, necessary for
   infection. Also involved in repressing host immune response.
 protein:
