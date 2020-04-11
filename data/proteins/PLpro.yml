@@ -1,5 +1,5 @@
 protein: PLpro
-name: SARS-CoV-2 Papain-like protease
+name: SARS-CoV-2 Papain-like protease (NSP3)
 description: >
   PLpro (nsp3, papain-like protease) is a viral cysteine protease
   responsible for maturation of the viral polyprotein, necessary for
@@ -8,3 +8,4 @@ organism: SARS-CoV-2
 targets:
   - PLpro protease activity
 image: images/protein_renderings/2FE8a.png
+interest: active
