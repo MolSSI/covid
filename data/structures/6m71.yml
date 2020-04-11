@@ -5,7 +5,7 @@ protein:
   - NSP7
   - NSP8
   - RdRP
-organism:
+organisms:
   - SARS-CoV-2
   - human
 annotation: High-resolution cyro-EM structure of the SARS-CoV-2 NSP7-8 complex with RdRP

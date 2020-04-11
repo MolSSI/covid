@@ -1,0 +1,9 @@
+{{ $localScratch := newScratch }}
+
+{{ if reflect.IsSlice . }}
+    {{ $localScratch.Set "iter" . }}
+{{ else }}
+    {{ $localScratch.Set "iter" (slice .) }}
+{{ end }}
+
+{{ return ($localScratch.Get "iter") }}

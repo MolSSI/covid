@@ -2,14 +2,11 @@
 
 {{ $localScratch := newScratch }}
 {{ $localScratch.Set "rowcount" 0 }}
-<!-- Isnt used right now, but will be to auto populate table -->
 
-<!-- Populate Targets -->
-{{ $localScratch.Set "targets" slice }}
-{{ range $.Site.Data.targets }}
-    {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append . ) }}
-{{ end }}
-{{ $localScratch.Set "targets" (uniq ($localScratch.Get "targets") ) }}
+{{ $targets := partial "target-map" . }}
+{{ $proteins := partial "protein-map" . }}
+{{ $structures := partial "structure-map" . }}
+{{ $thera := partial "thera-map" . }}
 
 
 <main>
@@ -19,66 +16,36 @@
         <h3>{{ markdownify .Site.Params.Description }}</h3>
         {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
 
+
         <!-- Establish a scope-independent scratch -->
         {{ $mainScratch := newScratch }}
 
-        <span class="table-responsive">
-            <table class="table table-striped table-hover text-center-row">
-              <thead>
-                <tr>
-                    <th scope="col">Proteins</th>
-                    <th scope="col">Structures</th>
-                    <th scope="col">Targets</th>
-                    <th scope="col">Therapeutics</th>
-                </tr>
-              </thead>
-              <tbody>
-                    <tr>
-                        <th><a href="/proteins/">All Proteins</a></th>
-                        <th><a href="/structures/">All Structures</a></th>
-                        <th><a href="/targets/">All Targets</a></th>
-                        <th><a href="/theraputics/">All Therapeutics</a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="/proteins/viral-proteins/">Viral Proteins</a></th>
-                        <th><a href="/structures/viral-proteins/">Viral Proteins</a></th>
-                        <th><a href='/targets/#{{ "Inhibition of 3CL-PRO protease activity" | anchorize }}'>Inhibition of 3CL-PRO protease activity</a></th>
-                        <th><a href="/theraputics/antibodies/">Antibodies</a></th>
-                    </tr>
-                    <tr>
-                        <th><a href="/proteins/host-proteins/">Host Proteins</a></th>
-                        <th><a href="/structures/host-proteins/">Host Proteins</a></th>
-                        <th><a href='/targets/#{{ "Inhibition of PL-PRO protease activity" | anchorize }}'>Inhibition of PL-PRO protease activity</a></th>
-                        <th><a href="/theraputics/peptides/">Peptides</a></th>
-                    </tr>
-                    <tr>
-                        <th><br/></th>
-                        <th><br/></th>
-                        <th><a href='/targets/#{{ "Blocking SARS-CoV-2 Spike protein binding to human ACE2 receptor" | anchorize }}'>Blocking SARS-CoV-2 Spike protein binding to human ACE2 receptor</a></th>
-                        <th><a href="/theraputics/small_molecules/">Small (Optionally Drug-like) Molecules</a></th>
-                    </tr>
-                    <tr>
-                        <th><br/></th>
-                        <th><br/></th>
-                        <th><a href='/targets/#{{ "Inhibiting cleavage of the SARS-CoV-2 spike protein" | anchorize }}'>Inhibiting cleavage of the SARS-CoV-2 spike protein</a></th>
-                        <th><a href="/theraputics/vaccines/">Vaccines</a></th>
-                    </tr>
-                    <tr>
-                        <th><br/></th>
-                        <th><br/></th>
-                        <th><a href='/targets/#{{ "Inhibition of formation of the viral fusion core" | anchorize }}'>Inhibition of formation of the viral fusion core</a></th>
-                        <th><br/></th>
-                    </tr>
-                    <tr>
-                        <th><br/></th>
-                        <th><br/></th>
-                        <th><a href='/targets/#{{ "Inhibition of viral polymerases" | anchorize }}'>Inhibition of viral polymerases</a></th>
-                        <th><br/></th>
-                    </tr>
-                </tr>
-              </tbody>
-            </table>
-        </span>
+        <div id="data">
+            <h3>Targets:</h3>
+            <p>
+                {{ range $targets }}
+                <a href="{{ .link }}"><kbd class="item-tag" style="">{{ .name | title }}</kbd></a><br>
+                {{ end }}
+            </p>
+            <h3>Proteins:</h3>
+            <p>
+                {{ range $pname, $plink := $proteins }}
+                <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Structures:</h3>
+            <p>
+                {{ range $pname, $plink := $structures }}
+                <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Therapeutics:</h3>
+            <p>
+                {{ range $tname, $tlink := $thera }}
+                <a href="{{ $tlink }}"><kbd class="alert-success" style="">{{ $tname }}</kbd></a>
+                {{ end }}
+            </p>
+        </div>
 
     </div>
 
