@@ -44,20 +44,20 @@
                   <thead>
                     <tr>
                       <th scope="col">Description</th>
-                      <th scope="col">Origin Method</th>
+                      <th scope="col">Method</th>
                       <th scope="col">Resolution</th>
-                      <th scope="col">Get the Structure</th>
-                      <th scope="col">Read the Paper</th>
+                      <th scope="col">PDBID</th>
+                      <th scope="col">Citation</th>
                       <th scope="col">Related Proteins</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <td>{{ partial "ifx" $content.annotation }}</td>
+                        <td align="justify">{{ partial "ifx" $content.annotation }}</td>
                         <td>{{ partial "ifx" $content.method }}</td>
-                        <td>{{ partial "ifx" $content.resolution }}</td>
-                        <td><a href="{{ $content.pdb_doi | safeURL }}">PDB {{ $file }}</a></td>
-                        <td><a href="{{ $content.publication_doi | safeHTML}}">Link out to Paper</a></td>
+                        <td>{{ partial "resolution" $content.resolution }}</td>
+                        <td><a href="{{ $content.pdb_doi | safeURL }}">{{ $file }}</a></td>
+                        <td><a href="{{ $content.publication_doi | safeHTML}}">DOI</a></td>
                         <td> {{ partial "related-proteins" (dict "current" (($localScratch.Get "page").Param "protein") "data" $content.protein "baseurl" $.Site.BaseURL "keymap" ($localScratch.Get "map")) }}</td>
                     </tr>
                   </tbody>
