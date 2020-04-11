@@ -7,7 +7,7 @@
 <div class="col col-9">
 
   <!-- protein name -->
-  <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b>{{ .protein.name }}</b>
+  <h3 align="left" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b>
 
   <!-- protein description -->
   <h4 align="justify">{{ .protein.description }}</h4>
@@ -15,7 +15,6 @@
   <!-- illustrative structure image -->
   {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
 
-  <!-- TODO: Dynamically add associated therapeutic modalities -->
   {{ range (index ($localScratch.Get "thera_by_protein") (.protein.protein) ) }}
     <a href='{{ index ($localScratch.Get "thera_map") . }}'><kbd class="alert-success">{{ . | title }}</kbd></a>
   {{ end }}
