@@ -1,0 +1,51 @@
+<!-- Condensed form for all structures associated with a protein -->
+
+<div class="col col-9">
+
+  <!-- protein name -->
+  <h3 class="anchor" id="{{.name | anchorize }}"><b>{{ .protein.name }}</b>
+
+  <!-- protein description -->
+  <h4 align="justify">{{ .protein.description }}</h4>
+
+  <!-- illustrative structure image -->
+  {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
+
+  <!-- TODO: Dynamically add associated therapeutic modalities -->
+  <kbd class="item-tag">small molecule</kbd>
+
+  <!-- top (useful) structures containing this protein -->
+  <!-- TODO: Change this to link to the individual structure pages with attached models? -->
+  <h4 align="left">Selected structural data: <a href="">[all]</a></h4>
+  {{ $protein_id := .protein.protein }}
+  {{ range $structure := .context.Site.Data.structures }}
+     {{ if in $structure.proteins $protein_id }}
+       <div class="item" align="left"><a href="https://rcsb.org/structure/{{ $structure.pdbid }}">[{{ $structure.pdbid }}]</a>
+       {{ $structure.annotation }}
+       {{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+       </div>
+
+     {{ end }}
+
+  {{ end }}
+
+  <!-- top (useful) models containing this protein -->
+  <!-- TODO: Change this to link to the individual structures pages with attached models? -->
+  <h4 align="left">Selected models: <a href="">[all]</a></h4>
+  {{ $protein_id := .protein.protein }}
+  {{ range $structure := .context.Site.Data.structures }}
+     {{ if in $structure.proteins $protein_id }}
+       <div class="item" align="left"><a href="https://rcsb.org/structure/{{ $structure.pdbid }}">[{{ $structure.pdbid }}]</a>
+       {{ $structure.annotation }}
+       {{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+       </div>
+
+     {{ end }}
+
+  {{ end }}
+
+  <!-- TODO: Add most useful molecules/bioassay data? -->
+
+  - - -
+
+</div>

@@ -37,28 +37,30 @@
         {{ end }}
 
         {{ if and ($localScratch.Get "match") (ne $file "TEMPLATE") }}
-            <h3>Structure: {{ $file }}</h3>
+            <h3><a href="{{ $content.pdb_doi | safeURL }}">{{ $file | upper }}</a></h3>
             <br>
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">Description</th>
-                      <th scope="col">Origin Method</th>
-                      <th scope="col">Resolution</th>
-                      <th scope="col">Get the Structure</th>
-                      <th scope="col">Read the Paper</th>
-                      <th scope="col">Related Proteins</th>
+                      <th scope="col"><p align="center">Description</p></th>
+                      <th scope="col"><p align="center">Method</p></th>
+                      <th scope="col"><p align="center">Resolution</p></th>
+                      <th scope="col"><p align="center">PDBID</p></th>
+                      <th scope="col"><p align="center">Citation</p></th>
+                      <th scope="col"><p align="center">Related Proteins</p></th>
+                      <th scope="col"><p align="center">Rating<p></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                        <td>{{ partial "ifx" $content.annotation }}</td>
+                        <td align="justify">{{ partial "ifx" $content.annotation }}</td>
                         <td>{{ partial "ifx" $content.method }}</td>
-                        <td>{{ partial "ifx" $content.resolution }}</td>
-                        <td><a href="{{ $content.pdb_doi | safeURL }}">PDB {{ $file }}</a></td>
-                        <td><a href="{{ $content.publication_doi | safeHTML}}">Link out to Paper</a></td>
+                        <td>{{ partial "resolution" $content.resolution }}</td>
+                        <td><a href="{{ $content.pdb_doi | safeURL }}">{{ $file | upper }}</a></td>
+                        <td><a href="{{ $content.publication_doi | safeHTML}}">DOI</a></td>
                         <td> {{ partial "related-proteins" (dict "current" (($localScratch.Get "page").Param "protein") "data" $content.protein "baseurl" $.Site.BaseURL "keymap" ($localScratch.Get "map")) }}</td>
+                        <td>{{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}</td>
                     </tr>
                   </tbody>
                 </table>

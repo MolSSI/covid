@@ -1,9 +1,10 @@
 pdbid: 6w41
-target:
+targets:
   - spike binding
-protein:
+proteins:
   - spike
   - RBD
-therapeutic: antibody
+therapeutics:
+  - antibody
 annotation: Low resolution X-ray structure of human antibody CR3022 bound to the receptor binding domain (RBD) of the spike protein.
 rating: 2

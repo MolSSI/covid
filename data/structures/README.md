@@ -9,7 +9,7 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 Each entry has the following required and optional keys:
 ```
 pdbid: (required)
-protein: (possible options listed)
+proteins: (one or more of the following options)
   - spike
   - RBD
   - S1
@@ -37,7 +37,7 @@ protein: (possible options listed)
   - 3CLpro
   - PLpro
   - RdRP
-target: (possible options listed)
+targets: (one or more of the following options)
   - spike binding
   - spike cleavage
   - viral replication
@@ -45,10 +45,14 @@ target: (possible options listed)
   - PLpro protease activity
   - viral fusion
   - host immune response
-  - cell cycle inhibitors 
-ligands: (optional)
+  - cell cycle inhibitors
 annotation: (required)
 rating: (required) (1= poor quality to 5=best quality)
+organisms: (one or more fo the following options)
+  - SARS-CoV-2
+  - SARS-CoV
+  - host
+ligands: (optional)
 ```
 
 ## Notes

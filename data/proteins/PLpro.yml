@@ -7,3 +7,4 @@ description: >
 organism: SARS-CoV-2
 targets:
   - PLpro protease activity
+image: images/protein_renderings/2FE8a.png

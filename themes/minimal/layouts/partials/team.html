@@ -1,0 +1,16 @@
+<div class="col col-9">
+
+  <!-- team name -->
+  <h3 class="anchor" id="{{.name | anchorize }}"><b>{{ .name }}</b></h3>
+
+  <!-- members -->
+  <ul>
+    {{ range .members }}
+      <!-- TODO: Pull more information about these publications automagically -->
+      <li> <div align="left"> {{ with .url }}<a href="{{.}}">{{ end }} <b>{{ .name }}</b> {{ with .url }}</a>{{ end }} </div> </li>
+    {{ end }}
+  </ul>
+
+  - - -
+
+</div>
