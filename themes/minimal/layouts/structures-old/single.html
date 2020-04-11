@@ -1,0 +1,80 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+        {{ partial "tags" . }}
+    </div>
+
+    {{ $content := .Content }}
+    <div align="start" class="content">
+        {{ $content }}
+
+    </div>
+
+    {{ $localScratch := newScratch }}
+
+    <!-- Counter -->
+    {{ $localScratch.Set "npages" 0 }}
+
+    <!-- page info -->
+    {{ $localScratch.Set "page" .Page }}
+
+    {{ $localScratch.Set "map" dict }}
+    {{ range .CurrentSection.Pages }}
+        {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict (string (.Param "protein")) .RelPermalink) ) }}
+    {{ end }}
+
+    <!-- loop through all the data at a file level so I can get YAML file names-->
+    {{ range $file, $content := .Site.Data.structures }}
+        <!-- Determine if structure is for this data -->
+        {{ if reflect.IsSlice $content.protein }}
+            {{ $localScratch.Set "match" (in $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ else }}
+            {{ $localScratch.Set "match" (eq $content.protein (($localScratch.Get "page").Param "protein")) }}
+        {{ end }}
+
+        {{ if and ($localScratch.Get "match") (ne $file "TEMPLATE") }}
+            <h3><a href="{{ $content.pdb_doi | safeURL }}">{{ $file | upper }}</a></h3>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col"><p align="center">Description</p></th>
+                      <th scope="col"><p align="center">Method</p></th>
+                      <th scope="col"><p align="center">Resolution</p></th>
+                      <th scope="col"><p align="center">PDBID</p></th>
+                      <th scope="col"><p align="center">Citation</p></th>
+                      <th scope="col"><p align="center">Related Proteins</p></th>
+                      <th scope="col"><p align="center">Rating<p></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td align="justify">{{ partial "ifx" $content.annotation }}</td>
+                        <td>{{ partial "ifx" $content.method }}</td>
+                        <td>{{ partial "resolution" $content.resolution }}</td>
+                        <td><a href="{{ $content.pdb_doi | safeURL }}">{{ $file | upper }}</a></td>
+                        <td><a href="{{ $content.publication_doi | safeHTML}}">DOI</a></td>
+                        <td> {{ partial "related-proteins" (dict "current" (($localScratch.Get "page").Param "protein") "data" $content.protein "baseurl" $.Site.BaseURL "keymap" ($localScratch.Get "map")) }}</td>
+                        <td>{{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <!-- Add one to the counter -->
+            {{ $localScratch.Set "npages" (add ($localScratch.Get "npages") 1) }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Content if nothing here yet -->
+    {{ if eq ($localScratch.Get "npages") 0 }}
+        {{ partial "no-data" $.Page.Title }}
+    {{ end }}
+
+</main>
+
+{{ partial "footer" . }}
