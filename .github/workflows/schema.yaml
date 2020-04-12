@@ -5,14 +5,13 @@ on: [push, pull_request]
 jobs:
   test:
 
-    runs-on: {{ '${{ matrix.os }}' }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest]
         python-version: [3.8]
     env:
-      PYVER: {{ '${{ matrix.python-version }}' }}
-      CI_OS: {{ '${{ matrix.os }}' }}
+      PYVER: 3.8
+      CI_OS: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
