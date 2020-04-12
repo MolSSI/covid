@@ -1,0 +1,16 @@
+name: "SARS-CoV-2 RdRP (NSP12) in complex with cofactors NSP7 and NSP8: ISOLDE refined model"
+pdbids:
+  - 7btf
+proteins:
+  - RdRP
+  - nsp7
+  - nsp8
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 7btf that fixes misthreading in the vininity of residues 910-920 where residues were shifted within density by 9 residues.
+  See [a complete description](https://twitter.com/CrollTristan/status/1247797030983852033) of the issues remedied by this model.
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV-2/7btf
+pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV-2/7btf/7btf.pdb
+creator: Tristan Croll
+rating: 5

@@ -12,5 +12,7 @@ Structures on this page are grouped in tiers:
 4. Structure Star Rating
 5. Model Star Ratings
 
-Because of the sorting, structures may appear in multiple groups under the first three categories, 
+Because of the sorting, structures may appear in multiple groups under the first three categories,
 but they will all link out to the same locations.
+
+Many structural annotations and reviews come from the [Coronavirus Structural Task Force](https://insidecorona.net/).

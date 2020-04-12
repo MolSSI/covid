@@ -1,7 +1,7 @@
 ---
-title: Models (WIP)
-description: Structure Models (WIP)
+title: Models
+description: Structural models for use in virtual screening, free energy calculations, and molecular simulation.
 type: models
 ---
 
-This page is a work in progress. Please bare with us while we finish this page.
+Many models come from the [Coronavirus Structural Task Force](https://insidecorona.net/).
