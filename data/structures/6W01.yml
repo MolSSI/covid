@@ -1,7 +1,7 @@
 pdbid: 6W01
 resolution: 1.9
 method: X-ray diffraction
-protein:
+proteins:
   - NSP15
 organisms:
   - SARS-CoV-2

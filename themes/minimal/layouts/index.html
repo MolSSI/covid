@@ -7,6 +7,7 @@
 {{ $proteins := partial "protein-map" . }}
 {{ $structures := partial "structure-map" . }}
 {{ $thera := partial "thera-map" . }}
+{{ $model := partial "model-map" . }}
 
 
 <main>
@@ -15,7 +16,6 @@
         <h2>{{ .Site.Title }}</h2>
         <h3>{{ markdownify .Site.Params.Description }}</h3>
         {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
-
 
         <img src="images/sars-cov-2-600x300.jpg">
 
@@ -39,6 +39,12 @@
             <p>
                 {{ range $pname, $plink := $structures }}
                 <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Models:</h3>
+            <p>
+                {{ range $mname, $mlink := $model }}
+                <a href="{{ $mlink }}"><kbd class="bg-primary" style="">{{ $mname }}</kbd></a>
                 {{ end }}
             </p>
             <h3>Therapeutics:</h3>

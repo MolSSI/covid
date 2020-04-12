@@ -11,7 +11,7 @@ ignoreFiles = ["README.md$"]
 
 [params]
     author = "MolSSI and BioExcel"
-    description = "You're here for data. Lets go."
+    description = "Aggregating critical information to accelerate drug discovery for the molecular modeling and simulation community."
     githubUsername = "#"
     accent = "red"
     showBorder = true
@@ -44,7 +44,7 @@ ignoreFiles = ["README.md$"]
 [[menu.main]]
     hasChildren = true
     name = "Simulations"
-    weight = 2
+    weight = 8
 
     [[menu.main]]
         parent = "Simulations"
@@ -71,7 +71,7 @@ ignoreFiles = ["README.md$"]
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 8
+    weight = 9
 
     [[menu.main]]
         parent = "About"

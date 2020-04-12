@@ -16,3 +16,7 @@ Because of the sorting, structures may appear in multiple groups under the first
 but they will all link out to the same locations.
 
 Many structural annotations and reviews come from the [Coronavirus Structural Task Force](https://insidecorona.net/).
+
+More ★ = higher rated structures. 
+
+Zero ★ indicate no rating is done yet.

@@ -1,8 +1,8 @@
-name: "SARS-CoV-2 PL-PRO: ISOLDE refined model"
+name: "SARS-CoV-2 PLpro: ISOLDE refined model"
 pdbids:
   - 6w9c
 proteins:
-  - PL-PRO
+  - PLpro
 organism:
   - SARS-CoV-2
 description: >
