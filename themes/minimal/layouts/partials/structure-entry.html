@@ -8,7 +8,7 @@
 
 <div class="col col-9">
 
-  {{ $pdb := .structure.pdbid }}
+  {{ $pdb := upper .structure.pdbid }}
   {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
   {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
   {{ if $data }}
@@ -39,32 +39,40 @@
 
   <!-- illustrative structure image(s) -->
   <p>
+  {{ $view3d := "https://www.rcsb.org/3d-view/{{ upper .structure.pdbid }}/1" }}
   {{ if .structure.images }}
+    <!-- show provided images -->
     {{ $images := partial "ensure-slice" .structure.images }}
 
     {{ range $images }}
-      <img width=200 src="/{{ . }}">
+      <a href="{{ $view3d }}"><img width=200 src="/{{ . }}"></a>
     {{ end }}
 
   {{ else }}
-    No Image Provided
+      <!-- show image from RCSB -->
+      {{ $pdbid := lower .structure.pdbid }}
+      <a href="{{ $view3d }}"><img width=200 src="https://cdn.rcsb.org/images/rutgers/{{ substr $pdbid 1 2 }}/{{ $pdbid }}/{{ $pdbid }}.pdb1-500.jpg"></a>
   {{ end }}
   </p>
 
   <h3> Structure Data and Links </h3>
   <p>
-    <a href='{{ $url }}'><kbd class="alert-info">RCSB PDB</kbd></a>
+    <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
+    <a href="{{ $view3d }}"><kbd class="alert-info">View 3D</kbd></a>
     {{ if $pub_link }}
       <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
     {{ end }}
   </p>
   {{ if $method }}
-    <p>Experimental Method: {{ $method }}</p>
-  {{ end }}
-  {{ if $resolution }}
-    <p>Resolution: {{ $resolution }} Å</p>
+    <p>
+    Experimental Method: {{ $method }}
+    {{ if $resolution }}
+      | Resolution: {{ $resolution }} Å
+    {{ end }}
+    </p>
   {{ end }}
 
+  <!-- TODO: There are dashes ('-') being prepended here---fix them? -->
   <h4> Known Targets Modalities: </h4>
   <p>
   {{ $targets := partial "ensure-slice" .structure.targets }}
