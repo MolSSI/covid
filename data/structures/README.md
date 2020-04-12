@@ -46,8 +46,8 @@ targets: (one or more of the following options)
   - viral fusion
   - host immune response
   - cell cycle inhibitors
-annotation: (required)
-rating: (required) (1= poor quality to 5=best quality)
+annotation: (optional) Otherwise will be set to RCSB PDB Title
+rating: (optinal) (1= poor quality to 5=best quality)
 organisms: (required) (one or more fo the following options as a list)
   - SARS-CoV-2
   - SARS-CoV

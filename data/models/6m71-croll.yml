@@ -3,8 +3,8 @@ pdbids:
   - 6m71
 proteins:
   - RdRP
-  - nsp7
-  - nsp8
+  - NSP7
+  - NSP8
 organism:
   - SARS-CoV-2
 description: >

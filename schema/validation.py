@@ -1,181 +1,168 @@
-from pydantic import BaseModel, ValidationError, validator
+from pydantic import BaseModel, ValidationError, validator, AnyUrl, StrictInt
 from typing import Optional, List, Union, Dict
 from yaml import safe_load
+from enum import Enum
 from os import walk
 from os.path import join
 
+
+class ValidProteins(str, Enum):
+    spike = 'spike'
+    RBD = 'RBD'
+    S1 = 'S1'
+    S2 = 'S2'
+    ACE2 = 'ACE2'
+    NSP1 = 'NSP1'
+    NSP2 = 'NSP2'
+    NSP4 = 'NSP4'
+    NSP6 = 'NSP6'
+    NSP7 = 'NSP7'
+    NSP8 = 'NSP8'
+    NSP9 = 'NSP9'
+    NSP10 = 'NSP10'
+    NSP11 = 'NSP11'
+    NSP13 = 'NSP13'
+    NSP14 = 'NSP14'
+    NSP15 = 'NSP15'
+    NSP16 = 'NSP16'
+    fusion_core = 'fusion core'
+    HR1 = 'HR1'
+    HR2 = 'HR2'
+    TMPRSS2 = 'TMPRSS2'
+    Mpro = '3CLpro'
+    PLpro = 'PLpro'
+    RdRP = 'RdRP'
+    BoAT1 = 'BoAT1'
+    FcR = 'Fc receptor'
+    Furin = 'Furin'
+    IL6R = 'IL6R'
+    p38 = 'p38'
+
+
+class ValidTargets(str, Enum):
+    spike_binding = 'spike binding'
+    spike_cleavage = 'spike cleavage'
+    viral_replication = 'viral replication'
+    Pro3CL_protease_activity = '3CLpro protease activity'
+    PLpro_protease_activity = 'PLpro protease activity'
+    viral_fusion = 'viral fusion'
+    host_immune_response = 'host immune response'
+    cell_cyle_inhibitors = 'cell cycle inhibitors'
+
+
+class ValidOrganisms(str, Enum):
+    human = 'human'
+    sars_cov = 'SARS-CoV'
+    sars_cov_2 = 'SARS-CoV-2'
+
+
+class ValidInterest(str, Enum):
+    active = 'active'
+    low = 'low'
+
+
+class ResourcesEnum(str, Enum):
+    structures = 'structures'
+    models = 'models'
+
+
+class ValidSimulations(str, Enum):
+    docking = 'docking'
+    md = 'md'
+    mc = 'mc'
+    cg = 'cg'
+
+
+class LinkOutKeys(BaseModel):
+    wikipedia: Optional[str]
+    drugbank: Optional[str]
+    pubchem: Optional[str]
+    chemspider: Optional[str]
+
+
 class LinksModel(BaseModel):
     name: str
-    url: str
+    url: AnyUrl
     description: str
     organization: Optional[str]
     institution: Optional[str]
     lab: Optional[str]
-    resources: Union[str, List]
+    resources: Union[ResourcesEnum, List[ResourcesEnum]]
+
 
 class ModelsModel(BaseModel):
     name: str
     description: str
-    url: str
+    url: AnyUrl
+    pdb_url: AnyUrl
     pdbids: List[str]
+    proteins: List[ValidProteins]
+    creator: str
     organization: Optional[str]
     institution: Optional[str]
     lab: Optional[str]
-    resources: Union[str, List[str]]
+    rating: Optional[StrictInt]
+
+    @validator('rating')
+    def rating_valid(cls, v):
+        if v < 1 or v > 5:
+            raise ValueError(f'Rating must be on domain [1,5], is {v}')
+        return v
+
 
 class MoleculesModel(BaseModel):
     name: str
     description: str
-    url: str
     therapeutic: Union[str, List[str]]
-    target: Union[str, List[str]]
-    protein: Union[str, List[str]]
-    links: Optional[Dict]
-    
-    @validator('links')
-    def links_valid(cls, v):
-        if v is None:
-            return v
-        else:
-            for key, value in v.items():
-                if key not in ['wikipedia', 'drugbank', 'pubchem', 'chemspider']:
-                    raise ValueError(f'{key} not valid site link.')
+    target: Union[ValidTargets, List[ValidTargets]]
+    protein: Optional[Union[ValidProteins, List[ValidProteins]]]
+    links: Optional[LinkOutKeys]
+    url: Optional[AnyUrl]
+
 
 class ProteinsModel(BaseModel):
     protein: str
-    organism: str
+    organism: ValidOrganisms
     name: str
-    interest: str
+    interest: ValidInterest
     description: str
     uniprot: Optional[str]
     target: Optional[Union[str, List[str]]]
-    subunits: Optional[str]
+    subunits: Optional[Dict[str, List[str]]]
 
-    @validator('interest')
-    def interest_valid(cls, v):
-        if v in ['active', 'low']:
-            return v
-        else:
-            raise ValueError(f'{v} is not a valid interest type.')
 
-    @validator('organism')
-    def organism_valid(cls, v):
-        if v in ['SARS-CoV-2', 'SARS-CoV', 'human']:
-            return v
-        else:
-            raise ValueError(f'{v} is not a valid organism type.')
-    
 class SimulationsModel(BaseModel):
     simulation: str
     name: str
     description: str
-    url: str
-    type: str
-    
-    @validator('type')
-    def type_valid(cls, v):
-        if v in ['docking', 'md', 'mc', 'cg']:
-            return v
-        else:
-            raise ValidationError(f'{v} not a valid simulation type.')
-    
+    url: AnyUrl
+    type: ValidSimulations
+
+
 class StructuresModel(BaseModel):
     pdbid: str
-    proteins: Union[str, List[str]]
-    targets: Union[str, List[str]]
-    annotation: str
-    rating: int
-    organisms: Union[str, List[str]]
+    proteins: Union[ValidProteins, List[ValidProteins]]
+    targets: Union[ValidTargets, List[ValidTargets]]
+    annotation: Optional[str]
+    organisms: Union[ValidOrganisms, List[ValidOrganisms]]
     ligands: Optional[Union[str, List[str]]]
-    
-    @validator('proteins')
-    def proteins_valid(cls, v):
-        valid_proteins = ['spike', 'RBD', 'S1', 'S2', 'ACE2', 'NSP1', 'NSP2', 'NSP3', 'NSP4', 'NSP5', 'NSP6', 'NSP7', 'NSP8', 'NSP9', 'NSP10', 'NSP11', 'NSP12', 'NSP13', 'NSP14', 'NSP15', 'fusion core', 'HR1', 'HR2', 'TMPRSS2', '3CLpro', 'PLpro', 'RdRP']
-        if isinstance(v, str):
-            if v in valid_proteins:
-                return v
-            else:
-                raise ValueError(f'{v} not a valid protein type.')
-        elif isinstance(v, list):
-            invalid_items = []
-            for item in v:
-                if item not in valid_proteins:
-                    invalid_items.append(item)
-            if invalid_items:
-                raise ValueError(f'{invalid_items} are not valid protein types.')
-                
-    @validator('targets')
-    def targets_valid(cls, v):
-        valid_targets = ['spike binding', 'spike cleavage', 'viral replication','3CLpro protease activity', 'PLpro protease activity', 'viral fusion', 'host immune response', 'cell cycle inhibitors']
-        if isinstance(v, str):
-            if v in valid_targets:
-                return v
-            else:
-                raise ValueError(f'{v} not a valid target type.')
-        elif isinstance(v, list):
-            invalid_items = []
-            for item in v:
-                if item not in valid_targets:
-                    invalid_items.append(item)
-            if invalid_items:
-                raise ValueError(f'{invalid_items} are not valid target types.')
-                
-    @validator('organisms')
-    def organism_valid(cls, v):
-        valid_organisms = ['SARS-CoV-2', 'SARS-CoV', 'human']
-        if isinstance(v, str):
-            if v in valid_organisms:
-                return v
-            else:
-                raise ValueError(f'{v} not a valid organism type.')
-        
-        elif isinstance(v, list):
-            invalid_items = []
-            for item in v:
-                if item not in valid_organisms:
-                    invalid_items.append(item)
-            if invalid_items:
-                raise ValueError(f'{invalid_items} are not valid organism types.')
-    
+    rating: Optional[StrictInt]
+
+    @validator('rating')
+    def rating_valid(cls, v):
+        if v < 1 or v > 5:
+            raise ValueError(f'Rating must be on domain [1,5], is {v}')
+        return v
+
+
 class TargetsModel(BaseModel):
     target: str
     name: str
     description: str
-    proteins: Union[str, List[str]]
+    proteins: Union[ValidProteins, List[ValidProteins]]
     therapeutic_modalities: Union[str, List[str]]
-    
-    @validator('proteins')
-    def proteins_valid(cls, v):
-        valid_proteins = ['spike', 'RBD', 'S1', 'S2', 'ACE2', 'NSP1', 'NSP2', 'NSP3', 'NSP4', 'NSP5', 'NSP6', 'NSP7', 'NSP8', 'NSP9', 'NSP10', 'NSP11', 'NSP12', 'NSP13', 'NSP14', 'NSP15', 'fusion core', 'HR1', 'HR2', 'TMPRSS2', '3CLpro', 'PLpro', 'RdRP']
-        if isinstance(v, str):
-            if v in valid_proteins:
-                return v
-            else:
-                raise ValueError(f'{v} not a valid protein type.')
-        elif isinstance(v, list):
-            invalid_items = []
-            for item in v:
-                if item not in valid_proteins:
-                    invalid_items.append(item)
-            if invalid_items:
-                raise ValueError(f'{invalid_items} are not valid protein types.')
-                
-    @validator('therapeutic_modalities')
-    def therapeutics_valid(cls, v):
-        valid_therapeutics = ['small molecule', 'antibody', 'peptide', 'vaccine']
-        if isinstance(v, str):
-            if v in valid_therapeutics:
-                return v
-            else:
-                raise ValueError(f'{v} not a valid therapeutic modality.')
-        elif isinstance(v, list):
-            invalid_items = []
-            for item in v:
-                if item not in valid_therapeutics:
-                    invalid_items.append(item)
-            if invalid_items:
-                raise ValueError(f'{invalid_items} are not valid therapeutic modalities.')
-    
+
+
 class TeamsModel(BaseModel):
     name: str
     members: List[Dict]
@@ -207,7 +194,9 @@ def filter_yaml(string, substr):
 def validate(filepath, model):
     """Function to perform validation on a file and a model.
     
-    This function takes in a file path to a yaml file and a model. It opens the file and safely loads the yaml file into a dictionary. It will only allow simple types currently to avoid arbitrary code execution. The dictionary from the yaml file is validated against the given model.
+    This function takes in a file path to a yaml file and a model. It opens the file and safely loads the yaml file
+    into a dictionary. It will only allow simple types currently to avoid arbitrary code execution. The dictionary from
+    the yaml file is validated against the given model.
     
     Parameters
     ----------
@@ -221,14 +210,21 @@ def validate(filepath, model):
         yml_dict = safe_load(stream)
         try:
             model(**yml_dict)
+            return 0
         except ValidationError as e:
             print(f"File failed validation: {filepath}")
-            print(e.json())
+            print(e)
+            return 1
+
 
 if __name__ == "__main__":
-    # Contains a list of directory names as keys and models as values. Each pair is a directory and the model to validate files within that directory.
-    directories = {'links': LinksModel, 'models': ModelsModel,'molecules': MoleculesModel, 'proteins': ProteinsModel, 'simulations': SimulationsModel, 'structures': StructuresModel, 'targets': TargetsModel, 'teams': TeamsModel}
-    
+    # Contains a list of directory names as keys and models as values. Each pair is a directory and the model to
+    # validate files within that directory.
+    directories = {'links': LinksModel, 'models': ModelsModel, 'molecules': MoleculesModel, 'proteins': ProteinsModel,
+                   'simulations': SimulationsModel, 'structures': StructuresModel, 'targets': TargetsModel,
+                   'teams': TeamsModel}
+
+    total_errors = 0
     # Iterate over each directory.
     for directory, model in directories.items():
         
@@ -242,4 +238,7 @@ if __name__ == "__main__":
         
         # For each yml file in the directory, perform validation against its associated model.
         for filename in f_filter:
-            validate(join("../data", directory, filename), model)
+            total_errors += validate(join("../data", directory, filename), model)
+
+    if total_errors:
+        raise RuntimeError("There we validation errors! Check the log for what")

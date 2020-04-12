@@ -6,7 +6,7 @@ description: >
   infection. Target of many drug discovery campaigns. 3CLpro is an
   obligate dimer, although many drug design efforts just use a monomer
   structure.
-protein:
+proteins:
   - 3CLpro
 therapeutic_modalities:
   - small molecule

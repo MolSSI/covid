@@ -7,6 +7,6 @@ therapeutic:
 links:
   wikipedia: Azvudine
   pubchem: Azvudine
-targets:
+target:
   - viral replication
 mechanism: Blocks the reverse transcriptase enzyme halting the virus from replicating

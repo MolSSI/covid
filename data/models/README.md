@@ -22,6 +22,5 @@ creator: (required) Name of person or group who created it
 organization: (optional)
 institution: (optional)
 lab: (optional) If more information beyond `creator` is requred to properly cite, use this field
-resources: one or more of [structures, models]
 rating: (optional) int on range [1,5]. 1=worst, 5=best
 ```
