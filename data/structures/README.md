@@ -61,4 +61,3 @@ ligands: (optional)
   Only annotation information is needed. The rest can be scraped from the PDB via the API or by retrieving the PDB file.
   This includes resolution, method, name, publication DOI.
 * `data_type` is not needed because the directory organization will identify that this is a structure.
-* `organism` is not needed because the `protein` tag uniquely identifies an organism
