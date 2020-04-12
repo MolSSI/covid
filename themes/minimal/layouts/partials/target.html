@@ -14,7 +14,7 @@
   <h3 class="anchor" id="{{.context.name | anchorize }}"><b>{{ .context.name }}</b><img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
 
   <!-- target description -->
-  <p align="justify">{{ .context.description }}</p>
+  <p align="justify">{{ .context.description | markdownify }}</p>
 
   <!-- tag links to proteins involves in this target -->
   <h4 align="left">Protein targets:</h4>

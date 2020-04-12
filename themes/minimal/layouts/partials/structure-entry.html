@@ -30,7 +30,9 @@
 
 
   <!-- Structure name -->
-  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'><b>{{ $title }}</b></h3>
+  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
+    <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} </b>
+  </h3>
 
   <!-- Structure Annotation -->
   {{ if not (in ( $title | lower) (.structure.annotation | lower) ) }}

@@ -11,7 +11,7 @@
   <h3 align="left" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b></h3>
 
   <!-- protein description -->
-  <h4 align="justify">{{ .protein.description }}</h4>
+  <h4 align="justify">{{ .protein.description | markdownify }}</h4>
 
   <!-- illustrative structure image -->
   {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
