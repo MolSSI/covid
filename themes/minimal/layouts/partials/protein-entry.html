@@ -21,34 +21,68 @@
   {{ end }}
 
   <!-- top (useful) structures containing this protein -->
-  <!-- TODO: Change this to link to the individual structure pages with attached models? -->
-  <h4 align="left">Selected structural data: <a href="">[all]</a></h4>
+  <h4 align="left">Top Structural Data: <a href='{{ $localScratch.Get "BaseURL" }}structures/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
   {{ $protein_id := .protein.protein }}
   {{ $localScratch.Set "protein_id" $protein_id }}
-  {{ range $structure := .context.Site.Data.structures }}
-     {{ if in $structure.proteins $protein_id }}
-       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}structures/#{{ print ( $structure.pdbid | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ $structure.pdbid }}]</a>
-       {{ $structure.annotation }}
-       {{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+  {{ $localScratch.Set "postedStruct" 0 }}
+  {{ range sort .context.Site.Data.structures "rating" "desc" }}
+     {{ if and (in .proteins $protein_id) (lt ($localScratch.Get "postedStruct") 2) }}
+       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}structures/#{{ print ( .pdbid | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ .pdbid }}]</a>
+         <!-- Structure Annotation -->
+         <!-- Scrape from PDB -->
+        {{ $pdb := upper .protein.protein }}
+        {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" .pdbid }}
+        {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
+        {{ if $data }}
+          {{ $localScratch.Set "title" (print ($data.struct.title | title) )  }}
+        {{ else }}
+          {{ $localScratch.Set "title" nil }}
+        {{ end }}
+        {{ $title := $localScratch.Get "title"}}
+
+        {{ if ($localScratch.Get "title") }}
+          {{ $localScratch.Get "title" }}
+        {{ else }}
+          {{ .structure.annotation }}
+        {{ end }}
+       {{ partial "stars" .rating }}
        </div>
-
+      {{ $localScratch.Set "postedStruct" (add ($localScratch.Get "postedStruct") 1 )}}
      {{ end }}
-
   {{ end }}
+  {{ if eq ($localScratch.Get "postedStruct") (0) }}
+    <p>---</p>
+  {{ end }}
+
+
+
 
   <!-- top (useful) models containing this protein -->
   <!-- TODO: Change this to link to the individual structures pages with attached models? -->
-  <h4 align="left">Selected models: <a href="">[all]</a></h4>
-  {{ $protein_id := .protein.protein }}
-  {{ range $structure := .context.Site.Data.structures }}
-     {{ if in $structure.proteins $protein_id }}
-       <div class="item" align="left"><a href="https://rcsb.org/structure/{{ $structure.pdbid }}">[{{ $structure.pdbid }}]</a>
-       {{ $structure.annotation }}
-       {{ with .rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
-       </div>
-
-     {{ end }}
-
+  <h4 align="left">Top Models: <a href='{{ $localScratch.Get "BaseURL" }}models/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+    <!-- Determine if there are known models -->
+  {{ $localScratch.Set "postedModels" 0 }}
+  {{ range sort .context.Site.Data.models "rating" "desc" }}
+    {{ $localScratch.Set "model" . }}
+    <!-- This PDB is in the given model and we have not posted more than 1 -->
+    {{ if and (partial "x-in-y-nocase" (dict "x" $.protein.protein "y" .proteins)) (lt ($localScratch.Get "postedModels") 2)}}
+      <!-- We haven't sorted by target, so just get the first target we can out of this-->
+      <!-- TODO: Group by all targets -->
+      {{ $target := partial "protein-model-first-target" (dict "model" ($localScratch.Get "model") "context" $.context) }}
+      <p>
+        {{ $model := $localScratch.Get "model" }}
+        {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein.protein | anchorize) "-" ( $target | anchorize) }}
+        {{ $model_url := print $.context.Site.BaseURL "models/#" $anchor }}
+        <a href='{{ $model_url }}'>
+          <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
+        </a>
+      </p>
+      <!-- Add to the counter -->
+      {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
+    {{ end }}
+  {{ end }}
+  {{ if eq ($localScratch.Get "postedModels") (0) }}
+    <p>---</p>
   {{ end }}
 
   <!-- TODO: Add most useful molecules/bioassay data? -->

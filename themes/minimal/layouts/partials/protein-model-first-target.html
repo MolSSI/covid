@@ -16,4 +16,9 @@
     {{ end }}
 {{ end }}
 
-{{ return (uniq ($localScratch.Get "targets")) }}
+{{ if not ($localScratch.Get "targets") }}
+    {{ $localScratch.Set "ret" "nil" }}
+{{ else }}
+    {{ $localScratch.Set "ret" (index ($localScratch.Get "targets") 0) }}
+{{ end }}
+{{ return ($localScratch.Get "ret") }}
