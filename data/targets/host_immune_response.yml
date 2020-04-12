@@ -1,0 +1,13 @@
+target: host immune response
+name: Host immune response
+description: >
+  Certain mechanisms allow viruses to avoid host immune response, such as removal of ISG15, a ubiquitin-like protein conjugated to intracellular proteins post interferon activation and involved in cell-to-cell signaling and heightened immune response. Removal of such tags and disruption of signal cascades allow infected cells to avoid apoptotic signals.
+proteins:
+  - IL6R
+therapeutic_modalities:
+  - antibody
+papers:
+  - Rismanbaf_2020_Potential_Treatments_of_COVID19:
+    pmid: 32232214
+  - Li_2020_Immune_Pathogenesis_of_COVID19:
+    doi: 10.1016/j.jpha.2020.03.001

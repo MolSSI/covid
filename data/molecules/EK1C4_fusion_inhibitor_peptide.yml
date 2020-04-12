@@ -7,7 +7,8 @@ therapeutic:
 sequence: SLDQINVTFLDLEYEMKKLEEAIKKLEESYIDLKELGSGSG-(PEG4)-(Cholesterol)
 publications:
   - doi: 10.1038/s41422-020-0305-x
-target: viral fusion
+target:
+  - viral fusion
 protein:
   - spike
   - S2

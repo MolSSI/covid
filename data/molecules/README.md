@@ -9,8 +9,15 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 Each entry has the following required and optional keys:
 ```
 name: (required)
-url: (required)
 description: (required)
-therapeutic: one of [small molecule, peptide, antibody, protein]
-target: (required)
+url: (required)
+therapeutic: (required, one or more)
+target: (required, one or more)
+protein: (required, one or more)
+links: (optional)
+  wikipedia: (optional) omit leading https://en.wikipedia.org/wiki/
+  drugbank: (optional) omit leading https://www.drugbank.ca/drugs/
+  pubchem: (optional) will be inserted into http://www.chemspider.com/Chemical-Structure.{{ .data.links.chemspider }}.html
+  chemspider: (optional) omit leading https://pubchem.ncbi.nlm.nih.gov/compound/
+
 ```

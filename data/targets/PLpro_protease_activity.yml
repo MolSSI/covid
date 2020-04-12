@@ -4,6 +4,7 @@ description: >
   PLpro (NSP3, papain-like protease) is a viral cysteine protease
   responsible for maturation of the viral polyprotein, necessary for
   infection. Also involved in repressing host immune response.
-protein:
+proteins:
   - PLpro
-therapeutic: small molecule
+therapeutics:
+  - small molecule

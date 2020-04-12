@@ -7,6 +7,8 @@ therapeutic:
 links:
   wikipedia: "wikipedia: https://en.wikipedia.org/wiki/Remdesivir"
   chemspider: http://www.chemspider.com/Chemical-Structure.58827832.html
-target: viral replication
+target:
+  - viral replication
 mechanism: inhibitor of RNA-dependent RNA polymerase
-protein: RdRP
+protein:
+  - RdRP

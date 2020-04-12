@@ -4,7 +4,11 @@ description: >
 therapeutic:
     - antiviral (antiretroviral)
 links:
-  wikipedia: https://en.wikipedia.org/wiki/Darunavir
-  Drugdatabank: https://www.drugbank.ca/drugs/DB01264
-target: viral replication
-mechanism: Protease inhibitor
+  wikipedia: Darunavir
+  drugbank: DB01264
+target:
+  - viral replication
+mechanism: Darunavir is an HIV protease inhibitor, but currently there is a lack of evidence of its utility in treating COVID-19.
+publications:
+  - title: Lack of evidence to support use of darunavir-based treatments for SARS-CoV-2
+    url: https://www.jnj.com/lack-of-evidence-to-support-darunavir-based-hiv-treatments-for-coronavirus

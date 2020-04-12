@@ -5,9 +5,11 @@ description: >
 therapeutic:
   - small molecule
 links:
-  wikipedia: https://en.wikipedia.org/wiki/Hydroxychloroquine
-  chemspider: http://www.chemspider.com/Chemical-Structure.3526.html?rid=075f1a7d-e297-4680-a730-11c68bbd8a42#synonymsTab
-target: viral fusion and replication
+  wikipedia: Hydroxychloroquine
+  chemspider: 3526
+target:
+  - viral fusion
+  - viral replication
 mechanism: Act primarily by>
   Altering endosomal pH and affecting virus-cell fusion
   By inhibiting the ACE2 cellular receptor
