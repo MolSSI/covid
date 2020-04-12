@@ -34,7 +34,7 @@ jobs:
     - name: Run Schema Validation
       shell: bash
       run: |
-        . devtools/github-actions/initialize_conda.sh
+        . repo_management/github-actions/initialize_conda.sh
         conda activate schema
         cd schema
         python validation.py
