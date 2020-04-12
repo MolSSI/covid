@@ -12,5 +12,5 @@ simulation: (required)
 name: (required)
 description: (required)
 url: (required)
-type: one of [docking, md]
+type: one of [docking, md, mc, cg]
 ```
