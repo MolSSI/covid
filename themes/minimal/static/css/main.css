@@ -23,12 +23,13 @@ img {
 /* Homepage */
 
 .intro {
-    transform: translateY(22vh);
+    /* This line was causing infinite misalignment problems on the page */
+    /* transform: translateY(22vh); */
 }
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    /* font-size: 12vh; */
 }
 
 .intro > h2 {
