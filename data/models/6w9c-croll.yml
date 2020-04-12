@@ -1,0 +1,18 @@
+name: "SARS-CoV-2 PL-PRO: ISOLDE refined model"
+pdbids:
+  - 6w9c
+proteins:
+  - PL-PRO
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 6w9c (a 2.7A X-ray structure) of papain-like protease of SARS-CoV-2 that contains three copies of the same chain in the asymmetric unit.
+  Corrects several issues:
+  * Corrects zinc site in chain A misidentified as a disulfide, and incompletely modeled site in chain B; the same zinc site is correctly modeled in chain C.
+  * Cleans up lots of issues due to missing data (overall completeness 57.1%)
+  See [a complete description](https://twitter.com/CrollTristan/status/1245322667093352448) of the issues remedied by this model.
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/nsp3/SARS-CoV-2/6w9c
+pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/nsp3/SARS-CoV-2/6w9c/6w9c.pdb
+notes: https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/nsp3/SARS-CoV-2/6w9c/isolde/notes.txt
+creator: Tristan Croll
+rating: 4

@@ -39,7 +39,7 @@
 
   <!-- illustrative structure image(s) -->
   <p>
-  {{ $view3d := "https://www.rcsb.org/3d-view/{{ upper .structure.pdbid }}/1" }}
+  {{ $view3d := (printf "http://gjbekker.github.io/molmil/#molmil.loadPDB('%s')" $pdb) }}  
   {{ if .structure.images }}
     <!-- show provided images -->
     {{ $images := partial "ensure-slice" .structure.images }}
@@ -56,6 +56,7 @@
   </p>
 
   <h3> Structure Data and Links </h3>
+  {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
   <p>
     <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
     <a href="{{ $view3d }}"><kbd class="alert-info">View 3D</kbd></a>

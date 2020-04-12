@@ -1,8 +1,16 @@
-name: ISOLDE refined model of Nsp12 (6nur)
+name: "SARS-CoV RdRP (NSP12) in complex with cofactors NSP7 and NSP8: ISOLDE refined model"
+pdbids:
+  - 6nur
+proteins:
+  - RdRP
+  - nsp7
+  - nsp8
+organism:
+  - SARS-CoV
 description: >
   Refinement of 6nur that fixes misthreading in the vininity of residues 910-920 where residues were shifted within density by 9 residues.
-  See https://twitter.com/CrollTristan/status/1247797030983852033 for a complete description of the issues remedied by this model.
+  See [a complete description](https://twitter.com/CrollTristan/status/1247797030983852033) of the issues remedied by this model.
 url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV/6nur
 pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV/6nur/6nur.pdb
 creator: Tristan Croll
-structures: 6nur
+rating: 4
