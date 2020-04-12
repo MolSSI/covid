@@ -1,7 +1,7 @@
 pdbid: 6vyb
 targets:
   - spike binding
-protein:
+proteins:
   - spike
 annotation: Low-resolution cryo-EM structure of the SARS-CoV-2 ectodomain in the open state.
 rating: 2

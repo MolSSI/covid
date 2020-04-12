@@ -1,7 +1,7 @@
 pdbid: 6m71
 targets:
   - viral replication
-protein:
+proteins:
   - NSP7
   - NSP8
   - RdRP

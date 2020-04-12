@@ -75,8 +75,30 @@
     </p>
   {{ end }}
 
-  <!-- TODO: There are dashes ('-') being prepended here---fix them? -->
-  <h4> Known Targets Modalities: </h4>
+  <!-- Determine if there are known models -->
+  {{ $localScratch.Set "postedModels" 0 }}
+  <h3> Top Two Models: </h3>
+  {{ range sort .context.Site.Data.models "rating" "desc" }}
+    {{ $localScratch.Set "model" . }}
+    <!-- This PDB is in the given model and we have not posted more than 1 -->
+    {{ if and (partial "x-in-y-nocase" (dict "x" $pdb "y" .pdbids)) (lt ($localScratch.Get "postedModels") 2)}}
+      <!-- Add to the counter -->
+      <p>
+        {{ $model := $localScratch.Get "model" }}
+        {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+        {{ $model_url := print $.context.Site.BaseURL "models/#" $anchor }}
+        <a href='{{ $model_url }}'>
+          <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
+        </a>
+      </p>
+      {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
+    {{ end }}
+  {{ end }}
+  {{ if eq ($localScratch.Get "postedModels") (0) }}
+    <p>---</p>
+  {{ end }}
+
+  <h3> Known Target Modalities: </h3>
   <p>
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
@@ -84,7 +106,7 @@
   {{ end }}
   </p>
 
-  <h4> Related Proteins: </h4>
+  <h3> Related Proteins: </h3>
   <p>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}

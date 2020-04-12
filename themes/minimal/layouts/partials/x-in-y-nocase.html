@@ -1,0 +1,11 @@
+{{ $localScratch := newScratch }}
+
+{{ $y := partial "ensure-slice" .y }}
+{{ $localScratch.Set "in" false }}
+{{ range $y }}
+    {{ if eq ( . | upper ) ( $.x | upper ) }}
+        {{ $localScratch.Set "in" true }}
+    {{ end }}
+{{ end }}
+
+{{ return ( $localScratch.Get "in") }}
