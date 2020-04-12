@@ -51,7 +51,7 @@ rating: (required) (1= poor quality to 5=best quality)
 organisms: (required) (one or more fo the following options as a list)
   - SARS-CoV-2
   - SARS-CoV
-  - host
+  - human
 ligands: (optional)
 ```
 
