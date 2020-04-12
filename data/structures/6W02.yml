@@ -1,11 +1,13 @@
-data_type: "structure"
-pdbid: "6W02"
-protein: "NSP3"
-method: "x-ray diffraction"
+pdbid: 6W02
+method: "X-ray diffraction"
 resolution: "1.5"
-organism: "SARS-CoV-2"
-pdb_doi: "10.2210/pdb6W02/pdb"
-target: "3CL-PRO protease activity"
-ligands: "ADP ribose"
-annotation: "Crystal Structure of ADP ribose phosphatase of NSP3 from SARS CoV-2 in the complex with ADP ribose"
-rating: "3"
+proteins:
+  - NSP3
+organisms:
+  - SARS-CoV-2
+targets:
+  - 3CLpro protease activity
+ligands:
+  - ADP ribose
+annotation: Crystal Structure of ADP ribose phosphatase of NSP3 from SARS CoV-2 in the complex with ADP ribose
+rating: 3

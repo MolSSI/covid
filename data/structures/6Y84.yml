@@ -1,10 +1,12 @@
-data_type: "structure"
-pdbid: "6Y84"
-protein: "3CL-PRO"
-method: "x-ray diffraction"
+pdbid: 6Y84
+method: "X-ray diffraction"
 resolution: "1.39"
-organism: "SARS-CoV-2"
-pdb_doi: "10.2210/pdb6Y84/pdb"
-target: "3CL-PRO protease activity"
-annotation: "SARS-CoV-2 main protease with unliganded active site (2019-nCoV, coronavirus disease 2019, COVID-19)"
-rating: "2"
+proteins:
+  - 3CLpro
+organisms:
+  - SARS-CoV-2
+targets:
+  - 3CLpro protease activity
+annotation: SARS-CoV-2 main protease with unliganded active site (2019-nCoV, coronavirus disease 2019, COVID-19)
+rating: 2
+images: images/protein_renderings/6Y84.png

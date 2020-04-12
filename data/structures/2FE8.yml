@@ -1,11 +1,13 @@
-data_type: "structure"
-pdb_id: "2FE8"
-method: "X-Ray Diffraction"
-resolution: "1.85"
-pdb_doi: "https://www.rcsb.org/structure/2FE8"
-publication_doi: "https://www.pnas.org/content/103/15/5717"
-target: viral replication
-protein:
-  - PL-PRO
-organism:
-  - SARS
+pdbid: 2FE8
+method: X-Ray Diffraction
+resolution: 1.85
+targets:
+  - viral replication
+proteins:
+  - PLpro
+organisms:
+  - SARS-CoV
+images:
+  - images/protein_renderings/2FE8a.png
+  - images/protein_renderings/2FE8b.png
+  - images/protein_renderings/2FE8c.png

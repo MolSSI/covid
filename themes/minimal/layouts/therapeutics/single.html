@@ -20,8 +20,6 @@
         <h5>{{ .Description }}</h5>
     </div>
 
-    <hr>
-
     <!-- List all targets from data/targets/ -->
     {{ range (sort ($localScratch.Get "thera_categories")) }}
         <hr class="hr-thick">

@@ -1,7 +1,6 @@
 {{ $localScratch := newScratch }}
 
 {{ $localScratch.Set "map" dict }}
-{{ $localScratch.Set "map" dict }}
 
 {{ range $.Site.Data.molecules }}
     {{ if reflect.IsSlice .therapeutic }}

@@ -1,0 +1,20 @@
+{{ partial "header" . }}
+
+<!-- MODELS PAGE -->
+
+{{ $localScratch := newScratch }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+
+        {{ .Content }}
+
+    </div>
+
+
+</main>
+
+{{ partial "footer" . }}

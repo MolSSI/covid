@@ -1,6 +1,0 @@
-protein: Mpro
-name: SARS-CoV-2 main protease (Mpro)
-description: Cysteine protease essential for viral maturation
-organism: SARS-CoV-2
-targets:
-  - 3CL-PRO protease activity

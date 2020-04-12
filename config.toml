@@ -1,6 +1,6 @@
 baseURL = "https://covid.molssi.org/"
 languageCode = "en-us"
-title = "COVID-19 Molecular Structure and Therapeutics Exchange"
+title = "COVID-19 Molecular Structure and Therapeutics Hub"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
 # googleAnalytics = ""
@@ -21,10 +21,6 @@ ignoreFiles = ["README.md$"]
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-
-[taxonomies]
-    protein = "proteins"
-
 [[menu.main]]
     url = "/"
     name = "Home"
@@ -36,42 +32,30 @@ ignoreFiles = ["README.md$"]
     weight = 2
 
 [[menu.main]]
-    hasChildren = true
+    url = "/proteins/"
     name = "Proteins"
     weight = 3
-
-    [[menu.main]]
-        parent = "Proteins"
-        url = "/proteins/"
-        name = "All Proteins"
-        weight = 1
-
-    [[menu.main]]
-        parent = "Proteins"
-        url = "/proteins/viral-proteins"
-        name = "Viral Proteins"
-        weight = 2
-
-    [[menu.main]]
-        parent = "Proteins"
-        url = "/proteins/host-proteins/"
-        name = "Host Proteins"
-        weight = 3
-
-[[menu.main]]
-    url = "/therapeutics"
-    name = "Therapeutics"
-    weight = 4
 
 [[menu.main]]
     url = "/structures"
     name = "Structures"
-    weight = 5
+    weight = 4
+
+
+[[menu.main]]
+    url = "/models"
+    name = "Models"
+    weight = 6
+
+[[menu.main]]
+    url = "/therapeutics"
+    name = "Therapeutics"
+    weight = 7
 
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 6
+    weight = 8
 
     [[menu.main]]
         parent = "About"
@@ -91,6 +75,11 @@ ignoreFiles = ["README.md$"]
         name = "Collaborating"
         weight = 3
 
+    [[menu.main]]
+        parent = "About"
+        url = "/teams/"
+        name = "Teams"
+        weight = 4
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
