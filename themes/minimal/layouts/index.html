@@ -8,6 +8,7 @@
 {{ $structures := partial "structure-map" . }}
 {{ $thera := partial "thera-map" . }}
 {{ $model := partial "model-map" . }}
+{{ $sim := partial "sim-map" . }}
 
 
 <main>
@@ -38,19 +39,25 @@
             <h3>Structures:</h3>
             <p>
                 {{ range $pname, $plink := $structures }}
-                <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+                <a href="{{ $plink }}"><kbd class="alert-danger" style="">{{ $pname  }}</kbd></a>
                 {{ end }}
             </p>
             <h3>Models:</h3>
             <p>
                 {{ range $mname, $mlink := $model }}
-                <a href="{{ $mlink }}"><kbd class="bg-primary" style="">{{ $mname }}</kbd></a>
+                <a href="{{ $mlink }}"><kbd class="alert-info" style="">{{ $mname }}</kbd></a>
                 {{ end }}
             </p>
             <h3>Therapeutics:</h3>
             <p>
                 {{ range $tname, $tlink := $thera }}
                 <a href="{{ $tlink }}"><kbd class="alert-success" style="">{{ $tname }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Simulations:</h3>
+            <p>
+                {{ range $sname, $slink := $sim }}
+                <a href="{{ $slink }}"><kbd class="alert-secondary" style="">{{ $sname }}</kbd></a>
                 {{ end }}
             </p>
         </div>

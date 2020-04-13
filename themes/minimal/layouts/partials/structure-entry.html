@@ -57,7 +57,7 @@
   {{ end }}
   </p>
 
-  <h3> Structure Data and Links </h3>
+  <h4 align="left"> Structure Data and Links </h4>
   {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
   <p>
     <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
@@ -77,7 +77,7 @@
 
   <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
-  <h3> Top Two Models: </h3>
+  <h4 align="left"> Top Two Models: </h4>
   {{ range sort .context.Site.Data.models "rating" "desc" }}
     {{ $localScratch.Set "model" . }}
     <!-- This PDB is in the given model and we have not posted more than 1 -->
@@ -98,7 +98,7 @@
     <p>---</p>
   {{ end }}
 
-  <h3> Known Target Modalities: </h3>
+  <h4 align="left"> Known Target Modalities: </h4>
   <p>
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
@@ -106,13 +106,29 @@
   {{ end }}
   </p>
 
-  <h3> Related Proteins: </h3>
+  <h4 align="left"> Related Proteins: </h4>
   <p>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
   </p>
+
+  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
+    {{ $localScratch.Set "postedSim" 0 }}
+    {{ range sort .context.Site.Data.simulations "rating" "desc" }}
+        {{ $sim := . }}
+        {{ $sin := partial "x-in-y-nocase" (dict "x" $.structure.pdbid "y" .structures) }}
+        {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
+            {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+            <a href='{{ $localScratch.Get "BaseURL" }}simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+            <!-- Add to the counter -->
+            {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
+        {{ end }}
+    {{ end }}
+    {{ if eq ($localScratch.Get "postedSim") 0 }}
+      ---
+    {{ end }}
 
   <hr>
 
