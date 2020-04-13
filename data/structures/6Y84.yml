@@ -8,5 +8,5 @@ organisms:
 targets:
   - 3CLpro protease activity
 annotation: SARS-CoV-2 main protease with unliganded active site (2019-nCoV, coronavirus disease 2019, COVID-19)
-rating: 2
+rating: 
 images: images/protein_renderings/6Y84.png
