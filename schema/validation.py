@@ -113,7 +113,7 @@ class ModelsModel(BaseModel):
 
     @validator('rating')
     def rating_valid(cls, v):
-        if v:
+        if v is not None:
             if v < 1 or v > 5:
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
@@ -166,7 +166,7 @@ class SimulationsModel(BaseModel):
 
     @validator('rating')
     def rating_valid(cls, v):
-        if v:
+        if v is not None:
             if v < 1 or v > 5:
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
@@ -183,7 +183,7 @@ class StructuresModel(BaseModel):
 
     @validator('rating')
     def rating_valid(cls, v):
-        if v:
+        if v is not None:
             if v < 1 or v > 5:
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
