@@ -86,7 +86,7 @@
       <p>
         {{ $model := $localScratch.Get "model" }}
         {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
-        {{ $model_url := print $.context.Site.BaseURL "models/#" $anchor }}
+        {{ $model_url := print $.context.Site.BaseURL "/models/#" $anchor }}
         <a href='{{ $model_url }}'>
           <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
         </a>
@@ -114,14 +114,14 @@
   {{ end }}
   </p>
 
-  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
+  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
     {{ $localScratch.Set "postedSim" 0 }}
     {{ range sort .context.Site.Data.simulations "rating" "desc" }}
         {{ $sim := . }}
         {{ $sin := partial "x-in-y-nocase" (dict "x" $.structure.pdbid "y" .structures) }}
         {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
             {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
-            <a href='{{ $localScratch.Get "BaseURL" }}simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+            <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}

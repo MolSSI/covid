@@ -21,13 +21,13 @@
   {{ end }}
 
   <!-- top (useful) structures containing this protein -->
-  <h4 align="left">Top Structural Data: <a href='{{ $localScratch.Get "BaseURL" }}structures/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+  <h4 align="left">Top Structural Data: <a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
   {{ $protein_id := .protein.protein }}
   {{ $localScratch.Set "protein_id" $protein_id }}
   {{ $localScratch.Set "postedStruct" 0 }}
   {{ range sort .context.Site.Data.structures "rating" "desc" }}
      {{ if and (in .proteins $protein_id) (lt ($localScratch.Get "postedStruct") 2) }}
-       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}structures/#{{ print ( .pdbid | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ .pdbid }}]</a>
+       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ print ( .pdbid | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ .pdbid }}]</a>
          <!-- Structure Annotation -->
          <!-- Scrape from PDB -->
         {{ $pdb := upper .protein.protein }}
@@ -56,7 +56,7 @@
 
 
   <!-- top (useful) models containing this protein -->
-  <h4 align="left">Top Models: <a href='{{ $localScratch.Get "BaseURL" }}models/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+  <h4 align="left">Top Models: <a href='{{ $localScratch.Get "BaseURL" }}/models/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
     <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
   {{ range sort .context.Site.Data.models "rating" "desc" }}
@@ -69,7 +69,7 @@
       <p>
         {{ $model := $localScratch.Get "model" }}
         {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein.protein | anchorize) "-" ( $target | anchorize) }}
-        {{ $model_url := print $.context.Site.BaseURL "models/#" $anchor }}
+        {{ $model_url := print $.context.Site.BaseURL "/models/#" $anchor }}
         <a href='{{ $model_url }}'>
           <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
         </a>
@@ -82,13 +82,13 @@
     <p>---</p>
   {{ end }}
 
-    <h4 align="left"> Top Simulations: <a href='{{ $localScratch.Get "BaseURL" }}simulations/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+    <h4 align="left"> Top Simulations: <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
     {{ $localScratch.Set "postedSim" 0 }}
     {{ range sort .context.Site.Data.simulations "rating" "desc" }}
         {{ $sim := . }}
         {{ if and (in .proteins $.protein.protein) (lt ($localScratch.Get "postedSim") 2) }}
         <!-- TODO: Map the anchor to *a* target instead of just the protein heade-->
-            <a href='{{ $localScratch.Get "BaseURL" }}simulations/#{{ $.protein.name | anchorize }}'><kbd class="alert-secondary">{{ $sim.title}}</kbd></a>
+            <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $.protein.name | anchorize }}'><kbd class="alert-secondary">{{ $sim.title}}</kbd></a>
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}

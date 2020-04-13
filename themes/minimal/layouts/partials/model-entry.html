@@ -20,7 +20,7 @@
 
       <!-- Proteins represented -->
       {{ range $pname := .model.proteins }}
-         {{ $plink := print ($localScratch.Get "context").Site.BaseURL "proteins/#" ( $pname | anchorize) }}
+         {{ $plink := print ($localScratch.Get "context").Site.BaseURL "/proteins/#" ( $pname | anchorize) }}
          <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname }}</kbd></a>
       {{ end }}
 
@@ -61,7 +61,7 @@
             {{ $sin := partial "x-in-y-nocase" (dict "x" ($localScratch.Get "mname") "y" .models) }}
             {{ if ($sin) }}
                 {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
-                <a href='{{ $localScratch.Get "BaseURL" }}simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+                <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
                 <!-- Add to the counter -->
                 {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
             {{ end }}

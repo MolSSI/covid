@@ -93,7 +93,7 @@
             Represented Structures:
             {{ range .simulation.structures }}
                 {{ $anchor := print ( . | upper | anchorize) "-" ( $.protein | anchorize) }}
-                <a href='{{ $.context.Site.BaseURL }}structures/#{{ $anchor }}'><kbd class="alert-danger">{{.}}</kbd></a>
+                <a href='{{ $.context.Site.BaseURL }}/structures/#{{ $anchor }}'><kbd class="alert-danger">{{.}}</kbd></a>
             {{ else }}
                 ---
             {{ end }}
@@ -107,7 +107,7 @@
                 {{ range $mname, $mdata := $.context.Site.Data.models }}
                     {{ if eq $model $mname }}
                         {{ $anchor := print ( $mdata.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
-                        <a href='{{ $.context.Site.BaseURL }}models/#{{ $anchor }}'><kbd class="alert-info">{{ $mdata.name}}</kbd></a>
+                        <a href='{{ $.context.Site.BaseURL }}/models/#{{ $anchor }}'><kbd class="alert-info">{{ $mdata.name}}</kbd></a>
                     {{ end }}
                 {{ end }}
             {{ else }}
