@@ -1,0 +1,25 @@
+lab: Chodera Lab
+members:
+  - name: John Chodera
+    url: http://choderalab.org
+    email: john.chodera@choderalab.org
+    twitter: jchodera
+  - name: Melissa Boby
+    role: Chemical Biology insight
+    url: http://choderalab.org
+    email: melissa.boby@choderalab.org
+  - name: Binisha Karki
+    role: Lit Review
+    url: http://choderalab.org
+    email: binisha.karki@choderalab.org
+  - name: Chiara Mancinelli
+    role: Lit Review
+    url: http://choderalab.org
+    email: chiara.mancinelli@choderalab.org
+  - name: Hannah Bruce Macdonald
+    role: Lit Review; Computational Docking
+    url: http://choderalab.org
+    email: hannah.brucemacdonald@choderalab.org
+  - name: Erica Goldberger
+    url: http://choderalab.org
+    email: erica.goldberger@choderalab.org
