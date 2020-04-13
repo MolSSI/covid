@@ -1,12 +1,6 @@
 name: Targets
 members:
   - name: John Chodera
-    url: http://choderalab.org
-    email: john.chodera@choderalab.org
-    twitter: jchodera
   - name: Alex Payne
-    url: http://choderalab.org
-    email: alex.payne@choderalab.org
   - name: Erica Goldberger
-    url: http://choderalab.org
-    email: erica.goldberger@choderalab.org
+  - name: Binisha Karki
