@@ -10,7 +10,7 @@ to be an active contributor to join us!
 
 Reach out to any of the maintainers below and lets work together to make this as helpful as possible! 
 
-## Exchange Maintainers 
+## Hub Maintainers 
 
 * [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
 * [BioExcel](https://bioexcel.eu/)

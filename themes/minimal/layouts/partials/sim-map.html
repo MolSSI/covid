@@ -2,7 +2,7 @@
 {{ $localScratch.Set "map" dict }}
 
 {{ range $.Site.Data.proteins }}
-    {{ $link := print $.Site.BaseURL "/proteins/#" ( .name | anchorize) }}
+    {{ $link := print $.Site.BaseURL "/simulations/#" ( .name | anchorize) }}
     {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict .protein $link) ) }}
 {{ end }}
 

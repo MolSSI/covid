@@ -20,15 +20,17 @@
 
       <!-- Proteins represented -->
       {{ range $pname := .model.proteins }}
-         {{ $plink := print ($localScratch.Get "context").Site.BaseURL "proteins/#" ( $pname | anchorize) }}
+         {{ $plink := print ($localScratch.Get "context").Site.BaseURL "/proteins/#" ( $pname | anchorize) }}
          <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname }}</kbd></a>
       {{ end }}
 
       <!-- Show 3D structure using 3Dmol.js : see https://3dmol.csb.pitt.edu/ -->
-      {{ if in (slice 5 ) .model.rating }}
-        <div align="center" style="height: 400px; width: 400px; position: relative; margin-top: 0px; margin-bottom: 0px; margin-left: auto; margin-right: auto;" class='viewer_3Dmoljs' data-href='{{ .model.pdb_url }}' data-backgroundcolor='0xffffff' data-style='cartoon:color~spectrum'></div>
-      {{ else }}
-        <div><h4><a href='http://3Dmol.csb.pitt.edu/viewer.html?url={{ .model.pdb_url }}&type=pdb&style=cartoon:color~spectrum'>See the Model in 3DMol.js</a></h4></div>
+      {{ if .model.pdb_url }}
+          {{ if in (slice 5 ) .model.rating }}
+            <div align="center" style="height: 400px; width: 400px; position: relative; margin-top: 0px; margin-bottom: 0px; margin-left: auto; margin-right: auto;" class='viewer_3Dmoljs' data-href='{{ .model.pdb_url }}' data-backgroundcolor='0xffffff' data-style='cartoon:color~spectrum'></div>
+          {{ else }}
+            <div><h4><a href='http://3Dmol.csb.pitt.edu/viewer.html?url={{ .model.pdb_url }}&type=pdb&style=cartoon:color~spectrum'>See the Model in 3DMol.js</a></h4></div>
+          {{ end }}
       {{ end }}
 
       <!-- Model and source PDBs -->
@@ -46,6 +48,27 @@
 
       <!-- Model description -->
       <h4 align="justify">{{ .model.description | markdownify }}</h4>
+
+        <h4 align="left"> Simulations:</h4>
+        {{ $localScratch.Set "postedSim" 0 }}
+        {{ range $mname, $mdata := .context.Site.Data.models }}
+            {{ if eq $mdata.name $.model.name }}
+                {{ $localScratch.Set "mname" $mname }}
+            {{ end }}
+        {{ end }}
+        {{ range sort .context.Site.Data.simulations "rating" "desc" }}
+            {{ $sim := . }}
+            {{ $sin := partial "x-in-y-nocase" (dict "x" ($localScratch.Get "mname") "y" .models) }}
+            {{ if ($sin) }}
+                {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+                <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+                <!-- Add to the counter -->
+                {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
+            {{ end }}
+        {{ end }}
+        {{ if eq ($localScratch.Get "postedSim") 0 }}
+          ---
+        {{ end }}
 
       <!-- Separator -->
       <hr>

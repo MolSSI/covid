@@ -42,21 +42,9 @@ ignoreFiles = ["README.md$"]
     weight = 4
 
 [[menu.main]]
-    hasChildren = true
+    url = "/simulations/"
     name = "Simulations"
     weight = 8
-
-    [[menu.main]]
-        parent = "Simulations"
-        url = "/simulations/md"
-        name = "Molecular Dynamics"
-        weight = 1
-
-    [[menu.main]]
-        parent = "Simulations"
-        url = "/simulations/docking"
-        name = "Docking"
-        weight = 1
 
 [[menu.main]]
     url = "/models"

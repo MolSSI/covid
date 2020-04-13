@@ -155,4 +155,8 @@ footer {
     margin-top: -56px;
 }
 
-.mol3dcontent
+.alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}

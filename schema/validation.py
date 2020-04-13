@@ -70,7 +70,15 @@ class ValidSimulations(str, Enum):
     docking = 'docking'
     md = 'md'
     mc = 'mc'
-    cg = 'cg'
+    mdcg = 'mdcg'
+    mdmc = 'mdcm'
+
+
+class ValidEnsembles(str, Enum):
+    NPT = 'NPT'
+    NVT = 'NVT'
+    NVE = 'NVE'
+    Other = 'Other'
 
 
 class LinkOutKeys(BaseModel):
@@ -132,11 +140,34 @@ class ProteinsModel(BaseModel):
 
 
 class SimulationsModel(BaseModel):
-    simulation: str
-    name: str
-    description: str
-    url: AnyUrl
     type: ValidSimulations
+    title: str
+    description: str
+    creator: str
+    organization: Optional[str]
+    lab: Optional[str]
+    institute: Optional[str]
+    models: List[str]
+    proteins: List[ValidProteins]
+    structures: List[str]
+    rating: Optional[int]
+    files: Optional[List[AnyUrl]]
+    trajectory: AnyUrl
+    size: str
+    length: str
+    ensemble: ValidEnsembles
+    temperature: float
+    pressure: float
+    solvent: str
+    salinity: float
+    forcefields: List[str]
+    references: Optional[List[str]]
+
+    @validator('rating')
+    def rating_valid(cls, v):
+        if v < 1 or v > 5:
+            raise ValueError(f'Rating must be on domain [1,5], is {v}')
+        return v
 
 
 class StructuresModel(BaseModel):
