@@ -1,0 +1,30 @@
+type: md
+title: Gromacs 60 ns MD of SARS-CoV-2 spike trimer, All Atom model
+description: >
+  This trajectory is from a 60 ns MD simulation of the SARS-CoV-2 spike protein. The protein was solvated in a 20 x 20 x 20 nm  water
+  box containing 0.1 M NaCl. The simulation was performed with Gromacs 2018.8 on the Puhti cluster located at the CSC-IT using the Charmm27 force field. The interval
+  between frames is 80 ps. The simulation was conducted in the NPT ensemble (1 bar). This trajectory is all atom.
+creator: Dmitry Morozov
+organization: University of Jyvaskyla
+institute: Department of Chemistry and Nanoscience Center
+models:
+  - spike_protein_trimer
+proteins:
+  - spike
+structures:
+  - 6VXX
+ensemble: NPT
+forcefields:
+  - Charmm27
+files: https://github.com/bioexcel/covid_modelling_simulation_data/tree/master/spike_protein/full_spike/trimer
+trajectory: https://covmme.molssi.org/data/morozov/morozov_trajs_0/spike_protein/SARS-CoV-2-Full-Spike-60ns.tar 
+size: 2.0 GB
+solvent: Water
+temperature: 300
+pressure: 0.987                                               	
+salinity: 0.1
+length: 60 ns
+references:
+  - "Mark James Abraham, Teemu Murtola, Roland Schulz, Szilard Pall, Jeremy C. Smith, Berk Hess, Erik Lindahl,
+     GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers,
+     SoftwareX, 2015, V. 1–2, pp. 19-25"

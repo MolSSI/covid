@@ -1,0 +1,16 @@
+name: "SARS-CoV-2 spike protein trimer (closed state) model for MD simulations"
+description: >
+  Model of the spike protein trimer of SARS-CoV-2 virus in closed conformation. 
+  That trimer is built from the homology model of monomer made by Thomas Desautels et.al. (https://doi.org/10.1101/2020.04.03.024885)
+  It has been replicated and fitted to the known structure of SARS-CoV-1 by Wenfei Song et.al. PDBID: 6ACK (https://doi.org/10.1371/journal.ppat.1007236). 
+  That model has been made to perform MD simulations.  
+url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/spike_protein/full_spike/trimer
+pdb_url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/spike_protein/full_spike/trimer/full_spike_trimer_all.pdb
+pdbids: 
+  - 6ACK
+proteins: 
+  - spike
+creator: Vladimir Mironov
+organization: Lomonosov Moscow State University
+institution: Chemistry Department
+lab: Laboratory of Chemical Cybernetics
