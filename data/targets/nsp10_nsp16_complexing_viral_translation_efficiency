@@ -1,0 +1,13 @@
+target: "nsp10-nsp16 complexing for viral translation efficiency" 
+description: >
+  nsp10, nonstructural protein 10, is an nsp activator required to initiate nsp14's
+  proofreading exoribonuclease with (guanine-N7) methyl transferase activity for viral 
+  mRNA capping and nsp16's 2'-O-mehtyltransferase activity. Both nsp14/16 interact at 
+  the same nsp10 surface and disrupting this complex formation can decrease translational 
+  efficiency of viral mRNAs and promote recognition of foreign RNA to enhance innate immune
+  reponses. 
+ therapeutic: 
+  -peptide
+ papers:
+  Wang_2015_Targeting_nsp10/nsp16_for_Reduced_Replication_and_Pathogenesis:
+    DOI: 10.1128/JVI.00948-15
