@@ -57,9 +57,14 @@ ignoreFiles = ["README.md$"]
     weight = 7
 
 [[menu.main]]
+    url = "/contributing/"
+    name = "Contributing"
+    weight = 9
+
+[[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 9
+    weight = 10
 
     [[menu.main]]
         parent = "About"
@@ -69,21 +74,15 @@ ignoreFiles = ["README.md$"]
 
     [[menu.main]]
         parent = "About"
-        url = "/contributing/"
-        name = "Contributing"
-        weight = 2
-
-    [[menu.main]]
-        parent = "About"
         url = "/collaborating/"
         name = "Collaborating"
-        weight = 3
+        weight = 2
 
     [[menu.main]]
         parent = "About"
         url = "/teams/"
         name = "Teams"
-        weight = 4
+        weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
