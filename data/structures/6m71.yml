@@ -1,7 +1,7 @@
 pdbid: 6m71
 targets:
   - viral replication
-protein:
+proteins:
   - NSP7
   - NSP8
   - RdRP
@@ -9,5 +9,5 @@ organisms:
   - SARS-CoV-2
   - human
 annotation: High-resolution cyro-EM structure of the SARS-CoV-2 NSP7-8 complex with RdRP
-rating: 4
+rating: 
 images: images/protein_renderings/6M71.png

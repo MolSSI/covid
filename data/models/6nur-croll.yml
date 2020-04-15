@@ -3,8 +3,8 @@ pdbids:
   - 6nur
 proteins:
   - RdRP
-  - nsp7
-  - nsp8
+  - NSP7
+  - NSP8
 organism:
   - SARS-CoV
 description: >
@@ -13,4 +13,4 @@ description: >
 url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV/6nur
 pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV/6nur/6nur.pdb
 creator: Tristan Croll
-rating: 4
+rating: 

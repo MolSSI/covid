@@ -7,6 +7,8 @@
 {{ $proteins := partial "protein-map" . }}
 {{ $structures := partial "structure-map" . }}
 {{ $thera := partial "thera-map" . }}
+{{ $model := partial "model-map" . }}
+{{ $sim := partial "sim-map" . }}
 
 
 <main>
@@ -15,7 +17,6 @@
         <h2>{{ .Site.Title }}</h2>
         <h3>{{ markdownify .Site.Params.Description }}</h3>
         {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
-
 
         <img src="images/sars-cov-2-600x300.jpg">
 
@@ -38,13 +39,25 @@
             <h3>Structures:</h3>
             <p>
                 {{ range $pname, $plink := $structures }}
-                <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+                <a href="{{ $plink }}"><kbd class="alert-danger" style="">{{ $pname  }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Models:</h3>
+            <p>
+                {{ range $mname, $mlink := $model }}
+                <a href="{{ $mlink }}"><kbd class="alert-info" style="">{{ $mname }}</kbd></a>
                 {{ end }}
             </p>
             <h3>Therapeutics:</h3>
             <p>
                 {{ range $tname, $tlink := $thera }}
                 <a href="{{ $tlink }}"><kbd class="alert-success" style="">{{ $tname }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Simulations:</h3>
+            <p>
+                {{ range $sname, $slink := $sim }}
+                <a href="{{ $slink }}"><kbd class="alert-secondary" style="">{{ $sname }}</kbd></a>
                 {{ end }}
             </p>
         </div>

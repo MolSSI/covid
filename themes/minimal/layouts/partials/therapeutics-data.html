@@ -13,7 +13,7 @@
 {{ end }}
 
 <!-- Molecule description -->
-<p align="justify">{{ .data.description }}</p>
+<p align="justify">{{ .data.description | markdownify }}</p>
 
 <!-- Molecule mechanism -->
 <p align="justify"><u>Mechanism:</u> {{ .data.mechanism }}</p>

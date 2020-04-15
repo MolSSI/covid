@@ -10,12 +10,17 @@ Each entry has the following required and optional keys:
 ```
 name: (required)
 description: (required)
-url: (required)
+url: (required) Link to where the model and supporting info can be found
+pdb_url: Link to the physical PDF file the model is contained in (used to render on page)
 pdbids: (required)
   - pdbid1
   - ...
+proteins: (required) Valid options in /data/proteins
+  - protein id
+  - ...
+creator: (required) Name of person or group who created it
 organization: (optional)
 institution: (optional)
-lab: (optional)
-resources: one or more of [structures, models]
+lab: (optional) If more information beyond `creator` is requred to properly cite, use this field
+rating: (optional) int on range [1,5]. 1=worst, 5=best
 ```

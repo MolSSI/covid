@@ -1,8 +1,8 @@
-# COVID-19 Therapeutics and Modeling Exchange
+# COVID-19 Molecular Structure and Therapeutics Hub
 
 ![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
 
-A community data repository and curation service for Molecular Mechanics (MM) and Molecular Dynamics (MD) 
+A community data repository and curation service for Structure, Models, Therapeutics, Simulations 
 related computations for research into the SARS-CoV-2 / COVID-19 / ”Coronavirus” pandemic maintained 
 by [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org) and 
 [BioExcel](https://bioexcel.eu/). 
@@ -13,7 +13,7 @@ this repository is meant to serve as a curated central repository of MM and MD i
 trajectories, analysis scripts, well-validated algorithms, and related data for immediate community 
 access.
 
-This project may serve as a prototype into a future, more general Molecular Mechanics Exchange of Data 
+This project may serve as a prototype into a future, more general Hub of structural and simulation Data 
 project. There may come a time as this project evolves that it naturally does become more general (or 
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
 future evolutions can be dealt with as they arise. 
@@ -26,40 +26,19 @@ The nature of this pandemic requires rapid, and flexible response. This reposito
 within are designed to get the information out quickly. The repo seeks to provide the following information
 in a centralized location:
 
-* Provide Simulation input files (structures, configurations, scripts, Jupyter notebooks) 
-  to the community in an organized structure. Sorting done by Research Group, proteins (spike protein, protease, etc), 
-  Simulation Program, Hardware/platform (cluster, cloud, local, etc).
-* Provide Trajectories to the community for analysis. Due to the nature of the trajectories’ sizes, 
-  we may only be able to provide pointers to the trajectories where possible. As the data, repository, 
-  and available resources evolve, MolSSI may be able to provide a central location for full trajectories
-  in the future.
-* Provide analysis files and quantitative numbers associated with inputs and trajectories.
-* Pointers to preprint servers such as arXiv, bioRxiv, and ChemRxiv on biomolecular simulation research in regards 
-  SARS-CoV-2.
-* Where appropriate, well-validated and easily deployable algorithms such as functional Monte Carlo, machine 
-  learning methods, and heuristic property calculators.
-  
-This exchange is a community resource as well as community driven tool. Suggestions as to changes for 
-the folder structure, types of content accepted, regulation of the content, etc. are all welcome and 
-encouraged through issues and pull requests.
-
-## Types of Data Stored
-
-The following classes of data are currently accepted in the Exchange (Note: This is a **flexible** and 
- broad list. New suggestions can be made through [issues](https://github.com/MolSSI/CoVMME/issues)). Please note that all data in each category should have the subsequent information associated with it to be accepted. All submissions should also 
- have contributing information in the form of a README.md
-
 * Structures
     * Provenance of structure including any modifications made. Will accept manually written provenance. 
       If modifications made by program, please include script along with pre-modified files and list of required 
       programs to re-generate.
+* Models
+    * Extensions of the structures which are ready to go in a drug discovery Pipeline
+* Therapeutics
+    * Known small molecules, drug-likes, and other therapeutics which have been tested for treating this virus
 * Simulation Configuration Files
     * Programs required to run (minimal subset which gets all dependencies, with minimal versions), 
     * Basic script and/or working instructions to execute these configuration files, 
     * Structure files (required for non-internet accessible structures, e.g. not required for things on the 
       [Protein Data Bank](https://www.rcsb.org/))
-* Program Structure Files - Structures formatted uniquely for a specific simulation program or run 
-    * Same requirements as Simulation Configuration Files
 * Analysis Data 
     * Complete set of any of the previous data and exact details for replication
     * Analysis scripts with placeholders for output trajectory files.
@@ -84,49 +63,19 @@ The following classes of data are currently accepted in the Exchange (Note: This
     * Programing Language (if restricted)
     * List of required software and minimal dependencies (if any)
 
-Due to the rapidly evolving nature of this exchange, organization and requirements may change with time. However, 
+Due to the rapidly evolving nature of this hub, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
 contributor to ask for additional information as needed.  
-
+ 
 
 ## Contributing
 
-The exchange gladly accepts any of the above types of data (and others if you propose an organization). 
-Simply open a PR with the data you wish to submit with the following folder structure (omit any directories 
-for types you are not submitting):
+The exchange gladly accepts any of the types of data hosted on the website (and others if you propose a schema). 
+Simply open a Pull Request on the [Github repository](https://github.com/MolSSI/covid) with the data you wish to submit following the Schema in each of the `/data/{TYPE}/README.md` files.
+Data is submitted as YAML files into the `/data/{TYPE}/README.md` directory.
 
-```
-sorted_by_group
-└──YOUR_GROUP_NAME
-   ├── README.md
-   └── TARGET
-       ├── algorithms
-       ├── analysis
-       ├── movies
-       ├── papers
-       ├── program_specific_structures
-       │   └── SIMULATION_SOFTWARE
-       ├── simulation_configs
-       │   └── SIMULATION_SOFTWARE
-       ├── structures
-       └── trajectories
-           └── SIMULATION_SOFTWARE
-```
-
-Create a folder for your group within the `sorted_by_group` directory. This will serve as the main storage location for all of your submissions. Within this folder, create a `README.md` file and include information about your contributing group(s):
-* Author: The user(s) who produced the data associated with the submission.
-* Group: The group(s) of the author(s) of the submission.
-* Organization: The organization(s) of the author(s).
-* Reference_Information: If desired, include websites for the associated groups.
-* Contact_Information: If desired, include ways that the author(s) can be contacted about their submission.
-
-Note that for submissions by collaborations of multiple groups, create a folder within the `sorted_by_group` folder for your collaboration. Within the `README.md` include all authors and groups associated with this collaboration.
-
-For each new submission made to the repository, please create a folder, within your groups folder, with a unique `SUBMISSION_ID` as its name. Ideally, submission names should represent the order of submissions, allowing each submission to be processed in the order it is received.
-
-Each submission should include a folder representing the `TARGET` of the submission and a `README.md` for the submission. The `TARGET` folder should be named to represent the target type of your submission. We ask that you include all fields under Contributor Information above along with information requested for the type of data in your submission within the `README.md` file.
-Within the `TARGET` folder, create a subfolder for each type of data within this submission. These folders should contain all relevant files to the data types along with any meta data, such as provenance information, for the data.
-
+A new YAML file should be created for *every* new piece of data.
+Upon opening the pull request, submitted files will be automatically validated against the appropriate schemas. If a failure occurs during validation, please check the logs to determine the cause of the failure.
 
 This structure is subject to change, but all changes will be made by a maintainer and the instructions 
 updated accordingly.
@@ -139,7 +88,7 @@ to be an active contributor to join us!
 
 Reach out to any of the maintainers below and lets work together to make this as helpful as possible! 
 
-## Exchange Maintainers 
+## Hub Maintainers 
 
 * [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org)
 * [BioExcel](https://bioexcel.eu/)
