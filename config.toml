@@ -11,7 +11,7 @@ ignoreFiles = ["README.md$"]
 
 [params]
     author = "MolSSI and BioExcel"
-    description = "You're here for data. Lets go."
+    description = "Aggregating critical information to accelerate drug discovery for the molecular modeling and simulation community."
     githubUsername = "#"
     accent = "red"
     showBorder = true
@@ -42,21 +42,9 @@ ignoreFiles = ["README.md$"]
     weight = 4
 
 [[menu.main]]
-    hasChildren = true
+    url = "/simulations/"
     name = "Simulations"
-    weight = 2
-
-    [[menu.main]]
-        parent = "Simulations"
-        url = "/simulations/md"
-        name = "Molecular Dynamics"
-        weight = 1
-
-    [[menu.main]]
-        parent = "Simulations"
-        url = "/simulations/docking"
-        name = "Docking"
-        weight = 1
+    weight = 8
 
 [[menu.main]]
     url = "/models"
@@ -69,9 +57,14 @@ ignoreFiles = ["README.md$"]
     weight = 7
 
 [[menu.main]]
+    url = "/contributing/"
+    name = "Contributing"
+    weight = 9
+
+[[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 8
+    weight = 10
 
     [[menu.main]]
         parent = "About"
@@ -81,21 +74,15 @@ ignoreFiles = ["README.md$"]
 
     [[menu.main]]
         parent = "About"
-        url = "/contributing/"
-        name = "Contributing"
-        weight = 2
-
-    [[menu.main]]
-        parent = "About"
         url = "/collaborating/"
         name = "Collaborating"
-        weight = 3
+        weight = 2
 
     [[menu.main]]
         parent = "About"
         url = "/teams/"
         name = "Teams"
-        weight = 4
+        weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.

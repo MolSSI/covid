@@ -2,12 +2,12 @@ pdbid: 6W02
 method: "X-ray diffraction"
 resolution: "1.5"
 proteins:
-  - NSP3
+  - PLpro
 organisms:
   - SARS-CoV-2
 targets:
   - 3CLpro protease activity
 ligands:
   - ADP ribose
-annotation: Crystal Structure of ADP ribose phosphatase of NSP3 from SARS CoV-2 in the complex with ADP ribose
-rating: 3
+annotation: Crystal Structure of ADP ribose phosphatase of PLpro from SARS CoV-2 in the complex with ADP ribose
+rating: 

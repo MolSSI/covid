@@ -30,7 +30,9 @@
 
 
   <!-- Structure name -->
-  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'><b>{{ $title }}</b></h3>
+  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
+    <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} </b>
+  </h3>
 
   <!-- Structure Annotation -->
   {{ if not (in ( $title | lower) (.structure.annotation | lower) ) }}
@@ -55,7 +57,7 @@
   {{ end }}
   </p>
 
-  <h3> Structure Data and Links </h3>
+  <h4 align="left"> Structure Data and Links </h4>
   {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
   <p>
     <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
@@ -73,8 +75,30 @@
     </p>
   {{ end }}
 
-  <!-- TODO: There are dashes ('-') being prepended here---fix them? -->
-  <h4> Known Targets Modalities: </h4>
+  <!-- Determine if there are known models -->
+  {{ $localScratch.Set "postedModels" 0 }}
+  <h4 align="left"> Top Two Models: </h4>
+  {{ range sort .context.Site.Data.models "rating" "desc" }}
+    {{ $localScratch.Set "model" . }}
+    <!-- This PDB is in the given model and we have not posted more than 1 -->
+    {{ if and (partial "x-in-y-nocase" (dict "x" $pdb "y" .pdbids)) (lt ($localScratch.Get "postedModels") 2)}}
+      <!-- Add to the counter -->
+      <p>
+        {{ $model := $localScratch.Get "model" }}
+        {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+        {{ $model_url := print $.context.Site.BaseURL "/models/#" $anchor }}
+        <a href='{{ $model_url }}'>
+          <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
+        </a>
+      </p>
+      {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
+    {{ end }}
+  {{ end }}
+  {{ if eq ($localScratch.Get "postedModels") (0) }}
+    <p>---</p>
+  {{ end }}
+
+  <h4 align="left"> Known Target Modalities: </h4>
   <p>
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
@@ -82,13 +106,29 @@
   {{ end }}
   </p>
 
-  <h4> Related Proteins: </h4>
+  <h4 align="left"> Related Proteins: </h4>
   <p>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
   </p>
+
+  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
+    {{ $localScratch.Set "postedSim" 0 }}
+    {{ range sort .context.Site.Data.simulations "rating" "desc" }}
+        {{ $sim := . }}
+        {{ $sin := partial "x-in-y-nocase" (dict "x" $.structure.pdbid "y" .structures) }}
+        {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
+            {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+            <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+            <!-- Add to the counter -->
+            {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
+        {{ end }}
+    {{ end }}
+    {{ if eq ($localScratch.Get "postedSim") 0 }}
+      ---
+    {{ end }}
 
   <hr>
 

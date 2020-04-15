@@ -1,0 +1,24 @@
+<!-- Helper function to determine if a given model has a certain target by sifting through the PDBS -->
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "targets" slice }}
+
+{{ range .model.pdbids }}
+    {{ $localScratch.Set "model_pdb" . }}
+    {{ range $.context.Site.Data.structures }}
+        {{ $localScratch.Set "structure" . }}
+        {{ if eq (.pdbid | upper ) ($localScratch.Get "model_pdb" | upper) }}
+            {{ if ($localScratch.Get "structure").targets }}
+                {{ $targets := partial "ensure-slice" ($localScratch.Get "structure").targets }}
+                {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if not ($localScratch.Get "targets") }}
+    {{ $localScratch.Set "ret" "nil" }}
+{{ else }}
+    {{ $localScratch.Set "ret" (index ($localScratch.Get "targets") 0) }}
+{{ end }}
+{{ return ($localScratch.Get "ret") }}

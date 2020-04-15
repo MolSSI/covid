@@ -1,0 +1,17 @@
+<!-- Helper function to determine if a given model has a certain target by sifting through the PDBS -->
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "targets" slice }}
+
+{{ range .simulation.models }}
+    {{ $localScratch.Set "model_id" . }}
+    {{ range $mname, $mcontent := $.context.Site.Data.models }}
+        {{ $model_id := $localScratch.Get "model_id"}}
+        {{ if eq $mname $model_id }}
+            {{ $targets := partial "list-model-targets" (dict "model" . "context" $.context ) }}
+            {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return (uniq ($localScratch.Get "targets")) }}

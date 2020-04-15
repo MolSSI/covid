@@ -23,12 +23,13 @@ img {
 /* Homepage */
 
 .intro {
-    transform: translateY(22vh);
+    /* This line was causing infinite misalignment problems on the page */
+    /* transform: translateY(22vh); */
 }
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    /* font-size: 12vh; */
 }
 
 .intro > h2 {
@@ -152,4 +153,10 @@ footer {
     /* Shenanigans to make anchors work correctly. */
     padding-top: 56px;
     margin-top: -56px;
+}
+
+.alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
 }

@@ -3,8 +3,8 @@ pdbids:
   - 6m71
 proteins:
   - RdRP
-  - nsp7
-  - nsp8
+  - NSP7
+  - NSP8
 organism:
   - SARS-CoV-2
 description: >
@@ -16,4 +16,4 @@ description: >
 url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV-2/6m71
 pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/rna_polymerase-nsp7-nsp8/SARS-CoV-2/6m71/6m71.pdb
 creator: Tristan Croll
-rating: 4
+rating: 

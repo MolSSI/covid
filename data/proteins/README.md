@@ -15,7 +15,7 @@ interest: (required) one of [active, low]
 description: (required)
 uniprot: (optional)
 target: (optional)
-subunits: (optional)
+subunits: (optional) Dict of {<unit name>: List[proteins/short descriptors]}
 ```
 
 ## Notes

@@ -1,0 +1,122 @@
+<!-- Condensed form for all structures associated with a protein -->
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .context) }}
+{{ $localScratch.Set "context"  .context }}
+{{ $localScratch.Set "target_map" (partial "target-map" .context) }}
+{{ $localScratch.Set "protein_map" (partial "protein-map" .context) }}
+{{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
+{{ $md_type_map := dict "md" "Molecular Dynamics" "mc" "Monte Carlo" "mdcg" "Coarse Grained Molecular Dynamics" "mdmc" "Coarse Grained Monte Carlo" "docking" "Docking" }}
+
+<div class="col col-9">
+
+        <!-- Model name -->
+        <h3 class="anchor" id='{{ print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
+            {{ .simulation.title }}
+            {{ if .simulation.length }}
+            ({{ .simulation.length }} )
+            {{ end }}
+            {{ with .simulation.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+        </h3>
+
+        <h5>{{ .simulation.description | markdownify }}</h5>
+
+        <!-- Author -->
+        <h4>{{ .simulation.creator }}</h4>
+        {{ if .simulation.organization }}
+        <p>Organization: {{ .simulation.organization }}</p>
+        {{ end }}
+        {{ if .simulation.institution }}
+        <p>Institution: {{ .simulation.institution }}</p>
+        {{ end }}
+        {{ if .simulation.lab }}
+        <p>Lab: {{ .simulation.lab }}</p>
+        {{ end }}
+
+        <!-- Physical Data -->
+        <table class="table text-center-row">
+            <thead style="background: linear-gradient(#777, #444);color: #fff">
+                <tr class="">
+                    <th scope="col">Type</th>
+                    <th scope="col">Ensemble</th>
+                    <th scope="col">Temperature (K) </th>
+                    <th scope="col">Pressure (atm)</th>
+                    <th scope="col">Solvent</th>
+                    <th scope="col">Salinity (M)</th>
+                    <th scope="col">Force Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ index $md_type_map .simulation.type }}</td>
+                    <td>{{ .simulation.ensemble }}</td>
+                    <td>{{ .simulation.temperature }}</td>
+                    <td>{{ .simulation.pressure }}</td>
+                    <td>{{ .simulation.solvent }}</td>
+                    <td>{{ .simulation.salinity }}</td>
+                    <td>{{ range .simulation.forcefields }} {{ . }}<br>{{ end }}</td>
+                </tr>
+        </table>
+
+        <h4 align="left">
+            Input and Supporting Files:
+            {{ if .simulation.files }}
+                {{ range (seq (len .simulation.files)) }}
+                    <a href="{{ index $.simulation.files (sub . 1) }}"><kbd class="alert-secondary">[.]</kbd></a>
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        </h4>
+
+        <h4 align="left">
+            Trajectory:
+            {{ if .simulation.trajectory }}
+                <a href="{{ .simulation.trajectory }}"><kbd class="alert-secondary">Get Trajectory ({{.simulation.size}})</kbd></a>
+            {{ else }}
+                ---
+            {{ end }}
+        </h4>
+
+        <!-- Proteins represented -->
+        <h4 align="left">
+            Represented Proteins:
+            {{ range .simulation.proteins }}
+                <a href='{{ $localScratch.Get "protein_map" }}'><kbd class="bg-primary">{{.}}</kbd></a>
+            {{ else }}
+                ---
+            {{ end }}
+        </h4>
+
+        <!-- Structures represented -->
+        <h4 align="left">
+            Represented Structures:
+            {{ range .simulation.structures }}
+                {{ $anchor := print ( . | upper | anchorize) "-" ( $.protein | anchorize) }}
+                <a href='{{ $.context.Site.BaseURL }}/structures/#{{ $anchor }}'><kbd class="alert-danger">{{.}}</kbd></a>
+            {{ else }}
+                ---
+            {{ end }}
+        </h4>
+
+        <!-- Models represented -->
+        <h4 align="left">
+            Models Models:
+            {{ range .simulation.models }}
+                {{ $model := . }}
+                {{ range $mname, $mdata := $.context.Site.Data.models }}
+                    {{ if eq $model $mname }}
+                        {{ $anchor := print ( $mdata.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+                        <a href='{{ $.context.Site.BaseURL }}/models/#{{ $anchor }}'><kbd class="alert-info">{{ $mdata.name}}</kbd></a>
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        </h4>
+
+        <!-- TODO: Include references in an accordion -->
+
+        <hr>
+
+</div>
