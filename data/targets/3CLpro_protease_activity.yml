@@ -6,6 +6,6 @@ description: >
   an obligate dimer, although many drug design efforts just use a monomer
   structure. Two potential therapeutic modalities exist, the first being
   active site inhibition, and the second being dimerization inhibition.
-protein:
+proteins:
   - 3CLpro
 therapeutic: small molecule
