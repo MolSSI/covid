@@ -2,10 +2,10 @@ pdbid: 5R8T
 method: "X-ray diffraction"
 resolution: "1.27"
 proteins:
-  - 3CLpro / Mpro
+  - 3CLpro
 organisms:
   - SARS-CoV-2
 targets:
-  - 3CLpro activity
+  - 3CLpro protease activity
 annotation: PanDDA analysis group deposition of ground-state model of SARS-CoV-2 main protease fragment screening
 images: images/protein_renderings/5R8T.png
