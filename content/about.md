@@ -22,8 +22,6 @@ project. There may come a time as this project evolves that it naturally does be
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
 future evolutions can be dealt with as they arise. 
 
-## [Go to the Website](https://covid.molssi.org)
-
 ## A Central Reference for Community Simulation Data
 
 The nature of this pandemic requires rapid, and flexible response. This repository, and the data 
@@ -70,3 +68,10 @@ in a centralized location:
 Due to the rapidly evolving nature of this hub, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
 contributor to ask for additional information as needed.  
+
+## The Website Itself
+
+All content for this website (excluding external links) exist on a single [Github repository](https://github.com/MolSSI/). 
+Data, HTML pages, CSS, etc. all live there.
+
+This page is generated automatically from the GitHub through by [Hugo](https://gohugo.io/) and deployed through [Netlify](https://www.netlify.com/).
