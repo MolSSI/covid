@@ -6,7 +6,7 @@ description: >
   the same nsp10 surface and disrupting this complex formation can decrease translational 
   efficiency of viral mRNAs and promote recognition of foreign RNA to enhance innate immune
   reponses. 
-therapeutic: 
+therapeutic_modalities: 
   -peptide
 papers:
   Wang_2015_Targeting_nsp10_nsp16:
