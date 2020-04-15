@@ -37,6 +37,7 @@ class ValidProteins(str, Enum):
     Furin = 'Furin'
     IL6R = 'IL6R'
     p38 = 'p38'
+    PD_1 = 'PD-1'
 
 
 class ValidTargets(str, Enum):
