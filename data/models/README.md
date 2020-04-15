@@ -11,7 +11,7 @@ Each entry has the following required and optional keys:
 name: (required)
 description: (required)
 url: (required) Link to where the model and supporting info can be found
-pdb_url: Link to the physical PDF file the model is contained in (used to render on page)
+pdb_url: (optional) Link to the physical PDF file the model is contained in (used to render on page), if present
 pdbids: (required)
   - pdbid1
   - ...

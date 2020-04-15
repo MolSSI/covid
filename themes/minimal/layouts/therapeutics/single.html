@@ -19,6 +19,17 @@
         <h2>{{ .Title }}</h2>
         <h4>{{ .Description }}</h4>
         <h4 align="justify">{{ .Content }}</h4>
+
+        <h4 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "therapeutics" "targets" "proteins"}}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h4>
+
     </div>
 
     <!-- List all targets from data/targets/ -->

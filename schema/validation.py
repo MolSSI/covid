@@ -102,7 +102,7 @@ class ModelsModel(BaseModel):
     name: str
     description: str
     url: AnyUrl
-    pdb_url: AnyUrl
+    pdb_url: Optional[AnyUrl]
     pdbids: List[str]
     proteins: List[ValidProteins]
     creator: str
@@ -206,6 +206,13 @@ class TeamsModel(BaseModel):
         for member in v:
             if 'name' not in member.keys():
                 raise ValueError(f'Missing field: name')
+
+
+class GlossaryModel(BaseModel):
+    term: str
+    short: str
+    long: str
+    url: Optional[str]
                 
     
 def filter_yaml(string, substr):
