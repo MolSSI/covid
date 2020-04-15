@@ -1,0 +1,11 @@
+name: Refinement of RaptorX ORF3a by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: FeigLab refinement of RaptorX-Contact models. Refinement performed using a protocol based on molecular dynamics (MD) simulations. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+publication_doi: https://doi.org/10.1101/2020.03.25.008904
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/RaptorX/ORF3a.pdb
+pdbids:
+  -
+proteins:
+  - ORF3a
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
