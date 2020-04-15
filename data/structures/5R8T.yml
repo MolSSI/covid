@@ -8,5 +8,4 @@ organisms:
 targets:
   - 3C-like / Main protease activity
 annotation: PanDDA analysis group deposition of ground-state model of SARS-CoV-2 main protease fragment screening
-rating: 5
 images: images/protein_renderings/5R8T.png
