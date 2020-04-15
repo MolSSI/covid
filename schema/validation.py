@@ -110,7 +110,7 @@ class ModelsModel(BaseModel):
     description: str
     url: AnyUrl
     pdb_url: AnyUrl
-    pdbids: List[str]
+    pdbids: Optional[List[str]]
     proteins: List[ValidProteins]
     creator: str
     organization: Optional[str]
