@@ -4,8 +4,7 @@ description: FeigLab refinement of RaptorX-Contact models. Refinement performed 
 publication_doi: https://doi.org/10.1101/2020.03.25.008904
 pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/RaptorX/M_protein.pdb
 pdbids:
-  -
 proteins:
-  - Membrane Glycoprotein
+  - M protein
 creator: Feig Computational Biophysics Lab
 institution: Michigan State University
