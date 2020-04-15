@@ -1,0 +1,19 @@
+term: Structures
+short: Data defining protein structures determined by experimental methods and referenced via a unique PDB ID.
+long: >
+  Experimentally and calculated molecular structures of the proteins.
+
+
+  Sub-structures for each protein should be grouped under the primary structure.
+
+
+  Groupings of multiple protein structures are listed here if they were derived from experimental methods,
+  however, for any sort of post-measurement modeling, they are in "Models." For example, The Viral Spike S1 might be
+  interacting with the Host ACE2 (for interfering with binding); this would be considered a "model."
+
+
+  Due to the significant overlap between SARS-CoV-2 (Common Name: COVID-19) and SARS-CoV (Common Name: SARS), many of the
+  structures could be applied for homology research. When a structure, is of a SARS-CoV based nature, it will be explicitly
+  denoted. If no notation appears, it is applicable to SARS-CoV-2.
+  
+url: /structures

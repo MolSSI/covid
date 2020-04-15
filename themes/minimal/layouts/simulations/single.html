@@ -14,6 +14,17 @@
         <h5>{{ .Description }}</h5>
 
         {{ .Content }}
+
+        <h4 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "simulations" "proteins" "structures" "models" }}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h4>
+
         <h4>Quick Navigation</h4>
         <p>
             {{ range $pname, $plink := $structure_map }}
