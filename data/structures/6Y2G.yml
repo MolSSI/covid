@@ -6,6 +6,6 @@ proteins:
 organisms:
   - SARS-CoV-2
 targets:
-  - 3C-like / Main protease activity
+  - 3CLpro protease activity
 annotation: Crystal structure of SARS-CoV-2 main protease provides a basis for design of improved alpha-ketoamide inhibitors
 images: images/protein_renderings/6Y2G.png

@@ -1,7 +1,9 @@
 protein: TMPRSS2
 organism: human
 name: Transmembrane Protease Serine 2
-description:
+description: >
+  Transmembrane serine protease which has been shown to be involved
+  in spike protein cleavage.
 uniprot: https://www.uniprot.org/uniprot/O15393
 target: spike cleavage
 domains:
