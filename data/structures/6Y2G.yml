@@ -2,7 +2,7 @@ pdbid: 6Y2G
 method: "X-ray diffraction"
 resolution: "2.20"
 proteins:
-  - 3CLpro / Mpro
+  - 3CLpro
 organisms:
   - SARS-CoV-2
 targets:
