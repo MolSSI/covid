@@ -8,4 +8,4 @@ description: >
   active site inhibition, and the second being dimerization inhibition.
 proteins:
   - 3CLpro
-therapeutic: small molecule
+therapeutic_modalities: small molecule
