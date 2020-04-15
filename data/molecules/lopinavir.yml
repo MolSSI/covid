@@ -9,7 +9,8 @@ links:
   drugbank: DB01601
   chemspider: 83706
 target:
-  - viral proteases
+  - PLpro protease activity
+  - 3CLpro protease activity
 mechanism: Inhibits the viral proteases
 protein:
   - 3CLpro
