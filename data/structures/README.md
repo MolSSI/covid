@@ -37,6 +37,12 @@ proteins: (one or more of the following options)
   - 3CLpro
   - PLpro
   - RdRP
+  - ORF3a
+  - ORF6
+  - ORF8
+  - ORF7b
+  - ORF10
+  - M protein
 targets: (one or more of the following options)
   - spike binding
   - spike cleavage
