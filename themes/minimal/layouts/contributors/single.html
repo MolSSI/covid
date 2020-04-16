@@ -7,7 +7,9 @@
         <!--<h5>{{ .Description }}</h5>-->
         {{ partial "tags" . }}
     </div>
-
+    <div align="left">
+        {{ .Content }}
+    </div>
     <hr>
     <!-- List all targets from data/targets/ -->
     {{ range $.Site.Data.contributors }}
