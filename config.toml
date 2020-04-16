@@ -75,20 +75,26 @@ ignoreFiles = ["README.md$"]
 
 [[menu.main]]
     hasChildren = true
-    name = "About"
+    name = "About & Info"
     weight = 10
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Info"
         url = "/about/"
-        name = "About the Exchange"
+        name = "About the Hub"
         weight = 1
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Info"
         url = "/collaborating/"
         name = "Collaborating"
         weight = 2
+
+    [[menu.main]]
+        parent = "About & Info"
+        url = "/links/"
+        name = "Ext. Resources"
+        weight = 3
         
 #    [[menu.main]]
 #        parent = "About"
