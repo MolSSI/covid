@@ -1,0 +1,13 @@
+term: Models
+short: Derived, integrated, or refined structures from multiple data sources prepared for different computational tasks.
+long: >
+  Derived and/or integrated structures from multiple data sources prepared for different tasks such as docking, FEP,
+  virtual screening, etc. Effectively ready to go constructed molecular systems which can be used as inputs for myriad
+  scientific research techniques.
+
+
+  Due to the significant overlap between SARS-CoV-2 (Common Name: COVID-19) and SARS-CoV (Common Name: SARS), many of the
+  models could be applied for homology research. When a model, is of a SARS-CoV based nature, it will be explicitly
+  denoted. If no notation appears, it is applicable to SARS-CoV-2.
+  
+url: /models

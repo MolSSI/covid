@@ -1,0 +1,9 @@
+term: Therapeutics
+short: Molecules, drugs, antibodies, peptides, etc. which implement targets.
+long: >
+  Molecules, drugs, antibodies, peptides, etc. which implement or act to disrupt Targets.
+
+
+  A "Therapeutic Modality" are the subcategories of these such as "small molecules" and "antibody"
+
+url: /therapeutics

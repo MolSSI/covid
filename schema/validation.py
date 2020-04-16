@@ -43,6 +43,7 @@ class ValidProteins(str, Enum):
     ORF8 = 'ORF8'
     ORF10 = 'ORF10'
     M_protein = 'M protein'
+    PD_1 = 'PD-1'
 
 
 class ValidTargets(str, Enum):
@@ -108,7 +109,7 @@ class ModelsModel(BaseModel):
     name: str
     description: str
     url: AnyUrl
-    pdb_url: AnyUrl
+    pdb_url: Optional[AnyUrl]
     pdbids: Optional[List[str]]
     proteins: List[ValidProteins]
     creator: str
@@ -206,45 +207,52 @@ class TargetsModel(BaseModel):
 class TeamsModel(BaseModel):
     name: str
     members: List[Dict]
-    
+
     @validator('members')
     def members_valid(cls, v):
         for member in v:
             if 'name' not in member.keys():
                 raise ValueError(f'Missing field: name')
+
+
+class GlossaryModel(BaseModel):
+    term: str
+    short: str
+    long: str
+    url: Optional[str]
                 
     
 def filter_yaml(string, substr):
     """ Function to filter for strings that contain one or more of the substrings.
-    
+
     This function returns a list of strings that contain at least one of the strings from the list substr.
-    
+
     Parameters
     ----------
     string : List[str]
         A list containing the strings to be filtered.
-        
+
     substr : List[str]
         A list of substrings to look for in the strings.
     """
     return [str for str in string if
              any(sub in str for sub in substr)]
-             
+
 
 def validate(filepath, model):
     """Function to perform validation on a file and a model.
-    
+
     This function takes in a file path to a yaml file and a model. It opens the file and safely loads the yaml file
     into a dictionary. It will only allow simple types currently to avoid arbitrary code execution. The dictionary from
     the yaml file is validated against the given model.
-    
+
     Parameters
     ----------
     filepath : str
         Path to a yaml file.
     model : BaseModel
         Path to a model that inherits from Pydantic BaseModel
-    
+
     """
     with open(filepath, 'r') as stream:
         yml_dict = safe_load(stream)
@@ -267,15 +275,15 @@ if __name__ == "__main__":
     total_errors = 0
     # Iterate over each directory.
     for directory, model in directories.items():
-        
+
         # Generate a set of files for the given directory.
-        f = []    
+        f = []
         for (dirpath, dirnames, filenames) in walk(join("../data", directory)):
             f.extend(filenames)
-        
+
         # Filter out non ".yml" files from the directory
         f_filter = filter_yaml(f, ["yml"])
-        
+
         # For each yml file in the directory, perform validation against its associated model.
         for filename in f_filter:
             total_errors += validate(join("../data", directory, filename), model)

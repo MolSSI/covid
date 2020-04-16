@@ -1,0 +1,11 @@
+term: Proteins
+short: The biological proteins associated with the SARS-CoV-2 virus and host.
+long: >
+  The biological proteins associated with the SARS-CoV-2 virus and host that impact the viral infection cycle.
+
+
+  Due to the significant overlap between SARS-CoV-2 (Common Name: COVID-19) and SARS-CoV (Common Name: SARS), many of the
+  proteins applicable to both, but defer to SARS-CoV-2. When a structure, model, or simulation is of a SARS-CoV based
+  nature, it will be explicitly denoted. If no notation appears, it is applicable to SARS-CoV-2.
+
+url: /proteins
