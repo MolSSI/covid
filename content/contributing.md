@@ -4,7 +4,7 @@ description: Instructions for Contributing
 draft: false
 ---
 
-## Data Tagging System
+## Data Publication Indicator System
 
 All data submitted to the website is flagged based on the data's current state of publication.
 
