@@ -13,6 +13,7 @@
       <h3 class="anchor" id='{{ print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
           {{ .model.name }}
           {{ with .model.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+          {{ partial "general-marker" . }}
       </h3>
 
       <!-- Author -->
@@ -37,7 +38,7 @@
       <h5 align="left">
       Model: <a href="{{ .model.url }}"><kbd class="alert-success">Model PDB</kbd></a>
       |
-      Source PDBs:
+      Source Structure PDBs:
       {{ range .model.pdbids }}
         {{ $pdb := upper . }}
         {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
@@ -62,6 +63,7 @@
             {{ if ($sin) }}
                 {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
                 <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+                {{ partial "general-marker" $sim }}
                 <!-- Add to the counter -->
                 {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
             {{ end }}

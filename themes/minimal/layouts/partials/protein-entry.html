@@ -46,6 +46,7 @@
           {{ .structure.annotation }}
         {{ end }}
        {{ partial "stars" .rating }}
+       {{ partial "structure-marker" . }}
        </div>
       {{ $localScratch.Set "postedStruct" (add ($localScratch.Get "postedStruct") 1 )}}
      {{ end }}
@@ -73,6 +74,7 @@
         <a href='{{ $model_url }}'>
           <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
         </a>
+        {{ partial "general-marker" $model }}
       </p>
       <!-- Add to the counter -->
       {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
@@ -89,6 +91,7 @@
         {{ if and (in .proteins $.protein.protein) (lt ($localScratch.Get "postedSim") 2) }}
         <!-- TODO: Map the anchor to *a* target instead of just the protein heade-->
             <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $.protein.name | anchorize }}'><kbd class="alert-secondary">{{ $sim.title}}</kbd></a>
+            {{ partial "general-marker" $sim }}
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}
