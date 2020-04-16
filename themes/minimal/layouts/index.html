@@ -9,6 +9,7 @@
 {{ $thera := partial "thera-map" . }}
 {{ $model := partial "model-map" . }}
 {{ $sim := partial "sim-map" . }}
+{{ $links := partial "links-map" . }}
 
 
 <main>
@@ -38,7 +39,7 @@
             Quick Terminology <a href="{{ .Site.BaseURL}}/glossary">[Full Glossary]</a>:
         </p>
             <ul style="text-align:left;font-size:120%;">
-                {{ range slice "targets" "proteins" "structures" "models" "therapeutics" "simulations" }}
+                {{ range slice "targets" "proteins" "structures" "models" "therapeutics" "simulations" "links" }}
                     {{ $data := index $.Site.Data.glossary . }}
                     <li>
                         <a href="{{ $data.url }}"><b>{{ $data.term }}:</b></a> {{ $data.short }}
@@ -84,6 +85,12 @@
             <p>
                 {{ range $sname, $slink := $sim }}
                 <a href="{{ $slink }}"><kbd class="alert-secondary" style="">{{ $sname }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Links:</h3>
+            <p>
+                {{ range $lname, $llink := $links }}
+                <a href="{{ $llink }}"><kbd class="alert-secondary" style="">{{ $lname }}</kbd></a>
                 {{ end }}
             </p>
         </div>
