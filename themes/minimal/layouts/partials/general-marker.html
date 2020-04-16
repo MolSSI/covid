@@ -4,11 +4,11 @@
 {{ $localScratch := newScratch }}
 
 {{ if $.publication }}
-  <a href="{{ $.publication | safeURL }}">🟢</a>
+  <a href="{{ $.publication | safeURL }}"><img src="/images/greendot.png"></a>
 {{ else if and $.preprint (not (eq $.preprint "Submitted")) }}
-  <a href="{{ $.preprint | safeURL }}">🟡</a>
+  <a href="{{ $.preprint | safeURL }}"><img src="/images/yellowdot.png"></a>
 {{ else if and $.preprint (eq $.preprint "Submitted") }}
-  🟡
+  <img src="/images/yellowdot.png">
 {{ else }}
-  🔴
+  <img src="/images/reddot.png">
 {{ end }}
