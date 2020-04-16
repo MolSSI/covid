@@ -77,12 +77,12 @@ ignoreFiles = ["README.md$"]
         url = "/collaborating/"
         name = "Collaborating"
         weight = 2
-
-    [[menu.main]]
-        parent = "About"
-        url = "/teams/"
-        name = "Teams"
-        weight = 3
+        
+#    [[menu.main]]
+#        parent = "About"
+#        url = "/teams/"
+#        name = "Teams"
+#        weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.

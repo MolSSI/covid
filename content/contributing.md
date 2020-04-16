@@ -61,7 +61,7 @@ be supported by written publication. However, the review process itself helps re
 into the site from the community has been approved by that same community is hopes to serve.
 
 Please contact a site maintainer if you are willing to help contribute your expertise to helping on one of the 
-review [teams](/teams)!
+review teams!<!--[teams](/teams)!-->
 
 ## Contributing Non-Scientific Efforts and Website Changes
 
