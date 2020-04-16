@@ -1,5 +1,5 @@
 term: Structures
-short: Data defining protein structures determined by experimental methods and referenced via a unique PDB ID.
+short: Data defining structures determined by experimental methods and referenced via a unique identifier such as a PDB ID.
 long: >
   Experimentally and calculated molecular structures of the proteins.
 
