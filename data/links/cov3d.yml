@@ -2,6 +2,6 @@ name: "COV3D: A Coronavirus 3D Structure Database"
 url: https://cov3d.ibbr.umd.edu/cov3d
 description: >
   Updated structures of SARS-CoV-2 (COVID-19 virus), SARS-CoV, and MERS-CoV spike proteins, as well as other coronavirus proteins of interest for therapeutics and vaccines.
-lab: Pierce Lab
+lab: Brian Pierce
 institution: Institute for Bioscience and Biotechnology Research, University of Maryland
 resources: structures
