@@ -37,6 +37,12 @@ class ValidProteins(str, Enum):
     Furin = 'Furin'
     IL6R = 'IL6R'
     p38 = 'p38'
+    ORF3a = 'ORF3a'
+    ORF6 = 'ORF6'
+    ORF7b = 'ORF7b'
+    ORF8 = 'ORF8'
+    ORF10 = 'ORF10'
+    M_protein = 'M protein'
     PD_1 = 'PD-1'
 
 
@@ -108,7 +114,7 @@ class ModelsModel(BaseModel):
     description: str
     url: AnyUrl
     pdb_url: Optional[AnyUrl]
-    pdbids: List[str]
+    pdbids: Optional[List[str]]
     proteins: List[ValidProteins]
     creator: str
     organization: Optional[str]
