@@ -4,6 +4,20 @@ description: Instructions for Contributing
 draft: false
 ---
 
+## Data Publication Indicator System
+
+All data submitted to the website is flagged based on the data's current state of publication.
+
+* Unpublished data with no preprints are given a Red (🔴) marker.
+* Data in a preprint or submitted for publication are given a Yellow (🟡) marker.
+* Data published in a paper or accepted are given a Green (🟢) marker (i.e. has been approved by formal peer review).
+
+## Data discussion
+
+Data are open for community discussion through the [GitHub Projects](https://github.com/MolSSI/covid/projects) 
+and [Issues](https://github.com/MolSSI/covid/issues). All discussions will be tagged so they can be seen by the 
+review teams and the broader community. 
+
 ## Contributing
 
 The exchange gladly accepts any of the types of data hosted on the website (and others if you propose a schema). 
@@ -27,22 +41,6 @@ so we can get in touch with you and figure out the best way to upload your data 
 link out to your data if its hosted somewhere, or we may coordinate transferring the data to our servers 
 so we can link to it there (you retain full rights!)
 
-## Data Review and Acceptance
-
-Although we want data to be admitted to the repository very quickly, we still strive to have some level of peer review 
-on the data.
-
-When new data are submitted, the following protocol is taken for review and admittance:
-* Contribution is made in a PR with an initial assessment by the author of the quality of the data
-* The corresponding [team](/teams) for those data are notified by GitHub/Email
-* That assessment is reviewed by the curation [team](/teams) for that type of data
-* Adjustments are made and discussed in PR by the team and the submitting author
-* Data are annotated as needed
-* Merged after consensus from the team
-
-This process is mean to provide some basic peer review of data as it comes into the site and should 
-not discourage people from submitting data.
-
 ## Data Curation Teams
 
 The Hub is actively looking for people willing to help curate and review data as it comes in. Specifically, 
@@ -55,13 +53,15 @@ we need people willing to contribute some time to look over submissions in the e
 * Website Information
 
 Duties are to look over data and give an assessment as to relative usefulness in expanding research into the 
-SARS-CoV-2 virus. The turn around time for reviews This is differs from a standard journal publication review in a few ways: The reviews are not 
+SARS-CoV-2 virus. The discussions are meant to happen on the issues on the 
+[GitHub Issue Tracker]https://github.com/MolSSI/covid/issues) and grouped by tags. 
+These reviews differ from a standard journal publication review in a few ways: The reviews are not 
 blinded nor double blinded, the reviews and discussions are held in a public space, data do not have to 
 be supported by written publication. However, the review process itself helps reinforce that data coming 
 into the site from the community has been approved by that same community is hopes to serve.
 
 Please contact a site maintainer if you are willing to help contribute your expertise to helping on one of the 
-review [teams](/teams)!
+review teams!<!--[teams](/teams)!-->
 
 ## Contributing Non-Scientific Efforts and Website Changes
 

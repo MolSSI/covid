@@ -12,8 +12,12 @@
   {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
   {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
   {{ if $data }}
-    {{ $localScratch.Set "pub_link" (print "http://doi.org/" $data.rcsb_primary_citation.pdbx_database_id_doi) }}
-    {{ $localScratch.Set "title" (print ($data.struct.title | title) "(" ($pdb | upper) ")")  }}
+    {{ if eq $data.rcsb_primary_citation.journal_abbrev "To Be Published" }}
+      {{ $localScratch.Set "pub_link" "TBP" }}
+    {{ else }}
+      {{ $localScratch.Set "pub_link" (print "http://doi.org/" $data.rcsb_primary_citation.pdbx_database_id_doi) }}
+    {{ end }}
+    {{ $localScratch.Set "title" (print ($data.struct.title | title) " (" ($pdb | upper) ")")  }}
     {{ $localScratch.Set "method" ((index $data.exptl 0).method | lower | title) }}
     {{ $localScratch.Set "resolution" (index ($data.rcsb_entry_info.resolution_combined) 0) }}
   {{ else }}
@@ -31,7 +35,7 @@
 
   <!-- Structure name -->
   <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
-    <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} </b>
+    <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} {{ partial "structure-marker" .structure }} </b>
   </h3>
 
   <!-- Structure Annotation -->
@@ -63,7 +67,11 @@
     <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
     <a href="{{ $view3d }}"><kbd class="alert-info">View 3D</kbd></a>
     {{ if $pub_link }}
-      <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
+      {{ if eq $pub_link "TBP" }}
+        <kbd class="alert-info">To Be Published</kbd>
+      {{ else }}
+        <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
+      {{ end }}
     {{ end }}
   </p>
   {{ if $method }}
@@ -90,6 +98,7 @@
         <a href='{{ $model_url }}'>
           <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
         </a>
+        {{ partial "general-marker" $model }}
       </p>
       {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
     {{ end }}
@@ -122,6 +131,7 @@
         {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
             {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
             <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+            {{ partial "general-marker" $sim }}
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}

@@ -17,6 +17,7 @@
             ({{ .simulation.length }} )
             {{ end }}
             {{ with .simulation.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
+            {{ partial "general-marker" .simulation }}
         </h3>
 
         <h5>{{ .simulation.description | markdownify }}</h5>

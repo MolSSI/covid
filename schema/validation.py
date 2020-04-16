@@ -37,6 +37,12 @@ class ValidProteins(str, Enum):
     Furin = 'Furin'
     IL6R = 'IL6R'
     p38 = 'p38'
+    ORF3a = 'ORF3a'
+    ORF6 = 'ORF6'
+    ORF7b = 'ORF7b'
+    ORF8 = 'ORF8'
+    ORF10 = 'ORF10'
+    M_protein = 'M protein'
     PD_1 = 'PD-1'
 
 
@@ -82,6 +88,10 @@ class ValidEnsembles(str, Enum):
     Other = 'Other'
 
 
+class Submitted(str, Enum):
+    submitted = "Submitted"
+
+
 class LinkOutKeys(BaseModel):
     wikipedia: Optional[str]
     drugbank: Optional[str]
@@ -104,13 +114,15 @@ class ModelsModel(BaseModel):
     description: str
     url: AnyUrl
     pdb_url: Optional[AnyUrl]
-    pdbids: List[str]
+    pdbids: Optional[List[str]]
     proteins: List[ValidProteins]
     creator: str
     organization: Optional[str]
     institution: Optional[str]
     lab: Optional[str]
     rating: Optional[StrictInt]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):
@@ -164,6 +176,8 @@ class SimulationsModel(BaseModel):
     salinity: float
     forcefields: List[str]
     references: Optional[List[str]]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):
@@ -181,6 +195,8 @@ class StructuresModel(BaseModel):
     organisms: Union[ValidOrganisms, List[ValidOrganisms]]
     ligands: Optional[Union[str, List[str]]]
     rating: Optional[StrictInt]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):

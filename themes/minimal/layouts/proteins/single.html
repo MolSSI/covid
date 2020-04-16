@@ -9,7 +9,7 @@
         <h4>{{ .Description }}</h4>
 
         <h4 align="justify">{{ .Content }}</h4>
-        <h4 align="left">
+        <h5 align="left">
         Data classification:
             <ul style="text-align:left;">
                 {{ range slice "structures" "models" "simulations" }}
@@ -17,7 +17,9 @@
                     <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
                 {{ end }}
             </ul>
-        </h4>
+        </h5>
+
+        {{ partial "marker-info-header" . }}
 
     </div>
 

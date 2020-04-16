@@ -1,0 +1,23 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <!--<h5>{{ .Description }}</h5>-->
+        {{ partial "tags" . }}
+    </div>
+    <div align="left">
+        {{ .Content }}
+    </div>
+    <hr>
+    <!-- List all targets from data/targets/ -->
+    {{ range $.Site.Data.contributors }}
+       {{ partial "contributors.html" . }}
+    {{ end }}
+
+    <hr>
+
+</main>
+
+{{ partial "footer" . }}

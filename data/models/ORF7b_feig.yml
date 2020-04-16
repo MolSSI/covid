@@ -1,0 +1,10 @@
+name: Refinement of ORF7b by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: Contact-based structure prediction using trRosetta. 10 models generated and the best scoring was refined through molecular dynamics (MD) simulations. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+publication_doi: https://doi.org/10.1101/2020.03.25.008904
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/FeigLab/ORF7b.pdb
+pdbids:
+proteins:
+  - ORF7b
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University

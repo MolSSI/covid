@@ -39,7 +39,9 @@ salinity: (optional) in Molar
 forcefields: (required) List of forcefields, can be simple names
     - FF 1
     - ...
-references: (optional) List of referfences
+references: (optional) List of referfences associated with the programs and methods you want to mention. For publications tied to this exact simulation, use the `publicaton` and `preprint` categories
     - ref1
     - ref2
+publication: (optional) URL of the publication which includes THIS simulation
+preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
 ```

@@ -1,0 +1,10 @@
+name: Refinement of AplhaFold M_protein by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: Physics-based refinement of Google DeepMind AlphaFold models from early March 2020. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+publication_doi: https://doi.org/10.1101/2020.03.25.008904
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/AlphaFold/M_protein.pdb
+pdbids:
+proteins:
+  - M protein
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
