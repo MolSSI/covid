@@ -1,0 +1,9 @@
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "map" dict }}
+
+{{ range $.Site.Data.links }}
+    {{ $link := print $.Site.BaseURL "/links/#" ( .name | anchorize) }}
+    {{ $localScratch.Set "map" (merge ($localScratch.Get "map") (dict .name $link) ) }}
+{{ end }}
+
+{{ return ($localScratch.Get "map") }}
