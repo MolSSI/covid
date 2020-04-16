@@ -20,6 +20,30 @@ members:
     url: http://amarolab.ucsd.edu/
   - name: Adrian Mulholland
     url: https://mulhollandgroup.wordpress.com/
+  - name: John Chodera
+    url: http://www.choderalab.org/
+  - name: Erica Goldberger
+    url: http://www.choderalab.org/
+  - name: Rafal Wiewiora
+    url: http://www.choderalab.org/
+  - name: Alex Payne
+    url: http://www.choderalab.org/
+  - name: Binisha Karkl
+    url: http://www.choderalab.org/
+  - name: Hanna Bruce Macdonald
+    url: http://www.choderalab.org/
+  - name: Chiara Mancinelli
+    url: http://www.choderalab.org/
+  - name: Melissa Boby
+    url: http://www.choderalab.org/
+  - name: Jaime Rodríguez-Guerra
+    url: http://www.choderalab.org/
+  - name: Andrea Thorn
+    url: http://shelx.uni-ac.gwdg.de/~athorn/
+  - name: Yunyun Gao
+    url: http://shelx.uni-ac.gwdg.de/~athorn/
+  - name: Bryan Jackson
+    url: https://www.deshaw.com/
   - name: Michael Feig
     url: http://feig.bch.msu.edu/
   - name: Shantenu Jha
@@ -54,32 +78,10 @@ members:
     url: https://scholar.google.com/citations?user=0Z7M-VsAAAAJ&hl=en
   - name: Tibor Simko
     url: https://orcid.org/0000-0001-7202-5803
-  - name: Andrea Thorn
-    url: http://shelx.uni-ac.gwdg.de/~athorn/
-  - name: Yunyun Gao
-    url: http://shelx.uni-ac.gwdg.de/~athorn/
   - name: Greg Bowman
     url: https://bowmanlab.biochem.wustl.edu/
   - name: Jean-Philip Piquemal
     url: http://piquemalresearch.com/
-  - name: John Chodera
-    url: http://www.choderalab.org/
-  - name: Erica Goldberger
-    url: http://www.choderalab.org/
-  - name: Rafal Wiewiora
-    url: http://www.choderalab.org/
-  - name: Alex Payne
-    url: http://www.choderalab.org/
-  - name: Binisha Karkl
-    url: http://www.choderalab.org/
-  - name: Hanna Bruce Macdonald
-    url: http://www.choderalab.org/
-  - name: Chiara Mancinelli
-    url: http://www.choderalab.org/
-  - name: Melissa Boby
-    url: http://www.choderalab.org/
-  - name: Jaime Rodríguez-Guerra
-    url: http://www.choderalab.org/
   - name: Callie Rodgers Chappell
     url: https://www.calliechappell.com/
   - name: Thomas Splettstößer
@@ -89,8 +91,6 @@ members:
   - name: William Jorgensen
     url: http://www.jorgensenresearch.com/
   - name: D. E. Shaw
-    url: https://www.deshaw.com/
-  - name: Bryan Jackson
     url: https://www.deshaw.com/
   - name: Tristan Croll
     url: https://isolde.cimr.cam.ac.uk/
