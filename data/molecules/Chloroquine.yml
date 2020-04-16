@@ -15,6 +15,6 @@ mechanism: The potential mechanisms for attacking the virus >
   By changing the acidity of the cells
   By inhibiting the ACE2 cellular receptor
   By activating the immune response
-protein:
+proteins:
   - ACE2
   - spike

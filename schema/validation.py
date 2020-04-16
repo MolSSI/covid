@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ValidationError, validator, AnyUrl, StrictInt
+from pydantic import BaseModel, ValidationError, validator, AnyUrl, StrictInt, create_model
 from typing import Optional, List, Union, Dict
 from yaml import safe_load
 from enum import Enum
@@ -6,38 +6,105 @@ from os import walk
 from os.path import join
 
 
-class ValidProteins(str, Enum):
-    spike = 'spike'
-    RBD = 'RBD'
-    S1 = 'S1'
-    S2 = 'S2'
-    ACE2 = 'ACE2'
-    NSP1 = 'NSP1'
-    NSP2 = 'NSP2'
-    NSP4 = 'NSP4'
-    NSP6 = 'NSP6'
-    NSP7 = 'NSP7'
-    NSP8 = 'NSP8'
-    NSP9 = 'NSP9'
-    NSP10 = 'NSP10'
-    NSP11 = 'NSP11'
-    NSP13 = 'NSP13'
-    NSP14 = 'NSP14'
-    NSP15 = 'NSP15'
-    NSP16 = 'NSP16'
-    fusion_core = 'fusion core'
-    HR1 = 'HR1'
-    HR2 = 'HR2'
-    TMPRSS2 = 'TMPRSS2'
-    Mpro = '3CLpro'
-    PLpro = 'PLpro'
-    RdRP = 'RdRP'
-    BoAT1 = 'BoAT1'
-    FcR = 'Fc receptor'
-    Furin = 'Furin'
-    IL6R = 'IL6R'
-    p38 = 'p38'
-    PD_1 = 'PD-1'
+def build_file_list(walk_dir):
+    file_names = []
+    for (_, _, names) in walk(join("../data", walk_dir)):
+        file_names.extend(names)
+    return file_names
+
+
+def filter_files(strings, substr):
+    """ Function to filter for strings that contain one or more of the substrings.
+
+    This function returns a list of strings that contain at least one of the strings from the list substr.
+
+    Parameters
+    ----------
+    string : List[str]
+        A list containing the strings to be filtered.
+
+    substr : List[str]
+        A list of substrings to look for in the strings.
+    """
+    return [x for x in strings if any(sub in x for sub in substr)]
+
+
+# Build out valid proteins and valid subunits
+class StrEnum(str, Enum):
+    pass
+
+
+protein_files = filter_files(build_file_list('proteins'), ['yml', 'yaml'])
+protein_dict = {}
+subunit_master = {}
+for file in protein_files:
+    with open(join('../data', 'proteins', file)) as f:
+        y = safe_load(f)
+    protein_name = y['protein']
+    protein_dict[protein_name] = protein_name
+    # Handle Subunits
+    if 'subunits' in y and y['subunits'] is not None:
+        subunit_master[protein_name] = y['subunits']
+ValidProteins = StrEnum('ValidProteins', protein_dict)
+
+
+def check_subunits_are_of_protein_and_valid(v, values):
+    """Helper function for protein subunits"""
+    # Cycle through dict
+    for protein, subunits in v.items():
+        if protein != values['protein'] and protein not in values['protein']:
+            raise ValueError(f'Protein Subunit {protein} is not also in the list of proteins for this molecule!')
+        # Ensure every subunit key is valid, ensure every subunit value of each key is valid
+        if protein not in subunit_master:
+            raise ValueError(f'Protein {protein} does not have subunits defined but it was attempted to be '
+                             f'used here!')
+        subunit_dict = subunit_master[protein]
+        for subunit_category, subunits_values in subunits.items():
+            if subunit_category not in subunit_dict:
+                raise ValueError(f'Protein {protein}\'s does not have a {subunit_category}!, valid options for '
+                                 f'this protein are: {subunit_dict.keys()}')
+            master_subunit_set = set(subunit_dict[subunit_category])
+            current_subunit_set = set(subunits_values)
+            in_current_not_master = current_subunit_set - master_subunit_set
+            if in_current_not_master:
+                raise ValueError(f'Protein {protein}\'s subunit category of {subunit_category} does not have '
+                                 f'the subunits: {in_current_not_master}! Valid options for this subunit category '
+                                 f'are {master_subunit_set}')
+    return v
+
+
+# class ValidProteins(str, Enum):
+#     spike = 'spike'
+#     RBD = 'RBD'
+#     S1 = 'S1'
+#     S2 = 'S2'
+#     ACE2 = 'ACE2'
+#     NSP1 = 'NSP1'
+#     NSP2 = 'NSP2'
+#     NSP4 = 'NSP4'
+#     NSP6 = 'NSP6'
+#     NSP7 = 'NSP7'
+#     NSP8 = 'NSP8'
+#     NSP9 = 'NSP9'
+#     NSP10 = 'NSP10'
+#     NSP11 = 'NSP11'
+#     NSP13 = 'NSP13'
+#     NSP14 = 'NSP14'
+#     NSP15 = 'NSP15'
+#     NSP16 = 'NSP16'
+#     fusion_core = 'fusion core'
+#     HR1 = 'HR1'
+#     HR2 = 'HR2'
+#     TMPRSS2 = 'TMPRSS2'
+#     Mpro = '3CLpro'
+#     PLpro = 'PLpro'
+#     RdRP = 'RdRP'
+#     BoAT1 = 'BoAT1'
+#     FcR = 'Fc receptor'
+#     Furin = 'Furin'
+#     IL6R = 'IL6R'
+#     p38 = 'p38'
+#     PD_1 = 'PD-1'
 
 
 class ValidTargets(str, Enum):
@@ -125,9 +192,14 @@ class MoleculesModel(BaseModel):
     description: str
     therapeutic: Union[str, List[str]]
     target: Union[ValidTargets, List[ValidTargets]]
-    protein: Optional[Union[ValidProteins, List[ValidProteins]]]
+    proteins: Optional[Union[ValidProteins, List[ValidProteins]]]
+    protein_subunits: Optional[Dict[ValidProteins, Dict[str, List[str]]]]
     links: Optional[LinkOutKeys]
     url: Optional[AnyUrl]
+
+    @validator('protein_subunits')
+    def subunits_are_of_protein_and_valid(cls, v, values, **kwargs):
+        return check_subunits_are_of_protein_and_valid(v, values)
 
 
 class ProteinsModel(BaseModel):
@@ -176,6 +248,7 @@ class SimulationsModel(BaseModel):
 class StructuresModel(BaseModel):
     pdbid: str
     proteins: Union[ValidProteins, List[ValidProteins]]
+    protein_subunits: Optional[Dict[ValidProteins, Dict[str, List[str]]]]
     targets: Union[ValidTargets, List[ValidTargets]]
     annotation: Optional[str]
     organisms: Union[ValidOrganisms, List[ValidOrganisms]]
@@ -188,6 +261,10 @@ class StructuresModel(BaseModel):
             if v < 1 or v > 5:
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
+
+    @validator('protein_subunits')
+    def subunits_are_of_protein_and_valid(cls, v, values, **kwargs):
+        return check_subunits_are_of_protein_and_valid(v, values)
 
 
 class TargetsModel(BaseModel):
@@ -214,23 +291,7 @@ class GlossaryModel(BaseModel):
     short: str
     long: str
     url: Optional[str]
-                
-    
-def filter_yaml(string, substr):
-    """ Function to filter for strings that contain one or more of the substrings.
 
-    This function returns a list of strings that contain at least one of the strings from the list substr.
-
-    Parameters
-    ----------
-    string : List[str]
-        A list containing the strings to be filtered.
-
-    substr : List[str]
-        A list of substrings to look for in the strings.
-    """
-    return [str for str in string if
-             any(sub in str for sub in substr)]
 
 
 def validate(filepath, model):
@@ -276,7 +337,7 @@ if __name__ == "__main__":
             f.extend(filenames)
 
         # Filter out non ".yml" files from the directory
-        f_filter = filter_yaml(f, ["yml"])
+        f_filter = filter_files(f, ["yml"])
 
         # For each yml file in the directory, perform validation against its associated model.
         for filename in f_filter:

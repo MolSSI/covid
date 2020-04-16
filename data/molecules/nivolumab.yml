@@ -12,4 +12,5 @@ links:
 target:
   - host immune response
 mechanism: Blocks PD-1 inhibitory signaling to T-cells
-protein: PD-1
+proteins:
+  - PD-1

@@ -1,8 +1,11 @@
 pdbid: 6m0j
 proteins:
   - spike
-  - RBD
   - ACE2
+protein_subunits:
+  spike:
+    S1:
+      - RBD
 organisms:
   - SARS-CoV-2
   - human

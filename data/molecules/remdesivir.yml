@@ -10,5 +10,5 @@ links:
 target:
   - viral replication
 mechanism: inhibitor of RNA-dependent RNA polymerase
-protein:
+proteins:
   - RdRP

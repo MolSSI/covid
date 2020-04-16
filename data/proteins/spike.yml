@@ -9,8 +9,9 @@ target:
   - viral fusion
 subunits:
   S1:
-    - RBD (receptor binding domain)
+    - RBD # (receptor binding domain)
   S2:
+    - S2
     - S1/S2 cleavage site
     - Fusion
     - S2' cleavage site

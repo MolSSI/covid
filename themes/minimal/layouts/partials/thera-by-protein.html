@@ -3,11 +3,11 @@
 {{ $localScratch.Set "map" dict }}
 
 {{ range $.Site.Data.molecules }}
-    {{ if .protein }}
-        {{ if reflect.IsSlice .protein }}
-            {{ $localScratch.Set "iter" .protein }}
+    {{ if .proteins }}
+        {{ if reflect.IsSlice .proteins }}
+            {{ $localScratch.Set "iter" .proteins }}
         {{ else }}
-            {{ $localScratch.Set "iter" (slice .protein) }}
+            {{ $localScratch.Set "iter" (slice .proteins) }}
         {{ end }}
 
         {{ $localScratch.Set "data" . }}

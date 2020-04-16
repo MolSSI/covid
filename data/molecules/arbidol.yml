@@ -12,6 +12,6 @@ target:
   - viral replication
   - viral fusion
 mechanism: May disrupt the binding of viral envelope protein to host cells and prevent viral entry to the target cell
-protein:
+proteins:
   - ACE2
   - spike

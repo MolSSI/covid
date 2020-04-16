@@ -48,11 +48,11 @@
 {{ end }}
 
 <!-- tag links to proteins involves in this target -->
-{{ if .data.protein }}
-  {{ if reflect.IsSlice .data.protein }}
-      {{ $localScratch.Set "iter" .data.protein }}
+{{ if .data.proteins }}
+  {{ if reflect.IsSlice .data.proteins }}
+      {{ $localScratch.Set "iter" .data.proteins }}
   {{ else }}
-      {{ $localScratch.Set "iter" (slice .data.protein) }}
+      {{ $localScratch.Set "iter" (slice .data.proteins) }}
   {{ end }}
   <p align="justify"><u>Known Protein Interactions:</u></p>
   {{ range $localScratch.Get "iter" }}

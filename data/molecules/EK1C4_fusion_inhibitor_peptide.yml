@@ -9,8 +9,13 @@ publications:
   - doi: 10.1038/s41422-020-0305-x
 target:
   - viral fusion
-protein:
+proteins:
   - spike
-  - S2
   - fusion core
-  - HR1
+protein_subunits:
+  spike:
+    S2:
+      - S2
+      - HR1
+    S1:
+      - RBD

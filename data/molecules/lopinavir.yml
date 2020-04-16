@@ -12,6 +12,6 @@ target:
   - PLpro protease activity
   - 3CLpro protease activity
 mechanism: Inhibits the viral proteases
-protein:
+proteins:
   - 3CLpro
   - PLpro

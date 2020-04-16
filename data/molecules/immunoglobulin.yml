@@ -12,5 +12,5 @@ links:
 target:
   - viral fusion
 mechanism: proposed to block viral Fc receptor activation by boosting endogenous neutralizing antibodies and preventing antibody-dependent enhancement of infection
-protein:
+proteins:
   - Fc receptor

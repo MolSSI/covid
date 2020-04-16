@@ -8,5 +8,5 @@ links:
 target:
   - host immune response
 mechanism: Targets soluble and membrane-bound IL-6 receptors to decrease immune and inflammatory responses
-protein:
+proteins:
   - IL6R
