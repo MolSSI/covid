@@ -46,13 +46,14 @@ for file in protein_files:
     if 'subunits' in y and y['subunits'] is not None:
         subunit_master[protein_name] = y['subunits']
 ValidProteins = StrEnum('ValidProteins', protein_dict)
+protein_subunits_entry = Optional[Dict[ValidProteins, Dict[str, List[str]]]]
 
 
 def check_subunits_are_of_protein_and_valid(v, values):
     """Helper function for protein subunits"""
     # Cycle through dict
     for protein, subunits in v.items():
-        if protein != values['protein'] and protein not in values['protein']:
+        if protein != values['proteins'] and protein not in values['proteins']:
             raise ValueError(f'Protein Subunit {protein} is not also in the list of proteins for this molecule!')
         # Ensure every subunit key is valid, ensure every subunit value of each key is valid
         if protein not in subunit_master:
@@ -71,40 +72,6 @@ def check_subunits_are_of_protein_and_valid(v, values):
                                  f'the subunits: {in_current_not_master}! Valid options for this subunit category '
                                  f'are {master_subunit_set}')
     return v
-
-
-# class ValidProteins(str, Enum):
-#     spike = 'spike'
-#     RBD = 'RBD'
-#     S1 = 'S1'
-#     S2 = 'S2'
-#     ACE2 = 'ACE2'
-#     NSP1 = 'NSP1'
-#     NSP2 = 'NSP2'
-#     NSP4 = 'NSP4'
-#     NSP6 = 'NSP6'
-#     NSP7 = 'NSP7'
-#     NSP8 = 'NSP8'
-#     NSP9 = 'NSP9'
-#     NSP10 = 'NSP10'
-#     NSP11 = 'NSP11'
-#     NSP13 = 'NSP13'
-#     NSP14 = 'NSP14'
-#     NSP15 = 'NSP15'
-#     NSP16 = 'NSP16'
-#     fusion_core = 'fusion core'
-#     HR1 = 'HR1'
-#     HR2 = 'HR2'
-#     TMPRSS2 = 'TMPRSS2'
-#     Mpro = '3CLpro'
-#     PLpro = 'PLpro'
-#     RdRP = 'RdRP'
-#     BoAT1 = 'BoAT1'
-#     FcR = 'Fc receptor'
-#     Furin = 'Furin'
-#     IL6R = 'IL6R'
-#     p38 = 'p38'
-#     PD_1 = 'PD-1'
 
 
 class ValidTargets(str, Enum):
@@ -193,7 +160,7 @@ class MoleculesModel(BaseModel):
     therapeutic: Union[str, List[str]]
     target: Union[ValidTargets, List[ValidTargets]]
     proteins: Optional[Union[ValidProteins, List[ValidProteins]]]
-    protein_subunits: Optional[Dict[ValidProteins, Dict[str, List[str]]]]
+    protein_subunits: protein_subunits_entry
     links: Optional[LinkOutKeys]
     url: Optional[AnyUrl]
 
@@ -248,7 +215,7 @@ class SimulationsModel(BaseModel):
 class StructuresModel(BaseModel):
     pdbid: str
     proteins: Union[ValidProteins, List[ValidProteins]]
-    protein_subunits: Optional[Dict[ValidProteins, Dict[str, List[str]]]]
+    protein_subunits: protein_subunits_entry
     targets: Union[ValidTargets, List[ValidTargets]]
     annotation: Optional[str]
     organisms: Union[ValidOrganisms, List[ValidOrganisms]]
@@ -273,6 +240,11 @@ class TargetsModel(BaseModel):
     description: str
     proteins: Union[ValidProteins, List[ValidProteins]]
     therapeutic_modalities: Union[str, List[str]]
+    protein_subunits: protein_subunits_entry
+
+    @validator('protein_subunits')
+    def subunits_are_of_protein_and_valid(cls, v, values, **kwargs):
+        return check_subunits_are_of_protein_and_valid(v, values)
 
 
 class TeamsModel(BaseModel):
@@ -291,7 +263,6 @@ class GlossaryModel(BaseModel):
     short: str
     long: str
     url: Optional[str]
-
 
 
 def validate(filepath, model):
@@ -317,6 +288,7 @@ def validate(filepath, model):
         except ValidationError as e:
             print(f"File failed validation: {filepath}")
             print(e)
+            print("---")  # Divider line for clarity
             return 1
 
 
@@ -344,4 +316,4 @@ if __name__ == "__main__":
             total_errors += validate(join("../data", directory, filename), model)
 
     if total_errors:
-        raise RuntimeError("There we validation errors! Check the log for what")
+        raise RuntimeError(f"There were {total_errors} validation errors! Check the log for what")

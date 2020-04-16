@@ -1,9 +1,12 @@
 pdbid: 6m17
 proteins:
   - spike
-  - RBD
   - ACE2
   - BoAT1
+protein_subunits:
+  spike:
+    S1:
+      - RBD
 organisms:
   - SARS-CoV-2
   - human

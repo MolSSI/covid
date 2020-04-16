@@ -10,7 +10,7 @@ links:
 target:
   - viral replication
 proteins:
-  - 3CL-PRO
+  - 3CLpro
 mechanism: Believed to inhibit the 3CL-PRO viral protease of SARS-CoV-2
 publications:
   - title: First Clinical Study Using HCV Protease Inhibitor Danoprevir to Treat Naïve and Experienced COVID-19 Patients

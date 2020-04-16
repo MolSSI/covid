@@ -13,7 +13,12 @@ description: (required)
 
 therapeutic: (required, one or more)
 target: (required, one or more)
-protein: (required, one or more)
+proteins: (required, one or more)
+protein_subunits: (optional)
+    {name_of_protien_from_proteins}:
+        {name_of_subunit_category}:
+            - subunit 1
+            - ...
 links: (optional)
   wikipedia: (optional) omit leading https://en.wikipedia.org/wiki/
   drugbank: (optional) omit leading https://www.drugbank.ca/drugs/

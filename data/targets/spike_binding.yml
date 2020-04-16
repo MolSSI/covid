@@ -4,7 +4,11 @@ description: >
   The spike protein of SARS-CoV-2 binds to the ACE2 protein to initiate cell entry.
 proteins:
   - ACE2
-  - RBD
+  - spike
+protein_subunits:
+  spike:
+    S1:
+      - RBD
 therapeutic_modalities:
   - antibody
   - small molecule

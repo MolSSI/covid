@@ -11,9 +11,6 @@ Each entry has the following required and optional keys:
 pdbid: (required)
 proteins: (one or more of the following options)
   - spike
-  - RBD
-  - S1
-  - S2
   - ACE2
   - NSP1
   - NSP2
@@ -31,12 +28,15 @@ proteins: (one or more of the following options)
   - NSP14
   - NSP15
   - fusion core
-  - HR1
-  - HR2
   - TMPRSS2
   - 3CLpro
   - PLpro
   - RdRP
+protein_subunits: (optional)
+    {name_of_protien_from_proteins}:
+        {name_of_subunit_category}:
+            - subunit 1
+            - ...
 targets: (one or more of the following options)
   - spike binding
   - spike cleavage

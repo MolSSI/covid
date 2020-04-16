@@ -3,7 +3,10 @@ targets:
   - spike binding
 proteins:
   - spike
-  - RBD
+protein_subunits:
+  spike:
+    S1:
+      - RBD
 therapeutics:
   - antibody
 annotation: Low resolution X-ray structure of human antibody CR3022 bound to the receptor binding domain (RBD) of the spike protein.
