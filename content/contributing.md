@@ -8,9 +8,9 @@ draft: false
 
 All data submitted to the website is flagged based on the data's current state of publication.
 
-* Unpublished data with no preprints are given a Red (🔴) marker.
-* Data in a preprint or submitted for publication are given a Yellow (🟡) marker.
-* Data published in a paper or accepted are given a Green (🟢) marker (i.e. has been approved by formal peer review).
+* Unpublished data with no preprints are given a Red (![](/images/reddot.png)) marker.
+* Data in a preprint or submitted for publication are given a Yellow (![](/images/yellowdot.png)) marker.
+* Data published in a paper or accepted are given a Green (![](/images/greendot.png)) marker (i.e. has been approved by formal peer review).
 
 ## Data discussion
 
