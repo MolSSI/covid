@@ -82,6 +82,10 @@ class ValidEnsembles(str, Enum):
     Other = 'Other'
 
 
+class Submitted(str, Enum):
+    submitted = "Submitted"
+
+
 class LinkOutKeys(BaseModel):
     wikipedia: Optional[str]
     drugbank: Optional[str]
@@ -111,6 +115,8 @@ class ModelsModel(BaseModel):
     institution: Optional[str]
     lab: Optional[str]
     rating: Optional[StrictInt]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):
@@ -164,6 +170,8 @@ class SimulationsModel(BaseModel):
     salinity: float
     forcefields: List[str]
     references: Optional[List[str]]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):
@@ -181,6 +189,8 @@ class StructuresModel(BaseModel):
     organisms: Union[ValidOrganisms, List[ValidOrganisms]]
     ligands: Optional[Union[str, List[str]]]
     rating: Optional[StrictInt]
+    publication: Optional[AnyUrl]
+    preprint: Optional[Union[AnyUrl, Submitted]]
 
     @validator('rating')
     def rating_valid(cls, v):

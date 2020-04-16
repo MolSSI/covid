@@ -23,4 +23,6 @@ organization: (optional)
 institution: (optional)
 lab: (optional) If more information beyond `creator` is requred to properly cite, use this field
 rating: (optional) int on range [1,5]. 1=worst, 5=best
+publication: (optional) URL of the publication
+preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
 ```
