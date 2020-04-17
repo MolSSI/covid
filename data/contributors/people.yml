@@ -46,6 +46,12 @@ members:
     url: https://www.deshaw.com/
   - name: Michael Feig
     url: http://feig.bch.msu.edu/
+  - name: Richard Friesner
+    url: https://chem.columbia.edu/people/faculty/richard-friesner/
+  - name: Peter Tieleman
+    url: https://www.ucalgary.ca/tieleman/people/peter-tieleman
+  - name: Syma Khalid
+    url: https://www.southampton.ac.uk/chemistry/research/staff/sk2x07.page
   - name: Shantenu Jha
     url: https://www.ece.rutgers.edu/shantenu-jha
   - name: Rossen Apostolov
@@ -62,6 +68,8 @@ members:
     url: https://www.irbbarcelona.org/en/profile/modesto-orozco
   - name: Thomas M. Hermans
     url: https://jedi.group/
+  - name: Stacey Wetmore
+    url: http://people.uleth.ca/~stacey.wetmore/
   - name: Peter Elmer
     url: https://scholar.princeton.edu/elmer/home
   - name: Frank Wuerthwein
@@ -104,3 +112,5 @@ members:
     url: https://www.bdr.riken.jp/en/research/labs/taiji-m-computational/index.html
   - name: Noriaki Okimoto
     url: https://www.bdr.riken.jp/en/research/labs/taiji-m-computational/index.html
+  - name: Stian Soiland-Reyes
+    url: http://soiland-reyes.com/stian/work/
