@@ -54,7 +54,7 @@ we need people willing to contribute some time to look over submissions in the e
 
 Duties are to look over data and give an assessment as to relative usefulness in expanding research into the 
 SARS-CoV-2 virus. The discussions are meant to happen on the issues on the 
-[GitHub Issue Tracker]https://github.com/MolSSI/covid/issues) and grouped by tags. 
+[GitHub Issue Tracker](https://github.com/MolSSI/covid/issues) and grouped by tags. 
 These reviews differ from a standard journal publication review in a few ways: The reviews are not 
 blinded nor double blinded, the reviews and discussions are held in a public space, data do not have to 
 be supported by written publication. However, the review process itself helps reinforce that data coming 
