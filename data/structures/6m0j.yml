@@ -8,3 +8,5 @@ organisms:
   - human
 annotation: Crystal structure of SARS-CoV-2 spike receptor-binding domain bound with ACE2
 rating:
+targets:
+  - spike binding
