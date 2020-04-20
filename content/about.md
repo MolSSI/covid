@@ -74,4 +74,8 @@ contributor to ask for additional information as needed.
 All content for this website (excluding external links) exist on a single [Github repository](https://github.com/MolSSI/). 
 Data, HTML pages, CSS, etc. all live there.
 
-This page is generated automatically from the GitHub through by [Hugo](https://gohugo.io/) and deployed through [Netlify](https://www.netlify.com/).
+This page is generated automatically from the GitHub through by [Hugo](https://gohugo.io/) and deployed through 
+[Netlify](https://www.netlify.com/).
+
+The logos and symbols used to indicate publication and preprint are from 
+[SHERPA/RoMEO](https://v2.sherpa.ac.uk/romeo/about.html) and are reused under their [CC BY-NC-ND license](https://www.jisc.ac.uk/website/copyright?loc=cc).
