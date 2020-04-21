@@ -1,16 +1,41 @@
-<div class="col col-9">
+<style>
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 13% 20% 13% 20% 13% 20%;
+  grid-gap: 10px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.box {
+  border-radius: 15px;
+  padding: 0px;
+  font-size: 90%;
+}
+
+.logo_img
+{
+display: inline;
+margin: 0px;
+padding: 0px 10px 10px 10px;
+}
+
+</style>
+
+<div class="row">
   <!-- team name -->
-  <h3 class="anchor" id="{{.name | anchorize }}"><b>{{ .name }}</b></h3>
+  <!-- <h3 class="anchor" id="{{.name | anchorize }}"><b>{{ .name }}</b></h3> -->
 
   <!-- members -->
-  <ul>
+  <div class="wrapper">
+    
     {{ range .members }}
-      <!-- TODO: Pull more information about these publications automagically -->
-      <li> <div align="left"> {{ with .url }}<a href="{{.}}">{{ end }} <b>{{ .name }}</b> {{ with .url }}</a>{{ end }} </div> </li>
+        <div class="box" align="left"> <a href = "{{ .url }}"> <b>{{ .name }}</b> </a> </div>
+        <div class="box" class="logo_img" align="left"> <img src="{{ .logo }}"></div>
     {{ end }}
-  </ul>
 
-  - - -
+
+  </div>
 
 </div>
