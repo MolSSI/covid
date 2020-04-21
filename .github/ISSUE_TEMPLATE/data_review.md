@@ -39,7 +39,7 @@ Explain the scientific process you used to review the submitted data. The tables
 | Valid license | yes/no | ... | ... |
 
 ### Evaluation
-Coclude the review with a qualitative assessment of the submission: 
+Conclude the review with a qualitative assessment of the submission: 
    - *bad*: data set ought to be rejected
    - *fuzzy*: some issues needs to be addressed before publication
    - *good*: data set is acceptable as is and ready to be published
