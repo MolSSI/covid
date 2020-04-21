@@ -1,27 +1,4 @@
-<style>
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 13% 20% 13% 20% 13% 20%;
-  grid-gap: 10px;
-  background-color: #fff;
-  align-items: center;
-}
-
-.box {
-  border-radius: 15px;
-  padding: 0px;
-  font-size: 90%;
-}
-
-.logo_img
-{
-display: inline;
-margin: 0px;
-padding: 0px 10px 10px 10px;
-}
-
-</style>
+{{ $localScratch := newScratch }}
 
 <div class="row">
   <!-- team name -->
@@ -30,9 +7,42 @@ padding: 0px 10px 10px 10px;
   <!-- members -->
   <div class="wrapper">
     
-    {{ range .members }}
-        <div class="box" align="left"> <a href = "{{ .url }}"> <b>{{ .name }}</b> </a> </div>
-        <div class="box" class="logo_img" align="left"> <img src="{{ .logo }}"></div>
+    {{ range .contrib.members }}
+        <div class="box" align="left">
+            {{ if .url }}
+                <a href = "{{ .url }}"> <b>{{ .name }}</b></a>
+            {{ else }}
+                {{ .name }}
+            {{ end }}
+        </div>
+        <!-- Figure out what org they are with-->
+        {{ if .organization }}
+            {{ $org := index $.context.Site.Data.organizations .organization}}
+            {{ if $org }}
+                <!--Org exists...-->
+                {{ if and ($org.logo) ($org.url) }}
+                    <!-- ... and has a logo and url-->
+                    <div class="box logo_img" align="left">
+                        <a href="{{ $org.url }}"><img src="/images/org-logos/{{ $org.logo }}" style="width:44px;height:33px;"></a>
+                    </div>
+                {{ else if ($org.logo) }}
+                    <!-- ... and a logo but not url-->
+                    <div class="box logo_img" align="left">
+                        <img src="/images/org-logos/{{ $org.logo }}" style="width:44px;height:33px;">
+                    </div>
+                {{ else }}
+                    <!-- ... no logo and no url-->
+                    <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+                {{ end }}
+            {{ else }}
+                <!--Org does not exist-->
+                <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+            {{ end }}
+        {{ else }}
+            <!--No Org-->
+            <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+        {{ end }}
+
     {{ end }}
 
 

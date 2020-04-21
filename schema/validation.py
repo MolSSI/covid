@@ -230,6 +230,24 @@ class GlossaryModel(BaseModel):
     short: str
     long: str
     url: Optional[str]
+
+
+class OrganizationModel(BaseModel):
+    name: str
+    short: Optional[str]
+    logo: Optional[str]
+    url: Optional[AnyUrl]
+
+
+class ContributorMemberModel(BaseModel):
+    name: str
+    url: Optional[AnyUrl]
+    organization: Optional[str]
+
+
+class ContributorsModel(BaseModel):
+    name: Optional[str]
+    members: List[ContributorMemberModel]
                 
     
 def filter_yaml(string, substr):
@@ -278,9 +296,18 @@ def validate(filepath, model):
 if __name__ == "__main__":
     # Contains a list of directory names as keys and models as values. Each pair is a directory and the model to
     # validate files within that directory.
-    directories = {'links': LinksModel, 'models': ModelsModel, 'molecules': MoleculesModel, 'proteins': ProteinsModel,
-                   'simulations': SimulationsModel, 'structures': StructuresModel, 'targets': TargetsModel,
-                   'teams': TeamsModel}
+    directories = {'links': LinksModel,
+                   'models': ModelsModel,
+                   'molecules': MoleculesModel,
+                   'proteins': ProteinsModel,
+                   'simulations': SimulationsModel,
+                   'structures': StructuresModel,
+                   'targets': TargetsModel,
+                   'teams': TeamsModel,
+                   'glossary': GlossaryModel,
+                   'organizations': OrganizationModel,
+                   'contributors': ContributorsModel
+                   }
 
     total_errors = 0
     # Iterate over each directory.

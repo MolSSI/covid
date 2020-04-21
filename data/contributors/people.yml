@@ -2,175 +2,130 @@ name:
 members:
   - name: Levi Naden
     url: https://molssi.org/
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Andrew Abi-Mansour
     url: https://molssi.org/
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Sam Ellis
     url: https://molssi.org/
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Ben Pritchard
     url: https://molssi.org
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Doaa Altarawy
     url: https://molssi.org
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Jessica Nash
     url: https://molssi.org
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Daniel Crawford
     url: https://molssi.org
-    logo: /images/molssi_logo_mini.png
+    organization: molssi
   - name: Teresa Head-Gordon
     url: https://thglab.berkeley.edu/
-    logo: /images/blank_logo_mini.png
   - name: Cecilia Clementi
     url: https://clementiresearch.rice.edu
-    logo: /images/blank_logo_mini.png
   - name: Rommie Amaro
     url: http://amarolab.ucsd.edu
-    logo: /images/blank_logo_mini.png
   - name: Adrian Mulholland
     url: https://mulhollandgroup.wordpress.com
-    logo: /images/blank_logo_mini.png
   - name: John Chodera
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Erica Goldberger
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Rafal Wiewiora
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Alex Payne
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Binisha Karkl
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Hanna Bruce Macdonald
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Chiara Mancinelli
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Melissa Boby
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Jaime Rodríguez-Guerra
     url: http://www.choderalab.org
-    logo: /images/blank_logo_mini.png
   - name: Andrea Thorn
     url: http://shelx.uni-ac.gwdg.de/~athorn
-    logo: /images/blank_logo_mini.png
   - name: Yunyun Gao
     url: http://shelx.uni-ac.gwdg.de/~athorn/
-    logo: /images/blank_logo_mini.png
   - name: Bryan Jackson
     url: https://www.deshaw.com
-    logo: /images/blank_logo_mini.png
   - name: Michael Feig
     url: http://feig.bch.msu.edu
-    logo: /images/blank_logo_mini.png
   - name: Richard Friesner
     url: https://chem.columbia.edu/people/faculty/richard-friesner
-    logo: /images/blank_logo_mini.png
   - name: Peter Tieleman
     url: https://www.ucalgary.ca/tieleman/people/peter-tieleman
-    logo: /images/blank_logo_mini.png
   - name: Syma Khalid
     url: https://www.southampton.ac.uk/chemistry/research/staff/sk2x07.page
-    logo: /images/blank_logo_mini.png
   - name: Shantenu Jha
     url: https://www.ece.rutgers.edu/shantenu-jha
-    logo: /images/blank_logo_mini.png
   - name: Rossen Apostolov
     url: https://bioexcel.eu
-    logo: /images/blank_logo_mini.png
+    organization: bioexcel
   - name: Bert de Groot
     url: https://bioexcel.eu
-    logo: /images/blank_logo_mini.png
+    organization: bioexcel
   - name: Erik Lindahl
     url: https://bioexcel.eu
-    logo: /images/blank_logo_mini.png
+    organization: bioexcel
   - name: Dmitry Morozov
     url: https://bioexcel.eu
-    logo: /images/blank_logo_mini.png
+    organization: bioexcel
   - name: Gerrit Groenhof
     url: https://bioexcel.eu
-    logo: /images/blank_logo_mini.png
+    organization: bioexcel
   - name: Modesto Orozco
     url: https://www.irbbarcelona.org/en/profile/modesto-orozco
-    logo: /images/blank_logo_mini.png
   - name: Thomas M. Hermans
     url: https://jedi.group
-    logo: /images/blank_logo_mini.png
   - name: Stacey Wetmore
     url: http://people.uleth.ca/~stacey.wetmore
-    logo: /images/blank_logo_mini.png
   - name: Peter Elmer
     url: https://scholar.princeton.edu/elmer/home
-    logo: /images/blank_logo_mini.png
   - name: Frank Wuerthwein
     url: https://www-physics.ucsd.edu/fac_staff/fac_profile/faculty_description.php?person_id=494
-    logo: /images/blank_logo_mini.png
   - name: Tim Smith
     url: https://home.cern/authors/tim-smith
-    logo: /images/blank_logo_mini.png
   - name: Lukas Heinrich
     url: http://www.lukasheinrich.com
-    logo: /images/blank_logo_mini.png
   - name: Markus Elsing
     url: https://elsing.web.cern.ch/elsing/group.html
-    logo: /images/blank_logo_mini.png
   - name: Alessandra Forti
     url: https://www.linkedin.com/in/alessandra-forti-79748714/?originalSubdomain=uk
-    logo: /images/blank_logo_mini.png
   - name: Mario Lassnig
     url: https://scholar.google.com/citations?user=0Z7M-VsAAAAJ&hl=en
-    logo: /images/blank_logo_mini.png
   - name: Tibor Simko
     url: https://orcid.org/0000-0001-7202-5803
-    logo: /images/blank_logo_mini.png
   - name: Greg Bowman
     url: https://bowmanlab.biochem.wustl.edu
-    logo: /images/blank_logo_mini.png
   - name: Jean-Philip Piquemal
     url: http://piquemalresearch.com
-    logo: /images/blank_logo_mini.png
   - name: Callie Rodgers Chappell
     url: https://www.calliechappell.com
-    logo: /images/blank_logo_mini.png
   - name: Thomas Splettstößer
     url: https://www.scistyle.com
-    logo: /images/blank_logo_mini.png
   - name: Charlie Brooks
     url: http://brooks.chem.lsa.umich.edu
-    logo: /images/blank_logo_mini.png
   - name: William Jorgensen
     url: http://www.jorgensenresearch.com
-    logo: /images/blank_logo_mini.png
   - name: D. E. Shaw
     url: https://www.deshaw.com
-    logo: /images/blank_logo_mini.png
   - name: Tristan Croll
     url: https://isolde.cimr.cam.ac.uk
-    logo: /images/blank_logo_mini.png
   - name: Vincent Voelz
     url: http://www.voelzlab.org
-    logo: /images/blank_logo_mini.png
   - name: Makoto Taiji
     url: https://www.bdr.riken.jp/en/research/labs/taiji-m-computational/index.html
-    logo: /images/blank_logo_mini.png
   - name: Yuji Sugita
     url: https://www.riken.jp/en/research/labs/chief/theor_mol_sci/index.html
-    logo: /images/blank_logo_mini.png
   - name: Teruhisa Komatsu
     url: https://www.bdr.riken.jp/en/research/labs/taiji-m-computational/index.html
-    logo: /images/blank_logo_mini.png
   - name: Noriaki Okimoto
     url: https://www.bdr.riken.jp/en/research/labs/taiji-m-computational/index.html
-    logo: /images/blank_logo_mini.png
   - name: Stian Soiland-Reyes
     url: http://soiland-reyes.com/stian/work/
   - name: Alexandre Bonvin

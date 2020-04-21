@@ -4,8 +4,6 @@ description: What is This Hub?
 draft: false
 ---
 
-![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
-
 A community data repository and curation service for Structure, Models, Therapeutics, Simulations 
 related computations for research into the SARS-CoV-2 / COVID-19 / ”Coronavirus” pandemic maintained 
 by [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org) and 
