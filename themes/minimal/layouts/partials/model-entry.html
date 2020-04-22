@@ -13,7 +13,7 @@
       <h3 class="anchor" id='{{ print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
           {{ .model.name }}
           {{ with .model.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
-          {{ partial "general-marker" . }}
+          {{ partial "general-marker" .model }}
       </h3>
 
       <!-- Author -->
