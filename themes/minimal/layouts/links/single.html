@@ -7,27 +7,37 @@
     <div>
         <h2>{{ .Title }}</h2>
         <h4>{{ .Description }}</h4>
-
+        
+        
+        
         <h5 align="left">
         Data classification:
             <ul style="text-align:justify;">
                 {{ range slice "structures" "models"}}
                     {{ $data := index $.Site.Data.glossary . }}
-                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                    <li><a href="{{ delimit (slice "#ext" "res" (string $data.term) ) "_" }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
                 {{ end }}
+                <li><a href="#ext_res_Publications"><b> Publications:</b></a> Databases containing pulications, peer-reviewed and pre-prints, relevant to COVID-19</li>
             </ul>
         </h5>
-
-        <h3> Structures </h3>
+        <hr class="hr-thick">
+        <h3 id="ext_res_Structures" > Structures </h3>
         {{ range $.Site.Data.links  }}
             {{ if eq .resources "structures" }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}
 
-        <h3> Models </h3>
+        <h3 id="ext_res_Models"> Models </h3>
         {{ range $.Site.Data.links  }}
             {{ if eq .resources "models" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+        
+        <h3 id="ext_res_Publications"> Publications </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if eq .resources "publications" }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}
