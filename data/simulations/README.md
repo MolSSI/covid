@@ -8,7 +8,7 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 
 Each entry has the following required and optional keys:
 ```
-type: one of [docking, md, mc, mdmc, mdcg]
+type: one of [docking, md, mc, md-cg, mc-cg]
 title: (required)
 description: (required)
 creator: (required)
