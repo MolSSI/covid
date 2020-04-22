@@ -72,7 +72,7 @@
         {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein.protein | anchorize) "-" ( $target | anchorize) }}
         {{ $model_url := print $.context.Site.BaseURL "/models/#" $anchor }}
         <a href='{{ $model_url }}'>
-          <kbd>{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
+          <kbd class="alert-info">{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
         </a>
         {{ partial "general-marker" $model }}
       </p>
