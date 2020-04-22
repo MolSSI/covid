@@ -78,9 +78,8 @@ class ValidSimulations(str, Enum):
     docking = 'docking'
     md = 'md'
     mc = 'mc'
-    mdcg = 'mdcg'
-    mdmc = 'mdcm'
-
+    mdcg = 'md-cg'
+    mccg = 'mc-cg'
 
 class ValidEnsembles(str, Enum):
     NPT = 'NPT'
