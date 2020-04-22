@@ -4,8 +4,6 @@ description: What is This Hub?
 draft: false
 ---
 
-![MolSSI, BioExcel, and the Community VS. COVID-19](repo_management/MolSSI-BioExcel-covid.png "MolSSI, BioExcel, and the Community VS. COVID-19")
-
 A community data repository and curation service for Structure, Models, Therapeutics, Simulations 
 related computations for research into the SARS-CoV-2 / COVID-19 / ”Coronavirus” pandemic maintained 
 by [The Molecular Sciences Software Institute (MolSSI)](https://molssi.org) and 
@@ -21,8 +19,6 @@ This project may serve as a prototype into a future, more general Hub of structu
 project. There may come a time as this project evolves that it naturally does become more general (or 
 change to another specific focus), however, this project focuses on the SARS-CoV-2 pandemic for now and 
 future evolutions can be dealt with as they arise. 
-
-## [Go to the Website](https://covid.molssi.org)
 
 ## A Central Reference for Community Simulation Data
 
@@ -70,3 +66,14 @@ in a centralized location:
 Due to the rapidly evolving nature of this hub, organization and requirements may change with time. However, 
 no changes to the repository will remove user-submitted data. The maintainers may reach out to the original 
 contributor to ask for additional information as needed.  
+
+## The Website Itself
+
+All content for this website (excluding external links) exist on a single [Github repository](https://github.com/MolSSI/). 
+Data, HTML pages, CSS, etc. all live there.
+
+This page is generated automatically from the GitHub through by [Hugo](https://gohugo.io/) and deployed through 
+[Netlify](https://www.netlify.com/).
+
+The symbols used to indicate "publication" and "preprint" are adapted from [Thomas Shafee through Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Preprint_postprint_published.svg) 
+and are reused under its [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/deed.en).

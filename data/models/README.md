@@ -11,7 +11,7 @@ Each entry has the following required and optional keys:
 name: (required)
 description: (required)
 url: (required) Link to where the model and supporting info can be found
-pdb_url: Link to the physical PDF file the model is contained in (used to render on page)
+pdb_url: (optional) Link to the physical PDF file the model is contained in (used to render on page), if present
 pdbids: (required)
   - pdbid1
   - ...
@@ -23,4 +23,6 @@ organization: (optional)
 institution: (optional)
 lab: (optional) If more information beyond `creator` is requred to properly cite, use this field
 rating: (optional) int on range [1,5]. 1=worst, 5=best
+publication: (optional) URL of the publication
+preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
 ```

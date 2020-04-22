@@ -13,7 +13,21 @@
         <h2>{{ .Title }}</h2>
         <h5>{{ .Description }}</h5>
 
-        {{ .Content }}
+
+        <div align="left">{{ .Content }}</div>
+
+        <h5 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "structures" "models" "targets" "proteins" "simulations"}}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h5>
+
+        {{ partial "marker-info-header" . }}
+
         <h4>Quick Navigation</h4>
         <p>
             {{ range $pname, $plink := $structure_map }}

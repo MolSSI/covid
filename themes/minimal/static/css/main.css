@@ -160,3 +160,23 @@ footer {
     background-color: #e2e3e5;
     border-color: #d6d8db;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 13% 20% 13% 20% 13% 20%;
+  grid-gap: 10px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.box {
+  border-radius: 15px;
+  padding: 0px;
+  font-size: 90%;
+}
+
+.logo_img {
+    display: inline;
+    margin: 0px;
+    padding: 0px 10px 10px 10px;
+}

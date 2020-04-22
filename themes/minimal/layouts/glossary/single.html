@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+    </div>
+
+    <div align="start" class="content">
+        {{ .Content }}
+
+        {{ range sort .Site.Data.glossary }}
+            <h3><a href="{{$.Site.BaseURL}}/{{.url}}">{{.term | title}}</a></h3>
+            {{ .long | markdownify }}
+        {{ end }}
+
+    </div>
+
+</main>
+
+{{ partial "footer" . }}

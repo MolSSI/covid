@@ -57,32 +57,56 @@ ignoreFiles = ["README.md$"]
     weight = 7
 
 [[menu.main]]
-    url = "/contributing/"
-    name = "Contributing"
+    hasChildren = true
+    name = "Contributions"
     weight = 9
+    
+    [[menu.main]]
+        parent = "Contributions"
+        url = "/contributing/"
+        name = "Contributing"
+        weight = 1
+        
+    [[menu.main]]
+        parent = "Contributions"
+        url = "/contributors/"
+        name = "Contributors"
+        weight = 2
 
 [[menu.main]]
     hasChildren = true
-    name = "About"
-    weight = 10
+    name = "About & Links"
+    weight = 600
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/about/"
-        name = "About the Exchange"
+        name = "About the Hub"
         weight = 1
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/collaborating/"
         name = "Collaborating"
         weight = 2
 
     [[menu.main]]
-        parent = "About"
-        url = "/teams/"
-        name = "Teams"
+        parent = "About & Links"
+        url = "/links/"
+        name = "External Resources"
         weight = 3
+
+    [[menu.main]]
+        parent = "About & Links"
+        url = "/glossary/"
+        name = "Glossary"
+        weight = 800
+        
+#    [[menu.main]]
+#        parent = "About"
+#        url = "/teams/"
+#        name = "Teams"
+#        weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
@@ -102,3 +126,4 @@ ignoreFiles = ["README.md$"]
     url = "https://twitter.com/MolSSI_NSF/"
     name = "twitter"
     weight = 3
+

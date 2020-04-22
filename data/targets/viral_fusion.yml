@@ -17,3 +17,5 @@ papers:
   Kawase_2019_Biochemical_analysis:
     title: Biochemical analysis of coronavirus spike glycoprotein conformational intermediates during membrane fusion
     doi: 10.1128/JVI.00785-19
+proteins:
+  - fusion core

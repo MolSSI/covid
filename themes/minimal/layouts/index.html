@@ -9,6 +9,7 @@
 {{ $thera := partial "thera-map" . }}
 {{ $model := partial "model-map" . }}
 {{ $sim := partial "sim-map" . }}
+{{ $links := partial "links-map" . }}
 
 
 <main>
@@ -18,7 +19,31 @@
         <h3>{{ markdownify .Site.Params.Description }}</h3>
         {{ with .Content }} <div class="homepage-content text-justify">{{ . }}</div> {{ end }}
 
-        <img src="images/sars-cov-2-600x300.jpg">
+        <img style="width:60%;" src="images/sars-cov-2-600x300.jpg">
+
+        <h3> What is this hub about? </h3>
+        <p align="justify" style="font-size:120%;">
+            This site provides a community-driven data repository and curation service for molecular structures, models,
+            therapeutics, and simulations related to computational research related to therapeutic opportunities
+            for COVID-19 (caused by the SARS-CoV-2 coronavirus). For more info about this project,
+            see the <a href="/about">about</a> page.
+            This is a public process and we encourage people to not only submit
+            data through <a href="https://github.com/MolSSI/covid/pulls">Pull Requests</a> or the
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1gtN4yts8D9QfQlnZUWpjHvs86Zgz3AJHmTug-ehpYYiGPA/viewform?usp=sf_link">Large Data Submission Request form</a>,
+            but we also encourage people to be part of our <a href="/teams">Review Teams</a> and help look over the data.
+            For instructions on how to contribute, please see the <a href="/contributing">contributing</a> page.
+        </p>
+        <p align="left" style="font-size:120%;">
+            Quick Terminology <a href="{{ .Site.BaseURL}}/glossary">[Full Glossary]</a>:
+        </p>
+            <ul style="text-align:left;font-size:120%;">
+                {{ range slice "targets" "proteins" "structures" "models" "therapeutics" "simulations" "links" }}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li>
+                        <a href="{{ $data.url }}"><b>{{ $data.term }}:</b></a> {{ $data.short }}
+                    </li>
+                {{ end }}
+            </ul>
 
         <!-- Establish a scope-independent scratch -->
         {{ $mainScratch := newScratch }}
@@ -58,6 +83,12 @@
             <p>
                 {{ range $sname, $slink := $sim }}
                 <a href="{{ $slink }}"><kbd class="alert-secondary" style="">{{ $sname }}</kbd></a>
+                {{ end }}
+            </p>
+            <h3>Links:</h3>
+            <p>
+                {{ range $lname, $llink := $links }}
+                <a href="{{ $llink }}"><kbd style="">{{ $lname }}</kbd></a>
                 {{ end }}
             </p>
         </div>

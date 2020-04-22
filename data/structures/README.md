@@ -37,6 +37,12 @@ proteins: (one or more of the following options)
   - 3CLpro
   - PLpro
   - RdRP
+  - ORF3a
+  - ORF6
+  - ORF8
+  - ORF7b
+  - ORF10
+  - M protein
 targets: (one or more of the following options)
   - spike binding
   - spike cleavage
@@ -53,6 +59,8 @@ organisms: (required) (one or more fo the following options as a list)
   - SARS-CoV
   - human
 ligands: (optional)
+publication: (optional) URL of the publication if not fetchable from RCSB (RCSB prioritized)
+preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted by the exact word "Submitted"
 ```
 
 ## Notes
