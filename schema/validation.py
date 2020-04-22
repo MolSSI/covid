@@ -71,6 +71,7 @@ class ValidInterest(str, Enum):
 class ResourcesEnum(str, Enum):
     structures = 'structures'
     models = 'models'
+    publications = 'publications'
 
 
 class ValidSimulations(str, Enum):
