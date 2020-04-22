@@ -19,13 +19,13 @@
 
 {{ $pub_link := $localScratch.Get "pub_link" }}
 {{ if and $pub_link (not (eq $pub_link "TBP")) }}
-  <a href="{{ $pub_link }}"><img src="/images/greendot.png"></a>
+  <a href="{{ $pub_link }}"><img src="/images/published.png" style="height:25px"></a>
 {{ else if $.publication }}
-  <a href="{{ $.publication | safeURL }}"><img src="/images/greendot.png"></a>
+  <a href="{{ $.publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
 {{ else if and $.preprint (not (eq $.preprint "Submitted")) }}
-  <a href="{{ $.preprint | safeURL }}"><img src="/images/yellowdot.png"></a>
+  <a href="{{ $.preprint | safeURL }}"><img src="/images/preprint.png" style="height:25px"></a>
 {{ else if and $.preprint (eq $.preprint "Submitted") }}
-  <img src="/images/yellowdot.png">
+  <img src="/images/preprint.png" style="height:25px">
 {{ else }}
-  <img src="/images/reddot.png">
+
 {{ end }}
