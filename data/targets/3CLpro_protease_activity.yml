@@ -1,4 +1,4 @@
-target: "3CLpro protease activity"
+target: 3CLpro protease activity
 name: 3CLpro / Mpro activity
 description: >
   3CLpro (main protease, M-PRO, etc) is a viral cysteine protease
@@ -9,4 +9,5 @@ description: >
   active site inhibition, and the second being dimerization inhibition.
 proteins:
   - 3CLpro
-therapeutic_modalities: small molecule
+therapeutic_modalities: 
+  - small molecule
