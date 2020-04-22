@@ -33,9 +33,6 @@ members:
     url: http://choderalab.org
     email: erica.goldberger@choderalab.org
     lab: Chodera Lab
-  - name: Levi Naden
-    lab: MolSSI
-    email: levi.naden@choderalab.org
   - name: Jiaye Guo
     role: Lit Review
     url: http://choderalab.org
