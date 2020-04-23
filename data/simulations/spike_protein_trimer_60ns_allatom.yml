@@ -1,4 +1,4 @@
-type: md
+﻿type: md
 title: Gromacs 60 ns MD of SARS-CoV-2 spike trimer, All Atom model
 description: >
   This trajectory is from a 60 ns MD simulation of the SARS-CoV-2 spike protein. The protein was solvated in a 20 x 20 x 20 nm  water

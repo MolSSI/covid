@@ -1,4 +1,4 @@
-name: "SARS-CoV-2 spike protein trimer (closed state) model for MD simulations"
+﻿name: "SARS-CoV-2 spike protein trimer (closed state) model for MD simulations"
 description: >
   Model of the spike protein trimer of SARS-CoV-2 virus in closed conformation. 
   That trimer is built from the homology model of monomer made by Thomas Desautels et.al. (https://doi.org/10.1101/2020.04.03.024885)
