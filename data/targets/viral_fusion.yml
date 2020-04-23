@@ -11,11 +11,9 @@ therapeutic_modalities:
   - peptide
   - antibody
 papers:
-  Xia_2020_Fusion_mechanism:
-    title: Fusion mechanism of 2019-nCoV and fusion inhibitors targeting HR1 domain in spike protein
+  - title: Fusion mechanism of 2019-nCoV and fusion inhibitors targeting HR1 domain in spike protein
     doi: 10.1038/s41423-020-0374-2
-  Kawase_2019_Biochemical_analysis:
-    title: Biochemical analysis of coronavirus spike glycoprotein conformational intermediates during membrane fusion
+  - title: Biochemical analysis of coronavirus spike glycoprotein conformational intermediates during membrane fusion
     doi: 10.1128/JVI.00785-19
 proteins:
   - fusion core
