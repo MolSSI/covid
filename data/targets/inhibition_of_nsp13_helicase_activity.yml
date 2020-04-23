@@ -7,9 +7,7 @@ proteins:
 therapeutic_modalities:
   - small molecule
 papers: 
- - Wu_2020_Analysis_of_SARS_Therapeutic_ Targets
-   Title: Analysis of therapeutic targets for SARS-CoV-2 and discovery of potential drugs by computational methods 
-   Doi: 10.1016/j.apsb.2020.02.008
- - Adedeji_2013_Novel_Inhibitors_of_SARS_Entry
-   Title: Novel Inhibitors of Severe Acute Respiratory Syndrome Coronavirus Entry That Act by Three Distinct Mechanisms 
-   Doi:  10.1128/JVI.00998-13
+  - Title: Analysis of therapeutic targets for SARS-CoV-2 and discovery of potential drugs by computational methods 
+    Doi: 10.1016/j.apsb.2020.02.008
+  - Title: Novel Inhibitors of Severe Acute Respiratory Syndrome Coronavirus Entry That Act by Three Distinct Mechanisms 
+    Doi:  10.1128/JVI.00998-13
