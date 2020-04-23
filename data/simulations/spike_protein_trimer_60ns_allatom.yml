@@ -22,7 +22,7 @@ trajectory: https://covmme.molssi.org/data/morozov/morozov_trajs_0/spike_protein
 size: 2.0 GB
 solvent: Water
 temperature: 300
-pressure: 0.987                                               	
+pressure: 0.987
 salinity: 0.1
 length: 60 ns
 references:
