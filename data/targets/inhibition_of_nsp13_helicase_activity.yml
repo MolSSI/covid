@@ -8,6 +8,6 @@ therapeutic_modalities:
   - small molecule
 papers: 
   - Title: Analysis of therapeutic targets for SARS-CoV-2 and discovery of potential drugs by computational methods 
-    Doi: 10.1016/j.apsb.2020.02.008
+    doi: 10.1016/j.apsb.2020.02.008
   - Title: Novel Inhibitors of Severe Acute Respiratory Syndrome Coronavirus Entry That Act by Three Distinct Mechanisms 
-    Doi:  10.1128/JVI.00998-13
+    doi:  10.1128/JVI.00998-13
