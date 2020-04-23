@@ -206,12 +206,18 @@ class StructuresModel(BaseModel):
         return v
 
 
+class PapersModel(BaseModel):
+    title: str
+    doi: str
+
+
 class TargetsModel(BaseModel):
     target: str
     name: str
     description: str
     proteins: Union[ValidProteins, List[ValidProteins]]
     therapeutic_modalities: Union[str, List[str]]
+    papers: Optional[List[PapersModel]]
 
 
 class TeamsModel(BaseModel):

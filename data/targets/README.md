@@ -13,4 +13,9 @@ name: (required)
 description: (required)
 proteins: (required)
 therapeutic_modalities: one or ore of [small molecule, antibody, peptide, vaccine]
+papers: (optional) List of 
+    - title: First paper title
+      doi: First paper DOI
+    - title: ...
+      doi: ...
 ```
