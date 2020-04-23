@@ -27,7 +27,7 @@
 
     <!-- List all targets from data/targets/ -->
     {{ range $.Site.Data.targets }}
-       {{ partial "target.html" (dict "context" . "protein_map" ($localScratch.Get "protein_map") "thera_map" ($localScratch.Get "thera_map") )}}
+       {{ partial "target-entry" (dict "context" . "protein_map" ($localScratch.Get "protein_map") "thera_map" ($localScratch.Get "thera_map") )}}
     {{ end }}
 
     <hr>

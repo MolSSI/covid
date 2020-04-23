@@ -206,12 +206,29 @@ class StructuresModel(BaseModel):
         return v
 
 
+class PapersModel(BaseModel):
+    title: str
+    doi: Optional[str]
+    pmid: Optional[str]
+
+    @validator('pmid', always=True, pre=True)
+    def needs_one_of(cls, v, values, **kwargs):
+        """
+        Note: order of attributes is important here! always validate against the _last_ key otherwise it wont appear
+              in the "values" arg. Its a subtle nuance to how pydantic does its validation population.
+        """
+        if not values.get('doi') and not v:
+            raise ValueError("At least one of doi or pmid must be set!")
+        return v
+
+
 class TargetsModel(BaseModel):
     target: str
     name: str
     description: str
     proteins: Union[ValidProteins, List[ValidProteins]]
     therapeutic_modalities: Union[str, List[str]]
+    papers: Optional[List[PapersModel]]
 
 
 class TeamsModel(BaseModel):
