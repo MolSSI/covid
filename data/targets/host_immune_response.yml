@@ -7,7 +7,7 @@ proteins:
 therapeutic_modalities:
   - antibody
 papers:
-  - Rismanbaf_2020_Potential_Treatments_of_COVID19:
+  - title: Potential Treatments for COVID-19; a Narrative Literature Review
     pmid: 32232214
-  - Li_2020_Immune_Pathogenesis_of_COVID19:
+  - title: Molecular immune pathogenesis and diagnosis of COVID-19
     doi: 10.1016/j.jpha.2020.03.001

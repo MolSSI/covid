@@ -40,11 +40,21 @@
   <ul>
     {{ range .context.papers }}
       <!-- TODO: Pull more information about these publications automagically -->
-      <li> <div align="justify"><b>{{ .title }}</b> <a href="http://doi.org/{{ .doi }}"> [DOI] </a></div> </li>
+      <li>
+        <div align="justify"><b>{{ .title }}</b>
+        {{ if .doi }}
+          <a href="http://doi.org/{{ .doi }}"> <kbd class="alert-info">[DOI]</kbd> </a>
+        {{ end }}
+        {{ if .pmid }}
+          <a href="https://www.ncbi.nlm.nih.gov/pubmed/{{ .pmid }}"> <kbd class="alert-info">[PubMed]</kbd> </a>
+        {{ end }}
+        </div>
+      </li>
     {{ end }}
   </ul>
   {{ end }}
 
   - - -
+
 
 </div>
