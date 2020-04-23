@@ -16,7 +16,8 @@ structures:
 ensemble: NPT
 forcefields:
   - Charmm27
-files: https://github.com/bioexcel/covid_modelling_simulation_data/tree/master/spike_protein/full_spike/trimer
+files: 
+  - https://github.com/bioexcel/covid_modelling_simulation_data/tree/master/spike_protein/full_spike/trimer
 trajectory: https://covmme.molssi.org/data/morozov/morozov_trajs_0/spike_protein/SARS-CoV-2-Full-Spike-60ns.tar 
 size: 2.0 GB
 solvent: Water
@@ -27,4 +28,4 @@ length: 60 ns
 references:
   - "Mark James Abraham, Teemu Murtola, Roland Schulz, Szilard Pall, Jeremy C. Smith, Berk Hess, Erik Lindahl,
      GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers,
-     SoftwareX, 2015, V. 1–2, pp. 19-25"
+     SoftwareX, 2015, V. 1-2, pp. 19-25"
