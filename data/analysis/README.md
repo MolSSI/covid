@@ -39,9 +39,9 @@ output_files: (optional) URLs to output files produced by `compute_files`
 dependencies: (required) list of software/code/language dependencies along with (optionally) version specification e.g. `numpy >= 1.16.3`
     - dependency_1 >= X.X.X
     - ...
-references: (optional) List of references associated with the programs and methods you want to mention. For publications tied to this exact simulation, use the `publicaton` and `preprint` categories
+references: (optional) List of references associated with the programs and methods you want to mention. For publications tied to this exact analysis, use the `publicaton` and `preprint` categories
     - ref1
     - ref2
-publication: (optional) URL of the publication which includes THIS simulation
+publication: (optional) URL of the publication which includes this analysis
 preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
 ```
