@@ -207,7 +207,7 @@ class StructuresModel(BaseModel):
         return v
 
     @validator('unpublished_pdbid', pre=True, always=True)
-    def rating_valid(cls, v, values, **kwargs):
+    def at_least_one_of(cls, v, values, **kwargs):
         """
         Ensure at least one of pdbid or unpublished_pdbid is set
         """
