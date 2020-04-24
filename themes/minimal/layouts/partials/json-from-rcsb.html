@@ -1,0 +1,8 @@
+{{ $localScratch := newScratch }}
+
+{{ if .unpublished_pdbid }}
+    {{ $localScratch.Set "data" nil }}
+{{ else }}
+    {{ $localScratch.Set "data" (getJSON "https://data.rcsb.org/rest/v1/core/entry/" (upper .pdbid) ) }}
+{{ end }}
+{{ return ($localScratch.Get "data") }}

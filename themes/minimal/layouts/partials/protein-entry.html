@@ -27,12 +27,18 @@
   {{ $localScratch.Set "postedStruct" 0 }}
   {{ range sort .context.Site.Data.structures "rating" "desc" }}
      {{ if and (in .proteins $protein_id) (lt ($localScratch.Get "postedStruct") 2) }}
-       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ print ( .pdbid | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ .pdbid }}]</a>
+       {{ if .unpublished_pdbid }}
+        {{ $localScratch.Set "pdb" .unpublished_pdbid }}
+       {{ else }}
+        {{ $localScratch.Set "pdb" .pdbid }}
+       {{ end }}
+       {{ $pdb := $localScratch.Get "pdb" }}
+       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ print ( $pdb | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ $pdb }}]</a>
          <!-- Structure Annotation -->
          <!-- Scrape from PDB -->
-        {{ $pdb := upper .protein.protein }}
-        {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" .pdbid }}
-        {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
+
+        {{ $data := partial "json-from-rcsb" . }}
+
         {{ if $data }}
           {{ $localScratch.Set "title" (print ($data.struct.title | title) )  }}
         {{ else }}
