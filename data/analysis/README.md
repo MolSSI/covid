@@ -27,10 +27,10 @@ molecule: (optional) must point to a valid molecule which could be in `molecules
     - molecule_1
     - ...
 rating: (optional) int on domain [1,5], 5 is better
-input_files: (optional) URLs to input files needed to run `compute_files`
+input_files: (required) URLs to input files needed to run `compute_files`
     - file_1
     - ...
-compute_files: (optional) URLs to executable files that run the computational analysis
+compute_files: (required) URLs to executable files that run the computational analysis
     - file_1
     - ...
 output_files: (optional) URLs to output files produced by `compute_files`
