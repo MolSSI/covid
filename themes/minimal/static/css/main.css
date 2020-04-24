@@ -16,6 +16,13 @@ main {
     max-width: 750px;
 }
 
+.main-img {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 1180px !important;
+}
+
 img {
     max-width: 100%;
 }
