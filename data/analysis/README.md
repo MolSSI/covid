@@ -20,13 +20,17 @@ models: (required) must point to model in `models` dir
 proteins: (required) must be a valid protein (see `proteins` dir) 
     - protein_1
     - ...
-structures: (required) must point to structure which could be in `structure` dir
+structures: (required) must point to valid structures which could be in `structure` dir
     - structure_1
     - ...
-molecule: (optional) must point to a valid molecule which could be in `molecules` dir
+molecules: (optional) must point to valid molecules which could be in `molecules` dir
     - molecule_1
     - ...
+simulations: (optional) must point to valid simulations which could be in `simulations` dir
+    - sim_1
+    - ...
 rating: (optional) int on domain [1,5], 5 is better
+
 input_files: (required) URLs to input files needed to run `compute_files`
     - file_1
     - ...
