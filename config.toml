@@ -70,29 +70,29 @@ ignoreFiles = ["README.md$"]
 
 [[menu.main]]
     hasChildren = true
-    name = "About"
+    name = "About & Links"
     weight = 600
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/about/"
         name = "The Hub"
         weight = 1
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/collaborating/"
         name = "Collaboration"
         weight = 2
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/links/"
         name = "External Resources"
         weight = 3
 
     [[menu.main]]
-        parent = "About"
+        parent = "About & Links"
         url = "/glossary/"
         name = "Glossary"
         weight = 4
@@ -113,21 +113,16 @@ ignoreFiles = ["README.md$"]
     weight = 1
 
 [[menu.icon]]
-    url = "/about"
-    name = "info"
-    weight = 2
-
-[[menu.icon]]
     url = "https://github.com/molssi/covid"
     name = "github"
-    weight = 3
+    weight = 2
 
 [[menu.icon]]
     url = "mailto:info@molssi.org"
     name = "envelope-o"
-    weight = 4
+    weight = 3
 
 [[menu.icon]]
     url = "https://twitter.com/MolSSI_NSF/"
     name = "twitter"
-    weight = 5
+    weight = 4
