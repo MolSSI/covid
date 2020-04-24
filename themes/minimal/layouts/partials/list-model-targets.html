@@ -7,7 +7,8 @@
     {{ $localScratch.Set "model_pdb" . }}
     {{ range $.context.Site.Data.structures }}
         {{ $localScratch.Set "structure" . }}
-        {{ if eq (.pdbid | upper ) ($localScratch.Get "model_pdb" | upper) }}
+        {{ $model_pdb := ($localScratch.Get "model_pdb" | upper) }}
+        {{ if or (eq (.pdbid | upper) $model_pdb) (eq (.unpublished_pdbid | upper) $model_pdb)}}
             {{ if ($localScratch.Get "structure").targets }}
                 {{ $targets := partial "ensure-slice" ($localScratch.Get "structure").targets }}
                 {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}

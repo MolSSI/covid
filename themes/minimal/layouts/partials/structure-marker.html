@@ -3,7 +3,7 @@
 
 {{ $localScratch := newScratch }}
 {{ $pdb := upper .pdbid }}
-{{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
+{{ $data := partial "json-from-rcsb" . }}
 
 {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
 

@@ -188,7 +188,8 @@ class SimulationsModel(BaseModel):
 
 
 class StructuresModel(BaseModel):
-    pdbid: str
+    pdbid: Optional[str]
+    unpublished_pdbid: Optional[str]
     proteins: Union[ValidProteins, List[ValidProteins]]
     targets: Union[ValidTargets, List[ValidTargets]]
     annotation: Optional[str]
@@ -203,6 +204,15 @@ class StructuresModel(BaseModel):
         if v is not None:
             if v < 1 or v > 5:
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
+        return v
+
+    @validator('unpublished_pdbid', pre=True, always=True)
+    def at_least_one_of(cls, v, values, **kwargs):
+        """
+        Ensure at least one of pdbid or unpublished_pdbid is set
+        """
+        if not values.get('pdbid') and not v:
+            raise ValueError("At least one of pdbid or unpublished_pdbid must be set!")
         return v
 
 
