@@ -40,10 +40,13 @@ class ValidProteins(str, Enum):
     ORF3a = 'ORF3a'
     ORF6 = 'ORF6'
     ORF7b = 'ORF7b'
+    ORF7a = 'ORF7a'
     ORF8 = 'ORF8'
     ORF10 = 'ORF10'
     M_protein = 'M protein'
     PD_1 = 'PD-1'
+    E_protein = 'E protein'
+    N_protein = 'N protein'
 
 
 class ValidTargets(str, Enum):
