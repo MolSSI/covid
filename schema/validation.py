@@ -163,6 +163,7 @@ class SimulationsModel(BaseModel):
     institute: Optional[str]
     models: List[str]
     proteins: List[ValidProteins]
+    molecules: Optional[List[MoleculesModel]]
     structures: List[str]
     rating: Optional[int]
     files: Optional[List[AnyUrl]]
@@ -170,11 +171,12 @@ class SimulationsModel(BaseModel):
     size: str
     length: str
     ensemble: ValidEnsembles
-    temperature: float
-    pressure: float
+    temperature: Optional[float]
+    pressure: Optional[float]
     solvent: str
     salinity: float
     forcefields: List[str]
+    dependencies: List[str]
     references: Optional[List[str]]
     publication: Optional[AnyUrl]
     preprint: Optional[Union[AnyUrl, Submitted]]
