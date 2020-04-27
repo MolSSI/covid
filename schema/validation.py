@@ -40,9 +40,12 @@ class ValidProteins(str, Enum):
     ORF3a = 'ORF3a'
     ORF6 = 'ORF6'
     ORF7b = 'ORF7b'
+    ORF7a = 'ORF7a'
     ORF8 = 'ORF8'
     ORF10 = 'ORF10'
     M_protein = 'M protein'
+    N_protein = 'N protein'
+    E_protein = 'E protein'
     PD_1 = 'PD-1'
 
 
