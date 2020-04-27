@@ -171,7 +171,7 @@ footer {
 .wrapper {
   display: grid;
   grid-template-columns: 13% 20% 13% 20% 13% 20%;
-  grid-gap: 10px;
+  grid-gap: 10px 20px;
   background-color: #fff;
   align-items: center;
 }
