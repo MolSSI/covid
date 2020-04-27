@@ -18,6 +18,7 @@ ensemble: NPT
 forcefields:
   - DES-Amber FF
 files:
+  - https://covmme.molssi.org/data/desres/desres_trajs_0/main_protease/DESRES-Trajectory_sarscov2-10880334-structure.tar
 trajectory: https://covmme.molssi.org/data/desres/desres_trajs_0/main_protease/DESRES-Trajectory_sarscov2-10880334-no-water-no-ion-glueCA.tar
 size: 9.6 GB
 solvent: Water
@@ -25,6 +26,8 @@ temperature: 298
 pressure: 1
 salinity: 0.15
 length: 100 µs
+dependencies:
+  - Desmond
 references:
   - "David E. Shaw, J.P. Grossman, Joseph A. Bank, Brannon Batson, J. Adam Butts, Jack C. Chao, Martin M. Deneroff,
     Ron O. Dror, Amos Even, Christopher H. Fenton, Anthony Forte, Joseph Gagliardo, Gennette Gill, Brian Greskamp,

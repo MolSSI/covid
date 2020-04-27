@@ -25,6 +25,8 @@ temperature: 300
 pressure: 0.987
 salinity: 0.1
 length: 60 ns
+dependencies:
+  - Gromacs 2018.8
 references:
   - "Mark James Abraham, Teemu Murtola, Roland Schulz, Szilard Pall, Jeremy C. Smith, Berk Hess, Erik Lindahl,
      GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers,
