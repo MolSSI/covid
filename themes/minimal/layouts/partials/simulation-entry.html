@@ -116,6 +116,13 @@
             {{ end }}
         </h4>
 
+        <!-- Software dependencies represented -->
+        <h4 align="left">
+            Software:
+            {{ range .simulation.dependencies }}
+                 <kbd class="alert-tertiary">{{ . }}</kbd>
+            {{ end }}
+        </h4>
         <!-- TODO: Include references in an accordion -->
 
         <hr>
