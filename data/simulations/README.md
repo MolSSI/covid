@@ -24,7 +24,9 @@ proteins: (required) must be a valid protein (see `proteins` dir)
 structures: (required) must point to structure which could be in `structure` dir
     - structure 1
     - ...
-molecule: (optional) must point to a valid molecule which could be in `molecules` dir
+molecules: (optional) must point to a valid molecule which could be in `molecules` dir
+    - molecule_1
+    - ...
 rating: (optional) int on domain [1,5], 5 is better
 files: (optional) URLs to input and supporting files (not trajectory itself)
     - file 1
@@ -39,6 +41,9 @@ solvent: (required) can also be none or vacuum
 salinity: (optional) in Molar
 forcefields: (required) List of forcefields, can be simple names
     - FF 1
+    - ...
+dependencies: (required) list of software/code/language dependencies along with (optionally) version specification e.g. `numpy >= 1.16.3`
+    - dependency_1 >= X.X.X
     - ...
 references: (optional) List of references associated with the programs and methods you want to mention. For publications tied to this exact simulation, use the `publicaton` and `preprint` categories
     - ref1
