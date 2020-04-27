@@ -182,8 +182,16 @@ footer {
   font-size: 90%;
 }
 
-.logo_img {
+.logo-img-box {
     display: inline;
     margin: 0px;
     padding: 0px 10px 10px 10px;
+}
+
+.logo-img {
+    display: inline;
+    max-height: 43px;
+    max-width: 57px;
+    width: auto;
+    height: auto;
 }

@@ -1,0 +1,116 @@
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "count" 0 }}
+
+{{ range $.Site.Data.organizations }}
+  {{ if .endorsement_logo }}
+    {{ $localScratch.Set "count" (add (1) ($localScratch.Get "count")) }}
+  {{ end }}
+{{ end }}
+
+{{ $localScratch.Set "item_width" 250 }}
+{{ $localScratch.Set "marquee_height" 150 }}
+{{ $localScratch.Set "span_width" (mul ($localScratch.Get "count") ($localScratch.Get "item_width")) }}
+
+<!-- CSS Note: the CSS is HERE instead of main.css because values are programmatically set-->
+<style>
+
+.marquee {
+  height: {{ $localScratch.Get "marquee_height" }}px;
+  width: {{ $localScratch.Get "span_width"}}px;
+  overflow: hidden;
+  margin: auto;
+  box-sizing: border-box;
+  position: relative;
+  max-width: 750px;
+}
+
+.marquee--inner {
+  display: flex;
+  width: 200%;
+  margin: 0px 0;
+  position: absolute;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+span2 {
+  float: left;
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+
+.endorsement-elements {
+   width: {{$localScratch.Get "item_width"}}px; /* or whatever width you want. */
+   max-width: {{$localScratch.Get "item_width"}}px; /* or whatever width you want. */
+   display: inline-block;
+   max-height: {{ $localScratch.Get "marquee_height" }};
+   flex-grow: 1;
+   align-self: center
+}
+
+.endorsement-elements:hover {
+  transform: scale(0.9);
+  opacity: .8;
+  cursor: pointer;
+}
+
+.endorse-img {
+    display: block;
+    max-width: {{$localScratch.Get "item_width"}}px;
+    max-height: calc({{ $localScratch.Get "marquee_height" }}px - 10px - 18px); // Bootstrap values for h4 size and pad
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+</style>
+
+<!-- Notes-->
+<!-- The total width of all items within span must = the width of the marquee-->
+<!-- Marquee div must be a fixed width :( -->
+<!-- The span must occur twice in order for the infinite scroll illusion to work-->
+
+<div class="marquee">
+  <div class="marquee--inner">
+    {{ range $.Site.Data.organizations }}
+      {{ if .endorsement_logo }}
+        <div align="center" class='endorsement-elements' style="margin:0;padding:0">
+          {{ if .url }}
+            <a href="{{ .url }}">
+          {{ end }}
+            <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
+          {{ if .url }}
+            </a>
+          {{ end }}
+            <h4>{{ .name }}</h4>
+        </div>
+      {{ end }}
+    {{ end }}
+
+    <!-- Repeat for the illusion -->
+    {{ range $.Site.Data.organizations }}
+      {{ if .endorsement_logo }}
+        <div align="center" class='endorsement-elements' style="margin:0;padding:0">
+          {{ if .url }}
+            <a href="{{ .url }}">
+          {{ end }}
+            <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
+          {{ if .url }}
+            </a>
+          {{ end }}
+            <h4>{{ .name }}</h4>
+        </div>
+      {{ end }}
+    {{ end }}
+
+  </div>
+</div>

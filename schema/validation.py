@@ -264,6 +264,7 @@ class OrganizationModel(BaseModel):
     short: Optional[str]
     logo: Optional[str]
     url: Optional[AnyUrl]
+    endorsement_logo: Optional[str]
 
 
 class ContributorMemberModel(BaseModel):
