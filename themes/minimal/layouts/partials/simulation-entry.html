@@ -52,7 +52,13 @@
                     <td>{{ index $md_type_map .simulation.type }}</td>
                     <td>{{ .simulation.ensemble }}</td>
                     <td>{{ .simulation.temperature }}</td>
-                    <td>{{ .simulation.pressure }}</td>
+                    <td>
+                    {{ if not .simulation.pressure }}
+                        N/A
+                    {{ else }}
+                        {{ .simulation.pressure }}
+                    {{ end }}
+                    </td>
                     <td>{{ .simulation.solvent }}</td>
                     <td>{{ .simulation.salinity }}</td>
                     <td>{{ range .simulation.forcefields }} {{ . }}<br>{{ end }}</td>
