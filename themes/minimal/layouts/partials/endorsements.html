@@ -45,6 +45,7 @@
 .marquee--inner {
   display: flex;
   width: {{ $inner_width }}px;
+  height: {{ $marquee_height }}px;
   margin: 0px 0;
   position: absolute;
   animation: marquee {{ $scroll_time }}s linear infinite;
@@ -63,11 +64,10 @@
 
 .endorsement-elements {
    width: {{ $item_width }}px; /* or whatever width you want. */
-   max-width: {{ $item_width }}px; /* or whatever width you want. */
    display: inline-block;
-   max-height: {{ $marquee_height }};
+   max-height: {{ $marquee_height }}px;
    flex-grow: 1;
-   align-self: center
+   align-self: center;
 }
 
 .endorsement-elements:hover {
@@ -79,7 +79,7 @@
 .endorse-img {
     display: block;
     max-width: {{ $item_width }}px;
-    max-height: calc({{ $marquee_height }}px - 10px - 18px); /* Bootstrap values for h4 font size and padding */
+    max-height: calc({{ $marquee_height }}px - 10px - 18px - 4px); /* Bootstrap values for h4 font size and padding and a little extra for serif */
     width: auto;
     height: auto;
     margin: 0;
@@ -94,36 +94,22 @@
 
 <div class="marquee">
   <div class="marquee--inner">
-    {{ range $.Site.Data.organizations }}
-      {{ if .endorsement_logo }}
-        <div align="center" class='endorsement-elements' style="margin:0;padding:0">
-          {{ if .url }}
-            <a href="{{ .url }}">
+    {{ range (slice 1 2) }} <!-- Repeat for the illusion -->
+        {{ $iter := . }}
+        {{ range $.Site.Data.organizations }}
+          {{ if .endorsement_logo }}
+            <div align="center" class='endorsement-elements' style="margin:0;padding:0">
+              {{ if .url }}
+                <a href="{{ .url }}">
+              {{ end }}
+                <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
+              {{ if .url }}
+                </a>
+              {{ end }}
+                <h4>{{ .name }}</h4> <!-- Long titles will wrap below the marquee and look odd, no good fixes for it I can find yet -->
+            </div>
           {{ end }}
-            <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
-          {{ if .url }}
-            </a>
-          {{ end }}
-            <h4>{{ .name }}</h4>
-        </div>
-      {{ end }}
+        {{ end }}
     {{ end }}
-
-    <!-- Repeat for the illusion -->
-    {{ range $.Site.Data.organizations }}
-      {{ if .endorsement_logo }}
-        <div align="center" class='endorsement-elements' style="margin:0;padding:0">
-          {{ if .url }}
-            <a href="{{ .url }}">
-          {{ end }}
-            <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
-          {{ if .url }}
-            </a>
-          {{ end }}
-            <h4>{{ .name }}</h4>
-        </div>
-      {{ end }}
-    {{ end }}
-
   </div>
 </div>
