@@ -60,7 +60,13 @@
                     {{ end }}
                     </td>
                     <td>{{ .simulation.solvent }}</td>
-                    <td>{{ .simulation.salinity }}</td>
+                    <td>
+                    {{ if not .simulation.salinity }}
+                        N/A
+                    {{ else }}
+                        {{ .simulation.salinity }}
+                    {{ end }}
+                    </td>
                     <td>{{ range .simulation.forcefields }} {{ . }}<br>{{ end }}</td>
                 </tr>
         </table>
