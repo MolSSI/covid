@@ -18,8 +18,9 @@ length: 10 µs
 ensemble: NVT
 temperature: 310
 pressure: 
-solvent: TIP3P
+solvent: Water
 salinity: 
 forcefields:
     - amber99sb-ildn
+    - TIP3P
 preprint: http://dx.doi.org/10.17632/vpps4vhryg
