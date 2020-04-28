@@ -1,17 +1,21 @@
 {{ $localScratch := newScratch }}
 
-{{ $localScratch.Set "count" 0 }}
+<!-- Control Variables, units of px and seconds -->
+{{ $item_width := 250 }} <!-- Max width of each logo, aspect ratio preserved -->
+{{ $marquee_height := 150 }} <!-- Height of the marquee (and images), aspect ratio preserved  -->
+{{ $time_per_item := 5 }}  <!-- Roughly how many second each logo is on the screen -->
+{{ $max_marquee_width := 750 }}  <!-- Probably dont change this one, its the max width of the <main> tag -->
 
+<!-- Calculations, probably don't mess with these unless we're trying to change functional style-->
+<!-- Determine how many endorsements we have -->
+{{ $localScratch.Set "count" 0 }}
 {{ range $.Site.Data.organizations }}
   {{ if .endorsement_logo }}
     {{ $localScratch.Set "count" (add (1) ($localScratch.Get "count")) }}
   {{ end }}
 {{ end }}
 {{ $count := $localScratch.Get "count" }}
-
-{{ $item_width := 250 }}
-{{ $marquee_height := 150 }}
-{{ $max_marquee_width := 750 }}
+<!-- Determine the total marquee width as a function of the max and number of elements -->
 {{ $total_item_width := (mul ($count) ($item_width)) }}
 {{ if gt $total_item_width $max_marquee_width }}
   {{ $localScratch.Set "max" $max_marquee_width }}
@@ -19,10 +23,9 @@
   {{ $localScratch.Set "max" $total_item_width }}
 {{ end }}
 {{ $marquee_width := $localScratch.Get "max" }}
-
+<!-- Set the inner width to double total item width for the illusion to work -->
 {{ $inner_width := mul $total_item_width 2 }}
-
-{{ $time_per_item := 5 }}
+<!-- Control how long each element takes to scroll (roughly) -->
 {{ $scroll_time := mul $time_per_item $count }}
 
 <!-- CSS Note: the CSS is HERE instead of main.css because values are programmatically set-->
