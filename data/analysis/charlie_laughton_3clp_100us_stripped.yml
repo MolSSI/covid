@@ -1,13 +1,13 @@
 title: Analysis of DESRES 100 µs MD of 3CLpro, no water or ions
 description:
-    This notebook analyses the DE Shaw dataset 'DESRES 100 µs MD of 3CLpro, no water or ions (100 µs )' 
+    This notebook analyses the DE Shaw dataset 'DESRES 100 µs MD of 3CLpro, no water or ions (100 µs )'  
     (see https://covid.molssi.org/simulations/#sars-cov-2-main-protease-3clpro-or-nsp5) and extracts a 
-    reasonably-sized but diverse subset of structures of the catalytic domain that may be useful for, e.g., 
-    docking studies. Structures ('waymarks') are picked sequentially from both A chain and B chain copies 
-    of the catalytic domain in each snapshot, if their minimum rmsd from any previously selected structure 
-    exceeds a user-defined threshold. These waymarks are then used to produce a Voronoi partitioning of the 
-    trajectory. Waymarks defining domains that include more than a set minimum fraction of the trajectory 
-    snapshots are then output in PDB format.
+    reasonably-sized but diverse subset of structures of the catalytic domain that may be useful for, 
+    e.g., docking studies. Structures ('waymarks') are picked sequentially from both A chain and B 
+    chain copies of the catalytic domain in each snapshot, if their minimum rmsd from any previously 
+    selected structure exceeds a user-defined threshold. These waymarks are then used to produce a Voronoi 
+    partitioning of the trajectory. Waymarks defining domains that include more than a set minimum fraction 
+    of the trajectory snapshots are then output in PDB format.
 creator: Charlie Laughton
 institute: School of Pharmacy and Biodiscovery Institute, University of Nottingham, UK.
 models:
@@ -19,17 +19,17 @@ structures:
 simulations: 
    - desres_3clp_100_striped
 input_files:
-   - path_to_system.pdb
+   - https://bitbucket.org/claughton/covid/src/master/3CLpro/system.pdb
    - http://covmme.molssi.org/data/desres/desres_trajs_0/main_protease/DESRES-Trajectory_sarscov2-10880334-no-water-no-ion-glueCA.tar
 compute_files:
-   - path_to_structures%for%docking.ipynb
+   - https://bitbucket.org/claughton/covid/src/master/3CLpro/Select_structures_for_docking.ipynb
 output_files:
-   - path_to_zip_file
+   - https://bitbucket.org/claughton/covid/src/master/3CLpro/models.tgz
 dependencies:
-  - python >= ???
-  - mdtraj >= ???
-  - numpy >= ???
-  - jupyter lab/notebook >= ???
+  - python >= 3.4
+  - mdtraj >= 1.9.3
+  - numpy >= 1.18.2
+  - jupyter lab/notebook >= 6.0.3
 references:
-  - D. E. Shaw Research, "Molecular Dynamics Simulations Related to SARS-CoV-2," D. E. Shaw Research 
-    Technical Data, 2020. http://www.deshawresearch.com/resources_sarscov2.html
+   - D. E. Shaw Research, "Molecular Dynamics Simulations Related to SARS-CoV-2," D. E. Shaw Research 
+     Technical Data, 2020. http://www.deshawresearch.com/resources_sarscov2.html
