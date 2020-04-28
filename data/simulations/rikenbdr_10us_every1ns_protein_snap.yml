@@ -17,9 +17,9 @@ size: 340 MBs
 length: 10 µs
 ensemble: NVT
 temperature: 310
-pressure: N/A
+pressure: 
 solvent: TIP3P
-salinity: (optional) in Molar
+salinity: 
 forcefields:
     - amber99sb-ildn
 preprint: http://dx.doi.org/10.17632/vpps4vhryg
