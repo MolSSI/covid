@@ -1,0 +1,13 @@
+name: NSP4 by Yang Zhang lab
+description: model from deep learning contact-map assisted C-I-TASSER structure simulation
+url: https://zhanglab.ccmb.med.umich.edu/COVID-19/
+pdb_url: https://zhanglab.ccmb.med.umich.edu/COVID-19/QHD43415_4.pdb.gz
+pdbids:
+proteins:
+  - NSP4
+creator: Chengxin Zhang, Wei Zheng, Xiaoqiang Huang, Eric W. Bell, Xiaogen Zhou, Yang Zhang
+organization: Depeartment of Computational Medicine and Bioinformatics
+institution: University of Michigan
+lab: Yang Zhang
+publication: http://doi.org/10.1021/acs.jproteome.0c00129
+preprint: https://www.biorxiv.org/content/10.1101/2020.03.28.013607v1
