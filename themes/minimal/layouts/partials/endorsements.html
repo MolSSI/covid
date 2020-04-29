@@ -1,0 +1,115 @@
+{{ $localScratch := newScratch }}
+
+<!-- Control Variables, units of px and seconds -->
+{{ $item_width := 250 }} <!-- Max width of each logo, aspect ratio preserved -->
+{{ $marquee_height := 150 }} <!-- Height of the marquee (and images), aspect ratio preserved  -->
+{{ $time_per_item := 5 }}  <!-- Roughly how many second each logo is on the screen -->
+{{ $max_marquee_width := 750 }}  <!-- Probably dont change this one, its the max width of the <main> tag -->
+
+<!-- Calculations, probably don't mess with these unless we're trying to change functional style-->
+<!-- Determine how many endorsements we have -->
+{{ $localScratch.Set "count" 0 }}
+{{ range $.Site.Data.organizations }}
+  {{ if .endorsement_logo }}
+    {{ $localScratch.Set "count" (add (1) ($localScratch.Get "count")) }}
+  {{ end }}
+{{ end }}
+{{ $count := $localScratch.Get "count" }}
+<!-- Determine the total marquee width as a function of the max and number of elements -->
+{{ $total_item_width := (mul ($count) ($item_width)) }}
+{{ if gt $total_item_width $max_marquee_width }}
+  {{ $localScratch.Set "max" $max_marquee_width }}
+{{ else }}
+  {{ $localScratch.Set "max" $total_item_width }}
+{{ end }}
+{{ $marquee_width := $localScratch.Get "max" }}
+<!-- Set the inner width to double total item width for the illusion to work -->
+{{ $inner_width := mul $total_item_width 2 }}
+<!-- Control how long each element takes to scroll (roughly) -->
+{{ $scroll_time := mul $time_per_item $count }}
+
+<!-- CSS Note: the CSS is HERE instead of main.css because values are programmatically set-->
+<!-- Thanks to: https://codepen.io/nickcil/pen/BygPMY for the basis-->
+<style>
+
+.marquee {
+  height: {{ $marquee_height }}px;
+  width: {{ $marquee_width }}px;
+  overflow: hidden;
+  margin: auto;
+  box-sizing: border-box;
+  position: relative;
+  max-width: {{ $max_marquee_width }}px;
+}
+
+.marquee--inner {
+  display: flex;
+  width: {{ $inner_width }}px;
+  height: {{ $marquee_height }}px;
+  margin: 0px 0;
+  position: absolute;
+  animation: marquee {{ $scroll_time }}s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+/* Shift the length of 1 iteration  */
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -{{ $total_item_width }}px; }
+}
+
+
+.endorsement-elements {
+   width: {{ $item_width }}px; /* or whatever width you want. */
+   display: inline-block;
+   max-height: {{ $marquee_height }}px;
+   flex-grow: 1;
+   align-self: center;
+}
+
+.endorsement-elements:hover {
+  transform: scale(0.9);
+  opacity: .8;
+  cursor: pointer;
+}
+
+.endorse-img {
+    display: block;
+    max-width: {{ $item_width }}px;
+    max-height: calc({{ $marquee_height }}px - 10px - 18px - 4px); /* Bootstrap values for h4 font size and padding and a little extra for serif */
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+</style>
+
+<!-- Notes-->
+<!-- The total width of all items within span must = the width of the marquee-->
+<!-- Marquee div must be a fixed width :( -->
+<!-- The span must occur twice in order for the infinite scroll illusion to work-->
+
+<div class="marquee">
+  <div class="marquee--inner">
+    {{ range (slice 1 2) }} <!-- Repeat for the illusion -->
+        {{ $iter := . }}
+        {{ range $.Site.Data.organizations }}
+          {{ if .endorsement_logo }}
+            <div align="center" class='endorsement-elements' style="margin:0;padding:0">
+              {{ if .url }}
+                <a href="{{ .url }}">
+              {{ end }}
+                <img class="endorse-img" src="/images/org-logos/{{ .endorsement_logo }}" alt="" />
+              {{ if .url }}
+                </a>
+              {{ end }}
+                <h4>{{ .name }}</h4> <!-- Long titles will wrap below the marquee and look odd, no good fixes for it I can find yet -->
+            </div>
+          {{ end }}
+        {{ end }}
+    {{ end }}
+  </div>
+</div>

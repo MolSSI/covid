@@ -182,8 +182,18 @@ footer {
   font-size: 90%;
 }
 
-.logo_img {
+.logo-img-box {
     display: inline;
     margin: 0px;
-    padding: 0px 10px 10px 10px;
+    padding: 5px;
+    max-width: 146px;
+    max-height: 62px;
+}
+
+.logo-img {
+    display: inline;
+    max-width: 136px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
 }
