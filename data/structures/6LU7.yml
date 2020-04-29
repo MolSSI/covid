@@ -1,0 +1,8 @@
+pdbid: 6LU7
+proteins:
+  - 3CLpro
+targets:
+  - 3CLpro protease activity
+rating:
+organisms: 
+  - SARS-CoV-2

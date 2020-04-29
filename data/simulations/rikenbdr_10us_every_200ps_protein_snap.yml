@@ -1,0 +1,26 @@
+type: md
+title: Riken BDR 10 Microsecond Trajectory Protein Snapshot every 200ps
+description: Single 10 microseconds trajectory of SARS-CoV-2 dimeric main protease, NVT at 310K, with the time step 2.5fs (more precisely, 2.500000409 fs). The starting structure was prepared based on `PDB 6LU7`, with `amber99sb-ildn` force field. The system is composed of 98,694 atoms in 9.98921 nm length cubic box with periodic boundary conditions. Simulation performed in aqueous solution with solvent forcefield `TIP3P`.
+creator: Teruhisa S. Komatsu, Yohei M. Koyama, Noriaki Okimoto, Gentaro Morimoto, Yousuke Ohno, Makoto Taiji
+organization: Riken Biosystems Dynamics Research
+models:
+    - 3CLpro_rikenbdr
+proteins:
+    - 3CLpro
+structures: 
+    - 6LU7
+rating: 
+files:
+    - https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10921231-structure/sarscov2-10921231-structure.tar
+trajectory: https://covmme.molssi.org/data/rikenBDR/rikenBDR_trajs_0/main_protease/rikenBDR-Trajectory_sarscov2-10921231-trajectory/sarscov2-10921231-protein/traj_protein_snap_every200ps.tar
+size: 1.7 GBs
+length: 10 µs
+ensemble: NVT
+temperature: 310
+pressure: 
+solvent: Water
+salinity: 
+forcefields:
+    - amber99sb-ildn
+    - TIP3P
+preprint: http://dx.doi.org/10.17632/vpps4vhryg

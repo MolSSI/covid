@@ -174,9 +174,9 @@ class SimulationsModel(BaseModel):
     length: str
     ensemble: ValidEnsembles
     temperature: float
-    pressure: float
+    pressure: Optional[float]
     solvent: str
-    salinity: float
+    salinity: Optional[float]
     forcefields: List[str]
     references: Optional[List[str]]
     publication: Optional[AnyUrl]
@@ -189,6 +189,14 @@ class SimulationsModel(BaseModel):
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
 
+    # @validator('pressure')
+    # def pressure_valid(cls, v):
+        # if isinstance(v, str):
+            # if v.equals('N/A'):
+                # raise ValueError(f'Pressure must be a valid float or N/A, is {v}')
+        # if not isinstance(v, float):
+            # raise ValueError(f'Pressure must be a valid float or N/A, is {v}')
+        # return v
 
 class StructuresModel(BaseModel):
     pdbid: Optional[str]
