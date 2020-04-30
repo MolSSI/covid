@@ -164,6 +164,12 @@
         {{ end }}
     {{ end }}
 
+    <h3 id="ext_res_Models"> External Model Resources </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "models" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
 
 </main>
 

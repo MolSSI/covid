@@ -152,6 +152,14 @@
         {{ end }}
     {{ end }}
 
+
+    <h3 id="ext_res_Structures" > External Structure Resources </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "structures" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
 </main>
 
 {{ partial "footer" . }}

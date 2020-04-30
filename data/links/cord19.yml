@@ -2,4 +2,5 @@ name: "CORD-19: COVID-19 Open Research Dataset"
 url: https://allenai.org/data/cord-19
 description: CORD-19 provides over 52,000 scholarly articles about COVID-19 and the coronavirus family of viruses for use by the research community. This dataset is updated weekly as new research is published in peer-reviewed publications and archives, such as bioRxiv, medRxiv and more.
 organization: Allen Institute for AI
-resources: publications
+resources:
+  - publications

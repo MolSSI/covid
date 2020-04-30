@@ -80,6 +80,7 @@ class ResourcesEnum(str, Enum):
     structures = 'structures'
     models = 'models'
     publications = 'publications'
+    therapeutics = 'therapeutics'
 
 
 class ValidSimulations(str, Enum):
@@ -115,7 +116,7 @@ class LinksModel(BaseModel):
     organization: Optional[str]
     institution: Optional[str]
     lab: Optional[str]
-    resources: Union[ResourcesEnum, List[ResourcesEnum]]
+    resources: List[ResourcesEnum]
 
 
 class ModelsModel(BaseModel):

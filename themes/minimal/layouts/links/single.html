@@ -13,7 +13,7 @@
         <h5 align="left">
         Data classification:
             <ul style="text-align:justify;">
-                {{ range slice "structures" "models"}}
+                {{ range slice "structures" "models" "therapeutics"}}
                     {{ $data := index $.Site.Data.glossary . }}
                     <li><a href="{{ delimit (slice "#ext" "res" (string $data.term) ) "_" }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
                 {{ end }}
@@ -30,14 +30,21 @@
 
         <h3 id="ext_res_Models"> Models </h3>
         {{ range $.Site.Data.links  }}
-            {{ if eq .resources "models" }}
+            {{ if in .resources "models" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        <h3 id="ext_res_Therapeutics"> Therapeutics and Drug Databases </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "therapeutics" }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}
         
         <h3 id="ext_res_Publications"> Publications </h3>
         {{ range $.Site.Data.links  }}
-            {{ if eq .resources "publications" }}
+            {{ if in .resources "publications" }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}

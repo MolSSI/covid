@@ -2,4 +2,5 @@ name: Enamine REAL Space
 url: https://www.enaminestore.com/search#real
 description: The REAL Space comprises 13 billion make-on-demand molecules and is currently the largest offer of commercially available compounds. The REAL compounds in the Space are assembled via more than 180 well-validated parallel synthesis protocols applied to over 115 000 qualified reagents and building blocks. The synthetic protocols include standard and advanced one-pot procedures. They differ in the number of steps, type of purification, and compound handling, and therefore in the effort required to deliver the products.
 organization: Enamine Ltd
-resources: models
+resources:
+  - therapeutics

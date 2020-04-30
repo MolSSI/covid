@@ -3,4 +3,5 @@ url: https://zinc15.docking.org
 description: Database of commercially-available compounds for virtual screening. ZINC contains over 230 million purchasable compounds in ready-to-dock, 3D formats. ZINC also contains over 750 million purchasable compounds you can search for analogs in under a minute.
 lab: John Irwin, Brian Shoichet, and others
 institution: University of California, San Francisco
-resources: models
+resources:
+  - therapeutics
