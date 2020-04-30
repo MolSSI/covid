@@ -3,7 +3,7 @@ description: >
   Azvudine is an azidocytidine nucleoside analog.
   It is an reverse transcriptase inhibitor used in treatment of AIDS and Hepatitis C.
 therapeutic:
-  - antiviral (antiretroviral)
+  - antiviral # (antiretroviral)
 links:
   wikipedia: Azvudine
   pubchem: Azvudine

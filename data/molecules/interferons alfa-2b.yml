@@ -3,7 +3,7 @@ description: >
   Interferons alfa-2b is a recombinant cytokine with antiviral or antineoplastic property.
   Interferons alfa-2b is used alone or in combination with  lopinavir/ritonavir.
 therapeutic:
-  - antiviral (non-specific)
+  - antiviral # (non-specific)
   - immunotherapy
 links:
   wikipedia: Interferon_alfa-2b

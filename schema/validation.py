@@ -142,10 +142,18 @@ class ModelsModel(BaseModel):
         return v
 
 
+class ValidTherapeutic(str, Enum):
+    antiviral = "antiviral"
+    small_molecule = "small molecule"
+    peptide = "peptide"
+    immunotherapy = "immunotherapy"
+    antibody = "antibody"
+
+
 class MoleculesModel(BaseModel):
     name: str
     description: str
-    therapeutic: Union[str, List[str]]
+    therapeutic: List[ValidTherapeutic]
     target: Union[ValidTargets, List[ValidTargets]]
     protein: Optional[Union[ValidProteins, List[ValidProteins]]]
     links: Optional[LinkOutKeys]

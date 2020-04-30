@@ -63,9 +63,52 @@ ignoreFiles = ["README.md$"]
         weight = 2
 
 [[menu.main]]
+    hasChildern = true
     url = "/therapeutics"
     name = "Therapeutics"
     weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics"
+        name = "All Therapeutics"
+        weight = 1
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antiviral"
+        name = "Antivirals"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#small-molecule"
+        name = "Small Molecules"
+        weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#peptide"
+        name = "Peptides"
+        weight = 4
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#immunotherapy"
+        name = "Immunotherapies"
+        weight = 5
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antibody"
+        name = "Antibodies"
+        weight = 6
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#ext_res_therapeutics"
+        name = "Drug Databases"
+        weight = 7
 
 
 [[menu.main]]
