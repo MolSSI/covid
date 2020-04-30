@@ -23,14 +23,14 @@
         </h5>
     </div>
 
-    <hr>
+    <hr class="hr-thick">
 
     <!-- List all targets from data/targets/ -->
     {{ range $.Site.Data.targets }}
        {{ partial "target-entry" (dict "context" . "protein_map" ($localScratch.Get "protein_map") "thera_map" ($localScratch.Get "thera_map") )}}
     {{ end }}
 
-    <hr>
+    <hr class="hr-thick">
 
 </main>
 
