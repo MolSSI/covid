@@ -74,6 +74,7 @@
 
   <h4 align="left"> Structure Data and Links </h4>
   {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
+  <h5 align="left">
   <p>
     {{ if .unpublished_pdbid }}
       Unpublished PDB (not on RCSB)
@@ -97,7 +98,7 @@
     {{ end }}
     </p>
   {{ end }}
-
+</h5>
   <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
   <h4 align="left"> Top Two Models: </h4>
@@ -106,6 +107,7 @@
     <!-- This PDB is in the given model and we have not posted more than 1 -->
     {{ if and (partial "x-in-y-nocase" (dict "x" $pdb "y" .pdbids)) (lt ($localScratch.Get "postedModels") 2)}}
       <!-- Add to the counter -->
+      <h5 align="left">
       <p>
         {{ $model := $localScratch.Get "model" }}
         {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
@@ -115,28 +117,33 @@
         </a>
         {{ partial "general-marker" $model }}
       </p>
+      </h5>
       {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
     {{ end }}
   {{ end }}
   {{ if eq ($localScratch.Get "postedModels") (0) }}
-    <p>---</p>
+    <h5 align="left"><p>---</p></h5>
   {{ end }}
 
   <h4 align="left"> Known Target Modalities: </h4>
+  <h5 align="left">
   <p>
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
     <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ (index ($localScratch.Get "target_map") .).name | title }}</kbd></a>
   {{ end }}
   </p>
+  </h5>
 
   <h4 align="left"> Related Proteins: </h4>
+  <h5 align="left">
   <p>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
   </p>
+  </h5>
 
   <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
     {{ $localScratch.Set "postedSim" 0 }}
@@ -145,14 +152,16 @@
         {{ $sin := partial "x-in-y-nocase" (dict "x" $pdb "y" .structures) }}
         {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
             {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+            <h5 align="left"><p>
             <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
             {{ partial "general-marker" $sim }}
+            </p></h5>
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}
     {{ end }}
     {{ if eq ($localScratch.Get "postedSim") 0 }}
-      ---
+      <h5 align="left"><p>---</p></h5>
     {{ end }}
 
   <hr>
