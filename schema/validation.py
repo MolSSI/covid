@@ -159,7 +159,7 @@ class ProteinsModel(BaseModel):
     uniprot: Optional[str]
     target: Optional[Union[str, List[str]]]
     subunits: Optional[Dict[str, List[str]]]
-    domain = Optional[ValidDomains]
+    domain: Optional[ValidDomains]
 
     @validator('domain')
     def domain_is_virus(cls, v, values, **kwargs):
