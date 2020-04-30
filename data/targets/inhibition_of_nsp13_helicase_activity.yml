@@ -3,7 +3,7 @@ name: inhibition of nsp13 helicase activity
 description: >
   Nsp13, nonstructural protein 13 has multiple functions with an N-terminal metal binding domain (MBD) and a helicase domain (Hel). The nsp13 SARS sequence is conserved and helicase activity is necessary for COVID replication. While this is an attractive target for viral inhibition, there are few reports on nsp13 inhibitors. Helicase inhibition has been used for virus (HSV-amenavir) and cancer treatment (eIF41, RocA rocaglamides), but likely due to its inherent flexibility, inhibitor design is challenging and high throughput screen hits are generally DNA binding artifacts.
 proteins:
-  - NSP13
+  - Helicase
 therapeutic_modalities:
   - small molecule
 papers: 
