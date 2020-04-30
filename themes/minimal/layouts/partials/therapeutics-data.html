@@ -20,6 +20,7 @@
 
 {{ if .data.links }}
   <p align="justify"><u>Read more about it:</u></p></h5>
+  <h5 align="left">
   {{ if .data.links.wikipedia }}
     <a href='https://en.wikipedia.org/wiki/{{ .data.links.wikipedia }}'><kbd class="alert-info">Wikipedia</kbd></a>
   {{ end }}
@@ -32,6 +33,7 @@
   {{ if .data.links.pubchem }}
     <a href='https://pubchem.ncbi.nlm.nih.gov/compound/{{ .data.links.pubchem }}'><kbd class='alert-info'>PubChem</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 
 <!-- Targets -->
@@ -42,9 +44,11 @@
       {{ $localScratch.Set "iter" (slice .data.target) }}
   {{ end }}
   <p align="justify"><u>Targeting Modalities:</u></p>
+  <h5 align="left">
   {{ range $localScratch.Get "iter" }}
     <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ . | title}}</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 
 <!-- tag links to proteins involves in this target -->
@@ -55,8 +59,10 @@
       {{ $localScratch.Set "iter" (slice .data.protein) }}
   {{ end }}
   <p align="justify"><u>Known Protein Interactions:</u></p>
+  <h5 align="left">
   {{ range $localScratch.Get "iter" }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 <hr>
