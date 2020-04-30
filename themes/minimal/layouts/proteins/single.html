@@ -1,6 +1,10 @@
 {{ partial "header" . }}
 
 {{ $pmap := partial "protein-map" .}}
+{{ $domain_sort := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_sort.keys }}
+{{ $domain_titles := $domain_sort.titles }}
+{{ $viral_sort := partial "viral-domain-sort" $ }}
 
 <!-- PROTEINS PAGE -->
 
@@ -53,48 +57,21 @@
     <!-- Viral -->
     <hr class="hr-thick">
     <h2 class="a">Viral Proteins</h2>
-    <!-- Active -->
-    <h3><u>Active Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
-            {{ if eq .interest "active" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-    <!-- Low -->
-    <h3><u>Low Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
-            {{ if eq .interest "low" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
+    {{ range $domain_keys }}
+        {{ $header := print "Models of Viral " (index $domain_titles .) " Proteins" }}
+        <h3 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h3>
+        {{ range (index $viral_sort .) }}
+            {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
         {{ end }}
     {{ end }}
 
     <!-- Host -->
     <hr class="hr-thick">
     <h2>Host Proteins</h2>
-    <!-- Active -->
-    <h3><u>Active Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "human" ) .organism }}
-            {{ if eq .interest "active" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-    <!-- Low -->
-    <h3><u>Low Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "human" ) .organism }}
-            {{ if eq .interest "low" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if in (slice "human" ) .organism }} <!-- Viral/Host -->
+            <!-- pass current entry as .protein and current context as .context -->
+            {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
         {{ end }}
     {{ end }}
 

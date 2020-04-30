@@ -2,4 +2,4 @@ protein: ORF8
 name: Coronavirus Open Reading Frame 8
 description: Behaviour of this protein is uncertain/unclear.
 organism: SARS-CoV-2
-interest: low
+domain: orf

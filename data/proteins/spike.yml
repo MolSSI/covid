@@ -17,4 +17,4 @@ subunits:
     - HR1
     - HR2
 image: images/protein_renderings/6VYB.png
-interest: active
+domain: spike

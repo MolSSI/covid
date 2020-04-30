@@ -49,6 +49,16 @@ class ValidProteins(str, Enum):
     PD_1 = 'PD-1'
 
 
+class ValidDomains(str, Enum):
+    """ Valid Protein Domains """
+    spike = 'spike'
+    nsp = 'nsp'
+    orf = 'orf'
+    membrane = 'membrane'
+    envelope = 'envelope'
+    nucleocapsid = 'nucleocapsid'
+
+
 class ValidTargets(str, Enum):
     spike_binding = 'spike binding'
     spike_cleavage = 'spike cleavage'
@@ -66,11 +76,6 @@ class ValidOrganisms(str, Enum):
     sars_cov_2 = 'SARS-CoV-2'
 
 
-class ValidInterest(str, Enum):
-    active = 'active'
-    low = 'low'
-
-
 class ResourcesEnum(str, Enum):
     structures = 'structures'
     models = 'models'
@@ -83,6 +88,7 @@ class ValidSimulations(str, Enum):
     mc = 'mc'
     mdcg = 'md-cg'
     mccg = 'mc-cg'
+
 
 class ValidEnsembles(str, Enum):
     NPT = 'NPT'
@@ -149,11 +155,20 @@ class ProteinsModel(BaseModel):
     protein: str
     organism: ValidOrganisms
     name: str
-    interest: ValidInterest
     description: str
     uniprot: Optional[str]
     target: Optional[Union[str, List[str]]]
     subunits: Optional[Dict[str, List[str]]]
+    domain = Optional[ValidDomains]
+
+    @validator('domain')
+    def domain_is_virus(cls, v, values, **kwargs):
+        if v is None and values.get('organism') != 'human':
+            raise ValueError("Domains for virus must be set!")
+        elif values.get('organism') == 'human' and v is not None:
+            raise ValueError(f"Domain is set but Organism is 'human' so does not apply. This could be a case of the "
+                             f"wrong organism. If this is a human organism, please unset domain.")
+        return v
 
 
 class SimulationsModel(BaseModel):
@@ -197,6 +212,7 @@ class SimulationsModel(BaseModel):
         # if not isinstance(v, float):
             # raise ValueError(f'Pressure must be a valid float or N/A, is {v}')
         # return v
+
 
 class StructuresModel(BaseModel):
     pdbid: Optional[str]

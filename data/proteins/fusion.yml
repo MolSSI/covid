@@ -2,4 +2,4 @@ protein: fusion core
 name: Viral Spike Fusion Core
 description: Fusion core of the spike's S2 stalk. Includes the Heptad Repeats, HR1 and HR2
 organism: SARS-CoV-2
-interest: low
+domain: spike
