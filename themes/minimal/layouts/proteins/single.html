@@ -64,31 +64,15 @@
     {{ end }}
     <!-- Low -->
     <h3><u>Low Interest Proteins</u></h3>
-    <!-- Easier to view accordion -->
-    <div class="panel-group" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseProtLow" aria-expanded="false" aria-controls="collapseProtLow">
-              (Click to Expand)
-            </a>
-          </h4>
-        </div>
-        <div id="collapseProtLow" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingProtLow">
-          <div class="panel-body">
-            {{ range $.Site.Data.proteins  }}
-                {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
-                    {{ if eq .interest "low" }}
-                        <!-- pass current entry as .protein and current context as .context -->
-                        {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-                    {{ end }}
-                {{ end }}
+    {{ range $.Site.Data.proteins  }}
+        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
+            {{ if eq .interest "low" }}
+                <!-- pass current entry as .protein and current context as .context -->
+                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
             {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-    
+        {{ end }}
+    {{ end }}
+
     <!-- Host -->
     <hr class="hr-thick">
     <h2>Host Proteins</h2>
@@ -104,30 +88,14 @@
     {{ end }}
     <!-- Low -->
     <h3><u>Low Interest Proteins</u></h3>
-    <!-- Easier to view accordion -->
-    <div class="panel-group" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseHostLow" aria-expanded="false" aria-controls="collapseHostLow">
-              (Click to Expand)
-            </a>
-          </h4>
-        </div>
-        <div id="collapseHostLow" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingHostLow">
-          <div class="panel-body">
-            {{ range $.Site.Data.proteins  }}
-                {{ if in (slice "human" ) .organism }}
-                    {{ if eq .interest "low" }}
-                        <!-- pass current entry as .protein and current context as .context -->
-                        {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-                    {{ end }}
-                {{ end }}
+    {{ range $.Site.Data.proteins  }}
+        {{ if in (slice "human" ) .organism }}
+            {{ if eq .interest "low" }}
+                <!-- pass current entry as .protein and current context as .context -->
+                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
             {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
+        {{ end }}
+    {{ end }}
 
 
 </main>
