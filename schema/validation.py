@@ -21,7 +21,7 @@ class ValidProteins(str, Enum):
     NSP9 = 'NSP9'
     NSP10 = 'NSP10'
     NSP11 = 'NSP11'
-    NSP13 = 'NSP13'
+    Helicase = 'Helicase'
     NSP14 = 'NSP14'
     NSP15 = 'NSP15'
     NSP16 = 'NSP16'

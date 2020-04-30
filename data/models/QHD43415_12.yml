@@ -1,10 +1,10 @@
-name: NSP13 by Yang Zhang lab
+name: Helicase (NSP13) by Yang Zhang lab
 description: model from deep learning contact-map assisted C-I-TASSER structure simulation
 url: https://zhanglab.ccmb.med.umich.edu/COVID-19/
 pdb_url: https://zhanglab.ccmb.med.umich.edu/COVID-19/QHD43415_12.pdb.gz
 pdbids:
 proteins:
-  - NSP13
+  - Helicase
 creator: Chengxin Zhang, Wei Zheng, Xiaoqiang Huang, Eric W. Bell, Xiaogen Zhou, Yang Zhang
 organization: Depeartment of Computational Medicine and Bioinformatics
 institution: University of Michigan

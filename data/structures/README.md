@@ -30,7 +30,7 @@ proteins: (one or more of the following options)
   - NSP10
   - NSP11
   - NSP12
-  - NSP13
+  - Helicase
   - NSP14
   - NSP15
   - fusion core
