@@ -6,6 +6,10 @@
 {{ $protein_map := partial "protein-map" . }}
 {{ $target_map := partial "target-map" . }}
 {{ $model_map := partial "model-map" . }}
+{{ $domain_sort := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_sort.keys }}
+{{ $domain_titles := $domain_sort.titles }}
+{{ $viral_sort := partial "viral-domain-sort" $ }}
 
 <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
 
@@ -42,134 +46,72 @@
 
     <!-- Iterate over all models in same grouping as Structures-->
 
-    <!-- Viral Active -->
+    <!-- Viral -->
     <hr class="hr-thick">
-    <h2 class="anchor" id='{{ "Models of Viral Proteins of Active Interest" | anchorize }}'><u>Models of Viral Proteins of Active Interest</u></h2>
-    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
-        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}  <!-- Viral/Host -->
-            {{ if eq .interest "active" }}  <!-- Active/Inactive -->
-                {{ $localScratch.Set "protein" .protein }}
-                <!-- Protein Name -->
-                <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
-                {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
-                    <!-- Target -->
-                    {{ $localScratch.Set "target" $target_key }}
-                    <!-- First determine if there will be content-->
-                    {{ $localScratch.Set "has_content" false }}
-                    {{ range sort $.Site.Data.models "rating" "desc" }}
-                        {{ $protein := $localScratch.Get "protein" }}
-                        {{ $target := $localScratch.Get "target" }}
-                        <!-- Get the Targets by all the PDBs... Using a helper function -->
-                        {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                        {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                            {{ $localScratch.Set "has_content" true }}
-                        {{ end }}
-                    {{ end }}
-                    {{ if $localScratch.Get "has_content" }}
-                        <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
-                        <!-- Finally Models -->
-                        {{ range sort $.Site.Data.models "rating" "desc" }}
-                            {{ $protein := $localScratch.Get "protein" }}
-                            {{ $target := $localScratch.Get "target" }}
-                            {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                            {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                                {{ partial "model-entry" (dict "model" . "protein" $protein "target" $target  "context" $) }}
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-                <!-- Special Case of having no targets -->
+    {{ range $domain_keys }}
+        {{ $header := print "Models of Viral " (index $domain_titles .) " Proteins" }}
+        <h2 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h2>
+        <!-- Special sort rules! -->
+        {{ range (index $viral_sort .) }}
+            {{ $localScratch.Set "protein" .protein }}
+            <!-- Protein Name -->
+            <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
+            {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
+                <!-- Target -->
+                {{ $localScratch.Set "target" $target_key }}
+                <!-- First determine if there will be content-->
+                {{ $localScratch.Set "has_content" false }}
                 {{ range sort $.Site.Data.models "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
+                    {{ $target := $localScratch.Get "target" }}
+                    <!-- Get the Targets by all the PDBs... Using a helper function -->
                     {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                    {{ if and (in .proteins $protein) (not $known_targets) }}
+                    {{ if and (in .proteins $protein) (in $known_targets $target) }}
                         {{ $localScratch.Set "has_content" true }}
                     {{ end }}
                 {{ end }}
                 {{ if $localScratch.Get "has_content" }}
-                    <h3 align="left"><u>- No Targets Recorded </u></h3>
-                    <!-- Finally Structures -->
-                    {{ range sort $.Site.Data.models "rating" "desc" }}
-                        {{ $protein := $localScratch.Get "protein" }}
-                        {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                        {{ if and (in .proteins $protein) (not $known_targets) }}
-                            {{ partial "model-entry" (dict "model" . "protein" $protein "target" "nil" "context" $) }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-                <hr class="hr-thick">
-            {{ end }}
-        {{ end }}
-    {{ end }}
-
-
-    <!-- Viral Low -->
-    <hr class="hr-thick">
-    <h2 class="anchor" id='{{ "Models of Viral Proteins of Low Interest" | anchorize }}'><u>Models of Viral Proteins of Low Interest</u></h2>
-    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
-        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}  <!-- Viral/Host -->
-            {{ if eq .interest "low" }}  <!-- Active/Inactive -->
-                {{ $localScratch.Set "protein" .protein }}
-                <!-- Protein Name -->
-                <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
-                {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
-                    <!-- Target -->
-                    {{ $localScratch.Set "target" $target_key }}
-                    <!-- First determine if there will be content-->
-                    {{ $localScratch.Set "has_content" false }}
+                    <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <!-- Finally Models -->
                     {{ range sort $.Site.Data.models "rating" "desc" }}
                         {{ $protein := $localScratch.Get "protein" }}
                         {{ $target := $localScratch.Get "target" }}
-                        <!-- Get the Targets by all the PDBs... Using a helper function -->
                         {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
                         {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                            {{ $localScratch.Set "has_content" true }}
-                        {{ end }}
-                    {{ end }}
-                    {{ if $localScratch.Get "has_content" }}
-                        <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
-                        <!-- Finally Models -->
-                        {{ range sort $.Site.Data.models "rating" "desc" }}
-                            {{ $protein := $localScratch.Get "protein" }}
-                            {{ $target := $localScratch.Get "target" }}
-                            {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                            {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                                {{ partial "model-entry" (dict "model" . "protein" $protein "target" $target  "context" $) }}
-                            {{ end }}
+                            {{ partial "model-entry" (dict "model" . "protein" $protein "target" $target  "context" $) }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
-                <!-- Special Case of having no targets -->
+            {{ end }}
+            <!-- Special Case of having no targets -->
+            {{ range sort $.Site.Data.models "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
+                {{ if and (in .proteins $protein) (not $known_targets) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                <h3 align="left"><u>- No Targets Recorded </u></h3>
+                <!-- Finally Structures -->
                 {{ range sort $.Site.Data.models "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
                     {{ if and (in .proteins $protein) (not $known_targets) }}
-                        {{ $localScratch.Set "has_content" true }}
+                        {{ partial "model-entry" (dict "model" . "protein" $protein "target" "nil" "context" $) }}
                     {{ end }}
                 {{ end }}
-                {{ if $localScratch.Get "has_content" }}
-                    <h3 align="left"><u>- No Targets Recorded </u></h3>
-                    <!-- Finally Structures -->
-                    {{ range sort $.Site.Data.models "rating" "desc" }}
-                        {{ $protein := $localScratch.Get "protein" }}
-                        {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                        {{ if and (in .proteins $protein) (not $known_targets) }}
-                            {{ partial "model-entry" (dict "model" . "protein" $protein "target" "nil"  "context" $) }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-                <hr class="hr-thick">
             {{ end }}
+            <hr class="hr-thick">
         {{ end }}
     {{ end }}
 
-    <!-- Host Active -->
-    <hr class="hr-thick">
-    <h2 class="anchor" id='{{ "Models of Host Proteins of Active Interest" | anchorize }}'><u>Models of Host Proteins of Active Interest</u></h2>
+    <!-- Host -->
+    {{ $header := print "Models of Host Proteins" }}
+    <h2 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h2>
     {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
-        {{ if in (slice "human" ) .organism }}  <!-- Viral/Host -->
-            {{ if eq .interest "active" }}  <!-- Active/Inactive -->
-                {{ $localScratch.Set "protein" .protein }}
+        {{ if in (slice "human" ) .organism }} <!-- Viral/Host -->
+            {{ $localScratch.Set "protein" .protein }}
                 <!-- Protein Name -->
                 <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
                 {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
@@ -219,69 +161,15 @@
                     {{ end }}
                 {{ end }}
                 <hr class="hr-thick">
-            {{ end }}
         {{ end }}
     {{ end }}
 
-        <!-- Host Active -->
-    <hr class="hr-thick">
-    <h2 class="anchor" id='{{ "Models of Host Proteins of Low Interest" | anchorize }}'><u>Models of Host Proteins of Low Interest</u></h2>
-    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
-        {{ if in (slice "human" ) .organism }}  <!-- Viral/Host -->
-            {{ if eq .interest "low" }}  <!-- Active/Inactive -->
-                {{ $localScratch.Set "protein" .protein }}
-                <!-- Protein Name -->
-                <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
-                {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
-                    <!-- Target -->
-                    {{ $localScratch.Set "target" $target_key }}
-                    <!-- First determine if there will be content-->
-                    {{ $localScratch.Set "has_content" false }}
-                    {{ range sort $.Site.Data.models "rating" "desc" }}
-                        {{ $protein := $localScratch.Get "protein" }}
-                        {{ $target := $localScratch.Get "target" }}
-                        <!-- Get the Targets by all the PDBs... Using a helper function -->
-                        {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                        {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                            {{ $localScratch.Set "has_content" true }}
-                        {{ end }}
-                    {{ end }}
-                    {{ if $localScratch.Get "has_content" }}
-                        <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
-                        <!-- Finally Models -->
-                        {{ range sort $.Site.Data.models "rating" "desc" }}
-                            {{ $protein := $localScratch.Get "protein" }}
-                            {{ $target := $localScratch.Get "target" }}
-                            {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                            {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                                {{ partial "model-entry" (dict "model" .  "protein" $protein "target" $target  "context" $) }}
-                            {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-                <!-- Special Case of having no targets -->
-                {{ range sort $.Site.Data.models "rating" "desc" }}
-                    {{ $protein := $localScratch.Get "protein" }}
-                    {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                    {{ if and (in .proteins $protein) (not $known_targets) }}
-                        {{ $localScratch.Set "has_content" true }}
-                    {{ end }}
-                {{ end }}
-                {{ if $localScratch.Get "has_content" }}
-                    <h3 align="left"><u>- No Targets Recorded </u></h3>
-                    <!-- Finally Structures -->
-                    {{ range sort $.Site.Data.models "rating" "desc" }}
-                        {{ $protein := $localScratch.Get "protein" }}
-                        {{ $known_targets := partial "list-model-targets" (dict "model" . "context" $ ) }}
-                        {{ if and (in .proteins $protein) (not $known_targets) }}
-                            {{ partial "model-entry" (dict "model" . "protein" $protein "target" "nil"  "context" $) }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-                <hr class="hr-thick">
+    <h3 id="ext_res_Models"> External Model Resources </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "models" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}
-    {{ end }}
 
 </main>
 

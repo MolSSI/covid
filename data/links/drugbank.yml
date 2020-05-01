@@ -3,4 +3,5 @@ url: https://www.drugbank.ca
 description: The DrugBank database is a unique bioinformatics and cheminformatics resource that combines detailed drug data with comprehensive drug target information.
 lab: David Wishart
 institution: University of Alberta and The Metabolomics Innovation Centre
-resources: models
+resources:
+  - therapeutics

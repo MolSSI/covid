@@ -2,4 +2,4 @@ protein: BoAT1
 name: Sodium Dependent Neutral Amnio Acid Transporter (BoAT1)
 description: Chaperoned by ACE2 during S1 binding
 organism: human
-interest: low
+domain: null

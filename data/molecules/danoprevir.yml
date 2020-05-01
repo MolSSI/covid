@@ -3,7 +3,7 @@ description: >
   Danoprevir is a protease inhibitor used in combination with ritonavir for Hepatitis C and HIV-AIDS.
   Has been used in combination with ritonavir in SARS-2 patients.
 therapeutic:
-  - antiviral (antiretroviral)
+  - antiviral # (antiretroviral)
 links:
   wikipedia: Danoprevir
   drugbank: DB11779

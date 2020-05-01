@@ -3,4 +3,5 @@ url: http://cheminfo.charite.de/superdrug2
 description: SuperDRUG2 database is a unique, one-stop resource for approved/marketed drugs, containing more than 4,600 active pharmaceutical ingredients. We annotated drugs with regulatory details, chemical structures (2D and 3D), dosage, biological targets, physicochemical properties, external identifiers, side-effects and pharmacokinetic data. Different search mechanisms allow navigation through the chemical space of approved drugs. A 2D chemical structure search is provided in addition to a 3D superposition feature that superposes a drug with ligands already known to be found in the experimentally determined protein-ligand complexes.
 institution: University Medicine Berlin
 lab: Structural Bioinformatics Group
-resources: models
+resources:
+  - therapeutics

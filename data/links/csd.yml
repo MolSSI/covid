@@ -2,4 +2,5 @@ name: The Cambridge Structural Database
 url: https://www.ccdc.cam.ac.uk/structures/
 description: The Cambridge Structural Database (CSD) is a certified trusted database of fully curated and enhanced organic and metal-organic structures, used by researchers across the globe. Established in 1965, the CSD is the world’s repository for small-molecule organic and metal-organic crystal structures. Containing over one million structures from x-ray and neutron diffraction analyses, this unique database of accurate 3D structures has become an essential resource to scientists around the world.
 institution: Cambridge Crystallographic Data Centre
-resources: structures
+resources:
+  - structures

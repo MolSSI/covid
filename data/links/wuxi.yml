@@ -2,4 +2,5 @@ name: WuXi GalaXi
 url: https://www.biosolveit.de/CoLibri/spaces.html
 description: The first version of this new chemical space approaches 2 billion tangible molecules — 1,686,371,588 (or 1,7*109) to be exact. In close collaboration with WuXi LabNetwork we created a novel chemical space ready for you to download and search. This space contains a lot of unique chemical intellectual property (IP) for your research, and compounds can be created on demand upon request with WuXi. GalaXi has been shaped from WuXi LabNetwork's building blocks and reaction schemes that have been properly checked to deliver high quality results. High quality processing has been ensured using our CoLibri software.
 organization: BioSolveIT, WuXi LabNetwork
-resources: models
+resources:
+  - therapeutics

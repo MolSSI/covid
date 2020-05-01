@@ -3,7 +3,7 @@ description: >
   Favipiravir is a broad-spectrum antiviral used in treatment of influenza, ebola, and yellow fever.
   Favipiravir is a modified  pyrazine analog.
 therapeutic:
-  - antiviral (broad spectrum)
+  - antiviral # (broad spectrum)
 links:
   wikipedia: avipiravir
   Drugdatabank: DB12466
