@@ -21,9 +21,16 @@
             </ul>
         </h5>
         <hr class="hr-thick">
-        <h3 id="ext_res_Structures" > Structures </h3>
-        {{ range $.Site.Data.links  }}
+        {{ $localScratch.Set "struct" slice }}
+        {{ range $.Site.Data.links }}
             {{ if eq .resources "structures" }}
+                {{ $localScratch.Set "struct" ($localScratch.Get "struct" | append .) }}
+            {{ end }}
+        {{ end }}
+        {{ $structs := $localScratch.Get "struct" }}
+        {{ if $structs }}
+            <h3 id="ext_res_Structures" > Structures </h3>
+            {{ range $structs }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}

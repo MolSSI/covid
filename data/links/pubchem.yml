@@ -4,3 +4,4 @@ description: PubChem is a public chemistry database at the National Institutes o
 institution: NIH
 resources:
   - models
+  - publications
