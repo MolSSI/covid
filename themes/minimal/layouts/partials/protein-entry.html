@@ -8,10 +8,10 @@
 <div class="col col-9">
 
     <!-- protein name -->
-    <h3 align="left" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b></h3>
+    <h4 align="center" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b></h4>
 
     <!-- protein description -->
-    <h4 align="justify">{{ .protein.description | markdownify }}</h4>
+    <h5 align="justify">{{ .protein.description | markdownify }}</h5>
 
     <!-- illustrative structure image -->
     {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
@@ -21,7 +21,7 @@
     {{ end }}
 
   <!-- top (useful) structures containing this protein -->
-  <h4 align="left">Top Structural Data: <a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+  <h5 align="left"><b>Top Structural Data: </b><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
   {{ $protein_id := .protein.protein }}
   {{ $localScratch.Set "protein_id" $protein_id }}
   {{ $localScratch.Set "postedStruct" 0 }}
@@ -63,7 +63,7 @@
 
 
   <!-- top (useful) models containing this protein -->
-  <h4 align="left">Top Models: <a href='{{ $localScratch.Get "BaseURL" }}/models/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+  <h5 align="left"><b>Top Models: </b><a href='{{ $localScratch.Get "BaseURL" }}/models/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
   <h5 align="left">
     <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
@@ -91,7 +91,7 @@
     <p>---</p>
   {{ end }}
   </h5>
-    <h4 align="left"> Top Simulations: <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ .protein.name | anchorize }}'>[See All]</a></h4>
+    <h5 align="left"><b>Top Simulations: </b><a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
     <h5 align="left">
     {{ $localScratch.Set "postedSim" 0 }}
     {{ range sort .context.Site.Data.simulations "rating" "desc" }}

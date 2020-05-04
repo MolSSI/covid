@@ -45,13 +45,13 @@
 
 
   <!-- Structure name -->
-  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
+  <h4 align="center" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
     <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} {{ partial "structure-marker" .structure }} </b>
-  </h3>
+  </h4>
 
   <!-- Structure Annotation -->
   {{ if not (in ( $title | lower) (.structure.annotation | lower) ) }}
-    <h4 align="justify">Additional: {{ .structure.annotation }}</h4>
+    <h5 align="justify">Additional: {{ .structure.annotation }}</h5>
   {{ end }}
 
   <!-- illustrative structure image(s) -->
@@ -72,10 +72,8 @@
   {{ end }}
   </p>
 
-  <h4 align="left"> Structure Data and Links </h4>
+  <h5 align="left"><b>Structure Data and Links: </b>
   {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
-  <h5 align="left">
-  <p>
     {{ if .unpublished_pdbid }}
       Unpublished PDB (not on RCSB)
     {{ else }}
@@ -89,10 +87,11 @@
         {{ end }}
       {{ end }}
     {{ end }}
-  </p>
+    </h5>
+    <h5 align="left">
   {{ if $method }}
     <p>
-    Experimental Method: {{ $method }}
+    <b>Experimental Method: </b>{{ $method }}
     {{ if $resolution }}
       | Resolution: {{ $resolution }} Å
     {{ end }}
@@ -101,7 +100,7 @@
 </h5>
   <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
-  <h4 align="left"> Top Two Models: </h4>
+  <h5 align="left"><b>Top Two Models: </b></h5>
   {{ range sort .context.Site.Data.models "rating" "desc" }}
     {{ $localScratch.Set "model" . }}
     <!-- This PDB is in the given model and we have not posted more than 1 -->
@@ -125,27 +124,24 @@
     <h5 align="left"><p>---</p></h5>
   {{ end }}
 
-  <h4 align="left"> Known Target Modalities: </h4>
+  <h5 align="left"><b>Known Target Modalities:</b><!--</h5>
   <h5 align="left">
-  <p>
+  <p>-->
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
     <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ (index ($localScratch.Get "target_map") .).name | title }}</kbd></a>
   {{ end }}
-  </p>
+  <!--</p>-->
   </h5>
 
-  <h4 align="left"> Related Proteins: </h4>
-  <h5 align="left">
-  <p>
+  <h5 align="left"><b>Related Proteins:</b>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
-  </p>
   </h5>
 
-  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
+  <h5 align="left"><b>Top Simulations:</b><a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h5>
     {{ $localScratch.Set "postedSim" 0 }}
     {{ range sort .context.Site.Data.simulations "rating" "desc" }}
         {{ $sim := . }}

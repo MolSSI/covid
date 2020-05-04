@@ -11,19 +11,17 @@
 <div class="col col-9">
 
         <!-- Model name -->
-        <h3 class="anchor" id='{{ print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
+        <h4 class="anchor" id='{{ print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
             {{ .simulation.title }}
             {{ if .simulation.length }}
             ({{ .simulation.length }} )
             {{ end }}
             {{ with .simulation.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
             {{ partial "general-marker" .simulation }}
-        </h3>
-
-        <h5>{{ .simulation.description | markdownify }}</h5>
-
-        <!-- Author -->
-        <h4>{{ .simulation.creator }}</h4>
+        </h4>
+        
+<!-- Author -->
+        <h5>{{ .simulation.creator }}</h5>
         {{ if .simulation.organization }}
         <p>Organization: {{ .simulation.organization }}</p>
         {{ end }}
@@ -33,6 +31,10 @@
         {{ if .simulation.lab }}
         <p>Lab: {{ .simulation.lab }}</p>
         {{ end }}
+        
+        <h5 align="left">{{ .simulation.description | markdownify }}</h5>
+
+        
 
         <!-- Physical Data -->
         <table class="table text-center-row">
@@ -71,8 +73,8 @@
                 </tr>
         </table>
 
-        <h4 align="left">
-            Input and Supporting Files:
+        <h5 align="left">
+            <b>Input and Supporting Files:</b>
             {{ if .simulation.files }}
                 {{ range (seq (len .simulation.files)) }}
                     <a href="{{ index $.simulation.files (sub . 1) }}"><kbd class="alert-secondary">[.]</kbd></a>
@@ -80,41 +82,41 @@
             {{ else }}
                 ---
             {{ end }}
-        </h4>
+        </h5>
 
-        <h4 align="left">
-            Trajectory:
+        <h5 align="left">
+            <b>Trajectory:</b>
             {{ if .simulation.trajectory }}
                 <a href="{{ .simulation.trajectory }}"><kbd class="alert-secondary">Get Trajectory ({{.simulation.size}})</kbd></a>
             {{ else }}
                 ---
             {{ end }}
-        </h4>
+        </h5>
 
         <!-- Proteins represented -->
-        <h4 align="left">
-            Represented Proteins:
+        <h5 align="left">
+            <b>Represented Proteins:</b>
             {{ range .simulation.proteins }}
                 <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a> 
             {{ else }}
                 ---
             {{ end }}
-        </h4>
+        </h5>
 
         <!-- Structures represented -->
-        <h4 align="left">
-            Represented Structures:
+        <h5 align="left">
+            <b>Represented Structures:</b>
             {{ range .simulation.structures }}
                 {{ $anchor := print ( . | upper | anchorize) "-" ( $.protein | anchorize) }}
                 <a href='{{ $.context.Site.BaseURL }}/structures/#{{ $anchor }}'><kbd class="alert-danger">{{.}}</kbd></a>
             {{ else }}
                 ---
             {{ end }}
-        </h4>
+        </h5>
 
         <!-- Models represented -->
-        <h4 align="left">
-            Models:
+        <h5 align="left">
+            <b>Models:</b>
             {{ range .simulation.models }}
                 {{ $model := . }}
                 {{ range $mname, $mdata := $.context.Site.Data.models }}
@@ -126,7 +128,7 @@
             {{ else }}
                 ---
             {{ end }}
-        </h4>
+        </h5>
 
         <!-- TODO: Include references in an accordion -->
 
