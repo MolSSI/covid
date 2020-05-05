@@ -2,7 +2,7 @@ pdbid: 7BV1
 method: cryo-EM
 resolution: 2.80
 proteins:
-  - NSP12
+  - RdRP
   - NSP7
   - NSP8
 organisms:
