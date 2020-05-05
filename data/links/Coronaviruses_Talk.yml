@@ -3,4 +3,5 @@ url: https://www.youtube.com/watch?v=8_bOhZd6ieM
 description: In this video, Dr. Glaunsinger talks about the evolution, genetics, and virulence of coronaviruses.
 lab: Glaunsinger lab
 institution: UC Berkeley and Innovative Genomics Institute
-resources: biology
+resources: 
+  - biology
