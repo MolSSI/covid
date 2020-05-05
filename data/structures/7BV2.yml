@@ -1,0 +1,16 @@
+pdbid: 7BV2
+method: cryo-EM
+resolution: 2.50
+proteins:
+  - NSP7
+  - NSP8
+  - RdRP
+organisms:
+  - SARS-CoV-2
+targets:
+  - viral replication
+therapeutics: 
+  - antiviral (antiretroviral)  
+annotation: The nsp12-nsp7-nsp8 complex bound to the template-primer RNA and triphosphate form of Remdesivir(RTP)
+rating: 
+images: 
