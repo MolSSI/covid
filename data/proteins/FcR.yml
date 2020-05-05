@@ -2,4 +2,4 @@ protein: Fc receptor
 name: Ab Receptor in Host Cells (FcR)
 description: Polymeric immunoglobulin receptor
 organism: human
-interest: low
+domain: null

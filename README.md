@@ -70,7 +70,7 @@ contributor to ask for additional information as needed.
 
 ## Contributing
 
-The exchange gladly accepts any of the types of data hosted on the website (and others if you propose a schema). 
+The hub gladly accepts any of the types of data hosted on the website (and others if you propose a schema). 
 Simply open a Pull Request on the [Github repository](https://github.com/MolSSI/covid) with the data you wish to submit following the Schema in each of the `/data/{TYPE}/README.md` files.
 Data is submitted as YAML files into the `/data/{TYPE}/README.md` directory.
 

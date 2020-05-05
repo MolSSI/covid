@@ -1,0 +1,74 @@
+<!-- Special sort the protein pages! -->
+<!-- MUST pass in Site level domain -->
+
+{{ $localScratch := newScratch }}
+
+{{ $domain_index := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_index.keys }}
+
+
+{{ $localScratch.Set "nsp" slice }}
+{{ $localScratch.Set "nsp_head" slice }}
+{{ $localScratch.Set "nsp_rear" slice }}
+
+{{ $localScratch.Set "spike" slice }}
+{{ $localScratch.Set "orf" slice }}
+{{ $localScratch.Set "membrane" slice }}
+{{ $localScratch.Set "nucleocapsid" slice }}
+{{ $localScratch.Set "envelope" slice }}
+
+{{ range $.Site.Data.proteins }}
+    {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
+        <!-- nsp -->
+        {{ if eq .domain "nsp" }}
+            {{ if hasPrefix .protein "NSP" }}
+                {{ $nsp_rear := $localScratch.Get "nsp_rear" }}
+                {{ $localScratch.Set "nsp_rear" ($nsp_rear | append .) }}
+            {{ else }}
+                {{ $nsp_head := $localScratch.Get "nsp_head" }}
+                {{ $localScratch.Set "nsp_head" ($nsp_head | append .) }}
+            {{ end }}
+        {{ end }}
+        <!-- Spike -->
+        {{ if eq .domain "spike" }}
+            {{ $spike := $localScratch.Get "spike" }}
+            {{ $localScratch.Set "spike" ($spike | append .) }}
+        {{ end }}
+        <!-- orf -->
+        {{ if eq .domain "orf" }}
+            {{ $orf := $localScratch.Get "orf" }}
+            {{ $localScratch.Set "orf" ($orf | append .) }}
+        {{ end }}
+        <!-- membrane -->
+        {{ if eq .domain "membrane" }}
+            {{ $membrane := $localScratch.Get "membrane" }}
+            {{ $localScratch.Set "membrane" ($membrane | append .) }}
+        {{ end }}
+        <!-- nucleocapsid -->
+        {{ if eq .domain "nucleocapsid" }}
+            {{ $nucleocapsid := $localScratch.Get "nucleocapsid" }}
+            {{ $localScratch.Set "nucleocapsid" ($nucleocapsid | append .) }}
+        {{ end }}
+        <!-- envelope -->
+        {{ if eq .domain "envelope" }}
+            {{ $envelope := $localScratch.Get "envelope" }}
+            {{ $localScratch.Set "envelope" ($envelope | append .) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Stitch the special together -->
+{{ $nsp := $localScratch.Get "nsp" }}
+{{ $nsp_rear := $localScratch.Get "nsp_rear" }}
+{{ $nsp_head := $localScratch.Get "nsp_head" }}
+{{ $spike := $localScratch.Get "spike" }}
+{{ $orf := $localScratch.Get "orf" }}
+{{ $membrane := $localScratch.Get "membrane" }}
+{{ $nucleocapsid := $localScratch.Get "nucleocapsid" }}
+{{ $envelope := $localScratch.Get "envelope" }}
+
+{{ $nsp := $nsp | append $nsp_head }}
+{{ $nsp := $nsp | append $nsp_rear }}
+
+
+{{ return (dict "spike" $spike "nsp" $nsp "orf" $orf "membrane" $membrane "nucleocapsid" $nucleocapsid "envelope" $envelope) }}

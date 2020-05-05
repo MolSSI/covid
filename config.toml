@@ -22,85 +22,135 @@ ignoreFiles = ["README.md$"]
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
 [[menu.main]]
-    url = "/"
-    name = "Home"
+    hasChildren = true
+    name = "Biology"
     weight = 1
 
-[[menu.main]]
-    url = "/targets"
-    name = "Targets"
-    weight = 2
+    [[menu.main]]
+        parent = "Biology"
+        url = "/proteins/"
+        name = "Proteins"
+        weight = 1
 
-[[menu.main]]
-    url = "/proteins/"
-    name = "Proteins"
-    weight = 3
+    [[menu.main]]
+        parent = "Biology"
+        url = "/targets/"
+        name = "Target Modalities"
+        weight = 2
 
-[[menu.main]]
-    url = "/structures"
-    name = "Structures"
-    weight = 4
-
-[[menu.main]]
-    url = "/simulations/"
-    name = "Simulations"
-    weight = 8
-
-[[menu.main]]
-    url = "/models"
-    name = "Models"
-    weight = 6
-
-[[menu.main]]
-    url = "/therapeutics"
-    name = "Therapeutics"
-    weight = 7
 
 [[menu.main]]
     hasChildren = true
-    name = "Contributions"
-    weight = 9
-    
+    name = "Viral/Host Structural Data"
+    weight = 2
+
     [[menu.main]]
-        parent = "Contributions"
-        url = "/contributing/"
-        name = "Contributing"
+        parent = "Viral/Host Structural Data"
+        url = "/structures"
+        name = "Structures"
         weight = 1
-        
+
     [[menu.main]]
-        parent = "Contributions"
-        url = "/contributors/"
-        name = "Contributors"
+        parent = "Viral/Host Structural Data"
+        url = "/models"
+        name = "Models"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Viral/Host Structural Data"
+        url = "/simulations"
+        name = "Simulations"
         weight = 2
 
 [[menu.main]]
+    hasChildern = true
+    url = "/therapeutics"
+    name = "Therapeutics"
+    weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics"
+        name = "All Therapeutics"
+        weight = 1
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antiviral"
+        name = "Antivirals"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#small-molecule"
+        name = "Small Molecules"
+        weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#peptide"
+        name = "Peptides"
+        weight = 4
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#immunotherapy"
+        name = "Immunotherapies"
+        weight = 5
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antibody"
+        name = "Antibodies"
+        weight = 6
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#ext_res_therapeutics"
+        name = "Drug Databases"
+        weight = 7
+
+
+[[menu.main]]
     hasChildren = true
-    name = "About & Links"
+    name = "Contribution"
+    weight = 9
+
+    [[menu.main]]
+        parent = "Contribution"
+        url = "/contributors/"
+        name = "Contributors"
+        weight = 1
+    
+    [[menu.main]]
+        parent = "Contribution"
+        url = "/contributing/"
+        name = "How to Contribute"
+        weight = 2
+
+
+[[menu.main]]
+    hasChildren = true
+    name = "About"
     weight = 600
 
     [[menu.main]]
-        parent = "About & Links"
+        parent = "About"
         url = "/about/"
-        name = "About the Hub"
+        name = "About The Hub"
         weight = 1
 
     [[menu.main]]
-        parent = "About & Links"
-        url = "/collaborating/"
-        name = "Collaborating"
-        weight = 2
-
-    [[menu.main]]
-        parent = "About & Links"
+        parent = "About"
         url = "/links/"
         name = "External Resources"
         weight = 3
 
     [[menu.main]]
-        parent = "About & Links"
+        parent = "About"
         url = "/glossary/"
         name = "Glossary"
-        weight = 800
+        weight = 4
         
 #    [[menu.main]]
 #        parent = "About"
@@ -113,17 +163,21 @@ ignoreFiles = ["README.md$"]
 # The list of available icons can be found at http://fontawesome.io/icons.
 
 [[menu.icon]]
+    url = "/"
+    name = "home"
+    weight = 1
+
+[[menu.icon]]
     url = "https://github.com/molssi/covid"
     name = "github"
-    weight = 1
+    weight = 2
 
 [[menu.icon]]
     url = "mailto:info@molssi.org"
     name = "envelope-o"
-    weight = 2
+    weight = 3
 
 [[menu.icon]]
     url = "https://twitter.com/MolSSI_NSF/"
     name = "twitter"
-    weight = 3
-
+    weight = 4

@@ -1,0 +1,10 @@
+name: Refinement of nsp1 by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: Contact-based structure prediction using trRosetta. 10 models generated and the best scoring was refined through molecular dynamics (MD) simulations. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/FeigLab/nsp1.pdb
+pdbids:
+proteins:
+  - NSP1
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
+preprint: https://doi.org/10.1101/2020.03.25.008904

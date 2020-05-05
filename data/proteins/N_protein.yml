@@ -1,0 +1,5 @@
+protein: N protein
+name: Nucleoprotein
+description: Packages the positive strand viral genome RNA into a helical ribonucleocapsid (RNP) and plays a fundamental role during virion assembly through its interactions with the viral genome and membrane protein M. Plays an important role in enhancing the efficiency of subgenomic viral RNA transcription as well as viral replication.
+organism: SARS-CoV-2
+domain: nucleocapsid

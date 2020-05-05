@@ -1,0 +1,15 @@
+unpublished_pdbid: 6LZE
+method: X-Ray Diffraction
+resolution: 1.5
+proteins:
+  - 3CLpro
+organisms:
+  - SARS-CoV-2
+targets:
+  - 3CLpro protease activity
+ligands:
+  - covalent inhibitors
+  - aldehydes
+annotation: X-Ray crystal structure of SARS-Cov-2 MPro in complex with 11a
+rating: 
+images: 

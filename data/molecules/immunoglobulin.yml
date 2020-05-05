@@ -3,7 +3,7 @@ description: >
   Immunoglobulin AKA antibody is a protein produced by B cells that is used to fight against pathogens and viruses via adaptive immunity.
 therapeutic:
   - antibody
-  - antiviral (non-specific)
+  - antiviral # (non-specific)
   - peptide
   - immunotherapy
 links:

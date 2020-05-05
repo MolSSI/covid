@@ -9,4 +9,4 @@ target: spike cleavage
 domains:
   - transmembrane
   - peptidase
-interest: low
+domain: null

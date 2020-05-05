@@ -16,6 +16,13 @@ main {
     max-width: 750px;
 }
 
+.main-img {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 1180px !important;
+}
+
 img {
     max-width: 100%;
 }
@@ -164,7 +171,7 @@ footer {
 .wrapper {
   display: grid;
   grid-template-columns: 13% 20% 13% 20% 13% 20%;
-  grid-gap: 10px;
+  grid-gap: 10px 20px;
   background-color: #fff;
   align-items: center;
 }
@@ -175,8 +182,18 @@ footer {
   font-size: 90%;
 }
 
-.logo_img {
+.logo-img-box {
     display: inline;
     margin: 0px;
-    padding: 0px 10px 10px 10px;
+    padding: 5px;
+    max-width: 146px;
+    max-height: 62px;
+}
+
+.logo-img {
+    display: inline;
+    max-width: 136px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
 }

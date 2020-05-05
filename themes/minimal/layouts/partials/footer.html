@@ -12,7 +12,11 @@
                 </div>
             </div>
             -->
-            <p class="copyright text-muted">{{ .Site.Params.copyright | default "&copy; All rights reserved. COVID-19 Computational Molecular Data Exchange is lead by [MolSSI](http://molssi.org/) & [BioExcel](https://bioexcel.eu). The MolSSI is supported by the U.S. National Science Foundation through grant number OAC-1547580. [BioExcel is funded by the European Union Horizon 2020](https://ec.europa.eu/programmes/horizon2020) program under grant agreements [823830](https://cordis.europa.eu/project/id/823830), [675728](https://cordis.europa.eu/project/id/675728)" | markdownify }}</p>
+
+            <h3><u>Endorsements</u></h3>
+            {{ partial "endorsements" $ }}
+
+            <p class="copyright text-muted">{{ .Site.Params.copyright | default "&copy; All rights reserved. COVID-19 Molecular Structure and Therapeutics Hub is lead by [MolSSI](http://molssi.org/) & [BioExcel](https://bioexcel.eu). The MolSSI is supported by the U.S. National Science Foundation through grant number OAC-1547580. [BioExcel is funded by the European Union Horizon 2020](https://ec.europa.eu/programmes/horizon2020) program under grant agreements [823830](https://cordis.europa.eu/project/id/823830), [675728](https://cordis.europa.eu/project/id/675728)" | markdownify }}</p>
         </footer>
 
         {{ partial "body-close" . }}

@@ -3,4 +3,5 @@ url: https://drive.google.com/drive/folders/1S5qJtCnK00NrcbwwBNgImUMewhiBkyPa
 description: >
   Models refined by Tristan Croll in ISOLDE
 institution: Cambridge Institute for Medical Research
-resources: models
+resources:
+  - models

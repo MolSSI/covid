@@ -8,8 +8,19 @@
 
 <div class="col col-9">
 
-  {{ $pdb := upper .structure.pdbid }}
-  {{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
+  {{ $pdb := (upper .structure.unpublished_pdbid) | default (upper .structure.pdbid) }}
+
+  <!-- The getJSON function crashes the build if it cant find the page -->
+  <!-- Known bug, they fixed it in pre 0.50, broke it in 0.50, and keep pushing its re-fix back -->
+  <!-- https://github.com/gohugoio/hugo/issues/5766 -->
+  <!-- BUT! You can trap errors in custom shortcodes -->
+  <!-- BUT! You can't USE custom shortcodes outside of stuff in the /content folder -->
+  <!-- BUT! You can still error trap using the with...else...end statement. Its just undocumented outside of custom shortcodes-->
+  <!-- BUT! (and this is the kicker) It still crashes the build... -->
+  <!-- I brought this back up in https://github.com/gohugoio/hugo/issues/5643 -->
+  <!-- -LNN -->
+  {{ $data := partial "json-from-rcsb" .structure }}
+
   {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
   {{ if $data }}
     {{ if eq $data.rcsb_primary_citation.journal_abbrev "To Be Published" }}
@@ -34,13 +45,13 @@
 
 
   <!-- Structure name -->
-  <h3 align="left" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
+  <h4 align="center" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
     <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} {{ partial "structure-marker" .structure }} </b>
-  </h3>
+  </h4>
 
   <!-- Structure Annotation -->
   {{ if not (in ( $title | lower) (.structure.annotation | lower) ) }}
-    <h4 align="justify">Additional: {{ .structure.annotation }}</h4>
+    <h5 align="justify">Additional: {{ .structure.annotation }}</h5>
   {{ end }}
 
   <!-- illustrative structure image(s) -->
@@ -54,43 +65,48 @@
       <a href="{{ $view3d }}"><img width=200 src="/{{ . }}"></a>
     {{ end }}
 
-  {{ else }}
+  {{ else if not .structure.unpublished_pdbid }}
       <!-- show image from RCSB -->
       {{ $pdbid := lower .structure.pdbid }}
       <a href="{{ $view3d }}"><img width=200 src="https://cdn.rcsb.org/images/rutgers/{{ substr $pdbid 1 2 }}/{{ $pdbid }}/{{ $pdbid }}.pdb1-500.jpg"></a>
   {{ end }}
   </p>
 
-  <h4 align="left"> Structure Data and Links </h4>
+  <h5 align="left"><b>Structure Data and Links: </b>
   {{ $view3d := (printf "https://www.rcsb.org/3d-view/%s/1" $pdb) }} <!-- PDB viewer -->
-  <p>
-    <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
-    <a href="{{ $view3d }}"><kbd class="alert-info">View 3D</kbd></a>
-    {{ if $pub_link }}
-      {{ if eq $pub_link "TBP" }}
-        <kbd class="alert-info">To Be Published</kbd>
-      {{ else }}
-        <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
+    {{ if .unpublished_pdbid }}
+      Unpublished PDB (not on RCSB)
+    {{ else }}
+      <a href='{{ $url }}'><kbd class="alert-info">PDBID: {{ .structure.pdbid }}</kbd></a>
+      <a href="{{ $view3d }}"><kbd class="alert-info">View 3D</kbd></a>
+      {{ if $pub_link }}
+        {{ if eq $pub_link "TBP" }}
+          <kbd class="alert-info">To Be Published</kbd>
+        {{ else }}
+          <a href='{{ $pub_link }}'><kbd class="alert-info">Read the Paper</kbd></a>
+        {{ end }}
       {{ end }}
     {{ end }}
-  </p>
+    </h5>
+    <h5 align="left">
   {{ if $method }}
     <p>
-    Experimental Method: {{ $method }}
+    <b>Experimental Method: </b>{{ $method }}
     {{ if $resolution }}
       | Resolution: {{ $resolution }} Å
     {{ end }}
     </p>
   {{ end }}
-
+</h5>
   <!-- Determine if there are known models -->
   {{ $localScratch.Set "postedModels" 0 }}
-  <h4 align="left"> Top Two Models: </h4>
+  <h5 align="left"><b>Top Two Models: </b></h5>
   {{ range sort .context.Site.Data.models "rating" "desc" }}
     {{ $localScratch.Set "model" . }}
     <!-- This PDB is in the given model and we have not posted more than 1 -->
     {{ if and (partial "x-in-y-nocase" (dict "x" $pdb "y" .pdbids)) (lt ($localScratch.Get "postedModels") 2)}}
       <!-- Add to the counter -->
+      <h5 align="left">
       <p>
         {{ $model := $localScratch.Get "model" }}
         {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
@@ -100,44 +116,48 @@
         </a>
         {{ partial "general-marker" $model }}
       </p>
+      </h5>
       {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
     {{ end }}
   {{ end }}
   {{ if eq ($localScratch.Get "postedModels") (0) }}
-    <p>---</p>
+    <h5 align="left"><p>---</p></h5>
   {{ end }}
 
-  <h4 align="left"> Known Target Modalities: </h4>
-  <p>
+  <h5 align="left"><b>Known Target Modalities:</b><!--</h5>
+  <h5 align="left">
+  <p>-->
   {{ $targets := partial "ensure-slice" .structure.targets }}
   {{ range $targets }}
     <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ (index ($localScratch.Get "target_map") .).name | title }}</kbd></a>
   {{ end }}
-  </p>
+  <!--</p>-->
+  </h5>
 
-  <h4 align="left"> Related Proteins: </h4>
-  <p>
+  <h5 align="left"><b>Related Proteins:</b>
   {{ $proteins := partial "ensure-slice" .structure.proteins }}
   {{ range $proteins }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
-  </p>
+  </h5>
 
-  <h4 align="left"> Top Simulations: <a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h4>
+  <h5 align="left"><b>Top Simulations:</b><a href='{{ $.context.Site.BaseURL }}/simulations/#{{ $.protein | anchorize }}'>[See All]</a></h5>
     {{ $localScratch.Set "postedSim" 0 }}
     {{ range sort .context.Site.Data.simulations "rating" "desc" }}
         {{ $sim := . }}
-        {{ $sin := partial "x-in-y-nocase" (dict "x" $.structure.pdbid "y" .structures) }}
+        {{ $sin := partial "x-in-y-nocase" (dict "x" $pdb "y" .structures) }}
         {{ if and ($sin) (lt ($localScratch.Get "postedSim") 2) }}
             {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+            <h5 align="left"><p>
             <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
             {{ partial "general-marker" $sim }}
+            </p></h5>
             <!-- Add to the counter -->
             {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
         {{ end }}
     {{ end }}
     {{ if eq ($localScratch.Get "postedSim") 0 }}
-      ---
+      <h5 align="left"><p>---</p></h5>
     {{ end }}
 
   <hr>

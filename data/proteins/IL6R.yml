@@ -9,4 +9,4 @@ description: >
 uniprot: A0N0L5
 targets:
   - host immune response
-interest: low
+domain: null

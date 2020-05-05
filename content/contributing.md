@@ -4,25 +4,24 @@ description: Instructions for Contributing
 draft: false
 ---
 
+<div style="text-align: justify"> 
+
 ## Data Publication Indicator System
 
 All data submitted to the website is flagged based on the data's current state of publication.
 
-* Unpublished data with no preprints are given a Red (![](/images/reddot.png)) marker.
-* Data in a preprint or submitted for publication are given a Yellow (![](/images/yellowdot.png)) marker.
-* Data published in a paper or accepted are given a Green (![](/images/greendot.png)) marker (i.e. has been approved by formal peer review).
+{{< partial "marker-info-header" >}}
 
 ## Data discussion
-
-Data are open for community discussion through the [GitHub Projects](https://github.com/MolSSI/covid/projects) 
-and [Issues](https://github.com/MolSSI/covid/issues). All discussions will be tagged so they can be seen by the 
+Data are open for community discussion through the [Github Projects](https://github.com/MolSSI/covid/projects) 
+and [Issues](https://github.com/MolSSI/covid/issues"). All discussions will be tagged so they can be seen by the 
 review teams and the broader community. 
 
 ## Contributing
 
-The exchange gladly accepts any of the types of data hosted on the website (and others if you propose a schema). 
-Simply open a Pull Request on the [Github repository](https://github.com/MolSSI/covid) with the data you wish to submit 
-following the Schema in each of the `/data/{TYPE}/README.md` files.
+The COVID-19 Molecular Structure and Therapeutics Hub gladly accepts any of the types of data hosted on the website 
+(and others if you propose a schema). Simply open a Pull Request on the [Github repository](https://github.com/MolSSI/covid) 
+with the data you wish to submit  following the Schema in each of the `/data/{TYPE}/README.md` files.
 Data is submitted as YAML files into the `/data/{TYPE}/README.md` directory.
 
 A new YAML file should be created for *every* new piece of data.
@@ -71,4 +70,3 @@ on the [Github repository](https://github.com/MolSSI/) where the data from this 
 
 Are you an expert in Hugo, Static Web pages, or UX and want to help make this site better? Reach out to us, ping the 
 GitHub. We'd love feed back on how we can make this Hub a better experience for its visitors.
-

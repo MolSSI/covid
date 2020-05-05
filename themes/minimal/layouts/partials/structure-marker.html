@@ -3,7 +3,7 @@
 
 {{ $localScratch := newScratch }}
 {{ $pdb := upper .pdbid }}
-{{ $data := getJSON "https://data.rcsb.org/rest/v1/core/entry/" $pdb }}
+{{ $data := partial "json-from-rcsb" . }}
 
 {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
 
@@ -18,14 +18,16 @@
 {{ end }}
 
 {{ $pub_link := $localScratch.Get "pub_link" }}
-{{ if and $pub_link (not (eq $pub_link "TBP")) }}
-  <a href="{{ $pub_link }}"><img src="/images/published.png" style="height:25px"></a>
-{{ else if $.publication }}
-  <a href="{{ $.publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
-{{ else if and $.preprint (not (eq $.preprint "Submitted")) }}
-  <a href="{{ $.preprint | safeURL }}"><img src="/images/preprint.png" style="height:25px"></a>
-{{ else if and $.preprint (eq $.preprint "Submitted") }}
-  <img src="/images/preprint.png" style="height:25px">
-{{ else }}
 
+{{ if and .preprint (not (eq .preprint "Submitted")) }}
+  <a href="{{ $.preprint | safeURL }}"><img src="/images/preprint.png" style="height:25px"></a>
+{{ else if and (eq .preprint "Submitted") (and (not .publication) (or (not $pub_link) (eq $pub_link "TBP"))) }}
+  <!-- Preprint submitted, no publication, and (pub_link isnt real or pub_link is TBP) -->
+  <img src="/images/preprint.png" style="height:25px">
+{{ end }}
+
+{{ if and $pub_link (not (eq $pub_link "TBP")) }}
+  <a href="{{ $pub_link | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
+{{ else if .publication }}
+  <a href="{{ .publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
 {{ end }}

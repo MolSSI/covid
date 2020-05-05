@@ -51,8 +51,6 @@ members:
     url: http://shelx.uni-ac.gwdg.de/~athorn
   - name: Yunyun Gao
     url: http://shelx.uni-ac.gwdg.de/~athorn/
-  - name: Bryan Jackson
-    url: https://www.deshaw.com
   - name: Michael Feig
     url: http://feig.bch.msu.edu
   - name: Lim Heo
@@ -104,6 +102,7 @@ members:
     url: https://orcid.org/0000-0001-7202-5803
   - name: Greg Bowman
     url: https://bowmanlab.biochem.wustl.edu
+    organization: fah
   - name: Jean-Philip Piquemal
     url: http://piquemalresearch.com
   - name: Callie Rodgers Chappell
@@ -114,8 +113,9 @@ members:
     url: http://brooks.chem.lsa.umich.edu
   - name: William Jorgensen
     url: http://www.jorgensenresearch.com
-  - name: D. E. Shaw
-    url: https://www.deshaw.com
+  - name: D. E. Shaw Research
+    url: https://www.deshawresearch.com/
+    organization: desres
   - name: Tristan Croll
     url: https://isolde.cimr.cam.ac.uk
   - name: Vincent Voelz
@@ -132,3 +132,9 @@ members:
     url: http://soiland-reyes.com/stian/work/
   - name: Alexandre Bonvin
     url: https://www.bonvinlab.org
+  - name: Yang Zhang
+    url: https://zhanglab.ccmb.med.umich.edu/
+    organization: zhang-lab
+  - name: Chengxin Zhang
+    url: https://zhanglab.ccmb.med.umich.edu/
+    organization: zhang-lab

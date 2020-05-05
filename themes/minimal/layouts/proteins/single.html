@@ -1,5 +1,11 @@
 {{ partial "header" . }}
 
+{{ $pmap := partial "protein-map" .}}
+{{ $domain_sort := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_sort.keys }}
+{{ $domain_titles := $domain_sort.titles }}
+{{ $viral_sort := partial "viral-domain-sort" $ }}
+
 <!-- PROTEINS PAGE -->
 
 <main>
@@ -22,92 +28,62 @@
         {{ partial "marker-info-header" . }}
 
     </div>
+</main>
+
+<main class="main-img">
+    <!-- Wrap the div in a scaling thing, but map should use the full resolution of the image for coords -->
+    <img id="genome" src="/images/sars-cov-2-genome-structures.png" usemap="#proteintmap" border="0" width="100%">
+    <map id="proteinmap_id" name="proteintmap">
+        <area shape="rect" coords="0,26, 256,81" href="https://zhanglab.ccmb.med.umich.edu/COVID-19/" alt="Zhang">
+        <area shape="poly" coords="282,26, 252,94, 170,142, 172,245, 403,246, 397,101, 303,24" href="{{ $pmap.PLpro }}" alt="PLpro-nsp3">
+        <area shape="poly" coords="393,40, 430,174, 515,164, 529,82, 468,36" href='{{ index $pmap "3CLpro" }}' alt="3CLpro-nsp5">
+        <area shape="poly" coords="538,145, 516,167, 493,173, 496,239, 572,238, 570,143" href='{{ $pmap.NSP7 }}' alt="nsp7">
+        <area shape="rect" coords="532,41, 608,118" href='{{ $pmap.NSP9 }}' alt="nsp9">
+        <area shape="rect" coords="601,118, 700,243" href='{{ $pmap.RdRP }}' alt="RdRP">
+        <area shape="poly" coords="142,418, 143,524, 232,523, 230,454, 197,448, 180,416" href='{{ $pmap.NSP1 }}' alt="nsp1">
+        <area shape="rect" coords="196,349 318,444" href='{{ $pmap.NSP2 }}' alt="nsp2">
+        <area shape="poly" coords="373,512 494,512, 471,405, 378,408" href='{{ $pmap.NSP4 }}' alt="nsp4">
+        <area shape="rect" coords="482,354, 554,444" href='{{ $pmap.NSP6 }}' alt="nsp6">
+        <area shape="poly" coords="500,489, 501,501, 623,500, 593,423, 564,431" href='{{ $pmap.NSP8 }}' alt="nsp8">
+        <area shape="rect" coords="570,350, 646,429" href='{{ $pmap.NSP10 }}' alt="nsp10">
+        <area shape="poly" coords="873,386, 874,395, 876,530, 979,530, 978,466, 910,385" href='{{ $pmap.spike }}' alt="spike">
+        <area shape="rect" coords="657,339, 744,413" href='{{ $pmap.Helicase }}' alt="Helicase">
+    </map>
+</main>
 
     <!-- List all Proteins from data/targets/ -->
     <!-- (range where) does not work for this atm, using (range)>(if) -->
-
-
+<main>
     <!-- Viral -->
     <hr class="hr-thick">
     <h2 class="a">Viral Proteins</h2>
-    <!-- Active -->
-    <h3><u>Active Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
-            {{ if eq .interest "active" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
+    {{ range $domain_keys }}
+        {{ $header := print "Models of Viral " (index $domain_titles .) " Proteins" }}
+        <h3 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h3>
+        {{ range (index $viral_sort .) }}
+            {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
         {{ end }}
     {{ end }}
-    <!-- Low -->
-    <h3><u>Low Interest Proteins</u></h3>
-    <!-- Easier to view accordion -->
-    <div class="panel-group" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseProtLow" aria-expanded="false" aria-controls="collapseProtLow">
-              (Click to Expand)
-            </a>
-          </h4>
-        </div>
-        <div id="collapseProtLow" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingProtLow">
-          <div class="panel-body">
-            {{ range $.Site.Data.proteins  }}
-                {{ if in (slice "SARS-CoV-2" "SARS-CoV" ) .organism }}
-                    {{ if eq .interest "low" }}
-                        <!-- pass current entry as .protein and current context as .context -->
-                        {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
-    
+
     <!-- Host -->
     <hr class="hr-thick">
     <h2>Host Proteins</h2>
-    <!-- Active -->
-    <h3><u>Active Interest Proteins</u></h3>
-    {{ range $.Site.Data.proteins  }}
-        {{ if in (slice "human" ) .organism }}
-            {{ if eq .interest "active" }}
-                <!-- pass current entry as .protein and current context as .context -->
-                {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-            {{ end }}
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if in (slice "human" ) .organism }} <!-- Viral/Host -->
+            <!-- pass current entry as .protein and current context as .context -->
+            {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
         {{ end }}
     {{ end }}
-    <!-- Low -->
-    <h3><u>Low Interest Proteins</u></h3>
-    <!-- Easier to view accordion -->
-    <div class="panel-group" role="tablist" aria-multiselectable="true">
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseHostLow" aria-expanded="false" aria-controls="collapseHostLow">
-              (Click to Expand)
-            </a>
-          </h4>
-        </div>
-        <div id="collapseHostLow" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingHostLow">
-          <div class="panel-body">
-            {{ range $.Site.Data.proteins  }}
-                {{ if in (slice "human" ) .organism }}
-                    {{ if eq .interest "low" }}
-                        <!-- pass current entry as .protein and current context as .context -->
-                        {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 </main>
 
 {{ partial "footer" . }}
+
+<!--Resize map with page, very helpful-->
+<script src="https://cdn.rawgit.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('map').imageMapResize();
+});
+</script>

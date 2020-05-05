@@ -1,0 +1,14 @@
+pdbid: 7BV1
+method: cryo-EM
+resolution: 2.80
+proteins:
+  - RdRP
+  - NSP7
+  - NSP8
+organisms:
+  - SARS-CoV-2
+targets:
+  - viral replication
+annotation: Cryo-EM Structure of the apo nsp12-nsp7-nsp8 complex
+rating: 
+images: 

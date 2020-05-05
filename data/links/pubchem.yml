@@ -2,4 +2,6 @@ name: PubChem
 url: https://pubchem.ncbi.nlm.nih.gov
 description: PubChem is a public chemistry database at the National Institutes of Health (NIH). Since the launch in 2004, PubChem has become a key chemical information resource for scientists, students, and the general public. Each month our website and programmatic services provide data to several million users worldwide. PubChem mostly contains small molecules, but also larger molecules such as nucleotides, carbohydrates, lipids, peptides, and chemically-modified macromolecules. We collect information on chemical structures, identifiers, chemical and physical properties, biological activities, patents, health, safety, toxicity data, and many others.
 institution: NIH
-resources: models
+resources:
+  - models
+  - publications

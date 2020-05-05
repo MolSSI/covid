@@ -2,4 +2,5 @@ name: MolPort
 url: https://www.molport.com
 description: MolPort has collected the catalogs of all the major chemical suppliers that cater to drug discovery and created a consolidated database of commercially available screening compounds, building blocks and virtual compounds. These catalogs are up to date and typically synchronized with suppliers inventory daily. MolPort tracks compounds ordered via its platform, and monitors how well suppliers fulfil orders.
 organization: MolPort, Inc.
-resources: models
+resources:
+  - therapeutics

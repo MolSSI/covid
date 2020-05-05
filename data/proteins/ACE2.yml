@@ -5,4 +5,4 @@ organism: human
 uniprot: Q9BYF1
 targets:
   - viral fusion
-interest: active
+domain: null

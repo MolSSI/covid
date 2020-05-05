@@ -38,7 +38,7 @@
         {{ $localScratch.Set "term" . }}
         <div class="col col-9">
             <!-- therapeutic category -->
-            <h3 class="anchor" id="{{ . | anchorize }}"><b>{{ . | title }}</b> <img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
+            <h3 class="anchor" id="{{ . | anchorize }}"><b><u>{{ . | title }}</u></b> <img width=30 src="/images/sars-cov-2-thumbnail.jpg"></h3>
 
             {{ range $.Site.Data.molecules }}
                 {{ $localScratch.Set "data" . }}
@@ -50,7 +50,14 @@
         </div>
     {{ end }}
 
-    <hr>
+    <hr class="hr-thick">
+
+    <h3 id="ext_res_therapeutics"> External Therapeutics and Drug Databases </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "therapeutics" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
 
 </main>
 

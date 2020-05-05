@@ -3,4 +3,5 @@ url: https://clue.io/repurposing
 description: The Drug Repurposing Hub is a curated and annotated collection of FDA-approved drugs, clinical trial drugs, and pre-clinical tool compounds with a companion information resource. Order library plates to screen yourself or collaborate with the Broad Institute’s Center for the Development of Therapeutics to see if an existing drug may work against your novel target, model system, or indication. While the collection will undoubtedly reveal new uses for developed drugs, its true power is unlocked when applied to discover new biological insights and disease mechanisms.
 lab: John Irwin, Brian Shoichet, and others
 institution: University of California, San Francisco
-resources: models
+resources:
+  - therapeutics

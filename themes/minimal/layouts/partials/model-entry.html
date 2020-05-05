@@ -10,47 +10,48 @@
 <div class="col col-9">
 
       <!-- Model name -->
-      <h3 class="anchor" id='{{ print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
+      <h4 align="center" class="anchor" id='{{ print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
           {{ .model.name }}
           {{ with .model.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
           {{ partial "general-marker" .model }}
-      </h3>
+      </h4>
 
       <!-- Author -->
-      <h5>{{ .model.creator }}</h5>
+      <h5 align="center">{{ .model.creator }}</h5>
 
       <!-- Proteins represented -->
+      <h5 align="left"><b>Represented Proteins: </b>
       {{ range $pname := .model.proteins }}
          {{ $plink := print ($localScratch.Get "context").Site.BaseURL "/proteins/#" ( $pname | anchorize) }}
          <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname }}</kbd></a>
       {{ end }}
-
-      <!-- Show 3D structure using 3Dmol.js : see https://3dmol.csb.pitt.edu/ -->
-      {{ if .model.pdb_url }}
-          {{ if in (slice 5 ) .model.rating }}
-            <div align="center" style="height: 400px; width: 400px; position: relative; margin-top: 0px; margin-bottom: 0px; margin-left: auto; margin-right: auto;" class='viewer_3Dmoljs' data-href='{{ .model.pdb_url }}' data-backgroundcolor='0xffffff' data-style='cartoon:color~spectrum'></div>
-          {{ else }}
-            <div><h4><a href='http://3Dmol.csb.pitt.edu/viewer.html?url={{ .model.pdb_url }}&type=pdb&style=cartoon:color~spectrum'>See the Model in 3DMol.js</a></h4></div>
-          {{ end }}
-      {{ end }}
+      </h5>
 
       <!-- Model and source PDBs -->
       <h5 align="left">
-      Model: <a href="{{ .model.url }}"><kbd class="alert-success">Model PDB</kbd></a>
-      |
-      Source Structure PDBs:
+      
+      <b>Model: </b><a href="{{ .model.url }}"><kbd class="alert-success">Files</kbd></a>
+      <b>|
+      Source Structure PDBs:</b>
       {{ range .model.pdbids }}
         {{ $pdb := upper . }}
         {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
         <a href="{{ $url }}"><kbd class="alert-warning">{{ $pdb }}</kbd></a>
       {{ end }}
+      <!-- Show 3D structure using 3Dmol.js : see https://3dmol.csb.pitt.edu/ -->
+      {{ if .model.pdb_url }}
+          {{ if in (slice 5 ) .model.rating }}
+            <div align="center" style="height: 400px; width: 400px; position: relative; margin-top: 0px; margin-bottom: 0px; margin-left: auto; margin-right: auto;" class='viewer_3Dmoljs' data-href='{{ .model.pdb_url }}' data-backgroundcolor='0xffffff' data-style='cartoon:color~spectrum'></div>
+          {{ else }}
+            <b>| Visualize: </b><a href='http://3Dmol.csb.pitt.edu/viewer.html?url={{ .model.pdb_url }}&type=pdb&style=cartoon:color~spectrum'><kbd class="alert-warning">3DMol.js</kbd></a>
+          {{ end }}
+      {{ end }}
       </h5>
-
-
+      
       <!-- Model description -->
-      <h4 align="justify">{{ .model.description | markdownify }}</h4>
+      <h5 align="justify">{{ .model.description | markdownify }}</h5>
 
-        <h4 align="left"> Simulations:</h4>
+        <h5 align="left"><b>Simulations:</b></h5>
         {{ $localScratch.Set "postedSim" 0 }}
         {{ range $mname, $mdata := .context.Site.Data.models }}
             {{ if eq $mdata.name $.model.name }}
@@ -62,14 +63,18 @@
             {{ $sin := partial "x-in-y-nocase" (dict "x" ($localScratch.Get "mname") "y" .models) }}
             {{ if ($sin) }}
                 {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
+                <h5 align="left">
+                <p>
                 <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
                 {{ partial "general-marker" $sim }}
+                </p>
+                </h5>
                 <!-- Add to the counter -->
                 {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
             {{ end }}
         {{ end }}
         {{ if eq ($localScratch.Get "postedSim") 0 }}
-          ---
+          <h5 align="left"><p>---</p></h5>
         {{ end }}
 
       <!-- Separator -->

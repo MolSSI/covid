@@ -8,7 +8,10 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 
 Each entry has the following required and optional keys:
 ```
-pdbid: (required)
+pdbid: (One of this or unpublished_pdbid required) Use if on the RCSB, else LEAVE EMPTY
+unpublished_pdbid: (One of this or pdbid required) Use if NOT on the RCSB.
+    WARNING: If this is set, it will OVERWRITE the pdbid due to technical limiations on constructiong the site
+    If this is ever fixed upstream, this behavior will be reverted (and this key likely removed and foled into pdbid)
 proteins: (one or more of the following options)
   - spike
   - RBD
@@ -27,7 +30,7 @@ proteins: (one or more of the following options)
   - NSP10
   - NSP11
   - NSP12
-  - NSP13
+  - Helicase
   - NSP14
   - NSP15
   - fusion core

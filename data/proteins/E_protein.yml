@@ -1,0 +1,5 @@
+protein: E protein
+name: Envelope small membrane protein
+description: Plays a central role in virus morphogenesis and assembly. Acts as a viroporin and self-assembles in host membranes forming pentameric protein-lipid pores that allow ion transport. Also plays a role in the induction of apoptosis.
+organism: SARS-CoV-2
+domain: envelope

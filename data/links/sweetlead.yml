@@ -2,4 +2,5 @@ name: SWEETLEAD
 url: https://simtk.org/projects/sweetlead
 description: The SWEETLEAD database is a cheminformatics database of medicines, drugs, and herbal isolates.  It provides a resource for chemical structures and was built by pulling data from several public chemical databases.
 lab: Paul Novick and Vijay Pande
-resources: models
+resources:
+  - therapeutics

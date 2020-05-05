@@ -3,7 +3,7 @@ description: >
   Arbidol is an FDA approved drug for Influenza.
   Arbidol is an indole based antiviral/host-targeting agent.
 therapeutic:
-  - antiviral (broad spectrum)
+  - antiviral # (broad spectrum)
 links:
   wikipedia: Umifenovir
   drugbank: DB13609

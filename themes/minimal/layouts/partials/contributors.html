@@ -22,25 +22,25 @@
                 <!--Org exists...-->
                 {{ if and ($org.logo) ($org.url) }}
                     <!-- ... and has a logo and url-->
-                    <div class="box logo_img" align="left">
-                        <a href="{{ $org.url }}"><img src="/images/org-logos/{{ $org.logo }}" style="width:44px;height:33px;"></a>
+                    <div class="box logo-img-box" align="left">
+                        <a href="{{ $org.url }}"><img class="logo-img" src="/images/org-logos/{{ $org.logo }}"></a>
                     </div>
                 {{ else if ($org.logo) }}
                     <!-- ... and a logo but not url-->
-                    <div class="box logo_img" align="left">
-                        <img src="/images/org-logos/{{ $org.logo }}" style="width:44px;height:33px;">
+                    <div class="box logo-img-box" align="left">
+                        <img class="logo-img" src="/images/org-logos/{{ $org.logo }}">
                     </div>
                 {{ else }}
                     <!-- ... no logo and no url-->
-                    <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+                    <div class="box logo-img-box" align="left"> <img class="logo-img" src="/images/blank_logo_mini.png"></div>
                 {{ end }}
             {{ else }}
                 <!--Org does not exist-->
-                <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+                <div class="box logo-img-box" align="left"> <img class="logo-img" src="/images/blank_logo_mini.png"></div>
             {{ end }}
         {{ else }}
             <!--No Org-->
-            <div class="box logo_img" align="left"> <img src="/images/blank_logo_mini.png" style="width:44px;height:33px;"></div>
+            <div class="box logo-img-box" align="left"> <img class="logo-img" src="/images/blank_logo_mini.png"></div>
         {{ end }}
 
     {{ end }}

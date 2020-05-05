@@ -6,7 +6,7 @@
 {{ $localScratch.Set "target_map" .target_map }}
 
 <!-- Molecule Title -->
-<h4 align="justify">{{ .data.name | title }}</h4>
+<h4 align="center">{{ .data.name | title }}</h4>
 
 {{ with .data.links.drugbank }}
     <img src="https://www.drugbank.ca/structures/{{ . }}/thumb.svg">
@@ -16,10 +16,10 @@
 <p align="justify">{{ .data.description | markdownify }}</p>
 
 <!-- Molecule mechanism -->
-<p align="justify"><u>Mechanism:</u> {{ .data.mechanism }}</p>
+<p align="justify"><b>Mechanism: </b>{{ .data.mechanism }}</p>
 
 {{ if .data.links }}
-  <p align="justify"><u>Read more about it:</u></p></h5>
+  <h5 align="left"><b>Read more about it:</b>
   {{ if .data.links.wikipedia }}
     <a href='https://en.wikipedia.org/wiki/{{ .data.links.wikipedia }}'><kbd class="alert-info">Wikipedia</kbd></a>
   {{ end }}
@@ -32,6 +32,7 @@
   {{ if .data.links.pubchem }}
     <a href='https://pubchem.ncbi.nlm.nih.gov/compound/{{ .data.links.pubchem }}'><kbd class='alert-info'>PubChem</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 
 <!-- Targets -->
@@ -41,10 +42,12 @@
   {{ else }}
       {{ $localScratch.Set "iter" (slice .data.target) }}
   {{ end }}
-  <p align="justify"><u>Targeting Modalities:</u></p>
+  <h5 align="left"><b>Targeting Modalities:</b>
+  
   {{ range $localScratch.Get "iter" }}
     <a href='{{ (index ($localScratch.Get "target_map") .).link }}'><kbd class="item-tag">{{ . | title}}</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 
 <!-- tag links to proteins involves in this target -->
@@ -54,9 +57,11 @@
   {{ else }}
       {{ $localScratch.Set "iter" (slice .data.protein) }}
   {{ end }}
-  <p align="justify"><u>Known Protein Interactions:</u></p>
+  <h5 align="left"><b>Known Protein Interactions:</b>
+  
   {{ range $localScratch.Get "iter" }}
     <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a>
   {{ end }}
+  </h5>
 {{ end }}
 <hr>

@@ -1,0 +1,8 @@
+protein: Helicase
+name: Helicase coronavirus nonstructural protein 13 (NSP13)
+description: >
+  The NSP13 SARS sequence is conserved and helicase activity is necessary for COVID replication.
+  Helicase inhibition has been used for virus (HSV-amenavir) and cancer treatment (eIF41, RocA rocaglamides) and
+  has gained interested in a potential disrupting target.
+organism: SARS-CoV-2
+domain: nsp

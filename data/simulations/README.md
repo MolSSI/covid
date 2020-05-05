@@ -34,7 +34,7 @@ size: (required) Size of trajectory file, please include units
 length: (required) elapsed real time trajectory covers, please include units
 ensemble: one of [NPT, NVT, NVE, Other]
 temperature: (required) in Kelvin, can be N/A
-pressure: (required) in Atm, can be N/A  
+pressure: (optional) in Atm  
 solvent: (required) can also be none or vacuum
 salinity: (optional) in Molar
 forcefields: (required) List of forcefields, can be simple names

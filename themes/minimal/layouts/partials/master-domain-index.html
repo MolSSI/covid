@@ -1,0 +1,19 @@
+<!--Master sort order for the Virus Domain data-->
+<!--Keys, these match the Validation keys-->
+{{ $spike_key := "spike" }}
+{{ $nsp_key := "nsp" }}
+{{ $orf_key := "orf" }}
+{{ $mem_key := "membrane" }}
+{{ $env_key := "envelope" }}
+{{ $nuc_key := "nucleocapsid" }}
+{{ $keys := slice $spike_key $nsp_key $orf_key $mem_key $env_key $nuc_key }}
+<!--Titles-->
+{{ $spike := "Spike" }}
+{{ $nsp := "Protease, Polymerase, and Nonstructured" }}
+{{ $orf := "Open Reading Frame" }}
+{{ $mem := "Membrane" }}
+{{ $env := "Envelope" }}
+{{ $nuc := "Nucleocapsid" }}
+{{ $titles := dict $spike_key $spike $nsp_key $nsp $orf_key $orf $mem_key $mem $env_key $env $nuc_key $nuc }}
+
+{{ return (dict "keys" $keys "titles" $titles) }}

@@ -2,7 +2,7 @@ name: darunavir
 description: >
   Darunavir is an HIV protease inhibitor used in combination with pharmacokinetic enhancer like cobicistat.
 therapeutic:
-    - antiviral (antiretroviral)
+    - antiviral # (antiretroviral)
 links:
   wikipedia: Darunavir
   drugbank: DB01264

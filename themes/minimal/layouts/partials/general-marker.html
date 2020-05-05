@@ -3,12 +3,12 @@
 
 {{ $localScratch := newScratch }}
 
-{{ if $.publication }}
-  <a href="{{ $.publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
-{{ else if and $.preprint (not (eq $.preprint "Submitted")) }}
+{{ if and .preprint (not (eq .preprint "Submitted")) }}
   <a href="{{ $.preprint | safeURL }}"><img src="/images/preprint.png" style="height:25px"></a>
-{{ else if and $.preprint (eq $.preprint "Submitted") }}
+{{ else if and (eq .preprint "Submitted") (not .publication) }}
   <img src="/images/preprint.png" style="height:25px">
-{{ else }}
+{{ end }}
 
+{{ if .publication }}
+  <a href="{{ $.publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
 {{ end }}

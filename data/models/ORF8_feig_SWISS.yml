@@ -1,0 +1,10 @@
+name: Refinement of SWISS-MODEL ORF8 by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: FeigLab refinement of SWISS-MODEL models. Refinement performed using a protocol based on molecular dynamics (MD) simulations. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/Soluble/orf8_swiss.pdb
+pdbids:
+proteins:
+  - ORF8
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
+preprint: https://doi.org/10.1101/2020.03.25.008904
