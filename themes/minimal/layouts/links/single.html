@@ -56,6 +56,13 @@
             {{ end }}
         {{ end }}
 
+        <h3 id="ext_res_Biology"> Biology </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "biology" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
     </div>
 </main>
 

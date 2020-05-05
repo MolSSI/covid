@@ -81,6 +81,7 @@ class ResourcesEnum(str, Enum):
     models = 'models'
     publications = 'publications'
     therapeutics = 'therapeutics'
+    biology = 'biology'
 
 
 class ValidSimulations(str, Enum):

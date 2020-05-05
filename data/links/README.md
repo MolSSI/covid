@@ -14,5 +14,5 @@ description: (required)
 organization: (optional)
 institution: (optional)
 lab: (optional)
-resources: one or more of [structures, models, therapeutics]
+resources: one or more of [structures, models, therapeutics, biology]
 ```
