@@ -1,0 +1,10 @@
+name: Refinement of M Protein in membrane environment by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: Monomer structure revised using FeigLab and AlphaFold models. Refined with consideration of membrane environment. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/Membrane/M_dimer.pdb
+pdbids:
+proteins:
+  - M protein
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
+preprint: https://doi.org/10.1101/2020.03.25.008904
