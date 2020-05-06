@@ -1,0 +1,17 @@
+name: "SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex in aqueous solution"
+pdbids:
+  - 6m71
+proteins:
+  - RdRP
+  - NSP7
+  - NSP8
+organism:
+  - SARS-CoV-2
+description: >
+  The C- and N-peptide termini capped with amide and acetyl groups respectively. 
+  The missing loops in the published structural models were manually built as extended peptide conformation. 
+  The missing part of Chain D was built through homology modeling using the structure of SARS-CoV-1 polymerase 
+  complex (PDB entry 6NUR). The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. 
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10917618-structure.tar.gz
+creator: DESRES 
