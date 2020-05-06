@@ -1,0 +1,15 @@
+pdbid: 6vw1
+method: X-ray diffraction
+resolution: 2.68
+proteins:
+  - RBD
+  - ACE2
+organisms:
+  - SARS-CoV-2
+  - human
+targets:
+  - spike binding
+annotation: Crystal structure of SARS-CoV-2 chimeric receptor-binding domain complexed with its receptor human ACE2
+rating: 
+images:
+  - images/protein_renderings/6VW1.png
