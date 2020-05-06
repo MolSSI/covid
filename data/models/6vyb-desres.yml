@@ -1,0 +1,15 @@
+name: "Trimeric SARS-CoV-2 spike glycoprotein (open  state) in aqueous solution"
+pdbids:
+  - 6vyb
+proteins:
+  - spike
+organism:
+  - SARS-CoV-2
+description: >
+  Solvated structure of the trimeric SARS-CoV-2 spike glycoprotein in open state. The C- and N-peptide termini, including those
+  exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
+  The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. The total number of 
+  atoms in the system was 715439.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10897850-structure.tar.gz
+creator: DESRES 
