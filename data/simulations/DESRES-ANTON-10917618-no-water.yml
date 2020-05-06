@@ -1,0 +1,53 @@
+type: md
+title: DESRES-ANTON-10917618 10 µs simulation of SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex, no water or zinc
+description: >
+    A 10 µs simulation trajectory of the SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex determined in the 
+    absence of reducing agent (PDB entry 6M71). In the simulation, the partially disordered N-terminal region 
+    (residue 30 to residue 120) of the NiRAN domain folded into a stable ordered structure that resembles the
+    N-lobe fold of protein kinases. Lys 73 in β3 forms a salt bridge with Glu 83 in αC for most of the simulation, 
+    a common feature of protein kinases. The protein kinase-like fold formed in simulation is in good agreement 
+    with the structure of the same complex determined in the presence of reducing agent (PDB entry 7BTF). 
+    Structural comparison shows that the protein kinase-like fold in the NiRAN domain shares high similarity 
+    with that of the bacterial protein SELO, a protein kinase that catalyzes the transfer of adenosine 5'-monophosphate 
+    (AMP) to Ser, Thr and Tyr residues of target proteins, consistent with a potential connection between SELO and 
+    SARS-CoV-1 nps12 noted in a previous study. The simulations used the Amber ff99SB-ILDN force field for proteins, 
+    the CHARMM TIP3P model for water. The C- and N-peptide termini capped with amide and acetyl groups respectively. 
+    The missing loops in the published structural models were manually built as extended peptide conformation. 
+    The missing part of Chain D was built through homology modeling using the structure of SARS-CoV-1 polymerase 
+    complex (PDB entry 6NUR). The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. 
+    The interval between frames is 1.2 ns. The simulations were conducted in the NPT ensemble. The structural 
+    similarity search was done using the DALI server, and the SELO structure (PDB entry 6EAC) was the highest ranked 
+    protein in the list.
+creator: D. E. Shaw Research
+organization: DESRES
+models:
+    - 6m71-desres
+proteins:
+    - RdRP
+    - NSP7
+    - NSP8
+structures:
+    - 6m71
+files:
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10917618-structure.tar.gz
+    - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10917618.mp4
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10917618-no-water-zinc-glueCA.tar.gz
+size: 1.7 GB
+length: 10 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - Amber99sb-ildn
+    - TIP3P
+references:
+    - Kirchdoerfer, R.N.; Ward, A.B. Structure of the SARS-CoV nsp12 polymerase bound to nsp7 and nsp8 co-factors. Nat Commun. 2019, 10(1), 2342.
+    - Holm, L. Benchmarking fold detection by DaliLite v.5 Bioinformatics, 2019, 35(24), 5326–5327.
+    - Sreelatha, A.; Yee, S.S.; Lopez, V.A.; Park, B.C.; Kinch, L.; Pilch, S.; Servage, K.A.; Zhang, J.; Jiou, J.; Karasiewicz, M.; Łobocka, M.; Grishin, N.; 
+      Orth, K.; Kucharczyk, R.; Pawłowski, K.; Tomchick, D.R.; Tagliabracci, V.S. Protein AMPylation by an evolutionarily conserved pseudokinase. Cell, 2018, 175(3), 809–821.
+    - MacKerell, A. D.; Bashford, D.; Bellott, M.; Dunbrack, R. L.; Evanseck, J. D.; Field, M. J.; Fischer, S.; Gao, J.; Guo, H.; Ha, S.; Joseph-McCarthy, D.; Kuchnir, L.; 
+      Kuczera, K.; Lau, F. T.; Mattos, C.; Michnick, S.; Ngo, T.; Nguyen, D. T.; Prodhom, B.; Reiher, W. E.; Roux, B.; Schlenkrich, M.; Smith, J. C.; Stote, R.; Straub, J.; 
+      Watanabe, M.; Wiorkiewicz-Kuczera, J.; Yin, D.; Karplus, M. All-atom empirical potential for molecular modeling and dynamics studies of proteins. J. Phys. Chem. B 1998,
+      102(18), 3586–3616.
