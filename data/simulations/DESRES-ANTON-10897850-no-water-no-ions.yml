@@ -1,0 +1,42 @@
+type: md
+title: DESRES-ANTON-10897850 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein, no water or ions
+description: >
+    A 10 µs simulation of the trimeric SARS-CoV-2 spike glycoprotein. System was initiated in a partially opened state (PDB entry 6VYB)
+    which exhibited a high degree of conformational heterogeneity. In particular, the partially detached receptor binding domain sampled 
+    a variety of orientations, and further detached from the S2 fusion machinery. The simulation used the Amber ff99SB-ILDN force field for 
+    proteins, the CHARMM  TIP3P model for water, and the generalized Amber force field for glycosylated asparagine. The C- and N-peptide termini, 
+    including those exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
+    The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. The total number of atoms in the system was 715439 for
+    the closed state. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble. We have released new
+    versions of these simulations with enhancements to the spike protein model in [DESRES-ANTON-11021566,11021571]
+    (https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/#DESRES-ANTON-11021566), since the one used in this
+    simulation is incomplete in some of the disordered loop regions (i.e., resid 455 to 461, resid 469 to 488) and in glycan chains.
+creator: D. E. Shaw Research
+organization: DESRES
+models:
+    - 6vyb-desres
+proteins:
+    - spike
+structures:
+    - 6vyb
+files:
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10897850-structure.tar.gz
+    - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10897850.mp4
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10897850-no-water-no-ion-glueCA.tar.gz
+size: 4.1 GB
+length: 10 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - Amber99sb-ildn
+    - TIP3P
+    - GAFF
+references:
+    - Walls, A. C.; Park, Y. J.; Tortorici, M. A.; Wall, A.; McGuire, A. T.; Veesler, D. Structure, Function, and Antigenicity of the SARS-CoV-2 Spike Glycoprotein. Cell 2020, in press.
+    - MacKerell, A. D.; Bashford, D.; Bellott, M.; Dunbrack, R. L.; Evanseck, J. D.; Field, M. J.; Fischer, S.; Gao, J.; Guo, H.; Ha, S.; Joseph-McCarthy, D.; Kuchnir, L.; Kuczera, K.; 
+      Lau, F. T.; Mattos, C.; Michnick, S.; Ngo, T.; Nguyen, D. T.; Prodhom, B.; Reiher, W. E.; Roux, B.; Schlenkrich, M.; Smith, J. C.; Stote, R.; Straub, J.; Watanabe, M.; 
+      Wiorkiewicz-Kuczera, J.; Yin, D.; Karplus, M. All-atom empirical potential for molecular modeling and dynamics studies of proteins. J. Phys. Chem. B 1998, 102(18), 3586–3616.
+    - Wang, J.; Wolf, R. M.; Caldwell, J. W.; Kollman, P. A.; Case, D. A. Development and testing of a general Amber force field. J. Comput. Chem. 2004, 25(9), 1157–1174.

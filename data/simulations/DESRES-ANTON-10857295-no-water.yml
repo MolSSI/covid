@@ -1,0 +1,40 @@
+type: md
+title: DESRES-ANTON-10857295 75 µs conventional MD simulation of a chimeric RBD in complex with ACE2, no water or ions
+description: >
+    SARS-CoV-2 attachment to host cells is mediated by a protein-protein interaction between the 
+    receptor-binding domain (RBD) of the SARS-CoV-2 spike and the human ACE2 receptor. We performed 
+    a 75 µs conventional MD simulation of a chimeric RBD in complex with ACE2 (PDB entry 6VW1). 
+    In the simulation the complex was stable, and no dissociation events were observed. We provide below 
+    the conventional MD simulation. The complex model was solvated in a ~140 Å box of 200 mM NaCl and water, 
+    and parameterized with the DES-Amber protein and ion force field, the TIP4P-D water model, and an 
+    in-house force field derived from GAFF. Simulations were performed under the NPT ensemble at 300 K. 
+    During the AWE simulations, we used a 100.8 ps resampling interval to enhance the sampling of (i) 
+    the distance between the RBD and ACE2 centers of mass, (ii) the total number of atomic contacts 
+    between the RBD and ACE2, and (iii) the complex pRMSD (the square root of the product of the RMSD 
+    of the RBD after aligning on ACE2 and the RMSD of ACE2 after aligning on the RBD).
+creator: D. E. Shaw Research
+organization: DESRES
+proteins:
+    - RBD
+    - ACE2
+structures:
+    - 6vw1
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10857295-protein-zinc.tar.gz
+size: 104 GB
+length: 75 µs
+ensemble: NPT
+temperature: 300
+pressure: 1
+solvent: water
+salinity: 0.2
+forcefields:
+    - DES-Amber
+    - TIP4P-D
+    - Modified GAFF
+references:
+    - Piana, S.; Robustelli, P.; Tan, D; Chen, S; Shaw, D. E. Development of a Force Field for the Simulation of Single-Chain Proteins and Protein 
+      Protein Complexes. J. Chem. Theory Comput. 2020, in press.
+    - Shang, J.; Ye, G.; Shi, K.; Wan, Y.; Luo, C.; Aihara, H.; Geng, Q.; Auerbach, A.; Liet, F. Structural basis for receptor recognition by the 
+      novel coronavirus from Wuhan. Research Square preprint 2020.
+    - Piana, S.; Donchev, A. G.; Robustelli, P.; Shaw, D. E. Water dispersion interactions strongly influence simulated structural properties of 
+      disordered protein states. J. Phys. Chem. B 2015, 119(16), 5113–5123.
