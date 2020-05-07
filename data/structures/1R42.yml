@@ -1,0 +1,11 @@
+pdbid: 1R42
+method: X-Ray Diffraction
+resolution: 2.2
+targets:
+  - spike binding
+proteins:
+  - ACE2
+organisms:
+  - human
+images:
+  - images/protein_renderings/1R42.png
