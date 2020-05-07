@@ -10,7 +10,7 @@ description: >
 creator: D. E. Shaw Research
 organization: DESRES
 models:
-    - 1r42-desres
+    - desres-1r42
 proteins:
     - ACE2
 structures:
