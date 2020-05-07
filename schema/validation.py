@@ -89,8 +89,8 @@ class ValidSimulations(str, Enum):
     md = 'md'
     mc = 'mc'
     mdcg = 'md-cg'
+    mdwe = 'md-we'
     mccg = 'mc-cg'
-
 
 class ValidEnsembles(str, Enum):
     NPT = 'NPT'
