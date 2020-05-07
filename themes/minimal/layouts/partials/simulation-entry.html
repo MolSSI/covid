@@ -6,7 +6,7 @@
 {{ $localScratch.Set "target_map" (partial "target-map" .context) }}
 {{ $localScratch.Set "protein_map" (partial "protein-map" .context) }}
 {{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
-{{ $md_type_map := dict "md" "Molecular Dynamics" "mc" "Monte Carlo" "mdcg" "Coarse Grained Molecular Dynamics" "mdmc" "Coarse Grained Monte Carlo" "docking" "Docking" }}
+{{ $md_type_map := dict "md" "Molecular Dynamics" "mc" "Monte Carlo" "mdcg" "Coarse Grained Molecular Dynamics" "mdwe" "Weighted Ensemble Molecular Dynamics" "mccg" "Coarse Grained Monte Carlo" "docking" "Docking" }}
 
 <div class="col col-9">
 
