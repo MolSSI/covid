@@ -1,5 +1,5 @@
 type: md
-title: DESRES-ANTON-10875753 10 µs simulation trajectory of the human ACE2 ectodomain, no water or ions
+title: DESRES-ANTON-10875753 10 µs simulation trajectory of the human ACE2 ectodomain in aqueous solution
 description: >
     10 µs simulation trajectory of the human ACE2 ectodomain was initiated in an apo open state (PDB entry 1R42). 
     The simulations used the Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and 
