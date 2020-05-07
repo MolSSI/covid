@@ -1,0 +1,44 @@
+type: md
+title: DESRES-ANTON-10875754 10 µs simulation trajectory of the human ACE2 ectodomain in aqueous solution
+description: >
+    10 µs simulation trajectory of the human ACE2 ectodomain was initiated in an inhibitor-bound closed state (PDB entry 1R4L). 
+    The simulations used the Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and 
+    the generalized Amber force field for glycosylated asparagine. The C- and A- peptide termini, including those 
+    exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
+    The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 
+    1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.
+creator: D. E. Shaw Research
+organization: DESRES
+models:
+    - desres-1r4l
+proteins:
+    - ACE2
+structures:
+    - 1r4l
+files:
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875754-structure.tar.gz
+    - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10875754.mp4
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875754-all-glueCA.tar.gz
+size: 9.8 GB
+length: 10 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - Amber99sb-ildn
+    - TIP3P
+    - GAFF
+references:
+    - Lindorff-Larsen, K.; Piana, S.; Palmo, K.; Maragakis, P.; Klepeis, J. L.; Dror, R. O.; Shaw, D. E. Improved side-chain torsion potentials 
+      for the Amber ff99SB protein force field. Proteins 2010, 78(8), 1950–1958.
+    - MacKerell, A. D.; Bashford, D.; Bellott, M.; Dunbrack, R. L.; Evanseck, J. D.; Field, M. J.; Fischer, S.; Gao, J.; Guo, H.; Ha, S.; 
+      Joseph-McCarthy, D.; Kuchnir, L.; Kuczera, K.; Lau, F. T.; Mattos, C.; Michnick, S.; Ngo, T.; Nguyen, D. T.; Prodhom, B.; Reiher, W. E.; 
+      Roux, B.; Schlenkrich, M.; Smith, J. C.; Stote, R.; Straub, J.; Watanabe, M.; Wiorkiewicz-Kuczera, J.; Yin, D.; Karplus, M. All-atom 
+      empirical potential for molecular modeling and dynamics studies of proteins. J. Phys. Chem. B 1998, 102(18), 3586–3616.
+    - Wang, J.; Wolf, R. M.; Caldwell, J. W.; Kollman, P. A.; Case, D. A. Development and testing of a general Amber force field. J. Comput. 
+      Chem. 2004, 25(9), 1157–1174.
+    - Towler, P.; Staker, B.; Prasad, S.G.; Menon, S.; Tang, J.; Parsons, T.; Ryan, D.; Fisher, M.; Williams, D.; Dales, N.A.; Patane, M.A.; 
+      Pantoliano, M.W. ACE2 X-ray structures reveal a large hinge-bending motion important for inhibitor binding and catalysis. J. Biol. Chem., 
+      2004; 279(17); 17996–18007.
