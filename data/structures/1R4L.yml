@@ -1,0 +1,11 @@
+pdbid: 1R4L
+method: X-Ray Diffraction
+resolution: 3
+targets:
+  - spike binding
+proteins:
+  - ACE2
+organisms:
+  - human
+images:
+  - images/protein_renderings/1R4L.png
