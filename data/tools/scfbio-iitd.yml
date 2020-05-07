@@ -1,0 +1,12 @@
+name: Lipinski Rule of Five
+url: http://www.scfbio-iitd.res.in/software/drugdesign/lipinski.jsp
+description: >
+  Lipinski rule of 5 helps in distinguishing between drug like and non drug like molecules. It predicts high probability of success or 
+  failure due to drug likeness for molecules complying with 2 or more of the following rules.
+institution: Indian Institute of Technology
+type: 
+  - analysis
+input_data: 
+  - structure
+output:
+  - analytics

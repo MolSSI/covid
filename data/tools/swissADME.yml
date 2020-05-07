@@ -1,0 +1,12 @@
+name: SwissADME
+url: http://www.swissadme.ch
+description: >
+  This website allows you to compute physicochemical descriptors as well as to predict ADME parameters, pharmacokinetic properties, 
+  druglike nature and medicinal chemistry friendliness of one or multiple small molecules to support drug discovery.
+institution: Swiss Institute of Bioinformatics
+type: 
+  - analysis
+input_data: 
+  - structure
+output:
+  - analytics
