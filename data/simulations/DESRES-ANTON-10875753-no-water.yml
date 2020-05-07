@@ -10,16 +10,16 @@ description: >
 creator: D. E. Shaw Research
 organization: DESRES
 models:
-    - 6vyb-desres
+    - 1r42-desres
 proteins:
-    - spike
+    - ACE2
 structures:
-    - 6vyb
+    - 1r42
 files:
-    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875753-no-water-zinc-glueCA.tar.gz
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875753-structure.tar.gz
     - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10875753.mp4
-trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10897850-no-water-no-ion-glueCA.tar.gz
-size: 4.1 GB
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875753-no-water-zinc-glueCA.tar.gz
+size: 851 MB
 length: 10 µs
 ensemble: NPT
 temperature: 310
