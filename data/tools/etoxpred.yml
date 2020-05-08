@@ -1,0 +1,9 @@
+name: eToxPred
+url: https://github.com/pulimeng/eToxPred
+description: >
+  eToxPred is a machine learning tool to reliably estimate the toxicity and synthetic accessibility of small organic
+  compounds. Has links to pre-trained data and instructions for how to train your own data sets. Driven by Python
+  and Theano for easy use and accessibility.
+institute: LSU
+type:
+  - machine learning

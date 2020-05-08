@@ -70,7 +70,7 @@
                 {{ end }}
 
                 {{ if $localScratch.Get "has_content" }}
-                    <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
                     <!-- Finally Simulations -->
                     {{ range sort $.Site.Data.simulations "rating" "desc" }}
                         {{ $protein := $localScratch.Get "protein" }}
@@ -91,7 +91,7 @@
                 {{ end }}
             {{ end }}
             {{ if $localScratch.Get "has_content" }}
-                <h3 align="left"><u>- No Targets Recorded </u></h3>
+                <h3 align="left"><u>No Targets Recorded </u></h3>
                 <!-- Finally Structures -->
                 {{ range sort $.Site.Data.simulations "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
@@ -130,7 +130,7 @@
                 {{ end }}
 
                 {{ if $localScratch.Get "has_content" }}
-                    <h3 align="left"><u>- <a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
                     <!-- Finally Simulations -->
                     {{ range sort $.Site.Data.simulations "rating" "desc" }}
                         {{ $protein := $localScratch.Get "protein" }}
@@ -151,7 +151,7 @@
                 {{ end }}
             {{ end }}
             {{ if $localScratch.Get "has_content" }}
-                <h3 align="left"><u>- No Targets Recorded </u></h3>
+                <h3 align="left"><u>No Targets Recorded </u></h3>
                 <!-- Finally Structures -->
                 {{ range sort $.Site.Data.simulations "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}

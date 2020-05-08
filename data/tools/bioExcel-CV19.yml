@@ -1,4 +1,4 @@
-name: Modesto
+name: BioExcel-CV19 Web-Based Trajectory Analyzer
 url: https://bioexcel-cv19.bsc.es
 description: >
   Platform designed to provide web-access to atomistic-MD trajectories for macromolecules involved in the COVID-19 disease. 
@@ -17,4 +17,3 @@ output:
   - analytics 
   - structure
   - trajectory
-api: https://bioexcel-cv19.bsc.es/api/rest/docs/#/files

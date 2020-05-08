@@ -1,0 +1,9 @@
+name: ASKCOS
+url: http://askcos.mit.edu/
+description: >
+  MIT has created a website which hosts a number of computational tools to assist in synthetic planning and other
+  aspects of organic chemistry. Resources include: One-step Retrosynthesis, Synthesis Plan Tree Builder,
+  Context Recommendations, Forward Prediction, Reaction Evaluation, SCSore Evaluator, Buyable Look-Up, and Drawing
+institute: MIT
+type:
+  - machine learning

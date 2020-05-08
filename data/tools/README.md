@@ -14,8 +14,8 @@ description: (required)
 organization: (optional)
 institution: (optional)
 lab: (optional)
-type: (required) one or more of [analysis, construction]
-input_data: (required) one or more of [structure, trajectory]
-output: (required) one or more of [visualization, analytics, structure, trajectory]
+type: (required) one or more of [analysis, construction, workflows, machine learning, productivity]
+input_data: (required if type has "analysis" or "construction") one or more of [structure, trajectory]
+output: (required if type has "analysis" or "construction") one or more of [visualization, analytics, structure, trajectory]
 api: (optional) 
 ```

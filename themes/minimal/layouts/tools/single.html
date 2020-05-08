@@ -9,8 +9,22 @@
         <h4>{{ .Description }}</h4>
                 
         <hr class="hr-thick">
-        {{ range $.Site.Data.tools  }}
-            {{ partial "tools-data.html" (dict "tools" . "context" $) }}
+        {{ range $type := slice "machine learning" "analysis" "construction" "workflows" "productivity" }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range $.Site.Data.tools  }}
+                {{ if in .type $type }}
+                    {{ $localScratch.Set "has_content" true  }}
+                {{ end }}
+            {{ end }}
+            {{ if ($localScratch.Get "has_content") }}
+                <h3 align="left" class="anchor" id="{{ $type | anchorize }}"><b>{{$type | title}} Tools</b></h3>
+                {{ range $.Site.Data.tools  }}
+                    {{ if in .type $type }}
+                        {{ partial "tools-entry.html" (dict "tool" . "context" $) }}
+                    {{ end }}
+                {{ end }}
+                <hr class="hr-thick">
+            {{ end }}
         {{ end }}
     </div>
 </main>
