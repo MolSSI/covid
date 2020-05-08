@@ -1,0 +1,8 @@
+name: 3D-DenseNet-ChemShift
+url: https://github.com/THGLab/3D-DenseNet-ChemShift
+description: >
+  A Multi-Resolution 3D-DenseNet for Chemical Shift Prediction in NMR Crystallography and for molecular solids
+institution: UC Berkeley
+lab: Teresa Head-Gordon
+type:
+  - machine learning

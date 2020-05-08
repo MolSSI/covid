@@ -313,8 +313,50 @@ class ContributorMemberModel(BaseModel):
 class ContributorsModel(BaseModel):
     name: Optional[str]
     members: List[ContributorMemberModel]
-                
-    
+
+
+class ToolsTypeModel(str, Enum):
+    analysis = 'analysis'
+    construction = 'construction'
+    productivity = 'productivity'
+    workflows = 'workflows'
+    machine_learning = 'machine learning'
+
+
+class ToolsInputModel(str, Enum):
+    structure = 'structure'
+    trajectory = 'trajectory'
+
+
+class ToolsOutputModel(str, Enum):
+    structure = 'structure'
+    trajectory = 'trajectory'
+    visualization = 'visualization'
+    analytics = 'analytics'
+
+
+class ToolsModel(BaseModel):
+    name: str
+    url: AnyUrl
+    description: str
+    organization: Optional[str]
+    institution: Optional[str]
+    lab: Optional[str]
+    type: List[ToolsTypeModel]
+    input_data: Optional[List[ToolsInputModel]]
+    output: Optional[List[ToolsOutputModel]]
+    api: Optional[AnyUrl]
+
+    @validator("input_data", "output", always=True)
+    def tools_io_data_check(cls, v, values, field):
+        if ((ToolsTypeModel.analysis in values.get('type') or ToolsTypeModel.construction in values.get('type'))
+                and not v):
+            raise ValueError(f'{field} can only be null/not present/empty if type does not have '
+                             f'"{ToolsTypeModel.analysis}" or "{ToolsTypeModel.construction}"'
+                             f'Instead, types are {values.get("type")}')
+        return v
+
+
 def filter_yaml(string, substr):
     """ Function to filter for strings that contain one or more of the substrings.
 
@@ -371,7 +413,8 @@ if __name__ == "__main__":
                    'teams': TeamsModel,
                    'glossary': GlossaryModel,
                    'organizations': OrganizationModel,
-                   'contributors': ContributorsModel
+                   'contributors': ContributorsModel,
+                   'tools': ToolsModel
                    }
 
     total_errors = 0

@@ -1,0 +1,10 @@
+name: UCBShift
+url: https://github.com/THGLab/CSpred
+description: >
+  UCBShift is a program for predicting chemical shifts for backbone atoms and β-carbon of a protein in solution.
+  It utilizes a machine learning module that makes predictions from features extracted from the 3D structures of
+  the proteins.
+institution: UC Berkeley
+lab: Teresa Head-Gordon
+type:
+  - machine learning

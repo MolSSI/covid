@@ -1,0 +1,14 @@
+name: Covid-19 Workflow Hub
+url: https://covid19.workflowhub.eu
+description: >
+  The COVID-19 Workflow Hub is a workflow system agnostic repository of workflows in native and standardised form. It
+  provides standardised workflow identifiers and metadata descriptions needed for workflow discovery, reuse,
+  preservation, interoperability and monitoring and metadata harvesting using standard protocols.
+
+
+  This COVID-19 research centric one provides workflow snapshot preservation, publishing, citation and monitoring,
+  credit claiming, and workflows part of the scholarly communication landscape.
+institution:  EOSC-Life and collaborators
+type:
+  - workflows
+api: https://bioexcel-cv19.bsc.es/api/rest/docs/#/files

@@ -110,6 +110,10 @@ ignoreFiles = ["README.md$"]
         name = "Drug Databases"
         weight = 7
 
+[[menu.main]]
+    url = "/tools"
+    name = "Tools"
+    weight = 8
 
 [[menu.main]]
     hasChildren = true
