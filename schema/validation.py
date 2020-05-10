@@ -189,7 +189,7 @@ class SimulationsModel(BaseModel):
     organization: Optional[str]
     lab: Optional[str]
     institute: Optional[str]
-    models: List[str]
+    models: Optional[List[str]]
     proteins: List[ValidProteins]
     structures: List[str]
     rating: Optional[int]
@@ -198,7 +198,7 @@ class SimulationsModel(BaseModel):
     size: str
     length: str
     ensemble: ValidEnsembles
-    temperature: float
+    temperature: Optional[float]
     pressure: Optional[float]
     solvent: str
     salinity: Optional[float]
