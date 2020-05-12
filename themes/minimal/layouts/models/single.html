@@ -46,6 +46,33 @@
 
     <!-- Iterate over all models in same grouping as Structures-->
 
+    <!-- Viron -->
+    {{ $header := "Models of Viron Particle" }}
+    {{ $viron_name := $.Site.Data.proteins.viron.name }}
+    <h2 class="anchor" id='{{ $viron_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if eq .domain "viron" }}  <!-- Viron specific -->
+            {{ $localScratch.Set "protein" .protein }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.models "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if (in .proteins $protein) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                {{ range sort $.Site.Data.model "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if (in .proteins $protein) }}
+                        {{ partial "model-entry" (dict "model" . "protein" $protein "target" "all" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
     <!-- Viral -->
     <hr class="hr-thick">
     {{ range $domain_keys }}
