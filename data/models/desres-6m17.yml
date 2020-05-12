@@ -1,0 +1,16 @@
+name: "SARS-CoV-2 RBD/ACE2-B0AT1 complex in aqueous solution"
+pdbids:
+  - 6m17
+proteins:
+  - ACE2
+  - RBD
+  - BoAT1
+organism:
+  - human
+  - SARS-CoV-2  
+description: >
+  The C- and A- peptide termini, including those exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
+  The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 1.2 ns.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10905033-structure.tar.gz
+creator: DESRES
