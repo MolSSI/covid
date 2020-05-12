@@ -10,12 +10,13 @@ description: >
 creator: D. E. Shaw Research
 organization: DESRES
 models:
-    - desres-6vw1
+    - desres-6m17
 proteins:
     - ACE2
     - RBD
+    - BoAT1
 structures:
-    - 6vw1
+    - 6m17
 files:
     - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10905033-structure.tar.gz
     - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10905033.mp4
