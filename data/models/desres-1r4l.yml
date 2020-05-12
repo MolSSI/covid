@@ -1,0 +1,14 @@
+name: "Human ACE2 ectodomain in aqueous solution (inhibitor-bound closed state)"
+pdbids:
+  - 1r4l
+proteins:
+  - ACE2
+organism:
+  - human
+description: >
+  The C- and A- peptide termini, including those exposed due to missing loops in the published structural models, 
+  are capped with amide and acetyl groups respectively. The system was neutralized and salted with NaCl, with a 
+  final concentration of 0.15 M. 
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875754-structure.tar.gz
+creator: DESRES
