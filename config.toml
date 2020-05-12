@@ -29,7 +29,7 @@ ignoreFiles = ["README.md$"]
     [[menu.main]]
         parent = "Biology"
         url = "/proteins/"
-        name = "Proteins and Viron"
+        name = "Proteins and Virion"
         weight = 1
 
     [[menu.main]]

@@ -41,15 +41,15 @@
     </div>
 
     <!-- List all Structures from data/targets/ -->
-    <!-- Sorintg by Viron/Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Structure Star rating -> Model Star Rating -->
+    <!-- Sorting by Virion/Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Structure Star rating -> Model Star Rating -->
     <!-- (range where) does not work for this atm, using (range)>(if) -->
 
-    <!-- Viron -->
-    {{ $header := "Structures of Viron Particle" }}
-    {{ $viron_name := $.Site.Data.proteins.viron.name }}
-    <h2 class="anchor" id='{{ $viron_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    <!-- Virion -->
+    {{ $header := "Structures of Virion Particle" }}
+    {{ $virion_name := $.Site.Data.proteins.virion.name }}
+    <h2 class="anchor" id='{{ $virion_name | anchorize }}'><u>{{ $header | title }}</u></h2>
     {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
-        {{ if eq .domain "viron" }}  <!-- Viron specific -->
+        {{ if eq .domain "virion" }}  <!-- Virion specific -->
             {{ $localScratch.Set "protein" .protein }}
             {{ $localScratch.Set "has_content" false }}
             {{ range sort $.Site.Data.structures "rating" "desc" }}
