@@ -48,17 +48,31 @@
         <area shape="rect" coords="570,350, 646,429" href='{{ $pmap.NSP10 }}' alt="nsp10">
         <area shape="poly" coords="873,386, 874,395, 876,530, 979,530, 978,466, 910,385" href='{{ $pmap.spike }}' alt="spike">
         <area shape="rect" coords="657,339, 744,413" href='{{ $pmap.Helicase }}' alt="Helicase">
+        <area shape="rect" coords="0,176, 118,450" href='{{ $pmap.virion }}' alt="Virion">
+        <area shape="rect" coords="1195,0, 1285,151" href='{{ $pmap.virion }}' alt="Virion">
+        <area shape="rect" coords="70,530, 142,603" href='{{ $pmap.virion }}' alt="Virion">
     </map>
 </main>
 
     <!-- List all Proteins from data/targets/ -->
     <!-- (range where) does not work for this atm, using (range)>(if) -->
 <main>
+
+    <!-- Virion -->
+    <hr class="hr-thick">
+    {{ $header := "Virion Particle" }}
+    <h2 class="anchor" id='{{ $header | anchorize }}'>{{ $header | title }}</h2>
+    {{ range $.Site.Data.proteins  }}
+        {{ if eq .domain "virion" }}
+            {{ partial "protein-entry.html" (dict "protein" . "context" $) }}
+        {{ end }}
+    {{ end }}
+
     <!-- Viral -->
     <hr class="hr-thick">
     <h2 class="a">Viral Proteins</h2>
     {{ range $domain_keys }}
-        {{ $header := print "Models of Viral " (index $domain_titles .) " Proteins" }}
+        {{ $header := print "Viral " (index $domain_titles .) " Proteins" }}
         <h3 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h3>
         {{ range (index $viral_sort .) }}
             {{ partial "protein-entry.html" (dict "protein" . "context" $) }}

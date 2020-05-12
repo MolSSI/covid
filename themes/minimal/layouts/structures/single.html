@@ -41,9 +41,37 @@
     </div>
 
     <!-- List all Structures from data/targets/ -->
-    <!-- Sorintg by Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Structure Star rating -> Model Star Rating -->
+    <!-- Sorting by Virion/Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Structure Star rating -> Model Star Rating -->
     <!-- (range where) does not work for this atm, using (range)>(if) -->
 
+    <!-- Virion -->
+    {{ $header := "Structures of Virion Particle" }}
+    {{ $virion_name := $.Site.Data.proteins.virion.name }}
+    <h2 class="anchor" id='{{ $virion_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if eq .domain "virion" }}  <!-- Virion specific -->
+            {{ $localScratch.Set "protein" .protein }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.structures "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if (in .proteins $protein) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if (in .proteins $protein) }}
+                        {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" "all" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Virus -->
     <hr class="hr-thick">
     {{ range $domain_keys }}
         {{ $header := print "Structures of Viral " (index $domain_titles .) " Proteins" }}

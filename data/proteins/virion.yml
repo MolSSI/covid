@@ -1,0 +1,15 @@
+protein: virion
+name: SARS-CoV-2 Virion
+description: The complete virion particle consisting of all proteins and interactions in the Viral categories
+organism: SARS-CoV-2
+targets:
+  - 3CLpro protease activity
+  - host immune response
+  - nsp13 helicase activity
+  - PLpro protease activity
+  - spike binding
+  - spike cleavage
+  - viral fusion
+  - viral replication
+image: images/sars-cov-2-virion.png
+domain: virion

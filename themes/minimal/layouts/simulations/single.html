@@ -5,7 +5,7 @@
 {{ $localScratch := newScratch }}
 {{ $target_map := partial "target-map" . }}
 {{ $protein_map := partial "protein-map" . }}
-{{ $structure_map := partial "structure-map" . }}
+{{ $sim_map := partial "sim-map" . }}
 {{ $domain_sort := partial "master-domain-index" . }}
 {{ $domain_keys := $domain_sort.keys }}
 {{ $domain_titles := $domain_sort.titles }}
@@ -33,17 +33,42 @@
 
         <h4>Quick Navigation</h4>
         <p>
-            {{ range $pname, $plink := $structure_map }}
+            {{ range $pname, $plink := $sim_map }}
             <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
             {{ end }}
         </p>
     </div>
 
-    <!-- List all Simulations from data/targets/ -->
-    <!-- Sorting by Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Model Star Rating -->
-    <!-- (range where) does not work for this atm, using (range)>(if) -->
+    <!-- Iterate over all simulations in same grouping as Structures-->
 
+    <!-- Virion -->
+    {{ $header := "Simulations of Virion Particle" }}
+    {{ $virion_name := $.Site.Data.proteins.virion.name }}
+    <h2 class="anchor" id='{{ $virion_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if eq .domain "virion" }}  <!-- Virion specific -->
+            {{ $localScratch.Set "protein" .protein }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if (in .proteins $protein) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if (in .proteins $protein) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "all" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        {{ end }}
+    {{ end }}
 
+    <!-- Virus -->
     <hr class="hr-thick">
     {{ range $domain_keys }}
         {{ $header := print "Simulations of Viral " (index $domain_titles .) " Proteins" }}
