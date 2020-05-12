@@ -18,6 +18,7 @@ description: >
     The interval between frames is 1.2 ns. The simulations were conducted in the NPT ensemble. The structural 
     similarity search was done using the DALI server, and the SELO structure (PDB entry 6EAC) was the highest ranked 
     protein in the list.
+creator: D. E. Shaw Research
 organization: DESRES
 models:
     - 6m71-desres
