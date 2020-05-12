@@ -24,6 +24,8 @@ proteins:
     - ACE2
 structures:
     - 6vw1
+models:
+    - desres-6vw1
 files:
     - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10895671-bindingpaths.tar.gz
     - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10895671.mp4
