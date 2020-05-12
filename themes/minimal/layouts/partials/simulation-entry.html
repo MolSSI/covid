@@ -22,15 +22,7 @@
         
 <!-- Author -->
         <h5>{{ .simulation.creator }}</h5>
-        {{ if .simulation.organization }}
-        <p>Organization: {{ .simulation.organization }}</p>
-        {{ end }}
-        {{ if .simulation.institution }}
-        <p>Institution: {{ .simulation.institution }}</p>
-        {{ end }}
-        {{ if .simulation.lab }}
-        <p>Lab: {{ .simulation.lab }}</p>
-        {{ end }}
+        {{ partial "affiliations" .simulation }}
         
         <h5 align="left">{{ .simulation.description | markdownify }}</h5>
 

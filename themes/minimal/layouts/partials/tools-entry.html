@@ -4,20 +4,8 @@
 <!--Name/title-->
 <a href="{{.tool.url}}"><h4 align="center" class="anchor" id='{{ (.tool.name | anchorize) }}'>{{ .tool.name | title }}</h4></a>
 
-<!-- Author/or/institute -->
-<h5 align="center">
-    {{ $localScratch.Set "objs" slice }}
-    {{ if .tool.organization }}
-        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (print "Organization: " (.tool.organization | markdownify))) }}
-    {{ end }}
-    {{ if .tool.institution }}
-        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (print "Institution: " (.tool.institution | markdownify))) }}
-    {{ end }}
-    {{ if .tool.lab }}
-        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (print "Lab: " (.tool.lab | markdownify))) }}
-    {{ end }}
-    {{ delimit ($localScratch.Get "objs") " -- " }}
-</h5>
+<!-- Author/org/institute -->
+{{ partial "affiliations" .tool }}
 
 <!-- Tool description -->
 <h5 align="justify">{{ .tool.description | markdownify }}</h5>

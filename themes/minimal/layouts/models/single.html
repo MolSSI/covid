@@ -61,7 +61,7 @@
                 {{ end }}
             {{ end }}
             {{ if $localScratch.Get "has_content" }}
-                {{ range sort $.Site.Data.model "rating" "desc" }}
+                {{ range sort $.Site.Data.models "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ if (in .proteins $protein) }}
                         {{ partial "model-entry" (dict "model" . "protein" $protein "target" "all" "context" $) }}

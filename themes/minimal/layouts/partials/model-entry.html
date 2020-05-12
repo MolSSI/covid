@@ -18,6 +18,7 @@
 
       <!-- Author -->
       <h5 align="center">{{ .model.creator }}</h5>
+      {{ partial "affiliations" .model }}
 
       <!-- Proteins represented -->
       <h5 align="left"><b>Represented Proteins: </b>
@@ -32,11 +33,16 @@
       
       <b>Model: </b><a href="{{ .model.url }}"><kbd class="alert-success">Files</kbd></a>
       <b>|
+
       Source Structure PDBs:</b>
-      {{ range .model.pdbids }}
-        {{ $pdb := upper . }}
-        {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
-        <a href="{{ $url }}"><kbd class="alert-warning">{{ $pdb }}</kbd></a>
+      {{ if .model.pdbids }}
+          {{ range .model.pdbids }}
+            {{ $pdb := upper . }}
+            {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
+            <a href="{{ $url }}"><kbd class="alert-warning">{{ $pdb }}</kbd></a>
+          {{ end }}
+      {{ else }}
+          ---
       {{ end }}
       <!-- Show 3D structure using 3Dmol.js : see https://3dmol.csb.pitt.edu/ -->
       {{ if .model.pdb_url }}

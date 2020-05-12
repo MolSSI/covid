@@ -1,0 +1,16 @@
+{{ $localScratch := newScratch }}
+
+<!-- Author/org/institute -->
+<h5 align="center">
+    {{ $localScratch.Set "objs" slice }}
+    {{ if .organization }}
+        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (.organization | markdownify)) }}
+    {{ end }}
+    {{ if .institution }}
+        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (.institution | markdownify)) }}
+    {{ end }}
+    {{ if .lab }}
+        {{ $localScratch.Set "objs" ($localScratch.Get "objs" | append (.lab | markdownify)) }}
+    {{ end }}
+    {{ delimit ($localScratch.Get "objs") " -- " }}
+</h5>
