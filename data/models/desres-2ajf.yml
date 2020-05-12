@@ -1,0 +1,15 @@
+name: "Structure of SARS coronavirus spike receptor-binding domain complexed with its receptor in aqueous solution"
+pdbids:
+  - 2ajf
+proteins:
+  - ACE2
+  - RBD
+organism:
+  - human
+  - SARS-CoV-1
+description: >
+  The C- and A- peptide termini, including those exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
+  The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 1.2 ns.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10875775-structure.tar.gz
+creator: DESRES
