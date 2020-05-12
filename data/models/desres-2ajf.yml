@@ -6,7 +6,7 @@ proteins:
   - RBD
 organism:
   - human
-  - SARS-CoV-1
+  - SARS-CoV
 description: >
   The C- and A- peptide termini, including those exposed due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. 
   The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 1.2 ns.

@@ -4,7 +4,7 @@ proteins:
   - RBD
   - ACE2
 organisms:
-  - SARS-CoV-1
+  - SARS-CoV
   - human
 targets:
   - spike binding
