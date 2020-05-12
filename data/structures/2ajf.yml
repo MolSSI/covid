@@ -1,0 +1,16 @@
+pdbid: 2AJF
+proteins:
+  - spike
+  - RBD
+  - ACE2
+organisms:
+  - SARS-CoV-1
+  - human
+targets:
+  - spike binding
+annotation: High-resolution cryo-EM structure of the full-length SARS-CoV-1 spike protein bound to human host cell receptor ACE2.
+method: X-Ray Diffraction
+resolution: 2.9
+rating: 
+images:
+  - images/protein_renderings/2AJF.png
