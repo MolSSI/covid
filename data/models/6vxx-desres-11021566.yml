@@ -1,0 +1,14 @@
+name: "Improved trimeric SARS-CoV-2 spike glycoprotein (closed state) in aqueous solution"
+pdbids:
+  - 6vxx
+proteins:
+  - spike
+organism:
+  - SARS-CoV-2
+description: >
+  Solvated structure of the trimeric SARS-CoV-2 spike glycoprotein in closed state.  The C- and N-peptide termini are 
+  capped with amide and acetyl groups respectively. The system was solvated, neutralized and salted with NaCl, with 
+  a final concentration of 0.15 M. 
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-11021566-structure.tar.gz
+creator: DESRES 
