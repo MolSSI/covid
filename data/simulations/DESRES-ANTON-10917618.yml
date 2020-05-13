@@ -1,5 +1,5 @@
 type: md
-title: DESRES-ANTON-10917618 10 µs simulation of SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex, with water
+title: DESRES-ANTON-10917618 10 µs simulation of SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex in aqueous solution
 description: >
     A 10 µs simulation trajectory of the SARS-CoV-2 nsp7-nsp8-nsp12 RNA polymerase complex determined in the 
     absence of reducing agent (PDB entry 6M71). In the simulation, the partially disordered N-terminal region 
