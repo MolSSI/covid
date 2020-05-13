@@ -1,5 +1,5 @@
 type: md
-title: DESRES-ANTON-10897850 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein
+title: DESRES-ANTON-10897850 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein in aqueous solution
 description: >
     A 10 µs simulation of the trimeric SARS-CoV-2 spike glycoprotein. System was initiated in a partially opened state (PDB entry 6VYB)
     which exhibited a high degree of conformational heterogeneity. In particular, the partially detached receptor binding domain sampled 

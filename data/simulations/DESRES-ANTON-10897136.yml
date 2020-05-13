@@ -1,5 +1,5 @@
 type: md
-title: DESRES-ANTON-10897136 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein
+title: DESRES-ANTON-10897136 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein in aqueous solution
 description: >
     A 10 µs simulation of the trimeric SARS-CoV-2 spike glycoprotein. System was initiated in the closed state (PDB entry 6VXX),
     which remained stable. The simulation used the Amber ff99SB-ILDN force field for proteins, the CHARMM 
