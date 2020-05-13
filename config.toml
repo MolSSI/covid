@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "COVID-19 Molecular Structure and Therapeutics Hub"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
-# googleAnalytics = ""
+googleAnalytics = "UA-166331808-1"
 
 # Additional custom parameters
 # Ignore README files meant for GitHub
