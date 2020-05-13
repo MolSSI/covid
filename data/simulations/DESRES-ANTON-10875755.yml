@@ -1,16 +1,16 @@
 type: md
-title: DESRES-ANTON-10875755 10 µs simulation of the SARS-CoV-1-ACE2 complex in aqueous solution
+title: A 10 µs simulation of a SARS-CoV-1 and SARS-CoV-2 chimera-ACE2 complex in aqueous solution
 description: >
     10 µs simulation trajectory of the human ACE2 ectodomain was initiated from ACE2 in complex with with the receptor binding 
-    domain of spike protein SARS-COV-1 (PDB entry 2AJF). The simulations used the Amber ff99SB-ILDN force field for proteins, 
-    the CHARMM TIP3P model for water, and the generalized Amber force field for glycosylated asparagine. The C- and A- peptide 
-    termini, including those exposed due to missing loops in the published structural models, are capped with amide and acetyl 
-    groups respectively. The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval 
-    between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.
+    domain of spike protein from a chimera construct of SARS-CoV-1 and SARS-CoV-2  (PDB entry 6VW1). The simulations used the 
+    Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and the generalized Amber force field for 
+    glycosylated asparagine. The C- and A- peptide termini, including those exposed due to missing loops in the published structural 
+    models, are capped with amide and acetyl groups respectively. The system was neutralized and salted with NaCl, with a final 
+    concentration of 0.15 M. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.
 creator: D. E. Shaw Research
 organization: DESRES
 models:
-    - desres-2ajf
+    - desres-6vw1
 proteins:
     - ACE2
     - RBD
