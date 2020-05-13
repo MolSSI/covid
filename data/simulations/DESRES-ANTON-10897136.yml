@@ -6,7 +6,7 @@ description: >
     TIP3P model for water, and the generalized Amber force field for glycosylated asparagine. The C- and N-peptide termini, including those exposed
     due to missing loops in the published structural models, are capped with amide and acetyl groups respectively. The system was neutralized and
     salted with NaCl, with a final concentration of 0.15 M. The total number of atoms in the system was 566502 for
-    the closed state. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble. We have released new
+    the closed state. The interval between frames is 1.2 ns. The simulation was conducted at 310 K in the NPT ensemble. We have released new
     versions of these simulations with enhancements to the spike protein model in [DESRES-ANTON-11021566,11021571]
     (https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/#DESRES-ANTON-11021566), since the one used in this
     simulation is incomplete in some of the disordered loop regions (i.e., resid 455 to 461, resid 469 to 488) and in glycan chains.
