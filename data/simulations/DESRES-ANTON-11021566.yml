@@ -1,0 +1,41 @@
+type: md
+title: DESRES-ANTON-11021566 10 µs simulation of of the trimeric SARS-CoV-2 spike glycoprotein in aqueous solution
+description: >
+   10 µs simulation trajectory of the trimeric SARS-CoV-2 spike glycoprotein with additional loop structures and glycan chains to improve the 
+   spike protein model originally released in [DESRES-ANTON-[10897136,10897850]](https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/#DESRES-ANTON-10897136). 
+   Trajectory was initiated in the closed state (PDB entry 6VXX). The simulation used the Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and the generalized Amber force field 
+   for glycosylated asparagine. The C- and N-peptide termini are capped with amide and acetyl groups respectively. The system was neutralized 
+   and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 1.2 ns. The simulations were conducted at 310 K 
+   in the NPT ensemble.
+creator: D. E. Shaw Research
+organization: DESRES
+models:
+    - 6vxx-desres-11021566
+proteins:
+    - spike
+structures:
+    - 6vxx
+files:
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-11021566-structure.tar.gz
+    - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-11021566.mp4
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-11021566-all-glueCA.tar.gz
+size: 51 GB
+length: 10 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - Amber99sb-ildn
+    - TIP3P
+    - GAFF
+references:
+    - Walls, A. C.; Park, Y. J.; Tortorici, M. A.; Wall, A.; McGuire, A. T.; Veesler, D. Structure, Function, and Antigenicity of the SARS-CoV-2 Spike Glycoprotein. Cell 2020, in press.
+    - Lindorff-Larsen, K.; Piana, S.; Palmo, K.; Maragakis, P.; Klepeis, J. L.; Dror, R. O.; Shaw, D. E. Improved side-chain torsion potentials for the Amber ff99SB protein force field. 
+      Proteins 2010, 78(8), 1950–1958.
+    - MacKerell, A. D.; Bashford, D.; Bellott, M.; Dunbrack, R. L.; Evanseck, J. D.; Field, M. J.; Fischer, S.; Gao, J.; Guo, H.; Ha, S.; Joseph-McCarthy, D.; Kuchnir, L.; Kuczera, K.; 
+      Lau, F. T.; Mattos, C.; Michnick, S.; Ngo, T.; Nguyen, D. T.; Prodhom, B.; Reiher, W. E.; Roux, B.; Schlenkrich, M.; Smith, J. C.; Stote, R.; Straub, J.; Watanabe, M.; 
+      Wiorkiewicz-Kuczera, J.; Yin, D.; Karplus, M. All-atom empirical potential for molecular modeling and dynamics studies of proteins. J. Phys. Chem. B 1998, 102(18), 3586–3616.
+    - Wang, J.; Wolf, R. M.; Caldwell, J. W.; Kollman, P. A.; Case, D. A. Development and testing of a general Amber force field. J. Comput. Chem. 2004, 25(9), 1157–1174.
+    - Watanabe, Y.; Allen, J.D.; Wrapp, D.; McLellan, J.S.; Crispin, M. Site-specific analysis of the SARS-CoV-2 glycan shield. 2020, bioRxiv: 2020.03.26.010322.
