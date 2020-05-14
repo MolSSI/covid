@@ -1,7 +1,7 @@
 name: SWISS-MODEL NSP10
 url: https://swissmodel.expasy.org/repository/species/2697049#R1AB_SARS2-nsp10
 description: Full SARS-CoV-2 proteome modeled. Follow the Model link for weekly updated models and PDB structures. All models include global and per-residue quality estimates.
-creator: SWISS-MODEL team
+creator: SWISS-MODEL team, Schwede Group
 institution: Swiss Institute of Bioinformatics, Biozentrum, University of Basel
 pdb_url: 
 pdbids:
