@@ -141,3 +141,5 @@ members:
   - name: Voth Group
     url: https://vothgroup.uchicago.edu
     organization: voth-group
+  - name: Schwede Group
+    url: http://schwedelab.org/
