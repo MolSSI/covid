@@ -1,0 +1,10 @@
+name: SWISS-MODEL Protein 7a
+url: https://swissmodel.expasy.org/repository/species/2697049#NS7A_SARS2
+description: Full SARS-CoV-2 proteome modeled. Follow the Model link for weekly updated models and PDB structures. All models include global and per-residue quality estimates.
+creator: SWISS-MODEL team, Schwede Group
+institution: Swiss Institute of Bioinformatics, Biozentrum, University of Basel
+pdb_url: 
+pdbids:
+proteins:
+  - ORF7a
+preprint: 
