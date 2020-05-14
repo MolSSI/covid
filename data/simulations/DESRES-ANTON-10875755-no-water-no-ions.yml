@@ -6,7 +6,8 @@ description: >
     Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and the generalized Amber force field for
     glycosylated asparagine. The C- and A- peptide termini, including those exposed due to missing loops in the published structural
     models, are capped with amide and acetyl groups respectively. The system was neutralized and salted with NaCl, with a final
-    concentration of 0.15 M. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.creator: D. E. Shaw Research
+    concentration of 0.15 M. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.
+creator: D. E. Shaw Research
 organization: DESRES
 models:
     - desres-2ajf
@@ -44,5 +45,3 @@ references:
       2004; 279(17); 17996–18007.
     - Li, F.; Li, W.; Farzan, M.; Harrison, S.C. Structure of SARS coronavirus spike receptor-binding domain complexed with receptor. Science, 
       2005; 309(5742); 1864–1868.
-
-
