@@ -1,0 +1,10 @@
+name: SWISS-MODEL Spike
+url: https://swissmodel.expasy.org/repository/species/2697049#SPIKE_SARS2
+description: Full SARS-CoV-2 proteome based on NC_045512 modeled. Follow the Model link for updated models with latest PDB and quality assessment.
+pdb_url: 
+pdbids:
+proteins:
+  - spike
+creator: Protein Structure Bioinformatics Group, Biozentrum
+institution: SWISS Institute of Bioinformatics
+preprint: 
