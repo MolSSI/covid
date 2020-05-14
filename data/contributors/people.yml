@@ -138,12 +138,6 @@ members:
   - name: Chengxin Zhang
     url: https://zhanglab.ccmb.med.umich.edu/
     organization: zhang-lab
-  - name: Gregory A. Voth
-    url: https://vothgroup.uchicago.edu/greg-voth
-    organization: voth-group
-  - name: Alex Pak
-    url: https://vothgroup.uchicago.edu/group/voth-group-members/alex-pak
-    organization: voth-group
-  - name: Alvin Yu
-    url: https://vothgroup.uchicago.edu/group/voth-group-members/alvin-yu
+  - name: Voth Group
+    url: https://vothgroup.uchicago.edu
     organization: voth-group
