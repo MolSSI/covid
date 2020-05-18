@@ -1,6 +1,6 @@
 name: Solvation Maps for COVID19-related Protein Targets
 url: https://github.com/KurtzmanLab/COVID19_GIST_HSA
-description: >This is a free online repository for sharing GIST/HSA data of COVID19 related protein targets. Currently, we have the GIST/HSA data for 7 targets: 6LU7, 6YB7, 6M03, 6Y84, 6W63, 6JYT and 6W4H.
+description: This is a free online repository for sharing GIST/HSA data of COVID19 related protein targets. Currently, we have the GIST/HSA data for 7 targets: 6LU7, 6YB7, 6M03, 6Y84, 6W63, 6JYT and 6W4H.
 lab: Tom Kurtzman
 institution: Lehman College, City University of New York
 resources:
