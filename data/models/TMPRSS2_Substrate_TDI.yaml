@@ -1,0 +1,9 @@
+name: TMPRSS2 Homology Model With Substrate Overlaid
+description: TMPRSS2 homology model based on the structure of TMPRSS15/Enteropeptidase from PDBID 4DGJ with SARS-CoV-2 substrate peptide overlaid
+url: https://github.com/djhuggins/TMPRSS2
+pdb_url: https://github.com/djhuggins/TMPRSS2/blob/master/HomologyModels/https://github.com/djhuggins/TMPRSS2/blob/master/HomologyModels/TMPRSS2_HomologyModelFrom4DGJ_SubstrateOverlay.pdb
+proteins:
+  - TMPRSS2
+creator: David Huggins
+organization:  Tri-Institutional Therapeutics Discovery Institute 
+preprint: https://chemrxiv.org/articles/Structural_Analysis_of_Experimental_Drugs_Binding_to_the_COVID-19_Target_TMPRSS2/12315449
