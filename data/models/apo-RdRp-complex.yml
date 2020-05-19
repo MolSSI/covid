@@ -1,0 +1,21 @@
+﻿name: "SARS-CoV-2 apo-RdRp complex (nsp12+2*nsp8+nsp7) model for MD simulations"
+description: Model of the apo-protein form of RdRp complex of the SARS-CoV-2 is built using homology modelling with the 
+  SARS-CoV-1 RdRp complex (PDB:6NUR) as template structure (https://doi.org/10.1038/s41467-019-10280-3). The modelled structure
+  shows excellent fit (< 0.6 Å) to the SARS-CoV-2 RdRp complex (PDB:6M71,7BV1) kindly shared with us by Gao et.al.
+  The fitted models have been equilibriated to perform long MD simulations.  
+url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/rdrp_polymerase/
+pdb_url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/rdrp_polymerase/apo-RdRp/apo-RdRp.pdb
+pdbids:
+  - 6NUR
+  - 6M71
+  - 7BTF
+  - 7BV1
+proteins: 
+  - RdRP 
+  - NSP12
+  - NSP7
+  - NSP8
+creator: Vaibhav Modi
+organization: University of Jyväskylä
+institution: Department of Chemistry and Nanoscience Center
+lab: Computational Biomolecular Chemistry Group
