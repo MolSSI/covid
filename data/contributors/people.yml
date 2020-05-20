@@ -143,3 +143,6 @@ members:
     organization: voth-group
   - name: Schwede Group
     url: http://schwedelab.org/
+  - name: David Huggins
+    url: https://www.tritdi.org/
+    organization: tdi
