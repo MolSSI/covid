@@ -146,3 +146,8 @@ members:
   - name: David Huggins
     url: https://www.tritdi.org/
     organization: tdi
+  - name: Kurtzman Group
+    url: https://www.lehman.edu/faculty/tkurtzman/
+  - name: Daniel McKay
+    url: "mailto:dmckay@ventustx.com"
+    organization: ventustx
