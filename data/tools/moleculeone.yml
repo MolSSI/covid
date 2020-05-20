@@ -1,0 +1,8 @@
+name: Molecule.one
+url: https://molecule.one/
+description: >
+   Molecule.one is a computational chemistry platform that helps bring theoretical substances to life.
+   This is a desktop application which can predict the synthetic feasibility/complexity of a drug candidate.
+organization: Molecule.one
+type:
+  - machine learning

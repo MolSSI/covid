@@ -1,0 +1,9 @@
+pdbid: 6M03
+method: "X-Ray Diffraction"
+resolution: "2.2"
+targets:
+  - viral replication
+proteins:
+  - NSP15
+organisms:
+  - SARS-CoV-2

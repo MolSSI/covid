@@ -1,15 +1,19 @@
 target: viral fusion
+name: Inhibition of formation of the viral fusion core
 description: >
   After the S1 subunit is cleaved from the spike protein,
   S2 rearranges itself, bringing two heptad repeats in close,
   stable proximity to form a 6 helical coiled coil known as
   the fusion core. The formation of the fusion core is thought
-  to drive viral-host membrane fusion.
-therapeutic:
+  to drive viral-host membrane fusion, and inhibiting its formation could
+  halt viral entry.
+therapeutic_modalities:
   - peptide
   - antibody
 papers:
-  Xia_2020_Fusion_mechanism:
+  - title: Fusion mechanism of 2019-nCoV and fusion inhibitors targeting HR1 domain in spike protein
     doi: 10.1038/s41423-020-0374-2
-  Kawase_2019_Biochemical_analysis:
+  - title: Biochemical analysis of coronavirus spike glycoprotein conformational intermediates during membrane fusion
     doi: 10.1128/JVI.00785-19
+proteins:
+  - fusion core

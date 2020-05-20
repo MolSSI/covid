@@ -1,0 +1,11 @@
+pdbid: 6VXX
+method: cryo-EM
+resolution: 2.8
+proteins:
+  - spike
+organisms:
+  - SARS-CoV-2
+targets:
+  - spike binding
+annotation: "Structure of the SARS-CoV-2 spike glycoprotein (closed state)"
+rating: 

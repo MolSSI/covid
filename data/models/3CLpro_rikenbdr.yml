@@ -1,0 +1,12 @@
+name: "SARS-CoV-2 dimeric main protease without ligand based on PDB 6LU7"
+description: >
+  
+url: http://dx.doi.org/10.17632/vpps4vhryg
+model_type: GROMACS
+pdb_url: 
+pdbids: 
+  - 6LU7
+proteins: 
+  - 3CLpro
+creator: Teruhisa S. Komatsu, Yohei M. Koyama, Noriaki Okimoto, Gentaro Morimoto, Yousuke Ohno, Makoto Taiji
+organization: Riken Biosystems Dynamics Research

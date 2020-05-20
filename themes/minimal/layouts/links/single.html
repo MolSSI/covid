@@ -1,0 +1,71 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "baseURL" $.Site.BaseURL }}
+
+<main>
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h4>{{ .Description }}</h4>
+        
+        
+        
+        <h5 align="left">
+        Data classification:
+            <ul style="text-align:justify;">
+                {{ range slice "biology" "structures" "models" "therapeutics"}}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ delimit (slice "#ext" "res" (string $data.term) ) "_" }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+                <li><a href="#ext_res_Publications"><b> Publications:</b></a> Databases containing pulications, peer-reviewed and pre-prints, relevant to COVID-19</li>
+            </ul>
+        </h5>
+        <hr class="hr-thick">
+
+        <h3 class="anchor" id="ext_res_Biology"> Biology </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "biology" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        {{ $localScratch.Set "struct" slice }}
+        {{ range $.Site.Data.links }}
+            {{ if eq .resources "structures" }}
+                {{ $localScratch.Set "struct" ($localScratch.Get "struct" | append .) }}
+            {{ end }}
+        {{ end }}
+        {{ $structs := $localScratch.Get "struct" }}
+        {{ if $structs }}
+            <h3 class="anchor" id="ext_res_Structures" > Structures </h3>
+            {{ range $structs }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        <h3 class="anchor" id="ext_res_Models"> Models </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "models" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        <h3 class="anchor" id="ext_res_Therapeutics"> Therapeutics and Drug Databases </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "therapeutics" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        <h3 class="anchor" id="ext_res_Publications"> Publications </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "publications" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+
+    </div>
+</main>
+
+{{ partial "footer" . }}

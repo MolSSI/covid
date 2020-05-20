@@ -1,9 +1,18 @@
 ---
-title: "Structures"
-description: "Structures for each Protein"
-type: "structures"
+title: Structures
+description: Structural Data for proteins and associated models and simulations
+type: structures
 ---
 
-Virus (SARS-CoV-2), Host (validated), and Host (presumed) based protein. Validated proteins are known essential host 
-genes or interactions. The presumed are implicated host proteins that arise from analyses, but have not been 
-universally agreed upon. 
+Structures on this page are grouped in tiers:
+
+1. Viral VS Host
+2. Active interest VS low interest in drug discovery
+3. Therapeutic Modality (Target)
+4. Structure Rating
+5. Model Ratings
+
+Because of the sorting, structures may appear in multiple groups under the first three categories,
+but they will all link out to the same locations.
+
+Many structural annotations and reviews come from the [Coronavirus Structural Task Force](https://insidecorona.net/).

@@ -1,0 +1,12 @@
+name: tocilizumab
+description: targets soluble and membrane-bound IL-6 receptors (sIL-6R and mIL-6R). Previously used for rheumatoid arthritis, systemic juvenile idiopathic arthritis, and CAR T cell induced severe or life threatening cytokine release syndrome in conjunction with protease inhibitors
+therapeutic:
+  - antibody
+links:
+  wikipedia: Tocilizumab
+  drugbank: DB06273
+target:
+  - host immune response
+mechanism: Targets soluble and membrane-bound IL-6 receptors to decrease immune and inflammatory responses
+protein:
+  - IL6R

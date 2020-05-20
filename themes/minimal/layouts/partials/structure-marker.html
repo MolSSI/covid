@@ -1,0 +1,33 @@
+<!-- Helper function to determine if a structure has a publication and gives the marker -->
+<!-- Accepts a full structure object as a thing. -->
+
+{{ $localScratch := newScratch }}
+{{ $pdb := upper .pdbid }}
+{{ $data := partial "json-from-rcsb" . }}
+
+{{ $url := print "https://www.rcsb.org/structure/" $pdb }}
+
+{{ if $data }}
+  {{ if eq ($data.rcsb_primary_citation.journal_abbrev | title) "To Be Published" }}
+    {{ $localScratch.Set "pub_link" "TBP" }}
+  {{ else }}
+    {{ $localScratch.Set "pub_link" (print "http://doi.org/" $data.rcsb_primary_citation.pdbx_database_id_doi) }}
+  {{ end }}
+{{ else }}
+  {{ $localScratch.Set "pub_link" nil }}
+{{ end }}
+
+{{ $pub_link := $localScratch.Get "pub_link" }}
+
+{{ if and .preprint (not (eq .preprint "Submitted")) }}
+  <a href="{{ $.preprint | safeURL }}"><img src="/images/preprint.png" style="height:25px"></a>
+{{ else if and (eq .preprint "Submitted") (and (not .publication) (or (not $pub_link) (eq $pub_link "TBP"))) }}
+  <!-- Preprint submitted, no publication, and (pub_link isnt real or pub_link is TBP) -->
+  <img src="/images/preprint.png" style="height:25px">
+{{ end }}
+
+{{ if and $pub_link (not (eq $pub_link "TBP")) }}
+  <a href="{{ $pub_link | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
+{{ else if .publication }}
+  <a href="{{ .publication | safeURL }}"><img src="/images/published.png" style="height:25px"></a>
+{{ end }}

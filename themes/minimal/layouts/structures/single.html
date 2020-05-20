@@ -1,61 +1,192 @@
 {{ partial "header" . }}
 
+<!-- STRUCTURES PAGE -->
+
+{{ $localScratch := newScratch }}
+{{ $target_map := partial "target-map" . }}
+{{ $protein_map := partial "protein-map" . }}
+{{ $structure_map := partial "structure-map" . }}
+{{ $domain_sort := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_sort.keys }}
+{{ $domain_titles := $domain_sort.titles }}
+{{ $viral_sort := partial "viral-domain-sort" $ }}
+
 <main>
 
     <div>
         <h2>{{ .Title }}</h2>
         <h5>{{ .Description }}</h5>
-        {{ partial "tags" . }}
+
+
+        <div align="left">{{ .Content }}</div>
+
+        <h5 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "structures" "models" "targets" "proteins" "simulations"}}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h5>
+
+        {{ partial "marker-info-header" . }}
+
+        <h4>Quick Navigation</h4>
+        <p>
+            {{ range $pname, $plink := $structure_map }}
+            <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+            {{ end }}
+        </p>
     </div>
 
-    {{ $content := .Content }}
-    <div align="start" class="content">
-        {{ $content }}
+    <!-- List all Structures from data/targets/ -->
+    <!-- Sorting by Virion/Viral/Host -> Domain (viral only) -> Therapeutic Modality -> Structure Star rating -> Model Star Rating -->
+    <!-- (range where) does not work for this atm, using (range)>(if) -->
 
-    </div>
-
-    {{ $localScratch := newScratch }}
-
-    <!-- Counter -->
-    {{ $localScratch.Set "npages" 0 }}
-
-    <!-- loop through all the data at a file level so I can get YAML file names-->
-    {{ range $file, $content := .Site.Data.structures }}
-        <!-- Determine if structure is for this data -->
-        {{ if and (eq $content.target $.Page.Params.target) (ne $file "TEMPLATE") }}
-            <h3>Structure: {{ $file }}</h3>
-            <br>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Origin Method</th>
-                      <th scope="col">Resolution</th>
-                      <th scope="col">Get the Structure</th>
-                      <th scope="col">Read the Paper</th>
-                      <th scope="col">Related Proteins</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <td>{{ $content.method }}</td>
-                        <td>{{ $content.resolution }}</td>
-                        <td><a href="{{ $content.pdb_doi | safeURL }}">PDB {{ $file }}</a></td>
-                        <td><a href="{{ $content.publication_doi | safeHTML}}">Link out to Paper</a></td>
-                        <td> {{ partial "related-proteins" (dict "data" $content.protein "baseurl" $.Site.BaseURL ) }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <!-- Add one to the counter -->
-            {{ $localScratch.Set "npages" (add ($localScratch.Get "npages") 1) }}
+    <!-- Virion -->
+    {{ $header := "Structures of Virion Particle" }}
+    {{ $virion_name := $.Site.Data.proteins.virion.name }}
+    <h2 class="anchor" id='{{ $virion_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if eq .domain "virion" }}  <!-- Virion specific -->
+            {{ $localScratch.Set "protein" .protein }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.structures "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if (in .proteins $protein) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if (in .proteins $protein) }}
+                        {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" "all" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
         {{ end }}
     {{ end }}
 
-    <!-- Content if nothing here yet -->
-    {{ if eq ($localScratch.Get "npages") 0 }}
-        {{ partial "no-data" $.Page.Title }}
+    <!-- Virus -->
+    <hr class="hr-thick">
+    {{ range $domain_keys }}
+        {{ $header := print "Structures of Viral " (index $domain_titles .) " Proteins" }}
+        <h2 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h2>
+        <!-- Special sort rules! -->
+        {{ range (index $viral_sort .) }}
+            {{ $localScratch.Set "protein" .protein }}
+            <!-- Protein Name -->
+            <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
+            {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
+                <!-- Target -->
+                {{ $localScratch.Set "target" $target_key }}
+                <!-- First determine if there will be content-->
+                {{ $localScratch.Set "has_content" false }}
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $target := $localScratch.Get "target" }}
+                    {{ if and (in .proteins $protein) (in .targets $target) }}
+                        {{ $localScratch.Set "has_content" true }}
+                    {{ end }}
+                {{ end }}
+                {{ if $localScratch.Get "has_content" }}
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <!-- Finally Structures -->
+                    {{ range sort $.Site.Data.structures "rating" "desc" }}
+                        {{ $protein := $localScratch.Get "protein" }}
+                        {{ $target := $localScratch.Get "target" }}
+                        {{ if and (in .proteins $protein) (in .targets $target) }}
+                            {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" $target "context" $) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <!-- Special Case of having no targets -->
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.structures "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if and (in .proteins $protein) (not .targets) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                <h3 align="left"><u>No Targets Recorded </u></h3>
+                <!-- Finally Structures -->
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if and (in .proteins $protein) (not .targets) }}
+                        {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" nil "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <hr class="hr-thick">
+        {{ end }}
     {{ end }}
+
+    <!-- Host -->
+    <h2 class="anchor" id='{{ "Structures of Host Proteins" | anchorize }}'><u>Structures of Host Proteins</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if in (slice "human" ) .organism }}  <!-- Viral/Host -->
+            {{ $localScratch.Set "protein" .protein }}
+            <!-- Protein Name -->
+            <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
+            {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
+                <!-- Target -->
+                {{ $localScratch.Set "target" $target_key }}
+                <!-- First determine if there will be content-->
+                {{ $localScratch.Set "has_content" false }}
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $target := $localScratch.Get "target" }}
+                    {{ if and (in .proteins $protein) (in .targets $target) }}
+                        {{ $localScratch.Set "has_content" true }}
+                    {{ end }}
+                {{ end }}
+                {{ if $localScratch.Get "has_content" }}
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <!-- Finally Structures -->
+                    {{ range sort $.Site.Data.structures "rating" "desc" }}
+                        {{ $protein := $localScratch.Get "protein" }}
+                        {{ $target := $localScratch.Get "target" }}
+                        {{ if and (in .proteins $protein) (in .targets $target) }}
+                            {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" $target "context" $) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <!-- Special Case of having no targets -->
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.structures "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if and (in .proteins $protein) (not .targets) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                <h3 align="left"><u>No Targets Recorded </u></h3>
+                <!-- Finally Structures -->
+                {{ range sort $.Site.Data.structures "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if and (in .proteins $protein) (not .targets) }}
+                        {{ partial "structure-entry" (dict "structure" . "protein" $protein "target" nil "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <hr class="hr-thick">
+        {{ end }}
+    {{ end }}
+
+
+    <h3 id="ext_res_Structures" > External Structure Resources </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "structures" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
 
 </main>
 

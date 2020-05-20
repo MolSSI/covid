@@ -1,0 +1,13 @@
+pdbid: 2FE8
+method: X-Ray Diffraction
+resolution: 1.85
+targets:
+  - viral replication
+proteins:
+  - PLpro
+organisms:
+  - SARS-CoV
+images:
+  - images/protein_renderings/2FE8a.png
+  - images/protein_renderings/2FE8b.png
+  - images/protein_renderings/2FE8c.png

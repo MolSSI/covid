@@ -1,0 +1,13 @@
+term: Simulations
+short: The datasets produced as a result of applying the models to different scientific techniques.
+long: >
+  The datasets produced as a result of applying the models to different techniques.
+  This would also include all the possible input files, scripts, etc. necessary to run the technique. For Molecular
+  Dynamics, this would be things like the trajectory; for docking, this would be things like the poses and scores.
+
+
+  Due to the significant overlap between SARS-CoV-2 (Common Name: COVID-19) and SARS-CoV (Common Name: SARS), many of the
+  simulations could be applied for homology research. When a simulation  is of a SARS-CoV based
+  nature, it will be explicitly denoted. If no notation appears, it is applicable to SARS-CoV-2.
+
+url: /simulations

@@ -16,6 +16,13 @@ main {
     max-width: 750px;
 }
 
+.main-img {
+    margin: auto;
+    padding: 25px;
+    flex: 1 0 auto;
+    max-width: 1180px !important;
+}
+
 img {
     max-width: 100%;
 }
@@ -23,12 +30,13 @@ img {
 /* Homepage */
 
 .intro {
-    transform: translateY(22vh);
+    /* This line was causing infinite misalignment problems on the page */
+    /* transform: translateY(22vh); */
 }
 
 .intro > h1 {
     color: #212121;
-    font-size: 12vh;
+    /* font-size: 12vh; */
 }
 
 .intro > h2 {
@@ -139,4 +147,53 @@ footer {
 
 .hr-thick {
     border-top: 5px solid #eee;
+}
+
+.text-center-row>tbody>tr>th,
+.text-center-row>tbody>tr>td,
+.text-center-row>thead>tr>th {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.anchor {
+    /* Shenanigans to make anchors work correctly. */
+    padding-top: 56px;
+    margin-top: -56px;
+}
+
+.alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 13% 20% 13% 20% 13% 20%;
+  grid-gap: 10px 20px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.box {
+  border-radius: 15px;
+  padding: 0px;
+  font-size: 90%;
+}
+
+.logo-img-box {
+    display: inline;
+    margin: 0px;
+    padding: 5px;
+    max-width: 146px;
+    max-height: 62px;
+}
+
+.logo-img {
+    display: inline;
+    max-width: 136px;
+    max-height: 52px;
+    width: auto;
+    height: auto;
 }

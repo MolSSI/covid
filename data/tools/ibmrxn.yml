@@ -1,0 +1,10 @@
+name: IBM RXN
+url: https://rxn.res.ibm.com/
+description: >
+  IBM has established a free AI web service for predicting chemical reactions. This can be helpful for planning
+  complex synthesis routes for drug molecules and potential treatments. Allows uploading and testing molecules
+  through SMILES, API, or in-browser drawn molecules.
+organization: IBM
+type:
+  - machine learning
+api: https://rxn.res.ibm.com/wp-content/uploads/2020/04/ibm_rxn_api_v2.pdf

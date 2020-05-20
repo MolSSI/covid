@@ -1,0 +1,11 @@
+name: Drug Discovery
+members:
+  - name: John Chodera
+  - name: Melissa Boby
+    role: Chemical Biology insight
+  - name: Binisha Karki
+    role: Lit Review
+  - name: Chiara Mancinelli
+    role: Lit Review
+  - name: Hannah Bruce Macdonald
+    role: Lit Review; Computational Docking

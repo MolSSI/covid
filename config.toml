@@ -1,9 +1,9 @@
 baseURL = "https://covid.molssi.org/"
 languageCode = "en-us"
-title = "MolSSI and BioExcel COVID-19 Computational Molecular Data Exchange"
+title = "COVID-19 Molecular Structure and Therapeutics Hub"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
-# googleAnalytics = ""
+googleAnalytics = "UA-166331808-1"
 
 # Additional custom parameters
 # Ignore README files meant for GitHub
@@ -11,7 +11,7 @@ ignoreFiles = ["README.md$"]
 
 [params]
     author = "MolSSI and BioExcel"
-    description = "You're here for data. Lets go."
+    description = "Aggregating critical information to accelerate drug discovery for the molecular modeling and simulation community."
     githubUsername = "#"
     accent = "red"
     showBorder = true
@@ -21,84 +21,167 @@ ignoreFiles = ["README.md$"]
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-
-[taxonomies]
-    protein = "proteins"
-
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
-
 [[menu.main]]
     hasChildren = true
-    name = "Proteins"
-    weight = 2
+    name = "Biology"
+    weight = 1
 
     [[menu.main]]
-        parent = "Proteins"
+        parent = "Biology"
         url = "/proteins/"
-        name = "All Proteins"
+        name = "Proteins and Virion"
         weight = 1
 
     [[menu.main]]
-        parent = "Proteins"
-        url = "/proteins/viral-proteins"
-        name = "Viral Proteins"
+        parent = "Biology"
+        url = "/targets/"
+        name = "Target Modalities"
         weight = 2
-
-    [[menu.main]]
-        parent = "Proteins"
-        url = "/proteins/host-proteins/"
-        name = "Host Proteins"
-        weight = 3
 
 
 [[menu.main]]
-    url = "/structures"
-    name = "Structures"
+    hasChildren = true
+    name = "Viral/Host Structural Data"
+    weight = 2
+
+    [[menu.main]]
+        parent = "Viral/Host Structural Data"
+        url = "/structures"
+        name = "Structures"
+        weight = 1
+
+    [[menu.main]]
+        parent = "Viral/Host Structural Data"
+        url = "/models"
+        name = "Models"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Viral/Host Structural Data"
+        url = "/simulations"
+        name = "Simulations"
+        weight = 2
+
+[[menu.main]]
+    hasChildern = true
+    url = "/therapeutics"
+    name = "Therapeutics"
     weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics"
+        name = "All Therapeutics"
+        weight = 1
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antiviral"
+        name = "Antivirals"
+        weight = 2
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#small-molecule"
+        name = "Small Molecules"
+        weight = 3
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#peptide"
+        name = "Peptides"
+        weight = 4
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#immunotherapy"
+        name = "Immunotherapies"
+        weight = 5
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#antibody"
+        name = "Antibodies"
+        weight = 6
+
+    [[menu.main]]
+        parent = "Therapeutics"
+        url = "/therapeutics#ext_res_therapeutics"
+        name = "Drug Databases"
+        weight = 7
+
+[[menu.main]]
+    url = "/tools"
+    name = "Tools"
+    weight = 8
+
+[[menu.main]]
+    hasChildren = true
+    name = "Contribution"
+    weight = 9
+
+    [[menu.main]]
+        parent = "Contribution"
+        url = "/contributors/"
+        name = "Contributors"
+        weight = 1
+    
+    [[menu.main]]
+        parent = "Contribution"
+        url = "/contributing/"
+        name = "How to Contribute"
+        weight = 2
+
 
 [[menu.main]]
     hasChildren = true
     name = "About"
-    weight = 4
+    weight = 600
 
     [[menu.main]]
         parent = "About"
         url = "/about/"
-        name = "About the Exchange"
+        name = "About The Hub"
         weight = 1
-        
+
     [[menu.main]]
         parent = "About"
-        url = "/contributing/"
-        name = "Contributing"
-        weight = 2
-        
-    [[menu.main]]
-        parent = "About"
-        url = "/collaborating/"
-        name = "Collaborating"
+        url = "/links/"
+        name = "External Resources"
         weight = 3
 
+    [[menu.main]]
+        parent = "About"
+        url = "/glossary/"
+        name = "Glossary"
+        weight = 4
+        
+#    [[menu.main]]
+#        parent = "About"
+#        url = "/teams/"
+#        name = "Teams"
+#        weight = 3
 
 # Social icons to be shown on the right-hand side of the navigation bar.
 # The "name" field should match the name of the icon in Font Awesome.
 # The list of available icons can be found at http://fontawesome.io/icons.
 
 [[menu.icon]]
+    url = "/"
+    name = "home"
+    weight = 1
+
+[[menu.icon]]
     url = "https://github.com/molssi/covid"
     name = "github"
-    weight = 1
+    weight = 2
 
 [[menu.icon]]
     url = "mailto:info@molssi.org"
     name = "envelope-o"
-    weight = 2
+    weight = 3
 
 [[menu.icon]]
     url = "https://twitter.com/MolSSI_NSF/"
     name = "twitter"
-    weight = 3
-
+    weight = 4

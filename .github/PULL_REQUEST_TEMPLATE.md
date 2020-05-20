@@ -2,32 +2,22 @@
 Provide a brief description of the data being added here.
 
 
+## Status
+- [ ] YAML file for each piece of data
+- [ ] Ready to go
+
 <!---
 ### This wont show up in your PR, its just info for you ###
 
-Reminder: The folder structure is as follows:
+Data is submitted as YAML files into the `/data/{TYPE}/README.md` directory.
+Schema for each directory is in each of the `/data/{TYPE}/README.md` files.
 
-sorted_by_group
-└──YOUR_GROUP_NAME
-   ├── README.md
-   └── TARGET
-       ├── algorithms
-       ├── analysis
-       ├── movies
-       ├── papers
-       ├── program_specific_structures
-       │   └── SIMULATION_SOFTWARE
-       ├── simulation_configs
-       │   └── SIMULATION_SOFTWARE
-       ├── structures
-       └── trajectories
-       
-Please also include any metadata files (e.g. provenance, how-to, etc) 
-and additional use instructions for any file you want people to use.
+
+A new YAML file should be created for *every* new piece of data.
+
+This structure is subject to change, but all changes will be made by a maintainer and the instructions 
+updated accordingly.
 
 -->
 
-## Status
-- [ ] Adheres to the requested folder structure
-- [ ] Metadata is provided for each file
-- [ ] Ready to go
+

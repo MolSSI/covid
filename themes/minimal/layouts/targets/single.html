@@ -1,0 +1,37 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "protein_map" (partial "protein-map" .) }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .) }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+
+        <h4 align="justify">{{ .Content }}</h4>
+
+        <h5 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "targets" "proteins" "therapeutics" }}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h5>
+    </div>
+
+    <hr class="hr-thick">
+
+    <!-- List all targets from data/targets/ -->
+    {{ range $.Site.Data.targets }}
+       {{ partial "target-entry" (dict "context" . "protein_map" ($localScratch.Get "protein_map") "thera_map" ($localScratch.Get "thera_map") )}}
+    {{ end }}
+
+    <hr class="hr-thick">
+
+</main>
+
+{{ partial "footer" . }}

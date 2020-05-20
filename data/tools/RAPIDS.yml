@@ -1,0 +1,17 @@
+name: RAPIDS Open GPU Data Science
+url: https://rapids.ai/
+description: >
+  The RAPIDS suite of open source software libraries and APIs gives you the ability to execute end-to-end data science
+  and analytics pipelines entirely on GPUs. RAPIDS is meant to help make data science easier to program and execute
+  on CUDA-capable GPUs by allowing developers to interface through through user-friendly Python interfaces.
+
+
+  RAPIDS also focuses on common data preparation tasks for analytics and data science. This includes a familiar
+  dataframe API that integrates with a variety of machine learning algorithms for end-to-end pipeline accelerations
+  without paying typical serialization costs. RAPIDS also includes support for multi-node, multi-GPU deployments,
+  enabling vastly accelerated processing and training on much larger dataset sizes.
+organization: NVIDIA
+type:
+  - machine learning
+  - productivity
+api: https://docs.rapids.ai/api

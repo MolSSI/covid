@@ -1,0 +1,17 @@
+name: lopinavir
+description: >
+  Lopinavir is a protease inhibitor with high specificity for HIV-1 protease.
+  It is used against HIV infections as a combinaton with Ritonavir (another protease inhibitor)
+therapeutic:
+  - small molecule
+links:
+  wikipedia: Lopinavir
+  drugbank: DB01601
+  chemspider: 83706
+target:
+  - PLpro protease activity
+  - 3CLpro protease activity
+mechanism: Inhibits the viral proteases
+protein:
+  - 3CLpro
+  - PLpro

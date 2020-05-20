@@ -1,0 +1,40 @@
+
+{{ $localScratch := newScratch }}
+
+<!--Name/title-->
+<a href="{{.tool.url}}"><h4 align="center" class="anchor" id='{{ (.tool.name | anchorize) }}'>{{ .tool.name | title }}</h4></a>
+
+<!-- Author/org/institute -->
+{{ partial "affiliations" .tool }}
+
+<!-- Tool description -->
+<h5 align="justify">{{ .tool.description | markdownify }}</h5>
+
+
+<p align="justify"><b>Types:</b>
+{{ range .tool.type  }}
+    <kbd class="alert-info">{{ . | markdownify }}</kbd>
+{{ end }}
+</p>
+
+{{ if .tool.input_data }}
+    <p align="justify"><b>Input Dataset:</b>
+    {{ range .tool.input_data  }}
+        <kbd class="item-tag">{{ . | markdownify }}</kbd>
+    {{ end }}
+    </p>
+{{ end }}
+
+{{ if .tool.output }}
+    <p align="justify"><b>Output:</b>
+    {{ range .tool.output  }}
+        <kbd class="bg-primary">{{ . | markdownify }}</kbd>
+    {{ end }}
+    </p>
+{{ end }}
+
+{{ if .tool.api }}
+    <p align="justify"><b>API</b>: <a href="{{ .tool.api }}">Link</a></p>
+{{ end }}
+
+<hr>

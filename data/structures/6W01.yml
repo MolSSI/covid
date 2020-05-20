@@ -1,0 +1,13 @@
+pdbid: 6W01
+resolution: 1.9
+method: X-ray diffraction
+proteins:
+  - NSP15
+organisms:
+  - SARS-CoV-2
+targets:
+  - viral replication
+ligands:
+  - Citrate
+annotation: "The 1.9 A Crystal Structure of NSP15 Endoribonuclease from SARS CoV-2 in the Complex with a Citrate"
+rating: 

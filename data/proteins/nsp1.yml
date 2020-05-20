@@ -1,4 +1,5 @@
-protein: nsp1
+protein: NSP1
 name: Coronavirus nonstructural protein 1
 description: Suppressor of host genome expression
 organism: SARS-CoV-2
+domain: nsp

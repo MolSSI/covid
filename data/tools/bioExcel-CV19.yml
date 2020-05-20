@@ -1,0 +1,19 @@
+name: BioExcel-CV19 Web-Based Trajectory Analyzer
+url: https://bioexcel-cv19.bsc.es
+description: >
+  Platform designed to provide web-access to atomistic-MD trajectories for macromolecules involved in the COVID-19 disease. 
+  The project is part of the open access initiatives promoted by the world-wide scientific community to share information
+  about COVID-19 research. BioExcel-CV19 web server interface presents the resulting trajectories, with a set of quality 
+  control analyses and system information. All data produced by the project is available to download from an associated 
+  programmatic access API.
+institution: BioExcel
+type: 
+  - analysis
+input_data: 
+  - structure
+  - trajectory
+output:
+  - visualization
+  - analytics 
+  - structure
+  - trajectory

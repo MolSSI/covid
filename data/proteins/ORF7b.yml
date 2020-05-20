@@ -1,0 +1,5 @@
+protein: ORF7b
+name: Coronavirus Open Reading Frame 7b
+description: Behaviour of this protein is uncertain/unclear.
+organism: SARS-CoV-2
+domain: orf

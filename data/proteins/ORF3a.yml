@@ -1,0 +1,5 @@
+protein: ORF3a
+name: Coronavirus Open Reading Frame 3a
+description: Forms homotetrameric potassium sensitive ion channels and may modulate virus release.
+organism: SARS-CoV-2
+domain: orf

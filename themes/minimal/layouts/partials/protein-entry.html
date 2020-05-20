@@ -1,0 +1,114 @@
+<!-- Condensed form for all structures associated with a protein -->
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "thera_map" (partial "thera-map" .context) }}
+{{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
+{{ $localScratch.Set "BaseURL" .context.Site.BaseURL }}
+
+<div class="col col-9">
+
+    <!-- protein name -->
+    <h4 align="center" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b></h4>
+
+    <!-- protein description -->
+    <h5 align="justify">{{ .protein.description | markdownify }}</h5>
+
+    <!-- illustrative structure image -->
+    {{ with .protein.image }} <p><img width=200 src="/{{ . }}"></p> {{ end }}
+
+    {{ range (index ($localScratch.Get "thera_by_protein") (.protein.protein) ) }}
+        <a href='{{ index ($localScratch.Get "thera_map") . }}'><kbd class="alert-success">{{ . | title }}</kbd></a>
+    {{ end }}
+
+  <!-- top (useful) structures containing this protein -->
+  <h5 align="left"><b>Top Structural Data: </b><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
+  {{ $protein_id := .protein.protein }}
+  {{ $localScratch.Set "protein_id" $protein_id }}
+  {{ $localScratch.Set "postedStruct" 0 }}
+  {{ range sort .context.Site.Data.structures "rating" "desc" }}
+     {{ if and (in .proteins $protein_id) (lt ($localScratch.Get "postedStruct") 2) }}
+       {{ if .unpublished_pdbid }}
+        {{ $localScratch.Set "pdb" .unpublished_pdbid }}
+       {{ else }}
+        {{ $localScratch.Set "pdb" .pdbid }}
+       {{ end }}
+       {{ $pdb := $localScratch.Get "pdb" }}
+       <div class="item" align="left"><a href='{{ $localScratch.Get "BaseURL" }}/structures/#{{ print ( $pdb | anchorize) "-" ( $localScratch.Get "protein_id" | anchorize) }}'>[{{ $pdb }}]</a>
+         <!-- Structure Annotation -->
+         <!-- Scrape from PDB -->
+
+        {{ $data := partial "json-from-rcsb" . }}
+
+        {{ if $data }}
+          {{ $localScratch.Set "title" (print ($data.struct.title | title) )  }}
+        {{ else }}
+          {{ $localScratch.Set "title" nil }}
+        {{ end }}
+        {{ $title := $localScratch.Get "title"}}
+
+        {{ if ($localScratch.Get "title") }}
+          {{ $localScratch.Get "title" }}
+        {{ else }}
+          {{ .structure.annotation }}
+        {{ end }}
+       {{ partial "stars" .rating }}
+       {{ partial "structure-marker" . }}
+       </div>
+      {{ $localScratch.Set "postedStruct" (add ($localScratch.Get "postedStruct") 1 )}}
+     {{ end }}
+  {{ end }}
+  {{ if eq ($localScratch.Get "postedStruct") (0) }}
+    <h5 align="left"><p>---</p><h5>
+  {{ end }}
+
+
+  <!-- top (useful) models containing this protein -->
+  <h5 align="left"><b>Top Models: </b><a href='{{ $localScratch.Get "BaseURL" }}/models/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
+  <h5 align="left">
+    <!-- Determine if there are known models -->
+  {{ $localScratch.Set "postedModels" 0 }}
+  {{ range sort .context.Site.Data.models "rating" "desc" }}
+    {{ $localScratch.Set "model" . }}
+    <!-- This PDB is in the given model and we have not posted more than 1 -->
+    {{ if and (partial "x-in-y-nocase" (dict "x" $.protein.protein "y" .proteins)) (lt ($localScratch.Get "postedModels") 2)}}
+      <!-- We haven't sorted by target, so just get the first target we can out of this-->
+      <!-- TODO: Group by all targets -->
+      {{ $target := partial "protein-model-first-target" (dict "model" ($localScratch.Get "model") "context" $.context) }}
+      <p>
+        {{ $model := $localScratch.Get "model" }}
+        {{ $anchor := print ( $model.name | anchorize) "-" ( $.protein.protein | anchorize) "-" ( $target | anchorize) }}
+        {{ $model_url := print $.context.Site.BaseURL "/models/#" $anchor }}
+        <a href='{{ $model_url }}'>
+          <kbd class="alert-info">{{  $model.name | title }}{{partial "stars" $model.rating}}</kbd>
+        </a>
+        {{ partial "general-marker" $model }}
+      </p>
+      <!-- Add to the counter -->
+      {{ $localScratch.Set "postedModels" (add ($localScratch.Get "postedModels") 1 )}}
+    {{ end }}
+  {{ end }}
+  {{ if eq ($localScratch.Get "postedModels") (0) }}
+    <p>---</p>
+  {{ end }}
+  </h5>
+    <h5 align="left"><b>Top Simulations: </b><a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ .protein.name | anchorize }}'>[See All]</a></h5>
+    <h5 align="left">
+    {{ $localScratch.Set "postedSim" 0 }}
+    {{ range sort .context.Site.Data.simulations "rating" "desc" }}
+        {{ $sim := . }}
+        {{ if and (in .proteins $.protein.protein) (lt ($localScratch.Get "postedSim") 2) }}
+        <!-- TODO: Map the anchor to *a* target instead of just the protein heade-->
+            <p>
+                <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $.protein.name | anchorize }}'><kbd class="alert-secondary">{{ $sim.title}}</kbd></a>
+                {{ partial "general-marker" $sim }}
+                <!-- Add to the counter -->
+                {{ $localScratch.Set "postedSim" (add ($localScratch.Get "postedSim") 1 )}}
+            </p>
+        {{ end }}
+    {{ end }}
+    </h5>
+  <!-- TODO: Add most useful molecules/bioassay data? -->
+
+  <hr>
+
+</div>

@@ -1,0 +1,6 @@
+protein: ORF7a
+name: Coronavirus Open Reading Frame 7a
+description: Non-structural protein which is dispensable for virus replication in cell culture. May suppress small interfering RNA (siRNA). May bind to host ITGAL, thereby playing a role in attachment or modulation of leukocytes.
+organism: SARS-CoV-2
+domain: orf
+

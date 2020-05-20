@@ -1,0 +1,12 @@
+protein: IL6R
+organism: human
+name: Interleukin-6 (IL-6) receptor
+description: >
+  Inflammatory cytokines and chemokines, including interleukin-6 (IL-6), have been
+  observed to be significantly elevated in COVID-19 patients with severe disease.
+  Blockade of IL-6 signaling has been proposed as a therapeutic mechanism to prevent
+  cytokine storm, also known as cytokine release syndrome (CRS).
+uniprot: A0N0L5
+targets:
+  - host immune response
+domain: null

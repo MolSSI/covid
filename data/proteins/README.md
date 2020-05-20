@@ -14,9 +14,11 @@ name: (required)
 description: (required)
 uniprot: (optional)
 target: (optional)
-subunits: (optional)
+subunits: (optional) Dict of {<unit name>: List[proteins/short descriptors]}
+domain: (required if SARS-CoV-2 or SARS-CoV, optional if human) one of [nsp, spike, membrane, envelope, nucleocapsid, orf]
 ```
 
 ## Notes
 * The `target` field lists one or more drug targeting modalities from the `targets/` data directory
-* THe `uniprot` field will link to enormously useful information at Uniprot (e.g. [ACE2](https://www.uniprot.org/uniprot/Q9BYF1))
+* The `uniprot` field will link to enormously useful information at Uniprot (e.g. [ACE2](https://www.uniprot.org/uniprot/Q9BYF1))
+* The `domain` filed indicates what subunit of the viral protein categories the protein falls under.

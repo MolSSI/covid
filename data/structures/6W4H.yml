@@ -1,0 +1,12 @@
+pdbid: 6W4H
+method: X-ray diffraction
+resolution: 1.8
+proteins:
+  - NSP16
+  - NSP10
+organisms:
+  - SARS-CoV-2
+targets:
+  - viral replication
+annotation: 1.80 Angstrom Resolution Crystal Structure of NSP16 - NSP10 Complex from SARS-CoV-2
+rating: 

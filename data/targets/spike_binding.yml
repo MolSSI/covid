@@ -1,10 +1,11 @@
 target: spike binding
+name: Blocking SARS-CoV-2 Spike protein binding to human ACE2 receptor
 description: >
   The spike protein of SARS-CoV-2 binds to the ACE2 protein to initiate cell entry.
-protein:
+proteins:
   - ACE2
   - RBD
-therapeutic:
+therapeutic_modalities:
   - antibody
   - small molecule
   - vaccine

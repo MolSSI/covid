@@ -1,0 +1,195 @@
+{{ partial "header" . }}
+
+<!-- SIMULATIONS PAGE -->
+
+{{ $localScratch := newScratch }}
+{{ $target_map := partial "target-map" . }}
+{{ $protein_map := partial "protein-map" . }}
+{{ $sim_map := partial "sim-map" . }}
+{{ $domain_sort := partial "master-domain-index" . }}
+{{ $domain_keys := $domain_sort.keys }}
+{{ $domain_titles := $domain_sort.titles }}
+{{ $viral_sort := partial "viral-domain-sort" $ }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Description }}</h5>
+
+        {{ .Content }}
+
+        <h5 align="left">
+        Data classification:
+            <ul style="text-align:left;">
+                {{ range slice "simulations" "proteins" "structures" "models" }}
+                    {{ $data := index $.Site.Data.glossary . }}
+                    <li><a href="{{ $data.url }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
+                {{ end }}
+            </ul>
+        </h5>
+
+        {{ partial "marker-info-header" . }}
+
+        <h4>Quick Navigation</h4>
+        <p>
+            {{ range $pname, $plink := $sim_map }}
+            <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname  }}</kbd></a>
+            {{ end }}
+        </p>
+    </div>
+
+    <!-- Iterate over all simulations in same grouping as Structures-->
+
+    <!-- Virion -->
+    {{ $header := "Simulations of Virion Particle" }}
+    {{ $virion_name := $.Site.Data.proteins.virion.name }}
+    <h2 class="anchor" id='{{ $virion_name | anchorize }}'><u>{{ $header | title }}</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if eq .domain "virion" }}  <!-- Virion specific -->
+            {{ $localScratch.Set "protein" .protein }}
+            {{ $localScratch.Set "has_content" false }}
+            {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ if (in .proteins $protein) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ if (in .proteins $protein) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "all" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                ---
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Virus -->
+    <hr class="hr-thick">
+    {{ range $domain_keys }}
+        {{ $header := print "Simulations of Viral " (index $domain_titles .) " Proteins" }}
+        <h2 class="anchor" id='{{ $header | anchorize }}'><u>{{ $header | title }}</u></h2>
+        <!-- Special sort rules! -->
+        {{ range (index $viral_sort .) }}
+            {{ $localScratch.Set "protein" .protein }}
+            <!-- Protein Name -->
+            <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
+            {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
+                <!-- Target -->
+                {{ $localScratch.Set "target" $target_key }}
+                <!-- First determine if there will be content-->
+                {{ $localScratch.Set "has_content" false }}
+                <!-- Determine if this target is tied to the simulations -->
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $target := $localScratch.Get "target" }}
+                    <!-- Get the Targets by all the PDBs... Using a helper function -->
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ if and (in .proteins $protein) (in $known_targets $target) }}
+                        {{ $localScratch.Set "has_content" true }}
+                    {{ end }}
+                {{ end }}
+
+                {{ if $localScratch.Get "has_content" }}
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <!-- Finally Simulations -->
+                    {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                        {{ $protein := $localScratch.Get "protein" }}
+                        {{ $target := $localScratch.Get "target" }}
+                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                        {{ if and (in .proteins $protein) (in $known_targets $target) }}
+                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <!-- Special Case of having no targets -->
+            {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                {{ if and (in .proteins $protein) (not $known_targets) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                <h3 align="left"><u>No Targets Recorded </u></h3>
+                <!-- Finally Structures -->
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ if and (in .proteins $protein) (not $known_targets) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <hr class="hr-thick">
+        {{ end }}
+    {{ end }}
+
+    <!-- Host -->
+    <hr class="hr-thick">
+    <h2 class="anchor" id='{{ "Simulations of Host Proteins" | anchorize }}'><u>Simulations of Host Proteins</u></h2>
+    {{ range $.Site.Data.proteins  }} <!-- Protein Top Sort -->
+        {{ if in (slice "human" ) .organism }}  <!-- Viral/Host -->
+            {{ $localScratch.Set "protein" .protein }}
+            <!-- Protein Name -->
+            <h3 align="left" class="anchor" id="{{ .name | anchorize }}"><b><a href='{{index $protein_map .protein }}'>{{ .name }}</a></b></h3>
+            {{ range $target_key, $t_map := $target_map }} <!-- By Target -->
+                <!-- Target -->
+                {{ $localScratch.Set "target" $target_key }}
+                <!-- First determine if there will be content-->
+                {{ $localScratch.Set "has_content" false }}
+                <!-- Determine if this target is tied to the simulations -->
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $target := $localScratch.Get "target" }}
+                    <!-- Get the Targets by all the PDBs... Using a helper function -->
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ if and (in .proteins $protein) (in $known_targets $target) }}
+                        {{ $localScratch.Set "has_content" true }}
+                    {{ end }}
+                {{ end }}
+
+                {{ if $localScratch.Get "has_content" }}
+                    <h3 align="left"><u><a style="color:black;" href='{{ $t_map.link }}'>{{$t_map.name}}</a></u></h3>
+                    <!-- Finally Simulations -->
+                    {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                        {{ $protein := $localScratch.Get "protein" }}
+                        {{ $target := $localScratch.Get "target" }}
+                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                        {{ if and (in .proteins $protein) (in $known_targets $target) }}
+                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <!-- Special Case of having no targets -->
+            {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                {{ $protein := $localScratch.Get "protein" }}
+                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                {{ if and (in .proteins $protein) (not $known_targets) }}
+                    {{ $localScratch.Set "has_content" true }}
+                {{ end }}
+            {{ end }}
+            {{ if $localScratch.Get "has_content" }}
+                <h3 align="left"><u>No Targets Recorded </u></h3>
+                <!-- Finally Structures -->
+                {{ range sort $.Site.Data.simulations "rating" "desc" }}
+                    {{ $protein := $localScratch.Get "protein" }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ if and (in .proteins $protein) (not $known_targets) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <hr class="hr-thick">
+        {{ end }}
+    {{ end }}
+
+</main>
+
+{{ partial "footer" . }}

@@ -1,7 +1,8 @@
 protein: ACE2
-name: Angiotensin-converting enzyme 2
+name: Angiotensin-converting enzyme 2 (ACE2)
 description: Extracellular carboxypeptidase expressed in lung tissue that is the host receptor for SARS-CoV-2 viral fusion.
 organism: human
 uniprot: Q9BYF1
 targets:
   - viral fusion
+domain: null

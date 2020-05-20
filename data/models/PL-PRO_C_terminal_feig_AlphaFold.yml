@@ -1,0 +1,10 @@
+name: Refinement of AplhaFold PLpro C terminal by FeigLab
+url: https://github.com/feiglab/sars-cov-2-proteins
+description: Physics-based refinement of Google DeepMind AlphaFold models from early March 2020. See https://github.com/feiglab/sars-cov-2-proteins for a complete description of the process.
+pdb_url: https://github.com/feiglab/sars-cov-2-proteins/blob/master/AlphaFold/PL-PRO_C_terminal.pdb
+pdbids:
+proteins:
+  - PLpro
+creator: Feig Computational Biophysics Lab
+institution: Michigan State University
+preprint: https://doi.org/10.1101/2020.03.25.008904

@@ -1,0 +1,7 @@
+protein: PD-1
+organism: human
+name: Programmed cell death factor 1
+description: Immune checkpoint that guards against autoimmunity
+uniprot: Q15116
+target: host immune response
+domain: null

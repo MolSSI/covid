@@ -9,10 +9,12 @@ target:
   - viral fusion
 subunits:
   S1:
-    RBD (receptor binding domain)
+    - RBD (receptor binding domain)
   S2:
-    S1/S2 cleavage site
-    Fusion
-    S2' cleavage site
-    HR1
-    HR2
+    - S1/S2 cleavage site
+    - Fusion
+    - S2' cleavage site
+    - HR1
+    - HR2
+image: images/protein_renderings/6VYB.png
+domain: spike

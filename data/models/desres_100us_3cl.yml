@@ -1,0 +1,11 @@
+name: "3CLpro prepared for simulation in a 120 cubic A box for long continuous trajectory"
+pdbids:
+  - 6Y84
+proteins:
+  - 3CLpro
+organism:
+  - SARS-CoV-2
+description: >
+  Apo enzyme started from the apo enzyme structure determined by X-ray crystallography (PDB entry 6Y84) The protein was solvated in a 120 x 120 x 120 Å water box containing 0.15 M NaCl.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+creator: DESRES

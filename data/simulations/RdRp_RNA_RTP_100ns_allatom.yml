@@ -1,0 +1,39 @@
+﻿type: md
+title: Gromacs 100 ns MD of SARS-CoV-2 RdRp + RNA template-primer + RTP (Remdesivir Tri-Phosphate) model, All Atom model
+description: >
+  This trajectory is from a 100 ns atomic MD simulation of the SARS-CoV-2 RdRp-RNA-RTP-complex protein. The protein was solvated in a 
+  16 x 16 x 16 nm box of solvent containing water and 0.15 M NaCl. The simulation was performed with Gromacs 2018.8 
+  on the Puhti cluster located at the CSC-IT using the Amber14sb-OL15 force field. The interval
+  between frames is 100 ps. The simulation was conducted in the NPT ensemble (1 bar and 300K).
+creator: Vaibhav Modi
+organization: University of Jyväskylä
+institute: Department of Chemistry and Nanoscience Center
+models:
+  - RdRp-RNA-RTP-complex
+proteins: 
+  - RdRP 
+  - NSP12
+  - NSP7
+  - NSP8
+structures:
+  - 6M71
+  - 7BTF
+  - 7BV2
+  - 6YYT
+ensemble: NPT
+forcefields:
+  - Amber14sb-OL15
+files: 
+  - https://github.com/bioexcel/covid_modelling_simulation_data/tree/master/rdrp_polymerase/RdRp-RNA-RTP-complex
+  - https://github.com/bioexcel/covid_modelling_simulation_data/tree/master/rdrp_polymerase/amber14sb_OL15.ff
+trajectory: https://a3s.fi/swift/v1/AUTH_9dc2202df4e44114a3949af1f7bbde96/RdRp-complex/RdRp-RNA-RTP-complex/traj_RdRp-RNA-RTP-complex.xtc
+size: 1.5 GB
+solvent: Water
+temperature: 300
+pressure: 0.987
+salinity: 0.15
+length: 100 ns
+references:
+  - "Mark James Abraham, Teemu Murtola, Roland Schulz, Szilard Pall, Jeremy C. Smith, Berk Hess, Erik Lindahl,
+     GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers,
+     SoftwareX, 2015, V. 1-2, pp. 19-25"
