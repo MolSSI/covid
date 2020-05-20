@@ -1,5 +1,5 @@
 target: host immune response
-name: Host immune response
+name: Managing the host immune response
 description: >
   Certain mechanisms allow viruses to avoid host immune response, such as removal of ISG15, a ubiquitin-like protein conjugated to intracellular proteins post interferon activation and involved in cell-to-cell signaling and heightened immune response. Removal of such tags and disruption of signal cascades allow infected cells to avoid apoptotic signals.
 proteins:
