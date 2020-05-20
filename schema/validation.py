@@ -4,6 +4,24 @@ from yaml import safe_load
 from enum import Enum
 from os import walk
 from os.path import join
+import re
+
+# Custom types
+
+
+class MailTo(str):
+    @classmethod
+    def __get_validators__(cls):
+        yield cls.validate
+
+    @classmethod
+    def validate(cls, v: str):
+        if not isinstance(v, str):
+            raise TypeError("Not a valid mailto Email format")
+        v = v.strip()
+        re.match(r"mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+", v)
+        if not re.match(r"mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+", v):
+            raise ValueError("mailto URL is not a valid mailto link")
 
 
 class ValidProteins(str, Enum):
@@ -309,7 +327,7 @@ class OrganizationModel(BaseModel):
 
 class ContributorMemberModel(BaseModel):
     name: str
-    url: Optional[AnyUrl]
+    url: Optional[Union[AnyUrl, MailTo]]
     organization: Optional[str]
 
 
