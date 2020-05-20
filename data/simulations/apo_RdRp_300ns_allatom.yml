@@ -11,8 +11,7 @@ institute: Department of Chemistry and Nanoscience Center
 models:
   - apo-RdRp-complex 
 proteins: 
-  - RdRP 
-  - NSP12
+  - RdRP
   - NSP7
   - NSP8
 structures:

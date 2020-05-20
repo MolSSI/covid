@@ -29,7 +29,7 @@ proteins: (one or more of the following options)
   - NSP9
   - NSP10
   - NSP11
-  - NSP12
+  - RdRP
   - Helicase
   - NSP14
   - NSP15
@@ -39,7 +39,6 @@ proteins: (one or more of the following options)
   - TMPRSS2
   - 3CLpro
   - PLpro
-  - RdRP
   - ORF3a
   - ORF6
   - ORF8
