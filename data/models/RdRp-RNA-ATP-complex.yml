@@ -9,14 +9,12 @@ description: Model of the RdRp + RNA + ATP complex of the SARS-CoV-2 with non-co
 url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/rdrp_polymerase/
 pdb_url: https://github.com/bioexcel/covid_modelling_simulation_data/blob/master/rdrp_polymerase/RdRp-RNA-ATP-complex/RdRp-RNA-ATP-complex.pdb
 pdbids: 
-pdbids: 
   - 6NUR
   - 7BTF
   - 7BV2
   - 6YYT
 proteins: 
-  - RdRP 
-  - NSP12
+  - RdRP
   - NSP7
   - NSP8
 creator: Vaibhav Modi

@@ -39,7 +39,7 @@ class ValidProteins(str, Enum):
     NSP9 = 'NSP9'
     NSP10 = 'NSP10'
     NSP11 = 'NSP11'
-    NSP12 = 'NSP12'
+    RdRP = 'RdRP'
     Helicase = 'Helicase'
     NSP14 = 'NSP14'
     NSP15 = 'NSP15'
@@ -50,7 +50,6 @@ class ValidProteins(str, Enum):
     TMPRSS2 = 'TMPRSS2'
     Mpro = '3CLpro'
     PLpro = 'PLpro'
-    RdRP = 'RdRP'
     BoAT1 = 'BoAT1'
     FcR = 'Fc receptor'
     Furin = 'Furin'
@@ -67,6 +66,36 @@ class ValidProteins(str, Enum):
     E_protein = 'E protein'
     PD_1 = 'PD-1'
     virion = "virion"
+
+
+# Check that proteins have not been given other names
+common_names = {
+    '3CLpro': ['mpro', 'nsp5', '3c-like', '3c-l', 'mprotease', '3cl-pro'],
+    'PLpro': ['nsp3', 'p-l', 'papin', 'papin-like', 'pl-pro'],
+    'E protein': ['e-protein', 'envelope', 'e-pro', 'epro', 'orf4'],
+    'Helicase': ['hel', 'nsp13'],
+    'M protein': ['membrane', 'mem', 'm-protein', 'm-pro', 'orf5'],
+    'N protein': ['nucleoprotein', 'nucleocapsid', 'nuc', 'orf9'],
+    'RdRP': ['nsp12', 'rna prot', 'rna', 'rna-prot', 'rna-dir']
+    }
+# make a reverse map.
+alt_names = {}
+for common, alts in common_names.items():
+    for alt in alts:
+        alt_names[alt] = common
+# Check for overlap
+overlap_map = []
+for prot in ValidProteins:
+    value = prot.value  # IDE's complain, its a valid property for Enum objects.
+    if value.lower() in alt_names:
+        overlap_map.append([value, alt_names[value.lower()]])
+if overlap_map:
+    err_string = "A protein was defined in the ValidProtein's schema, but already has a more common name. Please " \
+                 "changing the following item(s) to its/their more common name(s):\n"
+    for value, common in overlap_map:
+        err_string += f"\t{value} -> {common}\n"
+    err_string += "If you think this is in error, please raise the issue on GitHub"
+    raise ValueError(err_string)
 
 
 class ValidDomains(str, Enum):

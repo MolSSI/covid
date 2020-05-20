@@ -11,8 +11,7 @@ pdbids:
   - 7BTF
   - 7BV1
 proteins: 
-  - RdRP 
-  - NSP12
+  - RdRP
   - NSP7
   - NSP8
 creator: Vaibhav Modi
