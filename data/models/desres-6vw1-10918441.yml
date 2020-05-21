@@ -1,0 +1,15 @@
+name: "Chimeric RBD in complex with human ACE2"
+pdbids:
+  - 6vw1
+proteins:
+  - ACE2
+  - RBD
+organism:
+  - human
+  - SARS-CoV-2  
+description: >
+  The complex model was solvated in a ~140 Å box of 200 mM NaCl and water, and parameterized with the DES-Amber protein and ion force field, the TIP4P-D water model, 
+  and an in-house force field derived from GAFF.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10895671-bindingpaths.tar.gz
+creator: DESRES
