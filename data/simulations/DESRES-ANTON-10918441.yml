@@ -1,0 +1,47 @@
+type: md
+title: DESRES-ANTON-10918441 2 µs simulations of 78 FDA approved or investigational drug molecules binding to the ectodomain of human ACE2
+description: >
+  78 2 µs trajectories of FDA approved or investigational drug molecules that in simulation remained bound to the ectodomain of human ACE2
+  at positions that might conceivably allosterically disrupt the interaction between these proteins. The small molecule drugs and their 
+  initial binding poses were chosen from a combination of molecular dynamics simulation and docking performed using an FDA-investigational 
+  drug library. The 78 putative ACE2 binding small molecules located at three regions on ACE2: a pocket underneath a helical bundle (residue 20-100; 
+  51 molecules), a pocket involving a beta-hairpin structure (residue 346 to 360; 14 molecules) and a pocket behind a loop (residue 131-142; 
+  13 molecules). The helical bundle and the beta-hairpin structure are known to interact with the RBD (receptor binding domain) of the spike 
+  protein and the loop structure is known to be involved in ACE2 homo-dimerization.
+  The simulations used the Amber ff99SB-ILDN force field for proteins, the CHARMM TIP3P model for water, and the generalized Amber force field
+  for small molecules. The C- and N-peptide termini were capped with amide and acetyl groups respectively. The ectodomain of human ACE2 is from 
+  PDB entry 6VW1. The system was neutralized and salted with NaCl, with a final concentration of 0.15 M. The interval between frames is 1.2 ns. 
+  The simulations were conducted at 310 K in the NPT ensemble.
+creator: D. E. Shaw Research
+organization: DESRES
+models:
+    - 6vw1-desres-10918441
+proteins:
+    - ACE2
+structures:
+    - 6vw1
+files:
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10918441-set_ACE2-structure.tar.gz
+    - https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10918441-set_ACE2-table.csv
+    - https://d3fw8ue024hgfm.cloudfront.net/outgoing/DESRES-Trajectory_sarscov2-10918441.mp4
+trajectory: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10918441-set_ACE2-all-glueCA.tar.gz
+size: 128 GB
+length: 2 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - Amber99sb-ildn
+    - TIP3P
+    - GAFF
+references:
+    - Lindorff-Larsen, K.; Piana, S.; Palmo, K.; Maragakis, P.; Klepeis, J. L.; Dror, R. O.; Shaw, D. E. Improved side-chain torsion potentials for the Amber ff99SB protein force field. 
+      Proteins 2010, 78(8), 1950-1958.
+    - MacKerell, A. D.; Bashford, D.; Bellott, M.; Dunbrack, R. L.; Evanseck, J. D.; Field, M. J.; Fischer, S.; Gao, J.; Guo, H.; Ha, S.; Joseph-McCarthy, D.; Kuchnir, L.; Kuczera, K.; 
+      Lau, F. T.; Mattos, C.; Michnick, S.; Ngo, T.; Nguyen, D. T.; Prodhom, B.; Reiher, W. E.; Roux, B.; Schlenkrich, M.; Smith, J. C.; Stote, R.; Straub, J.; Watanabe, M.; 
+      Wiorkiewicz-Kuczera, J.; Yin, D.; Karplus, M. All-atom empirical potential for molecular modeling and dynamics studies of proteins. J. Phys. Chem. B 1998, 102(18), 3586-3616.
+    - Wang, J.; Wolf, R. M.; Caldwell, J. W.; Kollman, P. A.; Case, D. A. Development and testing of a general Amber force field. J. Comput. Chem. 2004, 25(9), 1157–1174.
+    - Yan, R.; Zhang, Y.; Li, Y.; Xia, L.; Guo, Y.; Zhou, Q. Structural basis for the recognition of SARS-CoV-2 by full-length human ACE2. Science, 2020; 367(6485); 1444–1448.
+    - Shang, J.; Ye, G.; Shi, K.; Wan, Y.; Luo, C.; Aihara, H.; Geng, Q.; Auerbach, A.; Li, F. Structural basis of receptor recognition by SARS-CoV-2 Nature, 2020, in press.
