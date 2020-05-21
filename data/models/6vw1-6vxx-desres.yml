@@ -1,0 +1,16 @@
+name: "SARS-CoV-2 trimeric spike protein binding to FDA approved or investigational drug molecules"
+pdbids:
+  - 6vxx
+  - 6vw1
+proteins:
+  - spike
+  - RBD
+organism:
+  - SARS-CoV-2  
+description: >
+  Spike trimer constructed from PDB entries 6VXX and 6VW1, only retaining the RBD and a short region from S1 fusion protein as a 
+  minimal system for maintaining a trimer assembly. The system was neutralized and salted with NaCl, with a final concentration 
+  of 0.15 M. The interval between frames is 1.2 ns. The simulations were conducted at 310 K in the NPT ensemble.
+url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi
+pdb_url: https://www.deshawresearch.com/downloads/download_trajectory_sarscov2.cgi/DESRES-Trajectory_sarscov2-10906555-set_spike-structure.tar.gz
+creator: DESRES
