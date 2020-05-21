@@ -1,0 +1,7 @@
+protein: Upf1
+organism: human
+name: Regulator of nonsense transcripts 1
+description: Well-characterized human RNA dependent helicase belonging to the 
+helicase superfamily 1 (SF1).
+uniprot: https://www.uniprot.org/uniprot/Q92900
+target:  nsp13 helicase activity

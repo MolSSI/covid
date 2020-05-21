@@ -4,8 +4,14 @@ the only structures from other coronaviruses are not ligand bound. To
 facilitate drug discovery against SARS-CoV-2 helicase, we need to determine a
 model of the helicase bound to ATP and / or RNA. 
 url: https://github.com/choderalab/nsp13-models
+pdbids: 
+  - 6JYT
+  - 6JYT_refined
+  - 5WWP
+  - 2GK6
+  - 2XZO
 proteins:
-  - helicase 
+  - helicase
 creator: Alex Payne
 lab: Chodera lab
 
