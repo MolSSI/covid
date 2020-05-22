@@ -1,0 +1,11 @@
+name: ANI-FDA Drugs Archive
+url: https://covmme.molssi.org/data/isayev/drug_dbs/fda-drugs-ani2x_v1.zip
+description: >
+  A collection of about 32,000 ANI-FDA Drugs composed of a unique molecular tautomer per file and multiple conformations per tautomer.
+  Every tautomer is optimized for all low laying conformers within approx. 6 kcal/mol windows. Total elative energies and
+  partial atomic chargers included for each conformer. Part of the approximately 9 million conformer from this
+  and the ANI-CAS Antiviral collection. (~2.1GB zip file comprised of SDF files)
+lab: Olexandr Isayev Lab
+resources:
+  - therapeutics
+internal: true
