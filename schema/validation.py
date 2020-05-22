@@ -72,6 +72,7 @@ class ValidTargets(str, Enum):
     viral_fusion = 'viral fusion'
     host_immune_response = 'host immune response'
     cell_cyle_inhibitors = 'cell cycle inhibitors'
+    nsp13_helicase_activity = 'nsp13 helicase activity'
 
 
 class ValidOrganisms(str, Enum):
