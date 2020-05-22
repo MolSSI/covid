@@ -14,6 +14,7 @@ models:
   - 6jyt_croll
 proteins:
   - Helicase
+  - Upf1
 creator: Alex Payne
 lab: Chodera lab
 

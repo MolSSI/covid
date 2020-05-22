@@ -2,7 +2,7 @@ name: "SARS nsp13 helicase 6JYT: ISOLDE refined model"
 pdbids:
   - 6JYT
 proteins:
-  - helicase
+  - Helicase
 organism:
   - SARS-CoV
 description: >
