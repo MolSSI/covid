@@ -1,9 +1,0 @@
-protein: helicase homologues
-organism:
-  - SARS-CoV 
-  - human
-name: helicase homologues
-description: >Proteins with high enough homology to SARS-CoV-2 nsp13 / Helicase
-that they are worth including in this repo.
-target: nsp13 helicase activity
-domain: nsp 
