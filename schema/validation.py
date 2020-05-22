@@ -79,6 +79,7 @@ class ValidOrganisms(str, Enum):
     human = 'human'
     sars_cov = 'SARS-CoV'
     sars_cov_2 = 'SARS-CoV-2'
+    mers = 'MERS'
 
 
 class ResourcesEnum(str, Enum):
