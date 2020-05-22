@@ -49,6 +49,7 @@ class ValidProteins(str, Enum):
     E_protein = 'E protein'
     PD_1 = 'PD-1'
     virion = "virion"
+    Upf1 = "Upf1"
 
 
 class ValidDomains(str, Enum):
