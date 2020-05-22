@@ -24,7 +24,7 @@
       <h5 align="left"><b>Represented Proteins: </b>
       {{ range $pname := .model.proteins }}
          {{ $plink := print ($localScratch.Get "context").Site.BaseURL "/proteins/#" ( $pname | anchorize) }}
-         <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ $pname }}</kbd></a>
+         <a href="{{ $plink }}"><kbd class="bg-primary" style="">{{ partial "protein_icon" }} {{ $pname }}</kbd></a>
       {{ end }}
       </h5>
 
@@ -71,7 +71,7 @@
                 {{ $anchor := print ( $sim.title | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
                 <h5 align="left">
                 <p>
-                <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ $sim.title }}</kbd></a>
+                <a href='{{ $localScratch.Get "BaseURL" }}/simulations/#{{ $anchor }}'><kbd class="alert-secondary">{{ partial "simulation_icon" }} {{ $sim.title }}</kbd></a>
                 {{ partial "general-marker" $sim }}
                 </p>
                 </h5>
