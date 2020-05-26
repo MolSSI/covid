@@ -1,10 +1,11 @@
-name: ANI-CAS Antiviral Archive
-url: https://covmme.molssi.org/data/isayev/drug_dbs/cas-antiviral-ani2x_v1.zip
+name: ANI-FDA Drugs Archive
+url: https://covmme.molssi.org/data/isayev/drug_dbs/fda-drugs-ani2x_v1.zip
 description: >
-  A collection of about 67,000 ANI-CAS Antiviral compounds composed of a unique molecular tautomer per file and multiple conformations per tautomer.
-  Every tautomer is optimized for all low laying conformers within approx. 6 kcal/mol windows. Total elative energies and
-  partial atomic chargers included for each conformer. Part of the approximately 9 million conformer from this
-  and the ANI-CAS Antiviral collection. (~5.3GB zip file comprised of SDF files)
+    The dataset files contain low-energy conformers and tautomers of 6,433 FDA approved & investigational drugs.
+    A collection consists of 32,036 tautomeric structures and ~3M conformers. After extensive sampling, for every tautomer we found low laying conformers within approx. 
+    6 kcal/mol window using ANI-2x neural-network molecular potential. The ANI-2x potential is approaching the accuracy of high-level QM calculations 
+    (wB97x-D). [DOI: 10.26434/chemrxiv.11819268.v1 ] For each conformer we list total energy, relative energy, and dipole-consistent partial atomic charges.
+    (~2.1GB zip file comprised of SDF files)
 lab: Olexandr Isayev Lab
 resources:
   - therapeutics
