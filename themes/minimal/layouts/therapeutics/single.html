@@ -50,11 +50,17 @@
         </div>
     {{ end }}
 
+    <!-- List external drug databases We are housing and tracking -->
     <hr class="hr-thick">
 
-    <h3 id="ext_res_therapeutics"> External Therapeutics and Drug Databases </h3>
+    <h3 id="res_therapeutics" class="anchor"> Therapeutics and Drug Databases </h3>
         {{ range $.Site.Data.links  }}
-            {{ if in .resources "therapeutics" }}
+            {{ if and (in .resources "therapeutics") (.internal) }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+        {{ range $.Site.Data.links  }}
+            {{ if and (in .resources "therapeutics") (not .internal) }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}

@@ -15,4 +15,5 @@ organization: (optional)
 institution: (optional)
 lab: (optional)
 resources: one or more of [structures, models, therapeutics, biology]
+internal: (optional) boolean to indicate if this is an databse MolSSI is hosting on our resources
 ```

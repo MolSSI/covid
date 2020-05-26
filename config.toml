@@ -106,8 +106,8 @@ ignoreFiles = ["README.md$"]
 
     [[menu.main]]
         parent = "Therapeutics"
-        url = "/therapeutics#ext_res_therapeutics"
-        name = "Drug Databases"
+        url = "/therapeutics#res_therapeutics"
+        name = "Drug/Antiviral Databases"
         weight = 7
 
 [[menu.main]]
