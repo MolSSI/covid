@@ -1,0 +1,12 @@
+name: Open Science Data Portal
+url: https://opendata.ncats.nih.gov/covid19/index.html
+description: >
+  NCATS is generating a collection of datasets by screening a panel of 
+  SARS-CoV-2-related assays against all approved drugs. These datasets, as well 
+  as the assay protocols used to generate them, are being made immediately 
+  available to the scientific community on this site as these screens are 
+  completed.
+organization: National Center for Advancing Translational Sciences (NCATS)
+institution: National Institutes of Health
+resources:
+  - therapeutics
