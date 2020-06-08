@@ -1,0 +1,29 @@
+
+{{ $localScratch := newScratch }}
+
+<a href="{{.dois.url}}"><h4 align="center">{{ .dois.name | title }}</h4></a>
+
+<p align="justify"><b>Creator:</b> {{ .dois.creator | markdownify }}</p>
+<p align="justify"><b>DOI:</b> {{ .dois.doi | markdownify }}</p>
+<p align="justify"><b>Owner:</b> {{ .dois.owner | markdownify }}</p>
+<p align="justify"><b>Description:</b> {{ .dois.description | markdownify }}</p>
+<p align="justify"><b>Purpose:</b> {{ .dois.purpose | markdownify }}</p>
+<p align="justify"><b>Size:</b> {{ .dois.size | markdownify }}</p>
+
+
+<p align="justify"><b>Content:</b>
+{{ range .dois.content }}
+     <kbd class="bg-primary"> {{ . | markdownify }} </kbd>
+{{ end }}
+</p>
+
+<p align="justify"><b>File types:</b>
+{{ range .dois.file_types }}
+     <kbd class="alert-primary"> {{ . | markdownify }} </kbd>
+{{ end }}
+</p>
+
+{{ if .dois.license }}
+     <p align="justify"> <b>License:</b> <kbd class="alert-secondary"> {{ .dois.license | markdownify }} </kbd> </p>
+{{ end }}
+<hr>
