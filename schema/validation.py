@@ -169,6 +169,18 @@ class LinksModel(BaseModel):
     lab: Optional[str]
     resources: List[ResourcesEnum]
 
+class DOIModel(BaseModel):
+    name: str
+    url: AnyUrl
+    doi: str
+    description: str
+    creator: str
+    owner: str
+    content: List[str]
+    file_types: List[str]
+    size: str
+    purpose: str
+    license: Optional[str]
 
 class ModelsModel(BaseModel):
     name: str
@@ -454,6 +466,7 @@ if __name__ == "__main__":
     # Contains a list of directory names as keys and models as values. Each pair is a directory and the model to
     # validate files within that directory.
     directories = {'links': LinksModel,
+                   'dois': DOIModel,
                    'models': ModelsModel,
                    'molecules': MoleculesModel,
                    'proteins': ProteinsModel,
