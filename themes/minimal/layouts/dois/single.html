@@ -1,0 +1,19 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "baseURL" $.Site.BaseURL }}
+
+<main>
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h4>{{ .Description }}</h4>
+
+        <hr class="hr-thick">
+                
+        {{ range $.Site.Data.dois  }}
+            {{ partial "dois-data.html" (dict "dois" . "context" $) }}
+        {{ end }}
+    </div>
+</main>
+
+{{ partial "footer" . }}
