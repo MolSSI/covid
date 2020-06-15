@@ -1,0 +1,10 @@
+name: spike_full-length_open_amarolab
+description: PSF/PDB for full-length SPIKE protein in the Open state, including protein, glycans, membrane, water and ions.
+url: https://amarolab.ucsd.edu/files/covid19/PSF-PDB_spike_open_prot_glyc_memb_wat_ions_amarolab.tar.gz
+pdbids:
+  - 6VSB
+proteins:
+  - Spike
+creator: Amaro Lab
+institution: University of California San Diego
+preprint: https://doi.org/10.1101/2020.06.11.146522
