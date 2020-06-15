@@ -4,7 +4,7 @@ url: https://amarolab.ucsd.edu/files/covid19/PSF-PDB_spike_open_prot_glyc_memb_w
 pdbids:
   - 6VSB
 proteins:
-  - Spike
+  - spike
 creator: Amaro Lab
 institution: University of California San Diego
 preprint: https://doi.org/10.1101/2020.06.11.146522
