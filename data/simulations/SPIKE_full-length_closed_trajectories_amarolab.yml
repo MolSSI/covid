@@ -13,8 +13,8 @@ trajectory: https://amarolab.ucsd.edu/files/covid19/TRAJECTORIES_spike_closed_pr
 size: 13 GB
 length: 1.7 µs
 ensemble: NPT
-temperature: 310 K
-pressure: 1 Atm
+temperature: 310
+pressure: 1
 solvent: water
 salinity: 0.15
 forcefields:
