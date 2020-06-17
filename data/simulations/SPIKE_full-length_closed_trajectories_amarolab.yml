@@ -1,0 +1,23 @@
+type: md
+title: Trajectories of full-length SPIKE protein in the Closed state.
+description: All-atom MD simulations of full-length SPIKE protein in the Closed state, protein + glycans only (not aligned). PSF and DCDs files are provided.
+creator: Amaro Lab
+institute: University of California San Diego
+models:
+    - spike_full-length_closed_amarolab
+proteins:
+    - spike
+structures:
+    - 6VXX
+trajectory: https://amarolab.ucsd.edu/files/covid19/TRAJECTORIES_spike_closed_prot_glyc_amarolab.tar.gz
+size: 13 GB
+length: 1.7 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - CHARMM36
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.06.11.146522
