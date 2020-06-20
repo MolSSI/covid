@@ -9,7 +9,7 @@ proteins:
     - spike
 structures:
     - 6VSB
-trajectory: https://amarolab.ucsd.edu/files/covid19/TRAJECTORIES_spike_open_prot_glyc_amarolab.tar.gz
+trajectory: https://amarolab.ucsd.edu/covid19.php
 size: 31 GB
 length: 4.2 µs
 ensemble: NPT
