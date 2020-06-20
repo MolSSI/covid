@@ -1,6 +1,6 @@
 name: spike_full-length_closed_amarolab
 description: PSF/PDB for full-length SPIKE protein in the Closed state, including protein, glycans, membrane, water and ions.
-url: https://amarolab.ucsd.edu/files/covid19/PSF-PDB_spike_closed_prot_glyc_memb_wat_ions_amarolab.tar.gz
+url: https://amarolab.ucsd.edu/covid19.php
 pdbids:
   - 6VXX
 proteins:
