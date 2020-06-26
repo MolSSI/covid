@@ -34,9 +34,9 @@ updated accordingly.
 ## Contributing large files (disk space) and large datasets (number of entries)
 
 If you have data such as multi-GB trajectories, million entry AI training molecules, or other "large" 
-data not suitable for manual entry or storage on GitHub there are two option.
-* You may host the data yourself. In this case, simply follow the contributing instructions above and provide a pointer (a link) to your hosted data in the appropriate field for the data type. The [Github repository](https://github.com/MolSSI/covid)  contains many examples of data hosted this way.
-* We can host the data for you. For this, please fill out [this Form](https://docs.google.com/forms/d/e/1FAIpQLSf1gtN4yts8D9QfQlnZUWpjHvs86Zgz3AJHmTug-ehpYYiGPA/viewform?usp=sf_link) so we can get in touch with you and figure out the best way to upload your data to the site. We will work with you to coordinate transferring the data to our servers so we can link to it there (you retain full rights!)
+data not suitable for manual entry or storage on GitHub there are two options.
+* You may host the data yourself. In this case, simply follow the contributing instructions above and provide a pointer (a link) to your hosted data in the appropriate field for the data type. The [Github repository](https://github.com/MolSSI/covid) contains many examples of data hosted this way.
+* We can host the data for you. Please fill out [this Form](https://docs.google.com/forms/d/e/1FAIpQLSf1gtN4yts8D9QfQlnZUWpjHvs86Zgz3AJHmTug-ehpYYiGPA/viewform?usp=sf_link) so we can get in touch with you and figure out the best way to upload your data to the site. We will work with you to coordinate transferring the data to our servers (utilizing our AWS allocation) so we can link to it there (you retain full rights!)
 
 ## Data Curation Teams
 
