@@ -1,0 +1,16 @@
+name: "Docking-based repurposing study of approved drugs against truncated human ACE2 ectodomain (inhibitor-bound closed state)"
+pdbids:
+  - 1r4l
+proteins:
+  - ACE2
+organism:
+  - human
+description: >
+  Computational docking of the approved subset of Drugbank + active
+  metabolites + investigational compounds of interest against the
+  inhibitor-bound (closed-state) ectodomain of hACE2. The receptor has
+  been truncated by removing residues distant from the binding site to
+  reduce the computational load. 3D conformers were generated from SMILES
+  using OpenEye OMEGA with default settings.
+url: https://zenodo.org/record/3929463
+creator: Bonvin Lab
