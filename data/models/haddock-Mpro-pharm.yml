@@ -1,0 +1,16 @@
+name: "Docking-based repurposing study of approved drugs against truncated Mpro"
+pdbids:
+  - 6Y2F
+proteins:
+  - 3CLpro
+organism:
+  - SARS-CoV-2
+description: >
+  Computational docking of the approved subset of Drugbank + active
+  metabolites + investigational compounds of interest against the
+  Main protease (Mpro). The receptor has been truncated by
+  removing residues distant from the binding site to reduce the
+  computational load. 3D conformers were generated from SMILES using
+  OpenEye OMEGA with default settings.
+url: https://zenodo.org/record/3929446
+creator: Bonvin Lab
