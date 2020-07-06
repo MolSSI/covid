@@ -1,5 +1,5 @@
 type: docking
-title: Docking of approved drugs against RdRp
+title: HADDOCK docking of approved Drugbank set against RdRp
 description: >
     Repurposing study of the approved subset of Drugbank + active metabolites
     + investigational compounds of interest against RdRp. Compounds are
@@ -13,19 +13,19 @@ description: >
     Compounds are scored using a scoring function comprised of the sum
     of vdW and electrostatics energies and an empirical desolvation potential.
     respectively.
-creator: Bonvin Lab
-organization: bonvin-lab
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
 models:
-    - haddock-rdrp
+    - haddock-RdRp
 proteins:
     - RdRP
 structures:
     - 7BV2
 files:
     - https://bonvinlab.org/covid/README_rdrp.pdf
-trajectory: https://zenodo.org/record/3929449
+trajectory: https://zenodo.org/record/3929449/files/rdrp.tar.xz?download=1
 size: 25 GB
-length: N/A
+length:
 ensemble: Other
 temperature: N/A
 solvent: vacuum

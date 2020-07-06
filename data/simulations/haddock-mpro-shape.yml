@@ -1,5 +1,5 @@
 type: docking
-title: Docking of approved drugs against Mpro with a geometric shape model
+title: HADDOCK docking of approved Drugbank set against Mpro with a geometric shape model
 description: >
     Repurposing study of the approved subset of Drugbank + active metabolites
     + investigational compounds of interest against Mpro. Compounds are
@@ -14,19 +14,19 @@ description: >
     respectively. Compounds are scored using a scoring function comprised of
     the sum of vdW and electrostatics energies and an empirical desolvation
     potential.
-creator: Bonvin Lab
-organization: bonvin-lab
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
 models:
-    - haddock-mpro-shape
+    - haddock-Mpro-shape
 proteins:
     - 3CLpro
 structures:
     - 6Y2F
 files:
     - https://bonvinlab.org/covid/README_mpro_tanimoto.pdf
-trajectory: https://zenodo.org/record/3929438
+trajectory: https://zenodo.org/record/3929438/files/mpro_tanimoto.tar.xz?download=1
 size: 11 GB
-length: N/A
+length:
 ensemble: Other
 temperature: N/A
 solvent: vacuum

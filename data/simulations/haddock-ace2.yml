@@ -1,5 +1,5 @@
 type: docking
-title: Docking of approved drugs against human ACE2 ectodomain
+title: HADDOCK docking of approved Drugbank set against human ACE2 ectodomain
 description: >
     Repurposing study of the approved subset of Drugbank + active metabolites
     + investigational compounds of interest against human ACE2. Compounds are
@@ -12,19 +12,19 @@ description: >
     allow the compounds to more easily penetrate into the binding pocket.
     Compounds are scored using a scoring function comprised of the sum
     of vdW and electrostatics energies and an empirical desolvation potential.
-creator: Bonvin Lab
-organization: bonvin-lab
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
 models:
-    - haddock-ace2
+    - haddock-ACE2
 proteins:
     - ACE2
 structures:
     - 1r4l
 files:
     - https://bonvinlab.org/covid/README_ace2.pdf
-trajectory: https://zenodo.org/record/3929463
+trajectory: https://zenodo.org/record/3929463/files/ace2.tar.xz?download=1
 size: 23 GB
-length: N/A
+length:
 ensemble: Other
 temperature: N/A
 solvent: vacuum
