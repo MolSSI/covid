@@ -6,10 +6,11 @@ description: >
     guided to the binding site using 3D pharmacophore data extracted from a plethora
     of templates available on the PDB and also through the Diamond assay.
     The template compound shapes have been superimposed on the binding pocket
-    of 6Y2F which is the receptor that was used for the docking. Restraints
-    are defined between target compound atoms and the template shape beads.
-    Docking is performed in vacuum using the OPLS (UA) forcefield with a
-    shifting and switching function for vdW and electrostatics energies,
+    of 6Y2F which is the receptor that was used for the docking. Ambiguous
+    distance restraints are defined between target compound atoms and the
+    template shape beads. Docking is performed in vacuum using the OPLS (UA)
+    forcefield with a shifting function and a target of 8.5Å for the electrostatic
+    energy and a switching function between 6.5 and 8.5Å for vdW energy,
     respectively. Compounds are scored using a scoring function comprised of
     the sum of vdW and electrostatics energies and an empirical desolvation
     potential.

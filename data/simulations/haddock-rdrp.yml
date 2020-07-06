@@ -8,10 +8,11 @@ description: >
     5Å. Docking is performed in vacuum using the OPLS (UA) forcefield with a
     shifting and switching function for vdW and electrostatics energies,
     respectively. Scaling of intermolecular energies was lowered to 1/1000
-    of its original value to allow the compounds to more easily penetrate
-    into the binding pocket. Compounds are scored using a scoring function
-    comprised of the sum of vdW and electrostatics energies and an
-    empirical desolvation potential.
+    of their original values for the initial rigid-body docking stage to
+    allow the compounds to more easily penetrate into the binding pocket.
+    Compounds are scored using a scoring function comprised of the sum
+    of vdW and electrostatics energies and an empirical desolvation potential.
+    respectively.
 creator: Bonvin Lab
 organization: bonvin-lab
 models:
