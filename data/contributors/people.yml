@@ -132,6 +132,13 @@ members:
     url: http://soiland-reyes.com/stian/work/
   - name: Alexandre Bonvin
     url: https://www.bonvinlab.org
+    organization: bonvin-lab
+  - name: Panagiotis Koukos
+    url: https://www.bonvinlab.org
+    organization: bonvin-lab
+  - name: Manon Réau
+    url: https://www.bonvinlab.org
+    organization: bonvin-lab
   - name: Yang Zhang
     url: https://zhanglab.ccmb.med.umich.edu/
     organization: zhang-lab
