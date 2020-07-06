@@ -13,4 +13,5 @@ description: >
   computational load. 3D conformers were generated from SMILES using
   OpenEye OMEGA with default settings.
 url: https://zenodo.org/record/3929449
-creator: Bonvin Lab
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University

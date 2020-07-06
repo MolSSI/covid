@@ -1,4 +1,4 @@
-name: "Docking-based repurposing study of approved drugs against truncated Mpro"
+name: "Truncated Mpro based on 6Y2F and shape-compliant 3D conformers"
 pdbids:
   - 6Y2F
 proteins:
@@ -13,4 +13,5 @@ description: >
   computational load. 3D conformers were generated from SMILES using
   OpenEye OMEGA with default settings.
 url: https://zenodo.org/record/3929438
-creator: Bonvin Lab
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
