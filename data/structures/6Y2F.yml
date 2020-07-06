@@ -1,0 +1,10 @@
+pdbid: 6Y2F
+method: "X-ray diffraction"
+resolution: "1.95"
+proteins:
+  - 3CLpro
+organisms:
+  - SARS-CoV-2
+targets:
+  - 3CLpro protease activity
+annotation: Crystal structure of SARS-CoV-2 main protease provides a basis for drug repurposing studies
