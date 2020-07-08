@@ -28,7 +28,7 @@ trajectory: https://zenodo.org/record/3929438/files/mpro_tanimoto.tar.xz?downloa
 size: 11 GB
 length:
 ensemble: Other
-temperature: N/A
+temperature: 
 solvent: vacuum
 forcefields:
     - OPLS-UA

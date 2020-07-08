@@ -28,7 +28,7 @@ trajectory: https://zenodo.org/record/3929446/files/mpro_pharmacophore.tar.xz?do
 size: 11 GB
 length:
 ensemble: Other
-temperature: N/A
+temperature: 
 solvent: vacuum
 forcefields:
     - OPLS-UA

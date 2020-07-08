@@ -27,7 +27,7 @@ trajectory: https://zenodo.org/record/3929449/files/rdrp.tar.xz?download=1
 size: 25 GB
 length:
 ensemble: Other
-temperature: N/A
+temperature: 
 solvent: vacuum
 forcefields:
     - OPLS-UA
