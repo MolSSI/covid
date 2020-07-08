@@ -246,7 +246,7 @@ class SimulationsModel(BaseModel):
     files: Optional[List[AnyUrl]]
     trajectory: AnyUrl
     size: str
-    length: str
+    length: Optional[str]
     ensemble: ValidEnsembles
     temperature: Optional[float]
     pressure: Optional[float]
@@ -264,6 +264,18 @@ class SimulationsModel(BaseModel):
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
 
+    @validator('length')
+    def length_valid(cls, v, values, **kwargs):
+        if v is None:
+            if values.get('type') == ('docking'):
+                return v
+            else:
+                raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of type "docking", is {v}.')
+        elif isinstance(v, str):
+            return v
+        else:
+            raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of type "docking", is {v}.')
+    
     # @validator('pressure')
     # def pressure_valid(cls, v):
         # if isinstance(v, str):

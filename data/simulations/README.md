@@ -33,7 +33,7 @@ trajectory: (required) URL to trajectory file. It is acceptable to have it be a 
 size: (required) Size of trajectory file, please include units
 length: (required) elapsed real time trajectory covers, please include units
 ensemble: one of [NPT, NVT, NVE, Other]
-temperature: (required) in Kelvin, can be N/A
+temperature: (required) in Kelvin, leave blank for N/A
 pressure: (optional) in Atm  
 solvent: (required) can also be none or vacuum
 salinity: (optional) in Molar
