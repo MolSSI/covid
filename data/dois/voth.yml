@@ -1,0 +1,13 @@
+name: SARS-COV-2 Coarse Grained Viron Model 
+url: https://doi.datacite.org/dois/10.34974%2Fq8ya-wh69
+doi: 10.34974/q8ya-wh69
+description: 
+  A coarse-grained (CG) model for the SARS-CoV-2 virion developed under an NSF RAPID award 2029092 to Gregory A Voth in response to the COVID-19 pandemic.
+content:
+  - Coarse-grained structure of SARS-CoV-2 virion
+creator: Alvin Yu & Gregory Voth
+owner: Alvin Yu & Gregory Voth
+file_types:
+  - pdb
+purpose: Coarse-grained structural data for the SARS-CoV-2 virion
+size: 17.3 MB
