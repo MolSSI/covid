@@ -43,7 +43,13 @@
                 <tr>
                     <td>{{ index $md_type_map .simulation.type }}</td>
                     <td>{{ .simulation.ensemble }}</td>
-                    <td>{{ .simulation.temperature }}</td>
+                    <td>
+                    {{ if not .simulation.temperature }}
+                        N/A
+                    {{ else }}
+                        {{ .simulation.temperature }}
+                    {{ end }}
+                    </td>
                     <td>
                     {{ if not .simulation.pressure }}
                         N/A

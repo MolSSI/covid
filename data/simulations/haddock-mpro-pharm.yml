@@ -1,0 +1,43 @@
+type: docking
+title: HADDOCK docking of approved Drugbank set against Mpro with a pharmacophore shape model
+description: >
+    Repurposing study of the approved subset of Drugbank + active metabolites
+    + investigational compounds of interest against Mpro. Compounds are
+    guided to the binding site using 3D pharmacophore data extracted from a plethora
+    of templates available on the PDB and also through the Diamond assay.
+    The template compound shapes have been superimposed on the binding pocket
+    of 6Y2F which is the receptor that was used for the docking. Ambiguous
+    distance restraints are defined between target compound atoms and the
+    template shape beads. Docking is performed in vacuum using the OPLS (UA)
+    forcefield with a shifting function and a target of 8.5Å for the electrostatic
+    energy and a switching function between 6.5 and 8.5Å for vdW energy,
+    respectively. Compounds are scored using a scoring function comprised of
+    the sum of vdW and electrostatics energies and an empirical desolvation
+    potential.
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
+models:
+    - haddock-Mpro-pharm
+proteins:
+    - 3CLpro
+structures:
+    - 6Y2F
+files:
+    - https://bonvinlab.org/covid/README_mpro_pharmacophore.pdf
+trajectory: https://zenodo.org/record/3929446/files/mpro_pharmacophore.tar.xz?download=1
+size: 11 GB
+length:
+ensemble: Other
+temperature: 
+solvent: vacuum
+forcefields:
+    - OPLS-UA
+references:
+    - "C. Dominguez, R. Boelens and A.M.J.J. Bonvin, HADDOCK: A protein-
+      protein docking approach based on biochemical or biophysical
+      information, J. Am. Chem. Soc., 125, 1731-1737 (2003)."
+    - "G.C.P van Zundert, J.P.G.L.M. Rodrigues, M. Trellet, C. Schmitz,
+      P.L. Kastritis, E. Karaca, A.S.J. Melquiond, M. van Dijk, S.J. de
+      Vries and A.M.J.J. Bonvin, The HADDOCK2.2 webserver: User-friendly
+      integrative modeling of biomolecular complexes, J. Mol. Biol., 428,
+      720-725 (2016)."

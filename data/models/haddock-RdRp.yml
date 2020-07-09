@@ -1,0 +1,17 @@
+name: "Docking-based repurposing study of approved drugs against truncated RdRp"
+pdbids:
+  - 7BV2
+proteins:
+  - RdRP
+organism:
+  - SARS-CoV-2
+description: >
+  Computational docking of the approved subset of Drugbank + active
+  metabolites + investigational compounds of interest against the
+  inhibitor-bound (remdesivir) RdRp. The receptor has been truncated by
+  removing residues distant from the binding site to reduce the
+  computational load. 3D conformers were generated from SMILES using
+  OpenEye OMEGA with default settings.
+url: https://zenodo.org/record/3929449
+creator: P. I. Koukos, M. Réau, A. M. J. J Bonvin
+organization: Computational Structural Biology group, Bijvoet Centre for Biomolecular Research, Utrecht University
