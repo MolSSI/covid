@@ -1,0 +1,20 @@
+name: ANI-FDA Drugs Archive
+url: https://doi.datacite.org/dois/10.34974%2Fwjn9-bs39
+doi: 10.34974/wjn9-bs39
+description: 
+  The dataset files contain low-energy conformers and tautomers of 6,433 FDA approved & investigational drugs. 
+  A collection consists of 32,036 tautomeric structures and ~3M conformers. After extensive sampling, for every 
+  tautomer we found low laying conformers within approx. 6 kcal/mol window using ANI-2x neural-network molecular 
+  potential. The ANI-2x potential is approaching the accuracy of high-level QM calculations (wB97x-D).
+  For each conformer we list total energy, relative energy, and dipole-consistent partial atomic charges.
+content:
+  - Conformer total energy
+  - Conformer relative energy
+  - Conformer dipole-consistent partial atomic charges
+owner: Olexandr Isayev
+creator: Olexandr Isayev
+file_types:
+  - sdf
+purpose: Data for tautomers And conformers Of 6,433 FDA approved investigational drugs published in 2020
+size: 2.1 GB
+license: CC BY-NC-ND 4.0
