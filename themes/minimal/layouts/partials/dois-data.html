@@ -3,17 +3,17 @@
 
 <a href="{{.dois.url}}"><h4 align="center">{{ .dois.name | title }}</h4></a>
 
-<p align="justify"><b>Creator:</b> {{ .dois.creator | markdownify }}</p>
-<p align="justify"><b>DOI:</b> {{ .dois.doi | markdownify }}</p>
-<p align="justify"><b>Owner:</b> {{ .dois.owner | markdownify }}</p>
+<p align="justify"><b>DOI:</b> <a href = "https://doi.org/{{ .dois.doi }}"> {{ .dois.doi | markdownify }} </a></p>
 <p align="justify"><b>Description:</b> {{ .dois.description | markdownify }}</p>
 <p align="justify"><b>Purpose:</b> {{ .dois.purpose | markdownify }}</p>
+<p align="justify"><b>Creator:</b> {{ .dois.creator | markdownify }}</p>
+<p align="justify"><b>Owner:</b> {{ .dois.owner | markdownify }}</p>
 <p align="justify"><b>Size:</b> {{ .dois.size | markdownify }}</p>
 
 
-<p align="justify"><b>Content:</b>
+<p align="justify"><b>Content:</b> <BR>
 {{ range .dois.content }}
-     <kbd class="bg-primary"> {{ . | markdownify }} </kbd>
+     <kbd class="alert-info"> {{ . | markdownify }} </kbd> <BR>
 {{ end }}
 </p>
 
