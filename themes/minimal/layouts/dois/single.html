@@ -10,8 +10,8 @@
 
         <hr class="hr-thick">
                 
-        {{ range $.Site.Data.dois  }}
-            {{ partial "dois-data.html" (dict "dois" . "context" $) }}
+        {{ range $filename, $yamlcontent := $.Site.Data.dois  }}
+            {{ partial "dois-data.html" (dict "dois" $yamlcontent "context" . "filename" $filename) }}
         {{ end }}
     </div>
 </main>
