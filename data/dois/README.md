@@ -9,7 +9,7 @@ Contribute a separate [YAML file](https://yaml.org/) for each entry.
 Each entry has the following required and optional keys:
 ```
 name: (required)
-url: (required)
+url: (optional)
 doi: (required)
 description: (required)
 owner: (required)
