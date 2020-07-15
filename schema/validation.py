@@ -171,7 +171,7 @@ class LinksModel(BaseModel):
 
 class DOIModel(BaseModel):
     name: str
-    url: AnyUrl
+    url: Optional[AnyUrl]
     doi: str
     description: str
     creator: str

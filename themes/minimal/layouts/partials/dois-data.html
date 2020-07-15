@@ -1,6 +1,6 @@
 {{ $localScratch := newScratch }}
 
-<a href="https://covid.molssi.org/dois/#{{.filename}}"><h4 align="center">{{ .dois.name | title }}</h4></a>
+<a href="#{{.filename}}" ><h4 align="center" class="anchor" id="{{.filename}}"><b>{{ .dois.name | title }}</b></h4></a>
 
 <p align="justify"><b>DOI:</b> <a href = "https://doi.org/{{ .dois.doi }}"> {{ .dois.doi | markdownify }} </a></p>
 <p align="justify"><b>Description:</b> {{ .dois.description | markdownify }}</p>
