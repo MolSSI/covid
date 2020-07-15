@@ -1,7 +1,6 @@
-
 {{ $localScratch := newScratch }}
 
-<a href="{{.dois.url}}"><h4 align="center">{{ .dois.name | title }}</h4></a>
+<a href="https://covid.molssi.org/dois/#{{.filename}}"><h4 align="center">{{ .dois.name | title }}</h4></a>
 
 <p align="justify"><b>DOI:</b> <a href = "https://doi.org/{{ .dois.doi }}"> {{ .dois.doi | markdownify }} </a></p>
 <p align="justify"><b>Description:</b> {{ .dois.description | markdownify }}</p>
@@ -20,6 +19,16 @@
 <p align="justify"><b>File types:</b>
 {{ range .dois.file_types }}
      <kbd class="alert-primary"> {{ . | markdownify }} </kbd>
+{{ end }}
+</p>
+
+<p align="justify"><b>Files:</b>
+{{ if .dois.files }}
+    {{ range (seq (len .dois.files)) }}
+        <a href="{{ index $.dois.files (sub . 1) }}"><kbd class="alert-secondary">[.]</kbd></a>
+    {{ end }}
+{{ else }}
+    ---
 {{ end }}
 </p>
 

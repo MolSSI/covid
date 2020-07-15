@@ -178,6 +178,7 @@ class DOIModel(BaseModel):
     owner: str
     content: List[str]
     file_types: List[str]
+    files: List[str]
     size: str
     purpose: str
     license: Optional[str]

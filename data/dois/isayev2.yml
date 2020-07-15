@@ -16,6 +16,8 @@ creator: Olexandr Isayev
 owner: Olexandr Isayev
 file_types:
   - sdf
+files:
+  - https://covmme.molssi.org/data/isayev/drug_dbs/cas-antiviral-ani2x_v1.zip
 purpose: Data for automers and conformers from the CAS antiviral database published in 2020
 size: 5.3 GB
 license: CC BY-NC-ND 4.0

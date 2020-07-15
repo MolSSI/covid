@@ -17,6 +17,7 @@ creator: (required)
 content: (required)
 purpose: (required)
 file_types: (required)
+files: (required)
 size: (required)
 license: (optional)
 ```

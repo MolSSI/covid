@@ -9,5 +9,7 @@ creator: Alvin Yu & Gregory Voth
 owner: Alvin Yu & Gregory Voth
 file_types:
   - pdb
+files:
+  - https://github.com/alvinyu33/sars-cov-2-public/blob/9b46373cb878929de5b74804a37f20fa73efa48e/sars-cov-2-virion-cg.pdb
 purpose: Coarse-grained structural data for the SARS-CoV-2 virion
 size: 17.3 MB
