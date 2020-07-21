@@ -1,0 +1,18 @@
+name: Apo SARS-CoV-2 PLPro (from PDB 6W9C C-chain)
+url: 
+doi: 10.34974/y5f0-0k68
+description: 1μs MD trajectory generated using Amber, FF14SB force field trajectory, stripped of water molecules and counter ions.
+content:
+  - PLpro 1μs MD trajectory
+  - Topology file
+owner: Chia-en A. Chang, Yuliana Bosken & Timothy Cholko
+creator: Chia-en A. Chang, Yuliana Bosken & Timothy Cholko
+file_types:
+  - dcd
+  - prmtop
+files:
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/C_6w9c_apo_noWater.dcd
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/C_6w9c_apo_noWater.prmtop
+purpose: SARS-CoV-2 MD Trajectory
+size: 5.5 GB
+license: 

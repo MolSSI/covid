@@ -1,0 +1,18 @@
+name: 3k bound SARS-CoV-2 PLPro (3k docked to frame from trajectory of PDB 6W9C C-chain)
+url: 
+doi: 10.34974/mawv-qh58
+description: 1μs MD trajectory generated using Amber, FF14SB force field trajectory, GAFF2  for ligand, AM1-BCC charges for ligand; stripped of water molecules and counter ions.
+content:
+  - PLpro 1μs MD trajectory
+  - Topology file
+owner: Chia-en A. Chang, Yuliana Bosken & Timothy Cholko
+creator: Chia-en A. Chang, Yuliana Bosken & Timothy Cholko
+file_types:
+  - dcd
+  - prmtop
+files:
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/Apose_noWater.dcd
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/Apose_noWater.prmtop
+purpose: SARS-CoV-2 MD Trajectory
+size: 5.5 GB
+license: 
