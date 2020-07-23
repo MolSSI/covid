@@ -1,0 +1,11 @@
+pdbid: 4ow0
+proteins:
+  - PLpro
+organisms:
+  - SARS-CoV
+targets:
+  - PLpro protease activity
+annotation:
+resolution: 2.10
+method: X-Ray Diffraction
+rating: 
