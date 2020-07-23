@@ -22,5 +22,3 @@ solvent: Water
 salinity: 
 forcefields:
     - FF14SB
-references:
-    - 

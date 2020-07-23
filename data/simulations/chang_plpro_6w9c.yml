@@ -21,5 +21,3 @@ pressure: 0.987
 solvent: Water
 forcefields:
     - FF14SB
-references:
-    - 
