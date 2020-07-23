@@ -1,0 +1,10 @@
+name: SARS-CoV-2 ligand-free (PDB 6W9C - chain C)
+url: http://chemcha-gpu0.ucr.edu/software/
+description: >
+  MD simulations prepared using Amber18 MD package with GPU acceleration. Used FF14SB for the protein. Systems solvated with TIP3p water. Systems minimized in four stages, using Generalized Born implicit solvent to minimize the hydrogen atoms, then the protein sidechains, then the entire protein, and finally the entire solvated structure.
+pdbids:
+  - 6w9c
+proteins:
+  - PLpro
+creator: Chang Group
+institution: University of California, Riverside

@@ -1,0 +1,10 @@
+name: SARS-CoV-1 ligand-bound (PDB 4OW0)
+url: http://chemcha-gpu0.ucr.edu/software/
+description: >
+  MD simulations prepared using Amber18 MD package with GPU acceleration. Used FF14SB for the protein, GAFF2 for the ligands. Systems solvated with TIP3p water. Systems minimized in four stages, using Generalized Born implicit solvent to minimize the hydrogen atoms, then the protein sidechains, then the entire protein, and finally the entire solvated structure.
+pdbids:
+  - 4ow0
+proteins:
+  - PLpro
+creator: Chang Group
+institution: University of California, Riverside
