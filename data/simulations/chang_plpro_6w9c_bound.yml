@@ -1,0 +1,24 @@
+type: md
+title: 3k bound SARS-CoV-2 PLPro (3k docked to frame from trajectory of PDB 6W9C C-chain)
+description: >
+    1μs MD trajectory generated using Amber, FF14SB force field trajectory, GAFF2  for ligand, AM1-BCC charges for ligand; stripped water molecules and counter ions.
+creator: Chia-en A. Chang, Yuliana Bosken, Timothy Cholko
+organization: Chang group, University of California, Riverside
+models:
+    - 6w9c_bound_chang
+proteins:
+    - PLpro
+structures:
+    - 6w9c
+files:
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/md_input.zip
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/Apose_noWater.dcd
+size: 5.4GB
+length: 1 μs
+ensemble: NPT
+temperature: 298
+pressure: 0.987
+solvent: Water
+forcefields:
+    - FF14SB
+    - GAFF2
