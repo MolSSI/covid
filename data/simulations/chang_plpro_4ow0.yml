@@ -1,0 +1,26 @@
+type: md
+title: Apo SARS-CoV PLpro
+description: >
+    1μs MD trajectory generated using Amber, FF14SB force field trajectory, stripped of water molecules and counter ions.
+creator: Chia-en A. Chang, Yuliana Bosken, Timothy Cholko
+organization: Chang group, University of California, Riverside
+models:
+    - 4ow0_chang
+proteins:
+    - PLpro
+structures:
+    - 4ow0
+files:
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/md_input.zip
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ChangGroupDeptChemUC/4ow0_apo_noWater.dcd
+size: 5.4GB
+length: 1 μs
+ensemble: NPT
+temperature: 298
+pressure: 0.987
+solvent: Water
+salinity: 
+forcefields:
+    - FF14SB
+references:
+    - 
