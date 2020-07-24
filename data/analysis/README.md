@@ -48,4 +48,5 @@ references: (optional) List of references associated with the programs and metho
     - ref2
 publication: (optional) URL of the publication which includes this analysis
 preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
+tags: (optional) keywords related to the type of data analysis 
 ```
