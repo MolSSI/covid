@@ -33,3 +33,6 @@ dependencies:
 references:
    - D. E. Shaw Research, "Molecular Dynamics Simulations Related to SARS-CoV-2," D. E. Shaw Research 
      Technical Data, 2020. http://www.deshawresearch.com/resources_sarscov2.html
+tags:
+   - data reduction
+   - diversity analysis
