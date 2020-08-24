@@ -66,6 +66,7 @@ class ValidProteins(str, Enum):
     E_protein = 'E protein'
     PD_1 = 'PD-1'
     virion = "virion"
+    Upf1 = "Upf1"
 
 
 # Check that proteins have not been given other names
@@ -118,12 +119,14 @@ class ValidTargets(str, Enum):
     viral_fusion = 'viral fusion'
     host_immune_response = 'host immune response'
     cell_cyle_inhibitors = 'cell cycle inhibitors'
+    nsp13_helicase_activity = 'nsp13 helicase activity'
 
 
 class ValidOrganisms(str, Enum):
     human = 'human'
     sars_cov = 'SARS-CoV'
     sars_cov_2 = 'SARS-CoV-2'
+    mers = 'MERS'
 
 
 class ResourcesEnum(str, Enum):

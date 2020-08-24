@@ -1,0 +1,20 @@
+name: GitHub Repo for building an nsp13 / helicase homology model
+description: > 
+  Current structures of the SARS-CoV-2 helicase are limited, and
+  the only structures from other coronaviruses are not ligand bound. To
+  facilitate drug discovery against SARS-CoV-2 helicase, we need to determine a
+  model of the helicase bound to ATP and / or RNA. 
+url: https://github.com/choderalab/nsp13-models
+pdbids: 
+  - 6JYT
+  - 5WWP
+  - 2GK6
+  - 2XZO
+models:
+  - 6jyt_croll
+proteins:
+  - Helicase
+  - Upf1
+creator: Alex Payne
+lab: Chodera lab
+

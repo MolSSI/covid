@@ -1,0 +1,24 @@
+name: "SARS nsp13 helicase 6JYT: ISOLDE refined model"
+pdbids:
+  - 6JYT
+proteins:
+  - Helicase
+organism:
+  - SARS-CoV
+description: >
+  Original model has numerous quite severe (albeit local) problems:
+    * spurious non-proline cis/twisted peptide bonds at A281-282, A285-286, A350-351, A353-354, A439-440, A551-552, B-1-0, B189-190, B206-207, B467-468
+    * high clashscore of 28.7
+    * only 79.6% of residues in favoured portion of Ramachandran plot (should be near 98%)
+    * C-terminal domains (~439 to end) nearly unresolved and severely distorted
+    * Some long loops were modelled despite having no discernable density.
+  Rebuilt well-resolved regions directly into density. Trimmed off unresolved loops. 
+  In the MERS equivalent of this complex (5wwp) the C-terminal domain is well-resolved (but needed 
+  substantial rebuilding in its own right). After rebuilding, I used this (chain A, residues 439 to end)
+  as a reference model (distance and torsion-based) to improve the poorly-resolved C-terminal domains
+  in 6jyt. Given the poor density it cannot be said that these domains are perfect, but application of 
+  the restraints substantially improved both R-factors and geometry.
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/helicase/SARS-CoV/6jyt/isolde
+pdb_url: https://raw.githubusercontent.com/thorn-lab/coronavirus_structural_task_force/master/pdb/helicase/SARS-CoV/6jyt/isolde/6jyt_refine_12.pdb
+creator: Tristan Croll
+rating: 
