@@ -1,0 +1,37 @@
+type: md
+title: SARS-CoV-2 main protease (apo, monomer) Folding@home simulations
+description: >
+  Folding@home projects 11743 and 11749 are made available here without solvent, but including salt. Both of these projects were initiated from PDB structure `6lu7`, chain A (after removing the inhibitor (i.e. in apo form), as a monomer). The split into two projects is simply the result of the architecture of Folding@home, there are no differences in the setups between these projects. Please note the identical file names in both projects, there is no relation between the identically named files - all trajectories are initialized with different random velocities. Each trajectory is available in the appropriate project folder with trajectory files formatted as `run<RUN>-clone<CLONE>.h5`, with `<RUN>`` indexing a set of trajectories started from the same conformation (i.e. all trajectories here are `RUN0`) and ``<CLONE>`` denoting different replicates initiated from the same structure but different initial velocities. The dataset contains 5688 trajectories - a subset of trajectories longer than 250 ns generated in these Folding@home projects. 
+  
+  Chain A (i.e. a monomer of the protein, without the inhibitor or waters) was extracted from `6lu7` using PyMOL, and protonated and capped (ACE,NME) with Schrodinger's Maestro. Simulations were performed in the NPT ensemble (310 K, 1 atm), in a cubic box with 1 nm padding, 150 mM NaCl, 4 amu hydrogen mass, using `amber14SB` and `tip3p` forcefields. OpenMM 7.4.1 was used. System was equilibrated for 5 ns using 2 fs timestep with default OpenMM Langevin integrator, production runs used 4 fs timestep with OpenMMTools custom Langevin integrator using `V R O R V` splitting.
+creator: Rafal Wiewiora, John Chodera
+organization: Folding@home
+lab: Chodera lab
+institute: Memorial Sloan Kettering Cancer Center
+models:
+    - fah-mpro-monomer-all-atom
+    - fah-mpro-monomer-no-water
+proteins:
+    - 3CLpro
+structures:
+    - 6LU7
+molecule:
+rating:
+files:
+    - https://github.com/FoldingAtHome/coronavirus/tree/master/system-preparation/6lu7_receptor
+trajectory:
+    - https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer
+    - https://osf.io/d9tm2/files/
+size: 519.1 GB
+length: 2.6 ms
+ensemble: NPT
+temperature: 310
+pressure: 1  
+solvent: water
+salinity: 0.15
+forcefields:
+    - amber14SB
+    - tip3p
+references:
+publication:
+preprint:
