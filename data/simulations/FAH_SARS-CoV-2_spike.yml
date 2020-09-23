@@ -1,0 +1,32 @@
+type: md
+title: Trajectories of the SARS-CoV-2 spike protein from Folding@Home
+description: All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using Folding@Home. Simulations were run using either GROMACS or OPENMM and are stored as compressed binary XTC files. The dataset comprises 3 projects, each having a RUN*/CLONE*/result* directory structure. Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the specified starting conformation, and each result is a fragment of the contiguous simulation.
+creator: Folding@Home
+institute: Washington University in St. Louis
+proteins:
+    - spike
+structures:
+    - 6VXX
+models:
+    - FAH_SARS-CoV-2_spike
+files:
+    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217/
+    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253/
+    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561/
+size:
+    - 2.2 TB
+    - 3.9 TB
+    - 453 GB
+length:
+    - 230 µs
+    - 830 µs
+    - 95 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.1
+forcefields:
+    - AMBER03
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.06.27.175430
