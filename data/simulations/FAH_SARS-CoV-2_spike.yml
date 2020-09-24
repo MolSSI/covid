@@ -1,26 +1,34 @@
 type: md
 title: Trajectories of the SARS-CoV-2 spike protein from Folding@Home
-description: All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using Folding@Home. Simulations were run using either GROMACS or OPENMM and are stored as compressed binary XTC files. The dataset comprises 3 projects, each having a RUN*/CLONE*/result* directory structure. Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the specified starting conformation, and each result is a fragment of the contiguous simulation.
+description: >
+  All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using Folding@Home. 
+  Simulations were run using either GROMACS or OPENMM and are stored as compressed binary XTC files. 
+  The dataset comprises 3 projects, each having a RUN*/CLONE*/result* directory structure. 
+  Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the 
+  specified starting conformation, and each result is a fragment of the contiguous simulation.
+  
+  *Entire dataset:* To get the raw trajectory files (XTCs) of the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
+   ```
+
+   *Topology file:* To pull the PDB topology file, you can download it directly from [this link](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
+
+  *Markov Model:* In addition to raw trajectories, a polished Markov Model, including representative cluster centers, transition probabilities, and equilibrum populations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/final_models/spike/model .
+   ```
 creator: Folding@Home
 institute: Washington University in St. Louis
 proteins:
     - spike
 structures:
     - 6VXX
-models:
-    - FAH_SARS-CoV-2_spike
-files:
-    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217/
-    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253/
-    - s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561/
-size:
-    - 2.2 TB
-    - 3.9 TB
-    - 453 GB
-length:
-    - 230 µs
-    - 830 µs
-    - 95 µs
+trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/model/full_centers.xtc
+size: 6.5 TB
+length: 1.2 ms
 ensemble: NPT
 temperature: 310
 pressure: 1
