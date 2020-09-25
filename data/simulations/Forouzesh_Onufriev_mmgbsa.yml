@@ -1,15 +1,14 @@
 type: md
 title: MMGB/SA Consensus Estimate of the Binding Free Energy Between the Novel Coronavirus Spike Protein to the Human ACE2 Receptor
 description:
-	50 ns simulation trajectory of a truncated SARS-CoV-2 spike receptor binding domain the human ACE2 receptor.
-	The simulations used the Amber ff14SB force field and the OPC water model.
-	The initial structure (PDB ID:6m0j) was truncated in order to obtain a smaller complex feasible with the computational framework.
-	A molecular mechanics generalized Born surface area (MMGB/SA) approach was employed to estimate absolute binding free energy of the truncated complex.
-	The system was neutralized and salted with NaCl, with a final concentration of 0.15 M.The simulations were conducted at 300 K in the NPT ensemble.
-	
-creators: Negin Forouzesh, Alexey Onufriev
-institutes: California State University, Los Angeles and Virginia Tech
+  50 ns simulation trajectory of a truncated SARS-CoV-2 spike receptor binding domain the human ACE2 receptor.
+  The simulations used the Amber ff14SB force field and the OPC water model.
+  The initial structure (PDB ID:6m0j) was truncated in order to obtain a smaller complex feasible with the computational framework.
+  A molecular mechanics generalized Born surface area (MMGB/SA) approach was employed to estimate absolute binding free energy of the truncated complex.
+  The system was neutralized and salted with NaCl, with a final concentration of 0.15 M.The simulations were conducted at 300 K in the NPT ensemble.
 
+creator: Negin Forouzesh, Alexey Onufriev
+institution: California State University, Los Angeles and Virginia Tech
 models:
     - 6m0j_Forouzesh
 proteins:
@@ -20,8 +19,7 @@ structures:
     - 6m0j
 files: 
     - https://github.com/NeginForouzesh/sars-cov-2-spike-and-human-ace-2/tree/master/MD_Input
-trajectory: 
-    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ForouzeshGroupCalState/2_PRODUCTION_TRUNC.tar.gz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ForouzeshGroupCalState/2_PRODUCTION_TRUNC.tar.gz
 
 size: 31 GB
 length: 50 ns
@@ -33,11 +31,13 @@ salinity: 0.15
 forcefields:
     - FF14SB
 references: 
-    - Forouzesh, Negin, Saeed Izadi, and Alexey V. Onufriev. "Grid-based surface generalized Born model for calculation of electrostatic binding free energies." 
-      Journal of chemical information and modeling 57.10 (2017): 2505-2513.
-    - Forouzesh, Negin, Abhishek Mukhopadhyay, Layne T. Watson, and Alexey V. Onufriev. 
-      "Multidimensional Global Optimization and Robustness Analysis in the Context of Protein-Ligand Binding.", Journal of Chemical Theory and Computation (2020).
-    - Izadi, Saeed, Ramu Anandakrishnan, and Alexey V. Onufriev. "Building water models: a different approach." 
-      Journal of Physical Chemistry Letters 5.21 (2014): 3863-3871.
-preprint: 
-    - https://www.biorxiv.org/content/10.1101/2020.08.25.267625v1.abstract
+    - >
+        Forouzesh, Negin, Saeed Izadi, and Alexey V. Onufriev. "Grid-based surface generalized Born model for calculation of electrostatic binding free energies."
+        Journal of chemical information and modeling 57.10 (2017): 2505-2513.
+    - >
+        Forouzesh, Negin, Abhishek Mukhopadhyay, Layne T. Watson, and Alexey V. Onufriev.
+        "Multidimensional Global Optimization and Robustness Analysis in the Context of Protein-Ligand Binding.", Journal of Chemical Theory and Computation (2020).
+    - >
+        Izadi, Saeed, Ramu Anandakrishnan, and Alexey V. Onufriev. "Building water models: a different approach."
+        Journal of Physical Chemistry Letters 5.21 (2014)\: 3863-3871.
+preprint: https://www.biorxiv.org/content/10.1101/2020.08.25.267625v1.abstract
