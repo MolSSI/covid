@@ -1,0 +1,16 @@
+name: SARS-CoV-2 spike receptor-binding domain bound with ACE2
+description:
+  Truncated structure of SARS-CoV-2 spike receptor-binding domain bound with the human ACE2 receptor.
+url: 
+  https://github.com/NeginForouzesh/sars-cov-2-spike-and-human-ace-2/tree/master/Models
+pdb_url: 
+  https://www.rcsb.org/structure/6M0J
+pdbids:
+  - 6m0j
+proteins:
+  - spike
+  - RBD
+  - ACE2
+creator: Negin Forouzesh, Alexey Onufriev
+institution: California State University, Los Angeles and Virginia Tech
+preprint: https://www.biorxiv.org/content/10.1101/2020.08.25.267625v1.abstract
