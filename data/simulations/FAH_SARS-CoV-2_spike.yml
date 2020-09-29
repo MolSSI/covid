@@ -1,12 +1,15 @@
 type: md
 title: Trajectories of the SARS-CoV-2 spike protein from Folding@Home
 description: >
-  All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using Folding@Home. 
-  Simulations were run using either GROMACS or OPENMM and are stored as compressed binary XTC files. 
+  All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
   The dataset comprises 3 projects, each having a RUN*/CLONE*/result* directory structure. 
+  Simulations were run using GROMACS (PROJ14217) or OpenMM (PROJ14235 and PROJ14561) and are stored as compressed binary XTC files.
   Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the 
   specified starting conformation, and each result is a fragment of the contiguous simulation.
+  PROJ14217 and PROJ14253 were seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
   
+   *Topology file:* To pull the PDB topology file, you can download it directly from [this link](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
+
   *Entire dataset:* To get the raw trajectory files (XTCs) of the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
@@ -14,11 +17,20 @@ description: >
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
    ```
 
-   *Topology file:* To pull the PDB topology file, you can download it directly from [this link](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
-
-  *Markov Model:* In addition to raw trajectories, a polished Markov Model, including representative cluster centers, transition probabilities, and equilibrum populations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+  *Markov State Model:* A polished Markov State Model, including representative cluster centers, transition probabilities, and equilibrum populations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/final_models/spike/model .
+   ```
+
+  *Input files:* The system setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/input_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/PROJ14217_tpr_files .
+   ```
+
+  *FAST simulations:* FAST simulations, which were used as seeds for Folding@Home simulations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/FAST_simulations .
    ```
 creator: Folding@Home
 institute: Washington University in St. Louis
