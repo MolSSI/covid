@@ -17,22 +17,22 @@ description: >
   The dataset is available through AWS Public Datasets and can be accessed through the command line interface (CLI) as follows:  
     
     1) Install the [AWS CLI](https://aws.amazon.com/cli/): 
-      ```bash
-      conda install -c conda-forge awscli
-      ```
-      or 
-      ```bash
-      pip install awscli
-      ```  
+       ```bash
+       conda install -c conda-forge awscli
+       ```
+       or 
+       ```bash
+       pip install awscli
+       ```
     2) To download the whole dataset (519 GB): 
-      ```bash
-      aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
-      ```  
+       ```bash
+       aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+       ```
     3) To download subsets of the dataset appropriate query terms can be used, e.g.:  
        the first trajectory of project 11743:
        ```bash
        aws s3 cp --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5 .
-       ```  
+       ```
        the first 10 trajectories of project 11743: 
        ```bash
        aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone?.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
@@ -40,7 +40,7 @@ description: >
        the first 100 trajectories of project 11743: 
        ```bash
        aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone??.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
-       ``` 
+       ```
 
   Individual files can also be downloaded directly via HTTP, [for example](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5).    
   Data can also be browsed and downloaded in the AWS Management Console [here](https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer).  
