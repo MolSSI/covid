@@ -25,7 +25,9 @@ description: >
       pip install awscli
       ```  
     2) To download the whole dataset (519 GB):  
-      `aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
+      ```bash
+      aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+      ```  
     3) To download subsets of the dataset appropriate query terms can be used, e.g.:  
        the first trajectory of project 11743: 
        ```bash
