@@ -42,7 +42,7 @@ description: >
 creator: Folding@Home
 institute: Temple University
 proteins:
-    - Mpro-3cl
+    - 3CLpro
 structures:
     - 6Y84
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14721/RUN0/CLONE0/results0/traj_comp.xtc
