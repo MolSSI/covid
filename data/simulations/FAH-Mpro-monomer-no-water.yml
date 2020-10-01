@@ -16,21 +16,33 @@ description: >
 
   The dataset is available through AWS Public Datasets and can be accessed through the command line interface (CLI) as follows:  
     
-    1) Install the AWS CLI:  
-      `conda install -c conda-forge awscli`  
+    1) Install the [AWS CLI](https://aws.amazon.com/cli/):  
+      ```bash
+      conda install -c conda-forge awscli
+      ```
       or  
-      `pip install awscli`  
-    2) Configure the CLI with your AWS account: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html  
-    3) To download the whole dataset (519 GB):  
-      `aws s3 sync s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
-    4) To download subsets of the dataset appropriate query terms can be used, e.g.:  
-       the first trajectory of project 11743: `aws s3 sync --exclude "*" --include "11743/run0-clone0.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
-       the first 10 trajectories of project 11743: `aws s3 sync --exclude "*" --include "11743/run0-clone?.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
-       the first 100 trajectories of project 11743: `aws s3 sync --exclude "*" --include "11743/run0-clone??.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
+      ```bash
+      pip install awscli
+      ```  
+    2) To download the whole dataset (519 GB):  
+      `aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .`  
+    3) To download subsets of the dataset appropriate query terms can be used, e.g.:  
+       the first trajectory of project 11743: 
+       ```bash
+       aws s3 cp --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5 .
+       ```  
+       the first 10 trajectories of project 11743: 
+       ```bash
+       aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone?.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+       ```
+       the first 100 trajectories of project 11743: 
+       ```bash
+       aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone??.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+       ``` 
 
-  Note that an AWS account is required to use the CLI. Individual files can also be downloaded without an AWS account, for example: https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5  
-  Data can also be browsed and downloaded in the AWS Management Console at https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer  
-  Alternatively, the dataset is also available through the Open Science Framework at https://osf.io/d9tm2
+  Individual files can also be downloaded directly via HTTP, [for example](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5).    
+  Data can also be browsed and downloaded in the AWS Management Console [here](https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer).  
+  Alternatively, the dataset is also available through the Open Science Framework [here](https://osf.io/d9tm2).
 creator: Rafal Wiewiora, John Chodera
 organization: Folding@home
 lab: Chodera lab
@@ -45,7 +57,7 @@ molecule:
 rating:
 files:
     - https://github.com/FoldingAtHome/coronavirus/tree/master/system-preparation/6lu7_receptor
-trajectory: https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer
+trajectory: https://registry.opendata.aws/foldingathome-covid19
 size: 519.1 GB
 length: 2.6 ms
 ensemble: NPT
