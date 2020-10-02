@@ -1,0 +1,18 @@
+name: SARS-CoV-2 main protease (apo, monomer) for Folding@home simulations
+description: > 
+  Apo, monomeric Mpro/3CLpro from PDB structure `6lu7` used in Folding@home simulations. 
+  Chain A (i.e. a monomer of the protein, without the inhibitor or waters) was extracted from `6lu7` using PyMOL, and protonated and capped (ACE, NME) with Schrodinger's Maestro.
+  The protein was solvated in a cubic box with 1 nm padding and 150 mM NaCl using OpenMM 7.4.1.
+url: https://github.com/FoldingAtHome/coronavirus/tree/master/system-preparation/6lu7_receptor/output
+pdb_url: https://github.com/FoldingAtHome/coronavirus/blob/master/system-preparation/6lu7_receptor/output/solvated.pdb
+pdbids:
+  - 6LU7
+proteins:
+  - 3CLpro
+creator: Ivy Zhang, Hannah Bruce Macdonald
+organization: Folding@home
+institution: Memorial Sloan Kettering Cancer Center
+lab: Chodera lab
+rating:
+publication:
+preprint:
