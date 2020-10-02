@@ -3,7 +3,7 @@ title: SARS-CoV-2 main protease (apo, monomer) Folding@home simulations
 description: >
   This is a dataset containing 5688 trajectories at least 250 ns in length (2.6 ms in total) of SARS-CoV-2 main viral protease (Mpro/3CLpro) in its apo, monomeric form. 
   Water (but not salt) has been stripped from the trajectories, frames are saved every 0.2 ns.
-  Simulations were initiated from PDB structure `6lu7`, chain A, after removing the inhibitor and structural waters.
+  Simulations were initiated from PDB structure [6lu7](http://www.rcsb.org/structure/6LU7), chain A, after removing the inhibitor and structural waters.
   
   The dataset is organized by Folding@home project number (11743 and 11749) due to the F@h parallelization -- there are no differences in setups between the projects 
   and there is no relation between the identically named files - all trajectories (`CLONE`s) are initialized with random velocities.
