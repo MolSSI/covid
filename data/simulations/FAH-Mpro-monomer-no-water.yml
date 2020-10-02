@@ -8,7 +8,8 @@ description: >
   The dataset is organized by Folding@home project number (11743 and 11749) due to the F@h parallelization -- there are no differences in setups between the projects 
   and there is no relation between the identically named files - all trajectories (`CLONE`s) are initialized with random velocities.
 
-  Chain A (i.e. a monomer of the protein, without the inhibitor or waters) was extracted from `6lu7` using PyMOL, and protonated and capped (ACE, NME) with Schrodinger's Maestro.
+  Chain A (i.e. a monomer of the protein, without the inhibitor or waters) was extracted from [6lu7](http://www.rcsb.org/structure/6LU7) using PyMOL, and protonated and capped (ACE, NME) with Schrodinger's Maestro.
+  The model can be downloaded [here](https://github.com/FoldingAtHome/coronavirus/blob/master/system-preparation/6lu7_receptor/output/solvated.pdb).
   Simulations were performed in the NPT ensemble (310 K, 1 atm), in a cubic box with 1 nm padding, 150 mM NaCl, with hydrogen mass repartitioning (4 amu H mass), using `amber14SB` and `tip3p` forcefields.
   OpenMM 7.4.1 was used. System was equilibrated for 5 ns using 2 fs timestep with default OpenMM Langevin integrator,
   then for 1.25 ns using 4 fs timestep with OpenMMTools custom Langevin integrator using `V R O R V` splitting.
