@@ -45,8 +45,10 @@
 
 
   <!-- Structure name -->
-  <h4 align="center" class="anchor" id='{{ print ($pdb | anchorize) "-" ( .protein | anchorize) }}'>
+  {{ $entry_name := ( print ($pdb | anchorize) "-" ( .protein | anchorize) ) }}
+  <h4 align="center" class="anchor" id='{{ $entry_name }}'>
     <b>{{ $title }} {{ with .structure.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }} {{ partial "structure-marker" .structure }} </b>
+    <a href='{{ print .context.Site.BaseURL "/structures/#" $entry_name }}'><i class="fa fa-link" aria-hidden="true"></i></a>
   </h4>
 
   <!-- Structure Annotation -->
