@@ -1,0 +1,22 @@
+name: "SARS-CoV-2 main protease model for MD simulations"
+description: >
+  Model of the main protease (Mpro/3cl) of SARS-CoV-2 virus.
+
+
+  Structures used for these simulations were obtained using x-ray crystallography from Diamond Light Source via Tim Dudgeon.
+
+
+  A directory of all structures used can be found on our AWS bucket using the [AWS CLI](https://aws.amazon.com/cli/):
+    ```bash
+      aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/receptor_structures .
+    ```
+  These conformations were used for all listed simulations pertaining to absolute free energy of protease inhibitors. A detailed database of which receptor was used for each simulation can be found in the dataframe listed in the url field.
+
+url: https://fah-public-data-covid19-absolute-free-energy.s3.us-east-2.amazonaws.com/free_energy_data/organization.pkl
+pdb_url: https://fah-public-data-covid19-absolute-free-energy.s3.us-east-2.amazonaws.com/receptor_structures.tar.gz
+proteins:
+  - 3CLpro
+creator: Matt Hurley
+organization: Temple University
+institution: Chemistry Department
+lab: Voelz Lab
