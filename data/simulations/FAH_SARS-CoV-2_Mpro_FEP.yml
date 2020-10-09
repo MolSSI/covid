@@ -14,10 +14,16 @@ description: >
   Absolute free energies were computed using an expanded ensemble scheme, using 40 lambdas to decouple the ligand interactions.
   Free energy data for each alchemical lambda is stored in the `md.log` file, and found more concisely in pre-scraped pickle (`.pkl`) dataframes.
   The dataset comprises several projects, each having a `RUN*/CLONE*/result*` directory structure:
+
+
   * each `PROJ` represents a different dataset of small molecules
+
   * each `RUN` represents a different small molecule
+
   * each `CLONE` is a unique MD simulation differing in initial atomic velocities
-  * each `result*` is a fragment of the contiguous simulation
+
+  * each `result` is a fragment of the contiguous simulation
+
 
   For the case of ligand-only "L" simulations, each XTC represents 10ns of sampling,
   while each complex "RL" xtc trajectory is only 1 ns.
