@@ -1,29 +1,45 @@
 type: md
-title: Trajectories of the SARS-CoV-2 main protease protein from Folding@Home
+target: 3CLpro
+title: Folding@home expanded ensemble absolute free energy calculations of potential small molecule inhibitors of the SARS-CoV-2 main protease from the COVID Moonshot
 description: >
-  All-atom MD simulations of the SARS-CoV-2 main protease with small molecules from the [COVID Moonshot](https://postera.ai/covid), simulated using Folding@Home.
-  Molecules from datasets prefixed with "MS" were submitted through Postera's crowdsourcing Moonshot campaign. These structures can be found [here](https://postera.ai/covid/structures).
+  This dataset contains all-atom expanded ensemble absolute free calculations for
+  potential small molecule inhibitors of the SARS-CoV-2 main viral protease (Mpro, 3CLpro)
+  from the [COVID Moonshot](https://postera.ai/covid) simulated on Folding@home with [gromacs](http://www.gromacs.org/).
+
+  Molecules from datasets prefixed with "MS" were crowdsourced small molecule designs
+  submitted to the [COVID Moonshot](http://postera.ai/covid).
+
   Each small molecule was run alone in solution and docked to Mpro to compute absolute free energies of binding.
   Simulations were run using GROMACS-5.0.4 or GROMACS-2020 and are stored as compressed binary XTC files.
   Absolute free energies were computed using an expanded ensemble scheme, using 40 lambdas to decouple the ligand interactions.
-  Free energy data for each alchemical lambda is stored in the md.log file, and found more concisely in pre-scraped pkl dataframes.
-  The dataset comprises several projects, each having a `RUN*/CLONE*/result*` directory structure.
-  Each PROJ represents a different dataset of small molecules. Each RUN represents a different small molecule,
-  each CLONE is a unique MD run differing in initial atomic velocities, and result is a fragment of the contiguous simulation.
-  For the case of ligand-only "L" simulations, each xtc represents 10ns of sampling, while each complex "RL" xtc trajectory is only 1ns.
+  Free energy data for each alchemical lambda is stored in the `md.log` file, and found more concisely in pre-scraped pickle (`.pkl`) dataframes.
+  The dataset comprises several projects, each having a `RUN*/CLONE*/result*` directory structure:
+  * each `PROJ` represents a different dataset of small molecules
+  * each `RUN` represents a different small molecule
+  * each `CLONE` is a unique MD simulation differing in initial atomic velocities
+  * each `result*` is a fragment of the contiguous simulation
+
+  For the case of ligand-only "L" simulations, each XTC represents 10ns of sampling,
+  while each complex "RL" xtc trajectory is only 1 ns.
   More information about the simulation set-up can be found [here](https://github.com/FoldingAtHome/covid-moonshot/blob/master/folding-at-home_submissions/COVID%20Moonshot%20051220%20Release%20Announcement.pdf).
-  In order to find particular PROJ/RUN of interest, see the results and organization dataframes.
+  In order to find particular `PROJ`/`RUN `of interest, see the `results` and `organization` dataframes.
 
-  *Organization dataframe:* In order to determine systems of interest, you can parse [this dataframe](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/organization.pkl) which contains information on which ligands are present in each project/run. Half of the projects contain trajectories for ligands alone in solution, while the other half contain trajectories for ligands docked to the main protease. More data is being added to this repository every day, so if a project/run is not available in the AWS bucket, check back later or contact Matt Hurley (tug27224@temple.edu).
+  **Organization dataframe:** In order to determine systems of interest, you can parse [this dataframe](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/organization.pkl) which contains information on which ligands are present in each project/run. Half of the projects contain trajectories for ligands alone in solution, while the other half contain trajectories for ligands docked to the main protease. More data is being added to this repository every day, so if a project/run is not available in the AWS bucket, check back later or contact [Matt Hurley](mailto:tug27224@temple.edu).
 
-  *Topology files:* Structure & topology files corresponding to each run can be found in the build directories. All-atom files that include solvent and ions are named npt.gro, while files containing only protein and ligand information are named xtc.gro. Other files of interest include the force-field parameters, stored in topol.top, and prod.mdp, which holds the MD parameters for running expanded ensemble simulations. You can access these via the [AWS CLI](https://aws.amazon.com/cli/):
+  **Topology files:** Structure and topology files corresponding to each run can
+  be found in the build directories. All-atom files that include solvent and
+  ions are named `npt.gro`, while files containing only protein and ligand information are named `xtc.gro`.
+  Other files of interest include the force-field parameters, stored in `topol.top`, and `prod.mdp`,
+  which holds the MD parameters for running expanded ensemble simulations.
+  You can access these via the [AWS CLI](https://aws.amazon.com/cli/), for example:
     ```bash
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14721 .
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14722/RUN0 .
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14725/RUN10/npt.gro .
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-asbolute-free-energy/build/p14727/RUN20/xtc.gro .
     ```
-  *Raw datasets:* To get the raw trajectory files (XTCs) of the whole dataset (~10+ TB/project), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+  **Raw datasets:()* To get the raw trajectory files [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset (~10+ TB/`PROJ`ect), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14721 .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14722/RUN2 .
@@ -32,14 +48,19 @@ description: >
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14728/RUN2/CLONE1/results0/traj_comp.xtc .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14752/RUN5/CLONE0/results1/traj.trr .
 
-  *Results dataframes:* Compiled free energy results, extracted from each work unit's log file can be found in the free_energy_data bucket. These dataframes are organized by dataset and contain the corresponding project number for accessing the raw data. A dataframe containing the most recently computed free energies of binding can be found [here](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/results.pkl). All other dataframes can be downloaded using [AWS CLI[(https://aws.amazon.com/cli):
+  **Results dataframes:** Compiled free energy results, extracted from each work
+  unit's log file can be found in the `free-energy-data` path.
+  These dataframes are organized by dataset and contain the corresponding project
+  number for accessing the raw data. A dataframe containing the most recently computed
+  free energies of binding can be found [here](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/results.pkl).
+  All other dataframes can be downloaded using [AWS CLI[(https://aws.amazon.com/cli):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data/MS0406-2_RL_14728.pkl .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data/MS0406-2_L_14380.pkl .
    ```
 
-creator: Folding@Home
+creator: Folding@home
 institute: Temple University
 proteins:
     - 3CLpro
