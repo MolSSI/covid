@@ -1,6 +1,6 @@
 target: spike binding
 type: md
-title: Trajectories of the SARS-CoV-2 spike protein from Folding@Home
+title: Folding@home simulations of the SARS-CoV-2 spike protein
 description: >
   All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
   The dataset comprises 3 projects, each having a `RUN*/CLONE*/result*` directory structure.
@@ -11,7 +11,10 @@ description: >
 
   **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
 
-  **Entire dataset:** To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  **Entire dataset:**
+  The dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
@@ -40,7 +43,9 @@ description: >
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/FAST_simulations .
    ```
-creator: Folding@home
+creator: Maxwell Zimmerman
+organization: Folding@home
+lab: Chodera lab
 institute: Washington University at St. Louis
 proteins:
     - spike

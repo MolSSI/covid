@@ -1,5 +1,5 @@
 type: md
-target: 3CLpro
+target: "3CLpro protease activity"
 title: Folding@home expanded ensemble absolute free energy calculations of potential small molecule inhibitors of the SARS-CoV-2 main protease from the COVID Moonshot
 description: >
   This dataset contains all-atom expanded ensemble absolute free calculations for
@@ -31,14 +31,22 @@ description: >
   ions are named `npt.gro`, while files containing only protein and ligand information are named `xtc.gro`.
   Other files of interest include the force-field parameters, stored in `topol.top`, and `prod.mdp`,
   which holds the MD parameters for running expanded ensemble simulations.
-  You can access these via the [AWS CLI](https://aws.amazon.com/cli/), for example:
+  The dataset is available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+
+  For example, to retrieve the whole project 14721:
     ```bash
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14721 .
+    ```
+  To retrieve a a specific RUN (`RUN0`):
+    ```bash
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14722/RUN0 .
+    ```
+  To retrieve a specific pair of `.gro` files from specific RUNs:
+    ```bash
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/build/p14725/RUN10/npt.gro .
     aws s3 --no-sign-request sync s3://fah-public-data-covid19-asbolute-free-energy/build/p14727/RUN20/xtc.gro .
     ```
-  **Raw datasets:()* To get the raw trajectory files [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  **Raw datasets:** To get the raw trajectory files [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset (~10+ TB/`PROJ`ect), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14721 .
@@ -59,8 +67,9 @@ description: >
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data/MS0406-2_RL_14728.pkl .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data/MS0406-2_L_14380.pkl .
    ```
-
-creator: Folding@home
+creator: Matt Hurley
+organization: Folding@home
+lab: Voelz lab
 institute: Temple University
 proteins:
     - 3CLpro
