@@ -9,7 +9,9 @@ description: >
   specified starting conformation, and each result is a fragment of the contiguous simulation.
   PROJ14217 and PROJ14253 were seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
 
+
   **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
+
 
   **Entire dataset:**
   The dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
@@ -22,6 +24,7 @@ description: >
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
    ```
 
+
   **Markov State Model:** A polished [Markov State Model (MSM)](https://pubs.acs.org/doi/abs/10.1021/jacs.7b12191),
   including representative cluster centers, transition probabilities, and equilibrum populations,
   can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/).
@@ -31,11 +34,13 @@ description: >
    ```
   MSM cluster centers can be obtained as a gromacs XTC file from this URL: [cluster centers XTC](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/model/full_centers.xtc)
 
+
   **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/input_files .
    aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/PROJ14217_tpr_files .
    ```
+
 
   **FAST simulations:** [FAST simulations](https://doi.org/10.1021/acs.jctc.5b00737),
   which were used as seeds for Folding@Home
