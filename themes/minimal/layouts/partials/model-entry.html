@@ -10,10 +10,12 @@
 <div class="col col-9">
 
       <!-- Model name -->
-      <h4 align="center" class="anchor" id='{{ print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
+      {{ $entry_name := ( print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+      <h4 align="center" class="anchor" id='{{ $entry_name }}'>
           {{ .model.name }}
           {{ with .model.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
           {{ partial "general-marker" .model }}
+          <a href='{{ print .context.Site.BaseURL "/models/#" $entry_name }}'><i class="fa fa-link" aria-hidden="true"></i></a>
       </h4>
 
       <!-- Author -->

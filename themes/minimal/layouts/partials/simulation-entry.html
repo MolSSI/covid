@@ -10,14 +10,16 @@
 
 <div class="col col-9">
 
-        <!-- Model name -->
-        <h4 class="anchor" id='{{ print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize)}}'>
+        <!-- Simulation name -->
+        {{ $entry_name := ( print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+        <h4 class="anchor" id='{{ $entry_name }}'>
             {{ .simulation.title }}
             {{ if .simulation.length }}
             ({{ .simulation.length }} )
             {{ end }}
             {{ with .simulation.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
             {{ partial "general-marker" .simulation }}
+            <a href='{{ print .context.Site.BaseURL "/simulations/#" $entry_name }}'><i class="fa fa-link" aria-hidden="true"></i></a>
         </h4>
         
 <!-- Author -->
@@ -73,7 +75,9 @@
             <b>Input and Supporting Files:</b>
             {{ if .simulation.files }}
                 {{ range (seq (len .simulation.files)) }}
-                    <a href="{{ index $.simulation.files (sub . 1) }}"><kbd class="alert-secondary">[.]</kbd></a>
+                    {{ $file_url := index $.simulation.files (sub . 1) }}  <!-- URL in the YAML -->
+                    {{ $file_last_item := index (last 1 (split $file_url "/")) 0 }} <!-- Filename -->
+                    <p><a href="{{ index $file_url }}"><kbd class="alert-secondary"> {{ $file_last_item }} </kbd></a></p>
                 {{ end }}
             {{ else }}
                 ---

@@ -1,0 +1,70 @@
+target: spike binding
+type: md
+title: Folding@home simulations of the SARS-CoV-2 spike protein
+description: >
+  All-atom MD simulations of the SARS-CoV-2 spike protein, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
+  The dataset comprises 3 projects, each having a `RUN*/CLONE*/result*` directory structure.
+  Simulations were run using GROMACS (PROJ14217) or OpenMM (PROJ14235 and PROJ14561) and are stored as compressed binary XTC files.
+  Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the
+  specified starting conformation, and each result is a fragment of the contiguous simulation.
+  PROJ14217 and PROJ14253 were seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
+
+
+  **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/spike/prot_masses.pdb).
+
+
+  **Entire dataset:**
+  The dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
+   ```
+
+
+  **Markov State Model:** A polished [Markov State Model (MSM)](https://pubs.acs.org/doi/abs/10.1021/jacs.7b12191),
+  including representative cluster centers, transition probabilities, and equilibrum populations,
+  can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/).
+  Details of how the MSM model was constructed can be found [here](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/README.dat).
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/final_models/spike/model .
+   ```
+  MSM cluster centers can be obtained as a gromacs XTC file from this URL: [cluster centers XTC](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/model/full_centers.xtc)
+
+
+  **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/input_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/PROJ14217_tpr_files .
+   ```
+
+
+  **FAST simulations:** [FAST simulations](https://doi.org/10.1021/acs.jctc.5b00737),
+  which were used as seeds for Folding@Home
+  simulations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/FAST_simulations .
+   ```
+creator: Maxwell Zimmerman
+organization: Folding@home
+lab: Chodera lab
+institute: Washington University at St. Louis
+proteins:
+    - spike
+structures:
+    - 6VXX
+trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/model/full_centers.xtc
+size: 6.5 TB
+length: 1.2 ms
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.1
+forcefields:
+    - AMBER03
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.06.27.175430

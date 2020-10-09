@@ -1,0 +1,72 @@
+type: md
+target: "3CLpro protease activity"
+title: Folding@home SARS-CoV-2 main protease (apo, monomer) simulations
+description: >
+  This is a dataset containing 5688 trajectories at least 250 ns in length (2.6 ms in total)
+  of the SARS-CoV-2 main viral protease (Mpro/3CLpro) in its apo, monomeric form with neutral His41 and Cys145.
+  Water (but not salt) has been stripped from the trajectories, and frames are saved every 0.2 ns.
+  Simulations were initiated from PDB structure [6lu7](http://www.rcsb.org/structure/6LU7),
+  chain A, after removing the inhibitor and structural waters.
+
+  The dataset is organized by Folding@home project number (11743 and 11749) due to the F@h parallelization -- there are no differences in setups between the projects
+  and there is no relation between the identically named files - all trajectories (`CLONE`s) are initialized with random velocities.
+
+  Chain A (i.e. a monomer of the protein, without the inhibitor or waters) was extracted from [6lu7](http://www.rcsb.org/structure/6LU7) using PyMOL, and protonated and capped (ACE, NME) with Schrodinger's Maestro.
+  The model can be downloaded [here](https://github.com/FoldingAtHome/coronavirus/blob/master/system-preparation/6lu7_receptor/output/solvated.pdb).
+  Simulations were performed in the NPT ensemble (310 K, 1 atm), in a cubic box with 1 nm padding, 150 mM NaCl, with hydrogen mass repartitioning (4 amu H mass), using `amber14SB` and `tip3p` forcefields.
+  OpenMM 7.4.1 was used. System was equilibrated for 5 ns using 2 fs timestep with default OpenMM Langevin integrator,
+  then for 1.25 ns using 4 fs timestep with OpenMMTools custom Langevin integrator using `V R O R V` splitting.
+  All Folding@home trajectories were then seeded with random velocities from this system.
+
+  The dataset is available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/):
+  To download the whole dataset (519 GB):
+    ```bash
+    aws s3 sync --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+    ```
+  To download subsets of the dataset appropriate query terms can be used. For example, to retrieve
+    the first trajectory of project 11743:
+       ```bash
+       aws s3 cp --no-sign-request s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5 .
+       ```
+       the first 10 trajectories of project 11743:
+       ```bash
+       aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone?.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+       ```
+       the first 100 trajectories of project 11743:
+       ```bash
+       aws s3 sync --no-sign-request --exclude "*" --include "11743/run0-clone??.h5" s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer .
+       ```
+
+  Individual files can also be downloaded directly via HTTP, [for example](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5).
+
+  If you have an AWS account, data can also be browsed and downloaded via the [AWS Management Console(https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer).
+
+  This dataset is also available through the [Open Science Framework](https://osf.io/d9tm2).
+creator: Rafal Wiewiora
+organization: Folding@home
+lab: Chodera lab
+institute: Memorial Sloan Kettering Cancer Center
+models:
+    - FAH-Mpro-monomer
+proteins:
+    - 3CLpro
+structures:
+    - 6LU7
+molecule:
+rating:
+files:
+    - https://github.com/FoldingAtHome/coronavirus/tree/master/system-preparation/6lu7_receptor
+trajectory: https://registry.opendata.aws/foldingathome-covid19
+size: 519.1 GB
+length: 2.6 ms
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - amber14SB
+    - tip3p
+references:
+publication:
+preprint:

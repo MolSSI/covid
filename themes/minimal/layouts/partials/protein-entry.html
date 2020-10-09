@@ -8,7 +8,10 @@
 <div class="col col-9">
 
     <!-- protein name -->
-    <h4 align="center" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b></h4>
+    {{ $entry_name := ( .protein.name | anchorize ) }}
+    <h4 align="center" class="anchor" id="{{ .protein.name | anchorize }}"><b>{{ .protein.name }}</b>
+        <a href='{{ print .context.Site.BaseURL "/proteins/#" $entry_name }}'><i class="fa fa-link" aria-hidden="true"></i></a>
+    </h4>
 
     <!-- protein description -->
     <h5 align="justify">{{ .protein.description | markdownify }}</h5>
