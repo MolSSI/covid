@@ -91,6 +91,8 @@ proteins:
     - 3CLpro
 structures:
     - 6Y84
+models:
+    - fah-main-protease-md-model
 trajectory: https://fah-public-data-covid19-absolute-free-energy.s3.us-east-2.amazonaws.com/SVR51748107/PROJ14721/RUN0/CLONE0/results0/traj_comp.xtc
 size: 34 TB
 length: 5.2 ms
