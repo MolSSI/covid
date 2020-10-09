@@ -13,7 +13,8 @@ description: >
   For the case of ligand-only "L" simulations, each xtc represents 10ns of sampling, while each complex "RL" xtc trajectory is only 1ns.
   More information about the simulation set-up can be found [here](https://github.com/FoldingAtHome/covid-moonshot/blob/master/folding-at-home_submissions/COVID%20Moonshot%20051220%20Release%20Announcement.pdf).
   In order to find particular PROJ/RUN of interest, see the results and organization dataframes.
-
+models:
+  - main-protease
   *Organization dataframe:* In order to determine systems of interest, you can parse [this dataframe](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/organization.pkl) which contains information on which ligands are present in each project/run. Half of the projects contain trajectories for ligands alone in solution, while the other half contain trajectories for ligands docked to the main protease. More data is being added to this repository every day, so if a project/run is not available in the AWS bucket, check back later or contact Matt Hurley (tug27224@temple.edu).
 
   *Topology files:* Structure & topology files corresponding to each run can be found in the build directories. All-atom files that include solvent and ions are named npt.gro, while files containing only protein and ligand information are named xtc.gro. Other files of interest include the force-field parameters, stored in topol.top, and prod.mdp, which holds the MD parameters for running expanded ensemble simulations. You can access these via the [AWS CLI](https://aws.amazon.com/cli/):
