@@ -55,12 +55,14 @@ description: >
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14727/RUN2/CLONE1/results0 .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14728/RUN2/CLONE1/results0/traj_comp.xtc .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14752/RUN5/CLONE0/results1/traj.trr .
-
+   ```
   **Results dataframes:** Compiled free energy results, extracted from each work
   unit's log file can be found in the `free-energy-data` path.
   These dataframes are organized by dataset and contain the corresponding project
-  number for accessing the raw data. A dataframe containing the most recently computed
-  free energies of binding can be found [here](https://fah-public-data-covid19-absolute-free-energy/free_energy_data/results.pkl).
+  number for accessing the raw data.
+
+  A pandas dataframe containing the most recently computed free energies of binding can be downloaded: [`results.pkl`](https://fah-public-data-covid19-absolute-free-energy.s3.us-east-2.amazonaws.com/free_energy_data/results.pkl)
+
   All other dataframes can be downloaded using [AWS CLI[(https://aws.amazon.com/cli):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-absolute-free-energy/free-energy-data .
@@ -75,7 +77,7 @@ proteins:
     - 3CLpro
 structures:
     - 6Y84
-trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/fah-public-data-covid19-absolute-free-energy/SVR51748107/PROJ14721/RUN0/CLONE0/results0/traj_comp.xtc
+trajectory: https://fah-public-data-covid19-absolute-free-energy.s3.us-east-2.amazonaws.com/SVR51748107/PROJ14721/RUN0/CLONE0/results0/traj_comp.xtc
 size: 34 TB
 length: 5.2 ms
 ensemble: NPT

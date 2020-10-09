@@ -38,8 +38,10 @@ description: >
        ```
 
   Individual files can also be downloaded directly via HTTP, [for example](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2_main_protease_monomer/11743/run0-clone0.h5).
-  Data can also be browsed and downloaded in the AWS Management Console [here](https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer).
-  Alternatively, the dataset is also available through the [Open Science Framework](https://osf.io/d9tm2).
+
+  If you have an AWS account, data can also be browsed and downloaded via the [AWS Management Console(https://s3.console.aws.amazon.com/s3/buckets/fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2_main_protease_monomer).
+
+  This dataset is also available through the [Open Science Framework](https://osf.io/d9tm2).
 creator: Rafal Wiewiora
 organization: Folding@home
 lab: Chodera lab
