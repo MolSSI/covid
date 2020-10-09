@@ -3,7 +3,7 @@ name: SARS-CoV-2 Spike (S) glycoprotein
 organism: SARS-CoV-2
 description: >
   The external glyocoprotein of the virus envelope required for fusion and entry into human host cells.
-target:
+targets:
   - spike binding
   - spike cleavage
   - viral fusion
