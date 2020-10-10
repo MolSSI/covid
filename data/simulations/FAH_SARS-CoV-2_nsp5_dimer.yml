@@ -7,7 +7,7 @@ description: >
   Simulations were run using GROMACS (PROJ14234 and PROJ14542 and PROJ14584) or OpenMM (PROJ14543) and are stored as compressed binary XTC files.
   Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the
   specified starting conformation, and each result is a fragment of the contiguous simulation.
-  PROJ16403 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
+  PROJ14234 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
 
 
   **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/nsp5_dimer/prot_masses.pdb).
@@ -47,8 +47,6 @@ description: >
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_dimer/input_files .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_dimer/PROJ14234_tpr_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_dimer/PROJ14542_tpr_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_dimer/PROJ14584_tpr_files .
    ```
 
 

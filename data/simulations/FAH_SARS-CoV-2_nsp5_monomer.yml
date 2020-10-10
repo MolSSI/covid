@@ -3,11 +3,11 @@ type: md
 title: Folding@home simulations of nsp5
 description: >
   All-atom MD simulations of nsp5, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
-  The dataset comprises 3 projects, each having a `RUN*/CLONE*/result*` directory structure.
-  Simulations were run using GROMACS (PROJ14582 and PROJ16411) or OpenMM (PROJ16435) and are stored as compressed binary XTC files.
+  The dataset comprises 4 projects, each having a `RUN*/CLONE*/result*` directory structure.
+  Simulations were run using GROMACS (PROJ14582, PROJ14592, and PROJ16411) or OpenMM (PROJ16435) and are stored as compressed binary XTC files.
   Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the
   specified starting conformation, and each result is a fragment of the contiguous simulation.
-  PROJ16403 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
+  PROJ14592 and PROJ16411 were seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
 
 
   **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/nsp5_monomer/prot_masses.pdb).
@@ -20,6 +20,7 @@ description: >
   for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ14582 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ14592 .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ16411 .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ16435 .
    ```
@@ -45,7 +46,7 @@ description: >
   **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/input_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ14582_tpr_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ14592_tpr_files .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp5_monomer/PROJ16411_tpr_files .
    ```
 
