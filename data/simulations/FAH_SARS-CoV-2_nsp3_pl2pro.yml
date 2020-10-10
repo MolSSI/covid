@@ -17,7 +17,7 @@ description: >
   The dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
 
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
-  for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+  for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14589 .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14584 .
@@ -61,7 +61,7 @@ institute: Washington University at St. Louis
 proteins:
     - nsp3
 structures:
-    - 6Y2E
+    - 3E9S
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp3_pl2pro/model/full_centers.xtc
 #size: 
 #length: 
