@@ -3,11 +3,11 @@ type: md
 title: Folding@home simulations of nsp3 pl2pro domain
 description: >
   All-atom MD simulations of nsp3 pl2pro, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
-  The dataset comprises 4 projects, each having a `RUN*/CLONE*/result*` directory structure.
-  Simulations were run using GROMACS (PROJ14589 and PROJ14584) and are stored as compressed binary XTC files.
+  The dataset comprises 2 projects, each having a `RUN*/CLONE*/result*` directory structure.
+  Simulations were run using GROMACS (PROJ14589 and PROJ14548) and are stored as compressed binary XTC files.
   Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the
   specified starting conformation, and each result is a fragment of the contiguous simulation.
-  PROJ14584 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
+  PROJ14548 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
 
 
   **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/nsp3_pl2pro/prot_masses.pdb).
@@ -20,7 +20,7 @@ description: >
   for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14589 .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14584 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14548 .
    ```
 
 
@@ -44,7 +44,7 @@ description: >
   **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/input_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14584_tpr_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_pl2pro/PROJ14548_tpr_files .
    ```
 
 
@@ -63,8 +63,8 @@ proteins:
 structures:
     - 3E9S
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp3_pl2pro/model/full_centers.xtc
-#size: 
-#length: 
+size: 
+length: 731 µs
 ensemble: NPT
 temperature: 300
 pressure: 1

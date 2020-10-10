@@ -66,8 +66,8 @@ proteins:
 structures:
     - 6Y2E
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp5_monomer/model/full_centers.xtc
-#size: 
-#length: 
+size: 
+length: 6.4 ms 
 ensemble: NPT
 temperature: 300
 pressure: 1

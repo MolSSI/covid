@@ -46,7 +46,6 @@ description: >
   **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_X/input_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_X/PROJ14576_tpr_files .
    aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp3_X/PROJ14593_tpr_files .
    ```
 
@@ -66,8 +65,8 @@ proteins:
 structures:
     - 6W02
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp3_X/model/full_centers.xtc
-#size: 
-#length: 
+size: 
+length: 11 ms
 ensemble: NPT
 temperature: 300
 pressure: 1

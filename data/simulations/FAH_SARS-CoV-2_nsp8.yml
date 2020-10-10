@@ -63,8 +63,8 @@ proteins:
 structures:
     - 2AHM
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp8/model/full_centers.xtc
-#size: 
-#length: 
+size: 
+length: 1.8 ms 
 ensemble: NPT
 temperature: 300
 pressure: 1

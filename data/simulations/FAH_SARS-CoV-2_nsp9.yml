@@ -63,8 +63,8 @@ proteins:
 structures:
     - 6W4B
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp9/model/full_centers.xtc
-#size: 
-#length: 
+size: 
+length: 9 ms 
 ensemble: NPT
 temperature: 300
 pressure: 1
