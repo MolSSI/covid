@@ -61,7 +61,7 @@ organization: Folding@home
 lab: Bowman lab
 institute: Washington University at St. Louis
 proteins:
-    - NSP3
+    - Macrodomain
 structures:
     - 6W02
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp3_X/model/full_centers.xtc
