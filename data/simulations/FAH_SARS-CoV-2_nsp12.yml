@@ -58,11 +58,10 @@ organization: Folding@home
 lab: Bowman lab
 institute: Washington University at St. Louis
 proteins:
-    - nsp12
+    - NSP12
 structures:
     - 6NUR
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp12/model/full_centers.xtc
-size: 
 length: 3.4 ms 
 ensemble: NPT
 temperature: 300
