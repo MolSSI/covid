@@ -1,0 +1,28 @@
+type: md
+title: Trajectories of the Spike protein in complex with human ACE2
+description: Atomistic MD simulations of the Spike protein in complex with the human ACE2 receptor, most probbale glycosylations are added.
+creator: Oostenbrink Lab
+institute: Institute for Molecular Modeling and Simulation
+organization: University of Natural Resources and Life Sciences, Vienna
+models:
+    - spike_ACE2_bokumms
+proteins:
+    - spike
+    - ACE2
+structures:
+    - 6vyb
+    - 6m17
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PertholdCaprazOostenbrink/50ns.xtc
+size: 43 GB
+length: 50 ns
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - GROMOS 54A8
+    - GROMOS 53A6glyc
+    - SPC
+preprint: 
+publication: 
