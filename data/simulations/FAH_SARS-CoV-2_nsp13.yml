@@ -59,7 +59,7 @@ organization: Folding@home
 lab: Bowman lab
 institute: Washington University at St. Louis
 proteins:
-    - helicase
+    - Helicase
 structures:
     - 6JYT
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp13/model/full_centers.xtc
