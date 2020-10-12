@@ -65,6 +65,7 @@ proteins:
 structures:
     - 6W02
 trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp3_X/model/full_centers.xtc
+size: "O(1 TB)"
 length: 11 ms
 ensemble: NPT
 temperature: 300
