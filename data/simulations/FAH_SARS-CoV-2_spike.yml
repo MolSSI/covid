@@ -19,9 +19,9 @@ description: >
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253 .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/spike/PROJ14253 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/spike/PROJ14561 .
    ```
 
 
@@ -30,15 +30,15 @@ description: >
   can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/).
   Details of how the MSM model was constructed can be found [here](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/README.dat).
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/final_models/spike/model .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/final_models/spike/model .
    ```
   MSM cluster centers can be obtained as a gromacs XTC file from this URL: [cluster centers XTC](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/spike/model/full_centers.xtc)
 
 
   **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/input_files .
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/PROJ14217_tpr_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/spike/input_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/spike/PROJ14217_tpr_files .
    ```
 
 
@@ -46,11 +46,11 @@ description: >
   which were used as seeds for Folding@Home
   simulations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid-19-cryptic-pockets/SARS-CoV-2/FAST_simulations .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/FAST_simulations .
    ```
 creator: Maxwell Zimmerman
 organization: Folding@home
-lab: Chodera lab
+lab: Bowman lab
 institute: Washington University at St. Louis
 proteins:
     - spike

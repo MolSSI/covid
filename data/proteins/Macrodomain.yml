@@ -1,0 +1,11 @@
+protein: Macrodomain
+name: SARS-CoV-2 Macrodomain (NSP3)
+description: >
+  Macrodomain (NSP3, Macrodomain, or X) is a viral protein that
+  is believed to be involved in repressing host immune response
+  from its ability to remove ADP-ribose from ADP-ribosylated
+  proteins and RNA.
+organism: SARS-CoV-2
+targets:
+  - host immune response
+domain: nsp

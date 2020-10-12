@@ -1,0 +1,76 @@
+target: nsp7
+type: md
+title: Folding@home simulations of nsp7
+description: >
+  All-atom MD simulations of nsp7, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
+  The dataset comprises 2 projects, each having a `RUN*/CLONE*/result*` directory structure.
+  Simulations were run using GROMACS (PROJ16425) or OpenMM (PROJ16433) and are stored as compressed binary XTC files.
+  Each RUN represents a unique starting conformation, each CLONE is a unique MD run from the
+  specified starting conformation, and each result is a fragment of the contiguous simulation.
+  PROJ16425 was seeded using [FAST simulations](https://pubs.acs.org/doi/pdfplus/10.1021/acs.jctc.5b00737).
+
+
+  **Topology files:** The topology used in the trajectories can be downloaded directly here: [PDB](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/nsp7/prot_masses.pdb).
+
+
+  **Entire dataset:**
+  The dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp7/PROJ16425 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp7/PROJ16433 .
+   ```
+
+
+  **Markov State Model:** A polished [Markov State Model (MSM)](https://pubs.acs.org/doi/abs/10.1021/jacs.7b12191),
+  including representative cluster centers, transition probabilities, and equilibrum populations,
+  can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/).
+  Details of how the MSM model was constructed can be found [here](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp7/README.dat).
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/final_models/nsp7/model .
+   ```
+  MSM cluster centers can be obtained as a gromacs XTC file from this URL: [cluster centers XTC](https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp7/model/full_centers.xtc)
+
+
+  **Discovered cryptic pockets:** Full description of the discovered cryptic pockets
+  can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/).
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/final_models/nsp7/cryptic_pockets .
+   ```
+
+
+  **Input files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp7/input_files .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp7/PROJ16425_tpr_files .
+   ```
+
+
+  **FAST simulations:** [FAST simulations](https://doi.org/10.1021/acs.jctc.5b00737),
+  which were used as seeds for Folding@Home
+  simulations, can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-cryptic-pockets/SARS-CoV-2/nsp7/FAST_simulations .
+   ```
+creator: Maxwell Zimmerman
+organization: Folding@home
+lab: Bowman lab
+institute: Washington University at St. Louis
+proteins:
+    - NSP7
+structures:
+    - 5F22
+trajectory: https://fah-public-data-covid19-cryptic-pockets.s3.us-east-2.amazonaws.com/SARS-CoV-2/final_models/nsp7/model/full_centers.xtc
+size: "O(1 TB)"
+length: 3.7 ms 
+ensemble: NPT
+temperature: 300
+pressure: 1
+solvent: water
+salinity: 0.1
+forcefields:
+    - AMBER03
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.06.27.175430
