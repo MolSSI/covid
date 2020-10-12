@@ -6,4 +6,6 @@ description: >
   from its ability to remove ADP-ribose from ADP-ribosylated
   proteins and RNA.
 organism: SARS-CoV-2
+targets:
+  - host immune response
 domain: nsp

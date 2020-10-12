@@ -50,6 +50,7 @@ class ValidProteins(str, Enum):
     TMPRSS2 = 'TMPRSS2'
     Mpro = '3CLpro'
     PLpro = 'PLpro'
+    Macrodomain = 'Macrodomain'
     BoAT1 = 'BoAT1'
     FcR = 'Fc receptor'
     Furin = 'Furin'
@@ -71,7 +72,8 @@ class ValidProteins(str, Enum):
 # Check that proteins have not been given other names
 common_names = {
     '3CLpro': ['mpro', 'nsp5', '3c-like', '3c-l', 'mprotease', '3cl-pro'],
-    'PLpro': ['nsp3', 'p-l', 'papin', 'papin-like', 'pl-pro'],
+    'PLpro': ['nsp3', 'p-l', 'papin', 'papin-like', 'pl-pro', 'pl2pro'],
+    'Macrodomain': ['x'],
     'E protein': ['e-protein', 'envelope', 'e-pro', 'epro', 'orf4'],
     'Helicase': ['hel', 'nsp13'],
     'M protein': ['membrane', 'mem', 'm-protein', 'm-pro', 'orf5'],
@@ -141,6 +143,7 @@ class ValidSimulations(str, Enum):
     mdcg = 'md-cg'
     mdwe = 'md-we'
     mccg = 'mc-cg'
+
 
 class ValidEnsembles(str, Enum):
     NPT = 'NPT'
