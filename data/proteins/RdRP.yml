@@ -4,4 +4,4 @@ description: RNA-dependent, RNA polymerase.
 organism: SARS-CoV-2
 domain: nsp
 targets:
-  - Inhibition of viral polymerases
+  - viral replication

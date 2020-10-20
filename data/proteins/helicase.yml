@@ -7,4 +7,4 @@ description: >
 organism: SARS-CoV-2
 domain: nsp
 targets:
-  - inhibition of nsp13 helicase activity
+  - nsp13 helicase activity
