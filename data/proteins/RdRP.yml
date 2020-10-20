@@ -3,3 +3,5 @@ name: SARS-CoV-2 RNA Polymerase (NSP12)
 description: RNA-dependent, RNA polymerase.
 organism: SARS-CoV-2
 domain: nsp
+targets:
+  - Inhibition of viral polymerases

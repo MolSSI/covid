@@ -3,3 +3,5 @@ name: Coronavirus nonstructural protein 7
 description: Suppressor of host genome expression
 organism: SARS-CoV-2
 domain: nsp
+targets:
+  - Inhibition of viral polymerases
