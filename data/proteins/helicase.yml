@@ -6,3 +6,5 @@ description: >
   has gained interested in a potential disrupting target.
 organism: SARS-CoV-2
 domain: nsp
+targets:
+  - nsp13 helicase activity
