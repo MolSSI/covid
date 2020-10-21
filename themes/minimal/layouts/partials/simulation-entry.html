@@ -11,8 +11,10 @@
 <div class="col col-9">
 
         <!-- Simulation name -->
-        {{ $entry_name := ( print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+        {{ $entry_id := ( print ( .simulation.title | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+        {{ $entry_name := .simulation.title | anchorize }}
         <h4 class="anchor" id='{{ $entry_name }}'>
+            <span class="anchor" id="{{ $entry_id }}"></span> <!-- This is to make the anchor work without breaking any previous links-->
             {{ .simulation.title }}
             {{ if .simulation.length }}
             ({{ .simulation.length }} )

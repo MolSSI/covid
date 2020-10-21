@@ -10,8 +10,10 @@
 <div class="col col-9">
 
       <!-- Model name -->
-      {{ $entry_name := ( print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+      {{ $entry_id := ( print ( .model.name | anchorize) "-" ( .protein | anchorize) "-" ( .target | anchorize) ) }}
+      {{ $entry_name := .model.name | anchorize }}
       <h4 align="center" class="anchor" id='{{ $entry_name }}'>
+          <span class="anchor" id="{{ $entry_id }}"></span> <!-- This is to make the anchor work without breaking anything previous-->
           {{ .model.name }}
           {{ with .model.rating }} {{ range $i, $sequence := (seq .) }}★{{ end }} {{ end }}
           {{ partial "general-marker" .model }}

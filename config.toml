@@ -130,12 +130,18 @@ ignoreFiles = ["README.md$"]
         url = "/contributors/"
         name = "Contributors"
         weight = 1
+
+    [[menu.main]]
+        parent = "Contribution"
+        url = "/org-contributions"
+        name = "Contributions by Organization"
+        weight = 2
     
     [[menu.main]]
         parent = "Contribution"
         url = "/contributing/"
         name = "How to Contribute"
-        weight = 2
+        weight = 3
 
 
 [[menu.main]]

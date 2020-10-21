@@ -11,7 +11,7 @@
         {{ .Content }}
     </div>
     <hr>
-    <!-- List all targets from data/targets/ -->
+    <!-- List all targets from data/contributors/ -->
     {{ range $.Site.Data.contributors }}
        {{ partial "contributors.html" (dict "contrib" . "context" $)}}
     {{ end }}
