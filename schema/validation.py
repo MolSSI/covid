@@ -380,6 +380,7 @@ class OrganizationModel(BaseModel):
     logo: Optional[str]
     url: Optional[AnyUrl]
     endorsement_logo: Optional[str]
+    alt_names: Optional[List[str]]
 
 
 class ContributorMemberModel(BaseModel):

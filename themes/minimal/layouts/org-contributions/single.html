@@ -1,0 +1,94 @@
+{{ partial "header" . }}
+
+{{ $localScratch := newScratch }}
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <!--<h5>{{ .Description }}</h5>-->
+        {{ partial "tags" . }}
+    </div>
+    <div align="justify">
+        {{ .Content }}
+    </div>
+    <hr>
+    <!-- List all targets from data/organizations/ -->
+    {{ range $.Site.Data.organizations }}
+        {{ $localScratch.Set "name" .name }}
+        <!-- Compose all names the org could be -->
+        {{ $localScratch.Set "org_names" (slice (replace .name " " "" | upper )) }} <!-- Strip spaces, cast upper -->
+        {{ range .alt_names }}
+            {{ $names := $localScratch.Get "org_names" }}
+            {{ $names := $names | append (replace . " " "" | upper ) }} <!-- Strip spaces, cast upper -->
+            {{ $localScratch.Set "org_names" $names }} <!-- Reassign to global variable -->
+        {{ end }}
+
+        <!-- Check if it has content first -->
+        {{ $localScratch.Set "has_content_models" false }}
+        {{ $localScratch.Set "has_content_sims" false }}
+        <!-- Loop over Models and Simulations-->
+        {{ range $.Site.Data.models }}
+            {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
+            {{ if $made_by_org }}
+                {{ $localScratch.Set "has_content_models" true }}
+            {{ end }}
+        {{ end }}
+        {{ range $.Site.Data.simulations }}
+            {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
+            {{ if $made_by_org }}
+                {{ $localScratch.Set "has_content_sims" true }}
+            {{ end }}
+        {{ end }}
+
+        {{ if or ($localScratch.Get "has_content_sims") ($localScratch.Get "has_content_models")}}
+            {{ $org := $localScratch.Get "name" | title}}
+            {{ $org_anchor := $org | anchorize }}
+            <h3 align="center" class="anchor" id='{{ $org_anchor }}'>
+                Contributions by the {{ $org }} Organization
+                <a href='{{ print $.Site.BaseURL "/org-contributions/#" $org_anchor }}'><i class="fa fa-link" aria-hidden="true"></i></a>
+            </h3>
+            {{ if ($localScratch.Get "has_content_models") }}
+                <h4 align="left" class="anchor" id='{{print  $org_anchor "-models"}}'>
+                    {{ $org }}'s Models
+                    <a href='{{ print $.Site.BaseURL "/org-contributions/#" $org_anchor "-models" }}'><i class="fa fa-link" aria-hidden="true"></i></a>
+                </h4>
+                {{ range $.Site.Data.models }}
+                    {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
+                    {{ if $made_by_org }}
+                        {{ $entry_name := print ( .name | anchorize) }}
+                            <p align="left">
+                                <a href='{{ print $.Site.BaseURL "/models/#" $entry_name }}'>
+                                    {{ .name }}
+                                    {{ partial "general-marker" . }}
+                                </a>
+                            </p>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ if ($localScratch.Get "has_content_sims") }}
+                <h4 align="left" class="anchor" id='{{print  $org_anchor "-sims"}}'>
+                    {{ $org }}'s Simulations
+                    <a href='{{ print $.Site.BaseURL "/org-contributions/#" $org_anchor "-sims" }}'><i class="fa fa-link" aria-hidden="true"></i></a>
+                </h4>
+                {{ range $.Site.Data.simulations }}
+                    {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
+                    {{ if $made_by_org }}
+                        {{ $entry_name := print ( .title | anchorize) }}
+                            <p align="left">
+                                <a href='{{ print $.Site.BaseURL "/simulations/#" $entry_name }}'>
+                                    {{ .title }}
+                                    {{ partial "general-marker" . }}
+                                </a>
+                            </p>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            <hr class="hr-thick">
+        {{ end }}
+    {{ end }}
+
+    <hr>
+
+</main>
+
+{{ partial "footer" . }}

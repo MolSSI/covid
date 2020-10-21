@@ -13,6 +13,7 @@ short: (optional) Short name or acronym if people want it
 logo: (optional) name of the logo file in the /static/images/org-logos directory
 url: (optional) Link to the organization
 endorsement_logo: (optional) Indicates that this org is endorsing the Hub, and then uses this logo path in /static/images/org-logos
+alt_names: (optional) List of alternate names the org can be known under as a string.
 ```
 
 ### Visual Display Caveat

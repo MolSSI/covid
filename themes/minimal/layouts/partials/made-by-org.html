@@ -1,0 +1,28 @@
+{{ $localScratch := newScratch }}
+{{ $localScratch.Set "made" false }}
+
+{{ if isset .data "organization" }}
+    {{ if in $.org (replace $.data.organization " " "" | upper) }}
+        {{ $localScratch.Set "made" true }}
+    {{ end }}
+{{ end }}
+
+{{ if isset .data "creator" }}
+    {{ if in $.org (replace $.data.creator " " "" | upper) }}
+        {{ $localScratch.Set "made" true }}
+    {{ end }}
+{{ end }}
+
+{{ if isset .data "institution" }}
+    {{ if in $.org (replace $.data.institution " " "" | upper) }}
+        {{ $localScratch.Set "made" true }}
+    {{ end }}
+{{ end }}
+
+{{ if isset .data "lab" }}
+    {{ if in $.org (replace $.data.lab " " "" | upper) }}
+        {{ $localScratch.Set "made" true }}
+    {{ end }}
+{{ end }}
+
+{{ return $localScratch.Get "made" }}
