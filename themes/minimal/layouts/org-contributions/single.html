@@ -56,12 +56,12 @@
                     {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
                     {{ if $made_by_org }}
                         {{ $entry_name := print ( .name | anchorize) }}
-                            <a href='{{ print $.Site.BaseURL "/models/#" $entry_name }}'>
-                                <h5 align="left" class="anchor" id='{{ $entry_name }}'>
+                            <p align="left">
+                                <a href='{{ print $.Site.BaseURL "/models/#" $entry_name }}'>
                                     {{ .name }}
                                     {{ partial "general-marker" . }}
-                                </h5>
-                            </a>
+                                </a>
+                            </p>
                     {{ end }}
                 {{ end }}
             {{ end }}
@@ -74,12 +74,12 @@
                     {{ $made_by_org := partial "made-by-org.html" (dict "org" ($localScratch.Get "org_names") "data" .) }}
                     {{ if $made_by_org }}
                         {{ $entry_name := print ( .title | anchorize) }}
-                            <a href='{{ print $.Site.BaseURL "/simulations/#" $entry_name }}'>
-                                <h5 align="left" class="anchor" id='{{ $entry_name }}'>
+                            <p align="left">
+                                <a href='{{ print $.Site.BaseURL "/simulations/#" $entry_name }}'>
                                     {{ .title }}
                                     {{ partial "general-marker" . }}
-                                </h5>
-                            </a>
+                                </a>
+                            </p>
                     {{ end }}
                 {{ end }}
             {{ end }}
