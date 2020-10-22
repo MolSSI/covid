@@ -10,6 +10,8 @@
 
   {{ $pdb := (upper .structure.unpublished_pdbid) | default (upper .structure.pdbid) }}
 
+  <!-- Future resolution Pending, see Addendum below -->
+  <!-- Original Notes -->
   <!-- The getJSON function crashes the build if it cant find the page -->
   <!-- Known bug, they fixed it in pre 0.50, broke it in 0.50, and keep pushing its re-fix back -->
   <!-- https://github.com/gohugoio/hugo/issues/5766 -->
@@ -19,6 +21,13 @@
   <!-- BUT! (and this is the kicker) It still crashes the build... -->
   <!-- I brought this back up in https://github.com/gohugoio/hugo/issues/5643 -->
   <!-- -LNN -->
+  <!-- ADDENDUM -->
+  <!-- There is a FIX for this through https://github.com/gohugoio/hugo/issues/7867 and detailed in
+       https://github.com/gohugoio/hugo/issues/7228#issuecomment-714529686
+       However, this fix is not in a released version and will come sometime after 0.76.5
+       Until that change is live in a stable version, the workarounds from original notes must remain.
+       This addendum is for future-dev-someone to keep an eye out for when we can make the change.
+  -->
   {{ $data := partial "json-from-rcsb" .structure }}
 
   {{ $url := print "https://www.rcsb.org/structure/" $pdb }}
