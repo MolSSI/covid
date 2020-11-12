@@ -19,10 +19,10 @@ creator: Martin Soñora
 lab: Biomolecular Simulations Laboratory
 institute: Institut Pasteur de Montevideo
 proteins:
-    - Main Protease
+    - 3CLpro
 structures:
     - 6LU7
-files: https://zenodo.org/record/3748665
+files: https://zenodo.org/record/3748665/
 trajectory: https://zenodo.org/record/3748665/
 size: 18 GB
 length: 15 µs
