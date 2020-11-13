@@ -30,7 +30,7 @@ creator: Exequiel Barrera
 organization: Institut Pasteur de Montevideo
 lab: Biomolecular Simulations Laboratory
 proteins:
-    - nsp15
+    - NSP15
 structures:
     - 6W01
 trajectory: https://zenodo.org/record/3748659/
