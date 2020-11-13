@@ -23,7 +23,7 @@ description: >
     ```
 
 
-Note that you can use normal VMD drawing methods as vdw, licorice, etc., and coloring by restype, element, name, etc.
+    Note that you can use normal VMD drawing methods as vdw, licorice, etc., and coloring by restype, element, name, etc.
 
 
 creator: Exequiel Barrera
