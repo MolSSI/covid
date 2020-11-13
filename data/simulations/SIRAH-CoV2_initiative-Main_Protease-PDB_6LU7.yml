@@ -26,7 +26,6 @@ proteins:
     - 3CLpro
 structures:
     - 6LU7
-files: https://zenodo.org/record/3748665/
 trajectory: https://zenodo.org/record/3748665/
 size: 18 GB
 length: 15 µs
