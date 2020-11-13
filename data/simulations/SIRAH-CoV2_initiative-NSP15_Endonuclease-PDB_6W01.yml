@@ -18,6 +18,7 @@ description: >
 
     2- Open the trajectory on VMD using the command line:
 
+
     ```
     vmd 6W01_SIRAHcg_prot.prmtop 6W01_SIRAHcg_prot_10us_skip10ns.ncrst 6W01_SIRAHcg_prot_10us_skip10ns.nc -e sirah_vmdtk.tcl
     ```
