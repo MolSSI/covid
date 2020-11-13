@@ -34,6 +34,6 @@ salinity: 0.15
 forcefields:
     - SIRAH 2.2
 references:
-    - Machado, M. R.; Barrera, E. E.; Klein, F.; Sóñora, M.; Silva, S.; Pantano, S. The SIRAH 2.0 Force Field: Altius, Fortius, Citius. J. Chem. Theory Comput. 2019, acs.jctc.9b00006. https://doi.org/10.1021/acs.jctc.9b00006.
-    - Machado, M. R.; Pantano, S. Split the Charge Difference in Two! A Rule of Thumb for Adding Proper Amounts of Ions in MD Simulations. J. Chem. Theory Comput. 2020, 16 (3), 1367–1372. https://doi.org/10.1021/acs.jctc.9b00953.
-    - Machado, M. R.; Pantano, S. SIRAH Tools: Mapping, Backmapping and Visualization of Coarse-Grained Models. Bioinformatics 2016, 32 (10), 1568–1570. https://doi.org/10.1093/bioinformatics/btw020.
+    - "Machado, M. R.; Barrera, E. E.; Klein, F.; Sóñora, M.; Silva, S.; Pantano, S. The SIRAH 2.0 Force Field: Altius, Fortius, Citius. J. Chem. Theory Comput. 2019, acs.jctc.9b00006. https://doi.org/10.1021/acs.jctc.9b00006."
+    - "Machado, M. R.; Pantano, S. Split the Charge Difference in Two! A Rule of Thumb for Adding Proper Amounts of Ions in MD Simulations. J. Chem. Theory Comput. 2020, 16 (3), 1367–1372. https://doi.org/10.1021/acs.jctc.9b00953."
+    - "Machado, M. R.; Pantano, S. SIRAH Tools: Mapping, Backmapping and Visualization of Coarse-Grained Models. Bioinformatics 2016, 32 (10), 1568–1570. https://doi.org/10.1093/bioinformatics/btw020."
