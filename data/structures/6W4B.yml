@@ -1,0 +1,10 @@
+pdbid: 6W4B
+method: X-RAY DIFFRACTION
+resolution: 2.95
+organisms:
+  - SARS-CoV-2
+proteins:
+  - NSP9
+targets:
+  - viral replication
+annotation: "The crystal structure of Nsp9 RNA binding protein of SARS CoV-2"
