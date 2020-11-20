@@ -1,0 +1,9 @@
+name: Coarse Grained RNA-dependent RNA polymerase (PDB 6M71)
+
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/6m71
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM). Molecules NSP 7 (chain C) and NSP 8 (chains A and B) of the RNA-dependent RNA polymerase are coarse grained separately. There are 10 and 15 mappings of different resolutions respectively. These are generated from the original all-atom [PDB](https://www.rcsb.org/structure/6M71) structure.  
+pdbids:
+  - 6m71
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester

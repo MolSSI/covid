@@ -1,0 +1,9 @@
+name: Coarse Grained Papain-like Protease (PDB 2FE8)
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/2fe8
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM). Chains A,B and C are coarse grained separately. There are  24,23 and 24 mappings of different resolutions respectively. These are generated from the original all-atom [PDB](https://www.rcsb.org/structure/2FE8) structure. 
+ 
+pdbids:
+  - 2fe8
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester

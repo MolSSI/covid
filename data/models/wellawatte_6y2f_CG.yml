@@ -1,0 +1,10 @@
+name: Coarse Grained 6y2f (PDB 6Y2F)
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/6y2f/CG_PDBs
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM) 9 mappings of different resolutions are currently available. These are generated from the original all-atom [PDB](https://www.rcsb.org/structure/6Y2F) structure. 
+
+ 
+pdbids:
+  - 6y2f
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester

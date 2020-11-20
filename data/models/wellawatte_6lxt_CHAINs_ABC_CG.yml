@@ -1,0 +1,10 @@
+name: Coarse Grained Post Fusion Core of 2019-nCoV S2 Subunit (PDB 6LXT)
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/6lxt
+
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM). Chains A,B and C of the fusion core are coarse grained separately. There are 15,15 and 15 mappings of different resolutions respectively. These are generated from the original all-atom [PDB](https://www.rcsb.org/structure/6LXT) structure. 
+ 
+pdbids:
+  - 6lxt
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester
