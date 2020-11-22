@@ -6,5 +6,10 @@ description: >
 
 pdbids:
   - 7bv1
+  
+proteins:
+  - NSP7
+  - NSP8
+
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

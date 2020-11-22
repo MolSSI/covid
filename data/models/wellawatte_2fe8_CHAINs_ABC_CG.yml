@@ -5,5 +5,7 @@ description: >
  
 pdbids:
   - 2fe8
+proteins:
+  - PLPro
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

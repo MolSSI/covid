@@ -6,5 +6,7 @@ description: >
  
 pdbids:
   - 6lxt
+proteins:
+  - S2
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

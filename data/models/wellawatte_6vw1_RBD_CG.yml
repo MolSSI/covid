@@ -5,7 +5,7 @@ description: >
  
 pdbids:
   - 6vw1
-protein:
+proteins:
   - RBD
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

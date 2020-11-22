@@ -5,5 +5,7 @@ description: >
  
 pdbids:
   - 6lu7
+proteins:
+  - 3CLpro
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

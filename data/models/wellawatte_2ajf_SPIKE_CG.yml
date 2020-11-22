@@ -5,7 +5,7 @@ description: >
  
 pdbids:
   - 2ajf
-protein:
+proteins:
   - SPIKE
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester

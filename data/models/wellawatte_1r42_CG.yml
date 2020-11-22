@@ -5,5 +5,8 @@ description: >
  
 pdbids:
   - 1r42
+
+proteins: 
+  - ACE2
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester
