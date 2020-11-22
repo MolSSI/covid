@@ -6,6 +6,6 @@ description: >
 pdbids:
   - 2ajf
 proteins:
-  - SPIKE
+  - spike
 creator: Geemi Wellawatte, White Lab
 institution: University of Rochester
