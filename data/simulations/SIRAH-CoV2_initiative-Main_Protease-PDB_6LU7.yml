@@ -4,7 +4,7 @@ description: >
     This dataset contains the trajectory of a 15 microseconds-long coarse-grained molecular dynamics simulation of SARS-CoV2 Main protease in its APO form (PDB id: 6LU7, Bioassembly 1). Simulations have been performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Machado et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00006), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953).
 
 
-    The files **6LU7_SIRAHcg_rawdata1.tar**, **6LU7_SIRAHcg_rawdata2.tar**, and **6LU7_SIRAHcg_rawdata3.tar**, contain all the raw information required to visualize (on VMD), analyze, backmap, and eventually continue the simulations using Amber18 or higher. Step-By-Step tutorials for running, visualizing, and analyzing CG trajectories using [SirahTools](https://academic.oup.com/bioinformatics/article/32/10/1568/1743152) can be found at [SIRAH website](www.sirahff.com).
+    The files **6LU7_SIRAHcg_rawdata1.tar**, **6LU7_SIRAHcg_rawdata2.tar**, and **6LU7_SIRAHcg_rawdata3.tar**, contain all the raw information required to visualize (on VMD), analyze, backmap, and eventually continue the simulations using Amber18 or higher. Step-By-Step tutorials for running, visualizing, and analyzing CG trajectories using [SirahTools](https://academic.oup.com/bioinformatics/article/32/10/1568/1743152) can be found at [SIRAH website](http://www.sirahff.com).
 
 
     Additionally, the file **6LU7_SIRAHcg_10us_prot.tar** contains only the protein coordinates, while **6LU7_SIRAHcg_10us_prot_skip10ns.tar** contains one frame every 10ns.
