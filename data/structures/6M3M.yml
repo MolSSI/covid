@@ -1,0 +1,10 @@
+pdbid: 6M3M
+method: X-RAY DIFFRACTION
+resolution: 2.7
+organisms:
+  - SARS-CoV-2
+proteins:
+  - N protein
+targets:
+  - viral fusion
+annotation: "Crystal structure of SARS-CoV-2 nucleocapsid protein N-terminal RNA binding domain"
