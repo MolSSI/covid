@@ -13,8 +13,10 @@ description: >
   `RUN2` is N439K/K417K;
   `RUN3` is wild-type (WT).
 
-  Complete details of this simulation are available [here](https://github.com/choderalab/rbm-ace2-contact-analysis).
+  Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis).
   Brief details appear below.
+
+  Preprint link will be posted shortly.
 
   **System preparation:**
   The RBD:ACE2 complex was constructed from individual RBD (PDB: [6m0j](https://www.rcsb.org/structure/6M0J), Chain E) and ACE2 (PDB: [1r42](https://www.rcsb.org/structure/1R42), Chain A) monomers aligned to the full RBD:ACE2 structure (PDB: [6m0j]((https://www.rcsb.org/structure/6M0J)).
@@ -27,7 +29,7 @@ description: >
   For the constructed RBD:ACE2 complex, these included sites: N53, N90, N103, N322, N432, N546, and N690 on ACE2 and N343 on the RBD.
   Base NAG residues of each glycan structure (FA2, FA26G1, FA2, FA2, FA2G2, A2, FA2, FA2G2, respectively) were acquired from [Elisa Fadda](https://www.maynoothuniversity.ie/people/elisa-fadda).
   Each glycan was then aligned to the corresponding NAG stub in the RBD:ACE2 model in PyMOL 2.3.2 and any resulting clashes were refined in [ISOLDE](https://isolde.cimr.cam.ac.uk/) ([Croll, 2018](https://doi.org/10.1107/S2059798318002425)).
-  Full details of the glycosylation patterns / structures used and full workflow are available [here](https://github.com/choderalab/rbm-ace2-contact-analysis).
+  Full details of the glycosylation patterns / structures used and full workflow are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis).
 
   **Folding@home simulation:**
   The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
@@ -43,11 +45,11 @@ description: >
   The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
   A single trajectory of the WT RBD (RUN3) (~30 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
   ```
-  aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311/run3-clone0.h5 .
+  aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5 .
   ```
   All HDF5 trajectories (~300 GB) can be retrieved with
   ```
-  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311 .
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311 .
   ```
 
   **Entire dataset:**
@@ -63,13 +65,16 @@ description: >
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
   ```bash
-  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/raw-data/ .
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/raw-data/ .
   ```
 
   **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
   ```bash
-  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/setup/ .
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/setup/ .
   ```
+
+  **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
+
 creator: Ivy Zhang
 organization: Folding@home
 lab: Chodera lab
@@ -81,7 +86,7 @@ proteins:
 structures:
     - 6m0j
     - 1R42
-trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311/run3-clone0.h5
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5
 size: 2.1 TB
 length: 173.8 µs
 ensemble: NPT
