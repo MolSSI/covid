@@ -1,0 +1,95 @@
+target: spike binding
+type: md
+title: Folding@home simulations of the SARS-CoV-2 spike RBD bound to human ACE2
+description: >
+  All-atom MD simulations of the SARS-CoV-2 spike protein receptor binding domain (RBD) bound to
+  human angiotensin converting enzyme-related carboypeptidase (ACE2), simulated using
+  [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
+  The "wild-type" RBD and three mutants (N439K, K417V, and the double mutant N439K/K417V) were simulated.
+
+  `RUNs` denote different mutants:
+  `RUN0` is RBD N439K;
+  `RUN1` is RBD K417V;
+  `RUN2` is N439K/K417K;
+  `RUN3` is wild-type (WT).
+
+  Complete details of this simulation are available [here](https://github.com/choderalab/rbm-ace2-contact-analysis).
+  Brief details appear below.
+
+  **System preparation:**
+  The RBD:ACE2 complex was constructed from individual RBD (PDB: [6m0j](https://www.rcsb.org/structure/6M0J), Chain E) and ACE2 (PDB: [1r42](https://www.rcsb.org/structure/1R42), Chain A) monomers aligned to the full RBD:ACE2 structure (PDB: [6m0j]((https://www.rcsb.org/structure/6M0J)).
+  These structural models were further refined by Tristan Croll using [ISOLDE](https://isolde.cimr.cam.ac.uk/) ([Croll, 2018](https://doi.org/10.1107/S2059798318002425)) and deposited in the [Coronavirus Structural Taskforce (CST) database](https://github.com/thorn-lab/coronavirus_structural_task_force) ([Croll et al., 2020](https://doi.org/10.1101/2020.10.07.307546)) to produce
+  a refined [6m0j](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j)
+  and [1r42](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/human_interaction_partners/ACE2/1r42/isolde/notes.txt).
+  The resulting RBD and ACE2 monomers were then aligned in [PyMOL 2.3.2](http://pymol.org) to the [CST 6m0j structure](https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j) to create an initial RBD:ACE2 complex.
+
+  Full glycosylation patterns for ACE2 and RBD glycans were determined from [Shajahan et al.](http://dx.doi.org/10.1093/glycob/cwaa101)
+  For the constructed RBD:ACE2 complex, these included sites: N53, N90, N103, N322, N432, N546, and N690 on ACE2 and N343 on the RBD.
+  Base NAG residues of each glycan structure (FA2, FA26G1, FA2, FA2, FA2G2, A2, FA2, FA2G2, respectively) were acquired from [Elisa Fadda](https://www.maynoothuniversity.ie/people/elisa-fadda).
+  Each glycan was then aligned to the corresponding NAG stub in the RBD:ACE2 model in PyMOL 2.3.2 and any resulting clashes were refined in [ISOLDE](https://isolde.cimr.cam.ac.uk/) ([Croll, 2018](https://doi.org/10.1107/S2059798318002425)).
+  Full details of the glycosylation patterns / structures used and full workflow are available [here](https://github.com/choderalab/rbm-ace2-contact-analysis).
+
+  **Folding@home simulation:**
+  The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
+  Simulations were run with OpenMM 7.4.2 (Folding@home core22 0.0.13).
+  Production simulations used the same Langevin integrator as the NpT equilibration described above.
+  In total, 2000 independent MD simulations were generated on Folding@home.
+  Conformational snapshots (frames) were stored at an interval of 0.5 ns/frame for subsequent analysis.
+  The resulting final dataset contained 2000 trajectories, 173.8 us of aggregate simulation time, and 34761 frames.
+  This amount of simulation time corresponds to ~12.9 GPU-years on an NVIDIA GeForce GTX 1080Ti.
+  This trajectory dataset with solvent is available at the MolSSI COVID-19 Molecular Structure and Therapeutics Hub: https://covid.molssi.org//org-contributions/#folding--home
+
+  **Solute-only trajectories:**
+  The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
+  A single trajectory of the WT RBD (RUN3) (~30 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+  ```
+  aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311/run3-clone0.h5 .
+  ```
+  All HDF5 trajectories (~300 GB) can be retrieved with
+  ```
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311 .
+  ```
+
+  **Entire dataset:**
+  The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+  The dataset consists of a single project (`PROJ17311`) and has a `RUN*/CLONE*/result*` directory structure.
+  `RUNs` denote different mutants:
+  `RUN0` is RBD N439K;
+  `RUN1` is RBD K417V;
+  `RUN2` is N439K/K417K;
+  `RUN3` is wild-type (WT).
+  `CLONE`s denote different independent replica trajectories.
+
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+  ```bash
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/raw-data/ .
+  ```
+
+  **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+  ```bash
+  aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/setup/ .
+  ```
+creator: Ivy Zhang
+organization: Folding@home
+lab: Chodera lab
+institute: Memorial Sloan Kettering Cancer Center
+proteins:
+    - spike
+    - RBD
+    - ACE2
+structures:
+    - 6m0j
+    - 1R42
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-spike-N439K-mutant/munged/solute/PROJ17311/run3-clone0.h5
+size: 2.1 TB
+length: 173.8 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0
+forcefields:
+    - AMBER14SB
+    - TIP3P
+#preprint: null
