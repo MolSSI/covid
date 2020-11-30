@@ -95,7 +95,7 @@ ensemble: NPT
 temperature: 310
 pressure: 1
 solvent: water
-salinity: 150 mM NaCl
+salinity: 0.150
 forcefields:
     - AMBER14SB
     - GLYCAM_06j-1
