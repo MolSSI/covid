@@ -1,0 +1,13 @@
+name: Coarse Grained Main Protease Structures (PDB 6LU7 ligands removed)
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/6lu7/CG_PDBs
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM) 15 mappings of different resolutions are currently available. The mappings are generated from the original all-atom [PDB](https://www.rcsb.org/structure/6LU7) structure. 
+ 
+pdbids:
+  - 6lu7
+proteins:
+  - 3CLpro
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester
+lab: Zhiheng Li, University of Rochester (contributor)
+
