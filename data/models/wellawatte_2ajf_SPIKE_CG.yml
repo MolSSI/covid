@@ -1,0 +1,13 @@
+name: Coarse Grained SPIKE Protein (PDB 2AJF) 
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/2ajf/SPIKE/CG_PDBs
+description: >
+    Coarse graied (CG) mappings are generated from the [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM)  18 mappings of different resolutions are currently available. The mappings are generated from the original all-atom [PDB](https://www.rcsb.org/structure/2AJF) structure. 
+ 
+pdbids:
+  - 2ajf
+proteins:
+  - spike
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester
+lab: Zhiheng Li, University of Rochester (contributor)
+

@@ -1,0 +1,16 @@
+name: Coarse Grained Apo NSP7, NSP8 Molecules (PDB 7BV1)
+
+url: https://github.com/geemi725/Covid_CG_mappings/tree/main/7bv1
+description: >
+    Coarse graied (CG) mappings are generated from [DSGPM deep learning model.](https://github.com/rochesterxugroup/DSGPM). Molecules NSP 7 (chain C) and NSP 8 (chains B and D) of the apo nsp12-nsp7-nsp8 complex are coarse grained separately. There are 10 and 19 mappings of different resolutions respectively. These are generated from the original all-atom [PDB](https://www.rcsb.org/structure/7BV1) structure.  
+
+pdbids:
+  - 7bv1
+  
+proteins:
+  - NSP7
+  - NSP8
+
+creator: Geemi Wellawatte, White Lab
+institution: University of Rochester
+lab: Zhiheng Li, University of Rochester (contributor)
