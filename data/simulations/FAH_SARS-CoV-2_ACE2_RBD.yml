@@ -10,7 +10,7 @@ description: >
   `RUNs` denote different mutants:
   `RUN0` is RBD N439K;
   `RUN1` is RBD K417V;
-  `RUN2` is N439K/K417K;
+  `RUN2` is N439K/K417V;
   `RUN3` is wild-type (WT).
 
   Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis).
@@ -95,8 +95,9 @@ ensemble: NPT
 temperature: 310
 pressure: 1
 solvent: water
-salinity: 0
+salinity: 150 mM NaCl
 forcefields:
     - AMBER14SB
+    - GLYCAM_06j-1 
     - TIP3P
 #preprint: null
