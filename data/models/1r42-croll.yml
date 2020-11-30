@@ -1,0 +1,14 @@
+name: "Native Human Angiotensin Converting Enzyme-Related Carboxypeptidase (ACE2): ISOLDE refined model"
+pdbids:
+  - 1r42
+proteins:
+  - ACE2
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 1r42 that fixes multiple issues:
+  * Merges in missing C-terminal domain from 6m17
+  See [a complete description](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/human_interaction_partners/ACE2/1r42/isolde/notes.txt) of the issues remedied by this model.
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/human_interaction_partners/ACE2/1r42
+pdb_url: https://www.rcsb.org/structure/1R42
+creator: Tristan Croll
