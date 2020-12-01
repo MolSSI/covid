@@ -14,6 +14,6 @@ description: >
   * Corrects incorrect modeling of both zinc binding sites (originally modeled as disulfides)
   * Corrects rotamer adjustments and peptide flips
   See [a complete description](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j/isolde/notes.txt) of the issues remedied by this model.
-url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j/isolde/6m0j_refine_14.pdb
 pdb_url: https://www.rcsb.org/structure/6M0J
 creator: Tristan Croll
