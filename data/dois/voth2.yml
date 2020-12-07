@@ -10,6 +10,6 @@ owner: Alvin Yu & Gregory Voth
 file_types:
   - pdb
 files:
-  - https://github.com/alvinyu33/sars-cov-2-public/tree/9b46373cb878929de5b74804a37f20fa73efa48e
+  - https://github.com/alvinyu33/sars-cov-2-public
 purpose: Coarse-grained data for multiscale models of the SARS-CoV-2 virion
 size: 6.2 MB
