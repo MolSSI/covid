@@ -1,0 +1,49 @@
+type: md-cg
+title: SIRAH-CoV2 initiative - NSP16 - NSP10 Complex
+description: >
+    This dataset contains the trajectory of a 10 microseconds-long coarse-grained molecular dynamics simulation of SARS-CoV2 NSP16 - NSP10 Complex with Zn ions bound (PDB id: 6W4H). Simulations were performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Machado et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00006), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953). Zinc ions were parameterized as reported in [Klein et al. 2020](https://pubs.acs.org/doi/10.1021/acs.jcim.0c00160).
+
+
+    The file **6W4H_SIRAHcg_rawdata.tar** contains all the raw information required to visualize (on VMD), analyze, backmap, and eventually continue the simulations using Amber18 or higher. Step-By-Step tutorials for running, visualizing, and analyzing CG trajectories using SirahTools can be found at [SIRAH website](http://www.sirahff.com). Additionally, the file **6W4H_SIRAHcg_10us_prot.tar** contains only the protein coordinates, while **6W4H_SIRAHcg_10us_prot_skip10ns.tar** contains one frame every 10ns.
+
+
+    To take a quick look at the trajectory:
+
+
+    1- Untar the file `6W4H_SIRAHcg_10us_prot_skip10ns.tar`
+
+
+    2- Open the trajectory on VMD using the command line:
+
+
+    ```
+    vmd 6W4H_SIRAHcg_prot.prmtop 6W4H_SIRAHcg_prot_10us_skip10ns.ncrst 6W4H_SIRAHcg_prot_10us_skip10ns.nc -e sirah_vmdtk.tcl
+    ```
+
+
+    Note that you can use normal VMD drawing methods as vdw, licorice, etc., and coloring by restype, element, name, etc.
+
+
+creator: Martín Soñora
+organization: Institut Pasteur de Montevideo
+lab: Biomolecular Simulations Laboratory
+proteins:
+  - NSP16
+  - NSP10
+structures:
+    - 6W4H
+trajectory: https://zenodo.org/record/3779057/
+size: 7.9 GB
+length: 10 µs
+ensemble: NPT
+temperature: 300
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - SIRAH 2.2
+references:
+    - "Machado, M. R.; Barrera, E. E.; Klein, F.; Sóñora, M.; Silva, S.; Pantano, S. The SIRAH 2.0 Force Field: Altius, Fortius, Citius. J. Chem. Theory Comput. 2019, acs.jctc.9b00006. https://doi.org/10.1021/acs.jctc.9b00006."
+    - "Machado, M. R.; Pantano, S. Split the Charge Difference in Two! A Rule of Thumb for Adding Proper Amounts of Ions in MD Simulations. J. Chem. Theory Comput. 2020, 16 (3), 1367–1372. https://doi.org/10.1021/acs.jctc.9b00953."
+    - "Machado, M. R.; Pantano, S. SIRAH Tools: Mapping, Backmapping and Visualization of Coarse-Grained Models. Bioinformatics 2016, 32 (10), 1568–1570. https://doi.org/10.1093/bioinformatics/btw020."
+    - "Klein, F.; Caceres-Rojas, D.; Carrasco, M.; Tapia, J. C.; Caballero, J.; Alzate-Morales, J. H.; Pantano, S. Coarse-Grained Parameters for Divalent Cations within the SIRAH Force Field. J. Chem. Inf. Model. 2020, acs.jcim.0c00160. https://doi.org/10.1021/acs.jcim.0c00160."

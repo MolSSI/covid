@@ -1,0 +1,11 @@
+pdbid: 6YHU
+method: X-RAY DIFFRACTION
+resolution: 2.00
+organisms:
+  - SARS-CoV-2
+proteins:
+  - NSP7
+  - NSP8
+targets:
+  - viral replication
+annotation: "Crystal structure of the nsp7-nsp8 complex of SARS-CoV-2"
