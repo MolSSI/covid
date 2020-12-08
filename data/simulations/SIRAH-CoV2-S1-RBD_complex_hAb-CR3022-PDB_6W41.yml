@@ -29,6 +29,7 @@ creator: Martin Soñora
 organization: Institut Pasteur de Montevideo
 lab: Biomolecular Simulations Laboratory
 proteins:
+  - spike
   - RBD
 structures:
     - 6W41
