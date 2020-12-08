@@ -1,0 +1,19 @@
+name: "SARS-CoV-2 spike receptor-binding domain bound with ACE2: ISOLDE refined model"
+pdbids:
+  - 6m0j
+proteins:
+  - spike
+  - RBD
+  - ACE2
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 6m0j that fixes multiple issues:
+  * Adds/extend GlcNAcs in ACE2
+  * Fixes backwards His374 (zinc binding site)
+  * Corrects incorrect modeling of both zinc binding sites (originally modeled as disulfides)
+  * Corrects rotamer adjustments and peptide flips
+  See [a complete description](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j/isolde/notes.txt) of the issues remedied by this model.
+url: https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j/isolde/6m0j_refine_14.pdb
+pdb_url: https://www.rcsb.org/structure/6M0J
+creator: Tristan Croll

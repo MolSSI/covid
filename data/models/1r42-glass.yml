@@ -1,0 +1,13 @@
+name: "Native Human Angiotensin Converting Enzyme-Related Carboxypeptidase (ACE2): ISOLDE refined model with glycans"
+pdbids:
+  - 1r42
+proteins:
+  - ACE2
+organism:
+  - SARS-CoV-2
+description: >
+ Takes the ACE2 (Chain A) from the [1r42 refined model](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/human_interaction_partners/ACE2/1r42/isolde/1r42_refine_2.pdb), builds all glycans using PyMOL, and refines clashes using ISOLDE.
+  See [a complete description](https://github.com/choderalab/rbd-ace2-contact-analysis/blob/main/01_system_preparation/01_openmm_integrator/README.md) of the workflow for building and refining the glycosylated model.
+url: https://github.com/choderalab/rbd-ace2-contact-analysis/blob/main/01_system_preparation/01_openmm_integrator/01_PDBs/3_refined_ace2_rbd_complex_ACE2_ONLY_cleaned.pdb
+pdb_url: https://www.rcsb.org/structure/1R42
+creator: William Glass

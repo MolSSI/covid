@@ -83,6 +83,9 @@ creator: Ivy Zhang
 organization: Folding@home
 lab: Chodera lab
 institute: Memorial Sloan Kettering Cancer Center
+models: 
+    - 6m0j-glass
+    - 1r42-glass
 proteins:
     - spike
     - RBD
