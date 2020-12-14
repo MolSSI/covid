@@ -1,0 +1,12 @@
+pdbid: 7BTF
+method: ELECTRON MICROSCOPY
+resolution: 2.95
+organisms:
+  - SARS-CoV-2
+proteins:
+    - RdRP
+    - NSP7
+    - NSP8
+targets:
+  - viral replication
+annotation: "SARS-CoV-2 RNA-dependent RNA polymerase in complex with cofactors in reduced condition"

@@ -1,0 +1,10 @@
+pdbid: 6W37
+method: X-RAY DIFFRACTION
+resolution: 2.9
+organisms:
+  - SARS-CoV-2
+proteins:
+  - ORF7a
+targets:
+  - host immune response
+annotation: "Structure of the SARS-CoV-2 ORF7a encoded accessory protein"
