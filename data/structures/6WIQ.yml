@@ -1,0 +1,11 @@
+pdbid: 6WIQ
+method: X-RAY DIFFRACTION
+resolution: 2.85
+organisms:
+  - SARS-CoV-2
+proteins:
+    - NSP7
+    - NSP8
+targets:
+  - viral replication
+annotation: "Crystal structure of the co-factor complex of NSP7 and the C-terminal domain of NSP8 from SARS CoV-2"
