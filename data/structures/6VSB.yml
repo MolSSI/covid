@@ -1,0 +1,11 @@
+pdbid: 6VSB
+method: ELECTRON MICROSCOPY
+resolution: 3.46
+organisms:
+  - SARS-CoV-2
+proteins:
+  - spike
+  - RBD
+targets:
+  - spike binding
+annotation: "Prefusion 2019-nCoV spike glycoprotein with a single receptor-binding domain up"

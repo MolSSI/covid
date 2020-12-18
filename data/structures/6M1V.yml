@@ -1,0 +1,11 @@
+pdbid: 6M1V
+method: X-RAY DIFFRACTION
+resolution: 1.5
+organisms:
+  - SARS-CoV-2
+proteins:
+  - spike
+  - S2
+targets:
+  - spike binding
+annotation: "Crystal structure of post fusion core of 2019-nCoV S2 subunit"
