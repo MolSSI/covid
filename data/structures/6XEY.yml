@@ -1,0 +1,11 @@
+pdbid: 6XEY
+method: ELECTRON MICROSCOPY
+resolution: 3.25
+organisms:
+  - SARS-CoV-2
+proteins:
+  - spike
+  - RBD
+targets:
+  - spike binding
+annotation: "Cryo-EM structure of the SARS-CoV-2 spike glycoprotein bound to Fab 2-4"

@@ -4,7 +4,7 @@ description: >
     This dataset contains the trajectories of 10 microseconds-long coarse-grained molecular dynamics simulations of SARS-CoV2 Spike´s RBD glycosylated at Asn331 and Asn343. The initial coordinates correspond to amino acids 327 to 532 taken from the PDB structure 6VSB. Missing loops and glycosylation trees were added with [CHARMM-GUI](http://www.charmm-gui.org).
 
 
-    There are two different sets of simulations corresponding to Core Complex and High Mannose. Simulations have been performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Machado et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00006), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953). Glycan parameters will be published soon.
+    There are two different sets of simulations corresponding to Core Complex and High Mannose. Simulations have been performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Machado et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00006), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953). Glycan were parameterized as reported in [Garay et at. 2020](https://www.biorxiv.org/content/10.1101/2020.12.18.423446v1).
 
 
     The files **RBD-Man9_SIRAHcg_rawdata_0-6us.tar** and **RBD-Man9_SIRAHcg_rawdata_6-10us.tar**, contain all the raw information required to visualize (on VMD), analyze, backmap the simulations. Analogous information for Core-complex glycosylations is contained in files **RBD-Core-complex_SIRAHcg_rawdata_0-6us.tar** and **RBD-Core-complex_SIRAHcg_rawdata_6-10us.tar**.
@@ -53,3 +53,4 @@ references:
     - "Machado, M. R.; Barrera, E. E.; Klein, F.; Sóñora, M.; Silva, S.; Pantano, S. The SIRAH 2.0 Force Field: Altius, Fortius, Citius. J. Chem. Theory Comput. 2019, acs.jctc.9b00006. https://doi.org/10.1021/acs.jctc.9b00006."
     - "Machado, M. R.; Pantano, S. Split the Charge Difference in Two! A Rule of Thumb for Adding Proper Amounts of Ions in MD Simulations. J. Chem. Theory Comput. 2020, 16 (3), 1367–1372. https://doi.org/10.1021/acs.jctc.9b00953."
     - "Machado, M. R.; Pantano, S. SIRAH Tools: Mapping, Backmapping and Visualization of Coarse-Grained Models. Bioinformatics 2016, 32 (10), 1568–1570. https://doi.org/10.1093/bioinformatics/btw020."
+    - "Garay, P. G.; Machado, M. R.; Verli, H.; Pantano, S. SIRAH Late Harvest: Coarse-Grained Models for Protein Glycosylation. bioRxiv 2020. https://doi.org/10.1101/2020.12.18.423446."

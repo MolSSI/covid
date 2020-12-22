@@ -1,0 +1,48 @@
+type: md-cg
+title: SIRAH-CoV2 initiative - Membrane embedded ORF3a
+description: >
+    This dataset contains the trajectory of a 10 microseconds-long coarse-grained molecular dynamics simulation of the SARS-CoV2 ORF3a dimeric transmembrane protein (PDB id: 6XDC, Bioassembly 1) embedded in a membrane patch containing POPE, POPC, and POPS phospholipids in a 2:1:1 proportion. Simulations have been performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Barrera et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00435), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953).
+
+
+    The files **6XDC_SIRAHcg_rawdata_0-2us.tar**, **6XDC_SIRAHcg_rawdata_2-4us.tar**, **6XDC_SIRAHcg_rawdata_4-6us.tar**, **6XDC_SIRAHcg_rawdata_6-8us.tar**, and **6XDC_SIRAHcg_rawdata_8-10us.tar** contain all the raw information required to visualize (on VMD 1.9.3), analyze, backmap, and eventually continue the simulations using Amber18 or higher. Step-By-Step tutorials for running, visualizing, and analyzing CG trajectories using [SirahTools](https://academic.oup.com/bioinformatics/article/32/10/1568/1743152) can be found at [SIRAH website](http://www.sirahff.com).
+
+
+    Additionally, the file **6XDC_SIRAHcg_10us_prot-memb_skip10ns.tar** contains only the protein and phospholipids´ coordinates, with one frame every 10ns.
+
+    To take a quick look at the trajectory:
+
+
+    1- Untar the file `6XDC_SIRAHcg_10us_prot-memb_skip10ns.tar`
+
+
+    2- Open the trajectory on VMD using the command line:
+    ```
+    vmd 6XDC_SIRAHcg_prot-memb_skip10ns.prmtop 6XDC_SIRAHcg_prot-memb_10us_skip10ns.ncrst 6XDC_SIRAHcg_prot-memb_10us_skip10ns.nc -e sirah_vmdtk.tcl
+    ```
+
+
+    Note that you can use normal VMD drawing methods as vdw, licorice, etc., and coloring by restype, element, name, etc. 
+
+
+creator: Exequiel Barrera
+organization: Institut Pasteur de Montevideo
+lab: Biomolecular Simulations Laboratory
+proteins:
+  - ORF3a
+structures:
+    - 6XDC
+trajectory: https://zenodo.org/record/4044378/
+size: 43 GB
+length: 10 µs
+ensemble: NPT
+temperature: 300
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - SIRAH 2.2
+references:
+    - "Machado, M. R.; Barrera, E. E.; Klein, F.; Sóñora, M.; Silva, S.; Pantano, S. The SIRAH 2.0 Force Field: Altius, Fortius, Citius. J. Chem. Theory Comput. 2019, acs.jctc.9b00006. https://doi.org/10.1021/acs.jctc.9b00006."
+    - "Machado, M. R.; Pantano, S. Split the Charge Difference in Two! A Rule of Thumb for Adding Proper Amounts of Ions in MD Simulations. J. Chem. Theory Comput. 2020, 16 (3), 1367–1372. https://doi.org/10.1021/acs.jctc.9b00953."
+    - "Machado, M. R.; Pantano, S. SIRAH Tools: Mapping, Backmapping and Visualization of Coarse-Grained Models. Bioinformatics 2016, 32 (10), 1568–1570. https://doi.org/10.1093/bioinformatics/btw020."
+    - "Barrera, E. E.; Machado, M. R.; Pantano, S. Fat SIRAH: Coarse-Grained Phospholipids To Explore Membrane–Protein Dynamics. J. Chem. Theory Comput. 2019, 15 (10), 5674–5688. https://doi.org/10.1021/acs.jctc.9b00435."
