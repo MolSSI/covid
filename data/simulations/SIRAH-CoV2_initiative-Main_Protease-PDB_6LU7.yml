@@ -1,5 +1,5 @@
 type: md-cg
-title: SIRAH-CoV2 initiative - Main Protease 15 µs trajectory (PDB id 6LU7)
+title: SIRAH-CoV2 initiative - Main Protease
 description: >
     This dataset contains the trajectory of a 15 microseconds-long coarse-grained molecular dynamics simulation of SARS-CoV2 Main protease in its APO form (PDB id: 6LU7, Bioassembly 1). Simulations have been performed using the SIRAH force field running with the Amber18 package at the Uruguayan National Center for Supercomputing (ClusterUY) under the conditions reported in [Machado et al. JCTC 2019](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00006), adding 150 mM NaCl according to [Machado & Pantano JCTC 2020](https://pubs.acs.org/doi/10.1021/acs.jctc.9b00953).
 

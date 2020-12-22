@@ -1,0 +1,10 @@
+pdbid: 6XDC
+method: ELECTRON MICROSCOPY
+resolution: 2.9
+organisms:
+  - SARS-CoV-2
+proteins:
+  - ORF3a
+targets:
+  - host immune response
+annotation: "Cryo-EM structure of SARS-CoV-2 ORF3a"

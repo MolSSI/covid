@@ -1,0 +1,10 @@
+pdbid: 6ZSL
+method: X-RAY DIFFRACTION
+resolution: 1.94
+organisms:
+  - SARS-CoV-2
+proteins:
+  - Helicase
+targets:
+  - viral replication
+annotation: "Crystal structure of the SARS-CoV-2 helicase at 1.94 Angstrom resolution"
