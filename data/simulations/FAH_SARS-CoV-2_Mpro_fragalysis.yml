@@ -88,6 +88,8 @@ lab: Chodera lab
 institute: MSKCC
 proteins:
     - 3CLpro
+structures: []
+models: []
 trajectory: https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2-Mpro-Diamond-structures/solute-hdf5-trajectories/13437/run0-clone0.h5
 size: 175.1 GB
 length: 8 ms
