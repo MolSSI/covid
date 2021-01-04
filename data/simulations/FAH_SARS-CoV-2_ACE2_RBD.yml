@@ -34,11 +34,9 @@ description: >
   The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
   Simulations were run with OpenMM 7.4.2 (Folding@home core22 0.0.13).
   Production simulations used the same Langevin integrator as the NpT equilibration described above.
-  In total, 2000 independent MD simulations were generated on Folding@home.
+  In total, 8000 independent MD simulations were generated on Folding@home.
   Conformational snapshots (frames) were stored at an interval of 0.5 ns/frame for subsequent analysis.
-  The resulting final dataset contained 2000 trajectories, 173.8 us of aggregate simulation time, and 34761 frames.
-  This amount of simulation time corresponds to ~12.9 GPU-years on an NVIDIA GeForce GTX 1080Ti.
-
+  The resulting final dataset contained 8000 trajectories, 725.3 us of aggregate simulation time, and 1450520 frames.
 
   **Solute-only trajectories:**
   The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
@@ -95,7 +93,7 @@ structures:
     - 1R42
 trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5
 size: 2.1 TB
-length: 173.8 µs
+length: 725.3 µs
 ensemble: NPT
 temperature: 310
 pressure: 1
