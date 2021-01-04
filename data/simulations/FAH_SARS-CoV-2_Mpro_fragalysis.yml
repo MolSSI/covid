@@ -1,0 +1,104 @@
+type: md
+target: "3CLpro protease activity"
+title: Folding@home molecular dynamics simulations of Diamond Light Source / XChem X-ray structures of small molecule inhibitors of the SARS-CoV-2 main protease from the COVID Moonshot
+description: >
+  This dataset contains all-atom molecular dynamics simulations starting from [Diamond Light Source](http://diamond.ac.uk/) /
+  [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) X-ray structures of small molecule inhibitors of the SARS-CoV-2 main viral protease (Mpro, 3CLpro)
+  from the [COVID Moonshot](https://postera.ai/covid) simulated on Folding@home with [gromacs](http://www.gromacs.org/).
+
+
+  All X-ray structures come from the [XChem Fragalysis platform](https://fragalysis.diamond.ac.uk/viewer/react/preview/target/Mpro) as of 2020-12-21.
+  These structures are linked to activity data on the [COVID Moonshot Structures browser](https://postera.ai/covid/structures).
+
+
+  All X-ray structures are simulated in multiple variants, each organized into a different Folding@home project number:
+    ```
+    13430 : apo Mpro monomer His41(0) Cys145(0)
+    13431 : apo Mpro monomer His41(+) Cys145(-)
+    13432 : holo Mpro monomer His41(0) Cys145(0)
+    13433 : holo Mpro monomer His41(+) Cys145(-)
+    13434 : apo Mpro dimer His41(0) Cys145(0)
+    13435 : apo Mpro dimer His41(+) Cys145(-)
+    13436 : holo Mpro dimer His41(0) Cys145(0)
+    13437 : holo Mpro dimer His41(+) Cys145(-)
+    ```
+  There are 356 X-ray structures as different RUNs within each PROJect, and 10 CLONEs within each RUN.
+  Each CLONE will be terminated at 1 microsecond, producing an aggregate total of 8 ms of data.
+
+
+  **NOTE:** This dataset will continue to be populated for the next few weeks.
+  Trajectories have not yet reached the full 1 microsecond/trajectory, but the available data is already useful for analysis.
+
+
+  Structures were prepared with [SpruceTK](https://docs.eyesopen.com/toolkits/python/sprucetk/index.html) from the [OpenEye Toolkit](https://www.eyesopen.com/toolkit-development) 2020.1.0
+  using the scripts in the [covid-moonshot](https://github.com/FoldingAtHome/covid-moonshot/tree/master/fah-xray) repo.
+  Simulations were run with the [OpenMM](http://openmm.org) 7.4.2 (Folding@home core22 0.0.14).
+  Solute snapshots were saved every 1 ns.
+
+
+  The dataset comprises several projects, each having a `RUN*/CLONE*/result*` directory structure:
+
+
+  * each `PROJ` represents a different dataset of small molecules
+
+  * each `RUN` represents a different small molecule
+
+  * each `CLONE` is a unique MD simulation differing in initial atomic velocities
+
+  * each `result*` is a 20 ns fragment of the contiguous simulation
+
+
+  **Project index:**
+  An index of all the projects can be found [here](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2-Mpro-Diamond-structures/setup/README.md).
+  A CSV file indexing all the fragments (in terms of Folding@home RUNs) can be found here: [fah-metadata.csv](https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2-Mpro-Diamond-structures/setup/fah-metadata.csv)
+
+  **Continuous solute-only trajectories:**
+  To download all the protein-ligand trajectories in [MDTraj HDF5 format](https://mdtraj.org/1.9.4/hdf5_format.html), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+    ```bash
+    aws s3 --no-sign-request sync s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2-Mpro-Diamond-structures/solute-hdf5-trajectories .
+    ```
+  To download a single trajectory, you can specify the path to the PROJECT (assembly state), RUN (ligand index), and CLONE (replicate).
+  For example, to retrieve the holo (ligand-bound) Mpro dimer with His41(+) Cys145(-) (charged catalytic dyad) for ligand 0 ([x11271](https://covid.postera.ai/covid/submissions/c9973a83-93b0-42ab-82c9-bca42619d363/1)):
+    ```bash
+    aws s3 --no-sign-request cp s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2-Mpro-Diamond-structures/solute-hdf5-trajectories/13437/run0-clone0.h5 .
+    ```
+
+  [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) contain the topology, so you can use the conda- and pip-installable [MDTraj](http://mdtraj.org) to convert to the desired format (PDB, XTC, DCD, etc.) or slice out specific frames programmatically.
+  MDTraj also provides the [`mdconvert`](https://mdtraj.org/1.9.4/mdconvert.html) tool to do this from the command line.
+  For example, to generate a PDB of the first frame and an XTC file of all the frames:
+    ```
+    mdconvert run0-clone0.h5 --index 0 -o run0-clone0.pdb
+    mdconvert run0-clone0.h5 -o run0-clone0.xtc
+    ```
+
+  **Retrieving all data:*
+  You can retrieve the whole dataset with:
+    ```bash
+    aws s3 --no-sign-request sync s3://fah-public-data-covid19-moonshot-dynamics/SARS-CoV-2-Mpro-Diamond-structures .
+    ```
+  This contains
+    ```
+    setup/ - input OpenMM XML and PDB files used to run simulations with Folding@home OpenMM core
+    solute-hdf5-trajectories/ - concatenated MDTraj HDF5 files with topology information
+    project-data/ - raw XTC file output from Folding@home work units
+    ```
+creator: John D. Chodera
+organization: Folding@home
+lab: Chodera lab
+institute: MSKCC
+proteins:
+    - 3CLpro
+structures: []
+models: []
+trajectory: https://fah-public-data-covid19-moonshot-dynamics.s3.us-east-2.amazonaws.com/SARS-CoV-2-Mpro-Diamond-structures/solute-hdf5-trajectories/13437/run0-clone0.h5
+size: 175.1 GB
+length: 8 ms
+ensemble: NPT
+temperature: 300.0
+pressure: 1
+solvent: water
+salinity: 0.070
+forcefields:
+    - AMBER14SB
+    - TIP3P
+    - OpenFF-1.3.0
