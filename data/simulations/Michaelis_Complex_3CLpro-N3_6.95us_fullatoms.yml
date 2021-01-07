@@ -1,0 +1,28 @@
+type: md
+title: 6.95 us simulation of SARS-CoV2 3CLpro in complex with the N3 inhibitor all atom simulation
+description: 6.5 us Molecular Dynamics simulations of the non-covalent enzyme-inhibitor (EI) complex built from the 7BQY PDB structure
+creator: Carlos A. Ramos-Guzmán, J. Javier Ruiz-Pernía, Iñaki Tuñón
+organization: , Universidad de Valencia
+lab: Efectos del medio
+institute: Departamento de Química Física
+models:
+    -http://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPro_N3_Mich.Complex/
+proteins: 
+    - https://covid.molssi.org//proteins/#3clpro
+structures: 
+    - https://www.rcsb.org/structure/7BQY
+trajectory:  https://disco.uv.es/disco/efme/disco/SARS-CoV-2/3CLPro_N3_Mich.Complex/Michaelis_Complex_SARSCoV2_3CLPro-N3_6.5us.tar.gz
+size: 577 MB
+length: 6.5 us
+ensemble: NVT
+temperature: 300 
+solvent: Water
+forcefields: 
+    - ff14SB 
+    - TIP3P 
+    - GAFF
+references: 
+    - Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
+    - Zinovjev, K.; Tuñón, I. Adaptive Finite Temperature String Method in Collective Variables. J. Phys. Chem. A 2017, 121 (51), 9764–9772.
+    - Zinovjev, K. String-Amber https://github.com/kzinovjev/string-amber
+preprint: Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
