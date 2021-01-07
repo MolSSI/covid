@@ -25,4 +25,5 @@ references:
     - Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
     - Zinovjev, K.; Tuñón, I. Adaptive Finite Temperature String Method in Collective Variables. J. Phys. Chem. A 2017, 121 (51), 9764–9772.
     - Zinovjev, K. String-Amber https://github.com/kzinovjev/string-amber
-preprint: Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
+preprint: 
+    - Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
