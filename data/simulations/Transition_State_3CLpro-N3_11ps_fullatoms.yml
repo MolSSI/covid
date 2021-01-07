@@ -1,0 +1,28 @@
+type: md
+title: 11 ps QM/MM simulation of Transition State of SARS-CoV2 3CLpro 
+description: QM/MM Molecular Dynamics simulations of the Transition State obtained during the acylation reaction using the string method. QM/MM Free Energy simulations where made at the hybrid B3LYP/MM level including D3 dispersion corrections with the 6-31+G* basis set.
+creator: Carlos A. Ramos-Guzmán, J. Javier Ruiz-Pernía, Iñaki Tuñón
+organization: , Universidad de Valencia
+lab: Efectos del medio
+institute: Departamento de Química Física
+models:
+    -http://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPro_N3_TransitionState
+proteins: 
+    - https://covid.molssi.org//proteins/#3clpro
+structures: 
+    - https://www.rcsb.org/structure/7BQY
+trajectory:  https://disco.uv.es/disco/efme/disco/SARS-CoV-2/3CLPro_N3_TransitionState/TransitionState_SARSCoV2_3CLPro-N3_11ps.tar.gz
+size: 1 GB
+length: 10 ps
+ensemble: NVT
+temperature: 300 
+solvent: Water
+forcefields: 
+    - ff14SB 
+    - TIP3P 
+    - GAFF
+references: 
+    - Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
+    - Zinovjev, K.; Tuñón, I. Adaptive Finite Temperature String Method in Collective Variables. J. Phys. Chem. A 2017, 121 (51), 9764–9772.
+    - Zinovjev, K. String-Amber https://github.com/kzinovjev/string-amber
+preprint: Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): A Microscopic Description of SARS-CoV-2 Main Protease Inhibition with Michael Acceptors. Strategies for Improving Inhibitors Design. ChemRxiv. Preprint. https://doi.org/10.26434/chemrxiv.12895064.v1 
