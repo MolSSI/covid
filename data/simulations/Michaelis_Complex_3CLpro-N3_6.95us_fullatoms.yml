@@ -6,7 +6,7 @@ organization: Universidad de Valencia
 lab: Efectos del medio
 institute: "Departamento de Química Física"
 models:
-    -http://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPro_N3_Mich.Complex/
+    - 6bqy-mc
 proteins: 
     - 3CLpro
 structures: 
