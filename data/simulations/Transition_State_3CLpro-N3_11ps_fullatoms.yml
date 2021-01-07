@@ -2,7 +2,7 @@ type: md
 title: 11 ps QM/MM simulation of Transition State of SARS-CoV2 3CLpro 
 description: QM/MM Molecular Dynamics simulations of the Transition State obtained during the acylation reaction using the string method. QM/MM Free Energy simulations where made at the hybrid B3LYP/MM level including D3 dispersion corrections with the 6-31+G* basis set.
 creator: Carlos A. Ramos-Guzmán, J. Javier Ruiz-Pernía, Iñaki Tuñón
-organization: , Universidad de Valencia
+organization: Universidad de Valencia
 lab: Efectos del medio
 institute: Departamento de Química Física
 models:
