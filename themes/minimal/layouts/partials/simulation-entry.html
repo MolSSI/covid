@@ -89,7 +89,7 @@
         <h5 align="left">
             <b>Trajectory:</b>
             {{ if .simulation.trajectory }}
-                <a href="{{ .simulation.trajectory }}"><kbd class="alert-secondary">Get Trajectory ({{.simulation.size}})</kbd></a>
+                <a href="{{ .simulation.trajectory }}"><kbd class="alert-secondary">{{ partial "trajectory_icon" }} Get Trajectory ({{.simulation.size}})</kbd></a>
             {{ else }}
                 ---
             {{ end }}
@@ -99,7 +99,7 @@
         <h5 align="left">
             <b>Represented Proteins:</b>
             {{ range .simulation.proteins }}
-                <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ . }}</kbd></a> 
+                <a href='{{ index ($localScratch.Get "protein_map") . }}'><kbd class="bg-primary">{{ partial "protein_icon" }} {{ . }}</kbd></a> 
             {{ else }}
                 ---
             {{ end }}
@@ -110,7 +110,7 @@
             <b>Represented Structures:</b>
             {{ range .simulation.structures }}
                 {{ $anchor := print ( . | upper | anchorize) "-" ( $.protein | anchorize) }}
-                <a href='{{ $.context.Site.BaseURL }}/structures/#{{ $anchor }}'><kbd class="alert-danger">{{.}}</kbd></a>
+                <a href='{{ $.context.Site.BaseURL }}/structures/#{{ $anchor }}'><kbd class="alert-danger">{{ partial "structure_icon" }} {{.}}</kbd></a>
             {{ else }}
                 ---
             {{ end }}
@@ -124,7 +124,7 @@
                 {{ range $mname, $mdata := $.context.Site.Data.models }}
                     {{ if eq $model $mname }}
                         {{ $anchor := print ( $mdata.name | anchorize) "-" ( $.protein | anchorize) "-" ( $.target | anchorize) }}
-                        <a href='{{ $.context.Site.BaseURL }}/models/#{{ $anchor }}'><kbd class="alert-info">{{ $mdata.name}}</kbd></a>
+                        <a href='{{ $.context.Site.BaseURL }}/models/#{{ $anchor }}'><kbd class="alert-info">{{ partial "models_icon" }} {{ $mdata.name}}</kbd></a>
                     {{ end }}
                 {{ end }}
             {{ else }}

@@ -29,13 +29,13 @@ ignoreFiles = ["README.md$"]
     [[menu.main]]
         parent = "Biology"
         url = "/proteins/"
-        name = "Proteins and Virion"
+        name = "🝪 Proteins and Virion"
         weight = 1
 
     [[menu.main]]
         parent = "Biology"
         url = "/targets/"
-        name = "Target Modalities"
+        name = "🞜 Target Modalities"
         weight = 2
 
 
@@ -47,19 +47,19 @@ ignoreFiles = ["README.md$"]
     [[menu.main]]
         parent = "Viral/Host Structural Data"
         url = "/structures"
-        name = "Structures"
+        name = "◳ Structures"
         weight = 1
 
     [[menu.main]]
         parent = "Viral/Host Structural Data"
         url = "/models"
-        name = "Models"
+        name = "⊧ Models"
         weight = 2
 
     [[menu.main]]
         parent = "Viral/Host Structural Data"
         url = "/simulations"
-        name = "Simulations"
+        name = "⮔ Simulations"
         weight = 2
 
 [[menu.main]]
@@ -71,7 +71,7 @@ ignoreFiles = ["README.md$"]
     [[menu.main]]
         parent = "Therapeutics"
         url = "/therapeutics"
-        name = "All Therapeutics"
+        name = "💊 All Therapeutics"
         weight = 1
 
     [[menu.main]]
