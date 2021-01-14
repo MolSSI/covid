@@ -1,5 +1,5 @@
 type: md
-title: Riken CPR, TMD2_toUp trajectories
+title: Riken CPR TMS, TMD2_toUp trajectory
 description: >
     The data set includes a trajectory file from Targeted Molecular Dynamics (TMD) simulations of a fully glycosylated SARS-CoV-2 S-protein in solution. Water molecules and counter ions were excluded. 
     The data includes trajectory from TMD simulation of Down to Up forms.
@@ -19,8 +19,7 @@ structures:
     - 6vsb
 files: 
     - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/Down_pro-gly.psf
-trajectory: 
-    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/TMD2_toUp.dcd
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/TMD2_toUp.dcd
 size: 15MB 
 length: 20 nanoseconds
 ensemble:  NVT
@@ -32,4 +31,4 @@ forcefields:
     - TIP3
 references: 
     - GENESIS https://www.r-ccs.riken.jp/labs/cbrt/
-publication: Submitted
+publication: 
