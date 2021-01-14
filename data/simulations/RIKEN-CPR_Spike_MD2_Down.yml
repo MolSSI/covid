@@ -1,0 +1,32 @@
+type: md
+title: Riken CPR, MD2_Down trajectories
+description: >
+    The data set includes a trajectory file from Molecular Dynamics (MD) of a fully glycosylated SARS-CoV-2 S-protein in solution. Water molecules and counter ions were excluded. 
+    The starting structure is an inactive Down taken from CHARMM-GUI COVID-19 Archive (http://www.charmm-gui.org/docs/archive/covid19). We replaced counter ions K+ in the original model with Na+. The simulation used CHARMM36m force field for protein, and TIP3P water model.  The simulation was performed using GENESIS.
+    The coordinates were saved every 1 nanoseconds and aligned to S2 domain (Calpha atoms of residues 689-727, 854-1147).
+creator: Takaharu Mori, Jaewoon Jung, Chigusa Kobayashi, Hisham M. Dokainish, Suyong Re, Yuji Sugita
+organization: RIKEN CPR (Cluster for Pioneering Research), TMS (Theoretical molecular science) laboratory
+lab: TMS (Theoretical molecular science) laboratory
+institute: RIKEN CPR
+models: 
+    - http://www.charmm-gui.org/docs/archive/covid19
+proteins: 
+    - spike
+structures:
+    - 6vxx
+files: 
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/Down_pro-gly.psf
+trajectory: 
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/MD1_Down.dcd
+size: 149MB 
+length: 200 nanoseconds
+ensemble:  NVT
+temperature: 310.15
+solvent: water
+salinity: 0.15
+forcefields:
+    - CHARMM36m
+    - TIP3
+references: 
+    - GENESIS https://www.r-ccs.riken.jp/labs/cbrt/
+publication: Submitted
