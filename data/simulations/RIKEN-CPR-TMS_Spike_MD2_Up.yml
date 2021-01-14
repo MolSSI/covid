@@ -16,7 +16,7 @@ structures:
     - 6vsb
 files: 
     - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/Up_pro-gly.psf
-trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/MD2_Up.dcd
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/MD2_Up_S2fit.dcd
 size: 149MB
 length: 200 nanoseconds
 ensemble:  NVT
