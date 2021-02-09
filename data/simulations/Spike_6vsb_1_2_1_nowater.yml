@@ -1,0 +1,25 @@
+type: md
+title: 1 microsecond trajecotry of glycosylated spike protein in open state for pdb:6VSB embedded in viral membrane
+description: All atom simulation of full-glycosylated spike protein in open state (pdb:6VSB) embedded in viral membrane. The structure 
+was taken from Charmm-Gui at http://www.charmm-gui.org/?doc=archive&lib=covid19 where 8 models were built for the open state. For MD simulations
+we used model 1-2-1 provided by Im et. al. The PSF, PDB and XTC files are uploaded
+creator: Klauda lab
+institute: University of Maryland College Park
+models:
+    - spike_6vsb_1_2_1_nowater
+proteins:
+    - spike
+structures:
+    - 6VSB
+trajectory: ...
+size: 12 GB
+length: 1 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.15
+forcefields:
+    - CHARMM36
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.09.28.317206
