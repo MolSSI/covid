@@ -11,7 +11,7 @@ proteins:
     - spike
 structures:
     - 6VXX
-trajectory: s3://molssi-bioexcel-covid-19-structure-therapeutics-hub/KlaudaGroup/spike_6VXX_1_2_1_nowater.gz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/KlaudaGroup/spike_6VXX_1_2_1_nowater.gz
 size: 12 GB
 length: 1 µs
 ensemble: NPT
