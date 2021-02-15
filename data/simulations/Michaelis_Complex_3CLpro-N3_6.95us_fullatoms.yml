@@ -11,7 +11,7 @@ proteins:
     - 3CLpro
 structures: 
     - https://www.rcsb.org/structure/7BQY
-trajectory:  https://disco.uv.es/disco/efme/disco/SARS-CoV-2/3CLPro_N3_Mich.Complex/Michaelis_Complex_SARSCoV2_3CLPro-N3_6.5us.tar.gz
+trajectory: http://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPro_N3_Mich.Complex/
 size: 577 MB
 length: 6.5 us
 ensemble: NVT
