@@ -1,0 +1,23 @@
+type: md
+title: Continuous trajectories of glycosylated SPIKE opening.
+description: All-atom MD trajectories from weighted ensemble simulations of glycosylated SPIKE protein, protein + glycans only. PSF, prmtop, DCDs, and WESTPA input files are provided. Starting structure based on model of the full-length spike in the closed state developed by the Amaro lab, which is modeled from 6VXX. Only the head region of the Spike was included in simulations from residues 16-1140.  
+creator: Amaro Lab and Chong Lab
+institute: University of California San Diego, and University of Pittsburgh
+models: 
+    - spike_full-length_closed_amarolab
+proteins: 
+    - Spike
+structures:
+    - 6VXX
+trajectory: https://https://amarolab.ucsd.edu/covid19.php
+size:  1.35 GB
+length: 175 ns 
+ensemble: NPT
+temperature: 300 K
+pressure: 1 Atm  
+solvent: water 
+salinity: 0.15
+forcefields: 
+    - CHARMM36
+    - TIP3P
+preprint: https://doi.org/10.1101/2021.02.15.431212
