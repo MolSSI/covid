@@ -6,10 +6,10 @@ institute: University of California San Diego, and University of Pittsburgh
 models: 
     - spike_full-length_closed_amarolab
 proteins: 
-    - Spike
+    - spike
 structures:
     - 6VXX
-trajectory: https://https://amarolab.ucsd.edu/covid19.php
+trajectory: https://amarolab.ucsd.edu/covid19.php
 size:  1.35 GB
 length: 175 ns 
 ensemble: NPT
