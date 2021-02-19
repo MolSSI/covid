@@ -13,8 +13,8 @@ trajectory: https://https://amarolab.ucsd.edu/covid19.php
 size:  1.35 GB
 length: 175 ns 
 ensemble: NPT
-temperature: 300 K
-pressure: 1 Atm  
+temperature: 300 
+pressure: 1.0  
 solvent: water 
 salinity: 0.15
 forcefields: 
