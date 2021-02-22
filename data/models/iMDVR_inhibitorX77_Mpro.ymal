@@ -1,0 +1,12 @@
+name: Docked Structures of a small molecule inhibitor (X77) to SARS-CoV-2 Mpro
+description: Links to the docked structures of a small molecule inhibitor (X77) to (i) an Apo SARS-CoV-2 Mpro, and (i) an Inhibitor complexed SARS-CoV-2 Mpro. The docking was performed 5 times for each Mpro target using interactive molecular dynamics in virtual reality both with (protocol 2, restrained) and without (protocol 3, fully flexible) backbone restraints during the VR simulation. Another protocol (protocol 1) was also used following docking procedures presented in our previous work (https://doi.org/10.1371/journal.pone.0228461). There are 15 structures in total. 
+url: https://github.com/rebeccawalters95/SARS_docking/tree/main/structures/x77
+pdbids: 
+  - 6m03
+  - 6w63 
+proteins:
+  - SARS-Cov-2 Mpro
+creator: Helen M. Deeks
+institution: University of Bristol
+lab: Intangible Realities Laboratory
+publication: https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c01030
