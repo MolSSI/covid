@@ -13,8 +13,8 @@ structures:
 trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/x77
 size: 19 MB
 ensemble: NVT
-temperature:  300 K
-solvent: OBC2 (implicit)
+temperature:  300 
+solvent: OBC2
 forcefields: 
     - ff14SB
     - GAFF
