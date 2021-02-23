@@ -6,8 +6,7 @@ pdbids:
   - 6w63 
   - 2q6g
 proteins:
-  - SARS-CoV Mpro
-  - SARS-Cov-2 Mpro
+  - 3CLpro
 creator: Rebecca K. Walters
 institution: University of Bristol
 lab: Intangible Realities Laboratory
