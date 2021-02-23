@@ -1,0 +1,15 @@
+type: docking
+title: Simulation files for docking the SARS-CoV Mpro natural substrate to an Mpro target using NarupaIMD
+description: Relevant smulation files in order to set-up a Narupa IMD simulation for docking the N-terminal natural substrate to three different Mpro targets (i) SARS-CoV Mpro, (ii) an Apo SARS-CoV-2 Mpro, and (iii) an Inhibitor complexed SARS-CoV-2 Mpro (where the inhibitor was deleted from the active site prior to docking). There are 6 simulations files in total. Documentation detailing how to set up a NarupaIMD simulation using these files can be found [here] (https://gitlab.com/intangiblerealities/narupa-applications/narupa-imd)
+creator: Rebecca K. Walters
+lab: Intangible Realities Laboratory
+institution: University of Bristol
+models:
+    - iMDVR_naturalsubstrate_Mpro.yml
+trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/oligopeptide
+ensemble: NVT
+temperature:  300 K
+solvent: OBC2 (implicit)
+forcefields: 
+    - Amber14
+publication: https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c01030
