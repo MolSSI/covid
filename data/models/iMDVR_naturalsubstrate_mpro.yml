@@ -1,0 +1,13 @@
+name: Docked Structures of the N-terminal natural substrate to SARS-CoV and SARS-CoV-2 Mpro
+description: Links to the docked structures of the N-terminal natural substrate of the SARS-CoV Mpro to (i) SARS-CoV Mpro, (ii) an Apo SARS-CoV-2 Mpro, and (iii) an Inhibitor complexed SARS-CoV-2 Mpro (where the inhibitor was deleted from the active site prior to docking). The docking was performed 5 times for each Mpro target using interactive molecular dynamics in virtual reality both with (protocol 2, restrained) and without (protocol 3, fully flexible) backbone restraints during the VR simulation. There are 30 structures in total. 
+url: https://github.com/rebeccawalters95/SARS_docking/tree/main/structures/oligopeptide
+pdbids: 
+  - 6m03
+  - 6w63 
+  - 2q6g
+proteins:
+  - 3CLpro
+creator: Rebecca K. Walters
+institution: University of Bristol
+lab: Intangible Realities Laboratory
+publication: https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c01030
