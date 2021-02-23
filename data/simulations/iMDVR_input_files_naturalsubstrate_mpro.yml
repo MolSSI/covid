@@ -11,7 +11,7 @@ proteins:
 structures:
     - https://www.rcsb.org/structure/6M03
 trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/oligopeptide
-size: 26 MB
+size: 45 MB
 ensemble: NVT
 temperature:  300
 solvent: OBC2
