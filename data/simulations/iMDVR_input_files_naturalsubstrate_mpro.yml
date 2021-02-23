@@ -7,8 +7,10 @@ institution: University of Bristol
 models:
     - iMDVR_naturalsubstrate_Mpro.yml
 trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/oligopeptide
+size: 
+length: 
 ensemble: NVT
-temperature:  300 K
+temperature:  300
 solvent: OBC2 (implicit)
 forcefields: 
     - Amber14
