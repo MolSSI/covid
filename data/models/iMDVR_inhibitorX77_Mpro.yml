@@ -5,7 +5,7 @@ pdbids:
   - 6m03
   - 6w63 
 proteins:
-  - SARS-Cov-2 Mpro
+  - 3CLpro
 creator: Helen M. Deeks
 institution: University of Bristol
 lab: Intangible Realities Laboratory
