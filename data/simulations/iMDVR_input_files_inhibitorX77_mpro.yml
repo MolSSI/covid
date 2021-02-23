@@ -1,0 +1,16 @@
+type: docking
+title: Simulation files for docking a small molecule inhibitor (X77) to an Mpro target using NarupaIMD
+description: Relevant smulation files in order to set-up a Narupa IMD simulation for docking a small molecule inhibitor (X77) to two different Mpro targets: (i) an Apo SARS-CoV-2 Mpro, and (ii) an Inhibitor complexed SARS-CoV-2 Mpro. There are 2 simulations files in total. Documentation detailing how to set up a NarupaIMD simulation using these files can be found [here] (https://gitlab.com/intangiblerealities/narupa-applications/narupa-imd)
+creator: Helen M. Deeks
+lab: Intangible Realities Laboratory
+institution: University of Bristol
+models:
+    - iMDVR_inhibitorX77_Mpro.yml
+trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/x77
+ensemble: NVT
+temperature:  300 K
+solvent: OBC2 (implicit)
+forcefields: 
+    - Amber14
+    - GAFF
+publication: https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c01030
