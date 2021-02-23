@@ -6,7 +6,11 @@ lab: Intangible Realities Laboratory
 institution: University of Bristol
 models:
     - iMDVR_inhibitorX77_Mpro.yml
+proteins:
+    - 3CLpro
 trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/x77
+size: 
+length: 
 ensemble: NVT
 temperature:  300 K
 solvent: OBC2 (implicit)
