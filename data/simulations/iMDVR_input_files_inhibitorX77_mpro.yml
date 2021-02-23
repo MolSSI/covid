@@ -8,13 +8,14 @@ models:
     - iMDVR_inhibitorX77_Mpro.yml
 proteins:
     - 3CLpro
+structures:
+    - https://www.rcsb.org/structure/6W63
 trajectory: https://github.com/rebeccawalters95/SARS_docking/tree/main/NarupaiMD_simulation_files/x77
-size: 
-length: 
+size: 19 MB
 ensemble: NVT
 temperature:  300 K
 solvent: OBC2 (implicit)
 forcefields: 
-    - Amber14
+    - ff14SB
     - GAFF
 publication: https://pubs.acs.org/doi/abs/10.1021/acs.jcim.0c01030
