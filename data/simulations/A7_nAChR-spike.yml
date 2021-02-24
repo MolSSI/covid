@@ -1,23 +1,35 @@
 type: md
 title: Interaction between the SARS-CoV-2 spike and the α7 nicotinic receptor
-description: MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2 spike and the extracellular domain of the human α7 nicotinic acetylcholine receptor.
+description:
+MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2 spike
+and the extracellular domain of the human α7 nicotinic acetylcholine receptor.
+A7_nAChR-spike.tar.gz contains all the files in the files tag.
 creator: A.S.F. Oliveira
 organization: University of Bristol
 lab: Mulholland Lab
 proteins:
-    - spike
+    - human α7 nicotinic receptor
+    - Y674-R685 region of the SARS-CoV-2 spike
 files:
-    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
+    - A7_nAChR-spike_complex.pdb
+    - A7_nAChR-spike_r1.tpr
+    - A7_nAChR-spike_r1.xtc
+    - A7_nAChR-spike_r2.tpr
+    - A7_nAChR-spike_r2.xtc
+    - A7_nAChR-spike_r3.tpr
+    - A7_nAChR-spike_r3.xtc
 trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
-size: 9 Gb
+structure: https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike_complex.pdb
+size: 9 GB
 length: 3 replicates, 300 ns each
 ensemble: NPT
-temperature: 310 K
-pressure: 1 Atm
+temperature: 310
+pressure: 1
 solvent: water
-salinity: 0.1 Molar
+salinity: 0.1
 forcefields:
     - Amber ff99SB-ILDN
 references:
-    - Oliveira, ASF; Ibarra, AA; et al. “A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors” 2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
-
+Oliveira, ASF; Ibarra, AA; et al.
+“A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors”
+2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
