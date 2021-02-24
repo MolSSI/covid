@@ -1,9 +1,9 @@
 type: md
 title: Interaction between the SARS-CoV-2 spike and the α7 nicotinic receptor
-description:
-MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2 spike
-and the extracellular domain of the human α7 nicotinic acetylcholine receptor.
-A7_nAChR-spike.tar.gz contains all the files in the files tag.
+description: >
+    MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2 spike
+    and the extracellular domain of the human α7 nicotinic acetylcholine receptor.
+    A7_nAChR-spike.tar.gz contains all the files in the files tag.
 creator: A.S.F. Oliveira
 organization: University of Bristol
 lab: Mulholland Lab
@@ -29,7 +29,5 @@ solvent: water
 salinity: 0.1
 forcefields:
     - Amber ff99SB-ILDN
-references:
-Oliveira, ASF; Ibarra, AA; et al.
-“A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors”
-2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
+references: Oliveira, ASF; Ibarra, AA; et al. “A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors”
+    2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
