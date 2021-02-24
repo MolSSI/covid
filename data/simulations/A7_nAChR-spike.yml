@@ -30,4 +30,5 @@ solvent: water
 salinity: 0.1
 forcefields:
     - Amber ff99SB-ILDN
-references: Oliveira, ASF; Ibarra, AA; et al. “A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors” 2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
+references: 
+    - "Oliveira, ASF; Ibarra, AA; et al. A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors 2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)"
