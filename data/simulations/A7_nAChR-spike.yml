@@ -15,8 +15,7 @@ creator: A.S.F. Oliveira
 organization: University of Bristol
 lab: Mulholland Lab
 proteins:
-    - human α7 nicotinic receptor
-    - Y674-R685 region of the SARS-CoV-2 spike
+    - spike
 files:
     - https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
 trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
