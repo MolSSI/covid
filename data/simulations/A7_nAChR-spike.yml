@@ -1,0 +1,34 @@
+type: md
+title: Interaction between the SARS-CoV-2 spike and the α7 nicotinic receptor
+description:
+MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2 spike and the extracellular domain of the human α7 nicotinic acetylcholine receptor.
+creator: A.S.F. Oliveira
+organization: University of Bristol
+lab: Mulholland Lab
+proteins:
+    - human α7 nicotinic receptor
+    - Y674-R685 region of the SARS-CoV-2 spike
+files:
+    - A7_nAChR-spike_complex.pdb
+    - A7_nAChR-spike_r1.tpr
+    - A7_nAChR-spike_r1.xtc
+    - A7_nAChR-spike_r2.tpr
+    - A7_nAChR-spike_r2.xtc
+    - A7_nAChR-spike_r3.tpr
+    - A7_nAChR-spike_r3.xtc
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
+size: 9 Gb
+length: 3 replicates, 300 ns each
+ensemble: NPT
+temperature: 310 K
+pressure: 1 Atm
+solvent: water
+salinity: 0.1 Molar
+forcefields:
+    - Amber ff99SB-ILDN
+references:
+Oliveira, ASF; Ibarra, AA; Bermudez, I; Casalino, L; Gaieb, Z; Shoemark, DK; Gallagher, T;
+Sessions, RB; Amaro, RE; Mulholland, AJ 
+“A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors” 
+2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
+
