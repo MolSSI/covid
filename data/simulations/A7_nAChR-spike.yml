@@ -27,8 +27,5 @@ salinity: 0.1 Molar
 forcefields:
     - Amber ff99SB-ILDN
 references:
-Oliveira, ASF; Ibarra, AA; Bermudez, I; Casalino, L; Gaieb, Z; Shoemark, DK; Gallagher, T;
-Sessions, RB; Amaro, RE; Mulholland, AJ 
-“A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors” 
-2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
+    - Oliveira, ASF; Ibarra, AA; et al. “A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors” 2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)
 
