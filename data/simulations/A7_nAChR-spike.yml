@@ -17,10 +17,10 @@ lab: Mulholland Lab
 proteins:
     - spike
 files:
-    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
-trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike.tar.gz
 structures: 
-    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike_complex.pdb
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A7_nAChR-spike_complex.pdb
 size: 9 GB
 length: 3 replicates, 300 ns each
 ensemble: NPT
