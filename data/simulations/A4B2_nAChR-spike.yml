@@ -1,0 +1,37 @@
+type: md
+title: Interaction between the SARS-CoV-2 spike and the α4β2 nicotinic receptor
+description: >
+    MD simulation of the complex between the Y674-R685 region of the SARS-CoV-2
+    spike and the extracellular domain of the human
+    α4β2 nicotinic acetylcholine receptor.
+    
+    A4B2_nAChR-spike.tar.gz contains the following files.
+    A4B2_nAChR-spike_complex.pdb
+    A4B2_nAChR-spike_r1.tpr  
+    A4B2_nAChR-spike_r1.xtc
+    A4B2_nAChR-spike_r2.tpr  
+    A4B2_nAChR-spike_r2.xtc
+    A4B2_nAChR-spike_r3.tpr  
+    A4B2_nAChR-spike_r3.xtc
+creator: A.S.F. Oliveira
+organization: University of Bristol
+lab: Mulholland Lab
+proteins: 
+    - spike
+files: 
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A4B2_nAChR-spike.tar.gz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A4B2_nAChR-spike.tar.gz 
+structures:
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nAChR-spike_interaction/A4B2_nAChR-spike_complex.pdb
+size: 9 GB
+length: 3 replicates, 300 ns each
+ensemble: NPT
+temperature: 310 
+pressure: 1    
+solvent: water
+salinity: 0.1 
+forcefields: 
+    - Amber ff99SB-ILDN
+references:
+    - "Oliveira, ASF; Ibarra, AA; et al. A potential interaction between the SARS-CoV-2 spike protein and nicotinic acetylcholine receptors 2021, Biophys J, accepted (DOI:10.1016/j.bpj.2021.01.037)"
+  
