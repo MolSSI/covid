@@ -145,8 +145,7 @@ structures:
       - 6ZB5
 files: 
       - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/Spike_MD_simulations/Spike_MD_simulations.tgz
-trajectory: 
-      - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/Spike_MD_simulations/Spike_MD_simulations.tgz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/Spike_MD_simulations/Spike_MD_simulations.tgz
 size: 9 GB
 length: 24 x 200 ns trajectories (solvent removed)
 ensemble: NPT
