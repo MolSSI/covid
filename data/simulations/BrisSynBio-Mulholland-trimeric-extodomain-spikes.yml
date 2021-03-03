@@ -1,0 +1,160 @@
+type:  md
+title: "MD simulations of trimeric SARS-Cov2 spike protein ectodomain in explicit solvent. Data were collected for apo, linoleic acid bound and other putative ligands (3x200 ns in each case)"
+description: >
+  The CryoEM stuctures of the apo and linoleic acid bound SARS-Cov2 spike protein trimer (residues 15/25 to 1139) were used to build complete atomistic models. Other putative ligands, including cholesterol and vitamins, retinoids and steroids identified by docking with BUDE, were simulated in both open and closed states.
+  The closed and open structures have 42 and 43 disulfide bonds respectively. Simulations were performed with GROMACS 2019.x.  the file Spike_MD_simulations.tgz contains:
+
+  * Spike_MD_simulations/
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/01_WT_closed_apo_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/02_WT_closed_apo_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/03_WT_closed_apo_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/01_WT_closed_apo_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/02_WT_closed_apo_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/03_WT_closed_apo_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_apo/README
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/01_WT_closed-OK_CLR_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/02_WT_closed-OK_CLR_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/03_WT_closed-OK_CLR_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/01_WT_closed-OK_CLR_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/02_WT_closed-OK_CLR_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/03_WT_closed-OK_CLR_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_cholesterol/README
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/01_clean_WT_closed_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/02_clean_WT_closed_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/03_clean_WT_closed_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/README
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/01_clean_WT_closed_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/02_clean_WT_closed_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_dexamethasone/03_clean_WT_closed_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/01_WT_closed_LA_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/02_WT_closed_LA_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/03_WT_closed_LA_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/01_WT_closed_LA_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/02_WT_closed_LA_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/03_WT_closed_LA_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_closed-SARS2-spike_LA/README
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/01_WT-OK_open_apo_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/02_WT-OK_open_apo_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/03_WT-OK_open_apo_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/README
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/01_WT-OK_open_apo_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/02_WT-OK_open_apo_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_apo/03_WT-OK_open_apo_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/01_WT-open-OK_CLR_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/01_WT-open-OK_CLR_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/02_WT-open-OK_CLR_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/02_WT-open-OK_CLR_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/03_WT-open-OK_CLR_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/03_WT-open-OK_CLR_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_cholesterol/README
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/01_clean_WT_open_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/03_clean_WT_open_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/01_clean_WT_open_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/03_clean_WT_open_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/02_clean_WT_open_dexys_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/02_clean_WT_open_dexys_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_dexamethasone/README
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/01_WT-OK_open_LAs_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/02_WT-OK_open_LAs_200_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/03_WT-OK_open_LAs_200ns_mol_noj_fit.xtc
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/01_WT-OK_open_LAs_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/02_WT-OK_open_LAs_200_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/03_WT-OK_open_LAs_200ns_mol_noj_fit.pdb
+
+  * Spike_MD_simulations/WT_open-SARS2-spike_LA/README
+
+  * Spike_MD_simulations/README
+
+creator: Deborah K Shoemark
+organization: University of Bristol, UK
+lab: BrisSynBio and Mulholland
+proteins:
+      - spike
+structures: 
+      - 6ZB5
+files: 
+      - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/Spike_MD_simulations/Spike_MD_simulations.tgz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/Spike_MD_simulations/Spike_MD_simulations.tgz
+size: 9 GB
+length: 24 x 200 ns trajectories (solvent removed)
+ensemble: NPT
+temperature: 310
+pressure: 1  
+solvent: water (TIP3P) 
+salinity: 0.15
+forcefields: 
+      - amber99sb-ildn.ff
+      - GAFF
+publication: https://onlinelibrary.wiley.com/doi/10.1002/ange.202015639
+preprint: https://doi.org/10.26434/chemrxiv.13143761.v1

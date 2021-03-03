@@ -1,0 +1,10 @@
+pdbid: 6ZB5
+method: ELECTRON MICROSCOPY
+resolution: 2.85
+organisms:
+  - SARS-CoV-2
+proteins:
+  - Helicase
+targets:
+  - viral replication
+annotation: "SARS CoV-2 Spike protein, Closed conformation, C3 symmetry"
