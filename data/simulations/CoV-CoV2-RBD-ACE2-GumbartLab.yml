@@ -11,7 +11,7 @@ proteins:
 structures: 
     - 2AJF
     - 6M17
-trajectory: TO ADD
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/GumbartGroup/RBD-ACE2.tgz
 size: 5.3 GB
 length: 2 µs
 ensemble: NPT
