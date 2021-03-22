@@ -1,0 +1,24 @@
+type: md
+title: Simulations of SARS-CoV and SARS-CoV-2 RBD with ACE2
+description: Two-microsecond trajectories of the receptor-binding domains from SARS-CoV and SARS-CoV-2 spike protein bound to the human receptor, ACE2 (two replicas each). Simulation systems were constructed with VMD, equilibrated initially with NAMD, and then run for 2 µs each with Amber16. Simulations used a 4-fs timestep enabled by hydrogen-mass repartitioning (HMR). 
+creator: Gumbart lab
+institute: Georgia Institute of Technology
+models: 
+proteins: 
+    - spike
+    - RBD
+    - ACE2
+structures: 
+    - 2AJF
+    - 6M17
+trajectory: TO ADD
+size: 5.3 GB
+length: 2 µs
+ensemble: NPT
+temperature: 310
+solvent: water
+salinity: 0.15
+forcefields: 
+    - CHARMM36m
+    - TIP3P
+preprint: https://doi.org/10.1101/2021.03.19.436231
