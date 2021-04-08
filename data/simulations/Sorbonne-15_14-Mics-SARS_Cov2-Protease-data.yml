@@ -1,0 +1,490 @@
+type: md
+title: AMOEBA 15.14 microsecond trajectory of Main Protease
+description: |
+  You can find here our data representing 15.14-microsecond AMOEBA simulation of the apo enzyme started from the apo
+  enzyme structure determined by X-ray crystallography (PDB entry 6LU7) with frames saved every 0.1-nanosecond.
+
+
+  The use of any AMOEBA trajectory data in any reports or publications of results obtained with the trajectory data
+  should be acknowledged by including a citation to:
+
+
+  “Jaffrelot Inizan, Theo; Célerse, Frédéric; Adjoua, Olivier; El Ahdab, Dina; Jolly, Luc-Henri; Liu, Chengwen; et al.
+  (2020): High-Resolution Mining of SARS-CoV-2 Main Protease Conformational Space: Supercomputer-Driven Unsupervised
+  Adaptive Sampling.” ChemRxiv. Preprint. Doi :[10.1039/D1SC00145K](https://doi.org/10.1039/D1SC00145K)
+
+
+  The AMOEBA_15mics_sampling trajectory is divided in sampling iterations X that represent the (X-1)th adaptive
+  sampling iteration. The iteration1 is the first of the fourteen 10ns trajectories that we used to start our
+  adaptive sampling scheme.
+
+
+  For each iteration, we give the protein atoms only files (protein.dcd) and the all atoms files trajectory file
+  (protein_water.arc).
+
+
+  We also provide the [6LU7 pdb file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/6lu7_rec_GMX_conf.pdb),
+  the [protease topology file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/6lu7_rec_GMX.itp)
+  and the [protease+water topology](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/protein_water_topologic.top)
+  file, both taken from [Riken, doi: 10.17632/vpps4vhryg.2](http://tinker-hp.ip2ct.upmc.fr/-%3Ehttps://www.doi.org/10.17632/vpps4vhryg.2)
+  and a [de-biasing score file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/full_de-biasing_score.txt)
+  of the whole 15.14-microsecond trajectory.
+
+
+  For Tinker-HP users we also provide a .key and .xyz files.
+
+
+  *Clusters: clustering_files*
+
+
+  We provide all cluster structures and reduced cluster structures.
+
+
+  The clusters were obtained with the DBSCAN algorithm in DCD format. The reduced stucture files have been used for the
+  volume computation. If the cluster size was larger than 1000, we took 1000 random structures from the cluster
+  structure file otherwise we took the biggest hundred.  We used the following settings:
+  1. DESRES: 1 cluster
+    * X=1 structures: 1000
+  2. Riken: 3 clusters
+    * X=1 structures: 299
+    * X=2 structures: 1000
+    * X=3 structures: 1000
+  3. Tinker-HP: 5 clusters
+    * X=1 structures: 1000
+    * X=2 structures: 1000
+    * X=3 structures: 599
+    * X=4 structures: 1000
+    * X=5 structures: 899
+
+
+  For each Tinker-HP clusters, we also provide a de-biasing score file for
+  [full clusters](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/clustering_files/full_tinker-hp_clusters/cluster5_pca4_tinker-hp_de-biasing_score.txt)
+  and [reduced clusters](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/clustering_files/reduced_tinker-hp_clusters/cluster5_pca4_tinker-hp_red_de-biasing_score.txt)
+
+
+  *How to use the de-biasing score?*
+
+
+  We provide [de-biased_observable.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable.py)
+  a python script to compute de-biased observable average. It takes as arguments:
+  1. name of the de-biasing score file, i.e, ’de-biasing_score’ (column file)
+  2. name of the computed observable file, i.e, ’observable’ (column file).
+
+  Additionally, we provide [de-biased_histogram.py6](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_histogram.py)
+  to compute de-biased histogram and kernel density estimation of a given observable. It takes the same arguments and
+  gives as output a picture (PNG format).
+
+
+  Finally, We added two python script examples:
+  [de-biased_observable_ex.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable_ex.py)
+  and [de-biased_histogram_ex.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable_ex.py)
+  They should be run with the following command :
+  ```bash
+  python de-biased_observable_ex.py
+  ```
+  Libraries needed: numpy, pandas, statsmodels, matplotlib
+
+
+  For further information about the de-biasing please refer to the paper method section.
+
+
+  We would like to acknowledge the exceptional work of D. E. Shaw Research and RIKEN Center for Biosystems
+  Dynamics Research, from which we used datas. Please cite:
+  * "D. E. Shaw Research, “Molecular Dynamics Simulations Related to SARS-CoV-2”, D. E. Shaw Research Technical Data,
+    2020. http://www.deshawresearch.com/resources_sarscov2.html/
+  * "Komatsu, T. S.; Koyama, Y.; OKIMOTO, N.; MORIMOTO, G.; OHNO, Y.; TAIJI, M. (2020), “COVID-19 related trajectory
+    data of 10 microseconds all atom molecular dynamics simulation of SARS-CoV-2 dimeric main protease” Mendeley
+    Data, V2. [Doi: 10.17632/vpps4vhryg.2/](https://www.doi.org/10.17632/vpps4vhryg.2)
+
+
+  *License*
+
+
+  The DESRES and Riken trajectory datasets are released under a Creative Commons Attribution 4.0 International
+  Public License, a copy of which is contained in the file CC4_License.txt provided in
+  http://www.deshawresearch.com/resources_sarscov2.html/
+
+
+  *Viewing in VMD*
+
+
+  This trajectory may be viewed using the [VMD version 1.8.7](http://www.ks.uiuc.edu/Research/vmd) or later
+  (or any other tool capable of reading files in ARC and DCD format). The VMD software is available from the
+  Theoretical and Computational Biophysics Group at the University of Illinois at Urbana-Champaign. The reference is:
+
+
+  "Humphrey, W., Dalke, A. and Schulten, K., VMD - Visual Molecular Dynamics", J. Molec. Graphics, 1996, vol. 14, pp. 33-38.
+
+
+  To view the full protein trajectory, use the command:
+  ```bash
+  $ vmd AMOEBA_15mics_sampling/6lu7_rec_GMX_conf.pdb AMOEBA_15mics_sampling/sampling_iteration*/protein.dcd
+  ```
+
+
+  You can find the download links of the files in the following table. Beware that the total size is over 1Tb.
+
+
+
+creator: Luc-Henri Jolly Jussieu
+lab: Piquemal Group
+institute: Sorbonne Université
+proteins:
+    - 3CLpro
+structures:
+    - 6LU7
+length: 15.14 us
+ensemble: NVT
+temperature: 300
+solvent: water
+forcefields:
+    - AMOEBA PFF
+preprint: https://doi.org/10.1039/D1SC00145K
+
+trajectory_data:
+  - AMOEBA 15 MICROSECONDS SAMPLING:
+    - label: Iteration 1 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration1/protein.dcd
+      size: 150 MB
+      type: VMD
+    - label: Iteration 1 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration1/protein_water.arc
+      size: 8.8 GB
+      type: Trajectories
+    - label: Iteration 2 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration2/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 2 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration2/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 3 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration3/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 3 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration3/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 4 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration4/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 4 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration4/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 5 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration5/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 5 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration5/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 6 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration6/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 6 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration6/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 7 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration7/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 7 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration7/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 8 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration8/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 8 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration8/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 9 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration9/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 9 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration9/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 10 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration10/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 10 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration10/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 11 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration11/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 11 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration11/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 12 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration12/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 12 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration12/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 13 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration13/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 13 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration13/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 14 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration14/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 14 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration14/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 15 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration15/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 15 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration15/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+    - label: Iteration 16 protein.dcd
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration16/protein.dcd
+      size: 1 GB
+      type: VMD
+    - label: Iteration 16 protein_water.arc
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration16/protein_water.arc
+      size: 62.8 GB
+      type: Trajectories
+
+  - FULL STRUCTURE CLUSTERING FILES:
+    - label: Desres Clusters
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster1_pca4_deshaw.dcd
+      size: 1.2 GB
+      type: VMD
+
+    - label: Riken Clusters 1
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster1_pca4_riken.dcd
+      size: 37.2 MB
+      type: VMD
+
+    - label: Riken Clusters 2
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster2_pca4_riken.dcd
+      size: 323.6 MB
+      type: VMD
+
+    - label: Riken Clusters 3
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster3_pca4_riken.dcd
+      size: 264.1 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 1
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster1_pca4_tinker-hp.dcd
+      size: 1.2 GB
+      type: VMD
+
+    - label: Tinker-HP Clusters 1 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster1_pca4_tinker-hp_de-biasing_score.txt
+      size: 212 KB
+      type: TXT
+
+    - label: Tinker-HP Clusters 2
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster2_pca4_tinker-hp.dcd
+      size: 885 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 2 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster2_pca4_tinker-hp_de-biasing_score.txt
+      size: 150 KB
+      type: TXT
+
+    - label: Tinker-HP Clusters 3
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster3_pca4_tinker-hp.dcd
+      size: 66 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 3 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster3_pca4_tinker-hp_de-biasing_score.txt
+      size: 10 KB
+      type: TXT
+
+    - label: Tinker-HP Clusters 4
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster4_pca4_tinker-hp.dcd
+      size: 221 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 4 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster4_pca4_tinker-hp_de-biasing_score.txt
+      size: 37 KB
+      type: TXT
+
+    - label: Tinker-HP Clusters 5
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster5_pca4_tinker-hp.dcd
+      size: 102 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 5 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster5_pca4_tinker-hp_de-biasing_score.txt
+      size: 15 KB
+      type: TXT
+
+  - REDUCED STRUCTURE CLUSTERING FILES:
+    - label: Desres Clusters (Reduced)
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_deshaw_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Riken Clusters 1 (Reduced)
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_riken_red.dcd
+      size: 32 MB
+      type: VMD
+
+    - label: Riken Clusters 2 (Reduced)
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster2_pca4_riken_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Riken Clusters 3 (Reduced)
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster3_pca4_riken_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 1
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_tinker-hp_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 1 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_tinker-hp_de-biasing_score_red.txt
+      size: ????
+      type: TXT
+
+    - label: Tinker-HP Clusters 2
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster2_pca4_tinker-hp_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 2 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster2_pca4_tinker-hp_de-biasing_score.txt
+      size: ????
+      type: TXT
+
+    - label: Tinker-HP Clusters 3
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster3_pca4_tinker-hp_red.dcd
+      size: 62 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 3 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster3_pca4_tinker-hp_de-biasing_score.txt
+      size: ?????
+      type: TXT
+
+    - label: Tinker-HP Clusters 4
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster4_pca4_tinker-hp_red.dcd
+      size: 107 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 4 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster4_pca4_tinker-hp_de-biasing_score.txt
+      size: ????
+      type: TXT
+
+    - label: Tinker-HP Clusters 5
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_red.dcd
+      size: 96 MB
+      type: VMD
+
+    - label: Tinker-HP Clusters 5 Biasaing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_de-biasing_score.txt
+      size: ????
+      type: TXT
+
+  - MISCELLANEOUS:
+    - label: 6lu7_rec_GMX
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX.itp
+      size: 1.3 MB
+      type: ITP
+
+    - label: 6lu7_rec_GMX_conf
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX_conf.pdb
+      size: 740 KB
+      type: PDB
+
+    - label: full_de-biasing_score
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/full_de-biasing_score.txt
+      size: 3 MB
+      type: TXT
+
+    - label: protein_water_topologic
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/protein_water_topologic.top
+      size: 0.6 KB
+      type: TOP
+
+    - label: charge
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/charge.f90
+      size: 1 KB
+      type: Fotrtan
+
+    - label: de-biased_histogram
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram.py
+      size: 0.7 KB
+      type: Python
+
+    - label: de-biased_histogram_ex
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram_ex.py
+      size: 2.2 KB
+      type: Python
+
+    - label: de-biased_observable.py
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable.py
+      size: 0.4 KB
+      type: Python
+
+    - label: de-biased_observable_ex.py
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable_ex.py
+      size: 0.5 KB
+      type: Python
+
+    - label: activesite_volume.txt
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/activesite_volume.txt
+      size: 45 KB
+      type: TXT
+
+    - label: dimerizationsite_volume.txt
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/dimerizationsite_volume.txt
+      size: 5 KB
+      type: TXT
+
+    - label: g16-mar21.pdb
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/g16-mar21.pdb
+      size: 142 KB
+      type: PDB
