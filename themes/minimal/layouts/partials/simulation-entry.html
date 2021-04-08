@@ -30,6 +30,7 @@
         
         <h5 align="left">{{ .simulation.description | markdownify }}</h5>
 
+
         <!-- Physical Data -->
         <table class="table text-center-row">
             <thead style="background: linear-gradient(#777, #444);color: #fff">
@@ -87,11 +88,14 @@
         </h5>
 
         <h5 align="left">
-            <b>Trajectory:</b>
             {{ if .simulation.trajectory }}
+            <b>Trajectory:</b>
                 <a href="{{ .simulation.trajectory }}"><kbd class="alert-secondary">Get Trajectory ({{.simulation.size}})</kbd></a>
+            {{ else if .simulation.trajectory_data}}
+            <b>Trajectory Data:</b>
+                {{ partial "trajectory-data" .simulation.trajectory_data }}
             {{ else }}
-                ---
+                <b>Trajectory:</b> ---
             {{ end }}
         </h5>
 
@@ -132,7 +136,30 @@
             {{ end }}
         </h5>
 
-        <!-- TODO: Include references in an accordion -->
+        <!-- References in an accordion -->
+        {{ if .simulation.references }}
+            {{ $hash := md5 .simulation.title }}
+            <div class="panel-group" id="{{ $hash }}" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="{{ $hash }}Header">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#{{ $hash }}" href="#{{ $hash }}Colapse" aria-expanded="false" aria-controls="{{ $hash }}Colapse">
+                      Click to see references
+                    </a>
+                  </h4>
+                </div>
+                <div id="{{ $hash }}Colapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{ $hash }}Header">
+                  <div class="panel-body">
+                    <ul class="list-group" style="text-align: left">
+                        {{ range .simulation.references }}
+                            <li class="list-group-item">{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+         </div>
+        {{ end }}
 
         <hr>
 

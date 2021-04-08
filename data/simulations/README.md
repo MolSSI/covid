@@ -29,8 +29,8 @@ rating: (optional) int on domain [1,5], 5 is better
 files: (optional) URLs to input and supporting files (not trajectory itself)
     - file 1
     - ...
-trajectory: (required) URL to trajectory file. It is acceptable to have it be a compressed object with additional supporting files
-size: (required) Size of trajectory file, please include units
+trajectory: (required UNLESS trajectory_data is used) URL to trajectory file. It is acceptable to have it be a compressed object with additional supporting files
+size: (required UNLESS trajectory_data is used) Size of trajectory file, please include units
 length: (required) elapsed real time trajectory covers, please include units
 ensemble: one of [NPT, NVT, NVE, Other]
 temperature: (required) in Kelvin, leave blank for N/A
@@ -45,4 +45,19 @@ references: (optional) List of references associated with the programs and metho
     - ref2
 publication: (optional) URL of the publication which includes THIS simulation
 preprint: (optional) URL of the preprint for the publication. Can also be used to note if submitted to a peer reviewed journal by the exact word "Submitted"
+
+trajectory_data: (required UNLESS trajectory is set) A more generalized way of show trajectories, such as those distributed over many files
+   - Arbitrary Header: (A string which will be rendered as your list's section header, e.g. "Clustering Data")
+     - label: (required) The string you want the item under the headerto be listed as
+       location: (required) URL to file
+       size: (required) Size of file, please include units
+       type: (optional) Type of file if known
+     - ...
+   - Arbitrary Header:
+     - label: ...
+       location: ...
+       size: ...
+       type: ...
+     - ...
+   - ...    
 ```
