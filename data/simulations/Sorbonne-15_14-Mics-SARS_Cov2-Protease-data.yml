@@ -126,7 +126,7 @@ description: |
 
 
 
-creator: Luc-Henri Jolly Jussieu
+creator: "Luc-Henri Jolly, CNRS/Sorbonne Université/IP2CT"
 lab: Piquemal Group
 institute: Sorbonne Université
 proteins:
@@ -142,6 +142,67 @@ forcefields:
 preprint: https://doi.org/10.1039/D1SC00145K
 
 trajectory_data:
+  - MISCELLANEOUS:
+      - label: 6lu7_rec_GMX
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX.itp
+        size: 1.3 MB
+        type: ITP
+
+      - label: 6lu7_rec_GMX_conf
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX_conf.pdb
+        size: 740 KB
+        type: PDB
+
+      - label: full_de-biasing_score
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/full_de-biasing_score.txt
+        size: 3 MB
+        type: TXT
+
+      - label: protein_water_topologic
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/protein_water_topologic.top
+        size: 0.6 KB
+        type: TOP
+
+      - label: charge
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/charge.f90
+        size: 1 KB
+        type: Fotrtan
+
+      - label: de-biased_histogram
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram.py
+        size: 0.7 KB
+        type: Python
+
+      - label: de-biased_histogram_ex
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram_ex.py
+        size: 2.2 KB
+        type: Python
+
+      - label: de-biased_observable.py
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable.py
+        size: 0.4 KB
+        type: Python
+
+      - label: de-biased_observable_ex.py
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable_ex.py
+        size: 0.5 KB
+        type: Python
+
+      - label: activesite_volume.txt
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/activesite_volume.txt
+        size: 45 KB
+        type: TXT
+
+      - label: dimerizationsite_volume.txt
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/dimerizationsite_volume.txt
+        size: 5 KB
+        type: TXT
+
+      - label: g16-mar21.pdb
+        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/g16-mar21.pdb
+        size: 142 KB
+        type: PDB
+
   - AMOEBA 15 MICROSECONDS SAMPLING:
     - label: Iteration 1 protein.dcd
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Iteration1/protein.dcd
@@ -427,64 +488,3 @@ trajectory_data:
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_red_de-biasing_score.txt
       size: 14 KB
       type: TXT
-
-  - MISCELLANEOUS:
-    - label: 6lu7_rec_GMX
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX.itp
-      size: 1.3 MB
-      type: ITP
-
-    - label: 6lu7_rec_GMX_conf
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX_conf.pdb
-      size: 740 KB
-      type: PDB
-
-    - label: full_de-biasing_score
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/full_de-biasing_score.txt
-      size: 3 MB
-      type: TXT
-
-    - label: protein_water_topologic
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/protein_water_topologic.top
-      size: 0.6 KB
-      type: TOP
-
-    - label: charge
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/charge.f90
-      size: 1 KB
-      type: Fotrtan
-
-    - label: de-biased_histogram
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram.py
-      size: 0.7 KB
-      type: Python
-
-    - label: de-biased_histogram_ex
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram_ex.py
-      size: 2.2 KB
-      type: Python
-
-    - label: de-biased_observable.py
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable.py
-      size: 0.4 KB
-      type: Python
-
-    - label: de-biased_observable_ex.py
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable_ex.py
-      size: 0.5 KB
-      type: Python
-
-    - label: activesite_volume.txt
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/activesite_volume.txt
-      size: 45 KB
-      type: TXT
-
-    - label: dimerizationsite_volume.txt
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/dimerizationsite_volume.txt
-      size: 5 KB
-      type: TXT
-
-    - label: g16-mar21.pdb
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/g16-mar21.pdb
-      size: 142 KB
-      type: PDB
