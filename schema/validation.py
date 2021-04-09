@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ValidationError, validator, AnyUrl, StrictInt
-from typing import Optional, List, Union, Dict
+from typing import Optional, List, Union, Dict, AnyStr
 from yaml import safe_load
 from enum import Enum
 from os import walk
@@ -172,6 +172,7 @@ class LinksModel(BaseModel):
     lab: Optional[str]
     resources: List[ResourcesEnum]
 
+
 class DOIModel(BaseModel):
     name: str
     url: Optional[AnyUrl]
@@ -185,6 +186,7 @@ class DOIModel(BaseModel):
     size: str
     purpose: str
     license: Optional[str]
+
 
 class ModelsModel(BaseModel):
     name: str
@@ -247,6 +249,13 @@ class ProteinsModel(BaseModel):
         return v
 
 
+class TrajectoryDataEntry(BaseModel):
+    label: str
+    location: str
+    size: str
+    type: Optional[str]
+
+
 class SimulationsModel(BaseModel):
     type: ValidSimulations
     title: str
@@ -260,8 +269,9 @@ class SimulationsModel(BaseModel):
     structures: List[str]
     rating: Optional[int]
     files: Optional[List[AnyUrl]]
-    trajectory: AnyUrl
-    size: str
+    trajectory: Optional[AnyUrl]
+    size: Optional[str]
+    trajectory_data: Optional[List[Dict[AnyStr, List[TrajectoryDataEntry]]]]
     length: Optional[str]
     ensemble: ValidEnsembles
     temperature: Optional[float]
@@ -286,11 +296,44 @@ class SimulationsModel(BaseModel):
             if values.get('type') == ('docking'):
                 return v
             else:
-                raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of type "docking", is {v}.')
+                raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of '
+                                 f'type "docking", is {v}.')
         elif isinstance(v, str):
             return v
         else:
-            raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of type "docking", is {v}.')
+            raise ValueError(f'Length must be the elapsed real time for the trajectory with units unless it is of type'
+                             f' "docking", is {v}.')
+
+    @validator("trajectory_data", pre=True, always=True)
+    def correct_trajectory_setup(cls, v, values, **kwargs):
+        traj = values.get("trajectory")
+        size = values.get("size")
+        # Check if not set
+        if not traj and not v:
+            raise ValueError("One of ('trajectory' and 'size') or ('trajectory_data') is required.")
+        # Check if both set
+        if v and (traj is not None or size is not None):
+            raise ValueError("'trajectory_data' cannot be set at the same time as ('trajectory' and 'size'), "
+                             "please choose one or the other.")
+        return v
+
+    @validator("trajectory_data")
+    def top_list_is_one_lenth(cls, v):
+        if v is not None:
+            for list_item in v:
+                len_list = len(list_item)
+                if len_list != 1:
+                    raise ValueError(f"Entry in 'trajectory_data' does not have the right number of top-level keys. "
+                                     f"Must have 1, it had {len_list}."
+                                     f"\n\t Entry with keys: {list_item.keys()}")
+        return v
+
+    @validator("size", pre=True, always=True)
+    def size_and_traj_set(cls, v, values, **kwargs):
+        traj = values.get("trajectory")
+        if (v and not traj) or (traj and not v):  # XOR
+            raise ValueError("Both ('trajectory' and 'size') must be set, or use the 'trajectory_data' entry")
+        return v
     
     # @validator('pressure')
     # def pressure_valid(cls, v):
@@ -514,4 +557,4 @@ if __name__ == "__main__":
             total_errors += validate(join("../data", directory, filename), model)
 
     if total_errors:
-        raise RuntimeError("There we validation errors! Check the log for what")
+        raise RuntimeError(f"There were {total_errors} validation errors! Check the log for what")

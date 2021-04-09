@@ -1,0 +1,37 @@
+<!-- Table construction for complex trajectory data -->
+
+{{ $localScratch := newScratch }}
+
+<!-- Metadata -->
+{{ range .}}  <!-- Loop over the order-preserving list of dicts -->
+    {{ range $header, $entry_list := . }}  <!-- Abuse range feature for 1 entry to get the header text -->
+        <table class="table text-center-row">
+            <thead style="background: linear-gradient(#444, #999);color: #fff">
+                <tr class="">
+                    <th colspan="3" scope="col">{{ $header }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> File </td>
+                    <td> File Type</td>
+                    <td> File Size </td>
+                </tr>
+                {{ range $entry_list }}  <!-- Look through the regular data -->
+                    <tr>
+                        <td style="text-align: left">
+                            <a href="{{ .location }}"><kbd class="alert-secondary"><b>{{ .label }}</b></kbd></a>
+                        </td>
+                        <td>
+                            {{ if .type }}
+                                {{ .type }}
+                            {{ else }}
+                                ----
+                            {{ end }}
+                        </td>
+                        <td> {{ .size }} </td>
+                    </tr>
+                {{ end }}
+        </table>
+    {{ end }}
+{{ end }}
