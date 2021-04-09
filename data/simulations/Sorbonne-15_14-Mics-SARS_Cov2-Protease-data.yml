@@ -23,11 +23,11 @@ description: |
   (protein_water.arc).
 
 
-  We also provide the [6LU7 pdb file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/6lu7_rec_GMX_conf.pdb),
-  the [protease topology file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/6lu7_rec_GMX.itp)
-  and the [protease+water topology](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/protein_water_topologic.top)
+  We also provide the [6LU7 pdb file](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX_conf.pdb),
+  the [protease topology file](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/6lu7_rec_GMX.itp)
+  and the [protease+water topology](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/protein_water_topologic.top)
   file, both taken from [Riken, doi: 10.17632/vpps4vhryg.2](http://tinker-hp.ip2ct.upmc.fr/-%3Ehttps://www.doi.org/10.17632/vpps4vhryg.2)
-  and a [de-biasing score file](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/AMOEBA_15mics_sampling/full_de-biasing_score.txt)
+  and a [de-biasing score file](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_red_de-biasing_score.txt)
   of the whole 15.14-microsecond trajectory.
 
 
@@ -58,26 +58,26 @@ description: |
 
 
   For each Tinker-HP clusters, we also provide a de-biasing score file for
-  [full clusters](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/clustering_files/full_tinker-hp_clusters/cluster5_pca4_tinker-hp_de-biasing_score.txt)
-  and [reduced clusters](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/clustering_files/reduced_tinker-hp_clusters/cluster5_pca4_tinker-hp_red_de-biasing_score.txt)
+  [full clusters](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster5_pca4_tinker-hp_de-biasing_score.txt)
+  and [reduced clusters](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_red_de-biasing_score.txt)
 
 
   *How to use the de-biasing score?*
 
 
-  We provide [de-biased_observable.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable.py)
+  We provide [de-biased_observable.py](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable.py)
   a python script to compute de-biased observable average. It takes as arguments:
   1. name of the de-biasing score file, i.e, ’de-biasing_score’ (column file)
   2. name of the computed observable file, i.e, ’observable’ (column file).
 
-  Additionally, we provide [de-biased_histogram.py6](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_histogram.py)
+  Additionally, we provide [de-biased_histogram.py6](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram.py)
   to compute de-biased histogram and kernel density estimation of a given observable. It takes the same arguments and
   gives as output a picture (PNG format).
 
 
   Finally, We added two python script examples:
-  [de-biased_observable_ex.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable_ex.py)
-  and [de-biased_histogram_ex.py](https://object.cscs.ch/v1/AUTH_0d4e0484e24549508cada0502ac6208d/covide-19-cmde/de-biased_observable_ex.py)
+  [de-biased_observable_ex.py](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_observable_ex.py)
+  and [de-biased_histogram_ex.py](https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Miscellaneous/de-biased_histogram_ex.py)
   They should be run with the following command :
   ```bash
   python de-biased_observable_ex.py
@@ -312,7 +312,7 @@ trajectory_data:
       size: 1.2 GB
       type: VMD
 
-    - label: Tinker-HP Clusters 1 Biasaing Scores
+    - label: Tinker-HP Clusters 1 Biasing Scores
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster1_pca4_tinker-hp_de-biasing_score.txt
       size: 212 KB
       type: TXT
@@ -322,7 +322,7 @@ trajectory_data:
       size: 885 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 2 Biasaing Scores
+    - label: Tinker-HP Clusters 2 Biasing Scores
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster2_pca4_tinker-hp_de-biasing_score.txt
       size: 150 KB
       type: TXT
@@ -332,7 +332,7 @@ trajectory_data:
       size: 66 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 3 Biasaing Scores
+    - label: Tinker-HP Clusters 3 Biasing Scores
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster3_pca4_tinker-hp_de-biasing_score.txt
       size: 10 KB
       type: TXT
@@ -342,7 +342,7 @@ trajectory_data:
       size: 221 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 4 Biasaing Scores
+    - label: Tinker-HP Clusters 4 Biasing Scores
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster4_pca4_tinker-hp_de-biasing_score.txt
       size: 37 KB
       type: TXT
@@ -352,7 +352,7 @@ trajectory_data:
       size: 102 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 5 Biasaing Scores
+    - label: Tinker-HP Clusters 5 Biasing Scores
       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Full_Clustering/cluster5_pca4_tinker-hp_de-biasing_score.txt
       size: 15 KB
       type: TXT
@@ -383,9 +383,9 @@ trajectory_data:
       size: 107 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 1 Biasaing Scores
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_tinker-hp_de-biasing_score_red.txt
-      size: ????
+    - label: Tinker-HP Clusters 1 Biasing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster1_pca4_tinker-hp_red_de-biasing_score.txt
+      size: 18 KB
       type: TXT
 
     - label: Tinker-HP Clusters 2
@@ -393,9 +393,9 @@ trajectory_data:
       size: 107 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 2 Biasaing Scores
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster2_pca4_tinker-hp_de-biasing_score.txt
-      size: ????
+    - label: Tinker-HP Clusters 2 Biasing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster2_pca4_tinker-hp_red_de-biasing_score.txt
+      size: 18 KB
       type: TXT
 
     - label: Tinker-HP Clusters 3
@@ -403,9 +403,9 @@ trajectory_data:
       size: 62 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 3 Biasaing Scores
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster3_pca4_tinker-hp_de-biasing_score.txt
-      size: ?????
+    - label: Tinker-HP Clusters 3 Biasing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster3_pca4_tinker-hp_red_de-biasing_score.txt
+      size: 10 KB
       type: TXT
 
     - label: Tinker-HP Clusters 4
@@ -413,9 +413,9 @@ trajectory_data:
       size: 107 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 4 Biasaing Scores
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster4_pca4_tinker-hp_de-biasing_score.txt
-      size: ????
+    - label: Tinker-HP Clusters 4 Biasing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster4_pca4_tinker-hp_red_de-biasing_score.txt
+      size: 18 KB
       type: TXT
 
     - label: Tinker-HP Clusters 5
@@ -423,9 +423,9 @@ trajectory_data:
       size: 96 MB
       type: VMD
 
-    - label: Tinker-HP Clusters 5 Biasaing Scores
-      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_de-biasing_score.txt
-      size: ????
+    - label: Tinker-HP Clusters 5 Biasing Scores
+      location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/PiquemalGroup/Apo_Enzyme/Reduced_Clustering/cluster5_pca4_tinker-hp_red_de-biasing_score.txt
+      size: 14 KB
       type: TXT
 
   - MISCELLANEOUS:
