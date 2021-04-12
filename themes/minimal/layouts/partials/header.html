@@ -28,8 +28,18 @@
             <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
         {{ end }}
 
+        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@MolSSI_NSF">
+        <meta name="twitter:title" content="{{ .Title }} - The MolSSI/BioExcel COVID-19 Hub">
+        <meta name="twitter:image" content="https://covid.molssi.org/favicon.ico">
+        {{ if .Description }}
+            <meta name="twitter:description" content="{{ .Description }}">
+        {{ else }}
+            <meta name="twitter:description" content="{{ markdownify .Site.Params.Description }}">
+        {{ end }}
+
+
 
         {{ partial "head-close" . }}
     </head>

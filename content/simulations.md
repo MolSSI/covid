@@ -1,5 +1,5 @@
 ---
 title: "Simulations"
-description: "Simulations of relevance to SARS-CoV-2"
+description: "Simulations of Relevance to SARS-CoV-2"
 type: "simulations"
 ---
