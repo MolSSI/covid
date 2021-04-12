@@ -11,7 +11,7 @@ description: |
 
   “Jaffrelot Inizan, Theo; Célerse, Frédéric; Adjoua, Olivier; El Ahdab, Dina; Jolly, Luc-Henri; Liu, Chengwen; et al.
   (2020): High-Resolution Mining of SARS-CoV-2 Main Protease Conformational Space: Supercomputer-Driven Unsupervised
-  Adaptive Sampling.” ChemRxiv. Preprint. Doi :[10.1039/D1SC00145K](https://doi.org/10.1039/D1SC00145K)
+  Adaptive Sampling.” Chem. Sci., 2021,12, 4889-4907. Doi: [10.1039/D1SC00145K](https://doi.org/10.1039/D1SC00145K)
 
 
   The AMOEBA_15mics_sampling trajectory is divided in sampling iterations X that represent the (X-1)th adaptive
@@ -139,7 +139,8 @@ temperature: 300
 solvent: water
 forcefields:
     - AMOEBA PFF
-preprint: https://doi.org/10.1039/D1SC00145K
+preprint: https://doi.org/10.26434/chemrxiv.13003166.v6
+publication: https://doi.org/10.1039/D1SC00145K
 
 trajectory_data:
   - MISCELLANEOUS:
