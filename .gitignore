@@ -114,3 +114,7 @@ scratch.txt
 /.vscode
 .DS_Store
 .idea
+
+# Debugging and Test Files for local builds not meant to go live
+fake_*.yaml
+fake_*.yml
