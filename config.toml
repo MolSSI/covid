@@ -11,7 +11,7 @@ ignoreFiles = ["README.md$"]
 
 [params]
     author = "MolSSI and BioExcel"
-    description = "Aggregating critical information to accelerate drug discovery for the molecular modeling and simulation community."
+    description = "Aggregating critical information to accelerate COVID-19 drug discovery for the molecular modeling and simulation community."
     githubUsername = "#"
     accent = "red"
     showBorder = true
