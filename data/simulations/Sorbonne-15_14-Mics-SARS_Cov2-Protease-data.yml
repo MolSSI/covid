@@ -118,7 +118,7 @@ description: |
 
   To view the full protein trajectory, use the command:
   ```bash
-  $ vmd AMOEBA_15mics_sampling/6lu7_rec_GMX_conf.pdb AMOEBA_15mics_sampling/sampling_iteration*/protein.dcd
+  $ vmd -f AMOEBA_15mics_sampling/6lu7_rec_GMX_conf.pdb AMOEBA_15mics_sampling/sampling_iteration*/protein.dcd
   ```
 
 
