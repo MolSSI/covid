@@ -19,4 +19,4 @@ forcefields:
     - ff14SB
     - GAFF
     - TIP3P
-publication: Sztain, T., Amaro, R. E., McCammon, J. A. Elucidation of cryptic and allosteric pockets within the SARS-CoV-2 main protease. JCIM. 2021.
+preprint: https://doi.org/10.1101/2020.07.23.218784
