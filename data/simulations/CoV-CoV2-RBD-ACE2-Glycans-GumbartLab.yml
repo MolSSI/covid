@@ -1,0 +1,24 @@
+type: md
+title: Simulations of SARS-CoV and SARS-CoV-2 RBD with ACE2 possessing different patterns of glycosylation
+description: Two-microsecond trajectories of the receptor-binding domains from SARS-CoV and SARS-CoV-2 spike protein bound to the human receptor, ACE2 with two distinct glycosylation schemes (three replicas each, joined in a single DCD file for each scheme) and with no glycans (two replicas each). Simulation systems were constructed with VMD, equilibrated initially with NAMD, and then run for 2 µs each with Amber16. Simulations used a 4-fs timestep enabled by hydrogen-mass repartitioning (HMR). 
+creator: Gumbart lab
+institute: Georgia Institute of Technology
+models: 
+proteins: 
+    - spike
+    - RBD
+    - ACE2
+structures: 
+    - 2AJF
+    - 6M17
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/GumbartGroup/RBD-ACE2-wGlycans.tgz
+size: 22 GB
+length: 2 µs
+ensemble: NPT
+temperature: 310
+solvent: water
+salinity: 0.15
+forcefields: 
+    - CHARMM36m
+    - TIP3P
+preprint: https://doi.org/10.1101/2021.04.29.442038
