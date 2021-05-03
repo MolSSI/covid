@@ -1,0 +1,22 @@
+type: md
+title: Gaussian Accelerated MD trajectories of 3CLpro
+description: GaMD trajectories of 3CLpro from 6LU7. Systems include dimer, monomer, with, and without N3 inhibitor covalent and non-covalently attached. Input files, netcdf trajectories, and PDBs arranged by pocket volumes for each system.    
+creator: Amaro Lab and McCammon Lab
+institute: University of California San Diego
+proteins: 
+    - 3CLpro
+structures:
+    - 6LU7
+trajectory: https://amarolab.ucsd.edu/covid19.php
+size:  2.6 GB
+length: 6 µs 
+ensemble: NPT
+temperature: 310 
+pressure: 1.0  
+solvent: water 
+salinity: 0.15
+forcefields: 
+    - ff14SB
+    - GAFF
+    - TIP3P
+preprint: https://doi.org/10.1101/2020.07.23.218784
