@@ -1,0 +1,29 @@
+type: md
+title: All-atom molecular dynamics simulations of SARS-CoV-2 envelope protein E in the monomeric form
+description: > 
+       The trajectories of all-atom MD simulations were obtained based on 4 starting representative 
+       conformations from the CG simulation. For each starting structure, there are six trajectories of the E protein: 
+       3 with the protein embedded in the membrane containing POPC, and 3 with the membrane mimicking the 
+       natural ERGIC membrane (Mix: 50% POPC, 25% POPE, 10% POPI, 5% POPS, 10% cholesterol).
+creator: Alexander Kuzmin, Philipp Orekhov, Roman Astashkin, Valentin Gordeliy, Ivan Gushchin
+organization: Research Center for Molecular Mechanisms of Aging and Age-related Diseases
+lab: Valentin Gordeliy's Lab, Ivan Gushchin's Lab
+institute: Moscow Institute of Physics and Technology
+models: 
+    - E_protein_feig_membrane
+proteins: 
+    - E protein
+structures:
+    - https://github.com/feiglab/sars-cov-2-proteins/blob/master/Membrane/E_protein.pdb
+trajectory: https://doi.org/10.5281/zenodo.4743386
+size: 45.6 GB
+length: 2.4 µs
+ensemble: NPT
+temperature: 310
+pressure: 1 
+solvent: water
+salinity: 0.15
+forcefields: 
+    - CHARMM36m
+    - TIP3
+preprint: https://doi.org/10.1101/2021.03.10.434722
