@@ -7,6 +7,7 @@ pdbids:
   - 6w41
 proteins:
   - RBD
+  - spike
 creator: Geemi Wellawatte, White Lab, University of Rochester
 
 lab: Zhiheng Li, Xu Group, University of Rochester (contributor)

@@ -69,6 +69,34 @@ class ValidProteins(str, Enum):
     virion = "virion"
 
 
+def prevent_unhandled_subdomains(proteins: List[str]) -> List[str]:
+    unhandled_subdomains = {
+        ValidProteins.RBD: ValidProteins.spike,
+        ValidProteins.S1: ValidProteins.spike,
+        ValidProteins.S2: ValidProteins.spike
+    }
+
+    base_error = ("Subdomain proteins are not correctly implemented yet. At least 1 protein listed was a subdomain.{}"
+                  "Please use the base protein instead (e.g. RBD -> spike).")
+    caught_subdomains = []
+
+    for protein in proteins:
+        if protein in unhandled_subdomains:
+            parent = unhandled_subdomains[protein]
+            if parent not in proteins:
+                caught_subdomains.append(protein)
+        else:
+            # There is at least some protein known
+            # Reset the building list
+            caught_subdomains = []
+            break
+    if caught_subdomains:
+        str_caught_subdomains = "\n\t- " + "\n\t- ".join(caught_subdomains) + "\n"
+        full_error = base_error.format(str_caught_subdomains)
+        raise ValueError(full_error)
+    return proteins
+
+
 # Check that proteins have not been given other names
 common_names = {
     '3CLpro': ['mpro', 'nsp5', '3c-like', '3c-l', 'mprotease', '3cl-pro'],
@@ -210,6 +238,8 @@ class ModelsModel(BaseModel):
                 raise ValueError(f'Rating must be on domain [1,5], is {v}')
         return v
 
+    _no_subdomains = validator("proteins", allow_reuse=True)(prevent_unhandled_subdomains)
+
 
 class ValidTherapeutic(str, Enum):
     antiviral = "antiviral"
@@ -227,6 +257,8 @@ class MoleculesModel(BaseModel):
     protein: Optional[Union[ValidProteins, List[ValidProteins]]]
     links: Optional[LinkOutKeys]
     url: Optional[AnyUrl]
+
+    _no_subdomains = validator("protein", allow_reuse=True)(prevent_unhandled_subdomains)
 
 
 class ProteinsModel(BaseModel):
@@ -334,6 +366,8 @@ class SimulationsModel(BaseModel):
         if (v and not traj) or (traj and not v):  # XOR
             raise ValueError("Both ('trajectory' and 'size') must be set, or use the 'trajectory_data' entry")
         return v
+
+    _no_subdomains = validator("proteins", allow_reuse=True)(prevent_unhandled_subdomains)
     
     # @validator('pressure')
     # def pressure_valid(cls, v):
@@ -373,6 +407,8 @@ class StructuresModel(BaseModel):
             raise ValueError("At least one of pdbid or unpublished_pdbid must be set!")
         return v
 
+    _no_subdomains = validator("proteins", allow_reuse=True)(prevent_unhandled_subdomains)
+
 
 class PapersModel(BaseModel):
     title: str
@@ -397,6 +433,8 @@ class TargetsModel(BaseModel):
     proteins: Union[ValidProteins, List[ValidProteins]]
     therapeutic_modalities: Union[str, List[str]]
     papers: Optional[List[PapersModel]]
+
+    _no_subdomains = validator("proteins", allow_reuse=True)(prevent_unhandled_subdomains)
 
 
 class TeamsModel(BaseModel):
