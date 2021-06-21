@@ -1,0 +1,15 @@
+name: "SARS-CoV-2 spike receptor-binding domain bound with S309: ISOLDE refined model with N343 glycan"
+pdbids:
+  - 7jx3
+proteins:
+  - RBD
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 7JX3 that fixes multiple issues:
+  * Adjusts a few rotamers and peptide bonds
+  * Merges in missing loop in antibody constant domain from 4jhw
+  * Builds in N343 glycan
+url: https://github.com/choderalab/rbd-ab-contact-analysis/blob/main/01_system_preparation/RBD_S309/PDBs/01_7jx3_rebuild.pdb
+pdb_url: https://www.rcsb.org/structure/7JX3
+creator: Tristan Croll, Ivy Zhang

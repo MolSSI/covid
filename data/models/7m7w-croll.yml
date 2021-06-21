@@ -1,0 +1,14 @@
+name: "SARS-CoV-2 spike receptor-binding domain bound with S2H97: ISOLDE refined model with N343 glycan"
+pdbids:
+  - 7m7w
+proteins:
+  - RBD
+organism:
+  - SARS-CoV-2
+description: >
+  Refinement of 7M7W that fixes multiple issues:
+  * Builds in missing loop in antibody constant domain
+  * Builds in N343 glycan
+url: https://github.com/choderalab/rbd-ab-contact-analysis/blob/main/01_system_preparation/RBD_S2H97/PDBs/1_glycos_renamed.pdb
+pdb_url: https://www.rcsb.org/structure/7M7W
+creator: Tristan Croll, Ivy Zhang
