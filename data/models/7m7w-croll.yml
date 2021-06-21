@@ -2,6 +2,7 @@ name: "SARS-CoV-2 spike receptor-binding domain bound with S2H97: ISOLDE refined
 pdbids:
   - 7m7w
 proteins:
+  - spike
   - RBD
 organism:
   - SARS-CoV-2

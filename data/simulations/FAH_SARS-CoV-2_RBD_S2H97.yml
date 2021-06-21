@@ -54,11 +54,12 @@ institute: Memorial Sloan Kettering Cancer Center
 models: 
     - 7m7w-croll
 proteins:
+    - spike
     - RBD
 structures:
     - 7m7w
 trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347
-size: 903.1 GB
+size: 210.3 GB
 length: 623.7 us
 ensemble: NPT
 temperature: 310

@@ -2,6 +2,7 @@ name: "SARS-CoV-2 spike receptor-binding domain bound with S309: ISOLDE refined 
 pdbids:
   - 7jx3
 proteins:
+  - spike
   - RBD
 organism:
   - SARS-CoV-2

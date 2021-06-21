@@ -55,6 +55,7 @@ institute: Memorial Sloan Kettering Cancer Center
 models: 
     - 7jx3-croll
 proteins:
+    - spike
     - RBD
 structures:
     - 7jx3
