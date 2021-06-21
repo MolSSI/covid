@@ -8,6 +8,7 @@ pdbids:
   - 6lxt
 proteins:
   - S2
+  - spike
 creator: Geemi Wellawatte, White Lab, University of Rochester
 
 lab: Zhiheng Li, Xu Group, University of Rochester (contributor)
