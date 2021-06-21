@@ -1,0 +1,11 @@
+pdbid: 7jx3
+proteins:
+  - spike
+  - RBD
+organisms:
+  - SARS-CoV-2
+  - human
+annotation: Crystal structure of SARS-CoV-2 spike receptor-binding domain bound with monoclonal antibody S309
+targets:
+  - spike binding
+  - host immune response

@@ -1,0 +1,11 @@
+pdbid: 7m7w
+proteins:
+  - spike
+  - RBD
+organisms:
+  - SARS-CoV-2
+  - human
+annotation: Crystal structure of SARS-CoV-2 spike receptor-binding domain bound with monoclonal antibody S2H97
+targets:
+  - spike binding
+  - host immune response

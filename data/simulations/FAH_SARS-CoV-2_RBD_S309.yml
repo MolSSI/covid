@@ -1,0 +1,73 @@
+target: spike binding
+type: md
+title: Folding@home simulations of the SARS-CoV-2 spike RBD bound to monoclonal antibody S309
+description: >
+  All-atom MD simulations of the SARS-CoV-2 spike protein receptor binding domain (RBD) bound to
+  monoclonal antibody S309, simulated using
+  [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
+  Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ab-contact-analysis/).
+  Brief details appear below.
+  Preprint link: https://www.biorxiv.org/content/10.1101/2021.04.06.438709v1
+  **System preparation:**
+  The RBD:S309 complex was constructed from PDB ID 7JX3 (Chains A, B, and R). 
+  7JX3 was first refined using ISOLDE to better fit the experimental electron density using detailed manual inspection. 
+  Refinement included adjusting several rotamers, flipping several peptide bonds, fixing several weakly resolved waters, and building in a missing four-residue-long loop. 
+  Though the N343 glycan N-Acetylglucosamine (NAG) was present in 7JX3, ISOLDE was used to construct a complex glycan at N343. 
+  The full glycosylation pattern was determined from Shajahan et al. and Watanabe et al.
+  The glycan structure used for N343 (FA2G2) corresponds to the most stable conformer obtained from multi microsecond molecular dynamics (MD) simulations of cumulative sampling.
+  The base NAG residue in FA2G2 was aligned to the corresponding NAG stub in the RBD:S309 model and any resulting clashes were refined in ISOLDE. 
+  The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
+  Simulations were run with OpenMM 7.4.2 (Folding@home core22 0.0.13).
+  Production simulations used the same Langevin integrator as the NpT equilibration described above.
+  In total, 5000 independent MD simulations were generated on Folding@home.
+  Conformational snapshots (frames) were stored at an interval of 1 ns/frame for subsequent analysis.
+  The resulting final dataset contained 5000 trajectories, 1.1 ms of aggregate simulation time.
+  **Solute-only trajectories:**
+  The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
+  A single trajectory (RUN0 CLONE0) (~42 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341/run0-clone0.h5 .
+   ```
+  All HDF5 trajectories can be retrieved with
+   ```bash
+   aws s3 --no-sign-request sync s3://https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341.
+   ```
+  **Entire dataset:**
+  The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+  The dataset consists of a single project (`PROJ17341`) and has a `RUN*/CLONE*/result*` directory structure.
+  `RUNs` denote different equilibrated starting structures.
+  `CLONE`s denote different independent replica trajectories.
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/raw-data/PROJ17341 .
+   ```
+  **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/setup-files/17341 .
+   ```
+  **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
+  **License:** All data is freely available under the Creative Commons [CC0 ("No Rights Reserved")](https://creativecommons.org/share-your-work/public-domain/cc0/) license.
+creator: Ivy Zhang
+organization: Folding@home
+lab: Chodera lab
+institute: Memorial Sloan Kettering Cancer Center
+models: 
+    - 7jx3-croll
+proteins:
+    - RBD
+structures:
+    - 7jx3
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341/
+size: 903.1 GB
+length: 1.1 ms
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.150
+forcefields:
+    - AMBER14SB
+    - GLYCAM_06j-1
+    - TIP3P
+preprint: https://www.biorxiv.org/content/10.1101/2021.04.06.438709v1
