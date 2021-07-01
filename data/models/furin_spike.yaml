@@ -6,7 +6,7 @@ pdbids:
   - 5JMO
   - 6VSB
 proteins:
-  - furin
+  - Furin
   - spike
 organism:
   - human
