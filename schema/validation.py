@@ -153,8 +153,10 @@ class ValidTargets(str, Enum):
 
 class ValidOrganisms(str, Enum):
     human = 'human'
+    mouse = 'mouse'
     sars_cov = 'SARS-CoV'
     sars_cov_2 = 'SARS-CoV-2'
+    hcov_oc43 = 'HCoV-OC43'
 
 
 class ResourcesEnum(str, Enum):

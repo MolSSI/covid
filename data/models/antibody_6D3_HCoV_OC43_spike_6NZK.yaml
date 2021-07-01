@@ -8,6 +8,9 @@ pdbids:
 proteins:
   - antibody
   - spike
+organism:
+  - mouse
+  - HCoV-OC43
 creator: Mary Hongying Cheng
 lab: Bahar Lab
 organization:  University of Pittsburgh Department of Computational and Systems Biology
