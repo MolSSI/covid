@@ -1,0 +1,15 @@
+name: Ab 6D3 bound to HCoV-OC43 Spike in down state
+description: representative docking model of Ab 6D3 bound to HCoV-OC43 Spike with three RBDs in the down state generated with ClusPro and refined by HADDOCK
+url: https://zenodo.org/record/4667694#.YN2dEUwo-F6
+pdb_url: https://zenodo.org/record/4667694/files/Antibody%206D3%20bound%20to%20SARS-CoV-2%20Spike%20on%206VSB.pdb
+pdbids:
+  - 4RGN
+  - 6VSB
+proteins:
+  - antibody 6D3
+  - HCoV-OC43 spike
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://www.cell.com/structure/fulltext/S0969-2126(21)00121-0
+preprint: https://www.biorxiv.org/content/10.1101/2020.11.24.395079v1
