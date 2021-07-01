@@ -591,7 +591,7 @@ if __name__ == "__main__":
             f.extend(filenames)
 
         # Filter out non ".yml" files from the directory
-        f_filter = filter_yaml(f, ["yml"])
+        f_filter = filter_yaml(f, ["yml", "yaml"])
 
         # For each yml file in the directory, perform validation against its associated model.
         for filename in f_filter:
