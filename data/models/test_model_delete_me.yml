@@ -1,0 +1,13 @@
+name: Junk
+description: some description of junk
+url: https://google.com
+pdb_url: https://google.com
+pdbids:
+  - 4RGN
+  - 6VXX
+proteins:
+  - antibody 6D3
+  - spike
+creator: Borowed Name
+lab: Lnaden Test Lab (Not real)
+organization:  MolSSI
