@@ -25,6 +25,7 @@ class MailTo(str):
 
 
 class ValidProteins(str, Enum):
+    antibody = 'antibody'
     spike = 'spike'
     RBD = 'RBD'
     S1 = 'S1'

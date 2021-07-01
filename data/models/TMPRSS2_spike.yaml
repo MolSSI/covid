@@ -8,6 +8,9 @@ pdbids:
 proteins:
   - TMPRSS2
   - spike
+organism:
+  - human
+  - SARS-CoV-2
 creator: Mary Hongying Cheng
 lab: Bahar Lab
 organization:  University of Pittsburgh Department of Computational and Systems Biology

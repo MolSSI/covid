@@ -6,6 +6,8 @@ pdbids:
   - 5CE1
 proteins:
   - TMPRSS2
+organism:
+  - human
 creator: Mary Hongying Cheng
 lab: Bahar Lab
 organization:  University of Pittsburgh Department of Computational and Systems Biology

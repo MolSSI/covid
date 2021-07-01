@@ -6,8 +6,8 @@ pdbids:
   - 4RGN
   - 6VSB
 proteins:
-  - antibody 6D3
-  - HCoV-OC43 spike
+  - antibody
+  - spike
 creator: Mary Hongying Cheng
 lab: Bahar Lab
 organization:  University of Pittsburgh Department of Computational and Systems Biology
