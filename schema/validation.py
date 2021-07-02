@@ -25,6 +25,7 @@ class MailTo(str):
 
 
 class ValidProteins(str, Enum):
+    antibody = 'antibody'
     spike = 'spike'
     RBD = 'RBD'
     S1 = 'S1'
@@ -152,8 +153,10 @@ class ValidTargets(str, Enum):
 
 class ValidOrganisms(str, Enum):
     human = 'human'
+    mouse = 'mouse'
     sars_cov = 'SARS-CoV'
     sars_cov_2 = 'SARS-CoV-2'
+    hcov_oc43 = 'HCoV-OC43'
 
 
 class ResourcesEnum(str, Enum):
@@ -588,7 +591,7 @@ if __name__ == "__main__":
             f.extend(filenames)
 
         # Filter out non ".yml" files from the directory
-        f_filter = filter_yaml(f, ["yml"])
+        f_filter = filter_yaml(f, ["yml", "yaml"])
 
         # For each yml file in the directory, perform validation against its associated model.
         for filename in f_filter:

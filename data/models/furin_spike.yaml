@@ -1,0 +1,18 @@
+name: Furin bound to SARS-CoV-2 Spike in one RBD up state
+description: representative docking model of furin bound to SARS-CoV-2 Spike with one RBD in the up state generated with ClusPro and refined by HADDOCK
+url: https://zenodo.org/record/4667694#.YN2dEUwo-F6
+pdb_url: https://zenodo.org/record/4667694/files/Antibody%206D3%20bound%20to%20HCoV%20OC43%20on%206NZK.pdb
+pdbids:
+  - 5JMO
+  - 6VSB
+proteins:
+  - Furin
+  - spike
+organism:
+  - human
+  - SARS-CoV-2
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://www.cell.com/structure/fulltext/S0969-2126(21)00121-0
+preprint: https://www.biorxiv.org/content/10.1101/2020.11.24.395079v1

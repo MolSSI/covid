@@ -1,0 +1,15 @@
+name: Homology model of human TMPRSS2
+description: TMPRSS2 homology model generated with SWISS-MODEL based on the structure of Hepsin (PDBID 5CE1) 
+url: https://zenodo.org/record/4667694#.YN2dEUwo-F6
+pdb_url: https://zenodo.org/record/4667694/files/Homology%20model%20Human_TMPRSS2_on_PDB5CE1.pdb
+pdbids:
+  - 5CE1
+proteins:
+  - TMPRSS2
+organism:
+  - human
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://www.cell.com/structure/fulltext/S0969-2126(21)00121-0
+preprint: https://www.biorxiv.org/content/10.1101/2020.11.24.395079v1
