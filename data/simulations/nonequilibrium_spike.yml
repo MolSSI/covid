@@ -1,0 +1,27 @@
+type: md
+title: Nonequilibrium simulations of the SARS-Cov-2 wild-type and D614G spike
+description: >
+    Nonequilibrium MD simulation of the
+    unglycosylated and uncleaved ectodomain of the SARS-CoV-2
+    wild-type and D614G spike
+
+creator: A.S.F. Oliveira
+organization: University of Bristol
+lab: Mulholland Lab
+proteins:
+    - spike
+files:
+    - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nonequilibrium-spike/nonequilibrium_simulations.tar.gz
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/MulhollandGroup/nonequilibrium-spike/nonequilibrium_simulations.tar.gz
+structures:
+    - https://www.rcsb.org/structure/6ZB5
+size: 23 GB
+length: 180 replicates, 5 ns each
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+forcefields:
+    - Amber ff99SB-ILDN
+references:
+    - "Oliveira, ASF; Shoemark, DK; et al. “The fatty acid site is coupled to functional motifs in the SARS-CoV-2 spike protein and modulates spike allosteric behavior” 2021, bioRxiv (DOI:10.1101/2021.06.07.447341)"
