@@ -1,0 +1,13 @@
+name: "Clusters center of gREST from Down State simulations"
+pdbids:
+  - 6vxx
+proteins:
+  - Spike
+organism:
+  - SARS-Cov-2
+description: >
+  PDB of cluster centers representing 13 clusters obtained from gREST_SSCR simulations starting from Down conformation. This includes Down symmetric (D1_Sym.pdb and D2_Sym.pdb), Down asymmetric (D1_asym.pdb and D2_asym.pdb), Intermediate 1 (I1a.pdb, I1b.pdb and I1c.pdb), Intermediate 2 (I2a.pdb, I2b.pdb and I2c.pdb), Intermediate 3 (I3a.pdb and I3b.pdb) and 1Up like (1U_L.pdb) conformations. Water molecules and Ions are removed from these PDB structures. 
+url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Down.zip
+institution: Riken
+creator: Sugita Lab
+
