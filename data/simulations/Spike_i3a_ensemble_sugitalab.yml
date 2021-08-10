@@ -1,0 +1,13 @@
+name: "Cluster ensemble of Intermediate 3a"
+pdbids:
+  - 6vxx
+proteins:
+  - Spike
+organism:
+  - SARS-Cov-2
+description: >
+  30 PDB structures of the intermediate (I3a) cluster obtained from gREST_SSCR simulations starting from Down conformation.  Water molecules and Ions are removed from these PDB structures. 
+url:https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/I3a-30structures.pdb.zip
+institution: Riken
+creator: Sugita Lab
+
