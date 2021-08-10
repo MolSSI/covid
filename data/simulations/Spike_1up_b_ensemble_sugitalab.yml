@@ -1,0 +1,13 @@
+name: "Cluster ensemble of 1UP second populated cluster"
+pdbids:
+  - 6vyb
+proteins:
+  - Spike
+organism:
+  - SARS-Cov-2
+description: >
+  30 PDB structures of the second populated cluster obtained from gREST_SSCR simulations starting from 1Up conformation.  Water molecules and Ions are removed from these PDB structures. 
+url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1Ub-30structures.pdb.zip
+institution: Riken
+creator: Sugita Lab
+
