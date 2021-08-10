@@ -1,0 +1,14 @@
+name: "Trimeric SARS-CoV-2 spike protein (Down state) with and without simulation box in the absence of glycan"
+pdbids:
+  - 6vxx
+proteins:
+  - Spike
+organism:
+  - SARS-Cov-2
+description: >
+  PSF/PDB of Spike model in Down state from residue 28 to 1135 before and after the addition of water molecules and Ions.
+  The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. This model has no glycans. 
+url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Down_wo_glycan.zip
+institution: Riken
+creator: Sugita Lab
+
