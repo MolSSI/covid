@@ -1,0 +1,13 @@
+name: "Clusters center of gREST from 1Up State simulations"
+pdbids:
+  - 6vyb
+proteins:
+  - Spike
+organism:
+  - SARS-Cov-2
+description: >
+  PDB of cluster centers representing 13 clusters obtained from gREST_SSCR simulations starting from 1Up conformation. This includes clusters represent 1Up conformations(1Ua.pdb, 1Ub.pdb, 1Uc.pdb, 1Ue.pdb, 1Uf.pdb, 1Ug.pdb, 1Uh.pdb, 1Ui.pdb and 1Uj.pdb), clusters for 2Up like conformations (2Ula.pdb and 2Ulb.pdb)and 1Up/open conformation (1U_O.pdb). 
+url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Up.zip
+institution: Riken
+creator: Sugita Lab
+
