@@ -2,7 +2,7 @@ name: "Trimeric SARS-CoV-2 spike glycoprotein (Down state) with and without simu
 pdbids:
   - 6vxx
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
