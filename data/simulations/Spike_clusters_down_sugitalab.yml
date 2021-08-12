@@ -2,7 +2,7 @@ name: "Clusters center of gREST from Down State simulations"
 pdbids:
   - 6vxx
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
