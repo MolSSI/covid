@@ -2,7 +2,7 @@ name: "Cluster ensemble of 2UP like conformations"
 pdbids:
   - 6vyb
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
