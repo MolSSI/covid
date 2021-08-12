@@ -2,7 +2,7 @@ name: "Clusters center of gREST from 1Up State simulations"
 pdbids:
   - 6vyb
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
