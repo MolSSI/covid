@@ -2,7 +2,7 @@ name: "Cluster ensemble of 1UP top populated cluster"
 pdbids:
   - 6vyb
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
