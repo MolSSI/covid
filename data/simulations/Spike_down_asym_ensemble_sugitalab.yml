@@ -13,7 +13,7 @@ structures:
     - 6vxx
 trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/D1_asym-30structures.pdb.zip
 size: 30.8 MB
-length: 300 ns
+length: 500 ns
 ensemble: NPT
 temperature: 310
 solvent: water
