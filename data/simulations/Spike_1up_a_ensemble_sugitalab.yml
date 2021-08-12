@@ -1,13 +1,24 @@
-name: "Cluster ensemble of 1UP top populated cluster"
-pdbids:
-  - 6vyb
-proteins:
-  - spike
-organism:
-  - SARS-Cov-2
+type: md
+title: Cluster ensemble of 1UP top populated cluster
 description: >
   30 PDB structures of the top populated cluster obtained from gREST_SSCR simulations starting from 1Up conformation.  Water molecules and Ions are removed from these PDB structures. 
-url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1Ua-30structures.pdb.zip
-institution: Riken
-creator: Sugita Lab
-
+creator: sugita lab
+organization: CPR
+institute: Riken
+models: 
+    - Spike_1up_sugitalab
+proteins: 
+    - spike
+structures: 
+    - 6vyb
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1Ua-30structures.pdb.zip
+size: 30.8 MB
+length: 300 ns
+ensemble: NPT
+temperature: 310
+solvent: water
+salinity: 0.15
+forcefields: 
+    - Charmm-36m
+    - TIP3P
+preprint: https://www.biorxiv.org/content/10.1101/2021.08.06.455384v1
