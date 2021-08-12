@@ -1,0 +1,14 @@
+name: "Trimeric SARS-CoV-2 spike glycoprotein (1Up state) with and without simulation box"
+pdbids:
+  - 6vyb
+proteins:
+  - spike
+organism:
+  - SARS-Cov-2
+description: >
+  PSF/PDB of Glycosylated Spike model in 1Up state from residue 28 to 1135 before and after the addition of water molecules and Ions.
+  The system was solvated, neutralized and salted with NaCl, with a final concentration of 0.15 M. 
+url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Up.zip
+institution: Riken
+creator: Sugita Lab
+
