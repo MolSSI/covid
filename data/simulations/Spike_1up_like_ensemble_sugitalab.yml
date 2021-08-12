@@ -1,13 +1,24 @@
-name: "Cluster ensemble of 1UP like conformation"
-pdbids:
-  - 6vxx
-proteins:
-  - spike
-organism:
-  - SARS-Cov-2
+type: md
+title: Cluster ensemble of 1UP like conformation
 description: >
   30 PDB structures of the 1Up like cluster obtained from gREST_SSCR simulations starting from Down conformation.  Water molecules and Ions are removed from these PDB structures. 
-url: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1U_L-30structures.pdb.zip
-institution: Riken
-creator: Sugita Lab
-
+creator: sugita lab
+organization: CPR
+institute: Riken
+models: 
+    - Spike_down_sugitalab
+proteins: 
+    - spike
+structures: 
+    - 6vxx
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1U_L-30structures.pdb.zip
+size: 30.8 MB
+length: 500 ns
+ensemble: NPT
+temperature: 310
+solvent: water
+salinity: 0.15
+forcefields: 
+    - Charmm-36m
+    - TIP3P
+preprint: https://www.biorxiv.org/content/10.1101/2021.08.06.455384v1
