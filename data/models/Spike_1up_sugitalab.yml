@@ -2,7 +2,7 @@ name: "Trimeric SARS-CoV-2 spike glycoprotein (1Up state) with and without simul
 pdbids:
   - 6vyb
 proteins:
-  - Spike
+  - spike
 organism:
   - SARS-Cov-2
 description: >
