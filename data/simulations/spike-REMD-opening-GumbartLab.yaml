@@ -1,0 +1,23 @@
+type: md
+title: PMF calculations of SARS-CoV-2 spike opening
+description: Conformations (~500) along the opening paths of the SARS-CoV-2 spike trimer with and without glycans as well as with the diproline mutation. Simulation systems were constructed with VMD, equilibrated initially with NAMD, and then used for two-dimensional replica-exchange umbrella sampling. Conformations provided here are taken from the minimum free-energy path between 1-RBD up and down states in each potential of mean force (PMF). Note that each DCD does not represent a continuous simulation trajecotry. Simulations used a 4-fs timestep enabled by hydrogen-mass repartitioning (HMR).
+creator: Gumbart lab
+institute: Georgia Institute of Technology
+models: 
+proteins: 
+    - spike
+    - RBD
+    - ACE2
+structures: 
+    - 6VYB
+    - 6XR8
+trajectory: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/GumbartGroup/spike-REMD-opening.tgz
+size: 962 MB
+ensemble: NPT
+temperature: 310
+solvent: water
+salinity: 0.15
+forcefields: 
+    - CHARMM36m
+    - TIP3P
+preprint: https://doi.org/10.1101/2021.08.12.456168
