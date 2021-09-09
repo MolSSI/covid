@@ -1,0 +1,28 @@
+type: md-cg
+title: Coarse-grained molecular dynamics simulations of SARS-CoV-2 envelope protein E in the pentameric form
+description: > 
+    1. The trajectories of coarse-grained (CG) molecular dynamics (MD) simulations of 
+       unmodified, palmitoylated SARS-CoV-2 E protein pentamer in a POPC bilayer. 
+    2. The trajectory of CG MD of system containing 2 pentamers in the curved membrane.
+creator: Alexander Kuzmin, Philipp Orekhov, Roman Astashkin, Valentin Gordeliy, Ivan Gushchin
+organization: Research Center for Molecular Mechanisms of Aging and Age-related Diseases
+lab: Valentin Gordeliy's Lab, Ivan Gushchin's Lab
+institute: Moscow Institute of Physics and Technology
+models: 
+    - E_protein_feig_membrane
+proteins: 
+    - E protein
+structures:
+    - https://github.com/feiglab/sars-cov-2-proteins/blob/master/Membrane/E_protein.pdb
+    - https://www.rcsb.org/structure/7k3g
+trajectory: https://doi.org/10.5281/zenodo.5232499
+size: 11.4 GB 
+length: 21 µs
+ensemble: NPT
+temperature: 323 
+pressure: 1 
+solvent: water
+salinity: 0.15
+forcefields:
+    - beta version of Martini 3 
+preprint: https://doi.org/10.1101/2021.03.10.434722
