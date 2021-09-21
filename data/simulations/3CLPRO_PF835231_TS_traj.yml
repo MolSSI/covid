@@ -1,0 +1,27 @@
+type: md
+title: 10 ps simulation of Transition State of the SARS-CoV2 3CLpro in complex with the PF-00832531 inhibitor all atom simulation
+description: 10 ps Molecular Dynamics simulations at B3LYP level of the Transition State of the enzyme-inhibitor (EI) complex built from the 6XHM PDB structure
+creator: "Carlos A. Ramos-Guzmán, J. Javier Ruiz-Pernía, Iñaki Tuñón"
+organization: Universidad de Valencia
+lab: Efectos del medio
+institute: "Departamento de Química Física"
+models:
+    - 6XHM
+proteins:
+    - 3CLpro
+structures:
+    - https://www.rcsb.org/structure/6XHM
+trajectory: https://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPRO_PF835231_TS_traj
+size: 1.1 GB
+length: 10 ps
+ensemble: NVT
+temperature: 300
+solvent: Water
+forcefields:
+    - ff14SB
+    - TIP3P
+    - GAFF
+references:
+    - "Zinovjev, K.; Tuñón, I. Adaptive Finite Temperature String Method in Collective Variables. J. Phys. Chem. A 2017, 121 (51), 9764–9772."
+    - "Zinovjev, K. String-Amber https://github.com/kzinovjev/string-amber"
+preprint: https://chemrxiv.org/engage/chemrxiv/article-details/60c756aa9abda25e61f8e585
