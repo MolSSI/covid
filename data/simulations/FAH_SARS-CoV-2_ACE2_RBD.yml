@@ -12,7 +12,7 @@ description: >
   Brief details appear below.
 
 
-  Preprint link will be posted shortly.
+  Publication: https://doi.org/10.1016/j.cell.2021.01.037
 
 
   **System preparation:**
@@ -103,4 +103,4 @@ forcefields:
     - AMBER14SB
     - GLYCAM_06j-1
     - TIP3P
-#preprint: null
+publication: https://doi.org/10.1016/j.cell.2021.01.037
