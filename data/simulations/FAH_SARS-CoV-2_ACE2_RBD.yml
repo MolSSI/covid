@@ -92,7 +92,7 @@ structures:
     - 6m0j
     - 1R42
 trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5
-size: 2.1 TB
+size: 341 GB # munged size
 length: 725.3 µs
 ensemble: NPT
 temperature: 310
