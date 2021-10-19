@@ -58,7 +58,7 @@ proteins:
     - RBD
 structures:
     - 7m7w
-trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347/run0-clone0.h5
 size: 210.3 GB # raw + munged sizes
 length: 623.7 us
 ensemble: NPT
