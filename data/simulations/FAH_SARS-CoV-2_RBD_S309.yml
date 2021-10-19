@@ -26,11 +26,11 @@ description: >
   The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
   A single trajectory (RUN0 CLONE0) (~42 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341/run0-clone0.h5 .
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341/run0-clone0.h5 .
    ```
   All HDF5 trajectories can be retrieved with
    ```bash
-   aws s3 --no-sign-request sync s3://https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341.
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341 .
    ```
   **Entire dataset:**
   The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
@@ -39,12 +39,12 @@ description: >
   `CLONE`s denote different independent replica trajectories.
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
-   ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/raw-data/PROJ17341 .
+   ```bash   
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/raw-data/PROJ17341 .
    ```
   **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/setup-files/17341 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/setup-files/17341 .
    ```
   **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
   **License:** All data is freely available under the Creative Commons [CC0 ("No Rights Reserved")](https://creativecommons.org/share-your-work/public-domain/cc0/) license.
