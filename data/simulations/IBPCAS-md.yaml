@@ -1,0 +1,24 @@
+type: md
+title: The effect of N- glycosylation of SARS-CoV-2 spike protein on the virus interaction with the host cell ACE2 receptor
+description: >
+    MD simulation of the complex between the s1 region of the SARS-CoV-2
+    spike and ace2 receptor of the human.
+    
+creator: Zeshun Tan
+organization: Institute of Biophysics, Chinese Academy of Sciences
+lab: Liyan Lab
+proteins: 
+    - spike
+files: 
+    - https://1drv.ms/u/s!AifDclhiAP1rgtFfC_w3lhU2vjeefg?e=4HNKhB 
+size: 22 GB
+length: 6 system, 150 ns each
+ensemble: NPT
+temperature: 303.15 
+pressure: 1    
+solvent: water
+forcefields: 
+    - CHARMM36
+references:
+    - "Huang, Chuncui et al. “The effect of N-glycosylation of SARS-CoV-2 spike protein on the virus interaction with the host cell ACE2 receptor.” iScience, 103272. 13 Oct. 2021, doi:10.1016/j.isci.2021.103272"
+  
