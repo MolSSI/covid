@@ -1,0 +1,41 @@
+type: md
+title: The effect of N- glycosylation of SARS-CoV-2 spike protein on the virus interaction with the host cell ACE2 receptor
+description: >
+    MD simulation of the complex between the s1 region of the SARS-CoV-2
+    spike and ace2 receptor of the human.
+    * SARS-CoV-2
+    * SARS-CoV-2\S1 without glycan\md_150.xtc
+    * SARS-CoV-2\S1-A2F\md_150.xtc
+    * SARS-CoV-2\S1-A3F\md_150.xtc
+    * SARS-CoV-2\S1-Man5\md_150.xtc
+    * SARS-CoV-2\S1-NA2F\md_150.xtc
+    * SARS-CoV-2\S1-NA3F\md_150.xtc
+    
+creator: Zeshun Tan
+organization: Institute of Biophysics, Chinese Academy of Sciences
+lab: Liyan Lab
+proteins: 
+    - spike
+trajectories: 
+    * SARS-CoV-2\S1 without glycan\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtFtqMumW51oFGnPQg?e=ktpcoA
+    * SARS-CoV-2\S1-A2F\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtFu9E8TJ3JLVK8Esg?e=Fyc2yq
+    * SARS-CoV-2\S1-A3F\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtF25cinKxkbG3XkHA?e=30CcVz
+    * SARS-CoV-2\S1-Man5\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtFrAaOkB6K7K5h03Q?e=gd8ObV              
+    * SARS-CoV-2\S1-NA2F\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtF0peKb93ZyjmhkiA?e=EEfFjZ
+    * SARS-CoV-2\S1-NA3F\md_150.xtc
+      - https://1drv.ms/u/s!AifDclhiAP1rgtF1gHoHjM4zfTOqCw?e=hZ1aQ5
+size: 22 GB
+length: 6 system, 150 ns each
+ensemble: NPT
+temperature: 303.15 
+pressure: 1    
+solvent: water
+forcefields: 
+    - CHARMM36
+references:
+    - "Huang, Chuncui et al. “The effect of N-glycosylation of SARS-CoV-2 spike protein on the virus interaction with the host cell ACE2 receptor.” iScience, 103272. 13 Oct. 2021, doi:10.1016/j.isci.2021.103272"
