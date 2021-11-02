@@ -30,7 +30,7 @@ description: >
    ```
   All HDF5 trajectories can be retrieved with
    ```bash
-   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17341 .
    ```
   **Entire dataset:**
   The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
