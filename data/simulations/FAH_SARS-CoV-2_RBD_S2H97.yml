@@ -7,7 +7,7 @@ description: >
   [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
   Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ab-contact-analysis/).
   Brief details appear below.
-  Preprint link: https://www.biorxiv.org/content/10.1101/2021.04.06.438709v1
+  Publication: https://doi.org/10.1038/s41586-021-03807-6
   **System preparation:**
   The RBD:S2H97 complex was constructed from PDB ID 7M7W (Chains S, C, and D). 
   7M7W was first refined using ISOLDE to better fit the experimental electron density using detailed manual inspection. 
@@ -25,11 +25,11 @@ description: >
   The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
   A single trajectory (RUN0 CLONE0) (~29 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347/run0-clone0.h5 .
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347/run0-clone0.h5 .
    ```
   All HDF5 trajectories can be retrieved with
    ```bash
-   aws s3 --no-sign-request sync s3://https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347.
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347 .
    ```
   **Entire dataset:**
   The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
@@ -39,11 +39,11 @@ description: >
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
   for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/raw-data/PROJ17347 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/raw-data/PROJ17347 .
    ```
   **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/setup-files/17347 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-antibody/setup-files/17347 .
    ```
   **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
   **License:** All data is freely available under the Creative Commons [CC0 ("No Rights Reserved")](https://creativecommons.org/share-your-work/public-domain/cc0/) license.
@@ -58,8 +58,8 @@ proteins:
     - RBD
 structures:
     - 7m7w
-trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347
-size: 210.3 GB
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-antibody/munged/solute/17347/run0-clone0.h5
+size: 60 GB # munged size
 length: 623.7 us
 ensemble: NPT
 temperature: 310
@@ -70,4 +70,4 @@ forcefields:
     - AMBER14SB
     - GLYCAM_06j-1
     - TIP3P
-preprint: https://www.biorxiv.org/content/10.1101/2021.04.06.438709v1
+publication: https://doi.org/10.1038/s41586-021-03807-6

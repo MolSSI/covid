@@ -1,0 +1,67 @@
+target: spike binding
+type: md
+title: Folding@home simulations of the apo SARS-CoV-2 spike RBD (without glycosylation)
+description: >
+  All-atom MD simulations of the SARS-CoV-2 spike protein receptor binding domain (RBD) (without glycosylation), simulated using
+  [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
+  Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis/tree/main/additional_data/6m0j_RBD_noglycos).
+  Brief details appear below.
+  Publication: https://doi.org/10.1016/j.cell.2021.01.037
+  **System preparation:**
+  The RBD complex was constructed from PDB ID 6M0J (Chain B). 
+  6M0J was refined using ISOLDE to better fit the experimental electron density using detailed manual inspection. The N343 glycan and ACE2 (+ associated glycans) were then deleted.
+  The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
+  Simulations were run with OpenMM 7.4.2 (Folding@home core22 0.0.13).
+  Production simulations used the same Langevin integrator as the NPT equilibration described above.
+  In total, 2995 independent MD simulations were generated on Folding@home.
+  Conformational snapshots (frames) were stored at an interval of 1 ns/frame for subsequent analysis.
+  The resulting final dataset contained 2995 trajectories, 1.9 ms of aggregate simulation time.
+  **Solute-only trajectories:**
+  The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
+  A single trajectory (RUN0 CLONE0) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-apo/munged/solute/17313/run0-clone0.h5 .
+   ```
+  All HDF5 trajectories can be retrieved with
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-apo/munged/solute/17313 .
+   ```
+  **Entire dataset:**
+  The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
+  The dataset consists of a single project (`PROJ17313`) and has a `RUN*/CLONE*/result*` directory structure.
+  `RUNs` denote different equilibrated starting structures.
+  `CLONE`s denote different independent replica trajectories.
+  To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
+  for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-apo/raw/PROJ17313 .
+   ```
+  **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+   ```bash
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-RBD-apo/setup-files/17313 .
+   ```
+  **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
+  **License:** All data is freely available under the Creative Commons [CC0 ("No Rights Reserved")](https://creativecommons.org/share-your-work/public-domain/cc0/) license.
+creator: Ivy Zhang
+organization: Folding@home
+lab: Chodera lab
+institute: Memorial Sloan Kettering Cancer Center
+models: 
+    - 6m0j-glass-noglycos
+proteins:
+    - spike
+    - RBD
+structures:
+    - 6m0j
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-RBD-apo/munged/solute/17313/run0-clone0.h5
+size: 49 GB # munged size
+length: 1.9 ms
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.150
+forcefields:
+    - AMBER14SB
+    - TIP3P
+publication: https://doi.org/10.1016/j.cell.2021.01.037

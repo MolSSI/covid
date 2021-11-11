@@ -1,0 +1,14 @@
+name: "SARS-CoV-2 spike receptor-binding domain: ISOLDE refined model without N343 glycan"
+pdbids:
+  - 6m0j
+proteins:
+  - spike
+  - RBD
+organism:
+  - SARS-CoV-2
+description: >
+  Takes the RBD (Chain E) from the [6m0j refined model](https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j/isolde/6m0j_refine_14.pdb) and refines clashes using ISOLDE.
+  See [a complete description](https://github.com/choderalab/rbd-ace2-contact-analysis/blob/main/additional_data/6m0j_RBD_noglycos/README.md) of the workflow for building and refining the model.
+url: https://github.com/choderalab/rbd-ace2-contact-analysis/blob/main/additional_data/6m0j_RBD_noglycos/PDBs/RBD_6m0j_refine_14_capped_noglycos_cleaned.pdb
+pdb_url: https://www.rcsb.org/structure/6M0J
+creator: William Glass

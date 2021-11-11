@@ -1,88 +1,64 @@
 target: spike binding
 type: md
-title: Folding@home simulations of the SARS-CoV-2 spike RBD bound to human ACE2
+title: Folding@home simulations of the SARS-CoV-2 spike RBD with N501Y mutation bound to human ACE2
 description: >
-  All-atom MD simulations of the SARS-CoV-2 spike protein receptor binding domain (RBD) bound to
+  All-atom MD simulations of the SARS-CoV-2 spike protein receptor binding domain (RBD) with N501Y mutation bound to
   human angiotensin converting enzyme-related carboypeptidase (ACE2), simulated using
   [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
-  The "wild-type" RBD and three mutants (N439K, K417V, and the double mutant N439K/K417V) were simulated.
-
-
-  Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis).
+  Complete details of this simulation are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis/tree/main/additional_data/N501Y_WT).
   Brief details appear below.
-
-
   Publication: https://doi.org/10.1016/j.cell.2021.01.037
-
-
   **System preparation:**
   The RBD:ACE2 complex was constructed from individual RBD (PDB: [6m0j](https://www.rcsb.org/structure/6M0J), Chain E) and ACE2 (PDB: [1r42](https://www.rcsb.org/structure/1R42), Chain A) monomers aligned to the full RBD:ACE2 structure (PDB: [6m0j]((https://www.rcsb.org/structure/6M0J)).
   These structural models were further refined by Tristan Croll using [ISOLDE](https://isolde.cimr.cam.ac.uk/) ([Croll, 2018](https://doi.org/10.1107/S2059798318002425)) and deposited in the [Coronavirus Structural Taskforce (CST) database](https://github.com/thorn-lab/coronavirus_structural_task_force) ([Croll et al., 2020](https://doi.org/10.1101/2020.10.07.307546)) to produce
   [refined 6m0j](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j)
   and [refined 1r42](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/human_interaction_partners/ACE2/1r42/isolde/notes.txt) models.
+  The RBD N501 was mutated to TYR using PyMOL 2.3.2](http://pymol.org).
   The resulting RBD and ACE2 monomers were then aligned in [PyMOL 2.3.2](http://pymol.org) to the [CST 6m0j structure](https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j) to create an initial RBD:ACE2 complex.
-
-
   Full glycosylation patterns for ACE2 and RBD glycans were determined from [Shajahan et al.](http://dx.doi.org/10.1093/glycob/cwaa101)
   For the constructed RBD:ACE2 complex, these included sites: N53, N90, N103, N322, N432, N546, and N690 on ACE2 and N343 on the RBD.
   Base NAG residues of each glycan structure (FA2, FA26G1, FA2, FA2, FA2G2, A2, FA2, FA2G2, respectively) were acquired from [Elisa Fadda](https://www.maynoothuniversity.ie/people/elisa-fadda).
   Each glycan was then aligned to the corresponding NAG stub in the RBD:ACE2 model in and any resulting clashes were refined in [ISOLDE](https://isolde.cimr.cam.ac.uk/).
   Full details of the glycosylation patterns / structures used and full workflow are available [here](https://github.com/choderalab/rbd-ace2-contact-analysis).
-
-
   **Folding@home simulation:**
   The equilibrated structure was then used to initiate parallel distributed MD simulations on Folding@home ([Shirts and Pande, 2000](https://science.sciencemag.org/content/290/5498/1903.full), [Zimmerman et al., 2020](https://doi.org/10.1101/2020.06.27.175430)).
   Simulations were run with OpenMM 7.4.2 (Folding@home core22 0.0.13).
   Production simulations used the same Langevin integrator as the NpT equilibration described above.
-  In total, 8000 independent MD simulations were generated on Folding@home.
-  Conformational snapshots (frames) were stored at an interval of 0.5 ns/frame for subsequent analysis.
-  The resulting final dataset contained 8000 trajectories, 725.3 us of aggregate simulation time, and 1450520 frames.
-
+  In total, 5000 independent MD simulations were generated on Folding@home.
+  Conformational snapshots (frames) were stored at an interval of 1 ns/frame for subsequent analysis.
+  The resulting final dataset contained 5000 trajectories and 953.7 µs of aggregate simulation time.
   **Solute-only trajectories:**
   The solute-only trajectories (with counterions) are available as [MDTraj HDF5 files](https://mdtraj.org/1.9.4/hdf5_format.html) that contain both topology and trajectory information.
-  A single trajectory of the WT RBD (RUN3) (~30 MB) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
+  A single trajectory of the WT RBD (RUN3) can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5 .
+   aws s3 --no-sign-request cp s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/17344/run0-clone0.h5 .
    ```
-
-
-  All HDF5 trajectories (~300 GB) can be retrieved with
+  All HDF5 trajectories can be retrieved with
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/17344 .
    ```
-
   **Entire dataset:**
   The raw Folding@home dataset is made available through the [AWS Open Data Registry](https://registry.opendata.aws/foldingathome-covid19/) and can be retrieved through the [AWS CLI](https://aws.amazon.com/cli/).
-  The dataset consists of a single project (`PROJ17311`) and has a `RUN*/CLONE*/result*` directory structure.
-  `RUNs` denote different RBD mutants: N439K (`RUN0`), K417V (`RUN1`), N439K/K417V (`RUN2`), and WT (`RUN3`).
+  The dataset consists of a single project (`PROJ17344`) and has a `RUN*/CLONE*/result*` directory structure.
+  `RUNs` denote different equilibrated starting structures.
   `CLONE`s denote different independent replica trajectories.
-
-
   To retrieve raw trajectory files in [gromacs XTC format](http://manual.gromacs.org/archive/5.0.4/online/xtc.html)
-  for the whole dataset (7 TB), you can use the [AWS CLI](https://aws.amazon.com/cli/):
+  for the whole dataset, you can use the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/raw-data/PROJ17311 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/raw-data/PROJ17344 .
    ```
-
-
   **Folding@home initial files:** System setup and input files can be downloaded using the [AWS CLI](https://aws.amazon.com/cli/):
    ```bash
-   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/setup/PROJ17311 .
+   aws s3 --no-sign-request sync s3://fah-public-data-covid19-antibodies/vir-collaboration/SARS-CoV-2-ACE2-RBD/setup/17344 .
    ```
-
-
   **Contributors:** Ivy Zhang, William G. Glass, Tristan I. Croll, Aoife M. Harbison, Elisa Fadda, John D. Chodera.
-
-
   **License:** All data is freely available under the Creative Commons [CC0 ("No Rights Reserved")](https://creativecommons.org/share-your-work/public-domain/cc0/) license.
-
-
 creator: Ivy Zhang
 organization: Folding@home
 lab: Chodera lab
 institute: Memorial Sloan Kettering Cancer Center
 models: 
-    - 6m0j-glass
+    - 6m0j-glass-N501Y
     - 1r42-glass
 proteins:
     - spike
@@ -91,9 +67,9 @@ proteins:
 structures:
     - 6m0j
     - 1R42
-trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17311/run3-clone0.h5
-size: 341 GB # munged size
-length: 725.3 µs
+trajectory: https://fah-public-data-covid19-antibodies.s3.us-east-2.amazonaws.com/vir-collaboration/SARS-CoV-2-ACE2-RBD/munged/solute/PROJ17344/run0-clone0.h5
+size: 132 GB # munged size
+length: 953.7 µs
 ensemble: NPT
 temperature: 310
 pressure: 1
