@@ -317,6 +317,7 @@ class SimulationsModel(BaseModel):
     references: Optional[List[str]]
     publication: Optional[AnyUrl]
     preprint: Optional[Union[AnyUrl, Submitted]]
+    bioexcel_accessions: Optional[List[str]]
 
     @validator('rating')
     def rating_valid(cls, v):

@@ -182,6 +182,14 @@ footer {
   font-size: 90%;
 }
 
+.ifbox {
+  display: inline-block;
+}
+
+.defaulthide {
+  display: none;
+}
+
 .logo-img-box {
     display: inline;
     margin: 0px;

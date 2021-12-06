@@ -74,6 +74,30 @@
                 </tr>
         </table>
 
+        <!-- Links to the BioExcel Files -->
+        {{ if .simulation.bioexcel_accessions }}
+            {{ range .simulation.bioexcel_accessions }}
+                <div class="ifbox">
+                    <iframe class="defaulthide" data-src="https://bioexcel-cv19.bsc.es/#/embed/{{.}}" src="about:blank" title="BioExcel-CV19 Accessions {{.}}" id="iframe{{.}}" width="500" height="400" frameborder="0" allowfullscreen></iframe>
+                    <div>
+                        <!-- Button to load trajectory and link out respectively-->
+                        BioExcel Trajectory Analysis Project: {{.}}
+                        <button class="btn btn-primary" id="btn{{.}}">Load Trajectory</button>
+                        <button class="btn btn-primary" onclick="window.open('https://bioexcel-cv19.bsc.es/#/browse/{{.}}/overview','_blank')">Go To BioExcel Analysis</button>
+                    </div>
+                    <!-- Button script to show frame and load data-->
+                    <script>
+                        $('#btn{{.}}').click(function() {
+                            var iframe = $("#iframe{{.}}");
+                            iframe.show();
+                            iframe.attr("src", iframe.data("src"));
+                        });
+                    </script>
+                </div>
+            {{ end }}
+
+        {{ end }}
+
         <h5 align="left">
             <b>Input and Supporting Files:</b>
             {{ if .simulation.files }}

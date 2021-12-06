@@ -21,3 +21,7 @@ forcefields:
     - CHARMM36
     - TIP3P
 publication: https://doi.org/10.1021/acscentsci.0c01056
+bioexcel_accessions:
+    - MCV1900193
+    - MCV1900194
+    - MCV1900195
