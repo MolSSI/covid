@@ -8,24 +8,16 @@
     {{ range $mname, $mcontent := $.context.Site.Data.models }}
         {{ $model_id := $localScratch.Get "model_id"}}
         {{ if eq $mname $model_id }}
-            {{ $targets := partial "list-model-targets" (dict "model" . "context" $.context ) }}
+            {{ $targets := partial "list-model-targets-renew" (dict "model" . "structureMap" $.structureMap "proteinMap" $.proteinMap ) }}
             {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
         {{ end }}
     {{ end }}
 {{ end }}
 
+
 {{ range .simulation.proteins }}
-    {{ $localScratch.Set "sim_protein" . }}
-    {{ range $.context.Site.Data.proteins }}
-        {{ $localScratch.Set "protein" . }}
-        {{ $sim_protein := ($localScratch.Get "sim_protein" | upper) }}
-        {{ if eq (.protein | upper) $sim_protein }}
-            {{ if ($localScratch.Get "protein").targets }}
-                {{ $targets := partial "ensure-slice" ($localScratch.Get "protein").targets }}
-                {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $targets := index $.proteinMap (. | upper) | default slice }}
+    {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
 {{ end }}
 
 {{ return (uniq ($localScratch.Get "targets")) }}

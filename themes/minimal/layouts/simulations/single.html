@@ -6,6 +6,8 @@
 {{ $target_map := partial "target-map" . }}
 {{ $protein_map := partial "protein-map" . }}
 {{ $sim_map := partial "sim-map" . }}
+{{ $structure_to_targets := partial "structure-to-targets" . }}
+{{ $protein_to_targets := partial "protein-to-targets" . }}
 {{ $domain_sort := partial "master-domain-index" . }}
 {{ $domain_keys := $domain_sort.keys }}
 {{ $domain_titles := $domain_sort.titles }}
@@ -88,7 +90,7 @@
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $target := $localScratch.Get "target" }}
                     <!-- Get the Targets by all the PDBs... Using a helper function -->
-                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (in $known_targets $target) }}
                         {{ $localScratch.Set "has_content" true }}
                     {{ end }}
@@ -100,7 +102,7 @@
                     {{ range sort $.Site.Data.simulations "rating" "desc" }}
                         {{ $protein := $localScratch.Get "protein" }}
                         {{ $target := $localScratch.Get "target" }}
-                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                         {{ if and (in .proteins $protein) (in $known_targets $target) }}
                             {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
                         {{ end }}
@@ -110,7 +112,7 @@
             <!-- Special Case of having no targets -->
             {{ range sort $.Site.Data.simulations "rating" "desc" }}
                 {{ $protein := $localScratch.Get "protein" }}
-                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                 {{ if and (in .proteins $protein) (not $known_targets) }}
                     {{ $localScratch.Set "has_content" true }}
                 {{ end }}
@@ -120,7 +122,7 @@
                 <!-- Finally Structures -->
                 {{ range sort $.Site.Data.simulations "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
-                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (not $known_targets) }}
                         {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
                     {{ end }}
@@ -148,7 +150,7 @@
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $target := $localScratch.Get "target" }}
                     <!-- Get the Targets by all the PDBs... Using a helper function -->
-                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (in $known_targets $target) }}
                         {{ $localScratch.Set "has_content" true }}
                     {{ end }}
@@ -160,7 +162,7 @@
                     {{ range sort $.Site.Data.simulations "rating" "desc" }}
                         {{ $protein := $localScratch.Get "protein" }}
                         {{ $target := $localScratch.Get "target" }}
-                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                        {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                         {{ if and (in .proteins $protein) (in $known_targets $target) }}
                             {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
                         {{ end }}
@@ -170,7 +172,7 @@
             <!-- Special Case of having no targets -->
             {{ range sort $.Site.Data.simulations "rating" "desc" }}
                 {{ $protein := $localScratch.Get "protein" }}
-                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                 {{ if and (in .proteins $protein) (not $known_targets) }}
                     {{ $localScratch.Set "has_content" true }}
                 {{ end }}
@@ -180,7 +182,7 @@
                 <!-- Finally Structures -->
                 {{ range sort $.Site.Data.simulations "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
-                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "context" $ ) }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (not $known_targets) }}
                         {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
                     {{ end }}
