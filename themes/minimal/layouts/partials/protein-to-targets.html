@@ -1,0 +1,20 @@
+<!-- Helper function to map proteins to targets by a lookup -->
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "target-map" dict }}
+
+{{ range $.Site.Data.proteins }}
+    {{ $localScratch.Set "protein" . }}
+    {{ if .targets }}
+        <!-- Set the local set of targets to empty slice -->
+        {{ $localScratch.Set "targets" (partial "ensure-slice" .targets) }}
+        <!-- Get the existing key in the map, if its not there, make a default slice-->
+        {{ $proteinTargets := index ($localScratch.Get "target-map") (.protein | upper ) | default slice }}
+        <!-- Expand the unique slice of targets -->
+        {{ $proteinTargets := $proteinTargets | append ($localScratch.Get "targets") | uniq }}
+        <!-- Reset the key, since we pulled the whole key the first time, we can just set again -->
+        {{ $localScratch.Set "target-map" (merge ($localScratch.Get "target-map") (dict (.protein | upper) $proteinTargets)) }}
+    {{ end }}
+{{ end }}
+
+{{ return ($localScratch.Get "target-map") }}

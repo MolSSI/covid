@@ -1,0 +1,30 @@
+<!-- Helper function to map structures to targets by a lookup -->
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "target-map" dict }}
+
+{{ range $.Site.Data.structures }}
+    {{ $localScratch.Set "structure" . }}
+    {{ if .targets }}
+        <!-- Set the local set of targets to empty slice -->
+        {{ $localScratch.Set "targets" (partial "ensure-slice" .targets) }}
+        {{ if .pdbid }}
+            <!-- Get the existing key in the map, if its not there, make a default slice-->
+            {{ $pdbTargets := index ($localScratch.Get "target-map") (.pdbid | upper ) | default slice }}
+            <!-- Expand the unique slice of targets -->
+            {{ $pdbTargets := $pdbTargets | append ($localScratch.Get "targets") | uniq }}
+            <!-- Reset the key, since we pulled the whole key the first time, we can just set again -->
+            {{ $localScratch.Set "target-map" (merge ($localScratch.Get "target-map") (dict (.pdbid | upper) $pdbTargets)) }}
+        {{ end }}
+        {{ if .unpublished_pdbid }}
+            <!-- Get the existing key in the map, if its not there, make a default slice-->
+            {{ $pdbTargets := index ($localScratch.Get "target-map") .unpublished_pdbid | default slice }}
+            <!-- Expand the unique slice of targets -->
+            {{ $pdbTargets := $pdbTargets | append ($localScratch.Get "targets") | uniq }}
+            <!-- Reset the key, since we pulled the whole key the first time, we can just set again -->
+            {{ $localScratch.Set "target-map" (merge ($localScratch.Get "target-map") (dict (.unpublished_pdbid | upper) $pdbTargets)) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ return ($localScratch.Get "target-map") }}

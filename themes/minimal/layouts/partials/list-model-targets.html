@@ -4,31 +4,13 @@
 {{ $localScratch.Set "targets" slice }}
 
 {{ range .model.pdbids }}
-    {{ $localScratch.Set "model_pdb" . }}
-    {{ range $.context.Site.Data.structures }}
-        {{ $localScratch.Set "structure" . }}
-        {{ $model_pdb := ($localScratch.Get "model_pdb" | upper) }}
-        {{ if or (eq (.pdbid | upper) $model_pdb) (eq (.unpublished_pdbid | upper) $model_pdb)}}
-            {{ if ($localScratch.Get "structure").targets }}
-                {{ $targets := partial "ensure-slice" ($localScratch.Get "structure").targets }}
-                {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $targets := index $.structureMap (. | upper) | default slice }}
+    {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
 {{ end }}
 
 {{ range .model.proteins }}
-    {{ $localScratch.Set "model_protein" . }}
-    {{ range $.context.Site.Data.proteins }}
-        {{ $localScratch.Set "protein" . }}
-        {{ $model_protein := ($localScratch.Get "model_protein" | upper) }}
-        {{ if eq (.protein | upper) $model_protein }}
-            {{ if ($localScratch.Get "protein").targets }}
-                {{ $targets := partial "ensure-slice" ($localScratch.Get "protein").targets }}
-                {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+    {{ $targets := index $.proteinMap (. | upper) | default slice }}
+    {{ $localScratch.Set "targets" (($localScratch.Get "targets") | append $targets )}}
 {{ end }}
 
 {{ return (uniq ($localScratch.Get "targets")) }}
