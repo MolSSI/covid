@@ -1,0 +1,21 @@
+name: gREST_SSCR simulation of trimeric SARS-CoV-2 Spike protein starting from 1Up conformation
+url: https://doi.datacite.org/dois/10.34974%2Fxn67-xk26
+doi: 10.34974/xn67-xk26
+description: 
+  Trimetric SARS-CoV-2 spike glycoprotein in the 1Up State with and without simulation box, and with and without glycan. Provided by the Sugita Lab of RIKEN
+content:
+  - Models of the glygoprotein and simulation clustering ensembles
+creator: Hisham M. Dokainish, Suyong Re, Takaharu Mori, Chigusa Kobayashi, Jaewoon Jung, and Yuji Sugita
+owner: RIKEN and the Sugita Lab
+file_types:
+  - PSF/PDB models
+  - PDB Trajectories
+files:
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Up.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Up.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1Ua-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1Ub-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1U_O-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/2UIb-30structures.pdb.zip
+purpose: Clustering simulation data for the spike glycoprotein starting in the 1Up state.
+size: ~150 MB, split evenly over files

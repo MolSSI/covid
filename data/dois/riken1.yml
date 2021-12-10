@@ -1,0 +1,23 @@
+name: gREST_SSCR simulation of trimeric SARS-CoV-2 Spike protein starting from Down conformation
+url: https://doi.datacite.org/dois/10.34974%2Fwtbx-0r84
+doi: 10.34974/wtbx-0r84
+description: 
+  Trimetric SARS-CoV-2 spike glycoprotein in the Down State with and without simulation box, and with and without glycan. Provided by the Sugita Lab of RIKEN
+content:
+  - Models of the glygoprotein and simulation clustering ensembles
+creator: Hisham M. Dokainish, Suyong Re, Takaharu Mori, Chigusa Kobayashi, Jaewoon Jung, and Yuji Sugita
+owner: RIKEN and the Sugita Lab
+file_types:
+  - PSF/PDB models
+  - PDB Trajectories
+files:
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Down.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Down_wo_glycan.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Down.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/D1_Sym-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/D1_asym-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/I2a-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/I3a-30structures.pdb.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/1U_L-30structures.pdb.zip
+purpose: Clustering simulation data for the spike glycoprotein starting in the down state.
+size: ~250 MB, split evenly over files
