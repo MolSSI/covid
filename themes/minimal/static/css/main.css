@@ -205,3 +205,7 @@ footer {
     width: auto;
     height: auto;
 }
+
+.dropdown {
+    display: inline-block;
+}
