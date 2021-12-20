@@ -1,0 +1,33 @@
+{{ $localScratch := newScratch }}
+
+{{ $localScratch.Set "output" dict }}
+{{ $localScratch.Set "accessionTitles" dict }}
+
+<!--Input is the JSON data in dict form from a BioExcel API call "projects" key-->
+<!--Loop over every index in the data-->
+{{ range . }}
+    <!--Set the accession key, we'll need it later-->
+    {{ $localScratch.Set "accession" .accession }}
+    <!--Create a map of Accession:Title, easier than embedding title into the Anchor:Accession-->
+    {{ $localScratch.Set "accessionTitles" (merge ($localScratch.Get "accessionTitles") (dict .accession .metadata.NAME)) }}
+    <!--There appears to only ever be 1 url in the data field, roll with it-->
+    {{ with (index .metadata.LINKS 0) }}
+        {{ $molssiURL := .url }}
+        {{ $anchor := path.Base $molssiURL }}
+        {{ $true_anchor := strings.TrimLeft "#" $anchor }}
+        <!--Get the current set of accessions associated with this key-->
+        {{ $output := $localScratch.Get "output" }}
+        {{ $accessions := index $output $true_anchor | default slice }}
+        <!--Make a unique list of accessions-->
+        {{ $accessions := ($accessions | append ($localScratch.Get "accession") | uniq) }}
+        <!--Set the key in the output dictionary locally-->
+        {{ $anchorDict := dict $true_anchor $accessions }}
+        <!--Merge the resulting dict into the existing one, overwritting any local changes-->
+        {{ $output := merge $output $anchorDict }}
+        <!--Finally pass the output to the outer context-->
+        {{ $localScratch.Set "output" $output }}
+    {{ end }}
+{{ end }}
+
+<!--Finally return the output with the Anchor:Accession and the Accession:Title dicts-->
+{{ return (dict "anchorMap" ($localScratch.Get "output") "accessionTitles" ($localScratch.Get "accessionTitles")) }}

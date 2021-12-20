@@ -12,6 +12,7 @@
 {{ $domain_keys := $domain_sort.keys }}
 {{ $domain_titles := $domain_sort.titles }}
 {{ $viral_sort := partial "viral-domain-sort" $ }}
+{{ $bioexcel_data := partial "bioexcel-api-get" . }}
 
 <main>
 
@@ -61,7 +62,7 @@
                 {{ range sort $.Site.Data.simulations "rating" "desc" }}
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ if (in .proteins $protein) }}
-                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "all" "context" $) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "all" "bioexcel_data" $bioexcel_data "context" $) }}
                     {{ end }}
                 {{ end }}
             {{ else }}
@@ -90,7 +91,7 @@
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $target := $localScratch.Get "target" }}
                     <!-- Get the Targets by all the PDBs... Using a helper function -->
-                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
+                    {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets) }}
                     {{ if and (in .proteins $protein) (in $known_targets $target) }}
                         {{ $localScratch.Set "has_content" true }}
                     {{ end }}
@@ -104,7 +105,7 @@
                         {{ $target := $localScratch.Get "target" }}
                         {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                         {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
+                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "bioexcel_data" $bioexcel_data "context" $) }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
@@ -124,7 +125,7 @@
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (not $known_targets) }}
-                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "bioexcel_data" $bioexcel_data "context" $) }}
                     {{ end }}
                 {{ end }}
             {{ end }}
@@ -164,7 +165,7 @@
                         {{ $target := $localScratch.Get "target" }}
                         {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                         {{ if and (in .proteins $protein) (in $known_targets $target) }}
-                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "context" $) }}
+                            {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" $target "bioexcel_data" $bioexcel_data "context" $) }}
                         {{ end }}
                     {{ end }}
                 {{ end }}
@@ -184,7 +185,7 @@
                     {{ $protein := $localScratch.Get "protein" }}
                     {{ $known_targets := partial "list-simulation-targets" (dict "simulation" . "structureMap" $structure_to_targets "proteinMap" $protein_to_targets ) }}
                     {{ if and (in .proteins $protein) (not $known_targets) }}
-                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "context" $) }}
+                        {{ partial "simulation-entry" (dict "simulation" . "protein" $protein "target" "nil" "bioexcel_data" $bioexcel_data "context" $) }}
                     {{ end }}
                 {{ end }}
             {{ end }}

@@ -1,0 +1,39 @@
+{{ $localScratch := newScratch }}
+{{ $totalPages := 1 }}
+
+<!--Wrap the API calls in backticks ` to have Hugo ignore all the characters inside and treat as raw string-->
+
+<!-- Make the first call -->
+{{ $bioexcel_raw := getJSON `https://bioexcel-cv19.bsc.es/api/rest/v1/projects?query={"metadata.LINKS":{"$elemMatch":{"url":{"$regex":"https://covid.molssi.org//simulations/"}}}}&projection={"accession":true,"metadata.NAME":true,"metadata.LINKS":true}&limit=100` }}
+{{ $filtered_count := index $bioexcel_raw "filteredCount" }}
+<!--Determine if there are extra pages-->
+{{ if gt $filtered_count 0 }}
+    {{ $localScratch.Set "extra_pages" (math.Floor (div $filtered_count 100)) }}
+{{ else }}
+    {{ $localScratch.Set "extra_pages" 0 }}
+{{ end }}
+{{ $extra_pages := $localScratch.Get "extra_pages" }}
+<!--Store intial data, go get more for now-->
+{{ $localScratch.Set "projects" $bioexcel_raw.projects }}
+
+<!--Loop through extra pages if there-->
+{{ if gt $extra_pages 0 }}
+    {{ range $num := (seq $extra_pages) }}
+        <!--Set the correct page numbe-->
+        {{ $page := add $num 1 }}
+        <!--Cast the URL string using the print statement because LOL string parsing in Hugo-->
+        {{ $pageURL := print `https://bioexcel-cv19.bsc.es/api/rest/v1/projects?query={"metadata.LINKS":{"$elemMatch":{"url":{"$regex":"https://covid.molssi.org//simulations/"}}}}&projection={"accession":true,"metadata.NAME":true,"metadata.LINKS":true}&limit=100` "&page=" $page }}
+        <!--Get the paginated data-->
+        {{ $bioexcel_page := getJSON $pageURL }}
+        <!--localize the fetched projects and top level projects-->
+        {{ $local_projects := $bioexcel_page.projects }}
+        {{ $top_projects := $localScratch.Get "projects" }}
+        <!--Merge projects together into a single slice, should be 0 collisions unless bioexcel pages mid Hugo build (very unlikely) -->
+        {{ $localScratch.Set "projects" (append $top_projects $local_projects) }}
+    {{ end }}
+{{ end }}
+
+<!--Parse projects into a map of COVID-19 Hub URL : accession number list-->
+{{ $anchors_and_accession := partial "bioexcel-accession-map-gen" ($localScratch.Get "projects") }}
+
+{{ return $anchors_and_accession }}

@@ -7,6 +7,8 @@
 {{ $localScratch.Set "protein_map" (partial "protein-map" .context) }}
 {{ $localScratch.Set "thera_by_protein" (partial "thera-by-protein" .context) }}
 {{ $md_type_map := dict "md" "Molecular Dynamics" "mc" "Monte Carlo" "md-cg" "Coarse Grained Molecular Dynamics" "md-we" "Weighted Ensemble Molecular Dynamics" "mc-cg" "Coarse Grained Monte Carlo" "docking" "Docking" }}
+{{ $bioexcel_anchors_accession := .bioexcel_data.anchorMap }}
+{{ $bioexcel_accession_titles := .bioexcel_data.accessionTitles }}
 
 <div class="col col-9">
 
@@ -73,6 +75,63 @@
                     <td>{{ range .simulation.forcefields }} {{ . }}<br>{{ end }}</td>
                 </tr>
         </table>
+
+        <!-- Links to the BioExcel Files -->
+        <!-- Pull the index of the URL in the BioExcel entry. Have to cast to URL and then lcase it-->
+        <!--Casting to URL is the mainly because of the UTF-8 site encoding which casts "micro" to "%C2%B5"-->
+        <!--https://www.charset.org/utf-8-->
+        {{ if (index $bioexcel_anchors_accession (urlize $entry_name | lower) ) }}
+            <!--Try to create a unique id for this iframe box-->
+            {{ $id_hash := md5 $entry_id }}
+            {{ $localScratch.Set "id_hash" $id_hash }}
+            <div class="ifbox">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select BioExcel Accession Number
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        {{ range (index $bioexcel_anchors_accession (urlize $entry_name | lower) ) }}
+                            {{ $id_hash := $localScratch.Get "id_hash" }}
+                            <li><a id=Opt{{.}}{{$id_hash}} href="#">{{.}}: {{index $bioexcel_accession_titles .}}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <br>
+                <div class="defaulthide" id="title{{$id_hash}}">Title Here</div> <!--This default text should not be seen initially-->
+                <iframe class="defaulthide" data-src="https://bioexcel-cv19.bsc.es/#/embed/" src="about:blank" title="BioExcel-CV19 Accessions" id="iframe{{$id_hash}}" width="500" height="400" frameborder="0" allowfullscreen></iframe>
+                <button class="btn btn-primary" id="btn{{$id_hash}}" disabled>Please Select Accession Number with Dropdown</button>
+                <!-- Script to change button, show frame and load data on dropdown selection -->
+                <!-- Have to put script down here since it cant be in the UL classes, so have to loop again -->
+                <!-- Loop over the entries in the dropdown,
+                     Change the text in the div (https://stackoverflow.com/questions/2554149/html-javascript-change-div-content)
+                     Make Trajectory title div visible. (https://stackoverflow.com/questions/21070101/show-hide-div-using-javascript)
+                     Disable main event (redirect anchor, https://stackoverflow.com/questions/11989146/event-handlers-for-twitter-bootstrap-dropdowns),
+                     Enable the main button (https://www.w3schools.com/jsref/prop_pushbutton_disabled.asp),
+                     Change button click url (https://stackoverflow.com/questions/15097315/change-onclick-attribute-with-javascript/23412811),
+                     Change button text (https://stackoverflow.com/questions/12679813/how-to-change-button-text-or-link-text-in-javascript)
+                     Enable the iframe (https://stackoverflow.com/questions/12102464/how-do-i-make-iframes-load-only-on-a-button-click),
+                        (and https://stackoverflow.com/questions/13437091/is-it-possible-to-not-load-an-iframe-in-a-hidden-div-until-the-div-is-displayed)
+                     Set the iframe src to the URL
+                -->
+                <script>
+                    {{ range (index $bioexcel_anchors_accession (urlize $entry_name | lower) ) }}
+                        {{ $id_hash := $localScratch.Get "id_hash" }}
+                        $('#Opt{{.}}{{$id_hash}}').click(function(e) {
+                            e.preventDefault();
+                            var div = document.getElementById("title{{$id_hash}}");
+                            div.innerHTML = "{{.}}: {{index $bioexcel_accession_titles .}}";
+                            div.style.display = 'inline-block';
+                            var btn = document.getElementById('btn{{$id_hash}}');
+                            btn.setAttribute('onclick',"window.open('https://bioexcel-cv19.bsc.es/#/browse/{{.}}/overview','_blank')");
+                            btn.disabled = false;
+                            btn.firstChild.data = "Go to Trajectory on BioExcel-CV19";
+                            var iframe = $("#iframe{{$id_hash}}");
+                            iframe.show();
+                            iframe.attr("src", iframe.data("src")+ {{.}} );
+                        });
+                    {{ end }}
+                </script>
+            </div>
+        {{ end }}
 
         <h5 align="left">
             <b>Input and Supporting Files:</b>
