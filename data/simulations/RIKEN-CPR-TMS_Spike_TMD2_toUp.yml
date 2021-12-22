@@ -31,4 +31,5 @@ forcefields:
     - TIP3
 references: 
     - GENESIS https://www.r-ccs.riken.jp/labs/cbrt/
-publication: 
+publication:
+    - https://doi.org/10.1016/j.bpj.2021.01.012

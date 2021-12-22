@@ -29,3 +29,4 @@ forcefields:
 references: 
     - GENESIS https://www.r-ccs.riken.jp/labs/cbrt/
 publication:
+    - https://doi.org/10.1016/j.bpj.2021.01.012
