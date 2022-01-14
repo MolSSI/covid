@@ -13,7 +13,7 @@ file_types:
 files:
   - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Down.zip
   - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Down_wo_glycan.zip
-  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_clusters_Down.zip
+  - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/gREST_Down.zip
   - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/D1_Sym-30structures.pdb.zip
   - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/D1_asym-30structures.pdb.zip
   - https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/RIKEN-CPR/I2a-30structures.pdb.zip
