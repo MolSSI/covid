@@ -13,7 +13,7 @@ creator: Logan Thrasher Collins, Tamer Elkholy, Shafat Mubin, David Hill, Ricky 
 organization: Conduit Computing
 trajectory_data:
    - Membrane-Only System:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/mem-initial.gro
        size: 27 MB
        type: Gromacs GRO file
@@ -23,7 +23,7 @@ trajectory_data:
        type: Gromacs XTC file
 
    - Single E Protein Pentamer in Membrane:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Einitial.gro
        size: 32 MB
        type: Gromacs GRO file
@@ -33,7 +33,7 @@ trajectory_data:
        type: Gromacs XTC file
 
    - Four E Protein Pentamers in Membrane:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Einitial.gro
        size: 40 MB
        type: Gromacs GRO file
@@ -43,7 +43,7 @@ trajectory_data:
        type: Gromacs XTC file
 
    - Single M Protein Dimer in Membrane:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Minitial.gro
        size: 37.4 MB
        type: Gromacs GRO file
@@ -53,7 +53,7 @@ trajectory_data:
        type: Gromacs XTC file
 
    - Four M Protein Dimers in Membrane:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Minitial.gro
        size: 39.5 MB
        type: Gromacs GRO file
@@ -63,7 +63,7 @@ trajectory_data:
        type: Gromacs XTC file
 
    - Three M Protein Dimers and One E Protein Pentamer in Membrane:
-     - label: Initial Confugiration
+     - label: Initial Configuration
        location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/3M1Einitial.gro
        size: 57.8 MB
        type: Gromacs GRO file
