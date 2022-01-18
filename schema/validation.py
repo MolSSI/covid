@@ -301,7 +301,7 @@ class SimulationsModel(BaseModel):
     institute: Optional[str]
     models: Optional[List[str]]
     proteins: List[ValidProteins]
-    structures: List[str]
+    structures: Optional[List[str]]
     rating: Optional[int]
     files: Optional[List[AnyUrl]]
     trajectory: Optional[AnyUrl]

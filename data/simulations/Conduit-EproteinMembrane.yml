@@ -1,0 +1,94 @@
+type: md
+title: Elucidation of SARS-Cov-2 Budding Mechanisms through Molecular Dynamics Simulations of M and E Protein Complexes
+description: > 
+  Data from Conduit Computing's recent paper "Elucidation of SARS-Cov-2 Budding Mechanisms through Molecular Dynamics
+  Simulations of M and E Protein Complexes" (published in Journal of Physical Chemistry Letters). These data include
+  compressed trajectories and initial configurations for membrane-only system (mem) (800 ns), system with a
+  single E protein pentamer in membrane (1E) (800 ns), a system with four E protein pentamers in membrane (4E)
+  (800 ns), a system with a single M protein dimer in membrane (1M) (800 ns), a system with four M protein dimers in
+  membrane (4M) (800 ns), and a system with three M protein dimers and one E protein pentamer in membrane (3M1E)
+  (400 ns).
+
+creator: Logan Thrasher Collins, Tamer Elkholy, Shafat Mubin, David Hill, Ricky Williams, Kayode Ezike, and Ankush Singhal
+organization: Conduit Computing
+trajectory_data:
+   - Membrane-Only System:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/mem-initial.gro
+       size: 27 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 800ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/mem-traj800ns.xtc
+       size: 11.3 GB
+       type: Gromacs XTC file
+
+   - Single E Protein Pentamer in Membrane:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Einitial.gro
+       size: 32 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 800ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Etraj800ns.xtc
+       size: 13.8 GB
+       type: Gromacs XTC file
+
+   - Four E Protein Pentamers in Membrane:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Einitial.gro
+       size: 40 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 800ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Etraj800ns.xtc
+       size: 17.0 GB
+       type: Gromacs XTC file
+
+   - Single M Protein Dimer in Membrane:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Minitial.gro
+       size: 37.4 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 800ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/1Mtraj800ns.xtc
+       size: 14.9 GB
+       type: Gromacs XTC file
+
+   - Four M Protein Dimers in Membrane:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Minitial.gro
+       size: 39.5 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 800ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/4Mtraj800ns.xtc
+       size: 16.8 GB
+       type: Gromacs XTC file
+
+   - Three M Protein Dimers and One E Protein Pentamer in Membrane:
+     - label: Initial Configuration
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/3M1Einitial.gro
+       size: 57.8 MB
+       type: Gromacs GRO file
+     - label: Trajectory, 400ns
+       location: https://molssi-bioexcel-covid-19-structure-therapeutics-hub.s3.amazonaws.com/ConduitComputing/3M1Etraj400ns.xtc
+       size: 12.3 GB
+       type: Gromacs XTC file
+
+publication: https://doi.org/10.1021/acs.jpclett.1c02955
+proteins:
+    - E protein
+    - M protein
+models:
+    - E_protein_feig_membrane
+    - M_protein_feig_membrane
+length: 3600 ns
+ensemble: NPT
+forcefields:
+    - CHARMM36
+    - TIP3P
+solvent: water
+temperature: 300
+pressure: 1
+
+
+
+
+
