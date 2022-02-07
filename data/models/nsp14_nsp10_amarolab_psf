@@ -1,0 +1,12 @@
+name: nsp14_nsp10_dry_segname_psf
+description: PSF for wild-type NSP14 in complex with NSP10 after water molecules and ions are stripped
+url: https://amarolab.ucsd.edu/covid19.php
+pdbids:
+  - 7MC6
+  - 5NFY
+proteins:
+  - NSP14
+  - NSP10
+creator: Amaro Lab
+institution: University of California San Diego
+publication: https://doi.org/10.1073/pnas.2106379119
