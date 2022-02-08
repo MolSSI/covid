@@ -1,6 +1,6 @@
 type: md
-title: NAMD Trajectories of full-length NSP14 protein.
-description: All-atom MD simulations of full-length NSP14 protein, protein only (aligned) after water molecules and ions are stripped. This is a concatanated trajectory of three independent copies (2x1µs + 1x0.6µs). PSF and DCDs files are provided.
+title: Amber Trajectories of NSP14 protein.
+description: All-atom MD simulations of wild-type NSP14 protein, protein only (aligned) after water molecules and ions are stripped. This is a concatanated trajectory of three independent copies (3x0.2µs). PSF and DCDs files are provided.
 creator: Amaro Lab
 institute: University of California San Diego
 models:
@@ -11,8 +11,8 @@ structures:
     - 7MC6
     - 5NFY
 trajectory: https://amarolab.ucsd.edu/covid19.php
-size: 2.3 GB
-length: 2.6 µs
+size: 524 MB
+length: 0.6 µs
 ensemble: NPT
 temperature: 310
 pressure: 1
