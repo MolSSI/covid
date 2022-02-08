@@ -1,0 +1,28 @@
+type: md
+title: NAMD Trajectories of NSP14-NSP10-RNA complex.
+description: All-atom MD simulations of NSP14-NSP10-RNA complex, protein and RNA only (aligned) after water molecules and ions are stripped. This is a concatanated trajectory of three independent copies (2x1µs + 1x0.6µs). PSF and DCDs files are provided.
+creator: Amaro Lab
+institute: University of California San Diego
+models:
+    - nsp14_nsp10_rna_amarolab_psf
+proteins:
+    - NSP14
+    - NSP10
+structures:
+    - 7MC6
+    - 5NFY
+    - 4FVU
+    - 4GV9
+trajectory: https://amarolab.ucsd.edu/files/covid19/CoV2_ExoN/nsp14_rna/trajectories_nsp14_nsp10_rna_namd_dry_amarolab.dcd.gz
+size: 2.7 GB
+length: 2.6 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.2
+forcefields:
+    - Amberff14SB
+    - RNA.OL3
+    - TIP3P
+publication: https://doi.org/10.1073/pnas.2106379119
