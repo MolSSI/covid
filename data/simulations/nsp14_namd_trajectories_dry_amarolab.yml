@@ -10,7 +10,7 @@ proteins:
 structures:
     - 7MC6
     - 5NFY
-trajectory: https://amarolab.ucsd.edu/covid19.php
+trajectory: https://amarolab.ucsd.edu/files/covid19/CoV2_ExoN/nsp14/trajectories_nsp14_namd_dry_amarolab.dcd.gz
 size: 2.3 GB
 length: 2.6 µs
 ensemble: NPT
