@@ -1,0 +1,24 @@
+type: md
+title: Amber Trajectories of NSP14.
+description: All-atom MD simulations of NSP14, protein only (aligned) after water molecules and ions are stripped. This is a concatanated trajectory of three independent copies (3x0.2µs). PSF and DCDs files are provided.
+creator: Amaro Lab
+institute: University of California San Diego
+models:
+    - nsp14_amarolab_psf
+proteins:
+    - NSP14
+structures:
+    - 7MC6
+    - 5NFY
+trajectory: https://amarolab.ucsd.edu/files/covid19/CoV2_ExoN/nsp14_amber/trajectories_nsp14_amber_dry_amarolab.dcd.gz
+size: 524 MB
+length: 0.6 µs
+ensemble: NPT
+temperature: 310
+pressure: 1
+solvent: water
+salinity: 0.2
+forcefields:
+    - Amberff14SB
+    - TIP3P
+publication: https://doi.org/10.1073/pnas.2106379119
