@@ -1,0 +1,24 @@
+name: Delta variant SARS-CoV-2 Spike RBD-Nb20 complex
+description: >
+  representative snapshot of Delta variant SARS-CoV-2 Spike RBD-Nb20 antibody complex from in silico mutation and MD simulation
+  filename is MD_Delta_RBD_Nb20_Fig7.pdb
+url: https://zenodo.org/record/6026641#.YitGLInP24R
+pdb_url: https://zenodo.org/record/6026641/preview/Structural_model_PDBs.zip
+pdbids:
+  - 7JVB
+proteins:
+  - antibody
+  - spike
+organism:
+  - human
+  - SARS-CoV-2
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://doi.org/10.1016/j.isci.2022.103939
+preprint: https://dx.doi.org/10.2139/ssrn.3907841
+references:
+  - "Mary Hongying Cheng, James M. Krieger, Anupam Banerjee, Yufei Xiang, Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar,
+     Impact of New Variants on SARS-CoV-2 Infectivity and Neutralization: A Molecular Assessment of the Alterations in 
+     the Spike-Host Protein Interactions,
+     iScience, 2022, 25(3), 103939"

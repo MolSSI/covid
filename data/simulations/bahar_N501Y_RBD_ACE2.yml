@@ -1,0 +1,32 @@
+﻿type: md
+title: 3 x 100 ns MD of N501Y SARS-CoV-2 RBD-ACE2 complex (Alpha variant)
+description: >
+  This trajectory is from three 100 ns atomic MD simulation of the Alpha variant SARS-CoV-2 RBD-ACE2 complex. 
+  The protein was solvated in a box of water and 0.15 M NaCl extending 10 A from protein edges. 
+  The simulation was performed with NAMD 2.13 on the department cluster using the CHARMM36m force field. 
+  The interval between frames is 10 ns. The simulation was conducted in the NPT ensemble (1 bar and 310 K).
+creator: Mary Hongying Cheng
+lab: Bahar lab
+organization: University of Pittsburgh
+institute: Department of Computational and Systems Biology
+proteins: 
+  - RBD
+  - ACE2
+structures:
+  - 6LZG
+ensemble: NPT
+forcefields:
+  - CHARMM36m
+files: 
+  - https://zenodo.org/record/6026641/files/Run2_N501Y_RBD_ACE2.zip
+size: 50 MB
+solvent: Water
+temperature: 310
+pressure: 0.987
+salinity: 0.15
+length: 3 x 100 ns
+references:
+  - "Mary Hongying Cheng, James M. Krieger, Anupam Banerjee, Yufei Xiang, Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar,
+     Impact of New Variants on SARS-CoV-2 Infectivity and Neutralization: A Molecular Assessment of the Alterations in 
+     the Spike-Host Protein Interactions,
+     iScience, (Accepted)"

@@ -1,0 +1,25 @@
+name: Furin bound to Delta variant SARS-CoV-2 Spike in one RBD up state
+description: >
+  representative docking model of furin bound to Delta variant SARS-CoV-2 Spike with one RBD in the up state generated with ClusPro and refined by HADDOCK
+  filename is Refined_Delta_Spike_furin_Fig2.pdb
+url: https://zenodo.org/record/6026641#.YitGLInP24R
+pdb_url: https://zenodo.org/record/6026641/preview/Structural_model_PDBs.zip
+pdbids:
+  - 5JMO
+  - 6VSB
+proteins:
+  - Furin
+  - spike
+organism:
+  - human
+  - SARS-CoV-2
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://doi.org/10.1016/j.isci.2022.103939
+preprint: https://dx.doi.org/10.2139/ssrn.3907841
+references:
+  - "Mary Hongying Cheng, James M. Krieger, Anupam Banerjee, Yufei Xiang, Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar,
+     Impact of New Variants on SARS-CoV-2 Infectivity and Neutralization: A Molecular Assessment of the Alterations in 
+     the Spike-Host Protein Interactions,
+     iScience, 2022, 25(3), 103939"

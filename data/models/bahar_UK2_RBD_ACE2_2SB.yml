@@ -1,0 +1,24 @@
+name: UK variant SARS-CoV-2 Spike RBD-ACE2 complex with 2 salt bridges
+description: >
+  representative snapshot of UK variant SARS-CoV-2 Spike RBD-ACE2 complex with 2 salt bridges from in silico mutation and MD simulation
+  filename is MD_UK2_RBD_ACE2_2SB_FigS1.pdb
+url: https://zenodo.org/record/6026641#.YitGLInP24R
+pdb_url: https://zenodo.org/record/6026641/preview/Structural_model_PDBs.zip
+pdbids:
+  - 6LZG
+proteins:
+  - ACE2
+  - spike
+organism:
+  - human
+  - SARS-CoV-2
+creator: Mary Hongying Cheng
+lab: Bahar Lab
+organization:  University of Pittsburgh Department of Computational and Systems Biology
+publication: https://doi.org/10.1016/j.isci.2022.103939
+preprint: https://dx.doi.org/10.2139/ssrn.3907841
+references:
+  - "Mary Hongying Cheng, James M. Krieger, Anupam Banerjee, Yufei Xiang, Burak Kaynak, Yi Shi, Moshe Arditi, Ivet Bahar,
+     Impact of New Variants on SARS-CoV-2 Infectivity and Neutralization: A Molecular Assessment of the Alterations in 
+     the Spike-Host Protein Interactions,
+     iScience, 2022, 25(3), 103939"
