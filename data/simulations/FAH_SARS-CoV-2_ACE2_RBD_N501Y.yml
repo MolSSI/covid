@@ -13,7 +13,7 @@ description: >
   These structural models were further refined by Tristan Croll using [ISOLDE](https://isolde.cimr.cam.ac.uk/) ([Croll, 2018](https://doi.org/10.1107/S2059798318002425)) and deposited in the [Coronavirus Structural Taskforce (CST) database](https://github.com/thorn-lab/coronavirus_structural_task_force) ([Croll et al., 2020](https://doi.org/10.1101/2020.10.07.307546)) to produce
   [refined 6m0j](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j)
   and [refined 1r42](https://github.com/thorn-lab/coronavirus_structural_task_force/blob/master/pdb/human_interaction_partners/ACE2/1r42/isolde/notes.txt) models.
-  The RBD N501 was mutated to TYR using PyMOL 2.3.2](http://pymol.org).
+  The RBD N501 was mutated to TYR using [PyMOL 2.3.2](http://pymol.org).
   The resulting RBD and ACE2 monomers were then aligned in [PyMOL 2.3.2](http://pymol.org) to the [CST 6m0j structure](https://github.com/thorn-lab/coronavirus_structural_task_force/tree/master/pdb/surface_glycoprotein/SARS-CoV-2/6m0j) to create an initial RBD:ACE2 complex.
   Full glycosylation patterns for ACE2 and RBD glycans were determined from [Shajahan et al.](http://dx.doi.org/10.1093/glycob/cwaa101)
   For the constructed RBD:ACE2 complex, these included sites: N53, N90, N103, N322, N432, N546, and N690 on ACE2 and N343 on the RBD.
