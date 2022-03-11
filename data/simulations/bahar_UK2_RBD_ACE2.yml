@@ -19,6 +19,7 @@ forcefields:
   - CHARMM36m
 files: 
   - https://zenodo.org/record/6026641/files/Run5_UK2_E484K_N501Y_RBD_ACE2.zip
+trajectory: https://zenodo.org/record/6026641/files/Run5_UK2_E484K_N501Y_RBD_ACE2.zip
 size: 50 MB
 solvent: Water
 temperature: 310
