@@ -1,0 +1,14 @@
+pdbid:
+unpublished_pdbid:
+proteins:
+  - 3CLpro
+targets:
+  - viral replication
+  - 3CLpro protease activity
+annotation: PROD, NWChem QM/MM optimization, density espfit option, 155 QM atoms
+rating:
+organisms: SARS-CoV-2
+ligands: Carmofur
+url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/155PROD_density_espfit.pdb
+publication:
+preprint: https://chemrxiv.org/engage/chemrxiv/article-details/62323f6d658bc0e529ad87bb
