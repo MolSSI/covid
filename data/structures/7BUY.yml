@@ -1,0 +1,9 @@
+pdbid: 7BUY
+proteins: 
+  - 3CLpro
+targets:
+  - viral replication
+  - 3CLpro protease activity
+organisms: 
+  - SARS-CoV-2
+ligands: Carmofur

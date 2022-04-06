@@ -1,7 +1,10 @@
 name: 83PROD_QChem.pdb
 description: Carmofur - Main Protease complex structure (PROD), Q-Chem QM/MM optimization, 83 QM atoms
 url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/83PROD_QChem.pdb
-proteins: 3CLpro
+pdbids:
+  - 7BUY
+proteins: 
+  - CLpro
 creator: Goran Giudetti
 institution: University of Southern California, Department of Chemistry
 lab: Anna I. Krylov research group
