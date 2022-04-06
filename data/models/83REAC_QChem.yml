@@ -1,0 +1,8 @@
+name: 83REAC_QChem.pdb
+description: Carmofur - Main Protease complex structure (REAC), Q-Chem QM/MM optimization, 83 QM atoms
+url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/83REAC_QChem.pdb
+proteins: 3CLpro
+creator: Goran Giudetti
+institution: University of Southern California, Department of Chemistry
+lab: Anna I. Krylov research group
+preprint: https://chemrxiv.org/engage/chemrxiv/article-details/62323f6d658bc0e529ad87bb

@@ -1,0 +1,8 @@
+name: 155REAC_density_static.pdb
+description: Carmofur - Main Protease complex structure (REAC), NWChem QM/MM optimization, 155 QM atoms, density static protocol
+url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/155REAC_density_static.pdb
+proteins: 3CLpro
+creator: Bella L. Grigorenko
+institution: Lomonosov Moscow State University, Department of Chemistry
+lab: Alexander V. Nemukhin research group
+preprint: https://chemrxiv.org/engage/chemrxiv/article-details/62323f6d658bc0e529ad87bb
