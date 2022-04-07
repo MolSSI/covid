@@ -4,7 +4,7 @@ url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/155PROD_den
 pdbids:
   - 7BUY
 proteins: 
-  - CLpro
+  - 3CLpro
 creator: Bella L. Grigorenko
 institution: Lomonosov Moscow State University, Department of Chemistry
 lab: Alexander V. Nemukhin research group

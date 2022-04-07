@@ -4,7 +4,7 @@ url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/83INT_QChem
 pdbids:
   - 7BUY
 proteins: 
-  - CLpro
+  - 3CLpro
 creator: Goran Giudetti
 institution: University of Southern California, Department of Chemistry
 lab: Anna I. Krylov research group

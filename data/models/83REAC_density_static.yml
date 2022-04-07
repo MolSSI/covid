@@ -4,7 +4,7 @@ url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/83REAC_dens
 pdbids:
   - 7BUY
 proteins: 
-  - CLpro
+  - 3CLpro
 creator: Igor Polyakov
 institution: Lomonosov Moscow State University, Department of Chemistry
 lab: Alexander V. Nemukhin research group
