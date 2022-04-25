@@ -1,17 +1,16 @@
-type: Trasition state structures
-title: Transition State (TS) structures for the inhibitory mechanism of the PF-00835231 molecule with the enzyme 3CLPRO of SARS-CoV-2
-description:  The files contain the coordinates of the TS structures obtained while using B3LYPD3 631+G(d), M062XD3 631+G(d), AM1D, B3LYP, DFTB3, PM6 and GFN2xTB to describe the reaction mechanism of the inhibitor PF-00835231 with the enzyme 3CLPRO of SARS-CoV-2. The residues involved in the reaction are the His41, Cys145 and the L4N304.
+name: Transition State (TS) structures for the inhibitory mechanism of the PF-00835231 molecule with the enzyme 3CLPRO of SARS-CoV-2
+description: The files contain the coordinates of the TS structures obtained while using B3LYPD3 631+G(d), M062XD3 631+G(d), AM1D, B3LYP, DFTB3, PM6 and GFN2xTB to describe the reaction mechanism of the inhibitor PF-00835231 with the enzyme 3CLPRO of SARS-CoV-2. The residues involved in the reaction are the His41, Cys145 and the L4N304.
+url: https://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPRO_PF835231_TS/
+pdb_url: https://www.rcsb.org/structure/6XHM
+pdbids:
+  - 6XHM
+proteins: 
+  - 3CLpro
 creator: "Carlos A. Ramos-Guzmán, José L. Velázquez-Libera, J. Javier Ruiz-Pernía, Iñaki Tuñón"
 organization: Universidad de Valencia
+institution: Universidad de Valencia
 lab: Efectos del medio
-institute: "Departamento de Química Física"
-models:
-    - 6XHM-TS
-proteins: 
-    - 3CLpro
-structures: 
-    - https://www.rcsb.org/structure/6XHM
-trajectory:  https://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPRO_PF835231_TS/
+trajectory:  
 size: 100 MB
 solvent: Water
 forcefields: 
