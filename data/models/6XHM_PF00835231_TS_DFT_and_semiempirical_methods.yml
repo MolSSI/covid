@@ -1,0 +1,32 @@
+type: Trasition state structures
+title: Transition State (TS) structures for the inhibitory mechanism of the PF-00835231 molecule with the enzyme 3CLPRO of SARS-CoV-2
+description:  The files contain the coordinates of the TS structures obtained while using B3LYPD3 631+G(d), M062XD3 631+G(d), AM1D, B3LYP, DFTB3, PM6 and GFN2xTB to describe the reaction mechanism of the inhibitor PF-00835231 with the enzyme 3CLPRO of SARS-CoV-2. The residues involved in the reaction are the His41, Cys145 and the L4N304.
+creator: "Carlos A. Ramos-Guzmán, José L. Velázquez-Libera, J. Javier Ruiz-Pernía, Iñaki Tuñón"
+organization: Universidad de Valencia
+lab: Efectos del medio
+institute: "Departamento de Química Física"
+models:
+    - 6XHM-TS
+proteins: 
+    - 3CLpro
+structures: 
+    - https://www.rcsb.org/structure/6XHM
+trajectory:  https://disco.uv.es/pub/efme/disco/SARS-CoV-2/3CLPRO_PF835231_TS/
+size: 100 MB
+solvent: Water
+forcefields: 
+    - ff14SB 
+    - TIP3P 
+    - GAFF
+methods:
+    -B3LYPD3 631+G(d)
+    -M062XD3 631+G(d)
+    -AM1D
+    -B3LYP
+    -DFTB3
+    -PM6
+    -GFN2xTB
+references: 
+    - "Ramos-Guzmán, Carlos A.; Ruiz-Pernía, J. Javier; Tuñón, Iñaki (2020): Inhibition Mechanism of SARS-CoV-2 Main Protease with Ketone-Based Inhibitors Unveiled by Multiscale Simulations: Insights for Improved Designs. Angewandte Chemie International Edition. https://doi.org/10.1002/anie.202110027." 
+    - "Zinovjev, K.; Tuñón, I. Adaptive Finite Temperature String Method in Collective Variables. J. Phys. Chem. A 2017, 121 (51), 9764–9772."
+    - "Zinovjev, K. String-Amber https://github.com/kzinovjev/string-amber"
