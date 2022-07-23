@@ -13,11 +13,11 @@
         <h5 align="left">
         Data classification:
             <ul style="text-align:justify;">
-                {{ range slice "biology" "structures" "models" "therapeutics"}}
+                {{ range slice "biology" "structures" "models" "therapeutics" "support"}}
                     {{ $data := index $.Site.Data.glossary . }}
                     <li><a href="{{ delimit (slice "#ext" "res" (string $data.term) ) "_" }}"><b>{{ $data.term | title }}:</b></a> {{ $data.short }}</li>
                 {{ end }}
-                <li><a href="#ext_res_Publications"><b> Publications:</b></a> Databases containing pulications, peer-reviewed and pre-prints, relevant to COVID-19</li>
+                <li><a href="#ext_res_Publications"><b> Publications:</b></a> Databases containing publications, peer-reviewed and pre-prints, relevant to COVID-19</li>
             </ul>
         </h5>
         <hr class="hr-thick">
@@ -60,6 +60,13 @@
         <h3 class="anchor" id="ext_res_Publications"> Publications </h3>
         {{ range $.Site.Data.links  }}
             {{ if in .resources "publications" }}
+                {{ partial "links-data.html" (dict "links" . "context" $) }}
+            {{ end }}
+        {{ end }}
+
+        <h3 class="anchor" id="ext_res_Support"> Support </h3>
+        {{ range $.Site.Data.links  }}
+            {{ if in .resources "support" }}
                 {{ partial "links-data.html" (dict "links" . "context" $) }}
             {{ end }}
         {{ end }}

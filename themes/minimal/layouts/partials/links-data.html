@@ -1,7 +1,11 @@
 
 {{ $localScratch := newScratch }}
 
-<a href="{{.links.url}}"><h4 align="center">{{ .links.name | title }}</h4></a>
+{{ $anchor := .links.name | anchorize }}
+<h4 align="center" id="{{ $anchor }}">
+    <a href="{{.links.url}}">{{ .links.name | title }}</a>
+    <a href='{{ print .context.Site.BaseURL "/links/#" $anchor }}'><i class="fa fa-link" aria-hidden="true"></i></a>
+</h4>
 
 <p align="justify"><b>Description:</b> {{ .links.description | markdownify }}</p>
 
