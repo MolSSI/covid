@@ -13,23 +13,11 @@ ureg = UnitRegistry()
 total_size = 0 * ureg.bytes
 total_length = 0 * ureg.second
 fah_length = 0 * ureg.second
+total_simulations = 0
 
 
-for filename in listdir("."):
-    if not isfile(filename) or ("yml" not in filename and "yaml" not in filename):
-        continue
-
-    with open(filename, 'r') as f:
-        data = yaml.safe_load(f)
-    try:
-        size = str(data["size"]).replace("μ", "u")
-    except KeyError:
-        size = None
-    try:
-        length = str(data["length"]).replace("μ", "u")
-    except KeyError:
-        length = None
-
+def compute_size(size, length, filename):
+    global total_size, total_length, fah_length, total_simulations
     # Size fixes
     if size is not None:
         # Fix big O notation
@@ -60,17 +48,53 @@ for filename in listdir("."):
             length = f"{first_number * second_number} {unit}"
 
     try:
+        increment = 0
         if size is not None and size != "None":
             total_size += ureg(size)
+            increment = 1
         if length is not None and length != "None":
             if "FAH" in filename or "fah" in filename:
                 fah_length += ureg(length)
             total_length += ureg(length)
+            increment = 1
+        total_simulations += increment
     except:
         breakpoint()
+
+
+def coerece_size_length(data):
+    try:
+        size = str(data["size"]).replace("μ", "u").replace("K", "k")
+    except KeyError:
+        size = None
+    try:
+        length = str(data["length"]).replace("μ", "u")
+    except KeyError:
+        length = None
+    return size, length
+
+
+for filename in listdir("."):
+    if not isfile(filename) or ("yml" not in filename and "yaml" not in filename) or ("fake" in filename):
+        continue
+
+    with open(filename, 'r') as f:
+        data = yaml.safe_load(f)
+
+    if "trajectory_data" in data:
+        for arbitrary_header in data["trajectory_data"]:
+            for arbitrary_data_list in arbitrary_header.values():
+                for entry_data in arbitrary_data_list:
+                    size, length = coerece_size_length(entry_data)
+                    compute_size(size, length, filename)
+
+    size, length = coerece_size_length(data)
+
+    compute_size(size, length, filename)
 
 
 print(f"Total Size: {total_size.to(ureg.TB)}")
 print(f"Total Length: {total_length.to(ureg.ms)}")
 print(f"F@H Length: {fah_length.to(ureg.ms)}")
+print(f"Total Simulations: {total_simulations}")
 
