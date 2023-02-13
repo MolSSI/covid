@@ -1,6 +1,6 @@
 target: nsp5
 type: md
-title: Folding@home simulations of nsp5
+title: Folding@home simulations of nsp5 monomer
 description: >
   All-atom MD simulations of nsp5, simulated using [Folding@Home](https://doi.org/10.1101/2020.06.27.175430).
   The dataset comprises 4 projects, each having a `RUN*/CLONE*/result*` directory structure.
