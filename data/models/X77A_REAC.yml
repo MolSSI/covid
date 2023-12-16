@@ -1,0 +1,11 @@
+name: X77A_REAC.pdb
+description: X77A - Main Protease complex structure (REAC)
+url: https://github.com/gorangiud/MolSSI_COVID-19_hub-base/blob/main/X77A_REAC.pdb
+pdbids:
+  - 7BUY
+proteins:
+ - 3CLpro
+creator: Bella Grigorenko and Igor Polyakov
+institution: Lomonosov Moscow State University, Department of Chemistry
+lab: Alexander V. Nemukhin research group
+publication: https://doi.org/10.1021/jacs.3c02229
